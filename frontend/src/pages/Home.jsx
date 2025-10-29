@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 import HeroSection from "../components/HeroSection";
 import WhyChooseUs from "../components/WhyChooseUs";
-// import ProductSlider from "../components/ProductSlider";
+import FeaturedCategories from "../components/FeaturedCategories";
 import HowItWorks from "../components/HowItWorks";
 import ContactForm from "../components/ContactForm";
 import OfferBanner from "../components/OfferBanner";
@@ -28,7 +28,7 @@ const Home = () => {
 
       <HeroSection  />
       
-        {/* <ProductSlider /> */}
+        <FeaturedCategories />
       
         <OfferBanner />
      

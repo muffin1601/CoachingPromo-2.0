@@ -1,133 +1,164 @@
+/* WRAPPER */
 .hero-wrapper {
   position: relative;
+  margin-top: 100px;
   width: 100%;
-  height: 100vh; /* Adjust as needed */
+  height: 80vh;
+  font-family: "Outfit", sans-serif;
   overflow: hidden;
 }
 
+/* SLIDE */
 .hero-slide {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
 }
 
+/* MEDIA */
 .hero-media {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures image/video covers the area */
+  object-fit: cover;
 }
 
-/* Overlay for text and social links */
+/* CONTENT */
 .hero-content {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* Use a subtle background if needed, like a linear gradient, 
-     but your image suggests a transparent overlay over a light background. */
-  padding: 10% 8%; /* Example padding */
+  inset: 0;
+  width: 40%;
+  padding: 8% 8%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Adjust for vertical alignment */
+  justify-content: center;
+  text-align: left;
+  color: var(--brand-blue); /* Primary readable text color */
 }
 
-/* Text Styling */
+/* HEADING */
 .hero-content h1 {
-  font-size: 4.5rem; /* Adjust for a large heading */
-  line-height: 1.1;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 20px;
+  font-family: "Outfit", sans-serif;
+  line-height: 1.2;
+  color: var(--brand-blue); /* Main headline color */
 }
 
-.hero-content .text-different {
-  color: #333; /* Or your dark text color */
-}
-
-.hero-content .text-online-flower-shop {
-  color: #d17b88; /* Your specific red/pink color */
-}
-
+/* DESCRIPTION TEXT */
 .hero-content .description-text {
-  max-width: 500px; /* Limit line length */
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 30px;
+  max-width: 480px;
+  font-size: 1.05rem;
+  color: var(--neutral-gray);
+  font-family: "Outfit", sans-serif;
+  margin-bottom: 32px;
+  line-height: 1.5;
 }
 
-/* Call-to-Action Button */
+/* CTA BUTTON */
 .hero-cta-button {
   display: inline-block;
   font-weight: 600;
-  padding: 10px 25px;
-  background-color: transparent; /* Assuming a clear background */
-  color: #333; /* Dark text */
-  border: 1px solid #333;
+  padding: 12px 28px;
+  background-color: transparent;
+  color: var(--brand-orange);
+  border: 2px solid var(--brand-orange);
+  font-family: "Outfit", sans-serif;
   text-decoration: none;
-  text-transform: uppercase;
   letter-spacing: 1px;
+  text-transform: uppercase;
   transition: all 0.3s ease;
   width: fit-content;
 }
 
 .hero-cta-button:hover {
-  background-color: #333;
+  background-color: var(--brand-orange);
   color: #fff;
 }
 
-/* Navigation Arrows */
+/* ARROWS */
 .hero-arrow {
   position: absolute;
   top: 50%;
+  display: flex;
+  justify-content: center;
   transform: translateY(-50%);
   z-index: 10;
-  background: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
-  color: #333;
-  border: none;
-  padding: 15px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--brand-blue);
+  border: 1px solid var(--light-border);
+  padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
+  border-radius: 50%;
 }
 
 .hero-arrow.left {
-  left: 30px;
+  left: 25px;
 }
 
 .hero-arrow.right {
-  right: 30px;
+  right: 25px;
 }
 
-/* Social Icons (Crucial for placement in your image) */
-.social-icons {
-    position: absolute;
-    bottom: 20px; /* Adjust based on desired distance from the bottom */
-    left: 8%; /* Align with content padding */
-    display: flex;
-    align-items: center;
-    gap: 10px; /* Space between icons */
-    /* If you want the icons to be vertical, use flex-direction: column; */
+.hero-arrow:hover {
+  background: rgba(255, 255, 255, 0.9);
 }
 
-.social-icons a {
-    color: #333; /* Dark icon color */
-    border: 1px solid #333; /* Border for the circle effect */
-    border-radius: 50%; /* Make it circular */
-    padding: 8px; /* Control icon size within the circle */
-    display: flex; /* Centers the icon */
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
+/* DOTS */
+.hero-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
 }
 
-.social-icons a:hover {
-    color: #fff;
-    background-color: #d17b88; /* Hover color */
-    border-color: #d17b88;
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--neutral-gray);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.25s ease;
 }
 
-/* Ensure the content aligns to the left as in your image */
-.hero-content {
-    align-items: flex-start;
+.hero-dot.active {
+  background: var(--brand-orange);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .hero-content {
+    padding: 10% 6%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-wrapper {
+    height: 60vh;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-content .description-text {
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  .hero-arrow {
+    padding: 12px;
+  }
 }

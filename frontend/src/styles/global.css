@@ -1,9 +1,20 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #ff8c00;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
 *{
     margin: 0;
     padding: 0;
 }
 body, .top-banner, .navbar, .footer, h1, h2, h3, p {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Outfit', Arial, sans-serif;
 }
 
 html, body {

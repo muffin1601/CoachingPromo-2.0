@@ -1,17 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
-
-:root {
-  --brand-blue: #0b4a8d;
-  --brand-orange: #ff8c00;
-  --neutral-gray: #555;
-  --light-border: #e4e4e4;
-  --light-bg: #fafafa;
-}
 
 /* WRAPPER */
 .navbar-flory {
   width: 100%;
-  height: 100px;
+  
   font-family: "Outfit", sans-serif;
 }
 
@@ -19,7 +10,7 @@
 .navbar-container {
   position: fixed;
   width: 100%;
-  /* height: 150px; */
+ height: 80px;
   top: 0;
   left: 0;
   background: #fff;
@@ -134,7 +125,7 @@ font-family: "Outfit", sans-serif;
 /* ================= BOTTOM MENU ================ */
 .navbar-bottom-menu {
   height: 60px;
-  padding: 15px 4%;
+  padding: 0px 4%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,7 +134,9 @@ font-family: "Outfit", sans-serif;
 }
 
 .navbar-bottom-menu.sticky {
+  padding-top: 15px ;
   box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+  background: #ffffff77;
 }
 
 /* LINKS */
@@ -182,30 +175,30 @@ font-family: "Outfit", sans-serif;
   width: 15px;
 }
 
-/* ================= MEGA MENU ================ */
+
 /* ================= MEGA MENU ================ */
 .dropdown-wrapper {
   position: relative;
 }
 
-/* HIDDEN STATE */
 .mega-dropdown {
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 700px;
+  left: -80%;
   background: #fff;
-  padding: 24px 6%;
-  display: flex;
+  padding: 24px 20%;
+  display: inline-flex;  
   gap: 40px;
-  border-top: 1px solid #e4e4e4;
   z-index: 999;
 
   opacity: 0;
   pointer-events: none;
   transform: translateY(12px);
   transition: opacity .25s ease, transform .25s ease;
+  width: auto;           
+  white-space: nowrap;   
 }
+
 
 /* SHOW + ANIMATION */
 .dropdown-wrapper:hover .mega-dropdown {
