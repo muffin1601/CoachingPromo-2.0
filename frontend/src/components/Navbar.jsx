@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Navbar.css";
-import { Search, User,  ChevronDown,GraduationCap, } from "lucide-react";
+import { Search, User, ChevronDown, GraduationCap, Phone, MessageCircle } from "lucide-react";
 import categories from "../data/categories";
 import axios from "axios";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showSearchBar, setShowSearchBar] = useState(false);
   const [visitorCount, setVisitorCount] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(null);
+
+  const [searchInput, setSearchInput] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,43 +20,70 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-   useEffect(() => {
+  // ✅ Visitor Count
+  useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_API_URL}/visitors/count`) 
+      .get(`${import.meta.env.VITE_API_URL}/visitors/count`)
       .then((res) => setVisitorCount(res.data.totalVisitors))
       .catch((err) => console.error("Failed to fetch visitor count", err));
   }, []);
-
-  const toggleSearch = () => setShowSearchBar((prev) => !prev);
 
   return (
     <header className="navbar-flory">
       <div className={`navbar-container ${isScrolled ? "top-bar-hidden" : ""}`}>
 
-        {/* ✅ TOP BAR */}
+        {/*  TOP BAR */}
         <div className="navbar-top-bar">
           <div className="top-bar-left">
             <div className="logo-section">
               <img src="/logo.webp" alt="Coaching Promo" className="logo-image" />
             </div>
 
-            <div className="visitor-count">
-              Visitors: {visitorCount}
-            </div>
+            <div className="visitor-count">Visitors: {visitorCount}</div>
           </div>
 
+          {/* Search + Phone + WhatsApp + CTA */}
           <div className="top-bar-right">
-            
-              <div className="full-search-container">
-                <input
-                  type="text"
-                  placeholder="Search for products..."
-                  className="full-search-input"
-                />
-                <Search className="search-icon" onClick={toggleSearch} />
-              </div>
-             
 
+            {/*  Search */}
+            <div className="full-search-container">
+              {/* <select
+                className="category-dropdown"
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+              >
+                <option value="">All Categories</option>
+                {categories.map((cat, i) => (
+                  <option key={i} value={cat.category}>{cat.category}</option>
+                ))}
+              </select> */}
+
+              <input
+                type="text"
+                placeholder="Search products..."
+                className="full-search-input"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+              />
+              <Search className="search-icon" />
+            </div>
+
+            {/* Phone Button */}
+            <a href="tel:+918750708222" className="phone-btn">
+              <Phone size={18} /> Call
+            </a>
+
+            {/*  WhatsApp Button */}
+            <a
+              href="https://wa.me/919999999999"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-btn"
+            >
+              <MessageCircle size={18} /> WhatsApp
+            </a>
+
+            {/* User */}
             <div className="nav-icon-link">
               <User />
             </div>
@@ -62,10 +91,15 @@ const Navbar = () => {
             <div className="nav-icon-link cart-icon">
               <GraduationCap />
             </div>
+
+            {/*  CTA Get Quote */}
+            <a href="/contact" className="primary-cta-btn">Get Quote</a>
+
           </div>
         </div>
 
-        
+
+        {/*  BOTTOM MENU */}
         <nav className={`navbar-bottom-menu ${isScrolled ? "sticky" : ""}`}>
           <ul className="nav-links">
 
@@ -73,7 +107,7 @@ const Navbar = () => {
               <a href="/" className="active">Home</a>
             </li>
 
-          
+            {/*  MEGA MENU */}
             {categories.map((cat, i) => (
               <li className="dropdown" key={i}>
                 <div
@@ -85,12 +119,11 @@ const Navbar = () => {
                     }
                   }}
                 >
-                  {/*  Category Link */}
                   <a href={cat.href}>
                     {cat.category} <ChevronDown size={16} />
                   </a>
 
-                  {/*  Mega Menu */}
+                  {/*  2-column MEGA MENU */}
                   {dropdownOpen === cat.category && (
                     <div className="mega-dropdown">
                       {Array.from({
@@ -106,7 +139,6 @@ const Navbar = () => {
                             {subGroup.map((sub, subIndex) => (
                               <div className="dropdown-category" key={subIndex}>
 
-                                {/* Subcategory Link */}
                                 <li href={sub.href} className="dropdown-category-title">
                                   {sub.name}
                                 </li>

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema(
   {
@@ -101,6 +101,6 @@ const categorySchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+module.exports = mongoose.model("Subproduct", categorySchema);
 
-export default mongoose.model("Subproduct", categorySchema);
 

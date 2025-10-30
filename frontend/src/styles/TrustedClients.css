@@ -1,0 +1,84 @@
+.trusted-wrapper {
+  width: 100%;
+  padding: 70px 0;
+  background: var(--light-bg);
+  font-family: "Outfit", sans-serif;
+  overflow: hidden; /* required for marquee */
+}
+
+.trusted-container {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Heading */
+.trusted-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 12px;
+}
+
+.trusted-subtext {
+  color: var(--neutral-gray);
+  font-size: 1.15rem;
+  margin-bottom: 40px;
+}
+
+/*  Marquee wrapper */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/*  Track that scrolls */
+.marquee-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: marqueeMove 25s linear infinite;
+}
+
+/*  Animation */
+@keyframes marqueeMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.trusted-logo {
+  width: 180px;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+
+.trusted-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.trusted-logo:hover {
+  transform: scale(1.06);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .trusted-title {
+    font-size: 1.65rem;
+  }
+
+  .trusted-logo {
+    width: 90px;
+  }
+
+  .marquee-track {
+    gap: 25px;
+    animation-duration: 18s;
+  }
+}

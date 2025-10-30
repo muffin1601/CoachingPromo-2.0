@@ -1,16 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 import slides from "../data/banners";
 import "../styles/HeroSection.css";
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
-  const length = slides.length;
   const timeoutRef = useRef(null);
+  const length = slides.length;
 
-  // Auto-slide
   useEffect(() => {
     if (!paused) {
       timeoutRef.current = setTimeout(
@@ -25,69 +24,86 @@ const HeroSection = () => {
   const goPrev = () => setCurrent((prev) => (prev - 1 + length) % length);
 
   return (
-    <div
+    <section
       className="hero-wrapper"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
+      {/* ✅ Background Change */}
       <AnimatePresence>
         <motion.div
           key={current}
-          className="hero-slide"
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: -80 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
+          className="hero-bg-wrapper"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          autoPlay
         >
-          {/* Media */}
           {slides[current].type === "video" ? (
-            <video
-              className="hero-media"
-              src={slides[current].src}
-              autoPlay
-              muted
-              loop
-            />
+            <video className="hero-bg-media" src={slides[current].src} autoPlay muted loop />
           ) : (
-            <img className="hero-media" src={slides[current].src} alt="" />
+            <img className="hero-bg-media" src={slides[current].src} alt="" />
           )}
-
-          {/* Content */}
-          <div className="hero-content">
-            <h1>
-              {slides[current].title || "Welcome to Coaching Promo"}
-            </h1>
-            <p className="description-text">
-              {slides[current].subtitle || "Welcome to Coaching Promo"}
-            </p>
-
-            {/* CTA */}
-            <a href={slides[current].ctaLink} className="hero-cta-button">
-              {slides[current].ctaText}
-            </a>
-          </div>
         </motion.div>
       </AnimatePresence>
 
-      {/* Arrows */}
+      {/* LEFT CONTENT */}
+      <div className="hero-content">
+        <h1 className="hero-title">
+           {slides[current].title}
+        </h1>
+
+        <p className="hero-subtext">
+           {slides[current].subtitle}
+        </p>
+
+        {/*  USP LIST WITH ICONS */}
+        <ul className="hero-usps">
+          <li>
+            <CheckCircle size={18} className="usp-icon" />
+            Bulk Discounts
+          </li>
+          <li>
+            <CheckCircle size={18} className="usp-icon" />
+            Fast Delivery
+          </li>
+          <li>
+            <CheckCircle size={18} className="usp-icon" />
+            Pan-India Shipping
+          </li>
+        </ul>
+
+        <div className="hero-cta-group">
+          <a href="/get-quote" className="btn-primary">
+            Get Quote
+          </a>
+          <a href="/catalogue" className="btn-outline">
+            Browse Catalogue
+          </a>
+        </div>
+      </div>
+
+      {/*  Navigation Arrows */}
       <button className="hero-arrow left" onClick={goPrev}>
-        <ArrowLeft size={20} />
-      </button>
-      <button className="hero-arrow right" onClick={goNext}>
-        <ArrowRight size={20} />
+        <ArrowLeft size={26} />
       </button>
 
-      {/* Dots */}
+      <button className="hero-arrow right" onClick={goNext}>
+        <ArrowRight size={26} />
+      </button>
+
+      {/*  Dots */}
       <div className="hero-dots">
         {slides.map((_, i) => (
           <div
             key={i}
             onClick={() => setCurrent(i)}
             className={`hero-dot ${current === i ? "active" : ""}`}
-          ></div>
+          />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

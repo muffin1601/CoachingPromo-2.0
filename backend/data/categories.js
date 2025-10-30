@@ -1,7 +1,7 @@
 const categories = [
   {
     category: "Apparel",
-    products: [
+    subcategories: [
       { name: "Polo T-Shirts", image: "/assets/polotshirt.png", price: 15.99 },
       { name: "Round Neck T-Shirts", image: "/assets/roundnecktshirt.png", price: 12.99 },
       { name: "Sweatshirts", image: "/assets/sweatshirt1.png", price: 19.99 },
@@ -22,7 +22,7 @@ const categories = [
   },
   {
     category: "Bags",
-    products: [
+    subcategories: [
       { name: "Institute Backpack", image: "/assets/institutebag.png", price: 29.99 },
       { name: "Jute Bag", image: "/assets/jutebag.png", price: 9.99 },
       { name: "Messenger Bags", image: "/assets/messengerbag.png", price: 24.99 },
@@ -33,7 +33,7 @@ const categories = [
   },
   {
     category: "Promotional Items",
-    products: [
+    subcategories: [
       { name: "Mug", image: "/assets/mug.png", price: 9.99 },
       { name: "Water Bottle", image: "/assets/waterbottle.png", price: 14.99 },
       { name: "Diary Set", image: "/assets/diaryset.png", price: 19.99 },
@@ -49,12 +49,16 @@ const categories = [
       { name: "Mouse Pad", image: "/assets/mousepad.png", price: 5.99 },
       { name: "Photo Frame", image: "/assets/photoframe.png", price: 8.99 },
       { name: "Magic Cube", image: "/assets/magiccube.png", price: 7.99 },
-      { name: "Planner", image: "/assets/planner.png", price: 11.99 }
+      { name: "Planner", image: "/assets/planner.png", price: 11.99 },
+      { name: "Trophy", image: "/assets/trophy.png", price: 49.99 },
+      { name: "Wooden Trophy", image: "/assets/woodentrophy.png", price: 59.99 },
+      { name: "Badges", image: "/assets/badges.png", price: 3.99 },
+      { name: "Other Awards", image: "/assets/trophy2.png", price: 39.99 }
     ]
   },
   {
     category: "Stationery",
-    products: [
+    subcategories: [
       { name: "Table Calendar", image: "/assets/tablecalender.png", price: 6.99 },
       { name: "Wall Calendar", image: "/assets/wallcalender.png", price: 8.99 },
       { name: "Binder Clips", image: "/assets/binderclip.png", price: 6.99 },
@@ -74,16 +78,7 @@ const categories = [
       { name: "Lanyard and ID Card", image: "/assets/lanyardid.png", price: 4.99 },
       { name: "Attendance Registers", image: "/assets/register.png", price: 6.99 }
     ]
-  },
-  {
-    category: "Awards",
-    products: [
-      { name: "Trophy", image: "/assets/trophy.png", price: 49.99 },
-      { name: "Wooden Trophy", image: "/assets/woodentrophy.png", price: 59.99 },
-      { name: "Badges", image: "/assets/badges.png", price: 3.99 },
-      { name: "Other Awards", image: "/assets/trophy2.png", price: 39.99 }
-    ]
-  },
+  }
   
 ];
 

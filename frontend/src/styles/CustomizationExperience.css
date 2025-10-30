@@ -1,0 +1,117 @@
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #ff8c00;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* Section container */
+.cex-wrapper {
+  padding: 80px 6%;
+  text-align: center;
+  background: var(--light-bg);
+}
+
+/* Heading */
+.cex-toptext h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--brand-blue);
+}
+
+.cex-toptext p {
+  color: var(--neutral-gray);
+  margin-bottom: 50px;
+  font-size: 1.05rem;
+}
+
+/* Card container */
+.cex-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 26px;
+}
+
+/* Each card */
+.cex-card {
+  
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 260px;
+  transition: 0.3s ease;
+  background: white;
+  border: 1px solid var(--light-border);
+}
+
+/* Hover */
+.cex-card:hover {
+  /* transform: translateY(-6px); */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Text section */
+.cex-info {
+  text-align: left;
+  max-width: 50%;
+}
+
+.cex-info h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: var(--brand-blue);
+}
+
+/* CTA Button */
+.cex-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-orange);
+  color: white;
+  padding: 10px 24px;
+  
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s;
+}
+
+.cex-btn:hover {
+  opacity: 0.9;
+}
+
+/* Image block */
+.cex-imgwrap {
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.cex-imgwrap img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cex-card {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+  }
+
+  .cex-info {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .cex-imgwrap {
+    max-width: 60%;
+  }
+}

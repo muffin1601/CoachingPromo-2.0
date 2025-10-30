@@ -114,8 +114,8 @@ font-family: "Outfit", sans-serif;
 }
 
 .nav-icon-link svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 
 .nav-icon-link:hover {
@@ -136,7 +136,7 @@ font-family: "Outfit", sans-serif;
 .navbar-bottom-menu.sticky {
   padding-top: 15px ;
   box-shadow: 0 1px 6px rgba(0,0,0,0.08);
-  background: #ffffff77;
+  background: #ffffffea;
 }
 
 /* LINKS */
@@ -250,6 +250,68 @@ font-family: "Outfit", sans-serif;
 .dropdown-category ul li a:hover {
   color: var(--brand-orange);
   transform: translateX(4px);
+}
+
+/*  Category Dropdown inside Search */
+.category-dropdown {
+  border: none;
+  outline: none;
+  font-family: "Outfit", sans-serif;
+  padding: 6px;
+  font-size: 15px;
+  background: transparent;
+  color: #444;
+}
+
+/*  Call Button */
+.phone-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-blue);
+  padding: 6px 14px;
+  
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.phone-btn:hover {
+  background: var(--brand-orange);
+}
+
+/*  WhatsApp Button */
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #25D366;
+  padding: 6px 14px;
+ 
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.whatsapp-btn:hover {
+  opacity: .85;
+}
+
+/*  CTA – Get Quote */
+.primary-cta-btn {
+  background: var(--brand-orange);
+  padding: 8px 20px;
+  
+  color: #fff !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.primary-cta-btn:hover {
+  background: #d76000;
 }
 
 /* ================= Responsive ================= */

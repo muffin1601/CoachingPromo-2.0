@@ -4,16 +4,17 @@ import { Helmet } from "react-helmet";
 import HeroSection from "../components/HeroSection";
 import WhyChooseUs from "../components/WhyChooseUs";
 import FeaturedCategories from "../components/FeaturedCategories";
-import HowItWorks from "../components/HowItWorks";
-import ContactForm from "../components/ContactForm";
-import OfferBanner from "../components/OfferBanner";
+
+
 import QualitySection from "../components/QualitySection";
 import SeoFooterText from "../components/SeoFooterText";
 import Content from "../components/Content";
+import TrustedClients from "../components/TrustedClients";
+import PopularSubcategories from "../components/PopularSubcategories";
+import CustomizationExperience from "../components/CustomizationExperience";
+import AboutUsSection from "../components/AboutUsSection";
 
 const Home = () => {
-  
-
   return (
     <div>
       
@@ -28,14 +29,14 @@ const Home = () => {
 
       <HeroSection  />
       
-        <FeaturedCategories />
+       
       
-        <OfferBanner />
-     
+        <TrustedClients />
+      <FeaturedCategories />
+      <PopularSubcategories />
       <WhyChooseUs />
-      <HowItWorks />
-      <ContactForm />
-      <QualitySection />
+      <CustomizationExperience />
+      <AboutUsSection />
       <Content />
       <SeoFooterText />
     </div>
