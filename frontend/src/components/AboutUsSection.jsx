@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRightCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import "../styles/AboutUsSection.css";
 
 const AboutUsSection = () => {
@@ -16,13 +16,13 @@ const AboutUsSection = () => {
             timely delivery—helping you create lasting impressions.
           </p>
           <a href="/about" className="about-btn">
-            Learn More <ArrowRightCircle size={18} />
+            Learn More <ArrowRight size={18} />
           </a>
         </div>
 
         <div className="about-image">
           <img
-            src="/assets/about-preview.webp"
+            src="/assets/about.webp"
             alt="Branded Merchandise for Institutes"
           />
         </div>

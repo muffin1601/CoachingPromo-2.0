@@ -29,7 +29,7 @@ const HeroSection = () => {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* ✅ Background Change */}
+      {/* Background Change */}
       <AnimatePresence>
         <motion.div
           key={current}
@@ -38,7 +38,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          autoPlay
+          AutoPlay
         >
           {slides[current].type === "video" ? (
             <video className="hero-bg-media" src={slides[current].src} autoPlay muted loop />
