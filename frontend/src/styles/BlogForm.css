@@ -1,0 +1,117 @@
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #ff8c00;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* ================================
+   PAGE WRAPPER
+================================ */
+.form-page-wrapper-4 {
+  
+  max-width: 80%;
+  background: var(--brand-blue);
+}
+
+/* ================================
+   CONTAINER BOX
+================================ */
+.form-container-4 {
+
+  padding: 35px;
+  box-shadow: 0px 3px 14px rgba(0,0,0,0.07);
+  border: 1px solid var(--light-border);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #fff;
+}
+
+/* ================================
+   HEADING
+================================ */
+.head-4 {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+.subtitle-form-4 {
+  text-align: center;
+  font-size: 15px;
+  color: #e0e0e0;
+  margin-bottom: 18px;
+}
+
+/* ================================
+   FORM
+================================ */
+.form-container-4 form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inputs */
+.form-input-4,
+.form-file-input-4,
+.form-textarea-4 {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #fff;
+  font-family: 'outfit', sans-serif;
+  font-size: 15px;
+  border-radius: 3px;
+}
+
+/* Textarea */
+.form-textarea-4 {
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* File */
+.form-file-input-4 {
+  background: #fff;
+  cursor: pointer;
+}
+
+/* Button */
+.form-button-4 {
+  margin-top: 10px;
+  width: 50%;
+  align-self: center;
+  background: var(--brand-orange);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 15px 0;
+  font-size: 15px;
+  font-family: 'outfit', sans-serif;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+}
+
+.form-button-4:hover {
+  opacity: 0.85;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .form-page-wrapper-4 {
+    max-width: 94%;
+  }
+
+  .form-button-4 {
+    width: 100%;
+  }
+}
