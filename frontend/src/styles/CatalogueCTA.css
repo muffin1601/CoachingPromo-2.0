@@ -16,7 +16,7 @@
 
 .cta-wrapper {
   width: 90%;
-  max-width: 1245px;
+  max-width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0px;

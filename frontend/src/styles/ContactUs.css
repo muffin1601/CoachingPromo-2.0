@@ -1,0 +1,154 @@
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #ff8c00;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* ================================
+   CONTACT INFO CARDS
+=================================== */
+.contactus-info-section {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 80%;
+}
+
+.contactus-card {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid var(--light-border);
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.07);
+}
+
+.contactus-card-icon {
+  background: var(--brand-orange);
+  color: #fff;
+  width: 72px;
+  height: 72px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactus-card-title {
+  font-size: 18px;
+  margin: 18px 0 12px;
+  color: #000;
+}
+
+.contactus-card-text,
+.contactus-link {
+  color: var(--neutral-gray);
+  font-size: 15px;
+  line-height: 22px;
+  text-decoration: none;
+}
+
+/* ================================
+   MAP + FORM SECTION
+=================================== */
+.contactus-body {
+  margin: 50px auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 30px;
+  max-width: 80%;
+  align-items: stretch;
+}
+
+.contactus-map-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  filter: grayscale(100%);
+}
+
+/* ================================
+   FORM
+=================================== */
+.contactus-form {
+  background: var(--brand-blue);
+  padding: 35px;
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* 2-column grid */
+.contactus-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.contactus-input {
+  width: 90%;
+  padding:  22px 15px;
+  border: none;
+  background: #fff;
+ font-family: 'outfit', sans-serif;
+  font-size: 15px;
+}
+
+.contactus-textarea, .contactus-input-loc {
+  width: 95%;
+  padding: 15px;
+  border: none;
+   font-family: 'outfit', sans-serif;
+  background: #fff;
+  
+  font-size: 15px;
+}
+/* Textarea */
+.contactus-textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Button */
+.contactus-submit-btn {
+  margin-top: 22px;
+  width: 50%;
+  background: var(--brand-orange);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 15px 0;
+  font-family: 'outfit', sans-serif;
+  font-size: 15px;
+  gap: 10px;
+  display: flex;
+  
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contactus-submit-btn:hover {
+  opacity: 0.85;
+}
+
+/* ================================
+   RESPONSIVE
+=================================== */
+@media (max-width: 900px) {
+  .contactus-info-section {
+    grid-template-columns: 1fr;
+  }
+
+  .contactus-body {
+    grid-template-columns: 1fr;
+  }
+
+  .contactus-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

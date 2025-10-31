@@ -1,0 +1,168 @@
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* MAIN */
+.about-wrapper {
+  width: 100%;
+  overflow: hidden;
+  font-family: "Outfit", sans-serif;
+}
+
+/* HERO */
+.about-hero {
+  text-align: center;
+  padding: 20px 10%;
+  background: 
+    var( --light-bg);
+  color: var(--neutral-gray);
+  /* border-bottom-left-radius: 120px;
+  border-bottom-right-radius: 120px; */
+}
+
+
+.about-hero p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* GRID */
+.about-content {
+  max-width: 1200px;
+  margin: 80px auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 50px;
+  padding: 0 30px;
+}
+
+.about-left h2 {
+  font-size: 36px;
+  color: var(--brand-orange);
+  margin-bottom: 15px;
+}
+
+.about-left p {
+  font-size: 18px;
+  color: var(--neutral-gray);
+  margin-bottom: 10px;
+  line-height: 26px;
+}
+
+/* Counters */
+.about-highlights {
+  margin-top: 25px;
+  display: flex;
+  gap: 25px;
+}
+
+.about-highlights div {
+  text-align: center;
+  background: #fff;
+  padding: 18px 16px;
+
+  border: 1px solid #ddd;
+  width: 150px;
+}
+
+.about-highlights h3 {
+  font-size: 20px;
+  color: var(--brand-blue);
+  font-weight: 700;
+}
+
+.about-right .about-image-box {
+  background: #fff;
+ 
+  overflow: hidden;
+  height: 500px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+.about-right img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Mission */
+.about-mission {
+  background: var(--brand-orange);
+  padding: 70px 15%;
+  text-align: center;
+  color: #fff;
+  margin-top: 60px;
+ 
+}
+
+.about-mission h2 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.about-mission p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Timeline Strip */
+.about-timeline {
+  margin: 40px auto 0px;
+  max-width: 80%;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.timeline-item {
+  background: #fff;
+  border-left: 4px solid var(--brand-orange);
+  padding: 18px 20px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.timeline-item h4 {
+  font-size: 22px;
+  color: var(--brand-blue);
+}
+
+.timeline-item p {
+  font-size: 15px;
+  color: var(--text-gray);
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-highlights {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .about-highlights div {
+    width: 45%;
+    margin-bottom: 10px;
+  }
+
+  .about-timeline {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-highlights div {
+    width: 100%;
+  }
+}

@@ -1,90 +1,102 @@
-import React, { useState, useEffect } from "react";
-import { FaWhatsapp, FaEnvelope, FaArrowUp } from "react-icons/fa";
-import { MdSchool } from "react-icons/md";
+import React, { useEffect, useState } from "react";
+import { FaWhatsapp } from "react-icons/fa";
+import { FiMail } from "react-icons/fi";
+import { GraduationCap } from "lucide-react";
 import "../styles/FloatingButtons.css";
-import ContactForm from "./ContactForm";
-import RegisterInstituteForm from "./RegisterInstituteForm";
+
+import EnquiryModal from "./EnquiryModal";
+import RegisterInstituteModal from "./RegisterInstituteModal";
 
 const FloatingButtons = () => {
-  const [showForm, setShowForm] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const [showRegistrationForm, setShowRegistrationForm] = useState(false);
-
-  const toggleForm = () => {
-    setShowForm((prev) => !prev);
-  };
-
-  const toggleRegistrationForm = () => {
-    setShowRegistrationForm((prev) => !prev);
-  };
+  const [showScroll, setShowScroll] = useState(false);
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      setIsVisible(window.scrollY > 300);
+    const handleScroll = () => {
+      if (window.scrollY > 300) setShowScroll(true);
+      else setShowScroll(false);
     };
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <div className="floating-buttons">
-      
-      <a
-        href="#"
-        className="register-button"
-        onClick={toggleRegistrationForm}
-        aria-label="register-institute"
-        data-title="Insert details"
-      >
-        <MdSchool className="icon-btn" />
-      </a>
-      <RegisterInstituteForm
-        showRegistrationForm={showRegistrationForm}
-       toggleRegistrationForm={toggleRegistrationForm}
-      />
-      
-      <a
-        href="https://wa.me/+918750708222"
-        className="whatsapp-button"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="chat-whtsapp"
-        data-title="Chat on WhatsApp"
-      >
-        <FaWhatsapp className="icon-btn" />
-      </a>
-
-     
-      <a
-        href="#"
-        onClick={toggleForm}
-        className="email-button"
-        aria-label="enquiry-button"
-        data-title="Enquiry"
-      >
-        <FaEnvelope className="icon-btn" />
-      </a>
-      <ContactForm showForm={showForm} toggleForm={toggleForm} />
-
-      
-      {isVisible && (
+    <>
+      {/* LEFT — SCROLL TO TOP */}
+      {showScroll && (
         <button
           onClick={scrollToTop}
-          className="scroll-to-top-button"
-
-          aria-label="Go to top"
+          className="floatingBtn scrollTopBtn"
+          aria-label="Scroll to top"
         >
-          <FaArrowUp />
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M10 15V5M10 5L5 10M10 5l5 5"
+              stroke="#ffffffff"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
         </button>
       )}
-    </div>
+
+      {/* RIGHT — REGISTER + WHATSAPP + ENQUIRY */}
+      <div className="floatingRight">
+        {/*  REGISTER INSTITUTE BUTTON */}
+        <button
+          onClick={() => setIsRegisterOpen(true)}
+          className="floatingBtn registerBtn-1"
+          aria-label="Register Institute"
+          title="Register Institute"
+        >
+          <GraduationCap size={28} />
+        </button>
+
+        {/*  WHATSAPP */}
+        <a
+          href="https://wa.me/919999999999"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="floatingBtn whatsappBtn"
+          aria-label="Chat on WhatsApp"
+        >
+          <FaWhatsapp size={28} />
+        </a>
+
+        {/*  ENQUIRY */}
+        <button
+          onClick={() => setIsEnquiryOpen(true)}
+          className="floatingBtn enquiryBtn"
+          aria-label="Enquiry"
+        >
+          <FiMail size={28} />
+        </button>
+      </div>
+
+      {/*  MODALS */}
+      <EnquiryModal
+        isOpen={isEnquiryOpen}
+        onClose={() => setIsEnquiryOpen(false)}
+      />
+
+      <RegisterInstituteModal
+        isOpen={isRegisterOpen}
+        onClose={() => setIsRegisterOpen(false)}
+      />
+    </>
   );
 };
 
