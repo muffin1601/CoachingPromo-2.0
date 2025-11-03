@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
-import { GraduationCap } from "lucide-react";
+import { GraduationCap, PhoneCall } from "lucide-react";
 import "../styles/FloatingButtons.css";
 
 import EnquiryModal from "./EnquiryModal";
@@ -67,7 +67,7 @@ const FloatingButtons = () => {
 
         {/*  WHATSAPP */}
         <a
-          href="https://wa.me/919999999999"
+          href="https://wa.me/918750708222"
           target="_blank"
           rel="noopener noreferrer"
           className="floatingBtn whatsappBtn"
@@ -77,6 +77,10 @@ const FloatingButtons = () => {
         </a>
 
         {/*  ENQUIRY */}
+        <div className="enquiryHint">
+          <PhoneCall size={16} strokeWidth={2.5} />
+          Request a Call
+        </div>
         <button
           onClick={() => setIsEnquiryOpen(true)}
           className="floatingBtn enquiryBtn"

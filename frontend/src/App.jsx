@@ -9,7 +9,10 @@ import AboutUsPage from './pages/AboutUsPage';
 import FloatingButtons from './components/FloatingButtons';
 import BlogList from './pages/BlogList';
 import BlogForm from './pages/BlogForm';
+import BlogDetail from './pages/BlogDetail';
 import ScrollToTop from './utils/ScrollToTop';
+import CategoryPage from './pages/CategoryPage';
+import SubcategoryPage from './pages/SubcategoryPage';
 
 const app =() => {
   return (
@@ -22,6 +25,10 @@ const app =() => {
         <Route path="/about" element={ <AboutUsPage />} />
         <Route path="/blogs" element={ <BlogList />} />
         <Route path="/blogs/post" element={ <BlogForm />} />
+        <Route path="/blogs/:id" element={ <BlogDetail />} />
+
+        <Route path="/categories/:slug" element={ <CategoryPage />} />
+        <Route path="/:categorySlug/:slug" element={ <SubcategoryPage />} />
       </Routes>
       <SupplyCities />
       <Footer />

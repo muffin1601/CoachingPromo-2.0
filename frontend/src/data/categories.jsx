@@ -5,7 +5,7 @@
 const categories = [
   {
     category: "Apparel",
-    href: "/apparel",
+    href: "/categories/apparel-accessories",
     subcategories: [
       {
         name: "T-Shirts",
@@ -50,7 +50,7 @@ const categories = [
 
   {
     category: "Bags",
-    href: "/bags",
+    href: "/categories/bags",
     subcategories: [
       {
         name: "Backpacks",
@@ -81,7 +81,7 @@ const categories = [
 
   {
     category: "Promotional Items",
-    href: "/promotional-items",
+    href: "/categories/promotional-items",
     subcategories: [
       {
         name: "Drinkware",
@@ -154,7 +154,7 @@ const categories = [
 
   {
     category: "Stationery",
-    href: "/stationery",
+    href: "/categories/stationery",
     subcategories: [
       {
         name: "Calendars",

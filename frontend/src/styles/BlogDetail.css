@@ -1,0 +1,164 @@
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+.blg-details-container {
+  
+  max-width: 80%;
+  margin: 60px auto;
+}
+
+/* TWO COLUMN */
+.blg-two-col {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.blg-left {
+  flex: 2;
+}
+
+.blg-right {
+  flex: 1;
+  position: sticky;
+  top: 110px;
+  background: #fff;
+  border: 1px solid var(--light-border);
+  padding: 20px;
+  border-radius: 6px;
+  height: max-content;
+}
+
+
+/* HEADER */
+.blg-details-header h1 {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 6px;
+}
+
+.blg-details-meta {
+  font-size: 14px;
+  color: var(--neutral-gray);
+  margin-bottom: 20px;
+}
+
+.blg-author {
+  font-weight: 600;
+  color: var(--brand-blue);
+}
+
+.blg-details-media {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+/* CONTENT */
+.blg-details-content {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+/* COMMENTS */
+.blg-comments-section h2 {
+  font-size: 26px;
+  color: var(--brand-blue);
+  margin-bottom: 20px;
+}
+
+.blg-comments-list {
+  margin-bottom: 25px;
+}
+
+.blg-comment {
+  border-bottom: 1px solid var(--light-border);
+  padding: 10px 0 18px;
+}
+
+.blg-comment h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--brand-blue);
+}
+
+.blg-comment p {
+  font-size: 15px;
+  margin: 8px 0;
+  color: #333;
+}
+
+.blg-comment span {
+  font-size: 13px;
+  color: var(--neutral-gray);
+}
+
+/* FORM */
+.blg-comment-form input,
+.blg-comment-form textarea {
+  width: 92%;
+  padding: 12px 15px;
+  border: 1px solid var(--light-border);
+  margin-bottom: 12px;
+  outline: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Outfit", sans-serif;
+}
+
+.blg-comment-form textarea {
+  resize: vertical;
+}
+
+.blg-comment-form button {
+  padding: 12px 20px;
+  background: var(--brand-orange);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.blg-comment-form button:hover {
+  background: var(--brand-blue);
+}
+
+/* LOADER */
+.blg-loader {
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .blg-two-col {
+    flex-direction: column;
+  }
+
+  .blg-right {
+    width: 100%;
+    position: static;
+  }
+}

@@ -59,11 +59,11 @@ const CatalogueCTA = () => {
   };
 
   return (
-    <section className="catalogue-cta">
+    <section  className="catalogue-cta">
       <div className="cta-wrapper">
 
         {/* Right Form */}
-        <div className="cta-right">
+        <div id= "catalogue" className="cta-right">
           <h2 className="cta-title">Download Catalogue</h2>
           <p className="cta-subtitle">
             Fill details and get complete catalogue.

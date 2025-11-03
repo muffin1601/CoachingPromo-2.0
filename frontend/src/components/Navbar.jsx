@@ -3,14 +3,17 @@ import "../styles/Navbar.css";
 import { Search, User, ChevronDown, GraduationCap, Phone, MessageCircle } from "lucide-react";
 import categories from "../data/categories";
 import axios from "axios";
+import EnquiryModal from "./EnquiryModal";
+import RegisterInstituteModal from "./RegisterInstituteModal";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [visitorCount, setVisitorCount] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(null);
-
+ const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [searchInput, setSearchInput] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
+  // const [selectedCategory, setSelectedCategory] = useState("");
+      const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +23,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ Visitor Count
+  //  Visitor Count
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/visitors/count`)
@@ -29,6 +32,7 @@ const Navbar = () => {
   }, []);
 
   return (
+    <>
     <header className="navbar-flory">
       <div className={`navbar-container ${isScrolled ? "top-bar-hidden" : ""}`}>
 
@@ -75,7 +79,7 @@ const Navbar = () => {
 
             {/*  WhatsApp Button */}
             <a
-              href="https://wa.me/919999999999"
+              href="https://wa.me/918750708222"
               target="_blank"
               rel="noopener noreferrer"
               className="whatsapp-btn"
@@ -88,12 +92,12 @@ const Navbar = () => {
               <User />
             </div>
 
-            <div className="nav-icon-link cart-icon">
+            <button onClick={() => setIsRegisterOpen(true)} className="nav-icon-link cart-icon">
               <GraduationCap />
-            </div>
+            </button>
 
             {/*  CTA Get Quote */}
-            <a href="/contact" className="primary-cta-btn">Get Quote</a>
+            <a  href="#" onClick={() => setIsEnquiryOpen(true)} className="primary-cta-btn">Get Quote</a>
 
           </div>
         </div>
@@ -169,6 +173,14 @@ const Navbar = () => {
         </nav>
       </div>
     </header>
+     <EnquiryModal
+            isOpen={isEnquiryOpen}
+            onClose={() => setIsEnquiryOpen(false)}
+        />
+         <RegisterInstituteModal
+                isOpen={isRegisterOpen}
+                onClose={() => setIsRegisterOpen(false)}
+              /></>
   );
 };
 

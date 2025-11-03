@@ -1,79 +1,106 @@
-const express = require('express');
-const Subproduct = require('../models/product');
+const express = require("express");
 const router = express.Router();
+const Category = require("../models/product"); // category model
 
-router.get("/categories", async (req, res) => {
+//  GET CATEGORY BY SLUG (with products, subcategories, filters, sorting, pagination)
+router.get("/:slug", async (req, res) => {
   try {
-    const categories = await Subproduct.find();
-    res.json(categories);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to fetch categories" });
-  }
-});
+    const { slug } = req.params;
 
-router.post("/add-category", async (req, res) => {
-  try {
-    const { name } = req.body;
-    if (!name || name.trim() === "") {
-      return res.status(400).json({ error: "Category name is required" });
+    // Query params
+    const page = parseInt(req.query.page) || 1;
+    const limit = 20;  // 20 products per page → change if needed
+    const sort = req.query.sort || "default";
+    const color = req.query.color;
+    const size = req.query.size;
+    const priceRange = req.query.price || ""; // example: "400-800"
+
+    //  Fetch category
+    const category = await Category.findOne({ slug });
+
+    if (!category) {
+      return res.status(404).json({ message: "Category not found" });
     }
 
-    const newCategory = new Subproduct({ name, subcategories: [] });
-    await newCategory.save();
-    res.status(201).json({ message: "Category added", category: newCategory });
+    //------------------------------------------
+    //  Merge all products under subcategories
+    //------------------------------------------
+    let allProducts = [];
+    category.subcategories.forEach((sub) => {
+      if (Array.isArray(sub.products)) {
+        allProducts.push(...sub.products);
+      }
+    });
+
+    //------------------------------------------
+    //  Filtering
+    //------------------------------------------
+
+    // Color filter
+    if (color) {
+      allProducts = allProducts.filter((p) =>
+        p.attributes?.color?.includes(color)
+      );
+    }
+
+    // Size filter
+    if (size) {
+      allProducts = allProducts.filter((p) =>
+        p.attributes?.size?.includes(size)
+      );
+    }
+
+    // Price Range filter
+    if (priceRange && priceRange.includes("-")) {
+      const [min, max] = priceRange.split("-").map(Number);
+      allProducts = allProducts.filter(
+        (p) => p.price >= min && p.price <= max
+      );
+    }
+
+    //------------------------------------------
+    //  Sorting
+    //------------------------------------------
+    if (sort === "low-high") {
+      allProducts.sort((a, b) => (a.salePrice || a.price) - (b.salePrice || b.price));
+    }
+
+    if (sort === "high-low") {
+      allProducts.sort((a, b) => (b.salePrice || b.price) - (a.salePrice || a.price));
+    }
+
+//    ------------------------------------------
+    //  Pagination
+    //-----------------------------------------
+    const totalProducts = allProducts.length;
+    const totalPages = Math.ceil(totalProducts / limit);
+    const startIndex = (page - 1) * limit;
+    const paginatedProducts = allProducts.slice(startIndex, startIndex + limit);
+
+
+    res.json({
+      category: {
+        name: category.name,
+        slug: category.slug,
+        image: category.image,
+        description: category.description,
+        seo: category.seo,
+      },
+      subcategories: category.subcategories.map((sub) => ({
+        name: sub.name,
+        slug: sub.slug,
+        image: sub.image,
+      })),
+      products: paginatedProducts,
+      pagination: {
+        page,
+        totalPages,
+        totalProducts,
+      },
+    });
   } catch (err) {
-    res.status(500).json({ error: "Server error while adding category" });
-  }
-});
-
-router.put("/update-category/:id", async (req, res) => {
-  try {
-    const { name } = req.body;
-    const { id } = req.params;
-
-    if (!name?.trim()) return res.status(400).json({ error: "Category name is required" });
-
-    const category = await Subproduct.findById(id);
-    if (!category) return res.status(404).json({ error: "Category not found" });
-
-    category.name = name;
-    await category.save();
-
-    res.json({ message: "Category updated successfully", category });
-  } catch (error) {
-    res.status(500).json({ error: "Failed to update category" });
-  }
-});
-
-router.delete("/delete-category/:id", async (req, res) => {
-  try {
-    const deleted = await Subproduct.findByIdAndDelete(req.params.id);
-    if (!deleted) return res.status(404).json({ error: "Category not found" });
-    res.status(200).json({ message: "Category deleted" });
-  } catch (err) {
-    res.status(500).json({ error: "Server error deleting category" });
-  }
-});
-
-router.get("/get-categories", async (req, res) => {
-  try {
-    const categories = await Subproduct.find({}, "name");
-    res.status(200).json(categories);
-  } catch (err) {
-    res.status(500).json({ error: "Server error fetching categories" });
-  }
-});
-
-router.get("/related-subcategories/:category", async (req, res) => {
-  try {
-    const { category } = req.params;
-    const categoryDoc = await Subproduct.findOne({ name: category });
-
-    if (!categoryDoc) return res.status(404).json({ message: "Category not found" });
-
-    res.json(categoryDoc.subcategories);
-  } catch (err) {
-    res.status(500).json({ message: "Server error" });
+    console.log(err);
+    res.status(500).json({ message: "Server Error", error: err.message });
   }
 });
 

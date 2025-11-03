@@ -10,7 +10,16 @@ const productSchema = new mongoose.Schema(
     price: { type: Number, required: true },
     salePrice: { type: Number, default: null },
 
+    // MAIN IMAGES
     images: [
+      {
+        url: String,
+        altText: String,
+      },
+    ],
+
+    //  ADDED: SUB / GALLERY IMAGES
+    subImages: [
       {
         url: String,
         altText: String,

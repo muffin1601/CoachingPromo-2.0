@@ -1,25 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/BlogSection.css";
 import { ArrowRight } from "lucide-react";
-
-const blogs = [
-  {
-    tag: "Gifting Ideas",
-    author: "Admin",
-    date: "20 Oct, 2024",
-    title: "Top 10 Annual Function T-Shirt Ideas",
-    thumb: "/assets/blog/b1.webp",
-  },
-  {
-    tag: "Corporate",
-    author: "Admin",
-    date: "10 Oct, 2024",
-    title: "Best Polo T-Shirt Designs for Coaching Institutes",
-    thumb: "/assets/blog/b2.webp",
-  },
-];
+import axios from "axios";
 
 const BlogSection = () => {
+  const [blogs, setblogs] = useState([]);
+
+    useEffect(() => {
+      axios
+        .get(`${import.meta.env.VITE_API_URL}/blogs/home/fetch`)
+        .then((res) => setblogs(res.data))
+        .catch((err) => console.error(err));
+    }, []);
+
   return (
     <section className="blog-section">
 
@@ -30,7 +23,7 @@ const BlogSection = () => {
         {blogs.map((b, i) => (
           <div className="blog-card" key={i}>
             <div className="blog-left">
-              <span className="blog-chip">{b.tag}</span>
+              <span className="blog-chip">{b.tag || "Promotional Branding"}</span>
 
               <p className="blog-meta">
                 By {b.author} &nbsp; • &nbsp; {b.date}
@@ -44,13 +37,13 @@ const BlogSection = () => {
             </div>
 
             <div className="blog-right">
-              <img src={b.thumb} alt={b.title} />
+              <img src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${b.media}`} alt={b.title} />
             </div>
           </div>
         ))}
       </div>
       <div className="cta-wrapper">
-        <button className="cta-btn-blog" onClick={() => window.location.href = '/all-blogs'}>
+        <button className="cta-btn-blog" onClick={() => window.location.href = '/blogs'}>
           View All Blogs
         </button>
       </div>

@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "../styles/FeaturedCategories.css";
 
-// ✅ Lucide Icons
+
 import { Grid3x3, Backpack, Gift, PencilRuler, ArrowRight } from "lucide-react";
 
 const categories = [
@@ -19,7 +19,7 @@ const categories = [
   },
   {
     title: "Bags & Backpacks",
-    slug: "bags-backpacks",
+    slug: "bags",
     items: 12,
     icon: <Backpack />,
     image:
@@ -67,7 +67,7 @@ const FeaturedCategories = () => {
 
                 <div className="featured-overlay">
                   <p className="overlay-items">{cat.items} Items</p>
-                  <a href={`/${cat.slug}`} className="overlay-btn">
+                  <a href={`/categories/${cat.slug}`} className="overlay-btn">
                     Explore
                   </a>
                 </div>
@@ -80,7 +80,7 @@ const FeaturedCategories = () => {
               <h3 className="featured-label">{cat.title}</h3>
 
               {/* CTA */}
-              <a href={`/${cat.slug}`} className="featured-cta">
+              <a href={`/categories/${cat.slug}`} className="featured-cta">
                 View Products <ArrowRight size={16} />
               </a>
             </div>

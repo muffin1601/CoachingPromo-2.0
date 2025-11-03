@@ -108,6 +108,8 @@ font-family: "Outfit", sans-serif;
   color: var(--brand-blue);
   padding: 6px;
   border-radius: 8px;
+  border: none;
+  background: transparent;
   transition: .22s ease;
   display: flex;
   align-items: center;

@@ -3,9 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 import slides from "../data/banners";
 import "../styles/HeroSection.css";
+import EnquiryModal from "./EnquiryModal";
 
 const HeroSection = () => {
   const [current, setCurrent] = useState(0);
+    const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [paused, setPaused] = useState(false);
   const timeoutRef = useRef(null);
   const length = slides.length;
@@ -24,6 +26,7 @@ const HeroSection = () => {
   const goPrev = () => setCurrent((prev) => (prev - 1 + length) % length);
 
   return (
+    <>
     <section
       className="hero-wrapper"
       onMouseEnter={() => setPaused(true)}
@@ -38,7 +41,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          AutoPlay
+          autoPlay
         >
           {slides[current].type === "video" ? (
             <video className="hero-bg-media" src={slides[current].src} autoPlay muted loop />
@@ -75,10 +78,10 @@ const HeroSection = () => {
         </ul>
 
         <div className="hero-cta-group">
-          <a href="/get-quote" className="btn-primary">
+          <a href="#" onClick={() => setIsEnquiryOpen(true)} className="btn-primary">
             Get Quote
           </a>
-          <a href="/catalogue" className="btn-outline">
+          <a href="#catalogue" className="btn-outline">
             Browse Catalogue
           </a>
         </div>
@@ -104,6 +107,10 @@ const HeroSection = () => {
         ))}
       </div>
     </section>
+     <EnquiryModal
+            isOpen={isEnquiryOpen}
+            onClose={() => setIsEnquiryOpen(false)}
+          /></>
   );
 };
 

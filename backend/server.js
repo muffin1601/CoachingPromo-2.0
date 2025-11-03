@@ -46,7 +46,7 @@ const visitorRoutes = require("./routes/visitor");
 
 app.use("/api/blogs", blogRoutes);
 app.use ("/api/visitors", visitorRoutes);
-app.use("/api", categoryRoutes);
+app.use("/api/categories", categoryRoutes);
 app.use("/api", subcategoryRoutes);
 app.use("/api", productRoutes);
 app.use("/api", emailRoutes);
