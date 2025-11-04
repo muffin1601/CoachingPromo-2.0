@@ -64,15 +64,15 @@ const CategoryPage = () => {
 
       <CategoryBanner
         name={category.name}
-        image= "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+        image="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
         subtitle={category?.description}
         breadcrumbs={breadcrumbs}
       />
 
-      <SubcategoryGrid subcategories={subcategories} />
+      <SubcategoryGrid subcategories={subcategories} catSlug={slug} />
 
-     
-      <CatalogueCTA/>
+
+      <CatalogueCTA />
     </>
   );
 };

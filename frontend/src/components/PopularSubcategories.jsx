@@ -117,7 +117,7 @@ const popularSubcategories = baseSubcategories
 const PopularSubcategories = () => {
   return (
     <section className="popsub-wrapper">
-      <h2 className="popsub-title">Popular Subcategories</h2>
+      <h2 className="popsub-title">Explore Our Popular Items </h2>
       <p className="popsub-subtext">
         Trending choices from top institutes & corporates
       </p>

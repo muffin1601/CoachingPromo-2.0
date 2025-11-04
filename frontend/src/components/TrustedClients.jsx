@@ -2,17 +2,21 @@ import React from "react";
 import "../styles/TrustedClients.css";
 
 const logos = [
-  { name: "IIT", src: "/clients/client (1).webp" },
-  { name: "IIM", src: "/clients/client (2).webp" },
-  { name: "Delhi University", src: "/clients/client (3).webp" },
-  { name: "DPS", src: "/clients/client (4).webp" },
-  { name: "Coaching Institutes", src: "/clients/client (5).webp" },
-  { name: "IIT", src: "/clients/client (1).webp" },
-  { name: "IIM", src: "/clients/client (2).webp" },
-  { name: "Delhi University", src: "/clients/client (3).webp" },
-  { name: "DPS", src: "/clients/client (4).webp" },
-  { name: "Coaching Institutes", src: "/clients/client (5).webp" },
+ 
+
+  //  Newly Added
+  { name: "Basu Classes", src: "/clients/client (3).webp" },
+  { name: "Photon Classes", src: "/clients/client (1).webp" },
+  { name: "Chemistry Solutions", src: "/clients/client (2).webp" },
+  { name: "Basu Classes", src: "/clients/client (3).webp" },
+  { name: "Photon Classes", src: "/clients/client (1).webp" },
+  { name: "Chemistry Solutions", src: "/clients/client (2).webp" },
+  { name: "Basu Classes", src: "/clients/client (3).webp" },
+  { name: "Photon Classes", src: "/clients/client (1).webp" },
+  { name: "Chemistry Solutions", src: "/clients/client (2).webp" },
+
 ];
+
 
 const TrustedClients = () => {
   return (
@@ -20,7 +24,7 @@ const TrustedClients = () => {
       <div className="trusted-container">
         <h2 className="trusted-title">Trusted by Universities & Institutions</h2>
         <p className="trusted-subtext">
-          IIT • IIM • Delhi University • DPS • Top Coaching Institutes & More
+          Chemistry Solutions • Photon Classes • Basu Classes • Top Coaching Institutes & More
         </p>
 
         {/*  Infinite Marquee */}

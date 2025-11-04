@@ -1,13 +1,15 @@
 import { ChevronRight } from "lucide-react";
 
-const SubcategoryGrid = ({ subcategories }) => {
+const SubcategoryGrid = ({ subcategories ,catSlug}) => {
+  console.log("catSlug =>", catSlug);
+
   return (
     <div className="subcat-list-container">
       <div className="subcat-list-grid">
         {subcategories.map((sub) => (
           <a
             key={sub.slug}
-            href={`/subcategory/${sub.slug}`}
+            href={`/${catSlug}/${sub.slug}`}
             className="subcat-card"
           >
             <img

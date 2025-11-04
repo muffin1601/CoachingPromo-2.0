@@ -7,7 +7,8 @@
 }
 
 .catalogue-cta {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   padding: 0px 0;
   background: #fff;
   display: flex;
@@ -15,7 +16,7 @@
 }
 
 .cta-wrapper {
-  width: 90%;
+  width: 100%;
   max-width: 80%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -28,10 +29,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .cta-img {
-  width: 80%;
+  width: 100%;
   height: auto;
   object-fit: contain;
 }
@@ -39,9 +41,9 @@
 /* Right Form Section */
 .cta-right {
   background: var(--brand-blue);
-  height: 82%;
+  height: 75%;
   padding: 40px;
-  
+  width: 100%;
   color: #fff;
 }
 

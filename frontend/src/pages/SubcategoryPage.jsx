@@ -8,25 +8,41 @@ import ProductGrid from "../components/Category/ProductGrid";
 import SEO from "../components/Category/SEO";
 import CatalogueCTA from "../components/CatalogueCTA";
 import axios from "axios";
+import PopularSubcategories from "../components/PopularSubCategories";
+import BlogSection from "../components/BlogSection";
 
 const SubcategoryPage = () => {
   const { categorySlug, subSlug } = useParams();
 
   const [subcategory, setSubcategory] = useState(null);
   const [products, setProducts] = useState([]);
-
+  const [category, setCategory] = useState(null);
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("default");
   const [loading, setLoading] = useState(true);
 
   const getSubcategoryData = async (categorySlug, subSlug, page, sort) => {
     const res = await axios.get(
-      `${import.meta.env.VITE_API_URL}/categories/${categorySlug}/${subSlug}`,
+      `${import.meta.env.VITE_API_URL}/subcategories/${categorySlug}/${subSlug}`,
       { params: { page, sort } }
     );
 
     return res.data;
   };
+
+   const getCategoryData = async (categorySlug, page = 1, sort = "default") => {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/categories/${categorySlug}`,
+        { params: { page, sort } }
+      );
+      return res.data;
+    };
+
+  useEffect(() => {
+    getCategoryData(categorySlug).then((data) => {
+      setCategory(data.category);
+    }); 
+  }, [categorySlug]);
 
   useEffect(() => {
     fetchSubCategory();
@@ -49,7 +65,7 @@ const SubcategoryPage = () => {
   /**   Breadcrumb Data */
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: categorySlug, href: `/categories/${categorySlug}` },
+    { label: category?.name, href: `/categories/${categorySlug}` },
     { label: subcategory.name }
   ];
 
@@ -71,9 +87,11 @@ const SubcategoryPage = () => {
       />
 
       {/*  Products */}
-      <ProductGrid products={products} />
+      <ProductGrid products={products}  catSlug= {categorySlug} subSlug ={subSlug} />
 
       <CatalogueCTA />
+      <PopularSubcategories/>
+      <BlogSection/>
     </>
   );
 };

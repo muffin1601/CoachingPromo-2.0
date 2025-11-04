@@ -1,303 +1,251 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
-import { FaCogs, FaEye } from "react-icons/fa";
-import "../styles/SingleProductPage.css";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { fetchSlugMap, slugify } from "../utils/slugMap";
-import { Helmet } from "react-helmet";
-import { subcategoryTemplates } from "../data/subcategoryTemplates";
+import EnquiryModal from "../components/EnquiryModal";
+import "../styles/SingleProductPage.css";
 
-// Add this helper function
-const getTemplateKey = (productName) => {
-  const templateMap = {
-    "Polo T-Shirt": "Polo T-Shirts",
-    "Round Neck T-Shirt": "Round Neck T-Shirts",
-    "Formal Shirts": "Formal Shirts",
-    "Corporate Shirt": "Corporate Shirts",
-    "Hoodies-Jacket": "Hoodies-jackets",
-    "Nehru Jacket": "Nehru Jacket",
-    "Teacher Jacket": "Teacher Jacket",
-    "Graduation Hat": "Graduation Hat",
-    "Graduation Gown": "Graduation Gown",
-    "Graduation Stole": "Graduation Stole",
-    "Convocation Sash": "Convocation Sash",
-    "Graduation Hood": "Graduation Hood",
-    "Kids Graduation Gown and Cap": "Kids Graduation Gown and Cap",
-    "Institute Backpack": "Institute Backpack",
-    "Backpack": "Backpacks",
-    "Jute Bag": "Jute Bags",
-    "Messenger Bag": "Messenger Bags",
-    "Tote Bag": "Tote Bags",
-    "Mug": "Mug",
-    "Water Bottle": "Water Bottle",
-    "Canopy": "Canopy",
-    "Rickshaw Hood": "Rickshaw Hood",
-    "Wall Clock": "Wall Clock",
-    "Table Clock": "Table Clock",
-    "Trophy": "Trophy",
-    "Wooden Trophy": "Wooden Trophy",
-    "Badge": "Badge",
-    "Medal": "Medal",
-    "Diary": "Diary",
-    "Paper Stand": "Paper Stand",
-    "Mobile Stand": "Mobile Stand",
-    "Planner": "Planner",
-    "Stress Ball": "Stress Ball",
-    "Magic Cube": "Magic Cube",
-    "Wristband": "Wristband",
-    "Flashcards": "Flashcards",
-    "Photo Frame": "Photo Frame",
-    "Mouse Pad": "Mouse Pad",
-    "Graduation Accessories": "Graduation Accessories",
-    "Graduation Honor Cards": "Graduation Honor Cards",
-    "Table Calendar": "Table Calendar",
-    "Wall Calendar": "Wall Calendar",
-  };
+import {
+  Heart,
+  Facebook,
+  Twitter,
+  Linkedin,
+  ShoppingCart,
+  Minus,
+  Plus,
+  Sparkles,
+  Palette,
+  Upload,
+  Info,
+  Tag,
+  BadgeIndianRupee,
+  Star,
+} from "lucide-react";
 
+import CategoryBanner from "../components/Category/CategoryBanner";
+import SEO from "../components/Category/SEO";
 
-  return templateMap[productName] || productName;
-};
+import BlogSection from "../components/BlogSection";
+import PopularSubcategories from "../components/PopularSubCategories";
+import CatalogueCTA from "../components/CatalogueCTA";
 
 const SingleProductPage = () => {
-  const { category: catSlug, productName: prodSlug, subproduct: subSlug } = useParams();
-  const [slugMap, setSlugMap] = useState({});
+  const { categorySlug, subSlug, prodSlug } = useParams();
+
   const [product, setProduct] = useState(null);
-  const [mainImage, setMainImage] = useState("");
-  const [quantity, setQuantity] = useState(0);
-  const [relatedProducts, setRelatedProducts] = useState([]);
-  const [deslugNames, setDeslugNames] = useState({ categoryName: "", productName: "", subproductName: "" });
-  const navigate = useNavigate();
+  const [category, setCategory] = useState(null);
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+  const [subcategory, setSubcategory] = useState(null);
+  const [activeImage, setActiveImage] = useState(null);
+  const [qty, setQty] = useState(1);
 
-  // Load slug map
+  const fetchProduct = async () => {
+    const { data } = await axios.get(
+      `${import.meta.env.VITE_API_URL}/products/${prodSlug}`
+    );
+    setProduct(data.product);
+    setActiveImage(data.product?.images?.[0]?.url);
+  };
+
+  const getCategoryData = async () => {
+    const res = await axios.get(
+      `${import.meta.env.VITE_API_URL}/categories/${categorySlug}`
+    );
+    setCategory(res.data.category);
+  };
+
+  const getSubcategoryData = async () => {
+    const res = await axios.get(
+      `${import.meta.env.VITE_API_URL}/subcategories/${categorySlug}/${subSlug}`
+    );
+    setSubcategory(res.data.subcategory);
+  };
+
   useEffect(() => {
-    const loadSlugMap = async () => {
-      const map = await fetchSlugMap();
-      setSlugMap(map);
-    };
-    loadSlugMap();
-  }, []);
-
-
-  useEffect(() => {
-    if (!Object.keys(slugMap).length) return;
-
-    const categoryName = slugMap[catSlug] || catSlug;
-    const productName = slugMap[`${catSlug}/${prodSlug}`] || prodSlug;
-    const subproductName = slugMap[`${catSlug}/${prodSlug}/${subSlug}`] || subSlug;
-
-    setDeslugNames({ categoryName, productName, subproductName });
-
-    const fetchProduct = async () => {
-      try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/${categoryName}/${productName}`);
-        const selected = (res.data.products || []).find(p => p.name === subproductName);
-        if (!selected) return;
-
-        setProduct(selected);
-        setMainImage(selected.image || "");
-        setRelatedProducts((res.data.products || []).filter(p => p._id !== selected._id));
-      } catch (err) {
-        console.error("Error fetching product:", err);
-      }
-    };
-
     fetchProduct();
-  }, [slugMap, catSlug, prodSlug, subSlug]);
+    getCategoryData();
+    getSubcategoryData();
+  }, [prodSlug]);
 
-  console.log("Product name:", deslugNames.productName);
-console.log("Template key:", getTemplateKey(deslugNames.productName));
-  if (!product) return <p className="error-message-1">Loading product...</p>;
+  if (!product) return <div>Loading...</div>;
 
-  const templateKey = getTemplateKey(deslugNames.productName);
-  const template = subcategoryTemplates[templateKey] || null;
-  const canonicalUrl = `${window.location.origin}/${catSlug}/${prodSlug}/${subSlug}`;
-
-  const customizeButton = (() => {
-    const routeMap = {
-      "Polo T-Shirts": "/customize/polotshirt",
-      "Round Neck T-Shirts": "/customize/roundneck"
-    };
-
-    const ProductList = ["Hoodies-Jackets", "Nehru Jacket", "Teacher Jacket", "Formal Shirts", "Corporate Shirts", "Institute Backpack"];
-    const customizeRoute = routeMap[templateKey];
-
-    if (customizeRoute) {
-      return (
-        <button className="customize-btn-1" onClick={() => navigate(customizeRoute)}>
-          <FaCogs /> Customize
-        </button>
-      );
-    }
-
-    if (ProductList.includes(templateKey)) {
-      return (
-        <button
-          className="customize-btn-1"
-          onClick={() =>
-            navigate(`/${catSlug}/${prodSlug}/${subSlug}/customize`, {
-              state: { productImages: [product.image, ...(product.subImages || [])], productName: product.name, category: deslugNames.categoryName },
-            })
-          }
-        >
-          <FaCogs /> Customize
-        </button>
-      );
-    }
-
-    return null;
-  })();
-
-
-  const RelatedProductsSwiper = () => (
-    <div className="related-products-container">
-      <div className="related-products-section">
-        <h2 className="related-products-title">You might like</h2>
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={20}
-          slidesPerView={1}
-          breakpoints={{ 640: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 6 } }}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-        >
-          {relatedProducts.map((item) => (
-            <SwiperSlide key={item._id}>
-              <div className="related-product-card">
-                <img loading="lazy" src={`${import.meta.env.VITE_IMAGE_API_URL}${item.image}`} alt={item.name} className="related-product-image" />
-                <h3 className="related-product-name">{item.name}</h3>
-                <Link to={`/${catSlug}/${prodSlug}/${slugify(item.name)}`} className="view-button">
-                  <FaEye /> View
-                </Link>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </div>
-  );
+  const {
+    name,
+    price,
+    salePrice,
+    description,
+    images,
+    subImages,
+    sku,
+    tags,
+    ratings,
+    attributes,
+  } = product;
 
   return (
-    <div className="single-product-page-wrapper">
-      <Helmet>
-        <title>
-          {template?.metaTitle
-            ? template.metaTitle.replace("{productName}", product.name)
-            : product.name}
-        </title>
-        <meta
-          name="description"
-          content={
-            template?.metaDescription
-              ? template.metaDescription.replace("{productName}", product.name)
-              : product.content || ""
-          }
-        />
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
+    <>
+      {/*  SEO */}
+      <SEO
+        title={product?.seo?.metaTitle || product?.name}
+        description={product?.seo?.metaDescription || product?.description}
+        keywords={product?.seo?.keywords?.join(",")}
+      />
 
-      <div className="single-product-container-1">
-        <div className="product-image-container-2">
-          {product.subImages?.length > 0 && (
-            <div className="product-thumbnails-1">
-              {[product.image, ...product.subImages].map((img, idx) => (
-                img && (
-                  <img
-                    loading="lazy"
-                    key={idx}
-                    src={`${import.meta.env.VITE_IMAGE_API_URL}${img}`}
-                    alt={`${product.name} ${idx}`}
-                    className={`thumbnail-image-1 ${img === mainImage ? "active" : ""}`}
-                    onClick={() => setMainImage(img)}
-                  />
-                )
-              ))}
+      {/* Banner */}
+      <CategoryBanner
+        name={product?.name}
+        image= "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+        subtitle={product?.description}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: category?.name, href: `/categories/${categorySlug}` },
+          { label: subcategory?.name, href: `/${categorySlug}/${subSlug}` },
+          { label: product?.name },
+        ]}
+      />
+
+      {/* PRODUCT PAGE */}
+      <div className="product-page-container">
+
+        {/* LEFT GALLERY */}
+        <div className="product-gallery">
+          <div className="product-thumb-list">
+            {(subImages?.length ? subImages : images)?.map((img, i) => (
+              <img
+                key={i}
+                src={img.url}
+                alt={img.altText}
+                className={`thumb-img ${
+                  activeImage === img.url ? "thumb-active" : ""
+                }`}
+                onClick={() => setActiveImage(img.url)}
+              />
+            ))}
+          </div>
+
+          <div className="product-main-img-wrapper">
+            <img src={activeImage} alt={name} className="product-main-img" />
+          </div>
+        </div>
+
+        {/* RIGHT DETAILS */}
+        <div className="product-info">
+          {/* TAG / RATINGS */}
+          <div className="product-meta-line">
+            <span className="product-tag">
+              <Tag size={14} /> {tags?.join(", ")}
+            </span>
+
+            {ratings?.average > 0 && (
+              <span className="product-rating">
+                <Star size={14} className="star-icon" /> {ratings.average}(
+                {ratings.count})
+              </span>
+            )}
+          </div>
+
+          {/* TITLE */}
+          <h2 className="product-title">{name}</h2>
+
+          {/* PRICE */}
+          <div className="product-price-block">
+            {salePrice ? (
+              <>
+                <span className="sale-price">
+                  <BadgeIndianRupee size={18} /> {salePrice}
+                </span>
+                <span className="main-price">₹{price}</span>
+              </>
+            ) : (
+              <span className="regular-price">
+                <BadgeIndianRupee size={18} /> {price}
+              </span>
+            )}
+          </div>
+
+          {/* SHORT DESCRIPTION */}
+          <p className="product-desc">{description}</p>
+
+          {/*  CTA CUSTOMIZATION BUTTON */}
+          <button className="btn-customize">
+            <Sparkles size={18} /> Add Your Logo & Customize Now
+          </button>
+
+          {/* Qty + Add to cart */}
+          <div className="product-actions">
+            <div className="qty-box">
+              <button onClick={() => qty > 1 && setQty(qty - 1)}>
+                <Minus size={16} />
+              </button>
+              <span>{qty}</span>
+              <button onClick={() => setQty(qty + 1)}>
+                <Plus size={16} />
+              </button>
             </div>
-          )}
-          <div className="product-image-section-1">
-            <img
-              className="main-product-image-1"
-              loading="lazy"
-              src={`${import.meta.env.VITE_IMAGE_API_URL}${mainImage}`}
-              alt={product.name}
-            />
+
+            <button onClick={() => setIsEnquiryOpen(true)} className="btn-add-cart">
+              <ShoppingCart size={18} /> Get a free quote
+            </button>
+
+            <button className="btn-wishlist">
+              <Heart size={18} />
+            </button>
+          </div>
+
+          {/* DETAILS STACKED  */}
+          <div className="product-extra-box">
+            {sku && (
+              <p>
+                <Info size={16} /> <strong>SKU:</strong> {sku}
+              </p>
+            )}
+
+            {tags?.length > 0 && (
+              <p>
+                <Tag size={16} /> <strong>Tags:</strong> {tags.join(", ")}
+              </p>
+            )}
+          </div>
+
+          {/* Attributes */}
+          <div className="product-attributes">
+            {attributes?.material && (
+              <p>
+                <Palette size={16} /> <strong>Material:</strong>{" "}
+                {attributes.material}
+              </p>
+            )}
+
+            {!!attributes?.size?.length && (
+              <p>
+                <strong>Sizes:</strong> {attributes.size.join(", ")}
+              </p>
+            )}
+
+            {!!attributes?.color?.length && (
+              <p>
+                <strong>Colors:</strong> {attributes.color.join(", ")}
+              </p>
+            )}
+          </div>
+
+          {/* SHARE */}
+          <div className="product-share">
+            <span>Share:</span>
+            <Facebook size={18} />
+            <Twitter size={18} />
+            <Linkedin size={18} />
           </div>
         </div>
 
-        <div className="product-details-1">
-          <h1 className="product-title-1">{template ? template.productTitle.replace("{productName}", product.name) : product.name}</h1>
-          <p className="product-stock-1">In Stock</p>
-          <p className="product-rating-1">Rating: <span>★★★★☆</span></p>
-          <p className="product-description-1">
-            {template ? template.shortDescription.replace("{productName}", product.name) : product.content}
-          </p>
-
-          <div className="quantity-input-1">
-            <input
-              type="number"
-              min="0"
-              value={quantity}
-              onChange={(e) => setQuantity(Number(e.target.value))}
-              className="quantity-input"
-            />
-          </div>
-
-          {customizeButton}
-
-          <p className="product-category-1">
-            <span>Categories:</span> {deslugNames.categoryName}, {deslugNames.productName}
-          </p>
-        </div>
       </div>
-
-
-      {template && (
-        <div className="product-info-container">
-          <div className="product-specifications">
-            <h3>Specifications:</h3>
-            <ul>
-              {template.specifications.map((spec, idx) => (
-                <li key={idx}>{spec}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="product-long-description">
-            {/* <h3>About {product.name}:</h3> */}
-            <div
-              dangerouslySetInnerHTML={{
-                __html: template.longDescription.replace(/{productName}/g, product.name),
-              }}
-            />
-          </div>
-        </div>
-      )}
-
-
-      {template && template.faqs?.length > 0 && (
-        <div className="product-faqs-container">
-          <h3>FAQs:</h3>
-          {template.faqs.map((faq, idx) => (
-            <div key={idx} className="faq-item">
-              <p className="faq-question">
-                <strong>Q:</strong> {faq.q ? faq.q.replace("{productName}", product.name) : "No question available"}
-              </p>
-              <p className="faq-answer">
-                <strong>A:</strong> {faq.a ? faq.a.replace("{productName}", product.name) : "No answer available"}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
-
-
-      {relatedProducts.length > 0 && <RelatedProductsSwiper />}
-    </div>
+      <CatalogueCTA />
+      <PopularSubcategories/>
+      <BlogSection/>
+      <EnquiryModal
+        isOpen={isEnquiryOpen}
+        onClose={() => setIsEnquiryOpen(false)}
+      />
+    </>
   );
 };
 

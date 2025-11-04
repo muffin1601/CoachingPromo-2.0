@@ -10,27 +10,26 @@ import "../styles/Testimonials.css";
 
 const testimonials = [
   {
-    name: "Delhi Public School",
-    role: "School",
+    name: "Basu Classes",
+    role: "Coaching Institute",
     review:
-      "Great quality T-shirts for our Annual Event. Smooth service & on-time delivery!",
+      "We are extremely pleased with the services provided by MF Global Services. Their team has demonstrated great expertise in delivering high-quality educational promotional products such as T-shirts, Bags, ID Cards, and customized items. Quality, design & timely delivery always exceeded expectations. Highly professional team!",
     rating: 5,
   },
   {
-    name: "Allen Institute",
-    role: "Coaching",
+    name: "Photon Classes",
+    role: "Coaching Institute",
     review:
-      "Bulk polo T-shirts customized with logo. Excellent printing & fabric.",
+      "Their team is highly professional and experienced in delivering top-quality promotional products such as T-shirts, hoodies, bags, and ID cards. Product quality, branding precision & timely delivery exceeded expectations. Highly recommended!",
     rating: 5,
   },
   {
-    name: "Resonance",
-    role: "Institute",
+    name: "Chemistry Solutions",
+    role: "Institution",
     review:
-      "Fast delivery, great support. Students loved the designs.",
+      "Great experience working with MF Global Services. From custom T-shirts, hoodies, bags, and ID cards, everything was timely and excellent quality. Creative designs, durable materials & smooth service. Highly recommended!",
     rating: 5,
   },
-  
 ];
 
 // rating → generate stars

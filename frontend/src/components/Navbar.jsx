@@ -171,16 +171,16 @@ const Navbar = () => {
 
           </ul>
         </nav>
-      </div>
-    </header>
-     <EnquiryModal
-            isOpen={isEnquiryOpen}
-            onClose={() => setIsEnquiryOpen(false)}
-        />
-         <RegisterInstituteModal
-                isOpen={isRegisterOpen}
-                onClose={() => setIsRegisterOpen(false)}
-              /></>
+        </div>
+      </header>
+      <EnquiryModal
+        isOpen={isEnquiryOpen}
+        onClose={() => setIsEnquiryOpen(false)}
+      />
+      <RegisterInstituteModal
+        isOpen={isRegisterOpen}
+        onClose={() => setIsRegisterOpen(false)}
+      /></>
   );
 };
 

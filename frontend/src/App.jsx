@@ -13,6 +13,7 @@ import BlogDetail from './pages/BlogDetail';
 import ScrollToTop from './utils/ScrollToTop';
 import CategoryPage from './pages/CategoryPage';
 import SubcategoryPage from './pages/SubcategoryPage';
+import SingleProductPage from './pages/SingleProductPage';
 
 const app =() => {
   return (
@@ -28,7 +29,8 @@ const app =() => {
         <Route path="/blogs/:id" element={ <BlogDetail />} />
 
         <Route path="/categories/:slug" element={ <CategoryPage />} />
-        <Route path="/:categorySlug/:slug" element={ <SubcategoryPage />} />
+        <Route path="/:categorySlug/:subSlug" element={ <SubcategoryPage />} />
+        <Route path="/:categorySlug/:subSlug/:prodSlug" element={ <SingleProductPage/>} />
       </Routes>
       <SupplyCities />
       <Footer />

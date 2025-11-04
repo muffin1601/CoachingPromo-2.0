@@ -1,3 +1,6 @@
+const mugs = require('./promotional/mugs.js');
+const bottles = require('./promotional/bottles.js');
+
 const seedData = [
   // --- Category: Apparel ---
   {
@@ -22,22 +25,7 @@ const seedData = [
           keywords: ["polo", "t-shirt", "apparel"],
         },
         products: [
-          {
-            name: "Polo T-Shirts",
-            slug: "polo-t-shirts-product",
-            description: "Premium quality polo t-shirts, ideal for corporate or institute branding.",
-            price: 15.99,
-            salePrice: null,
-            images: [{ url: "/assets/polotshirt.png", altText: "Custom Polo T-Shirt" }],
-            stock: 150,
-            sku: "APP-POLO-001",
-            attributes: { color: ["Navy", "White", "Black"], size: ["S", "M", "L", "XL"], material: "Cotton Blend" },
-            tags: ["t-shirt", "polo", "apparel"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.5, count: 120 },
-            seo: { metaTitle: "Buy Polo T-Shirts", metaDescription: "Order customizable polo shirts.", keywords: ["polo shirt", "custom shirt"] },
-          },
+          
         ],
       },
       {
@@ -601,24 +589,7 @@ const seedData = [
           metaDescription: "Ceramic and travel mugs for corporate gifting and promotion.",
           keywords: ["mug", "coffee mug", "ceramic"],
         },
-        products: [
-          {
-            name: "Mug",
-            slug: "mug-product",
-            description: "Standard ceramic coffee mug, fully customizable with logo/text.",
-            price: 9.99,
-            salePrice: 7.99,
-            images: [{ url: "/assets/mug.png", altText: "Custom Coffee Mug" }],
-            stock: 500,
-            sku: "PRO-MUG-001",
-            attributes: { color: ["White", "Black"], size: ["11 oz"], material: "Ceramic" },
-            tags: ["promotional", "mug", "drinkware"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.6, count: 210 },
-            seo: { metaTitle: "Buy Bulk Custom Mugs", metaDescription: "Affordable branded ceramic mugs.", keywords: ["coffee cup", "tea mug"] },
-          },
-        ],
+        products: mugs,
       },
       {
         name: "Water Bottle",
@@ -630,24 +601,7 @@ const seedData = [
           metaDescription: "Reusable plastic and steel water bottles for sports and hydration.",
           keywords: ["water bottle", "sipper", "hydration"],
         },
-        products: [
-          {
-            name: "Water Bottle",
-            slug: "water-bottle-product",
-            description: "Durable, personalized plastic or steel water bottle for daily use.",
-            price: 14.99,
-            salePrice: null,
-            images: [{ url: "/assets/waterbottle.png", altText: "Custom Water Bottle" }],
-            stock: 450,
-            sku: "PRO-WTR-002",
-            attributes: { color: ["Clear", "Blue"], size: ["750 ml"], material: "BPA-Free Plastic" },
-            tags: ["promotional", "bottle", "hydration"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.5, count: 180 },
-            seo: { metaTitle: "Order Branded Water Bottles", metaDescription: "Custom reusable bottles for promotion.", keywords: ["sports bottle", "steel bottle"] },
-          },
-        ],
+        products: bottles,
       },
       {
         name: "Diary Set",
