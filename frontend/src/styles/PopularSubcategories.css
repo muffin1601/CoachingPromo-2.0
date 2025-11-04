@@ -42,7 +42,7 @@
 .popsub-card {
   border: 1px solid var(--light-gray);
   /* border-radius: 14px; */
-  background: #fff;
+  background: #fff3e4;
   overflow: hidden;
   transition: 0.3s ease;
   text-align: left;
@@ -65,7 +65,7 @@
 
 .popsub-img {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
   transition: 0.3s ease;
 }

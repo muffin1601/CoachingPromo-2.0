@@ -72,24 +72,24 @@ const CatalogueCTA = () => {
           <form onSubmit={handleSubmit} className="cta-form">
 
             <div className="form-grid">
-              <input
+              {/* <input
                 type="text"
                 name="companyname"
                 placeholder="Company / Institute Name*"
                 value={formData.companyname}
                 onChange={handleChange}
                 required
-              />
+              /> */}
 
 
-              <input
+              {/* <input
                 type="email"
                 name="email"
                 placeholder="Email Address*"
                 value={formData.email}
                 onChange={handleChange}
                 required
-              />
+              /> */}
 
               <input
                 type="tel"

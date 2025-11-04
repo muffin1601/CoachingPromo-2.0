@@ -24,7 +24,7 @@ const CategoryBanner = ({ name, image, subtitle, breadcrumbs = [] }) => {
                 )}
 
                 {index !== breadcrumbs.length - 1 && (
-                  <span className="cat-banner-divider">/</span>
+                  <span className="cat-banner-divider">  /</span>
                 )}
               </span>
             ))}

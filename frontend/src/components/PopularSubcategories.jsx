@@ -23,7 +23,7 @@ const baseSubcategories = [
   {
     name: "Polo T-Shirts",
     category: "Apparel",
-    image: "/assets/Polotshirt/polo2 (1).webp",
+    image: "/assets/home-subcat/polo.webp",
     slug: "polo-tshirts",
     productCount: 152,
     icon: Shirt,
@@ -31,7 +31,7 @@ const baseSubcategories = [
   {
     name: "Round Neck T-Shirts",
     category: "Apparel",
-    image: "/assets/RoundNecktshirt/dark-blue (1).webp",
+    image: "/assets/home-subcat/round.webp",
     slug: "round-neck-tshirts",
     productCount: 189,
     icon: Shirt,
@@ -39,7 +39,7 @@ const baseSubcategories = [
   {
     name: "Hoodies / Jackets",
     category: "Apparel",
-    image: "/assets/hoodiesjackets/brown (1).webp",
+    image: "/assets/home-subcat/hoodie.webp",
     slug: "hoodies-jackets",
     productCount: 121,
     icon: PackageCheck,
@@ -48,7 +48,7 @@ const baseSubcategories = [
   {
     name: "Institute Backpack",
     category: "Bags",
-    image: "/assets/Polotshirt/polo2 (1).webp",
+    image: "/assets/home-subcat/bag.webp",
     slug: "institute-backpack",
     productCount: 143,
     icon: ShoppingBag,
@@ -56,7 +56,7 @@ const baseSubcategories = [
   {
     name: "Tote Bag",
     category: "Bags",
-    image: "/assets/Polotshirt/polo2 (1).webp",
+    image: "/assets/home-subcat/tote.webp",
     slug: "tote-bag",
     productCount: 97,
     icon: ShoppingBag,
@@ -65,7 +65,7 @@ const baseSubcategories = [
   {
     name: "Water Bottle",
     category: "Promotional Items",
-    image: "/assets/Polotshirt/polo2 (1).webp",
+    image: "/assets/home-subcat/bottle.webp",
     slug: "water-bottle",
     productCount: 202,
     icon: PenLine,
@@ -73,7 +73,7 @@ const baseSubcategories = [
   {
     name: "Diary Set",
     category: "Promotional Items",
-    image: "/assets/Polotshirt/polo2 (1).webp",
+    image: "/assets/home-subcat/diary.webp",
     slug: "diary-set",
     productCount: 111,
     icon: BookOpen,
@@ -81,7 +81,7 @@ const baseSubcategories = [
   {
     name: "Trophy",
     category: "Promotional Items",
-    image: "/assets/Polotshirt/polo2 (1).webp",
+    image: "/assets/home-subcat/trophy.webp",
     slug: "trophy",
     productCount: 85,
     icon: Award,
@@ -90,7 +90,7 @@ const baseSubcategories = [
   {
     name: "Notebook",
     category: "Stationery",
-    image: "/assets/Polotshirt/polo2 (1).webp",
+    image: "/assets/home-subcat/notbook.webp",
     slug: "notebook",
     productCount: 164,
     icon: Notebook,
@@ -98,7 +98,7 @@ const baseSubcategories = [
   {
     name: "Metal Pen",
     category: "Stationery",
-    image: "/assets/Polotshirt/polo2 (1).webp",
+    image: "/assets/home-subcat/pen.webp",
     slug: "metal-pen",
     productCount: 138,
     icon: PenLine,

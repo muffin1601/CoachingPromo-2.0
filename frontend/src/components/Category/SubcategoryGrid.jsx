@@ -50,13 +50,13 @@ const css = `
 /* GRID */
 .subcat-list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 25px;
 }
 
 /* CARD */
 .subcat-card {
-  background: #fff;
+  background: #fff7efff;
   border: 1px solid var(--light-border);
   overflow: hidden;
   transition: all 0.25s ease-in-out;
