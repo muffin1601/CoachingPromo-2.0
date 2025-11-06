@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { X, Mail, Lock, Loader2, ArrowRight } from "lucide-react";
+import { X, Mail, Lock, Loader2, Eye, EyeOff } from "lucide-react";
 import "../styles/Login.css";
 
 const Login = ({ onLoginSuccess }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -40,16 +41,12 @@ const Login = ({ onLoginSuccess }) => {
 
   return (
     <div className="login-wrapper">
-
-      {/*  Background video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="login-bg-video"
-      >
-        <source src="https://www.pexels.com/download/video/1448735/" type="video/mp4" />
+      {/* Background video */}
+      <video autoPlay muted loop playsInline className="login-bg-video">
+        <source
+          src="https://videos.pexels.com/video-files/1448735/1448735-hd_1920_1080_25fps.mp4"
+          type="video/mp4"
+        />
       </video>
 
       <div className="login-card">
@@ -76,16 +73,28 @@ const Login = ({ onLoginSuccess }) => {
             />
           </div>
 
-          <div className="input-group">
+          <div className="input-group password-group">
             <Lock className="input-icon" />
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={password}
               required
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
               disabled={loading}
             />
+            <button
+              type="button"
+              className="toggle-password-btn"
+              onClick={() => setShowPassword(!showPassword)}
+              tabIndex={-1}
+            >
+              {showPassword ? (
+                <EyeOff className="toggle-icon" />
+              ) : (
+                <Eye className="toggle-icon" />
+              )}
+            </button>
           </div>
 
           {error && <p className="error">{error}</p>}
@@ -99,7 +108,6 @@ const Login = ({ onLoginSuccess }) => {
             ) : (
               "Log in"
             )}
-            {/* <ArrowRight size={16} /> */}
           </button>
         </form>
       </div>

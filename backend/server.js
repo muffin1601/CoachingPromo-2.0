@@ -51,7 +51,7 @@ app.use("/api/subcategories", subcategoryRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api", emailRoutes);
 app.use("/api", adminRoutes);
-app.use("/api", bannerRoutes);
+app.use("/api/slides", bannerRoutes);
 app.use("/api", searchRoutes);
 app.use("/api", instituteRoutes);
 

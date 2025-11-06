@@ -1,0 +1,52 @@
+.hero-slide-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.slide-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--light-border);
+  padding: 10px 0;
+}
+
+.slide-info {
+  color: var(--neutral-gray);
+}
+
+.slide-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.preview img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.preview video {
+  border-radius: 8px;
+  margin-top: 10px;
+  max-width: 100%;
+}
+
+.edit-btn {
+  background: var(--brand-blue);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: crimson;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}

@@ -1,27 +1,22 @@
 import React from "react";
 import Sidebar from "../../components/Dashboard/Sidebar";
 import Navbar from "../../components/Dashboard/Navbar";
-import Overview from "../../components/Dashboard/Overview";
+
 
 import DashboardFooter from "../../components/Dashboard/DashboardFooter";
-import ChartOverview from "../../components/Dashboard/ChartOverview";
-import ToDoList from "../../components/Dashboard/ToDoList";
+
+import HeroManager from "../../components/Dashboard/HeroManager";
 
 
 
-const AdminDashboard = () => {
+const HeroManagerPage = () => {
   return (
     <div className="admin-dashboard-layout">
       <Sidebar />
       <div className="main-content">
         <Navbar />
         <div className="dashboard-content">
-          <Overview />
-          
-          <div className="dashboard-row">
-            <ChartOverview />
-            <ToDoList />
-            </div>
+          <HeroManager />
         </div>
         <DashboardFooter />
       </div>
@@ -29,7 +24,7 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default HeroManagerPage;
 
 
 const css = `
