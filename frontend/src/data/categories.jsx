@@ -87,7 +87,7 @@ const categories = [
         name: "Drinkware",
         href: "/promotional-items",
         products: [
-          { name: "Mug", href: "/promotional-items/drinkware/mug" },
+          { name: "Mug", href: "/promotional-items/mug" },
           { name: "Water Bottle", href: "/promotional-items/water-bottle" }
         ]
       },
