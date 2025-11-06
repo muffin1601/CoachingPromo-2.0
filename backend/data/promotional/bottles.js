@@ -8,6 +8,7 @@ const bottles = [
     salePrice: 449,
     images: [{ url: "/assets/bottle/1 image.webp", altText: "Custom Water Bottle" }],
     subImages: [
+      { url: "/assets/bottle/1 image.webp", altText: "Custom Water Bottle" },
       { url: "/assets/bottle/2 image.webp", altText: "Custom Water Bottle Side" },
       { url: "/assets/bottle/3 image.webp", altText: "Custom Water Bottle Side" }
     ],
@@ -39,6 +40,7 @@ const bottles = [
     salePrice: 199,
     images: [{ url: "/assets/bottle/4 image.webp", altText: "Branded Water Bottle" }],
     subImages: [
+      { url: "/assets/bottle/4 image.webp", altText: "Branded Water Bottle" },
       { url: "/assets/bottle/5 image.webp", altText: "Branded Water Bottle Side" },
       { url: "/assets/bottle/6 image.webp", altText: "Branded Water Bottle Side" },
     ],
@@ -72,6 +74,7 @@ const bottles = [
       { url: "/assets/bottle/7 image.webp", altText: "Personalized Water Bottle" },
     ],
     subImages: [
+      { url: "/assets/bottle/7 image.webp", altText: "Personalized Water Bottle" },
       {
         url: "/assets/bottle/8 image.webp",
         altText: "Personalized Water Bottle Side",
@@ -109,6 +112,7 @@ const bottles = [
     salePrice: 249,
     images: [{ url: "/assets/bottle/10 image.webp", altText: "Printed Water Bottle" }],
     subImages: [
+      { url: "/assets/bottle/10 image.webp", altText: "Printed Water Bottle" },
       { url: "/assets/bottle/11 image.webp", altText: "Printed Water Bottle Side" },
       { url: "/assets/bottle/12 image.webp", altText: "Printed Water Bottle Side" },
     ],
@@ -142,6 +146,7 @@ const bottles = [
       { url: "/assets/bottle/13image.webp", altText: "Stainless Steel Water Bottle" },
     ],
     subImages: [
+      { url: "/assets/bottle/13image.webp", altText: "Stainless Steel Water Bottle" },
       {
         url: "/assets/bottle/14 image.webp",
         altText: "Stainless Steel Water Bottle Side",
@@ -181,6 +186,7 @@ const bottles = [
       { url: "/assets/bottle/16 image.webp", altText: "Custom Logo Water Bottle" },
     ],
     subImages: [
+      { url: "/assets/bottle/16 image.webp", altText: "Custom Logo Water Bottle" },
       {
         url: "/assets/bottle/17 image.webp",
         altText: "Custom Logo Water Bottle Side",

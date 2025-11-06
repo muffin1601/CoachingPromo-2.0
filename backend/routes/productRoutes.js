@@ -1,31 +1,29 @@
 const express = require("express");
 const router = express.Router();
-const Category = require("../models/product");
 
+const Product = require("../models/product");
+const Category = require("../models/category");
+const Subcategory = require("../models/subcategory");
 
 router.get("/:slug", async (req, res) => {
   try {
     const { slug } = req.params;
 
-    const categories = await Category.find({
-      "subcategories.products.slug": slug,
-    });
+    //  Find product by slug + populate category + subcategory
+    const product = await Product.findOne({ slug })
+      .populate("category", "name slug")
+      .populate("subcategory", "name slug");
 
-    if (!categories.length)
+    if (!product) {
       return res.status(404).json({ message: "Product not found" });
+    }
 
-    let foundProduct = null;
-
-    categories.forEach((cat) => {
-      cat.subcategories.forEach((sub) => {
-        sub.products.forEach((p) => {
-          if (p.slug === slug) foundProduct = p;
-        });
-      });
+    res.json({
+      success: true,
+      product,
     });
-
-    return res.json({ success: true, product: foundProduct });
   } catch (err) {
+    console.error(err);
     res.status(500).json({ error: err.message });
   }
 });

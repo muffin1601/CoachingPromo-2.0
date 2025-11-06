@@ -88,9 +88,9 @@ const Navbar = () => {
             </a>
 
             {/* User */}
-            <div className="nav-icon-link">
+            <button onClick={()=> window.location.href = "/login"}className="nav-icon-link">
               <User />
-            </div>
+            </button>
 
             <button onClick={() => setIsRegisterOpen(true)} className="nav-icon-link cart-icon">
               <GraduationCap />
@@ -176,6 +176,7 @@ const Navbar = () => {
       <EnquiryModal
         isOpen={isEnquiryOpen}
         onClose={() => setIsEnquiryOpen(false)}
+        image="/assets/enquiry.webp"
       />
       <RegisterInstituteModal
         isOpen={isRegisterOpen}

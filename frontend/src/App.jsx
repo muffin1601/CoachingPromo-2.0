@@ -14,6 +14,7 @@ import ScrollToTop from './utils/ScrollToTop';
 import CategoryPage from './pages/CategoryPage';
 import SubcategoryPage from './pages/SubcategoryPage';
 import SingleProductPage from './pages/SingleProductPage';
+import Login from './pages/Login';
 
 const app =() => {
   return (
@@ -31,6 +32,8 @@ const app =() => {
         <Route path="/categories/:slug" element={ <CategoryPage />} />
         <Route path="/:categorySlug/:subSlug" element={ <SubcategoryPage />} />
         <Route path="/:categorySlug/:subSlug/:prodSlug" element={ <SingleProductPage/>} />
+
+        <Route path="/login" element={<Login />} />
       </Routes>
       <SupplyCities />
       <Footer />

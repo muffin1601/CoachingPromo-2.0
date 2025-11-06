@@ -1,37 +1,36 @@
-import React, { useState } from 'react';
-import '../styles/contactform.css';
-import { FaTimes } from "react-icons/fa";
+import React, { useState } from "react";
+import { X, Mail, Lock, Loader2, ArrowRight } from "lucide-react";
+import "../styles/Login.css";
 
 const Login = ({ onLoginSuccess }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     setLoading(true);
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.message || 'Login failed');
+        throw new Error(errorData.message || "Login failed");
       }
 
       const data = await response.json();
-
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('user', JSON.stringify(data.user));
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
 
       if (onLoginSuccess) onLoginSuccess(data.user);
-      else window.location.href = '/admin'; 
+      else window.location.href = "/admin";
     } catch (err) {
       setError(err.message);
     } finally {
@@ -40,41 +39,67 @@ const Login = ({ onLoginSuccess }) => {
   };
 
   return (
-    <div className="form-overlay login-form-overlay">
-      <div className="form-container login-form-container">
-        <button className="close-button login-close-button" onClick={() => window.location.href = '/'}>
-          <FaTimes className="close-icon login-close-icon" />
+    <div className="login-wrapper">
+
+      {/*  Background video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="login-bg-video"
+      >
+        <source src="https://www.pexels.com/download/video/1448735/" type="video/mp4" />
+      </video>
+
+      <div className="login-card">
+        <button
+          className="login-close"
+          onClick={() => (window.location.href = "/")}
+        >
+          <X />
         </button>
-        <h2 className="head login-head">Admin Login</h2>
-        <p className="subtitle-form login-subtitle-form">Please enter your credentials</p>
-        <form onSubmit={handleSubmit} className="login-form">
-          <div className="inputGroup login-input-group">
+
+        <h2 className="login-title">Admin Login</h2>
+        <p className="login-subtitle">Welcome!</p>
+
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <Mail className="input-icon" />
             <input
               type="email"
-              id="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
               disabled={loading}
-              className="login-input login-email-input"
             />
           </div>
-          <div className="inputGroup login-input-group">
+
+          <div className="input-group">
+            <Lock className="input-icon" />
             <input
               type="password"
-              id="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
               required
               placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
               disabled={loading}
-              className="login-input login-password-input"
             />
           </div>
-          {error && <p className="error-message login-error-message">{error}</p>}
-          <button type="submit" className="submit-button login-submit-button" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
+
+          {error && <p className="error">{error}</p>}
+
+          <button className="login-button" disabled={loading}>
+            {loading ? (
+              <span className="loader-container">
+                <Loader2 className="spinner" />
+                Logging in...
+              </span>
+            ) : (
+              "Log in"
+            )}
+            {/* <ArrowRight size={16} /> */}
           </button>
         </form>
       </div>

@@ -22,7 +22,7 @@ const TrustedClients = () => {
   return (
     <section className="trusted-wrapper">
       <div className="trusted-container">
-        <h2 className="trusted-title">Trusted by Universities & Institutions</h2>
+        <h2 className="trusted-title">Trusted by Coachings, Institutions, and many more Study Centers</h2>
         <p className="trusted-subtext">
           Chemistry Solutions • Photon Classes • Basu Classes • Top Coaching Institutes & More
         </p>

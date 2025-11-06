@@ -94,6 +94,7 @@ const FloatingButtons = () => {
       <EnquiryModal
         isOpen={isEnquiryOpen}
         onClose={() => setIsEnquiryOpen(false)}
+        image="/assets/enquiry.webp"
       />
 
       <RegisterInstituteModal

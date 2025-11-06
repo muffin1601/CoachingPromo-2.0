@@ -4,7 +4,7 @@ import { X, ArrowRight } from "lucide-react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const EnquiryModal = ({ isOpen, onClose }) => {
+const EnquiryModal = ({ isOpen, onClose, image}) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -60,7 +60,7 @@ const EnquiryModal = ({ isOpen, onClose }) => {
 
         {/* Left Image */}
         <div className="enquiry-img-box">
-          <img src="/assets/enquiry.webp" alt="enquiry" />
+          <img src={`${image}`} alt="enquiry" />
         </div>
 
         {/* Form */}

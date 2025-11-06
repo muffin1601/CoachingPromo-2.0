@@ -5,12 +5,15 @@ const productSchema = new mongoose.Schema(
     name: { type: String, required: true, trim: true },
     slug: { type: String, required: true, unique: true, lowercase: true },
 
-    description: String,
+    // Updated Description
+    description: {
+      short: String,
+      long: String,
+    },
 
     price: { type: Number, required: true },
     salePrice: { type: Number, default: null },
 
- 
     images: [
       {
         url: String,
@@ -26,7 +29,6 @@ const productSchema = new mongoose.Schema(
     ],
 
     stock: { type: Number, default: 0 },
-
     sku: { type: String, unique: true, sparse: true },
 
     attributes: {
@@ -34,6 +36,22 @@ const productSchema = new mongoose.Schema(
       size: [String],
       material: String,
     },
+
+    //  Additional Info
+    additionalInfo: [
+      {
+        label: String,
+        value: String,
+      },
+    ],
+
+    //  Specifications
+    specifications: [
+      {
+        key: String,
+        value: String,
+      },
+    ],
 
     tags: [String],
 
@@ -50,65 +68,19 @@ const productSchema = new mongoose.Schema(
       metaDescription: String,
       keywords: [String],
     },
+
+    // Relational Links
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+    },
+
+    subcategory: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Subcategory",
+    },
   },
   { timestamps: true }
 );
 
-const subCategorySchema = new mongoose.Schema(
-  {
-    name: { type: String, required: true, trim: true },
-
-    slug: {
-      type: String,
-      required: true,
-      lowercase: true,
-    },
-
-    description: { type: String, default: "" },
-
-    image: { type: String, default: "" },
-
-    seo: {
-      metaTitle: String,
-      metaDescription: String,
-      keywords: [String],
-    },
-
-    products: [productSchema],   
-  },
-  { timestamps: true }
-);
-
-const categorySchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-    },
-
-    slug: {
-      type: String,
-      required: true,
-      unique: true,
-      lowercase: true,
-    },
-
-    description: { type: String, default: "" },
-
-    image: { type: String, default: "" }, 
-
-    seo: {
-      metaTitle: String,
-      metaDescription: String,
-      keywords: [String],
-    },
-
-    subcategories: [subCategorySchema],  
-  },
-  { timestamps: true }
-);
-module.exports = mongoose.model("Subproduct", categorySchema);
-
-
+module.exports = mongoose.model("Product", productSchema);

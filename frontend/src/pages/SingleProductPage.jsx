@@ -23,7 +23,6 @@ import {
 
 import CategoryBanner from "../components/Category/CategoryBanner";
 import SEO from "../components/Category/SEO";
-
 import BlogSection from "../components/BlogSection";
 import PopularSubcategories from "../components/PopularSubCategories";
 import CatalogueCTA from "../components/CatalogueCTA";
@@ -80,7 +79,7 @@ const SingleProductPage = () => {
     ratings,
     attributes,
   } = product;
-
+const enquiryImage = images?.length > 0 ? images[0].url : "";
   return (
     <>
       {/*  SEO */}
@@ -244,6 +243,7 @@ const SingleProductPage = () => {
       <EnquiryModal
         isOpen={isEnquiryOpen}
         onClose={() => setIsEnquiryOpen(false)}
+        image= {enquiryImage }
       />
     </>
   );

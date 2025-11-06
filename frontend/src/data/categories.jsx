@@ -101,14 +101,7 @@ const categories = [
           { name: "Planner", href: "/promotional-items/office-desk/planner" }
         ]
       },
-      {
-        name: "Event Items",
-        href: "/promotional-items/event-items",
-        products: [
-          { name: "Canopy", href: "/promotional-items/event-items/canopy" },
-          { name: "Rickshaw Hood", href: "/promotional-items/event-items/rickshaw-hood" }
-        ]
-      },
+      
       {
         name: "Gadgets & Toys",
         href: "/promotional-items/gadgets-toys",
@@ -120,6 +113,16 @@ const categories = [
         ]
       },
       {
+        name: "Other",
+        href: "/promotional-items/other",
+        products: [
+          { name: "Photo Frame", href: "/promotional-items/other/photo-frame" },
+          { name: "Mouse Pad", href: "/promotional-items/other/mouse-pad" },
+          { name: "Graduation Accessories", href: "/promotional-items/other/graduation-accessories" },
+          // { name: "Graduation Honor Cards", href: "/promotional-items/other/graduation-honor-cards" }
+        ]
+      },
+      {
         name: "Clocks",
         href: "/promotional-items/clocks",
         products: [
@@ -127,16 +130,7 @@ const categories = [
           { name: "Table Clock", href: "/promotional-items/clocks/table-clock" }
         ]
       },
-      {
-        name: "Other",
-        href: "/promotional-items/other",
-        products: [
-          { name: "Photo Frame", href: "/promotional-items/other/photo-frame" },
-          { name: "Mouse Pad", href: "/promotional-items/other/mouse-pad" },
-          { name: "Graduation Accessories", href: "/promotional-items/other/graduation-accessories" },
-          { name: "Graduation Honor Cards", href: "/promotional-items/other/graduation-honor-cards" }
-        ]
-      },
+      
       {
         name: "Awards",
         href: "/promotional-items/awards",
@@ -145,7 +139,7 @@ const categories = [
           { name: "Wooden Trophy", href: "/promotional-items/awards/wooden-trophy" },
           { name: "Badges", href: "/promotional-items/awards/badges" },
           { name: "Medals", href: "/promotional-items/awards/medals" },
-          { name: "Other Awards", href: "/promotional-items/awards/other-awards" }
+          // { name: "Other Awards", href: "/promotional-items/awards/other-awards" }
         ]
       }
     ]

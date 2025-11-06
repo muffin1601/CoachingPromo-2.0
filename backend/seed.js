@@ -3,43 +3,60 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const Subproduct = require("./models/product.js");
+const Category = require("./models/category");
+const Subcategory = require("./models/subcategory");
+const Product = require("./models/product");
 const seedData = require("./data/categories.js");
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/your_database_name";
+const MONGO_URI = process.env.MONGO_URI;
 
 const seedDatabase = async () => {
-  console.log("Starting database seeding process...");
-
   try {
     await mongoose.connect(MONGO_URI);
-    console.log("MongoDB connected successfully");
+    console.log(" MongoDB connected");
 
-    console.log("Deleting existing data...");
-    await Subproduct.deleteMany({});
-    console.log("Old data deleted.");
+    // Clear previous
+    await Category.deleteMany({});
+    await Subcategory.deleteMany({});
+    await Product.deleteMany({});
+    console.log(" Previous data cleared");
 
-    console.log("Inserting new seed data...");
-    const result = await Subproduct.insertMany(seedData);
-    console.log(`Successfully inserted ${result.length} Category documents.`);
+    for (const catData of seedData) {
+  const category = await Category.create({
+    name: catData.name,
+    slug: catData.slug,
+    description: catData.description,
+    image: catData.image,
+    seo: catData.seo,
+  });
 
-    if (result.length > 0) {
-      console.log("Sample Data Check (Apparel Subcategories Count):");
-      const apparelCategory = result.find(c => c.name === 'Apparel');
-      if (apparelCategory) {
-        console.log(`Category: ${apparelCategory.name}`);
-        console.log(`Subcategories (Products) Found: ${apparelCategory.subcategories.length}`);
-        console.log(`Sample Subcategory Name: ${apparelCategory.subcategories[0].name}`);
-      }
+  for (const sub of catData.subcategories) {
+    const subcategory = await Subcategory.create({
+      name: sub.name,
+      slug: sub.slug,
+      description: sub.description,
+      image: sub.image,
+      seo: sub.seo,
+      category: category._id,
+    });
+
+    //  insert products if exist
+    for (const prod of sub.products ?? []) {
+      await Product.create({
+        ...prod,
+        category: category._id,
+        subcategory: subcategory._id,
+      });
     }
+  }
+}
 
-  } catch (error) {
-    console.error("ERROR during data seeding:", error.message);
-    process.exit(1);
+    console.log(" Seeding completed successfully");
+  } catch (err) {
+    console.error(" Seeding error:", err);
   } finally {
     await mongoose.connection.close();
-    console.log("MongoDB connection closed.");
-    process.exit(0);
+    console.log(" MongoDB disconnected");
   }
 };
 
