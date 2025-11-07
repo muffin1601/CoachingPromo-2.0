@@ -2,10 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 const path = require("path");
-const fs = require("fs");
-
 const app = express();
 
 
@@ -20,15 +17,6 @@ mongoose.connect(process.env.MONGO_URI, {
 })
 .then(() => console.log("✅ MongoDB Connected"))
 .catch((err) => console.error("❌ MongoDB Connection Error:", err));
-
-
-const ensureUploadDirs = () => {
-  const dirs = ["uploads", "uploads/products", "uploads/subcategories"];
-  dirs.forEach(dir => {
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-  });
-};
-ensureUploadDirs();
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 

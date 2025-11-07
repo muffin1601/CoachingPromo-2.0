@@ -24,7 +24,7 @@ import {
 import CategoryBanner from "../components/Category/CategoryBanner";
 import SEO from "../components/Category/SEO";
 import BlogSection from "../components/BlogSection";
-import PopularSubcategories from "../components/PopularSubCategories";
+import PopularSubcategories from "../components/PopularSubcategories";
 import CatalogueCTA from "../components/CatalogueCTA";
 
 const SingleProductPage = () => {

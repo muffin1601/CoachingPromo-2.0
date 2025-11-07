@@ -8,7 +8,7 @@ import ProductGrid from "../components/Category/ProductGrid";
 import SEO from "../components/Category/SEO";
 import CatalogueCTA from "../components/CatalogueCTA";
 import axios from "axios";
-import PopularSubcategories from "../components/PopularSubCategories";
+import PopularSubcategories from "../components/PopularSubcategories";
 import BlogSection from "../components/BlogSection";
 
 const SubcategoryPage = () => {
