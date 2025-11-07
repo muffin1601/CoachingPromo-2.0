@@ -5,14 +5,14 @@ const AdminNavbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    window.location.href = "/login";
+    window.location.href = "/";
   };
 
   return (
     <nav className="admin-navbar-container">
       {/* ===== LEFT SECTION ===== */}
       <div className="admin-navbar-left">
-        <h2 className="admin-navbar-title">Dashboard</h2>
+        <h2 className="admin-navbar-title"> Welcome!!!!</h2>
       </div>
 
       {/* ===== RIGHT SECTION ===== */}

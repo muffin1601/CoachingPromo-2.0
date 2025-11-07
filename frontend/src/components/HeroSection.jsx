@@ -16,7 +16,7 @@ const HeroSection = () => {
   useEffect(() => {
     const fetchSlides = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/banners`);
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/slides/banners`);
         setSlides(res.data);
       } catch (err) {
         console.error("Error fetching banners:", err);

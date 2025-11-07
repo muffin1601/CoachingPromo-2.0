@@ -13,7 +13,6 @@ const ContactPage = () => {
           { label: "Contact" },
         ]}
       />
-
       <ContactUs />
     </>
   );

@@ -2,6 +2,32 @@ const express = require('express');
 const Slide = require('../models/banner');
 const router = express.Router();
 
+const multer = require("multer");
+const path = require("path");
+
+//  Storage setup
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/slides");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage });
+
+//  Upload route
+router.post("/upload", upload.single("file"), (req, res) => {
+  if (!req.file) return res.status(400).json({ message: "No file uploaded" });
+
+  const fileUrl = `${req.protocol}://${req.get("host")}/uploads/slides/${req.file.filename}`;
+
+  res.json({ url: fileUrl });
+});
+
+
+
 router.get("/banners", async (req, res) => {
   try {
     const banners = await Slide.find();

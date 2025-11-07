@@ -28,9 +28,9 @@ import ProtectedRoute from "./utils/ProtectedRoute";
 //  Import admin pages
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import HeroManagerPage from "./pages/Admin/HeroManagerPage";
-import CategoryManager from "./pages/Admin/CategoryManager";
-import SubcategoryManager from "./pages/Admin/SubcategoryManager";
-import ProductManager from "./pages/Admin/ProductManager";
+import CategoryManager from "./pages/Admin/CategoryManagerPage";
+import SubcategoryManager from "./pages/Admin/SubcategoryManagerPage";
+import ProductManager from "./pages/Admin/ProductManagerPage";
 
 //  Layout wrapper to hide Navbar/Footer on admin pages
 const LayoutWrapper = ({ children }) => {

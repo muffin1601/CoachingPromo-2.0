@@ -4,8 +4,7 @@ import Navbar from "../../components/Dashboard/Navbar";
 import Overview from "../../components/Dashboard/Overview";
 
 import DashboardFooter from "../../components/Dashboard/DashboardFooter";
-import ChartOverview from "../../components/Dashboard/ChartOverview";
-import ToDoList from "../../components/Dashboard/ToDoList";
+
 
 
 
@@ -19,8 +18,7 @@ const AdminDashboard = () => {
           <Overview />
           
           <div className="dashboard-row">
-            <ChartOverview />
-            <ToDoList />
+          
             </div>
         </div>
         <DashboardFooter />
@@ -60,14 +58,14 @@ const css = `
 }
 
 .dashboard-content {
-  padding: 30px;
+  padding: 30px 55px;
   display: flex;
   flex-direction: column;
   gap: 25px;
   flex-grow: 1;
-  background: url('https://images.pexels.com/photos/4067756/pexels-photo-4067756.jpeg')
+   background: linear-gradient(135deg, #f4f7fb 0%, #e6edf5 100%);
     no-repeat center/cover;
-}
+}                     
 
 .dashboard-row {
   display: flex;
@@ -150,8 +148,7 @@ const css = `
   flex-direction: column;
   gap: 25px;
   flex-grow: 1;
-  background: url('https://images.pexels.com/photos/4067756/pexels-photo-4067756.jpeg')
-    no-repeat center/cover;
+   background: linear-gradient(135deg, #f4f7fb 0%, #e6edf5 100%);
 }
 
 .dashboard-row {

@@ -28,7 +28,7 @@ const Sidebar = () => {
         <li>
           <NavLink to="/admin" end>
             <LayoutDashboard className="icon" />
-            <span>Dashboard Overview</span>
+            <span>Dashboard</span>
           </NavLink>
         </li>
 
@@ -88,7 +88,8 @@ const css = `
   flex-direction: column;
   justify-content: flex-start;
   padding: 25px 15px;
-  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  // box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid var(--light-border);
   transition: width 0.3s ease;
 }
 
@@ -124,7 +125,7 @@ const css = `
   text-decoration: none;
   color: var(--neutral-gray);
   font-size: 17px;
-  border-radius: 8px;
+
   transition: all 0.3s ease;
 }
 
@@ -149,7 +150,7 @@ const css = `
   transition: color 0.3s ease;
 }
 
-/* ✅ Only when the link is ACTIVE, icon becomes white */
+
 .admin-sidebar-menu a.active .icon {
   color: #fff;
 }

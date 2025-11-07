@@ -1,52 +1,247 @@
-.hero-slide-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 15px;
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
 }
 
-.slide-item {
+.hm-wrapper {
+  background: #fff;
+  padding: 25px;
+  border: 1px solid var(--light-border);
+
+
+}
+
+.hm-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--light-border);
-  padding: 10px 0;
 }
 
-.slide-info {
+.hm-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-blue);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hm-description {
+  margin-top: 10px;
   color: var(--neutral-gray);
 }
 
-.slide-actions {
+.hm-add-btn {
+  background: var(--brand-blue);
+  color: #fff;
+  padding: 8px 14px;
+  /* border-radius: 6px; */
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Outfit', sans-serif;
+  transition: 0.2s;
+}
+
+.hm-add-btn:hover {
+  background: var(--brand-orange);
+}
+
+.hm-slide-list {
+  margin-top: 25px;
+  list-style: none;
+  padding: 0;
+}
+
+.hm-slide-item {
+  padding: 16px;
+  border: 1px solid var(--light-border);
+ 
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: var(--light-bg);
+}
+
+.hm-slide-title {
+  font-size: 18px;
+  color: var(--brand-blue);
+}
+
+.hm-slide-type {
+  font-size: 13px;
+  color: var(--neutral-gray);
+  margin-left: 5px;
+}
+
+.hm-slide-sub {
+  margin-top: 6px;
+  color: var(--neutral-gray);
+  font-size: 14px;
+}
+
+.hm-slide-actions {
   display: flex;
   gap: 10px;
 }
 
-.preview img {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-top: 10px;
+.hm-edit-btn,
+.hm-delete-btn {
+  padding: 6px 12px;
+  
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  display: flex;
+  font-family: 'Outfit', sans-serif;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
 }
 
-.preview video {
-  border-radius: 8px;
-  margin-top: 10px;
-  max-width: 100%;
+.hm-edit-btn {
+  background: var(--brand-orange);
+  color: white;
 }
 
-.edit-btn {
+.hm-edit-btn:hover {
+  background: #b86403;
+}
+
+.hm-delete-btn {
+  background: #c62828;
+  color: white;
+}
+
+.hm-delete-btn:hover {
+  background: #9a1f1f;
+}
+
+
+.hm-delete-btn-2 {
+  padding: 6px 12px;
+  
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  display: flex;
+  font-family: 'Outfit', sans-serif;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+}
+.hm-delete-btn-2 {
+  background: #c62828;
+  color: white;
+}
+
+.hm-delete-btn-2:hover {
+  background: #9a1f1f;
+}
+
+.hm-form-group {
+  margin-top: 12px;
+}
+
+.hm-input-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: var(--brand-blue);
+}
+
+.hm-select {
+  width: 94%;
+  padding: 10px;
+  border: 1px solid var(--light-border);
+ font-family: 'outfit', sans-serif;
+}
+
+.hm-preview {
+  margin-top: 12px;
+}
+
+.hm-preview img,
+.hm-preview video {
+  width: 50%;
+  
+  border: 1px solid var(--light-border);
+}
+
+.hm-save-btn {
+  margin-top: 18px;
+  background: var(--brand-blue);
+  padding: 10px 18px;
+  border: none;
+
+  color: white;
+  font-weight: 400;
+    font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.hm-save-btn:hover {
+  background: var(--brand-orange);
+}
+
+.hm-empty {
+  color: var(--neutral-gray);
+  padding: 10px 0;
+}
+.hm-upload-group {
+  margin: 12px 0;
+}
+
+.hm-file-input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid var(--light-border);
+  background: var(--light-bg);
+  cursor: pointer;
+}
+
+.hm-file-input:hover {
+  border-color: var(--brand-blue);
+}
+.pagination-container {
+  display: flex;
+  margin-top: 20px;
+  gap: 8px;
+  align-items: center;
+}
+
+.pg-btn,
+.pg-number {
+  padding: 6px 12px;
+  border: 1px solid var(--light-border);
+  background: white;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: 0.2s;
+}
+
+.pg-btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pg-number.active {
   background: var(--brand-blue);
   color: white;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
+  border-color: var(--brand-blue);
 }
 
-.delete-btn {
-  background: crimson;
+.pg-number:hover,
+.pg-btn:hover:not([disabled]) {
+  background: var(--brand-orange);
   color: white;
-  padding: 6px 10px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
+  border-color: var(--brand-orange);
 }

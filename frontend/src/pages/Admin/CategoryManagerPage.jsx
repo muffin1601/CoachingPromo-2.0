@@ -5,18 +5,18 @@ import Navbar from "../../components/Dashboard/Navbar";
 
 import DashboardFooter from "../../components/Dashboard/DashboardFooter";
 
-import HeroManager from "../../components/Dashboard/HeroManager";
+import CategoryManager from "../../components/Dashboard/CategoryManager";
 
 
 
-const HeroManagerPage = () => {
+const CategoryManagerPage = () => {
   return (
     <div className="admin-dashboard-layout">
       <Sidebar />
       <div className="main-content">
         <Navbar />
         <div className="dashboard-2">
-          <HeroManager />
+          <CategoryManager />
         </div>
         <DashboardFooter />
       </div>
@@ -24,7 +24,7 @@ const HeroManagerPage = () => {
   );
 };
 
-export default HeroManagerPage;
+export default CategoryManagerPage;
 
 const css =  `
 .dashboard-2 {

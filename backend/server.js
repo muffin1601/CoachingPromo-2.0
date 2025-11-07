@@ -54,7 +54,7 @@ app.use("/api", adminRoutes);
 app.use("/api/slides", bannerRoutes);
 app.use("/api", searchRoutes);
 app.use("/api", instituteRoutes);
-
+app.use("/api/admin", require("./routes/adminstatsRoutes"));
 
 // --- Serve Frontend ---
 app.use(express.static(path.join(__dirname, '../frontend/dist')));

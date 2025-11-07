@@ -93,7 +93,11 @@ const enquiryImage = images?.length > 0 ? images[0].url : "";
       <CategoryBanner
         name={product?.name}
         image= "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
-        subtitle={product?.description}
+        subtitle={
+          typeof product?.description === "string"
+            ? product.description
+            : product?.description?.short
+        }
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: category?.name, href: `/categories/${categorySlug}` },
@@ -162,7 +166,11 @@ const enquiryImage = images?.length > 0 ? images[0].url : "";
           </div>
 
           {/* SHORT DESCRIPTION */}
-          <p className="product-desc">{description}</p>
+          <p className="product-desc">
+            {typeof description === "string"
+              ? description
+              : description?.short || description?.long}
+          </p>
 
           {/*  CTA CUSTOMIZATION BUTTON */}
           <button className="btn-customize">

@@ -1,51 +1,72 @@
-import React from "react";
-import { Package, Layers, Users, Eye } from "lucide-react";
-
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Package, Layers, Eye, Image } from "lucide-react";
 
 const Overview = () => {
-  const stats = [
+  const [stats, setStats] = useState({
+    products: 0,
+    categories: 0,
+    visitors: 0,
+    slides: 0
+  });
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/admin/stats`);
+        setStats(res.data);
+      } catch (error) {
+        console.log("Error fetching stats", error);
+      }
+    };
+
+    fetchStats();
+  }, []);
+
+  const cards = [
     {
       label: "Total Products",
-      value: "342",
+      value: stats.products,
       icon: <Package />,
-      color: "var(--brand-blue)",
+      color: "var(--brand-blue)"
     },
     {
       label: "Categories",
-      value: "24",
+      value: stats.categories,
       icon: <Layers />,
-      color: "var(--brand-orange)",
+      color: "var(--brand-orange)"
     },
     {
-      label: "Total Orders",
-      value: "179",
-      icon: <Users />,
-      color: "#0d9488", // teal accent
-    },
-    {
-      label: "Monthly Visitors",
-      value: "12.4K",
+      label: "Total Visitors",
+      value: stats.visitors,
       icon: <Eye />,
-      color: "#6366f1", // indigo accent
+      color: "#6366f1"
     },
+    {
+      label: "Total Slides",
+      value: stats.slides,
+      icon: <Image />,
+      color: "#0d9488"
+    }
   ];
 
   return (
     <div className="overview-section">
       <div className="overview-header">
         <h2>Welcome back, Admin 👋</h2>
-        <p>Here’s a quick look at your site’s performance.</p>
+        <p>Here’s a quick look at your site’s Management.</p>
       </div>
 
       <div className="overview-grid">
-        {stats.map((item, i) => (
-          <div key={i} className="overview-card glass-card">
+        {cards.map((item, index) => (
+          <div key={index} className="overview-card">
             <div
               className="overview-icon"
               style={{ background: item.color + "22", color: item.color }}
             >
               {item.icon}
             </div>
+
             <div className="overview-info">
               <h3>{item.value}</h3>
               <p>{item.label}</p>
@@ -58,7 +79,6 @@ const Overview = () => {
 };
 
 export default Overview;
-
 
 const css = `
 .overview-section {
@@ -79,10 +99,10 @@ const css = `
   font-size: 1rem;
 }
 
-/* Grid for cards */
+/* Grid for cards (Fixed 2x2 layout) */
 .overview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns */
   gap: 20px;
 }
 
@@ -94,7 +114,7 @@ const css = `
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
   backdrop-filter: blur(12px);
-  border-radius: 16px;
+ 
   box-shadow: var(--shadow-soft);
   padding: 20px;
   transition: 0.3s ease;
