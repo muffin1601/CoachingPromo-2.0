@@ -9,7 +9,7 @@ const badges = [
         subImages: [
             { url: "/assets/badges/1.webp", altText: "Custom Badge" },
             { url: "/assets/badges/2.webp", altText: "Custom Badge Side" },
-            { url: "/assets/badges/3.webp", altText: "Custom Badge Close-up" }
+    
         ],
         stock: 500,
         sku: "BAD-001",
@@ -34,11 +34,11 @@ const badges = [
         description: "Promote your institute's identity with Branded Badges designed for everyday use and events. Durable and stylish, they are perfect for uniforms, seminars, workshops, and ceremonies while enhancing brand recognition.",
         price: 149,
         salePrice: 129,
-        images: [{ url: "/assets/badges/4.webp", altText: "Branded Badge" }],
+        images: [{ url: "/assets/badges/3.webp", altText: "Branded Badge" }],
         subImages: [
-            { url: "/assets/badges/4.webp", altText: "Branded Badge" },
-            { url: "/assets/badges/5.webp", altText: "Branded Badge Side" },
-            { url: "/assets/badges/6.webp", altText: "Branded Badge Close-up" }
+            { url: "/assets/badges/3.webp", altText: "Branded Badge" },
+            { url: "/assets/badges/4.webp", altText: "Branded Badge Side" },
+         
         ],
         stock: 750,
         sku: "BAD-002",
@@ -63,11 +63,11 @@ const badges = [
         description: "Make every event and achievement memorable with Personalized Badges crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create unique and thoughtful badges for students and staff.",
         price: 249,
         salePrice: 229,
-        images: [{ url: "/assets/badges/7.webp", altText: "Personalized Badge" }],
+        images: [{ url: "/assets/badges/5.webp", altText: "Personalized Badge" }],
         subImages: [
-            { url: "/assets/badges/7.webp", altText: "Personalized Badge" },
-            { url: "/assets/badges/8.webp", altText: "Personalized Badge Side" },
-            { url: "/assets/badges/9.webp", altText: "Personalized Badge Close-up" }
+            { url: "/assets/badges/5.webp", altText: "Personalized Badge" },
+            { url: "/assets/badges/6.webp", altText: "Personalized Badge Side" },
+ 
         ],
         stock: 300,
         sku: "BAD-003",
@@ -92,11 +92,11 @@ const badges = [
         description: "Boost your institute's branding with Printed Badges featuring vibrant designs, logos, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional visibility.",
         price: 99,
         salePrice: 89,
-        images: [{ url: "/assets/badges/10.webp", altText: "Printed Badge" }],
+        images: [{ url: "/assets/badges/7.webp", altText: "Printed Badge" }],
         subImages: [
-            { url: "/assets/badges/10.webp", altText: "Printed Badge" },
-            { url: "/assets/badges/11.webp", altText: "Printed Badge Side" },
-            { url: "/assets/badges/12.webp", altText: "Printed Badge Close-up" }
+            { url: "/assets/badges/7.webp", altText: "Printed Badge" },
+            { url: "/assets/badges/8.webp", altText: "Printed Badge Side" },
+       
         ],
         stock: 1000,
         sku: "BAD-004",
@@ -121,11 +121,11 @@ const badges = [
         description: "Stay stylish and professional with Designer Badges made from premium materials and modern designs. Perfect for students, faculty, and staff, they reflect your institute's elegance and class.",
         price: 299,
         salePrice: 279,
-        images: [{ url: "/assets/badges/13.webp", altText: "Designer Badge" }],
+        images: [{ url: "/assets/badges/9.webp", altText: "Designer Badge" }],
         subImages: [
-            { url: "/assets/badges/13.webp", altText: "Designer Badge" },
-            { url: "/assets/badges/14.webp", altText: "Designer Badge Side" },
-            { url: "/assets/badges/15.webp", altText: "Designer Badge Close-up" }
+            { url: "/assets/badges/9.webp", altText: "Designer Badge" },
+            { url: "/assets/badges/10.webp", altText: "Designer Badge Side" },
+     
         ],
         stock: 200,
         sku: "BAD-005",
@@ -150,11 +150,11 @@ const badges = [
         description: "Showcase your institute's pride with Custom Logo Badges featuring high-quality printing, embossing, or engraving. Ideal for gifting, events, or staff recognition, these badges serve as a lasting reminder of your institute's professionalism and identity.",
         price: 199,
         salePrice: 179,
-        images: [{ url: "/assets/badges/16.webp", altText: "Custom Logo Badge" }],
+        images: [{ url: "/assets/badges/11.webp", altText: "Custom Logo Badge" }],
         subImages: [
-            { url: "/assets/badges/16.webp", altText: "Custom Logo Badge" },
-            { url: "/assets/badges/17.webp", altText: "Custom Logo Badge Side" },
-            { url: "/assets/badges/18.webp", altText: "Custom Logo Badge Close-up" }
+            { url: "/assets/badges/11.webp", altText: "Custom Logo Badge" },
+            { url: "/assets/badges/12.webp", altText: "Custom Logo Badge Side" },
+      
         ],
         stock: 400,
         sku: "BAD-006",

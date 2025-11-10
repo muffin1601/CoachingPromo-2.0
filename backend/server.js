@@ -45,10 +45,10 @@ app.use("/api", instituteRoutes);
 app.use("/api/admin", require("./routes/adminstatsRoutes"));
 
 // --- Serve Frontend ---
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
-});
+// app.use(express.static(path.join(__dirname, '../frontend/dist')));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+// });
 
 
 const PORT = process.env.PORT || 5000;

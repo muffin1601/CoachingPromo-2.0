@@ -44,7 +44,8 @@
 
 /* LOGO */
 .logo-image {
-  height: 62px;
+  height: 70px;
+  margin: 15px 0px 10px 0px;
   object-fit: contain;
   transition: .25s ease;
 }

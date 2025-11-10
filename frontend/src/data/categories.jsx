@@ -95,10 +95,10 @@ const categories = [
         name: "Office & Desk",
         href: "/promotional-items/office-desk",
         products: [
-          { name: "Diary Set", href: "/promotional-items/office-desk/diary-set" },
-          { name: "Paper Stand", href: "/promotional-items/office-desk/paper-stand" },
-          { name: "Mobile Stand", href: "/promotional-items/office-desk/mobile-stand" },
-          { name: "Planner", href: "/promotional-items/office-desk/planner" }
+          { name: "Diary Set", href: "/promotional-items/diary-set" },
+          { name: "Paper Stand", href: "/promotional-items/paper-stand" },
+          { name: "Mobile Stand", href: "/promotional-items/mobile-stand" },
+          { name: "Planner", href: "/promotional-items/planner" }
         ]
       },
       
@@ -106,19 +106,19 @@ const categories = [
         name: "Gadgets & Toys",
         href: "/promotional-items/gadgets-toys",
         products: [
-          { name: "Stress Balls", href: "/promotional-items/gadgets-toys/stress-balls" },
-          { name: "Magic Cube", href: "/promotional-items/gadgets-toys/magic-cube" },
-          { name: "Wristbands", href: "/promotional-items/gadgets-toys/wristbands" },
-          { name: "Custom Flashcards", href: "/promotional-items/gadgets-toys/custom-flashcards" }
+          { name: "Stress Balls", href: "/promotional-items/stress-balls" },
+          { name: "Magic Cube", href: "/promotional-items/magic-cube" }
+          // { name: "Wristbands", href: "/promotional-items/wristbands" }
+          // { name: "Custom Flashcards", href: "/promotional-items/custom-flashcards" }
         ]
       },
       {
         name: "Other",
         href: "/promotional-items/other",
         products: [
-          { name: "Photo Frame", href: "/promotional-items/other/photo-frame" },
-          { name: "Mouse Pad", href: "/promotional-items/other/mouse-pad" },
-          { name: "Graduation Accessories", href: "/promotional-items/other/graduation-accessories" },
+          { name: "Photo Frame", href: "/promotional-items/photo-frame" },
+          { name: "Mouse Pad", href: "/promotional-items/mouse-pad" },
+          { name: "Graduation Accessories", href: "/promotional-items/graduation-accessories" },
           // { name: "Graduation Honor Cards", href: "/promotional-items/other/graduation-honor-cards" }
         ]
       },
@@ -126,8 +126,8 @@ const categories = [
         name: "Clocks",
         href: "/promotional-items/clocks",
         products: [
-          { name: "Wall Clocks", href: "/promotional-items/clocks/wall-clocks" },
-          { name: "Table Clock", href: "/promotional-items/clocks/table-clock" }
+          { name: "Wall Clocks", href: "/promotional-items/wall-clocks" },
+          { name: "Table Clock", href: "/promotional-items/table-clock" }
         ]
       },
       
@@ -135,10 +135,10 @@ const categories = [
         name: "Awards",
         href: "/promotional-items/awards",
         products: [
-          { name: "Trophy", href: "/promotional-items/awards/trophy" },
-          { name: "Wooden Trophy", href: "/promotional-items/awards/wooden-trophy" },
-          { name: "Badges", href: "/promotional-items/awards/badges" },
-          { name: "Medals", href: "/promotional-items/awards/medals" },
+          { name: "Trophy", href: "/promotional-items/trophy" },
+          { name: "Wooden Trophy", href: "/promotional-items/wooden-trophy" },
+          { name: "Badges", href: "/promotional-items/badges" },
+          { name: "Medals", href: "/promotional-items/medals" },
           // { name: "Other Awards", href: "/promotional-items/awards/other-awards" }
         ]
       }
@@ -162,9 +162,9 @@ const categories = [
         name: "Writing Instruments",
         href: "/stationery/writing-instruments",
         products: [
-          { name: "Pencils", href: "/stationery/writing-instruments/pencils" },
-          { name: "Erasers", href: "/stationery/writing-instruments/erasers" },
-          { name: "Highlighters", href: "/stationery/writing-instruments/highlighters" },
+          // { name: "Pencils", href: "/stationery/writing-instruments/pencils" },
+          // { name: "Erasers", href: "/stationery/writing-instruments/erasers" },
+          // { name: "Highlighters", href: "/stationery/writing-instruments/highlighters" },
           { name: "Markers", href: "/stationery/writing-instruments/markers" },
           { name: "Metal Pen", href: "/stationery/writing-instruments/metal-pen" },
           { name: "Plastic Pen", href: "/stationery/writing-instruments/plastic-pen" }
