@@ -196,6 +196,10 @@
 
 /* Small screens */
 @media (max-width: 600px) {
+  .enquiry-modal {
+  
+    height: 80vh;
+}
   .enq-title {
     font-size: 20px;
   }
@@ -213,8 +217,15 @@
   .enquiry-input-full,
   .enquiry-textarea {
    width: 80%;
+    font-size: 12px;
+   padding: 10px 12px;
   }
   
+.enquiry-input {
+  font-size: 12px;
+  padding: 10px 12px;
+}
+
 
 }
 
