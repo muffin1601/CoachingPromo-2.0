@@ -104,6 +104,54 @@ const css = `
   color: var(--brand-blue);
 }
 
+/* Tablets */
+@media (max-width: 900px) {
+  .subcat-card-media {
+    height: 200px;
+  }
+
+  .subcat-card-title {
+    font-size: 17px;
+  }
+}
+
+/*  Mobile — 2 items per row */
+@media (max-width: 600px) {
+  .subcat-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+.subcat-list-container {
+  
+  max-width: 90%;
+  margin: 20px auto;
+}
+
+  .subcat-card-media {
+    height: 160px;
+  }
+
+  .subcat-card-title {
+    font-size: 16px;
+  }
+}
+
+/*  Extra small — still 2 per row */
+@media (max-width: 400px) {
+  .subcat-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .subcat-card-media {
+    height: 140px;
+  }
+
+  .subcat-card-title {
+    font-size: 14px;
+  }
+}
+
 `;
 
 const style = document.createElement("style");

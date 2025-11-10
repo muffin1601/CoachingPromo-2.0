@@ -174,36 +174,149 @@
 }
 
 /* ─────────────────────────── */
-/* RESPONSIVE */
+/* RESPONSIVE IMPROVED */
 /* ─────────────────────────── */
 
-@media (max-width: 1024px) {
+/* LARGE SCREENS */
+@media (max-width: 1200px) {
+  .featured-title {
+    font-size: 2.2rem;
+  }
+  .featured-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* TABLET LANDSCAPE */
+@media (max-width: 992px) {
+  .featured-wrapper {
+    padding: 55px 0;
+  }
+
+  .featured-title {
+    font-size: 2rem;
+  }
+
+  .featured-card {
+    padding: 12px;
+  }
+
+  .featured-img {
+    height: 200px;
+  }
+
   .featured-slider {
     width: 95%;
   }
 }
 
+/* TABLET PORTRAIT + BIG MOBILE */
 @media (max-width: 768px) {
-  .featured-slider {
-    width: 100%;
+  .featured-title {
+    font-size: 1.8rem;
   }
 
-  .featured-slider .swiper-slide {
-    max-width: 240px !important;
+  .featured-subtitle {
+    font-size: 1rem;
   }
 
+  
+  .featured-img {
+    height: 180px;
+  }
+
+  /* Hide arrows */
   .swiper-button-next,
   .swiper-button-prev {
-    display: none;
+    display: none !important;
+  }
+
+  /* Improve spacing */
+  .featured-slider {
+    width: 100%;
+    margin-top: 35px;
   }
 }
 
-@media (max-width: 480px) {
+/* MOBILE */
+@media (max-width: 576px) {
+  .featured-wrapper {
+    padding: 10px 0;
+  }
+
+  .featured-title {
+    font-size: 1.6rem;
+  }
+
+  .featured-subtitle {
+    font-size: 0.92rem;
+  }
+
   .featured-slider .swiper-slide {
-    max-width: 180px !important;
+    margin: 0px 0px 0px 10px;
+    max-width: 200px !important;
   }
 
   .featured-img {
-    height: 170px;
+    height: 160px;
+  }
+
+  .featured-card {
+    padding: 10px;
+  }
+
+  .featured-label {
+    font-size: 16px;
+  }
+
+  .featured-cta {
+    font-size: 13px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .featured-title {
+    font-size: 1.45rem;
+  }
+
+  .featured-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .featured-slider .swiper-slide {
+    max-width: 165px !important;
+  }
+
+  .featured-img {
+    height: 140px;
+  }
+
+  .featured-icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .featured-label {
+    font-size: 15px;
+  }
+}
+
+/* VERY SMALL DEVICES */
+@media (max-width: 350px) {
+  .featured-slider .swiper-slide {
+    max-width: 150px !important;
+  }
+
+  .featured-img {
+    height: 125px;
+  }
+
+  .featured-title {
+    font-size: 1.3rem;
+  }
+
+  .featured-subtitle {
+    font-size: 0.8rem;
   }
 }

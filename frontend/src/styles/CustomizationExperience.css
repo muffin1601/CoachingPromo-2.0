@@ -97,21 +97,152 @@
   object-fit: contain;
 }
 
-/* Responsive */
+/* ================================ */
+/* FULLY IMPROVED RESPONSIVE SYSTEM */
+/* ================================ */
+
+/* LARGE SCREENS */
+@media (max-width: 1200px) {
+  .cex-toptext h2 {
+    font-size: 2rem;
+  }
+
+  .cex-info h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* TABLET LANDSCAPE */
+@media (max-width: 992px) {
+  .cex-wrapper {
+    padding: 60px 5%;
+  }
+
+  .cex-toptext h2 {
+    font-size: 1.9rem;
+  }
+
+  .cex-toptext p {
+    font-size: 1rem;
+  }
+
+  .cex-card {
+    padding: 25px;
+    min-height: auto;
+  }
+
+  .cex-imgwrap img {
+    max-height: 200px;
+  }
+}
+
+/* TABLET PORTRAIT */
 @media (max-width: 768px) {
+  .cex-cards {
+    grid-template-columns: 1fr;
+  }
+
   .cex-card {
     flex-direction: column;
     text-align: center;
-    min-height: auto;
+    gap: 20px;
   }
 
   .cex-info {
     max-width: 100%;
     text-align: center;
-    margin-bottom: 20px;
   }
 
   .cex-imgwrap {
-    max-width: 60%;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .cex-imgwrap img {
+    max-height: 180px;
+  }
+
+  .cex-info h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* BIG MOBILE */
+@media (max-width: 576px) {
+  .cex-wrapper {
+    padding: 50px 5%;
+  }
+
+  .cex-toptext h2 {
+    font-size: 1.7rem;
+  }
+
+  .cex-toptext p {
+    font-size: 0.9rem;
+  }
+
+  .cex-card {
+    padding: 22px;
+  }
+
+  .cex-info h3 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  .cex-btn {
+    padding: 9px 20px;
+    font-size: 0.9rem;
+  }
+
+  .cex-imgwrap img {
+    max-height: 160px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .cex-toptext h2 {
+    font-size: 1.55rem;
+  }
+
+  .cex-toptext p {
+    font-size: 0.85rem;
+  }
+
+  .cex-info h3 {
+    font-size: 1rem;
+  }
+
+  .cex-btn {
+    padding: 8px 18px;
+  }
+
+  .cex-imgwrap {
+    max-width: 90%;
+  }
+
+  .cex-imgwrap img {
+    max-height: 145px;
+  }
+}
+
+/* VERY SMALL DEVICES */
+@media (max-width: 350px) {
+  .cex-toptext h2 {
+    font-size: 1.35rem;
+  }
+
+  .cex-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .cex-btn {
+    font-size: 0.8rem;
+    padding: 7px 16px;
+  }
+
+  .cex-imgwrap img {
+    max-height: 130px;
   }
 }

@@ -1,0 +1,212 @@
+/* ================= SIDEBAR OVERLAY ================= */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.38);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.32s ease;
+  z-index: 9998;
+  font-family: "Outfit", sans-serif;
+}
+
+.sidebar-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= SIDEBAR PANEL ================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 78%;
+  max-width: 330px;
+  height: 100vh;
+  background: #fff;
+  padding: 22px 18px;
+  overflow-y: auto;
+  transition: left 0.32s ease;
+  z-index: 9999;
+  box-shadow: 2px 0 14px rgba(0,0,0,0.12);
+}
+
+/* LOGO */
+.logo-image-2 {
+  height: 60px;
+
+  object-fit: contain;
+  transition: .25s ease;
+}
+.sidebar-overlay.open .sidebar {
+  left: 0;
+}
+
+/* ================= HEADER ================= */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--light-border);
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--brand-blue);
+  transition: 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  color: var(--brand-orange);
+}
+
+/* ================= SEARCH BOX ================= */
+.sidebar-search {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--light-bg);
+  border: 1px solid var(--light-border);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.sidebar-search svg {
+  color: var(--brand-blue);
+}
+
+.sidebar-search input {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-family: 'outfit', sans-serif;
+  width: 100%;
+  background: transparent;
+  color: #444;
+}
+
+/* ================= CATEGORY LIST ================= */
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-list li {
+  margin-bottom: 14px;
+}
+
+.sidebar-list a {
+  text-decoration: none;
+  color: #222;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: .2s ease;
+}
+
+.sidebar-list a:hover {
+  color: var(--brand-orange);
+}
+
+/* ================= DETAILS & ACCORDION ================= */
+details {
+  background: #fff;
+  border-bottom: 1px solid var(--light-border);
+  padding: 8px 0;
+}
+
+details summary {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--brand-blue);
+  align-items: center;
+}
+
+details[open] summary {
+  color: var(--brand-orange);
+}
+
+details summary svg {
+  transition: transform .3s ease;
+}
+
+details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+/* ================= SUBCATEGORY ================= */
+.sidebar-sub {
+  padding-left: 14px;
+  margin-top: 6px;
+}
+
+.sub-title {
+  font-size: 0.87rem;
+  color: var(--brand-blue);
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+.sidebar-sub ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-sub li {
+  margin: 4px 0;
+}
+
+.sidebar-sub li a {
+  font-size: 0.85rem;
+  color: #444;
+  transition: .22s ease;
+}
+
+.sidebar-sub li a:hover {
+  color: var(--brand-orange);
+  transform: translateX(4px);
+}
+
+/* ================= CTA BUTTON ================= */
+.sidebar-cta {
+  display: block;
+  margin-top: 24px;
+  padding: 12px 20px;
+  background: var(--brand-orange);
+  color: #fff;
+  text-align: center;
+text-decoration: none;
+  font-weight: 400;
+  transition: .22s ease;
+}
+
+.sidebar-cta:hover {
+  background: #d76000;
+}
+
+/* ================= SCROLLBAR ================= */
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.15);
+  border-radius: 5px;
+}

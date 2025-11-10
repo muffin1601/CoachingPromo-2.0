@@ -146,12 +146,3 @@
   opacity: 0.85;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .blogcta-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .blogform-grid {
-    grid-template-columns: 1fr;
-  }
-}

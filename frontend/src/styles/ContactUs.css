@@ -136,9 +136,16 @@
   opacity: 0.85;
 }
 
-/* ================================
-   RESPONSIVE
-=================================== */
+
+/* Medium screens */
+@media (max-width: 1200px) {
+  .contactus-info-section,
+  .contactus-body {
+    max-width: 90%;
+  }
+}
+
+/* Tablets */
 @media (max-width: 900px) {
   .contactus-info-section {
     grid-template-columns: 1fr;
@@ -150,5 +157,69 @@
 
   .contactus-form-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contactus-map-frame {
+    min-height: 380px;
+  }
+
+  .contactus-submit-btn {
+    width: 70%;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 650px) {
+  .contactus-form {
+    padding: 25px 20px;
+  }
+
+  .contactus-submit-btn {
+    width: 80%;
+    font-size: 15px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .contactus-info-section {
+    gap: 18px;
+  }
+
+  .contactus-card-icon {
+    width: 60px;
+    height: 60px;
+  }
+   
+  .contactus-input-loc,
+  .contactus-textarea {
+    width: 90%;
+  }
+
+  .contactus-map-frame {
+    min-height: 300px;
+  }
+
+  .contactus-submit-btn {
+    width: 100%;
+    padding: 14px 0;
+  }
+}
+
+/* Extra small */
+@media (max-width: 360px) {
+  .contactus-form {
+    padding: 18px;
+  }
+
+  .contactus-input,
+  .contactus-input-loc,
+  .contactus-textarea {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .contactus-submit-btn {
+    font-size: 14px;
   }
 }

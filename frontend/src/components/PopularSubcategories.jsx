@@ -124,8 +124,14 @@ const PopularSubcategories = () => {
 
       <div className="popsub-slider">
         <Swiper
-          slidesPerView={4}
-          spaceBetween={22}
+          breakpoints={{
+            320: { slidesPerView: 1.2, spaceBetween: 16 },
+            450: { slidesPerView: 1.6, spaceBetween: 18 },
+            576: { slidesPerView: 2, spaceBetween: 18 },
+            768: { slidesPerView: 2.8, spaceBetween: 20 },
+            992: { slidesPerView: 3.2, spaceBetween: 22 },
+            1200: { slidesPerView: 4, spaceBetween: 22 },
+          }}
           navigation={{
             nextEl: ".popsub-next",
             prevEl: ".popsub-prev",

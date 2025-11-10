@@ -141,7 +141,6 @@
   background: var(--brand-orange);
 }
 
-
 .nav-btn-2 {
   position: absolute;
   top: 45%;
@@ -171,44 +170,132 @@
   background: var(--brand-orange);
 }
 
+/* ============================== */
+/* IMPROVED RESPONSIVE STYLES ✅ */
+/* ============================== */
 
-/* RESPONSIVE */
-@media (max-width: 1200px) {
-  .popsub-slider {
-    width: 94%;
+/* LARGE SCREENS */
+@media (max-width: 1400px) {
+  .popsub-title {
+    font-size: 2.2rem;
   }
 }
 
+/* LAPTOP */
+@media (max-width: 1200px) {
+  .popsub-slider {
+    width: 92%;
+  }
+  .popsub-title {
+    font-size: 2rem;
+  }
+  .popsub-subtext {
+    font-size: 1rem;
+  }
+  .popsub-img {
+    height: 220px;
+  }
+}
+
+/* TABLET LANDSCAPE */
 @media (max-width: 992px) {
   .popsub-slider {
-    width: 96%;
+    width: 95%;
+  }
+  .popsub-img {
+    height: 200px;
   }
   .popsub-name {
     font-size: 16px;
   }
+  .popsub-count {
+    font-size: 13px;
+  }
+  .nav-btn-2 {
+    display: none;
+  }
+}
+
+/* TABLET PORTRAIT */
+@media (max-width: 768px) {
+  .popsub-wrapper {
+    padding: 50px 0;
+  }
+  .popsub-title {
+    font-size: 1.8rem;
+  }
+  .popsub-subtext {
+    font-size: 0.95rem;
+  }
   .popsub-img {
     height: 180px;
   }
-}
-
-@media (max-width: 768px) {
-  .swiper-button-next,
-  .swiper-button-prev {
-    display: none !important;
-  }
-  .popsub-img {
-    height: 170px;
+  .popsub-content {
+    padding: 14px 16px;
   }
 }
 
-@media (max-width: 480px) {
+/* MOBILE */
+@media (max-width: 576px) {
+  .popsub-wrapper {
+    padding: 25px 0;
+  }
+
+  .popsub-title {
+    font-size: 1.6rem;
+  }
+
+  .popsub-subtext {
+    font-size: 0.85rem;
+  }
+
+  .popsub-slider {
+    width: 90%;
+  }
+
   .popsub-img {
     height: 160px;
   }
-  .popsub-card {
-    border-radius: 10px;
+
+ 
+  .popsub-name {
+    font-size: 15px;
+  }
+
+  .popsub-btn {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .popsub-title {
+    font-size: 1.45rem;
+  }
+  .popsub-subtext {
+    font-size: 0.82rem;
+  }
+  .popsub-img {
+    height: 145px;
   }
   .popsub-content {
-    padding: 14px;
+    padding: 12px;
+  }
+  .popsub-btn {
+    font-size: 12px;
+  }
+}
+
+/* VERY SMALL MOBILE */
+@media (max-width: 350px) {
+  .popsub-title {
+    font-size: 1.3rem;
+  }
+  .popsub-subtext {
+    font-size: 0.78rem;
+  }
+  .popsub-img {
+    height: 130px;
   }
 }

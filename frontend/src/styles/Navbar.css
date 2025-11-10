@@ -317,21 +317,28 @@ font-family: "Outfit", sans-serif;
   background: #d76000;
 }
 
-/* ================= Responsive ================= */
-@media (max-width: 900px) {
-  .full-search-input {
-    width: 130px;
-  }
-  .nav-links {
-    gap: 18px;
+/* Hide desktop elements on mobile */
+@media (max-width: 700px) {
+  .desktop-only {
+    display: none !important;
   }
 }
 
+/* Hamburger visible only on mobile */
+.hamburger-btn {
+  display: none;
+  border: none;
+  background: transparent;
+}
+
 @media (max-width: 700px) {
-  .visitor-count {
-    display: none;
+  .hamburger-btn {
+    display: block;
   }
-  .mega-dropdown {
-    display: none !important;
-  }
+  /* LOGO */
+.logo-image {
+  height: 60px;
+
+}
+
 }

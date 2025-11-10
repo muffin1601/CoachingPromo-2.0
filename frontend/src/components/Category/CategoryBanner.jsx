@@ -41,25 +41,27 @@ const css = `
 :root {
   --cat-banner-overlay: rgba(10, 10, 10, 0.45);
   --cat-banner-text: #fff;
-  --cat-banner-subtle: #f1f1f1;
+  --cat-banner-subtle: #eaeaea;
   --cat-banner-font-lg: 42px;
-  --cat-banner-font-md: 28px;
+  --cat-banner-font-md: 30px;
+  --cat-banner-font-sm: 24px;
 }
 
 /* MAIN WRAPPER */
 .cat-banner-wrapper {
   width: 100%;
-  height: 320px;
+  min-height: 320px;
   background-size: cover;
   background-position: center;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 100px;
+  padding: 60px 20px;   /* ✅ ensures spacing on all screens */
+  margin-top: 80px;
 }
 
-/* DARK OVERLAY */
+/* OVERLAY */
 .cat-banner-overlay {
   position: absolute;
   inset: 0;
@@ -71,7 +73,9 @@ const css = `
   position: relative;
   text-align: center;
   color: var(--cat-banner-text);
-  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+  max-width: 900px;  /* ✅ prevents over-stretch on large screens */
 }
 
 /* TITLE */
@@ -79,20 +83,22 @@ const css = `
   font-size: var(--cat-banner-font-lg);
   font-weight: 700;
   margin: 0 0 10px;
+  line-height: 1.2;
 }
 
 /* SUBTITLE */
 .cat-banner-subtitle {
   font-size: 18px;
   font-weight: 400;
-  color: var(--cat-banner-subtle);
+  opacity: 0.9;
   margin-bottom: 10px;
 }
 
 /* BREADCRUMBS */
 .cat-banner-breadcrumbs {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;   /* ✅ prevents overflow */
+  justify-content: center;
   gap: 8px;
   font-size: 15px;
 }
@@ -108,14 +114,13 @@ const css = `
   color: var(--brand-orange);
 }
 
-.cat-banner-divider {
-  opacity: 0.6;
-}
+/* ------------------ RESPONSIVE ------------------ */
 
-/* RESPONSIVE */
-@media (max-width: 640px) {
+/* Tablets */
+@media (max-width: 900px) {
   .cat-banner-wrapper {
-    height: 220px;
+    padding: 50px 20px;
+    min-height: 260px;
   }
 
   .cat-banner-title {
@@ -123,9 +128,42 @@ const css = `
   }
 
   .cat-banner-subtitle {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
+
+/* Mobile */
+@media (max-width: 640px) {
+  .cat-banner-wrapper {
+    padding: 40px 15px;
+    min-height: 120px;
+  }
+
+  .cat-banner-title {
+    font-size: var(--cat-banner-font-sm);
+  }
+
+  .cat-banner-subtitle {
+    font-size: 14px;
+  }
+
+  .cat-banner-breadcrumbs {
+    font-size: 13px;
+    gap: 4px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  .cat-banner-title {
+    font-size: 20px;
+  }
+
+  .cat-banner-subtitle {
+    font-size: 13px;
+  }
+}
+
 `;
 
 // Inject the CSS into the document head    

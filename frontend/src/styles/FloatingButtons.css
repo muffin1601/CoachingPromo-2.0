@@ -1,5 +1,5 @@
 .floatingBtn {
-  position: relative; /* keep relative since container handles fixed pos */
+  position: relative;
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -9,7 +9,6 @@
   color: white;
   border: none;
   cursor: pointer;
-  
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s ease, background-color 0.3s ease;
 }
@@ -18,15 +17,27 @@
   transform: scale(1.1);
 }
 
+/* Scroll Up Button */
 .scrollTopBtn {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  font-weight: 300;
   background-color: var(--brand-blue);
-  z-index: 9;;
+  z-index: 100;
 }
 
+/* Right Floating Buttons Container */
+.floatingRight {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 100;
+}
+
+/* Enquiry Hint */
 .enquiryHint {
   position: absolute;
   right: 75px;
@@ -47,7 +58,7 @@
   white-space: nowrap;
 }
 
-/* Small pointing arrow */
+/* Arrow */
 .enquiryHint::after {
   content: "";
   position: absolute;
@@ -59,37 +70,26 @@
   border-bottom: 8px solid transparent;
 }
 
-/* Pop-in animation */
+/* Animations */
 @keyframes bubblePop {
   0% { transform: scale(0.7); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* Glow pulse animation */
 @keyframes pulseGlow {
   0% { box-shadow: 0 0 0 rgba(11, 74, 141, 0.0); }
   50% { box-shadow: 0 0 20px rgba(11, 74, 141, 0.35); }
   100% { box-shadow: 0 0 0 rgba(11, 74, 141, 0.0); }
 }
 
-
-.floatingRight {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 9;
-}
-
-
+/* Button Colors */
 .whatsappBtn {
   background-color: #25d366;
 }
 .whatsappBtn:hover {
   background-color: #1ebe5b;
 }
+
 .registerBtn-1 {
   background-color: var(--brand-blue);
 }
@@ -99,4 +99,92 @@
 }
 .enquiryBtn:hover {
   background-color: #ff6600;
+}
+
+/* ============================
+   RESPONSIVE ADJUSTMENTS
+=============================== */
+
+/* Tablets & medium devices */
+@media (max-width: 900px) {
+  .floatingRight {
+    bottom: 16px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .scrollTopBtn {
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .floatingBtn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .enquiryHint {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  .floatingBtn {
+    width: 52px;
+    height: 52px;
+  }
+
+  .floatingRight {
+    bottom: 14px;
+    right: 14px;
+  }
+
+  .scrollTopBtn {
+    bottom: 14px;
+    left: 14px;
+  }
+
+  /* Hide hint on small screens */
+  .enquiryHint {
+    display: none;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 420px) {
+  .floatingBtn {
+    width: 48px;
+    height: 48px;
+  }
+
+  .floatingRight {
+    bottom: 12px;
+    right: 12px;
+    gap: 8px;
+  }
+
+  .scrollTopBtn {
+    bottom: 12px;
+    left: 12px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 350px) {
+  .floatingBtn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .floatingRight {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .scrollTopBtn {
+    bottom: 10px;
+    left: 10px;
+  }
 }

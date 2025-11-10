@@ -119,25 +119,136 @@
   box-shadow: 0 0 0 3px rgba(11, 74, 141, 0.25);
 }
 
-/*  Responsive */
-@media (max-width: 700px) {
+/* Large screens scaling */
+@media (max-width: 1200px) {
+  .testimonial-title {
+    font-size: 2rem;
+  }
+}
+
+/* Tablets landscape */
+@media (max-width: 992px) {
+  .testimonial-section {
+    padding: 70px 18px;
+  }
+
+  .testimonial-card {
+    width: 320px;
+  }
+
+  .review {
+    font-size: 0.92rem;
+  }
+
+  .testimonial-title {
+    font-size: 2rem;
+    margin-top: 16px;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
   .testimonial-wrapper {
-    gap: 16px;
+    gap: 18px;
   }
 
   .testimonial-card {
     width: 100%;
-    max-width: 320px;
+    max-width: 350px;
+  }
+
+  .testimonial-title {
+    font-size: 1.9rem;
+  }
+
+  .testimonial-nav {
+    margin-top: 32px;
+  }
+
+  .testimonial-nav-1 {
+    display: none;
   }
 }
 
-@media (max-width: 400px) {
+/* Large mobile */
+@media (max-width: 576px) {
   .testimonial-section {
-    padding: 60px 14px;
+    padding: 25px 14px;
+  }
+
+  .testimonial-tag {
+    font-size: 0.75rem;
+    padding: 5px 12px;
   }
 
   .testimonial-title {
     font-size: 1.7rem;
-    margin-bottom: 30px;
+    margin: 14px 0 34px;
+  }
+
+  .testimonial-card {
+    padding: 22px;
+  }
+
+  .review {
+    font-size: 0.9rem;
+  }
+
+  .star-row {
+    gap: 4px;
+  }
+
+  .star-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .quote-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .testimonial-nav-1 {
+    padding: 8px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 420px) {
+  .testimonial-title {
+    font-size: 1.55rem;
+  }
+
+  .testimonial-card {
+    max-width: 100%;
+  }
+
+  .testimonial-nav {
+    gap: 10px;
+  }
+
+  .testimonial-nav-1 {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 350px) {
+  .testimonial-title {
+    font-size: 1.4rem;
+  }
+
+  .testimonial-card {
+    padding: 18px;
+  }
+
+  .review {
+    font-size: 0.85rem;
+  }
+
+  .star-icon {
+    width: 15px;
+    height: 15px;
   }
 }

@@ -107,19 +107,145 @@
    
 }
 
-/* RESPONSIVE */
+/* ======================== */
+/* ENHANCED RESPONSIVE CSS  */
+/* ======================== */
+
+/* TABLET AND BELOW */
+@media (max-width: 1024px) {
+  .wcu-title {
+    font-size: 34px;
+  }
+  .wcu-subtitle-2 {
+    font-size: 18px;
+  }
+  .wcu-outer {
+    padding: 60px 5%;
+  }
+  .wcu-grid {
+    gap: 30px;
+  }
+  .wcu-info-h {
+    font-size: 20px;
+  }
+  .wcu-info-t {
+    font-size: 16px;
+  }
+}
+
+/* TABLET PORTRAIT */
 @media (max-width: 900px) {
   .wcu-grid {
     grid-template-columns: 1fr;
+    max-width: 600px;
   }
+
   .wcu-center-line {
     display: none;
   }
-  .wcu-info {
-    text-align: center;
-  }
+
   .wcu-item {
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .wcu-col {
+    gap: 32px;
+  }
+}
+
+/* BIG MOBILE */
+@media (max-width: 768px) {
+  .wcu-title {
+    font-size: 30px;
+  }
+
+  .wcu-subtitle-2 {
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+
+  .wcu-node {
+    width: 60px;
+    height: 60px;
+  }
+
+  .wcu-info-h {
+    font-size: 19px;
+  }
+
+  .wcu-info-t {
+    font-size: 15px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .wcu-outer {
+    padding: 55px 5%;
+  }
+
+  .wcu-title {
+    font-size: 26px;
+  }
+
+  .wcu-subtitle-2 {
+    font-size: 16px;
+  }
+
+  .wcu-col {
+    gap: 28px;
+  }
+
+  .wcu-info-h {
+    font-size: 18px;
+  }
+
+  .wcu-info-t {
+    font-size: 14.5px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .wcu-title {
+    font-size: 22px;
+  }
+
+  .wcu-subtitle-2 {
+    font-size: 15px;
+  }
+
+  .wcu-node {
+    width: 54px;
+    height: 54px;
+  }
+
+  .wcu-info-h {
+    font-size: 17px;
+  }
+
+  .wcu-info-t {
+    font-size: 14px;
+  }
+}
+
+/* VERY SMALL DEVICES */
+@media (max-width: 350px) {
+  .wcu-title {
+    font-size: 20px;
+  }
+
+  .wcu-info-h {
+    font-size: 16px;
+  }
+
+  .wcu-info-t {
+    font-size: 13.5px;
+  }
+
+  .wcu-col {
+    gap: 24px;
   }
 }

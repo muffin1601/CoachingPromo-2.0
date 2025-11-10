@@ -76,8 +76,10 @@ const css = `
 
 /* CONTAINER */
 .product-list-container {
+  width: 100%;
   max-width: 80%;
   margin: 50px auto;
+ 
 }
 
 /* GRID */
@@ -89,8 +91,7 @@ const css = `
 
 /* CARD */
 .product-card {
-  background: #fdf6e9ff;
-  // border-radius: 14px;
+  background: #fff;
   border: 1px solid var(--light-border);
   overflow: hidden;
   text-decoration: none;
@@ -98,71 +99,58 @@ const css = `
   flex-direction: column;
   position: relative;
   transition: all 0.3s ease;
+
 }
 
 .product-card:hover {
   box-shadow: 0 12px 30px rgba(0,0,0,0.11);
-  transform: translateY(-1px);
-}
-
-/* SALE BADGE */
-.sale-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: var(--brand-orange);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 8px;
-  z-index: 3;
+  transform: translateY(-3px);
 }
 
 /* IMAGE */
 .product-card-media {
   width: 100%;
-  height: 270px;
+  height: auto;
   object-fit: cover;
+  background: #f7f7f7;
 }
 
 /* CONTENT */
 .product-content {
-  padding: 16px 18px 20px;
+  padding: 14px 16px 18px;
 }
 
 /* NAME */
 .product-card-title {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   color: #111;
-  line-height: 1.3;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  line-height: 1.35;
 }
 
 /* PRICE WRAPPER */
 .product-price-wrapper {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 8px;
 }
 
 /* PRICES */
 .product-regular-price {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  color: #000;
 }
 
 .product-sale-price {
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--brand-orange);
 }
 
 .product-main-price {
-  font-size: 15px;
+  font-size: 14px;
   text-decoration: line-through;
   color: #777;
 }
@@ -190,6 +178,63 @@ const css = `
 
 .product-readmore-link:hover {
   color: var(--brand-blue);
+}
+
+/* ================================
+   RESPONSIVE STYLES
+================================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .product-card-media {
+    height: 200px;
+  }
+
+  .product-card-title {
+    font-size: 16px;
+  }
+}
+
+/*  Mobile — 2 cards per row */
+@media (max-width: 600px) {
+.product-list-container {
+  width: 100%;
+padding: 0px;
+  margin: 20px auto;
+  
+}
+  .product-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .product-card-media {
+    height: 160px;
+  }
+
+  .product-card-title {
+    font-size: 15px;
+  }
+
+  .product-content {
+    padding: 12px 14px;
+  }
+}
+
+/*  Extra-small — still 2 per row */
+@media (max-width: 400px) {
+  .product-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-card-media {
+    height: 140px;
+  }
+
+  .product-card-title {
+    font-size: 14px;
+  }
 }
 `;
 
