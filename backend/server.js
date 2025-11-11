@@ -40,7 +40,7 @@ app.use("/api/products", productRoutes);
 app.use("/api", emailRoutes);
 app.use("/api", adminRoutes);
 app.use("/api/slides", bannerRoutes);
-app.use("/api", searchRoutes);
+app.use("/api/products-search", searchRoutes);
 app.use("/api", instituteRoutes);
 app.use("/api/admin", require("./routes/adminstatsRoutes"));
 

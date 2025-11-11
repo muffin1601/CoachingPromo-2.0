@@ -11,6 +11,9 @@ const cubes = require('./promotional/cubes.js');
 const planners = require('./promotional/planners.js');
 const badges = require('./promotional/badges.js');
 const medals = require('./promotional/medals.js');
+const mousePads = require('./promotional/MousePads.js');
+const photoFrames = require('./promotional/photoFrames.js');
+const stressBalls = require('./promotional/stressBalls.js');
 
 const seedData = [
   // --- Category: Apparel ---
@@ -660,24 +663,7 @@ const seedData = [
           metaDescription: "Logo-printed foam stress balls in various shapes for stress relief and promotion.",
           keywords: ["stress ball", "anti-stress", "foam toy"],
         },
-        products: [
-          {
-            name: "Stress Balls",
-            slug: "stress-balls-product",
-            description: "Custom-shaped and logo-printed stress relief foam balls.",
-            price: 4.99,
-            salePrice: null,
-            images: [{ url: "/assets/stressballs.png", altText: "Custom Stress Balls" }],
-            stock: 700,
-            sku: "PRO-STRS-010",
-            attributes: { color: ["Yellow", "Red", "Blue"], size: ["Standard"], material: "Foam" },
-            tags: ["promotional", "stress", "novelty"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.2, count: 190 },
-            seo: { metaTitle: "Buy Bulk Stress Balls", metaDescription: "Logo printed stress balls for giveaways.", keywords: ["foam ball", "squeeze toy"] },
-          },
-        ],
+        products: stressBalls,
       },
       {
         name: "Wall Clocks",
@@ -713,24 +699,7 @@ const seedData = [
           metaDescription: "Personalized mouse pads with logos and images for offices and schools.",
           keywords: ["mouse pad", "computer accessory", "desk mat"],
         },
-        products: [
-          {
-            name: "Mouse Pad",
-            slug: "mouse-pad-product",
-            description: "Ergonomic, logo-printed mouse pad for desk use.",
-            price: 5.99,
-            salePrice: null,
-            images: [{ url: "/assets/mousepad.png", altText: "Custom Mouse Pad" }],
-            stock: 600,
-            sku: "PRO-MPD-013",
-            attributes: { color: ["Custom Print"], size: ["Standard"], material: "Rubber/Fabric" },
-            tags: ["promotional", "computer", "desk"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.6, count: 280 },
-            seo: { metaTitle: "Buy Bulk Custom Mouse Pads", metaDescription: "Affordable logo-printed mouse mats.", keywords: ["gaming pad", "office accessory"] },
-          },
-        ],
+        products: mousePads,
       },
       {
         name: "Photo Frame",
@@ -742,53 +711,7 @@ const seedData = [
           metaDescription: "Logo-engraved or printed photo frames for memories and corporate gifts.",
           keywords: ["photo frame", "picture holder", "desk accessory"],
         },
-        products: [
-          {
-            name: "Photo Frame",
-            slug: "photo-frame-product",
-            description: "Wooden or acrylic photo frame, customizable for gifts and awards.",
-            price: 8.99,
-            salePrice: null,
-            images: [{ url: "/assets/photoframe.png", altText: "Custom Photo Frame" }],
-            stock: 180,
-            sku: "PRO-PFR-014",
-            attributes: { color: ["Brown", "Black"], size: ["4x6 in"], material: "Wood/Acrylic" },
-            tags: ["promotional", "gift", "decor"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.4, count: 70 },
-            seo: { metaTitle: "Buy Branded Photo Frames", metaDescription: "Custom picture frames for desks.", keywords: ["wooden frame", "gift frame"] },
-          },
-        ],
-      },
-      {
-        name: "Graduation Accessories",
-        slug: "graduation-accessories",
-        description: "Miscellaneous items to complement graduation attire.",
-        image: "/assets/gradaccessories.png",
-        seo: {
-          metaTitle: "Graduation Accessories",
-          metaDescription: "Tassels, pins, and other essential graduation accessories.",
-          keywords: ["accessories", "graduation", "pins"],
-        },
-        products: [
-          {
-            name: "Graduation Accessories",
-            slug: "graduation-accessories-product",
-            description: "Assortment of graduation accessories like tassels, pins, and charms.",
-            price: 19.99,
-            salePrice: null,
-            images: [{ url: "/assets/gradaccessories.png", altText: "Graduation Accessories" }],
-            stock: 250,
-            sku: "APP-GRD-ACC",
-            attributes: { color: ["Various"], size: ["N/A"], material: "Various" },
-            tags: ["graduation", "accessories", "tassel"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.5, count: 80 },
-            seo: { metaTitle: "Shop Graduation Accessories", metaDescription: "Essential items for your graduation day.", keywords: ["graduation tassel", "charm"] },
-          },
-        ],
+        products: photoFrames,
       },
       {
         name: "Magic Cube",

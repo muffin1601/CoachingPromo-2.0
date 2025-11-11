@@ -31,6 +31,7 @@ import HeroManagerPage from "./pages/Admin/HeroManagerPage";
 import CategoryManager from "./pages/Admin/CategoryManagerPage";
 import SubcategoryManager from "./pages/Admin/SubcategoryManagerPage";
 import ProductManager from "./pages/Admin/ProductManagerPage";
+import SearchResults from "./pages/SearchResults";
 
 //  Layout wrapper to hide Navbar/Footer on admin pages
 const LayoutWrapper = ({ children }) => {
@@ -71,9 +72,10 @@ const App = () => {
             path="/:categorySlug/:subSlug/:prodSlug"
             element={<SingleProductPage />}
           />
+          <Route path="/search" element={<SearchResults />} />
           <Route path="/login" element={<Login />} />
 
-          {/* ---------- Admin Routes (Protected) ---------- */}
+          {/* ---------- Admin Routes ---------- */}
           <Route path="/admin" element={<ProtectedRoute />}>
             <Route index element={<AdminDashboard />} />
             <Route path="banners" element={<HeroManagerPage />} />

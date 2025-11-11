@@ -67,6 +67,11 @@ const Navbar = () => {
                   className="full-search-input"
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      window.location.href = `/search?q=${searchInput}`;
+                    }
+                  }}
                 />
                 <Search className="search-icon" />
               </div>

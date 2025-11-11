@@ -81,7 +81,7 @@
   background: var(--light-bg);
   border: 1px solid var(--light-border);
   padding: 10px 12px;
-  border-radius: 10px;
+  
 }
 
 .sidebar-search svg {
@@ -209,4 +209,35 @@ text-decoration: none;
 .sidebar::-webkit-scrollbar-thumb {
   background: rgba(0,0,0,0.15);
   border-radius: 5px;
+}
+
+.sidebar-contact-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 12px;
+  
+}
+
+.sidebar-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-blue);
+  padding: 6px 14px;
+  
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: .25s ease;
+}
+
+.sidebar-contact-item.whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+
+.sidebar-contact-item:hover {
+  opacity: 0.9;
 }

@@ -57,7 +57,7 @@ const css = `
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;   /* ✅ ensures spacing on all screens */
+  padding: 60px 20px;   /*  ensures spacing on all screens */
   margin-top: 80px;
 }
 
@@ -75,7 +75,7 @@ const css = `
   color: var(--cat-banner-text);
   width: 100%;
   padding: 0 20px;
-  max-width: 900px;  /* ✅ prevents over-stretch on large screens */
+  max-width: 900px;  /*  prevents over-stretch on large screens */
 }
 
 /* TITLE */
@@ -97,7 +97,7 @@ const css = `
 /* BREADCRUMBS */
 .cat-banner-breadcrumbs {
   display: flex;
-  flex-wrap: wrap;   /* ✅ prevents overflow */
+  flex-wrap: wrap;   /*  prevents overflow */
   justify-content: center;
   gap: 8px;
   font-size: 15px;

@@ -129,6 +129,18 @@ const HeroSection = () => {
           ))}
         </div>
       </section>
+      <div className="hero-cta-group-2">
+            <a
+              href="#"
+              onClick={() => setIsEnquiryOpen(true)}
+              className="btn-primary"
+            >
+              Get Quote
+            </a>
+            <a href="#catalogue" className="btn-outline">
+              Browse Catalogue
+            </a>
+          </div>
 
       <EnquiryModal
         isOpen={isEnquiryOpen}

@@ -158,6 +158,100 @@ const mobileStands = [
             keywords: ["designer mobile stands", "premium stands", "elegant stands"],
         },
     },
+    {
+        name: "Custom Logo Mobile Stands",
+        slug: "custom-logo-mobile-stands",
+        description:
+            "Showcase your institute’s pride with Custom Logo Mobile Stands. Featuring high-quality printing or engraving, these stands help keep workspaces organized while promoting your institute’s identity.",
+        price: 249,
+        salePrice: 229,
+        images: [{ url: "/assets/mobilestands/16.webp", altText: "Custom Logo Mobile Stand" }],
+        subImages: [
+            { url: "/assets/mobilestands/16.webp", altText: "Custom Logo Mobile Stand" },
+            { url: "/assets/mobilestands/17.webp", altText: "Custom Logo Mobile Stand Side" },
+            { url: "/assets/mobilestands/18.webp", altText: "Custom Logo Mobile Stand Back" }
+        ],
+        stock: 350,
+        sku: "MS-006",
+        attributes: {
+            color: ["Black", "Brown", "Custom Print"],
+            size: ["Standard"],
+            material: "ABS + Metal Plate",
+        },
+        tags: ["logo", "custom logo", "mobile stand"],
+        isFeatured: true,
+        isActive: true,
+        ratings: { average: 4.6, count: 180 },
+        seo: {
+            metaTitle: "Custom Logo Mobile Stands",
+            metaDescription: "Custom logo mobile stands with engraving, print, and branding.",
+            keywords: ["logo stands", "engraved mobile stands", "branding stands"],
+        },
+    },
+
+    {
+        name: "Eco-Friendly Mobile Stands",
+        slug: "eco-friendly-mobile-stands",
+        description:
+            "Support sustainability with Eco-Friendly Mobile Stands made from recycled and biodegradable materials. Ideal for environmentally conscious institutes looking to combine functionality with responsibility.",
+        price: 199,
+        salePrice: 179,
+        images: [{ url: "/assets/mobilestands/19.webp", altText: "Eco-Friendly Mobile Stand" }],
+        subImages: [
+            { url: "/assets/mobilestands/19.webp", altText: "Eco-Friendly Mobile Stand" },
+            { url: "/assets/mobilestands/20.webp", altText: "Eco-Friendly Mobile Stand Side" }
+        ],
+        stock: 300,
+        sku: "MS-007",
+        attributes: {
+            color: ["Brown", "Beige", "Green"],
+            size: ["Standard"],
+            material: "Recycled Wood + Eco Polymer",
+        },
+        tags: ["eco-friendly", "sustainable", "mobile stand"],
+        isFeatured: false,
+        isActive: true,
+        ratings: { average: 4.4, count: 140 },
+        seo: {
+            metaTitle: "Eco-Friendly Mobile Stands",
+            metaDescription:
+                "Eco-friendly mobile stands made with recycled and biodegradable materials.",
+            keywords: ["eco mobile stands", "sustainable stands", "wooden stands"],
+        },
+    },
+
+    {
+        name: "Premium Wooden Mobile Stands",
+        slug: "premium-wooden-mobile-stands",
+        description:
+            "Stay organized with Premium Wooden Mobile Stands designed with high-quality craftsmanship. Perfect for faculty desks, reception areas, and student workspaces, combining elegance with durability.",
+        price: 329,
+        salePrice: 309,
+        images: [{ url: "/assets/mobilestands/21.webp", altText: "Premium Wooden Mobile Stand" }],
+        subImages: [
+            { url: "/assets/mobilestands/21.webp", altText: "Premium Wooden Mobile Stand" },
+            { url: "/assets/mobilestands/22.webp", altText: "Premium Wooden Mobile Stand Side" },
+            { url: "/assets/mobilestands/23.webp", altText: "Premium Wooden Mobile Stand Back" }
+        ],
+        stock: 220,
+        sku: "MS-008",
+        attributes: {
+            color: ["Brown", "Dark Brown", "Woodgrain"],
+            size: ["Standard"],
+            material: "Premium Wood",
+        },
+        tags: ["wooden", "premium", "mobile stand"],
+        isFeatured: true,
+        isActive: true,
+        ratings: { average: 4.7, count: 190 },
+        seo: {
+            metaTitle: "Premium Wooden Mobile Stands",
+            metaDescription:
+                "Premium wooden mobile stands with elegant designs and durable build.",
+            keywords: ["wooden mobile stands", "premium stands", "wood stands"],
+        },
+    }
+
 ];
 
 module.exports = mobileStands;
