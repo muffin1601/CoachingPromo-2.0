@@ -154,8 +154,18 @@ const categories = [
         name: "Calendars",
         href: "/stationery/calendars",
         products: [
-          { name: "Table Calendar", href: "/stationery/calendars/table-calendar" },
-          { name: "Wall Calendar", href: "/stationery/calendars/wall-calendar" }
+          { name: "Table Calendar", href: "/stationery/table-calendar" },
+          { name: "Wall Calendar", href: "/stationery/wall-calendar" }
+        ]
+      },
+      {
+        name: "Files & Folders",
+        href: "/stationery/files-folders",
+        products: [
+          { name: "Branding Files & Folders", href: "/stationery/branding-files-and-folders" },
+          // { name: "Kobra File", href: "/stationery/files-folders/kobra-file" },
+          // { name: "Paper File Folder", href: "/stationery/files-folders/paper-file-folder" },
+          { name: "Graduation Degree Folders", href: "/stationery/graduation-degree-folders" },
         ]
       },
       {
@@ -165,38 +175,29 @@ const categories = [
           // { name: "Pencils", href: "/stationery/writing-instruments/pencils" },
           // { name: "Erasers", href: "/stationery/writing-instruments/erasers" },
           // { name: "Highlighters", href: "/stationery/writing-instruments/highlighters" },
-          { name: "Markers", href: "/stationery/writing-instruments/markers" },
-          { name: "Metal Pen", href: "/stationery/writing-instruments/metal-pen" },
-          { name: "Plastic Pen", href: "/stationery/writing-instruments/plastic-pen" }
+          // { name: "Markers", href: "/stationery/writing-instruments/markers" },
+          { name: "Customized Pens", href: "/stationery/customized-pens" },
+          // { name: "Plastic Pen", href: "/stationery/writing-instruments/plastic-pen" }
         ]
       },
       {
         name: "Notebooks & Pads",
         href: "/stationery/notebooks-pads",
         products: [
-          { name: "Notebook", href: "/stationery/notebooks-pads/notebook" },
-          { name: "Notepad", href: "/stationery/notebooks-pads/notepad" },
-          { name: "Exam Pad", href: "/stationery/notebooks-pads/exam-pad" }
+          { name: "Notebook", href: "/stationery/notebook" },
+          { name: "Notepad", href: "/stationery/notepad" },
+          { name: "Exam Pad", href: "/stationery/exam-pad" }
         ]
       },
-      {
-        name: "Files & Folders",
-        href: "/stationery/files-folders",
-        products: [
-          { name: "File & Folder", href: "/stationery/files-folders/file-folder" },
-          { name: "Kobra File", href: "/stationery/files-folders/kobra-file" },
-          { name: "Paper File Folder", href: "/stationery/files-folders/paper-file-folder" },
-          { name: "Graduation Degree Folders", href: "/stationery/files-folders/graduation-degree-folders" },
-        ]
-      },
+      
       {
         name: "Accessories",
         href: "/stationery/accessories",
         products: [
-          { name: "Binder Clips", href: "/stationery/accessories/binder-clips" },
-          { name: "Handbill", href: "/stationery/accessories/handbill" },
-          { name: "Lanyard and ID Card", href: "/stationery/accessories/lanyard-id-card" },
-          { name: "Attendance Registers", href: "/stationery/accessories/attendance-registers" }
+          { name: "Binder Clips", href: "/stationery/binder-clips" },
+          { name: "Handbill", href: "/stationery/handbill" },
+          { name: "Lanyard and ID Card", href: "/stationery/lanyard-and-id-card" },
+          { name: "Attendance Registers", href: "/stationery/attendance-registers" }
         ]
       }
     ]

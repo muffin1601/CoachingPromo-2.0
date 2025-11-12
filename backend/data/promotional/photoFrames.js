@@ -32,17 +32,17 @@ const photoFrames = [
     },
 
     {
-        name: "Branded Photo Frames",
-        slug: "branded-photo-frames",
+        name: "Branding Photo Frames",
+        slug: "branding-photo-frames",
         description:
-            "Enhance your institute’s identity with Branded Photo Frames designed for offices, classrooms, and award ceremonies. Durable and stylish, these frames beautifully display achievements while promoting your brand.",
+            "Enhance your institute’s identity with Branding Photo Frames designed for offices, classrooms, and award ceremonies. Durable and stylish, these frames beautifully display achievements while promoting your brand.",
         price: 299,
         salePrice: 279,
-        images: [{ url: "/assets/photoframes/4.webp", altText: "Branded Photo Frame" }],
+        images: [{ url: "/assets/photoframes/4.webp", altText: "Branding Photo Frame" }],
         subImages: [
-            { url: "/assets/photoframes/4.webp", altText: "Branded Photo Frame" },
-            { url: "/assets/photoframes/5.webp", altText: "Branded Photo Frame Side" },
-            { url: "/assets/photoframes/6.webp", altText: "Branded Photo Frame Back" }
+            { url: "/assets/photoframes/4.webp", altText: "Branding Photo Frame" },
+            { url: "/assets/photoframes/5.webp", altText: "Branding Photo Frame Side" },
+            { url: "/assets/photoframes/6.webp", altText: "Branding Photo Frame Back" }
         ],
         stock: 550,
         sku: "FRAME-002",
@@ -51,15 +51,15 @@ const photoFrames = [
             size: ["5x7", "8x12"],
             material: "Plastic + Glass",
         },
-        tags: ["branded", "photo frame", "events"],
+        tags: ["branding", "photo frame", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.4, count: 180 },
         seo: {
-            metaTitle: "Branded Photo Frames",
+            metaTitle: "Branding Photo Frames",
             metaDescription:
-                "Branded photo frames for offices, classrooms, and award ceremonies.",
-            keywords: ["branded frames", "office photo frames", "decor frames"],
+                "Branding photo frames for offices, classrooms, and award ceremonies.",
+            keywords: ["branding frames", "office photo frames", "decor frames"],
         },
     },
 

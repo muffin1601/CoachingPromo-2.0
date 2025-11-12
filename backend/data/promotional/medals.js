@@ -31,16 +31,16 @@ const medals = [
     },
 
     {
-        name: "Branded Medals",
-        slug: "branded-medals",
+        name: "Branding Medals",
+        slug: "branding-medals",
         description:
-            "Promote your institute’s spirit and achievements with Branded Medals crafted for award ceremonies, sports days, and academic events. Durable and elegant, they perfectly represent your institute’s commitment to excellence and recognition.",
+            "Promote your institute’s spirit and achievements with Branding Medals crafted for award ceremonies, sports days, and academic events. Durable and elegant, they perfectly represent your institute’s commitment to excellence and recognition.",
         price: 129,
         salePrice: 109,
-        images: [{ url: "/assets/medals/3.webp", altText: "Branded Medal" }],
+        images: [{ url: "/assets/medals/3.webp", altText: "Branding Medal" }],
         subImages: [
-            { url: "/assets/medals/3.webp", altText: "Branded Medal" },
-            { url: "/assets/medals/4.webp", altText: "Branded Medal Side" }
+            { url: "/assets/medals/3.webp", altText: "Branding Medal" },
+            { url: "/assets/medals/4.webp", altText: "Branding Medal Side" }
         ],
         stock: 800,
         sku: "MEDAL-002",
@@ -49,15 +49,15 @@ const medals = [
             size: ["Standard"],
             material: "Metal",
         },
-        tags: ["branded", "medal", "events"],
+        tags: ["branding", "medal", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.5, count: 180 },
         seo: {
-            metaTitle: "Branded Medals",
+            metaTitle: "Branding Medals",
             metaDescription:
-                "Branded medals for academic awards, sports events, and ceremonies.",
-            keywords: ["branded medals", "event medals", "award medals"],
+                "Branding medals for academic awards, sports events, and ceremonies.",
+            keywords: ["branding medals", "event medals", "award medals"],
         },
     },
 

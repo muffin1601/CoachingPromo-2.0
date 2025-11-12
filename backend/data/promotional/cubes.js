@@ -31,16 +31,16 @@ const cubes = [
     },
 
     {
-        name: "Branded Magic Cubes",
-        slug: "branded-magic-cubes",
+        name: "Branding Magic Cubes",
+        slug: "branding-magic-cubes",
         description:
-            "Strengthen your institute’s identity with Branded Magic Cubes designed for interactive learning and promotions. Durable and stylish, they’re perfect for seminars, exhibitions, and giveaways, enhancing your brand visibility.",
+            "Strengthen your institute’s identity with Branding Magic Cubes designed for interactive learning and promotions. Durable and stylish, they’re perfect for seminars, exhibitions, and giveaways, enhancing your brand visibility.",
         price: 249,
         salePrice: 229,
-        images: [{ url: "/assets/cubes/3.webp", altText: "Branded Magic Cube" }],
+        images: [{ url: "/assets/cubes/3.webp", altText: "Branding Magic Cube" }],
         subImages: [
-            { url: "/assets/cubes/3.webp", altText: "Branded Magic Cube" },
-            { url: "/assets/cubes/4.webp", altText: "Branded Magic Cube Side" }
+            { url: "/assets/cubes/3.webp", altText: "Branding Magic Cube" },
+            { url: "/assets/cubes/4.webp", altText: "Branding Magic Cube Side" }
         ],
         stock: 700,
         sku: "CUBE-002",
@@ -49,14 +49,14 @@ const cubes = [
             size: ["Standard"],
             material: "Plastic",
         },
-        tags: ["branded", "magic cube", "events"],
+        tags: ["branding", "magic cube", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.4, count: 160 },
         seo: {
-            metaTitle: "Branded Magic Cubes",
-            metaDescription: "Branded Magic Cubes for institutes, events, and promotions.",
-            keywords: ["branded cubes", "event magic cubes", "promotional cubes"],
+            metaTitle: "Branding Magic Cubes",
+            metaDescription: "Branding Magic Cubes for institutes, events, and promotions.",
+            keywords: ["branding cubes", "event magic cubes", "promotional cubes"],
         },
     },
 

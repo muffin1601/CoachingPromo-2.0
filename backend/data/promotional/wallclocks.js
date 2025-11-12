@@ -32,17 +32,17 @@ const wallClocks = [
     },
 
     {
-        name: "Branded Wall Clocks",
-        slug: "branded-wall-clocks",
+        name: "Branding Wall Clocks",
+        slug: "branding-wall-clocks",
         description:
-            "Promote your institute’s identity with Branded Wall Clocks designed for daily visibility and events. Durable and stylish, they are perfect for classrooms, reception areas, seminars, and workshops while enhancing brand recognition.",
+            "Promote your institute’s identity with Branding Wall Clocks designed for daily visibility and events. Durable and stylish, they are perfect for classrooms, reception areas, seminars, and workshops while enhancing brand recognition.",
         price: 249,
         salePrice: 229,
-        images: [{ url: "/assets/wallclocks/4.webp", altText: "Branded Wall Clock" }],
+        images: [{ url: "/assets/wallclocks/4.webp", altText: "Branding Wall Clock" }],
         subImages: [
-            { url: "/assets/wallclocks/4.webp", altText: "Branded Wall Clock" },
-            { url: "/assets/wallclocks/5.webp", altText: "Branded Wall Clock Side" },
-            { url: "/assets/wallclocks/6.webp", altText: "Branded Wall Clock Back" }
+            { url: "/assets/wallclocks/4.webp", altText: "Branding Wall Clock" },
+            { url: "/assets/wallclocks/5.webp", altText: "Branding Wall Clock Side" },
+            { url: "/assets/wallclocks/6.webp", altText: "Branding Wall Clock Back" }
         ],
         stock: 650,
         sku: "WALLCLOCK-002",
@@ -51,15 +51,15 @@ const wallClocks = [
             size: ["Standard"],
             material: "ABS Plastic",
         },
-        tags: ["branded", "wall clock", "events"],
+        tags: ["branding", "wall clock", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.4, count: 190 },
         seo: {
-            metaTitle: "Branded Wall Clocks",
+            metaTitle: "Branding Wall Clocks",
             metaDescription:
-                "Branded wall clocks for classrooms, offices, seminars, and events.",
-            keywords: ["branded wall clocks", "promotional clocks", "event clocks"],
+                "Branding wall clocks for classrooms, offices, seminars, and events.",
+            keywords: ["branding wall clocks", "promotional clocks", "event clocks"],
         },
     },
 

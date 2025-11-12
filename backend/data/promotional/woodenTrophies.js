@@ -31,16 +31,16 @@ const woodenTrophies = [
     },
 
     {
-        name: "Branded Wooden Trophies",
-        slug: "branded-wooden-trophies",
+        name: "Branding Wooden Trophies",
+        slug: "branding-wooden-trophies",
         description:
-            "Promote your institute’s identity with Branded Wooden Trophies designed for award ceremonies, events, and competitions. Durable and stylish, they are perfect for recognizing excellence while enhancing your institute’s brand visibility.",
+            "Promote your institute’s identity with Branding Wooden Trophies designed for award ceremonies, events, and competitions. Durable and stylish, they are perfect for recognizing excellence while enhancing your institute’s brand visibility.",
         price: 299,
         salePrice: 279,
-        images: [{ url: "/assets/woodentrophies/3.webp", altText: "Branded Wooden Trophy" }],
+        images: [{ url: "/assets/woodentrophies/3.webp", altText: "Branding Wooden Trophy" }],
         subImages: [
-            { url: "/assets/woodentrophies/3.webp", altText: "Branded Wooden Trophy" },
-            { url: "/assets/woodentrophies/4.webp", altText: "Branded Wooden Trophy Side" }
+            { url: "/assets/woodentrophies/3.webp", altText: "Branding Wooden Trophy" },
+            { url: "/assets/woodentrophies/4.webp", altText: "Branding Wooden Trophy Side" }
         ],
         stock: 500,
         sku: "WOODTROPHY-002",
@@ -49,15 +49,15 @@ const woodenTrophies = [
             size: ["Medium", "Large"],
             material: "Solid Wood",
         },
-        tags: ["branded", "wooden trophy", "events"],
+        tags: ["branding", "wooden trophy", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.5, count: 170 },
         seo: {
-            metaTitle: "Branded Wooden Trophies",
+            metaTitle: "Branding Wooden Trophies",
             metaDescription:
-                "Branded wooden trophies for ceremonies, award functions, and events.",
-            keywords: ["branded wooden trophies", "event trophies", "wooden awards"],
+                "Branding wooden trophies for ceremonies, award functions, and events.",
+            keywords: ["branding wooden trophies", "event trophies", "wooden awards"],
         },
     },
 

@@ -32,17 +32,17 @@ const tableClocks = [
     },
 
     {
-        name: "Branded Table Clocks",
-        slug: "branded-table-clocks",
+        name: "Branding Table Clocks",
+        slug: "branding-table-clocks",
         description:
-            "Promote your institute’s identity with Branded Table Clocks designed for everyday use and events. Durable and stylish, they are perfect for faculty desks, reception areas, workshops, and seminars while enhancing brand recognition.",
+            "Promote your institute’s identity with Branding Table Clocks designed for everyday use and events. Durable and stylish, they are perfect for faculty desks, reception areas, workshops, and seminars while enhancing brand recognition.",
         price: 249,
         salePrice: 229,
-        images: [{ url: "/assets/clocks/4.webp", altText: "Branded Table Clock" }],
+        images: [{ url: "/assets/clocks/4.webp", altText: "Branding Table Clock" }],
         subImages: [
-            { url: "/assets/clocks/4.webp", altText: "Branded Table Clock" },
-            { url: "/assets/clocks/5.webp", altText: "Branded Table Clock Side" },
-            { url: "/assets/clocks/6.webp", altText: "Branded Table Clock Back" }
+            { url: "/assets/clocks/4.webp", altText: "Branding Table Clock" },
+            { url: "/assets/clocks/5.webp", altText: "Branding Table Clock Side" },
+            { url: "/assets/clocks/6.webp", altText: "Branding Table Clock Back" }
         ],
         stock: 650,
         sku: "CLOCK-002",
@@ -51,15 +51,15 @@ const tableClocks = [
             size: ["Standard"],
             material: "ABS Plastic",
         },
-        tags: ["branded", "table clock", "events"],
+        tags: ["branding", "table clock", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.4, count: 180 },
         seo: {
-            metaTitle: "Branded Table Clocks",
+            metaTitle: "Branding Table Clocks",
             metaDescription:
-                "Branded table clocks for institutes, events, offices, and faculty desks.",
-            keywords: ["branded clocks", "promotional clocks", "desk clocks"],
+                "Branding table clocks for institutes, events, offices, and faculty desks.",
+            keywords: ["branding clocks", "promotional clocks", "desk clocks"],
         },
     },
 

@@ -31,16 +31,16 @@ const trophies = [
     },
 
     {
-        name: "Branded Trophies",
-        slug: "branded-trophies",
+        name: "Branding Trophies",
+        slug: "branding-trophies",
         description:
-            "Promote your institute’s identity with Branded Trophies designed for award ceremonies, events, and competitions. Durable and stylish, they are perfect for recognizing excellence while enhancing your institute’s brand visibility.",
+            "Promote your institute’s identity with Branding Trophies designed for award ceremonies, events, and competitions. Durable and stylish, they are perfect for recognizing excellence while enhancing your institute’s brand visibility.",
         price: 349,
         salePrice: 329,
-        images: [{ url: "/assets/trophies/3.webp", altText: "Branded Trophy" }],
+        images: [{ url: "/assets/trophies/3.webp", altText: "Branding Trophy" }],
         subImages: [
-            { url: "/assets/trophies/3.webp", altText: "Branded Trophy" },
-            { url: "/assets/trophies/4.webp", altText: "Branded Trophy Side" }
+            { url: "/assets/trophies/3.webp", altText: "Branding Trophy" },
+            { url: "/assets/trophies/4.webp", altText: "Branding Trophy Side" }
         ],
         stock: 450,
         sku: "TROPHY-002",
@@ -49,15 +49,15 @@ const trophies = [
             size: ["Medium", "Large"],
             material: "Metal",
         },
-        tags: ["branded", "trophy", "events"],
+        tags: ["branding", "trophy", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.5, count: 160 },
         seo: {
-            metaTitle: "Branded Trophies",
+            metaTitle: "Branding Trophies",
             metaDescription:
-                "Branded trophies for ceremonies, competitions, and institute recognition.",
-            keywords: ["branded trophies", "event trophies", "award trophies"],
+                "Branding trophies for ceremonies, competitions, and institute recognition.",
+            keywords: ["branding trophies", "event trophies", "award trophies"],
         },
     },
 

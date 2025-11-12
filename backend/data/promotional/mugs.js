@@ -28,17 +28,17 @@ const mugs = [
   },
 
   {
-    name: "Branded Mugs",
-    slug: "branded-mugs",
+    name: "Branding Mugs",
+    slug: "branding-mugs",
     description:
-      "Enhance your institute’s visibility with Branded Mugs designed for daily use, events, and gifting. These high-quality mugs feature elegant printing and smooth finishes that reflect your coaching institute’s pride and professionalism.",
+      "Enhance your institute’s visibility with Branding Mugs designed for daily use, events, and gifting. These high-quality mugs feature elegant printing and smooth finishes that reflect your coaching institute’s pride and professionalism.",
     price: 279,
     salePrice: 239,
-    images: [{ url: "/assets/mug/mug (11).webp", altText: "Branded Mugs" }],
+    images: [{ url: "/assets/mug/mug (11).webp", altText: "Branding Mugs" }],
     subImages: [
-      { url: "/assets/mug/mug (11).webp", altText: "Branded Mugs Side View" },
-      { url: "/assets/mug/mug (10).webp", altText: "Branded Mugs Top View" },
-      { url: "/assets/mug/mug (12).webp", altText: "Branded Mugs Angle View" }
+      { url: "/assets/mug/mug (11).webp", altText: "Branding Mugs Side View" },
+      { url: "/assets/mug/mug (10).webp", altText: "Branding Mugs Top View" },
+      { url: "/assets/mug/mug (12).webp", altText: "Branding Mugs Angle View" }
     ],
     stock: 160,
     sku: "MUG-002",
@@ -47,15 +47,15 @@ const mugs = [
       size: ["330 ml"],
       material: "Ceramic",
     },
-    tags: ["branded mug", "gift", "corporate"],
+    tags: ["branding mug", "gift", "corporate"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.6, count: 210 },
     seo: {
-      metaTitle: "Branded Mugs",
+      metaTitle: "Branding Mugs",
       metaDescription:
-        "Premium branded mugs featuring high-quality print for promotion & gifting.",
-      keywords: ["branded mugs", "corporate gift", "print mugs"],
+        "Premium branding mugs featuring high-quality print for promotion & gifting.",
+      keywords: ["branding mugs", "corporate gift", "print mugs"],
     },
   },
 

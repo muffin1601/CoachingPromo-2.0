@@ -3,7 +3,7 @@ const mousePads = [
         name: "Custom Mouse Pads",
         slug: "custom-mouse-pads",
         description:
-            "Keep your coaching institute’s workspace professional and branded with Custom Mouse Pads. Personalize each pad with your logo, name, or colors to create a cohesive and stylish look for faculty desks, student workstations, and offices.",
+            "Keep your coaching institute’s workspace professional and branding with Custom Mouse Pads. Personalize each pad with your logo, name, or colors to create a cohesive and stylish look for faculty desks, student workstations, and offices.",
         price: 149,
         salePrice: 129,
         images: [{ url: "/assets/mousepads/1.webp", altText: "Custom Mouse Pad" }],
@@ -27,22 +27,22 @@ const mousePads = [
             metaTitle: "Custom Mouse Pads",
             metaDescription:
                 "Custom mouse pads with institute branding, personalization, and elegant designs.",
-            keywords: ["custom mouse pads", "personalized mouse pads", "branded mouse pads"],
+            keywords: ["custom mouse pads", "personalized mouse pads", "branding mouse pads"],
         },
     },
 
     {
-        name: "Branded Mouse Pads",
-        slug: "branded-mouse-pads",
+        name: "Branding Mouse Pads",
+        slug: "branding-mouse-pads",
         description:
-            "Promote your institute’s identity with Branded Mouse Pads designed for daily use and events. Durable and sleek, they are perfect for classrooms, offices, and staff workspaces while enhancing brand recognition.",
+            "Promote your institute’s identity with Branding Mouse Pads designed for daily use and events. Durable and sleek, they are perfect for classrooms, offices, and staff workspaces while enhancing brand recognition.",
         price: 129,
         salePrice: 109,
-        images: [{ url: "/assets/mousepads/4.webp", altText: "Branded Mouse Pad" }],
+        images: [{ url: "/assets/mousepads/4.webp", altText: "Branding Mouse Pad" }],
         subImages: [
-            { url: "/assets/mousepads/4.webp", altText: "Branded Mouse Pad" },
-            { url: "/assets/mousepads/5.webp", altText: "Branded Mouse Pad Side" },
-            { url: "/assets/mousepads/6.webp", altText: "Branded Mouse Pad Close-up" }
+            { url: "/assets/mousepads/4.webp", altText: "Branding Mouse Pad" },
+            { url: "/assets/mousepads/5.webp", altText: "Branding Mouse Pad Side" },
+            { url: "/assets/mousepads/6.webp", altText: "Branding Mouse Pad Close-up" }
         ],
         stock: 650,
         sku: "MOUSEPAD-002",
@@ -51,15 +51,15 @@ const mousePads = [
             size: ["Standard"],
             material: "Rubber + Cloth",
         },
-        tags: ["branded", "mouse pad", "events"],
+        tags: ["branding", "mouse pad", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.4, count: 170 },
         seo: {
-            metaTitle: "Branded Mouse Pads",
+            metaTitle: "Branding Mouse Pads",
             metaDescription:
-                "Branded mouse pads for offices, classrooms, seminars, and daily work.",
-            keywords: ["branded mouse pads", "logo mouse pads", "promotional mouse pads"],
+                "Branding mouse pads for offices, classrooms, seminars, and daily work.",
+            keywords: ["branding mouse pads", "logo mouse pads", "promotional mouse pads"],
         },
     },
 

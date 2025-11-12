@@ -1,3 +1,4 @@
+//promotional items
 const mugs = require('./promotional/mugs.js');
 const bottles = require('./promotional/bottles.js');
 const diarySets = require('./promotional/diarySets.js');
@@ -15,12 +16,26 @@ const mousePads = require('./promotional/MousePads.js');
 const photoFrames = require('./promotional/photoFrames.js');
 const stressBalls = require('./promotional/stressBalls.js');
 
+//stationery
+const binderClips = require('./stationery/binderClips.js');
+const filesFolders = require('./stationery/filesFolders.js');
+const graduationFolders = require('./stationery/graduationFolders.js');
+const handbills = require('./stationery/handbills.js');
+const lanyards = require('./stationery/lanyards.js');
+const notebooks = require('./stationery/notebooks.js');
+const notepads = require('./stationery/notepads.js');
+const pens = require('./stationery/pens.js');
+const attendanceRegisters = require('./stationery/attendanceRegisters.js');
+const tableCalendars = require('./stationery/tableCalenders.js');
+const wallCalendars = require('./stationery/wallCalenders.js');
+const examPads = require('./stationery/examPads.js');
+
 const seedData = [
   // --- Category: Apparel ---
   {
     name: "Apparel",
     slug: "apparel-accessories",
-    description: "A wide selection of custom branded apparel for students and faculty.",
+    description: "A wide selection of custom branding apparel for students and faculty.",
     image: "/assets/category/apparel.webp",
     seo: {
       metaTitle: "Custom Apparel | T-Shirts, Hoodies, Graduation Gear",
@@ -96,7 +111,7 @@ const seedData = [
             isFeatured: true,
             isActive: true,
             ratings: { average: 4.7, count: 60 },
-            seo: { metaTitle: "Buy Branded Sweatshirts", metaDescription: "Order custom printed sweatshirts.", keywords: ["fleece top", "warm jumper"] },
+            seo: { metaTitle: "Buy Branding Sweatshirts", metaDescription: "Order custom printed sweatshirts.", keywords: ["fleece top", "warm jumper"] },
           },
         ],
       },
@@ -136,7 +151,7 @@ const seedData = [
         image: "/assets/apparel/hoodie.webp",
         seo: {
           metaTitle: "Hoodies and Jackets",
-          metaDescription: "Branded hoodies and jackets for ultimate comfort and team spirit.",
+          metaDescription: "Branding hoodies and jackets for ultimate comfort and team spirit.",
           keywords: ["hoodie", "jacket", "outerwear"],
         },
         products: [
@@ -154,7 +169,7 @@ const seedData = [
             isFeatured: true,
             isActive: true,
             ratings: { average: 4.4, count: 70 },
-            seo: { metaTitle: "Shop Branded Hoodies", metaDescription: "Customizable high-quality hoodies.", keywords: ["university hoodie", "team jacket"] },
+            seo: { metaTitle: "Shop Branding Hoodies", metaDescription: "Customizable high-quality hoodies.", keywords: ["university hoodie", "team jacket"] },
           },
         ],
       },
@@ -397,7 +412,7 @@ const seedData = [
   {
     name: "Bags",
     slug: "bags",
-    description: "A selection of custom branded bags for students and events.",
+    description: "A selection of custom branding bags for students and events.",
     image: "/assets/category/bag.webp",
     seo: {
       metaTitle: "Custom Bags | Backpacks, Totes, Messenger",
@@ -412,7 +427,7 @@ const seedData = [
         image: "/assets/institutebag.png",
         seo: {
           metaTitle: "Institute Backpacks",
-          metaDescription: "Ergonomic and durable backpacks branded for your educational institution.",
+          metaDescription: "Ergonomic and durable backpacks branding for your educational institution.",
           keywords: ["institute bag", "school bag", "heavy duty backpack"],
         },
         products: [
@@ -430,7 +445,7 @@ const seedData = [
             isFeatured: true,
             isActive: true,
             ratings: { average: 4.6, count: 85 },
-            seo: { metaTitle: "Buy Institute Backpack", metaDescription: "Order bulk university backpacks.", keywords: ["branded bag", "college backpack"] },
+            seo: { metaTitle: "Buy Institute Backpack", metaDescription: "Order bulk university backpacks.", keywords: ["branding bag", "college backpack"] },
           },
         ],
       },
@@ -469,7 +484,7 @@ const seedData = [
         description: "Stylish cross-body bags for carrying essentials and laptops.",
         image: "/assets/messengerbag.png",
         seo: {
-          metaTitle: "Branded Messenger Bags",
+          metaTitle: "Branding Messenger Bags",
           metaDescription: "Durable and practical messenger bags with shoulder straps for professionals.",
           keywords: ["messenger bag", "laptop bag", "cross body"],
         },
@@ -546,7 +561,7 @@ const seedData = [
             isFeatured: false,
             isActive: true,
             ratings: { average: 4.5, count: 75 },
-            seo: { metaTitle: "Shop Branded Backpacks", metaDescription: "Durable and stylish custom backpacks.", keywords: ["student bag", "daily backpack"] },
+            seo: { metaTitle: "Shop Branding Backpacks", metaDescription: "Durable and stylish custom backpacks.", keywords: ["student bag", "daily backpack"] },
           },
         ],
       },
@@ -585,7 +600,7 @@ const seedData = [
   {
     name: "Promotional Items",
     slug: "promotional-items",
-    description: "Custom branded merchandise for marketing and giveaways.",
+    description: "Custom branding merchandise for marketing and giveaways.",
     image: "/assets/category/promotional-items.webp",
     seo: {
       metaTitle: "Custom Promotional Items | Mugs, Bottles, Diaries",
@@ -599,7 +614,7 @@ const seedData = [
         description: "Custom printed ceramic mugs.",
         image: "/assets/mug.png",
         seo: {
-          metaTitle: "Custom Branded Mugs",
+          metaTitle: "Custom Branding Mugs",
           metaDescription: "Ceramic and travel mugs for corporate gifting and promotion.",
           keywords: ["mug", "coffee mug", "ceramic"],
         },
@@ -608,7 +623,7 @@ const seedData = [
       {
         name: "Water Bottle",
         slug: "water-bottle",
-        description: "Branded water bottles in various materials.",
+        description: "Branding water bottles in various materials.",
         image: "/assets/waterbottle.png",
         seo: {
           metaTitle: "Custom Water Bottles",
@@ -648,7 +663,7 @@ const seedData = [
         image: "/assets/mobilestand.png",
         seo: {
           metaTitle: "Custom Mobile Stands",
-          metaDescription: "Branded desktop mobile phone stands and holders.",
+          metaDescription: "Branding desktop mobile phone stands and holders.",
           keywords: ["mobile stand", "phone holder", "desk accessory"],
         },
         products: mobileStands,
@@ -668,10 +683,10 @@ const seedData = [
       {
         name: "Wall Clocks",
         slug: "wall-clocks",
-        description: "Large, branded clocks for walls.",
+        description: "Large, branding clocks for walls.",
         image: "/assets/wallclock.png",
         seo: {
-          metaTitle: "Custom Branded Wall Clocks",
+          metaTitle: "Custom Branding Wall Clocks",
           metaDescription: "Large wall clocks with custom logo printing for offices and institutions.",
           keywords: ["wall clock", "office clock", "timepiece"],
         },
@@ -695,7 +710,7 @@ const seedData = [
         description: "Custom-printed mouse pads for computer users.",
         image: "/assets/mousepad.png",
         seo: {
-          metaTitle: "Custom Branded Mouse Pads",
+          metaTitle: "Custom Branding Mouse Pads",
           metaDescription: "Personalized mouse pads with logos and images for offices and schools.",
           keywords: ["mouse pad", "computer accessory", "desk mat"],
         },
@@ -704,7 +719,7 @@ const seedData = [
       {
         name: "Photo Frame",
         slug: "photo-frame",
-        description: "Branded photo frames for desks and walls.",
+        description: "Branding photo frames for desks and walls.",
         image: "/assets/photoframe.png",
         seo: {
           metaTitle: "Custom Photo Frames",
@@ -732,7 +747,7 @@ const seedData = [
         image: "/assets/planner.png",
         seo: {
           metaTitle: "Custom Planners and Organizers",
-          metaDescription: "Branded daily, weekly, and monthly planners for organization.",
+          metaDescription: "Branding daily, weekly, and monthly planners for organization.",
           keywords: ["planner", "organizer", "agenda"],
         },
         products: planners,
@@ -792,11 +807,11 @@ const seedData = [
   {
     name: "Stationery",
     slug: "stationery",
-    description: "Essential custom-branded office and school supplies.",
+    description: "Essential custom-branding office and school supplies.",
     image: "/assets/category/stationery.webp",
     seo: {
       metaTitle: "Custom Stationery | Notebooks, Pens, Calendars",
-      metaDescription: "Branded notebooks, pens, highlighters, and files for school and office use.",
+      metaDescription: "Branding notebooks, pens, highlighters, and files for school and office use.",
       keywords: ["stationery", "office supplies", "school supplies", "notebooks", "pens"],
     },
     subcategories: [
@@ -810,24 +825,7 @@ const seedData = [
           metaDescription: "Desktop calendars with custom printing for annual corporate gifting.",
           keywords: ["table calendar", "desk calendar", "annual planner"],
         },
-        products: [
-          {
-            name: "Table Calendar",
-            slug: "table-calendar-product",
-            description: "Custom-printed desk calendar, perfect for corporate year-end gifts.",
-            price: 6.99,
-            salePrice: null,
-            images: [{ url: "/assets/tablecalender.png", altText: "Custom Table Calendar" }],
-            stock: 800,
-            sku: "STA-TCL-001",
-            attributes: { color: ["Custom Print"], size: ["A5"], material: "Paper/Cardboard" },
-            tags: ["stationery", "calendar", "desk"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.5, count: 250 },
-            seo: { metaTitle: "Buy Custom Table Calendars", metaDescription: "Branded desktop calendars in bulk.", keywords: ["promotional calendar", "monthly display"] },
-          },
-        ],
+        products: tableCalendars,
       },
       {
         name: "Wall Calendar",
@@ -839,53 +837,7 @@ const seedData = [
           metaDescription: "Large, monthly wall calendars with custom images and branding.",
           keywords: ["wall calendar", "hanging calendar", "yearly planner"],
         },
-        products: [
-          {
-            name: "Wall Calendar",
-            slug: "wall-calendar-product",
-            description: "Large format, custom wall calendar with glossy finish and spiral binding.",
-            price: 8.99,
-            salePrice: null,
-            images: [{ url: "/assets/wallcalender.png", altText: "Custom Wall Calendar" }],
-            stock: 600,
-            sku: "STA-WCL-002",
-            attributes: { color: ["Custom Print"], size: ["A3"], material: "Glossy Paper" },
-            tags: ["stationery", "calendar", "wall"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.6, count: 180 },
-            seo: { metaTitle: "Buy Branded Wall Calendars", metaDescription: "Order large custom-printed calendars.", keywords: ["office calendar", "photo calendar"] },
-          },
-        ],
-      },
-      {
-        name: "Binder Clips",
-        slug: "binder-clips",
-        description: "Metal clips for binding and holding papers.",
-        image: "/assets/binderclip.png",
-        seo: {
-          metaTitle: "Office Binder Clips",
-          metaDescription: "Assorted sizes of durable metal binder clips for document management.",
-          keywords: ["binder clips", "paper clips", "office supplies"],
-        },
-        products: [
-          {
-            name: "Binder Clips",
-            slug: "binder-clips-product",
-            description: "Set of standard metal binder clips in assorted sizes for document organization.",
-            price: 6.99,
-            salePrice: null,
-            images: [{ url: "/assets/binderclip.png", altText: "Binder Clips" }],
-            stock: 1200,
-            sku: "STA-BCL-003",
-            attributes: { color: ["Black"], size: ["Assorted"], material: "Metal" },
-            tags: ["stationery", "office", "clips"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.4, count: 90 },
-            seo: { metaTitle: "Buy Bulk Binder Clips", metaDescription: "Durable office paper clips.", keywords: ["document holder", "clip set"] },
-          },
-        ],
+        products: wallCalendars,
       },
       {
         name: "Exam Pad",
@@ -897,24 +849,7 @@ const seedData = [
           metaDescription: "Hardboard exam pads with clip, fully printable with institutional branding.",
           keywords: ["exam pad", "writing pad", "clipboard"],
         },
-        products: [
-          {
-            name: "Exam Pad",
-            slug: "exam-pad-product",
-            description: "Hardboard exam pad with strong clip, customizable with institutional logo.",
-            price: 5.99,
-            salePrice: null,
-            images: [{ url: "/assets/exampad.png", altText: "Custom Exam Pad" }],
-            stock: 700,
-            sku: "STA-EXM-006",
-            attributes: { color: ["Brown", "Custom Print"], size: ["Legal/A4"], material: "Hardboard" },
-            tags: ["stationery", "exam", "school"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.5, count: 160 },
-            seo: { metaTitle: "Buy Custom Exam Pads", metaDescription: "Branded hardboard writing pads.", keywords: ["clip board", "student writing pad"] },
-          },
-        ],
+        products: examPads,
       },
       {
         name: "Notebook",
@@ -923,27 +858,10 @@ const seedData = [
         image: "/assets/notebook.png",
         seo: {
           metaTitle: "Custom Notebooks",
-          metaDescription: "Branded notebooks for school, office, and corporate gifting.",
+          metaDescription: "Branding notebooks for school, office, and corporate gifting.",
           keywords: ["notebook", "diary", "journal"],
         },
-        products: [
-          {
-            name: "Notebook",
-            slug: "notebook-product",
-            description: "Spiral-bound or stitched notebook with customizable cover.",
-            price: 3.99,
-            salePrice: 2.99,
-            images: [{ url: "/assets/notebook.png", altText: "Custom Notebook" }],
-            stock: 2500,
-            sku: "STA-NTB-007",
-            attributes: { color: ["Custom Cover"], size: ["A4", "A5"], material: "Paper/Cardboard" },
-            tags: ["stationery", "notebook", "writing"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.7, count: 320 },
-            seo: { metaTitle: "Buy Bulk Custom Notebooks", metaDescription: "Affordable branded notebooks for students.", keywords: ["exercise book", "memo book"] },
-          },
-        ],
+        products: notebooks,
       },
       {
         name: "Notepad",
@@ -952,201 +870,43 @@ const seedData = [
         image: "/assets/notepad.png",
         seo: {
           metaTitle: "Custom Notepads",
-          metaDescription: "Small, branded notepads and memo pads for quick notes.",
+          metaDescription: "Small, branding notepads and memo pads for quick notes.",
           keywords: ["notepad", "memo pad", "sticky notes"],
         },
-        products: [
-          {
-            name: "Notepad",
-            slug: "notepad-product",
-            description: "Small, tear-off notepad with a printed header or logo.",
-            price: 2.99,
-            salePrice: null,
-            images: [{ url: "/assets/notepad.png", altText: "Custom Notepad" }],
-            stock: 3000,
-            sku: "STA-NPD-008",
-            attributes: { color: ["White", "Yellow"], size: ["A6"], material: "Paper" },
-            tags: ["stationery", "notepad", "memo"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.4, count: 200 },
-            seo: { metaTitle: "Buy Branded Notepads", metaDescription: "Order bulk memo pads.", keywords: ["scratch pad", "small notes"] },
-          },
-        ],
+        products: notepads,
       },
       {
-        name: "Markers",
-        slug: "markers",
-        description: "Permanent and whiteboard markers.",
-        image: "/assets/markers.png",
+        name: "Customized Pens",
+        slug: "customized-pens",
+        description: "Premium engraved metal pens and affordable plastic pens for professional and promotional use. Perfect for institutes, offices, and gifting.",
+        image: "/assets/customizedpens.png",
         seo: {
-          metaTitle: "Permanent and Whiteboard Markers",
-          metaDescription: "Fine-tip and broad-tip markers for presentation and general use.",
-          keywords: ["markers", "permanent marker", "whiteboard pen"],
+          metaTitle: "Customized Pens (Metal & Plastic)",
+          metaDescription:
+            "Explore premium engraved metal pens and custom-printed plastic pens for professional branding and promotional events.",
+          keywords: ["custom pens", "engraved pens", "promotional pens", "metal pens", "plastic pens"],
         },
-        products: [
-          {
-            name: "Markers",
-            slug: "markers-product",
-            description: "Set of permanent or whiteboard marker pens with durable tips.",
-            price: 3.99,
-            salePrice: null,
-            images: [{ url: "/assets/markers.png", altText: "Markers" }],
-            stock: 1500,
-            sku: "STA-MRK-010",
-            attributes: { color: ["Black", "Red", "Blue"], size: ["Standard"], material: "Plastic" },
-            tags: ["stationery", "marker", "writing"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.5, count: 120 },
-            seo: { metaTitle: "Buy Bulk Marker Pens", metaDescription: "Office and school marker supplies.", keywords: ["sharpie", "dry erase marker"] },
-          },
-        ],
+        products: pens,
       },
       {
-        name: "Metal Pen",
-        slug: "metal-pen",
-        description: "Premium, engraved metal pens.",
-        image: "/assets/metalpen.png",
-        seo: {
-          metaTitle: "Custom Metal Pens (Engraved)",
-          metaDescription: "High-quality, executive metal pens suitable for corporate gifts and personalized branding.",
-          keywords: ["metal pen", "executive pen", "engraved pen"],
-        },
-        products: [
-          {
-            name: "Metal Pen",
-            slug: "metal-pen-product",
-            description: "Executive metal ballpoint pen, suitable for laser engraving of logos.",
-            price: 7.99,
-            salePrice: 6.99,
-            images: [{ url: "/assets/metalpen.png", altText: "Custom Metal Pen" }],
-            stock: 500,
-            sku: "STA-MPN-011",
-            attributes: { color: ["Silver", "Black"], size: ["Standard"], material: "Metal" },
-            tags: ["stationery", "pen", "gift"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.8, count: 150 },
-            seo: { metaTitle: "Buy Branded Metal Pens", metaDescription: "Executive pens for corporate gifting.", keywords: ["ballpoint pen", "engraving pen"] },
-          },
-        ],
-      },
-      {
-        name: "Plastic Pen",
-        slug: "plastic-pen",
-        description: "Affordable, custom-printed plastic pens for mass giveaways.",
-        image: "/assets/plasticpen.png",
-        seo: {
-          metaTitle: "Custom Plastic Pens (Promotional)",
-          metaDescription: "Bulk, affordable plastic pens with custom logo printing for promotional giveaways.",
-          keywords: ["plastic pen", "promotional pen", "ballpoint"],
-        },
-        products: [
-          {
-            name: "Plastic Pen",
-            slug: "plastic-pen-product",
-            description: "Affordable plastic ballpoint pen, ideal for large-scale giveaways and events.",
-            price: 3.49,
-            salePrice: null,
-            images: [{ url: "/assets/plasticpen.png", altText: "Custom Plastic Pen" }],
-            stock: 5000,
-            sku: "STA-PPN-012",
-            attributes: { color: ["Blue", "Red", "Green"], size: ["Standard"], material: "Plastic" },
-            tags: ["stationery", "pen", "giveaway"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.3, count: 400 },
-            seo: { metaTitle: "Buy Bulk Plastic Pens", metaDescription: "Inexpensive custom pens for events.", keywords: ["printed pen", "marketing giveaway"] },
-          },
-        ],
-      },
-      {
-        name: "File & Folder",
-        slug: "file-and-folder",
-        description: "Assorted professional files and folders.",
+        name: "Branding Files & Folders",
+        slug: "branding-files-and-folders",
+        description:
+          "A complete range of custom-branding files and folders for professional document storage, binding, and organization. Perfect for institutes, offices, and events.",
         image: "/assets/filefolder1.png",
         seo: {
-          metaTitle: "Custom Files and Folders",
-          metaDescription: "Branded office files, folders, and portfolios for document storage.",
-          keywords: ["file folder", "document holder", "portfolio"],
+          metaTitle: "Customized Files and Folders for Branding",
+          metaDescription:
+            "Explore premium office files, kobra binders, and paper folders with your institute or company branding. Perfect for professional document organization.",
+          keywords: [
+            "custom files and folders",
+            "office file branding",
+            "document organizers",
+            "kobra files",
+            "paper folders",
+          ],
         },
-        products: [
-          {
-            name: "File & Folder",
-            slug: "file-and-folder-product",
-            description: "PVC or cardboard files and folders for document organization and presentation.",
-            price: 6.99,
-            salePrice: null,
-            images: [{ url: "/assets/filefolder1.png", altText: "Custom File & Folder" }],
-            stock: 600,
-            sku: "STA-FFD-013",
-            attributes: { color: ["Blue", "Green"], size: ["Legal/A4"], material: "PVC/Cardboard" },
-            tags: ["stationery", "office", "document"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.4, count: 110 },
-            seo: { metaTitle: "Buy Branded Files and Folders", metaDescription: "Office document organizers.", keywords: ["binder file", "presentation folder"] },
-          },
-        ],
-      },
-      {
-        name: "Kobra File",
-        slug: "kobra-file",
-        description: "A specific type of office file for secure document binding.",
-        image: "/assets/kobrafile.png",
-        seo: {
-          metaTitle: "Kobra Files (Binding Files)",
-          metaDescription: "Durable files with specific binding mechanisms for long-term document archiving.",
-          keywords: ["kobra file", "archiving file", "binding file"],
-        },
-        products: [
-          {
-            name: "Kobra File",
-            slug: "kobra-file-product",
-            description: "Durable kobra file for secure and long-term document binding and archiving.",
-            price: 4.99,
-            salePrice: null,
-            images: [{ url: "/assets/kobrafile.png", altText: "Kobra File" }],
-            stock: 400,
-            sku: "STA-KBF-014",
-            attributes: { color: ["Maroon", "Black"], size: ["Legal/A4"], material: "Cardboard" },
-            tags: ["stationery", "office", "binding"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.3, count: 80 },
-            seo: { metaTitle: "Buy Kobra Binding Files", metaDescription: "Secure files for document archiving.", keywords: ["document binder", "hardcover file"] },
-          },
-        ],
-      },
-      {
-        name: "Paper File Folder",
-        slug: "paper-file-folder",
-        description: "Lightweight manila or cardstock folders.",
-        image: "/assets/paperfile.png",
-        seo: {
-          metaTitle: "Paper File Folders",
-          metaDescription: "Manila or cardstock folders for basic document organization and presentation.",
-          keywords: ["paper folder", "manila folder", "document cover"],
-        },
-        products: [
-          {
-            name: "Paper File Folder",
-            slug: "paper-file-folder-product",
-            description: "Simple cardstock file folder for quick and easy document organization.",
-            price: 5.99,
-            salePrice: null,
-            images: [{ url: "/assets/paperfile.png", altText: "Paper File Folder" }],
-            stock: 900,
-            sku: "STA-PFF-015",
-            attributes: { color: ["Yellow", "Blue"], size: ["A4"], material: "Card Stock" },
-            tags: ["stationery", "file", "paper"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.2, count: 130 },
-            seo: { metaTitle: "Buy Bulk Paper Folders", metaDescription: "Affordable document folders.", keywords: ["card folder", "office file"] },
-          },
-        ],
+        products: filesFolders,
       },
       {
         name: "Graduation Degree Folders",
@@ -1158,24 +918,26 @@ const seedData = [
           metaDescription: "Premium folders to safely hold and present degree certificates.",
           keywords: ["degree folder", "certificate holder", "diploma"],
         },
-        products: [
-          {
-            name: "Graduation Degree Folders",
-            slug: "graduation-degree-folders-product",
-            description: "High-quality, padded folders to protect and present degree certificates.",
-            price: 9.99,
-            salePrice: null,
-            images: [{ url: "/assets/graddegree.png", altText: "Graduation Degree Folder" }],
-            stock: 600,
-            sku: "APP-GRD-FLD",
-            attributes: { color: ["Black", "Maroon"], size: ["A4/Legal"], material: "Vinyl/Leatherette" },
-            tags: ["graduation", "folder", "certificate"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.9, count: 250 },
-            seo: { metaTitle: "Buy Degree Folders", metaDescription: "Custom certificate holders for convocation.", keywords: ["diploma folder", "certificate presentation"] },
-          },
-        ],
+        products: graduationFolders,
+      },
+      {
+        name: "Binder Clips",
+        slug: "binder-clips",
+        description:
+          "Durable and customizable binder clips for institutes and offices. Perfect for holding documents neatly while showcasing your brand logo.",
+        image: "/assets/binderclips/1.webp",
+        seo: {
+          metaTitle: "Custom Binder Clips for Branding",
+          metaDescription:
+            "Explore custom, branding, and designer binder clips ideal for institutes, offices, and events. Personalize your stationery with logos and colors.",
+          keywords: [
+            "custom binder clips",
+            "branding stationery",
+            "office accessories",
+            "designer clips",
+          ],
+        },
+        products: binderClips,
       },
       {
         name: "Handbill",
@@ -1187,53 +949,19 @@ const seedData = [
           metaDescription: "Affordable printing service for flyers, handbills, and leaflets for promotion.",
           keywords: ["handbill", "flyer", "leaflet printing"],
         },
-        products: [
-          {
-            name: "Handbill",
-            slug: "handbill-product",
-            description: "Custom-printed promotional handbills/flyers in various sizes and finishes.",
-            price: 2.99,
-            salePrice: null,
-            images: [{ url: "/assets/handbill.png", altText: "Custom Handbill" }],
-            stock: 5000, // Sold in high volume
-            sku: "STA-HBL-016",
-            attributes: { color: ["Custom Print"], size: ["A5", "A4"], material: "Glossy Paper" },
-            tags: ["stationery", "printing", "promotional"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.5, count: 200 },
-            seo: { metaTitle: "Order Custom Flyers", metaDescription: "Bulk printing of promotional handbills.", keywords: ["leaflet design", "printing service"] },
-          },
-        ],
+        products: handbills,
       },
       {
         name: "Lanyard and ID Card",
         slug: "lanyard-and-id-card",
-        description: "Branded lanyards and ID card holders/printing.",
+        description: "Branding lanyards and ID card holders/printing.",
         image: "/assets/lanyardid.png",
         seo: {
           metaTitle: "Custom Lanyards and ID Cards",
-          metaDescription: "Branded lanyards and ID card printing for staff, students, and events.",
+          metaDescription: "Branding lanyards and ID card printing for staff, students, and events.",
           keywords: ["lanyard", "ID card", "badge holder"],
         },
-        products: [
-          {
-            name: "Lanyard and ID Card",
-            slug: "lanyard-and-id-card-product",
-            description: "Custom-printed lanyard with a plastic ID card holder and card printing service.",
-            price: 4.99,
-            salePrice: null,
-            images: [{ url: "/assets/lanyardid.png", altText: "Custom Lanyard and ID Card" }],
-            stock: 1000,
-            sku: "STA-LID-017",
-            attributes: { color: ["Custom Print"], size: ["Standard"], material: "Polyester/PVC" },
-            tags: ["stationery", "office", "ID"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.7, count: 300 },
-            seo: { metaTitle: "Buy Branded Lanyards and IDs", metaDescription: "Custom staff and student ID card sets.", keywords: ["neck strap", "badge lanyard"] },
-          },
-        ],
+        products: lanyards,
       },
       {
         name: "Attendance Registers",
@@ -1245,24 +973,7 @@ const seedData = [
           metaDescription: "Official logbooks for marking and recording student or staff attendance.",
           keywords: ["attendance register", "logbook", "record book"],
         },
-        products: [
-          {
-            name: "Attendance Registers",
-            slug: "attendance-registers-product",
-            description: "Durable, bound register for recording daily student or staff attendance.",
-            price: 6.99,
-            salePrice: null,
-            images: [{ url: "/assets/register.png", altText: "Attendance Register" }],
-            stock: 300,
-            sku: "STA-REG-018",
-            attributes: { color: ["Green", "Blue"], size: ["A4"], material: "Hardbound Paper" },
-            tags: ["stationery", "school", "office"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.6, count: 70 },
-            seo: { metaTitle: "Buy Attendance Registers", metaDescription: "Official logbooks for schools.", keywords: ["student register", "roll book"] },
-          },
-        ],
+        products: attendanceRegisters,
       },
     ],
   },

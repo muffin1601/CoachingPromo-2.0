@@ -32,17 +32,17 @@ const bottles = [
   },
 
   {
-    name: "Branded Water Bottles",
-    slug: "branded-water-bottles",
+    name: "Branding Water Bottles",
+    slug: "branding-water-bottles",
     description:
-      "Promote your institute’s identity with Branded Water Bottles designed for daily use, events, and giveaways. Durable and sleek, these bottles elevate brand visibility during classrooms, seminars, and sports activities.",
+      "Promote your institute’s identity with Branding Water Bottles designed for daily use, events, and giveaways. Durable and sleek, these bottles elevate brand visibility during classrooms, seminars, and sports activities.",
     price: 249,
     salePrice: 199,
-    images: [{ url: "/assets/bottle/4 image.webp", altText: "Branded Water Bottle" }],
+    images: [{ url: "/assets/bottle/4 image.webp", altText: "Branding Water Bottle" }],
     subImages: [
-      { url: "/assets/bottle/4 image.webp", altText: "Branded Water Bottle" },
-      { url: "/assets/bottle/5 image.webp", altText: "Branded Water Bottle Side" },
-      { url: "/assets/bottle/6 image.webp", altText: "Branded Water Bottle Side" },
+      { url: "/assets/bottle/4 image.webp", altText: "Branding Water Bottle" },
+      { url: "/assets/bottle/5 image.webp", altText: "Branding Water Bottle Side" },
+      { url: "/assets/bottle/6 image.webp", altText: "Branding Water Bottle Side" },
     ],
     stock: 230,
     sku: "BOT-002",
@@ -51,15 +51,15 @@ const bottles = [
       size: ["700 ml"],
       material: "Plastic",
     },
-    tags: ["branded bottle", "water bottle", "promotion"],
+    tags: ["branding bottle", "water bottle", "promotion"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.4, count: 170 },
     seo: {
-      metaTitle: "Branded Water Bottles",
+      metaTitle: "Branding Water Bottles",
       metaDescription:
-        "Promotional branded water bottles ideal for institutes, seminars & sports.",
-      keywords: ["branded bottle", "promotional bottle", "logo bottle"],
+        "Promotional branding water bottles ideal for institutes, seminars & sports.",
+      keywords: ["branding bottle", "promotional bottle", "logo bottle"],
     },
   },
 

@@ -32,17 +32,17 @@ const planners = [
     },
 
     {
-        name: "Branded Planners",
-        slug: "branded-planners",
+        name: "Branding Planners",
+        slug: "branding-planners",
         description:
-            "Promote your institute’s identity with Branded Planners designed for daily use, workshops, and events. Durable and stylish, they are perfect for planning, scheduling, and enhancing your institute’s brand visibility.",
+            "Promote your institute’s identity with Branding Planners designed for daily use, workshops, and events. Durable and stylish, they are perfect for planning, scheduling, and enhancing your institute’s brand visibility.",
         price: 249,
         salePrice: 229,
-        images: [{ url: "/assets/planners/4.webp", altText: "Branded Planner" }],
+        images: [{ url: "/assets/planners/4.webp", altText: "Branding Planner" }],
         subImages: [
-            { url: "/assets/planners/4.webp", altText: "Branded Planner" },
-            { url: "/assets/planners/5.webp", altText: "Branded Planner Side" },
-            { url: "/assets/planners/6.webp", altText: "Branded Planner Open" }
+            { url: "/assets/planners/4.webp", altText: "Branding Planner" },
+            { url: "/assets/planners/5.webp", altText: "Branding Planner Side" },
+            { url: "/assets/planners/6.webp", altText: "Branding Planner Open" }
         ],
         stock: 600,
         sku: "PLAN-002",
@@ -51,15 +51,15 @@ const planners = [
             size: ["A5"],
             material: "Leatherette",
         },
-        tags: ["branded", "planner", "events"],
+        tags: ["branding", "planner", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.4, count: 180 },
         seo: {
-            metaTitle: "Branded Planners",
+            metaTitle: "Branding Planners",
             metaDescription:
-                "Branded planners for offices, classrooms, seminars, and daily use.",
-            keywords: ["branded planners", "event planners", "professional planners"],
+                "Branding planners for offices, classrooms, seminars, and daily use.",
+            keywords: ["branding planners", "event planners", "professional planners"],
         },
     },
 

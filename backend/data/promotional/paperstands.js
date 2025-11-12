@@ -31,16 +31,16 @@ const paperStands = [
     },
 
     {
-        name: "Branded Paper Stands",
-        slug: "branded-paper-stands",
+        name: "Branding Paper Stands",
+        slug: "branding-paper-stands",
         description:
-            "Promote your institute’s identity with Branded Paper Stands designed for offices, classrooms, workshops, and events. Durable and stylish, they are perfect for organizing documents while enhancing your institute’s brand visibility.",
+            "Promote your institute’s identity with Branding Paper Stands designed for offices, classrooms, workshops, and events. Durable and stylish, they are perfect for organizing documents while enhancing your institute’s brand visibility.",
         price: 129,
         salePrice: 109,
-        images: [{ url: "/assets/paperstands/3.webp", altText: "Branded Paper Stand" }],
+        images: [{ url: "/assets/paperstands/3.webp", altText: "Branding Paper Stand" }],
         subImages: [
-            { url: "/assets/paperstands/3.webp", altText: "Branded Paper Stand" },
-            { url: "/assets/paperstands/4.webp", altText: "Branded Paper Stand Side" }
+            { url: "/assets/paperstands/3.webp", altText: "Branding Paper Stand" },
+            { url: "/assets/paperstands/4.webp", altText: "Branding Paper Stand Side" }
         ],
         stock: 600,
         sku: "PS-002",
@@ -49,15 +49,15 @@ const paperStands = [
             size: ["Standard"],
             material: "ABS Plastic",
         },
-        tags: ["branded", "paper stand", "events"],
+        tags: ["branding", "paper stand", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.4, count: 140 },
         seo: {
-            metaTitle: "Branded Paper Stands",
+            metaTitle: "Branding Paper Stands",
             metaDescription:
-                "Branded paper stands for offices, classrooms, seminars, and events.",
-            keywords: ["branded paper stands", "office paper stands", "event paper stands"],
+                "Branding paper stands for offices, classrooms, seminars, and events.",
+            keywords: ["branding paper stands", "office paper stands", "event paper stands"],
         },
     },
 
@@ -87,7 +87,7 @@ const paperStands = [
         seo: {
             metaTitle: "Personalized Paper Stands",
             metaDescription:
-                "Personalized paper stands with names, quotes, and branded designs.",
+                "Personalized paper stands with names, quotes, and branding designs.",
             keywords: ["personalized paper stands", "custom paper stands", "name stands"],
         },
     },

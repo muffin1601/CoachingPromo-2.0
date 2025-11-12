@@ -32,17 +32,17 @@ const diarySets = [
     },
 
     {
-        name: "Branded Diary Sets",
-        slug: "branded-diary-sets",
+        name: "Branding Diary Sets",
+        slug: "branding-diary-sets",
         description:
-            "Promote your institute’s identity with Branded Diary Sets designed for daily use and events. Durable and stylish, they are perfect for classrooms, workshops, seminars, and gifting while enhancing brand recognition.",
+            "Promote your institute’s identity with Branding Diary Sets designed for daily use and events. Durable and stylish, they are perfect for classrooms, workshops, seminars, and gifting while enhancing brand recognition.",
         price: 299,
         salePrice: 279,
-        images: [{ url: "/assets/diarysets/4.webp", altText: "Branded Diary Set" }],
+        images: [{ url: "/assets/diarysets/4.webp", altText: "Branding Diary Set" }],
         subImages: [
-            { url: "/assets/diarysets/4.webp", altText: "Branded Diary Set" },
-            { url: "/assets/diarysets/5.webp", altText: "Branded Diary Set Side" },
-            { url: "/assets/diarysets/6.webp", altText: "Branded Diary Set Open" }
+            { url: "/assets/diarysets/4.webp", altText: "Branding Diary Set" },
+            { url: "/assets/diarysets/5.webp", altText: "Branding Diary Set Side" },
+            { url: "/assets/diarysets/6.webp", altText: "Branding Diary Set Open" }
         ],
         stock: 700,
         sku: "DIARY-002",
@@ -51,14 +51,14 @@ const diarySets = [
             size: ["A5", "A6"],
             material: "Leatherette",
         },
-        tags: ["branded", "diary", "events"],
+        tags: ["branding", "diary", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.4, count: 180 },
         seo: {
-            metaTitle: "Branded Diary Sets",
-            metaDescription: "Professional branded diary sets for events and institute use.",
-            keywords: ["branded diaries", "event diaries", "professional diaries"],
+            metaTitle: "Branding Diary Sets",
+            metaDescription: "Professional branding diary sets for events and institute use.",
+            keywords: ["branding diaries", "event diaries", "professional diaries"],
         },
     },
 

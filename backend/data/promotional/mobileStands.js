@@ -30,19 +30,18 @@ const mobileStands = [
             keywords: ["custom mobile stands", "personalized mobile stand", "desk stand"],
         },
     },
-
     {
-        name: "Branded Mobile Stands",
-        slug: "branded-mobile-stands",
+        name: "Branding Mobile Stands",
+        slug: "branding-mobile-stands",
         description:
-            "Promote your institute’s identity with Branded Mobile Stands designed for classrooms, offices, and events. Durable and sleek, they enhance device accessibility while maintaining your institute’s professional image.",
+            "Promote your institute’s identity with Branding Mobile Stands designed for classrooms, offices, and events. Durable and sleek, they enhance device accessibility while maintaining your institute’s professional image.",
         price: 149,
         salePrice: 129,
-        images: [{ url: "/assets/mobilestands/4.webp", altText: "Branded Mobile Stand" }],
+        images: [{ url: "/assets/mobilestands/4.webp", altText: "Branding Mobile Stand" }],
         subImages: [
-            { url: "/assets/mobilestands/4.webp", altText: "Branded Mobile Stand" },
-            { url: "/assets/mobilestands/5.webp", altText: "Branded Mobile Stand Side" },
-            { url: "/assets/mobilestands/6.webp", altText: "Branded Mobile Stand Back" }
+            { url: "/assets/mobilestands/4.webp", altText: "Branding Mobile Stand" },
+            { url: "/assets/mobilestands/5.webp", altText: "Branding Mobile Stand Side" },
+            { url: "/assets/mobilestands/6.webp", altText: "Branding Mobile Stand Back" }
         ],
         stock: 700,
         sku: "MS-002",
@@ -51,15 +50,15 @@ const mobileStands = [
             size: ["Standard"],
             material: "ABS Plastic",
         },
-        tags: ["branded", "mobile stand", "events"],
+        tags: ["branding", "mobile stand", "events"],
         isFeatured: false,
         isActive: true,
         ratings: { average: 4.4, count: 160 },
         seo: {
-            metaTitle: "Branded Mobile Stands",
+            metaTitle: "Branding Mobile Stands",
             metaDescription:
-                "Branded mobile stands for classrooms, events, offices, and promotions.",
-            keywords: ["branded mobile stands", "event mobile stands", "institute stands"],
+                "Branding mobile stands for classrooms, events, offices, and promotions.",
+            keywords: ["branding mobile stands", "event mobile stands", "institute stands"],
         },
     },
 
