@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* Container */
+.nn-container {
+  padding: 18px;
+  background: #fff;
+  border: 1px solid var(--light-border);
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  font-family: "Outfit", sans-serif;
+}
+
+/* Title */
+.nn-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  margin-bottom: 14px;
+}
+
+/* Grid layout */
+.nn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* Field wrapper */
+.nn-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Label */
+.nn-label {
+  font-size: 15px;
+  color: var(--neutral-gray);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.nn-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--brand-blue);
+}
+
+/* Inputs */
+.nn-input,
+.nn-select {
+  padding: 10px 12px;
+ 
+  border: 1px solid var(--light-border);
+  background: var(--light-bg);
+  font-size: 14px;
+  font-family: "Outfit", sans-serif;
+  transition: 0.2s;
+}
+
+.nn-input:focus,
+.nn-select:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 4px rgba(11, 74, 141, 0.25);
+}
+
+/* Color picker */
+.nn-color {
+  height: 44px;
+  border-radius: 8px;
+  padding: 2px;
+  border: 1px solid var(--light-border);
+  cursor: pointer;
+}
+
+/* Add button */
+.nn-btn {
+  margin-top: 16px;
+  width: 100%;
+  background: var(--brand-blue);
+  border: none;
+  color: #fff;
+  padding: 12px;
+  font-size: 15px;
+  font-family: Outfit, sans-serif;
+  /* border-radius: 10px; */
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.nn-btn:hover {
+  background: var(--brand-orange);
+  transform: translateY(-1px);
+}

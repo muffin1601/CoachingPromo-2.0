@@ -7,14 +7,14 @@ const CustomizationExperience = () => {
   {
     title: "Personalized Round-Neck T-Shirt Customization – Logo Printing for Colleges, Schools & Corporate Branding",
     offer: "Customize Now",
-    href: "https://printkee.com/customize/roundneck",
+    href: "/customize/roundneck",
     img: "/assets/RoundNecktshirt/maroon (1).webp",
     bg: "#fff6e8ff",
   },
   {
     title: "Custom Polo T-Shirt Designer – Premium Logo Branding & Printing for Institutes, Events & Corporate Gifting",
     offer: "Customize Now",
-    href: "https://printkee.com/customize/polotshirt",
+    href: "/customize/polotshirt",
     img: "/assets/Polotshirt/polo5 (1).webp",
     bg: "#fff6e8ff",
   },

@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-blue-dark: #093a6c;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* ----------------------- OVERLAY ----------------------- */
+.sf-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+/* ----------------------- MODAL BOX ----------------------- */
+.sf-modal {
+  width: 420px;
+  max-width: 95%;
+  background: #ffffff;
+ 
+  padding: 28px 28px 35px;
+  border: 1px solid var(--light-border);
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.25);
+  font-family: "Outfit", sans-serif;
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ----------------------- TITLE ----------------------- */
+.sf-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* ----------------------- INPUT GROUP ----------------------- */
+.sf-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sf-field label {
+  font-size: 14px;
+  color: var(--neutral-gray);
+  font-weight: 500;
+}
+
+/* ----------------------- INPUTS ----------------------- */
+.sf-field input {
+  padding: 12px 14px;
+  
+  border: 1px solid var(--light-border);
+  background: var(--light-bg);
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.sf-field input:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 4px rgba(11,74,141,0.25);
+}
+
+/* ----------------------- BUTTONS ----------------------- */
+.sf-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.sf-submit {
+  background: var(--brand-blue);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  transition: 0.25s ease;
+}
+
+.sf-submit:hover {
+  background: var(--brand-blue-dark);
+  transform: translateY(-1px);
+}
+
+.sf-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Cancel Button */
+.sf-cancel {
+  background: transparent;
+  padding: 10px 15px;
+  
+  border: 1px solid var(--brand-blue);
+  color: var(--brand-blue);
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+.sf-cancel:hover {
+  background: rgba(11, 74, 141, 0.08);
+}
+
+/* ----------------------- LOADING SPINNER ----------------------- */
+.sf-loader {
+  width: 14px;
+  height: 14px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

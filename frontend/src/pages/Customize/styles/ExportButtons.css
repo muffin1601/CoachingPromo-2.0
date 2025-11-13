@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* Main container */
+.export-container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 5px 0;
+  font-family: "Outfit", sans-serif;
+}
+
+/* White Card Box */
+.export-card {
+  background: #ffffff;
+  border: 1px solid var(--light-border);
+  padding: 18px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+/* Section Title */
+.export-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.export-title .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Size input grid */
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.size-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.size-row label {
+  font-size: 14px;
+  color: var(--neutral-gray);
+}
+
+.size-row input {
+  width: 80px;
+  padding: 6px 10px;
+  font-size: 14px;
+  
+  border: 1px solid var(--light-border);
+  background: var(--light-bg);
+  transition: 0.2s;
+  font-family: "Outfit", sans-serif;
+}
+
+.size-row input:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 4px rgba(11, 74, 141, 0.2);
+}
+
+.size-row.total label {
+  font-weight: 600;
+}
+
+/* Dropdown Styling */
+.export-dropdown {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  /* border-radius: 10px; */
+  border: 1px solid var(--light-border);
+  background: var(--light-bg);
+  font-size: 14px;
+  color: var(--neutral-gray);
+  font-family: "Outfit", sans-serif;
+  transition: 0.2s;
+}
+
+.export-dropdown:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 4px rgba(11, 74, 141, 0.2);
+}
+
+/* Action buttons */
+.export-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Primary Button */
+.primary-btn {
+  background: var(--brand-blue);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font-size: 18px;
+  /* border-radius: 10px; */
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: 0.25s ease;
+}
+
+.primary-btn:hover {
+  background: var(--brand-orange);
+  transform: translateY(-1px);
+}
+
+/* Outline button */
+.outline-btn {
+  background: transparent;
+  border: 1px solid var(--brand-blue);
+  color: var(--brand-blue);
+  padding: 12px;
+  font-size: 18px;
+  /* border-radius: 10px; */
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  transition: 0.25s ease;
+}
+
+.outline-btn:hover {
+  background: rgba(11, 74, 141, 0.08);
+}
+
+/* ============================= */
+/*          SIZE CHART MODAL     */
+/* ============================= */
+.chart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.chart-box {
+  background: #fff;
+  width: 380px;
+  padding: 20px;
+  /* border-radius: 14px; */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chart-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  margin: 0;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--neutral-gray);
+  transition: 0.25s;
+}
+
+.close-btn:hover {
+  color: var(--brand-blue);
+}
+
+.chart-image {
+  width: 100%;
+  margin-top: 14px;
+  /* border-radius: 10px; */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

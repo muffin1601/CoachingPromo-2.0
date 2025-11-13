@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-blue-dark: #093a6c;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* Container */
+.uc-container {
+  font-family: "Outfit", sans-serif;
+  width: 100%;
+}
+
+/* Upload Box */
+.uc-upload-box {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--light-border);
+  padding: 22px 16px;
+  box-sizing:border-box;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  transition: 0.25s ease;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.06);
+}
+
+.uc-upload-box:hover {
+  background: var(--light-bg);
+  border-color: var(--brand-blue);
+  transform: translateY(-1px);
+}
+
+/* Upload Icon */
+.uc-icon {
+  width: 26px;
+  height: 26px;
+  color: var(--brand-blue);
+  margin-bottom: 8px;
+}
+
+/* Main Text */
+.uc-upload-box p {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  margin: 0;
+}
+
+/* Subtext */
+.uc-subtext {
+  font-size: 12px;
+  color: var(--neutral-gray);
+  display: block;
+  margin-top: 4px;
+}
+
+/* Hidden File Input */
+.uc-file-input {
+  display: none;
+}

@@ -15,10 +15,9 @@ body, .top-banner, .navbar, .footer, h1, h2, h3, p {
 }
 
 html, body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  
+  overflow-x: hidden !important;
+  width: 100%;
+}
   .block-middle {
   display: flex;
   gap: 30px; 

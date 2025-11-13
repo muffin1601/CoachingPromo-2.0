@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-blue-dark: #093a6c;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* --------------------------------------
+   OVERLAY
+-------------------------------------- */
+.preview-overlay {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 4000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  font-family: "Outfit", sans-serif;
+}
+
+/* --------------------------------------
+   MODAL BOX
+-------------------------------------- */
+.preview-modal {
+  position: relative;
+  width: 80%;
+  max-width: 95%;
+  background: #ffffff;
+  max-height: 85vh;      /* prevents modal from exceeding screen height */
+  overflow-y: auto; 
+  padding: 28px 28px 32px;
+  border: 1px solid var(--light-border);
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.25s ease-out;
+}
+
+/* Modal fade animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --------------------------------------
+   CLOSE BUTTON
+-------------------------------------- */
+.preview-close-btn {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  background: #ffffff;
+  border: 1px solid var(--light-border);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.preview-close-btn:hover {
+  background: var(--brand-blue);
+  color: white;
+  border-color: var(--brand-blue);
+}
+
+/* --------------------------------------
+   TITLE
+-------------------------------------- */
+.preview-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+/* --------------------------------------
+   DOWNLOAD BUTTON
+-------------------------------------- */
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--brand-blue);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  
+  font-size: 15px;
+  font-family: "Outfit", sans-serif;
+  cursor: pointer;
+  transition: 0.25s ease;
+  margin-bottom: 20px;
+}
+
+.download-btn:hover {
+  background: var(--brand-blue-dark);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------
+   PREVIEW GRID
+-------------------------------------- */
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  gap: 22px;
+  overflow-x: auto;
+}
+
+
+/* --------------------------------------
+   CANVAS CARD
+-------------------------------------- */
+.preview-card {
+  background: #ffffff;
+  padding: 18px;
+  min-width: 320px;
+  border: 1px solid var(--light-border);
+  text-align: center;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.05);
+  transition: 0.25s;
+}
+
+.preview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* Canvas itself */
+.preview-canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Label under each view */
+.preview-label {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--neutral-gray);
+  font-weight: 500;
+}
+
+/* Smaller screens */
+@media (max-width: 700px) {
+  .preview-grid {
+    grid-template-columns: 1fr;
+  }
+}

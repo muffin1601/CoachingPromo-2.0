@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-blue-dark: #093a6c;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* Container */
+.tc-container {
+  background: #ffffff;
+  padding: 18px 20px;
+  
+  border: 1px solid var(--light-border);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  font-family: "Outfit", sans-serif;
+}
+
+/* Title */
+.tc-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--brand-blue);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tc-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Grid */
+.tc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+/* Labels + fields */
+.tc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tc-field label {
+  font-size: 14px;
+  color: var(--neutral-gray);
+  font-weight: 500;
+}
+.tc-input {
+  padding: 10px 12px;
+  
+  border: 1px solid var(--light-border);
+  background: var(--light-bg);
+  font-size: 16px;
+  font-family: "Outfit", sans-serif;
+  transition: 0.2s;
+}
+/* Inputs */
+
+.tc-select {
+  padding: 10px 12px;
+  
+  border: 1px solid var(--light-border);
+  background: var(--light-bg);
+  font-size: 16px;
+  font-family: "Outfit", sans-serif;
+  transition: 0.2s;
+}
+
+.tc-input:focus,
+.tc-select:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 4px rgba(11,74,141,0.25);
+}
+
+/* Color Picker */
+.tc-color {
+  width: 50%;
+  height: 44px;
+  padding: 2px;
+  border: 1px solid var(--light-border);
+  cursor: pointer;
+}
+
+/* Button */
+.tc-btn {
+  margin-top: 16px;
+  width: 100%;
+  background: var(--brand-blue);
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  
+  cursor: pointer;
+  font-family: "Outfit", sans-serif;
+  transition: 0.25s ease;
+}
+
+.tc-btn:hover {
+  background: var(--brand-orange);
+  transform: translateY(-1px);
+}

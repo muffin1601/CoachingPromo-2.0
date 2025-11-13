@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-blue-dark: #093a6c;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* Main Page Wrapper */
+.customizer-page {
+  width: 100%;
+  max-width: 100%;       /* prevents any accidental extra width */
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box; /* IMPORTANT: includes padding inside width */
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: #ffffff;
+  margin-top: 130px;
+  overflow-x: hidden;     /* safety */
+}
+
+/* ------------------ HEADER ------------------ */
+.customizer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: #fff;
+
+  border: 1px solid var(--light-border);
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.06);
+}
+
+.customizer-header h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  color: var(--brand-blue);
+}
+
+.header-actions .preview-btn {
+  padding: 8px 16px;
+ 
+  border: none;
+  background: var(--brand-blue);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+   font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.header-actions .preview-btn:hover {
+  background: var(--brand-blue-dark);
+}
+.top-tools-bar {
+  width: 100%;
+  background: #fff;
+  padding: 12px 14px;
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 20px;
+  border: 1px solid var(--light-border);
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.04);
+}
+/* ------------------ THUMBNAIL BAR ------------------ */
+.thumbnail-bar {
+  width: 50%;
+  background: #fff;
+  padding: 12px 14px;
+
+  border: 1px solid var(--light-border);
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.04);
+}
+
+/* ------------------ MAIN BODY LAYOUT ------------------ */
+.customizer-body {
+  display: grid;
+  grid-template-columns: 220px 500px 1fr;
+  gap: 20px;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  min-height: 70vh;
+  box-sizing: border-box;
+}
+
+/* ------------------ LEFT TOOLBAR ------------------ */
+.left-toolbar {
+  background: #fff;
+  padding: 12px;
+box-sizing: border-box;
+  border: 1px solid var(--light-border);
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.05);
+}
+
+/* ------------------ CENTER CANVAS AREA ------------------ */
+.canvas-area {
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid var(--light-border);
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.05);
+}
+
+.canvas-container {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  /* background: var(--light-bg);
+
+  border: 1px solid var(--light-border); */
+  padding: 14px;
+}
+
+.product-customizer-canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Optional bottom toolbar area (future undo/redo/zoom) */
+.bottom-toolbar {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------ RIGHT SIDEBAR ------------------ */
+.right-sidebar {
+  background: #fff;
+  padding: 18px;
+ 
+  border: 1px solid var(--light-border);
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-y: auto;
+}
+
+/* Prevent right sidebar from pushing content */
+.right-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.right-sidebar::-webkit-scrollbar-thumb {
+  background: var(--light-border);
+  border-radius: 10px;
+}
+
+/* ------------------ MODAL OVERLAY (preview) ------------------ */
+.preview-modal-overlay {
+  backdrop-filter: blur(3px);
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 1100px) {
+  .customizer-body {
+    grid-template-columns: 180px 1fr 260px;
+  }
+}
+
+@media (max-width: 900px) {
+  .customizer-body {
+    grid-template-columns: 1fr;
+  }
+
+  .left-toolbar,
+  .right-sidebar {
+    order: 3;
+  }
+
+  .canvas-area {
+    order: 2;
+  }
+
+  .thumbnail-bar {
+    order: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .customizer-header h2 {
+    font-size: 18px;
+  }
+
+  .preview-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

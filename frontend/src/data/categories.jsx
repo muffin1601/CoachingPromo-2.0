@@ -20,16 +20,20 @@ const categories = [
         href: "/apparel/jackets-hoodies",
         products: [
           { name: "Hoodies-Jackets", href: "/apparel/jackets-hoodies/hoodies-jackets" },
-          { name: "Nehru Jacket", href: "/apparel/jackets-hoodies/nehru-jacket" },
-          { name: "Teacher Jacket", href: "/apparel/jackets-hoodies/teacher-jacket" }
+          {
+            name: "Uniform Jackets",
+            href: "/apparel/jackets-hoodies/uniform-jackets",
+          }
         ]
       },
       {
         name: "Shirts",
         href: "/apparel/shirts",
         products: [
-          { name: "Formal Shirts", href: "/apparel/shirts/formal-shirts" },
-          { name: "Corporate Shirts", href: "/apparel/shirts/corporate-shirts" }
+          {
+            name: "Formal & Corporate Shirts",
+            href: "/apparel/shirts/formal-corporate-shirts"
+          }
         ]
       },
       {
@@ -56,8 +60,8 @@ const categories = [
         name: "Backpacks",
         href: "/bags/backpacks",
         products: [
-          { name: "Institute Backpack", href: "/bags/backpacks/institute-backpack" },
-          { name: "Backpacks", href: "/bags/backpacks/backpacks" }
+          { name: "Institute Backpacks", href: "/bags/institute-backpacks" },
+          // { name: "Backpacks", href: "/bags/backpacks/backpacks" }
         ]
       },
       {

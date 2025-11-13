@@ -20,6 +20,8 @@ import BlogDetail from "./pages/BlogDetail";
 import CategoryPage from "./pages/CategoryPage";
 import SubcategoryPage from "./pages/SubcategoryPage";
 import SingleProductPage from "./pages/SingleProductPage";
+import CustomizerSVG from "./pages/Customize/CustomizerSVG";
+// import CustomizerAll from "./pages/Customize/CustomizerAll";
 import Login from "./pages/Login";
 
 import ScrollToTop from "./utils/ScrollToTop";
@@ -68,12 +70,11 @@ const App = () => {
           <Route path="/blogs/:id" element={<BlogDetail />} />
           <Route path="/categories/:slug" element={<CategoryPage />} />
           <Route path="/:categorySlug/:subSlug" element={<SubcategoryPage />} />
-          <Route
-            path="/:categorySlug/:subSlug/:prodSlug"
-            element={<SingleProductPage />}
-          />
+          <Route path="/:categorySlug/:subSlug/:prodSlug" element={<SingleProductPage />} />
           <Route path="/search" element={<SearchResults />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/customize/:productType" element={<CustomizerSVG />} />
+          {/* <Route path="/customize" element={<CustomizerAll />} /> */}
 
           {/* ---------- Admin Routes ---------- */}
           <Route path="/admin" element={<ProtectedRoute />}>

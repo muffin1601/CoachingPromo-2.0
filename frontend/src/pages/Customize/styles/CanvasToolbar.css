@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+}
+
+/* Toolbar Container */
+.canvas-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 12px 18px;
+  border: 1px solid var(--light-border);
+  
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  width: fit-content;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Buttons */
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--light-bg);
+  border: 1px solid var(--light-border);
+ 
+  font-size: 16px;
+  color: var(--neutral-gray);
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Hover Effect */
+.toolbar-btn:hover {
+  background: var(--brand-blue);
+  color: white;
+  border-color: var(--brand-blue);
+  transform: translateY(-1px);
+}
+
+/* Icons */
+.toolbar-icon {
+  width: 19px;
+  height: 19px;
+}
+
+/* Danger button */
+.toolbar-btn.danger {
+  background: #fff5f4;
+  border-color: #ffd7d7;
+  color: #d9534f;
+}
+
+.toolbar-btn.danger:hover {
+  background: #d9534f;
+  border-color: #d9534f;
+  color: white;
+}

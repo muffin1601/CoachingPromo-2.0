@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-blue-dark: #093a6c;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+  --neutral-gray: #555;
+}
+
+/* Main Toolbar Container */
+.vt-container {
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px;
+  /* background: #fff; */
+  /* border-radius: 14px;
+  border: 1px solid var(--light-border);
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.06); */
+  font-family: "Outfit", sans-serif;
+}
+
+/* Each Button */
+.vt-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  
+  background: #ffffff;
+  border: 1px solid var(--light-border);
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-size: 18px;
+  font-weight: 500;
+   font-family: "Outfit", sans-serif;
+  color: var(--neutral-gray);
+}
+
+/* Hover */
+.vt-btn:hover {
+  background: var(--light-bg);
+  border-color: var(--brand-blue);
+  transform: translateY(-1px);
+}
+
+/* Active Button */
+.vt-active {
+  background: var(--brand-blue);
+  color: #ffffff;
+  border-color: var(--brand-blue);
+  box-shadow: 0px 2px 6px rgba(11,74,141,0.25);
+}
+
+/* Active Icons */
+.vt-active .vt-icon {
+  color: white;
+}
+
+/* Icon */
+.vt-icon {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  color: var(--brand-orange);
+}
+
+/* Label text */
+.vt-label {
+  font-size: 16px;
+}
+
+/* Responsive – compact on smaller screens */
+@media (max-width: 768px) {
+  .vt-container {
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .vt-btn {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    gap: 4px;
+    font-size: 12px;
+  }
+
+  .vt-icon {
+    font-size: 16px;
+  }
+}

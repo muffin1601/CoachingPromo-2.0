@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
+
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-blue-dark: #093a6c;
+  --light-border: #e4e4e4;
+  --light-bg: #fafafa;
+  --neutral-gray: #555;
+}
+
+/* Container */
+.tg-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 12px 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  font-family: "Outfit", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Button row */
+.tg-buttons {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 6px;
+  max-width: 100%;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar */
+.tg-buttons::-webkit-scrollbar {
+  display: none;
+}
+
+/* Button */
+.tg-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-family: "Outfit", sans-serif;
+  background: #ffffff;
+  border: 1px solid var(--light-border);
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.25s ease;
+  color: var(--neutral-gray);
+  font-weight: 400;
+}
+
+/* Hover */
+.tg-btn:hover {
+  background: var(--light-bg);
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+}
+
+/* Icon styling */
+.tg-icon {
+  color: var(--brand-blue);
+  transition: 0.2s ease;
+}
+
+.tg-btn:hover .tg-icon {
+  color: var(--brand-blue);
+}
+
+/* Active */
+.tg-active {
+  background: var(--brand-blue);
+  color: white;
+  border-color: var(--brand-blue);
+  box-shadow: 0px 2px 6px rgba(11, 74, 141, 0.25);
+  font-weight: 600;
+}
+
+.tg-active .tg-icon {
+  color: white;
+}

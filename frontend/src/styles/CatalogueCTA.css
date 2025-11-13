@@ -84,6 +84,7 @@
   padding: 15px 0;
   font-size: 18px;
   margin: 50px auto 10px;
+  font-family: 'outfit', sans-serif ;
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -96,7 +97,7 @@
 }
 
 /* =============================== */
-/* ✅ RESPONSIVE FIXES             */
+/*  RESPONSIVE FIXES             */
 /* =============================== */
 
 /* Large tablets & laptops */
