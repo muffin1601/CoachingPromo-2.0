@@ -213,6 +213,7 @@ const SubcategoryManager = () => {
         {/* Pagination UI */}
         {totalPages > 1 && (
           <div className="pagination-container">
+            {/* Prev */}
             <button
               className="pg-btn"
               disabled={currentPage === 1}
@@ -221,16 +222,43 @@ const SubcategoryManager = () => {
               ◀ Prev
             </button>
 
-            {[...Array(totalPages)].map((_, i) => (
-              <button
-                key={i}
-                className={`pg-number ${currentPage === i + 1 ? "active" : ""}`}
-                onClick={() => goToPage(i + 1)}
-              >
-                {i + 1}
-              </button>
-            ))}
+            {/* Page Numbers with Ellipsis */}
+            {(() => {
+              const buttons = [];
+              const addButton = (p) => {
+                buttons.push(
+                  <button
+                    key={p}
+                    className={`pg-number ${currentPage === p ? "active" : ""}`}
+                    onClick={() => goToPage(p)}
+                  >
+                    {p}
+                  </button>
+                );
+              };
 
+              // Always show first page
+              if (currentPage > 3) {
+                addButton(1);
+                buttons.push(<span key="dots-left" className="pg-dots">...</span>);
+              }
+
+              // Middle pages
+              const start = Math.max(1, currentPage - 1);
+              const end = Math.min(totalPages, currentPage + 1);
+
+              for (let p = start; p <= end; p++) addButton(p);
+
+              // Always show last page
+              if (currentPage < totalPages - 2) {
+                buttons.push(<span key="dots-right" className="pg-dots">...</span>);
+                addButton(totalPages);
+              }
+
+              return buttons;
+            })()}
+
+            {/* Next */}
             <button
               className="pg-btn"
               disabled={currentPage === totalPages}
@@ -240,7 +268,6 @@ const SubcategoryManager = () => {
             </button>
           </div>
         )}
-
       </div>
 
       {/*  Modal */}

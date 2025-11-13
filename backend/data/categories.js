@@ -30,6 +30,11 @@ const tableCalendars = require('./stationery/tableCalenders.js');
 const wallCalendars = require('./stationery/wallCalenders.js');
 const examPads = require('./stationery/examPads.js');
 
+//bags
+const instituteBackpacks = require('./bags/instituteBackpacks.js');
+const juteBags = require('./bags/juteBags.js');
+const messengerBags = require('./bags/messengerBags.js');
+
 const seedData = [
   // --- Category: Apparel ---
   {
@@ -421,8 +426,8 @@ const seedData = [
     },
     subcategories: [
       {
-        name: "Institute Backpack",
-        slug: "institute-backpack",
+        name: "Institute Backpacks",
+        slug: "institute-backpacks",
         description: "Heavy-duty backpacks designed for institute use.",
         image: "/assets/institutebag.png",
         seo: {
@@ -430,24 +435,7 @@ const seedData = [
           metaDescription: "Ergonomic and durable backpacks branding for your educational institution.",
           keywords: ["institute bag", "school bag", "heavy duty backpack"],
         },
-        products: [
-          {
-            name: "Institute Backpack",
-            slug: "institute-backpack-product",
-            description: "Large-capacity, water-resistant backpack ideal for books and laptops.",
-            price: 29.99,
-            salePrice: null,
-            images: [{ url: "/assets/institutebag.png", altText: "Institute Backpack" }],
-            stock: 120,
-            sku: "BAG-INST-001",
-            attributes: { color: ["Grey/Black", "Navy"], size: ["Large"], material: "Polyester" },
-            tags: ["backpack", "institute", "school"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.6, count: 85 },
-            seo: { metaTitle: "Buy Institute Backpack", metaDescription: "Order bulk university backpacks.", keywords: ["branding bag", "college backpack"] },
-          },
-        ],
+        products: instituteBackpacks,
       },
       {
         name: "Jute Bag",
@@ -459,24 +447,7 @@ const seedData = [
           metaDescription: "Sustainable and customizable jute bags for events and retail.",
           keywords: ["jute bag", "eco-friendly", "reusable"],
         },
-        products: [
-          {
-            name: "Jute Bag",
-            slug: "jute-bag-product",
-            description: "Natural and biodegradable jute bag with reinforced handles, customizable logo printing.",
-            price: 9.99,
-            salePrice: null,
-            images: [{ url: "/assets/jutebag.png", altText: "Custom Jute Bag" }],
-            stock: 300,
-            sku: "BAG-JUTE-002",
-            attributes: { color: ["Natural Brown"], size: ["Medium"], material: "Jute Fiber" },
-            tags: ["bag", "jute", "eco-friendly"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.4, count: 60 },
-            seo: { metaTitle: "Buy Promotional Jute Bags", metaDescription: "Affordable custom jute carry bags.", keywords: ["natural bag", "shopping bag"] },
-          },
-        ],
+        products: juteBags,
       },
       {
         name: "Messenger Bags",
@@ -488,24 +459,7 @@ const seedData = [
           metaDescription: "Durable and practical messenger bags with shoulder straps for professionals.",
           keywords: ["messenger bag", "laptop bag", "cross body"],
         },
-        products: [
-          {
-            name: "Messenger Bags",
-            slug: "messenger-bags-product",
-            description: "Professional messenger bag with padded laptop sleeve and adjustable strap.",
-            price: 24.99,
-            salePrice: null,
-            images: [{ url: "/assets/messengerbag.png", altText: "Custom Messenger Bag" }],
-            stock: 80,
-            sku: "BAG-MESS-003",
-            attributes: { color: ["Black", "Brown"], size: ["15-inch Laptop"], material: "Canvas" },
-            tags: ["bag", "messenger", "laptop"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.7, count: 55 },
-            seo: { metaTitle: "Order Custom Messenger Bags", metaDescription: "Professional cross-body laptop bags.", keywords: ["office bag", "satchel"] },
-          },
-        ],
+        products: messengerBags,
       },
       {
         name: "Tote Bag",
@@ -535,65 +489,7 @@ const seedData = [
             seo: { metaTitle: "Buy Bulk Tote Bags", metaDescription: "Printed canvas tote bags for events.", keywords: ["carry bag", "shoulder bag"] },
           },
         ],
-      },
-      {
-        name: "Backpacks",
-        slug: "backpacks",
-        description: "General-purpose, everyday backpacks.",
-        image: "/assets/backpack.png",
-        seo: {
-          metaTitle: "Everyday Backpacks",
-          metaDescription: "Standard, comfortable backpacks for all-purpose use.",
-          keywords: ["backpack", "rucksack", "daypack"],
-        },
-        products: [
-          {
-            name: "Backpacks",
-            slug: "backpacks-product",
-            description: "Standard, comfortable backpack for daily commuting and student use.",
-            price: 22.99,
-            salePrice: null,
-            images: [{ url: "/assets/backpack.png", altText: "General Backpack" }],
-            stock: 150,
-            sku: "BAG-BPK-005",
-            attributes: { color: ["Blue", "Red"], size: ["Medium"], material: "Nylon" },
-            tags: ["backpack", "school", "travel"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.5, count: 75 },
-            seo: { metaTitle: "Shop Branding Backpacks", metaDescription: "Durable and stylish custom backpacks.", keywords: ["student bag", "daily backpack"] },
-          },
-        ],
-      },
-      {
-        name: "Miscellaneous Bags",
-        slug: "miscellaneous-bags",
-        description: "Various other bags like drawstring bags, duffels, etc.",
-        image: "/assets/bag2.png",
-        seo: {
-          metaTitle: "Miscellaneous Promotional Bags",
-          metaDescription: "A selection of specialized bags like drawstring, duffel, and small pouches.",
-          keywords: ["miscellaneous bags", "drawstring", "duffel"],
-        },
-        products: [
-          {
-            name: "Miscellaneous",
-            slug: "miscellaneous-bags-product",
-            description: "Assortment of other bags including gym sacks, pouches, and duffel bags.",
-            price: 19.99,
-            salePrice: null,
-            images: [{ url: "/assets/bag2.png", altText: "Miscellaneous Bag" }],
-            stock: 90,
-            sku: "BAG-MISC-006",
-            attributes: { color: ["Various"], size: ["Various"], material: "Various" },
-            tags: ["bag", "misc", "drawstring"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.1, count: 30 },
-            seo: { metaTitle: "Buy Specialty Bags", metaDescription: "Specialized promotional and gift bags.", keywords: ["pouch", "gym sack"] },
-          },
-        ],
-      },
+      }
     ],
   },
   // --- Category: Promotional Items ---

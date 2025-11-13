@@ -314,17 +314,55 @@ const ProductManager = () => {
         {/* Pagination */}
         {totalPages > 1 && (
           <div className="pagination-container">
-            <button className="pg-btn" onClick={() => goTo(page - 1)} disabled={page === 1}>◀ Prev</button>
-            {[...Array(totalPages)].map((_, i) => (
-              <button
-                key={i}
-                className={`pg-number ${page === i + 1 ? "active" : ""}`}
-                onClick={() => goTo(i + 1)}
-              >
-                {i + 1}
-              </button>
-            ))}
-            <button className="pg-btn" onClick={() => goTo(page + 1)} disabled={page === totalPages}>Next ▶</button>
+
+            {/* Prev */}
+            <button className="pg-btn" onClick={() => goTo(page - 1)} disabled={page === 1}>
+              ◀ Prev
+            </button>
+
+            {/* Page Numbers with Ellipsis */}
+            {(() => {
+              const btns = [];
+              const total = totalPages;
+
+              const addBtn = (p) =>
+                btns.push(
+                  <button
+                    key={p}
+                    className={`pg-number ${page === p ? "active" : ""}`}
+                    onClick={() => goTo(p)}
+                  >
+                    {p}
+                  </button>
+                );
+
+              // Always show 1
+              if (page > 3) {
+                addBtn(1);
+                btns.push(<span key="dots-left" className="pg-dots">...</span>);
+              }
+
+              // Middle range (visible pages)
+              const start = Math.max(1, page - 1);
+              const end = Math.min(total, page + 1);
+
+              for (let p = start; p <= end; p++) {
+                addBtn(p);
+              }
+
+              // Always show last
+              if (page < total - 2) {
+                btns.push(<span key="dots-right" className="pg-dots">...</span>);
+                addBtn(total);
+              }
+
+              return btns;
+            })()}
+
+            {/* Next */}
+            <button className="pg-btn" onClick={() => goTo(page + 1)} disabled={page === totalPages}>
+              Next ▶
+            </button>
           </div>
         )}
       </div>

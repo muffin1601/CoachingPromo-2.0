@@ -245,3 +245,34 @@
   color: white;
   border-color: var(--brand-orange);
 }
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 12px 0;
+  max-width: 100%;
+}
+
+.pg-number,
+.pg-btn {
+  padding: 6px 12px;
+  background: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.pg-number.active {
+  background: #0b4a8d;
+  color: white;
+  border-color: #0b4a8d;
+}
+
+.pg-dots {
+  padding: 0 6px;
+  color: #777;
+  font-size: 14px;
+}
