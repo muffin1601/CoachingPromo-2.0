@@ -11,18 +11,18 @@ const categories = [
         name: "T-Shirts",
         href: "/apparel/t-shirts",
         products: [
-          { name: "Polo T-Shirts", href: "/apparel/polo-t-shirts" },
-          { name: "Round Neck T-Shirts", href: "/apparel/round-neck-t-shirts" }
+          { name: "Polo T-Shirts", href: "/apparel-accessories/polo-t-shirts" },
+          { name: "Round Neck T-Shirts", href: "/apparel-accessories/round-neck-t-shirts" }
         ]
       },
       {
         name: "Jackets & Hoodies",
         href: "/apparel/jackets-hoodies",
         products: [
-          { name: "Hoodies-Jackets", href: "/apparel/hoodies-jackets" },
+          { name: "Hoodies-Jackets", href: "/apparel-accessories/hoodies-jackets" },
           {
             name: "Uniform Jackets",
-            href: "/apparel/uniform-jackets",
+            href: "/apparel-accessories/uniform-jackets",
           }
         ]
       },
@@ -32,7 +32,7 @@ const categories = [
         products: [
           {
             name: "Formal & Corporate Shirts",
-            href: "/apparel/formal-corporate-shirts"
+            href: "/apparel-accessories/shirts"
           }
         ]
       },
@@ -40,14 +40,14 @@ const categories = [
         name: "Graduation Wear",
         href: "/apparel/graduation-wear",
         products: [
-          { name: "Graduation Hat", href: "/apparel/graduation-hat" },
-          { name: "Graduation Gown", href: "/apparel/graduation-gown" },
+          { name: "Graduation Hat", href: "/apparel-accessories/graduation-hat" },
+          { name: "Graduation Gown", href: "/apparel-accessories/graduation-gown" },
           {
             name: "Stoles & Sashes",
-            href: "/apparel/stoles-and-sashes"
+            href: "/apparel-accessories/stoles-and-sashes"
           },
-          { name: "Graduation Hood", href: "/apparel/graduation-hood" },
-          { name: "Kids Graduation Gown and Cap", href: "/apparel/kids-graduation-gown-and-cap" },
+          { name: "Graduation Hood", href: "/apparel-accessories/graduation-hood" },
+          { name: "Kids Graduation Gown and Cap", href: "/apparel-accessories/kids-graduation-gown-and-cap" },
         ]
       }
     ]

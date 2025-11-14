@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import EnquiryModal from "../components/EnquiryModal";
@@ -36,6 +37,8 @@ const SingleProductPage = () => {
   const [subcategory, setSubcategory] = useState(null);
   const [activeImage, setActiveImage] = useState(null);
   const [qty, setQty] = useState(1);
+  const navigate = useNavigate();
+
 
   const fetchProduct = async () => {
     const { data } = await axios.get(
@@ -80,6 +83,18 @@ const SingleProductPage = () => {
     attributes,
   } = product;
 const enquiryImage = images?.length > 0 ? images[0].url : "";
+
+const customizeRoutes = {
+  "polo-t-shirts": `/customize/polotshirt`,
+  "round-neck-t-shirts": `/customize/roundneck`,
+  "institute-backpacks": `/customize/all`,
+};
+
+const shouldShowCustomize =
+  subSlug === "polo-t-shirts" ||
+  subSlug === "round-neck-t-shirts" ||
+  subSlug === "institute-backpacks";
+
   return (
     <>
       {/*  SEO */}
@@ -173,9 +188,33 @@ const enquiryImage = images?.length > 0 ? images[0].url : "";
           </p>
 
           {/*  CTA CUSTOMIZATION BUTTON */}
-          <button className="btn-customize">
-            <Sparkles size={18} /> Add Your Logo & Customize Now
-          </button>
+          {shouldShowCustomize && (
+            <button
+              className="btn-customize"
+              onClick={() => {
+                if (subSlug === "polo-t-shirts") {
+                  window.location.href = "/customize/polotshirt";
+                  return;
+                }
+
+                if (subSlug === "round-neck-t-shirts") {
+                  window.location.href = "/customize/roundneck";
+                  return;
+                }
+
+                // For institute-backpacks or ANY other customizable product
+                navigate("/customize/all", {
+                  state: {
+                    productImages: subImages?.length ? subImages.map(img => img.url) : images.map(img => img.url),
+                    productName: name,
+                    subcategory: subSlug,
+                  },
+                });
+              }}
+            >
+              <Sparkles size={18} /> Add Your Logo & Customize Now
+            </button>
+          )}
 
           {/* Qty + Add to cart */}
           <div className="product-actions">

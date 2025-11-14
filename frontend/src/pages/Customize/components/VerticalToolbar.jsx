@@ -11,33 +11,40 @@ import {
 
 const VerticalToolbar = ({ onSelectTool, activeTool, flag, subcategory, productType }) => {
 
-  const allowedSaveCategories = ["Aprons", "Winter Wear", "Corporate Shirts"];
-  const allowedProductTypes = ["polotshirt", "roundneck"];
-
+  /* FULL TOOL LIST (SVG CUSTOMIZER) */
   const tools = [
     { id: "upload", icon: <FaUpload />, label: "Upload" },
-    { id: "text", icon: <FaFont />, label: "Text" },
+    { id: "text",  icon: <FaFont />,  label: "Text" },
     { id: "color", icon: <FaPalette />, label: "Color" },
-    { id: "name", icon: <FaUserEdit />, label: "Name" },
+    { id: "name",  icon: <FaUserEdit />, label: "Name" },
     { id: "export", icon: <FaSave />, label: "Save" },
     { id: "preview", icon: <FaEye />, label: "Preview" },
   ];
 
-  // If flag is false → hide color, name, preview
-  let visibleTools = flag
-    ? tools
-    : tools.filter(tool => !["color", "name", "preview"].includes(tool.id));
+  /* SVG PRODUCT TYPES → full features allowed */
+  const svgTypes = ["polotshirt", "roundneck"];
 
-  const canSaveByCategory = allowedSaveCategories.some(
-    cat => cat.toLowerCase() === (subcategory || "").toLowerCase()
-  );
+  let visibleTools = tools;
 
-  const canSaveByType = allowedProductTypes.some(
-    type => type.toLowerCase() === (productType || "").toLowerCase()
-  );
+  /* --------------------------
+      PNG CUSTOMIZER MODE
+     -------------------------- */
+  if (productType === "png") {
+    // Only allow: upload, text, export, preview
+    visibleTools = tools.filter(tool =>
+      ["upload", "text", "export", "preview"].includes(tool.id)
+    );
+  }
 
-  if (!canSaveByCategory && !canSaveByType) {
-    visibleTools = visibleTools.filter(tool => tool.id !== "export");
+  /* --------------------------
+      SVG MODE — respect 'flag'
+     -------------------------- */
+  if (productType !== "png") {
+    if (!flag) {
+      visibleTools = tools.filter(
+        tool => !["color", "name", "preview"].includes(tool.id)
+      );
+    }
   }
 
   return (

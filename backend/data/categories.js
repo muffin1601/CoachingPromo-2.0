@@ -35,6 +35,9 @@ const instituteBackpacks = require('./bags/instituteBackpacks.js');
 const juteBags = require('./bags/juteBags.js');
 const messengerBags = require('./bags/messengerBags.js');
 const toteBags = require('./bags/toteBags.js');
+const poloTshirts = require('./apparel/poloTshirts.js');
+const roundNeckTshirts = require('./apparel/roundNeckTshirts.js');
+const formalShirts = require('./apparel/formalShirts.js');
 
 const seedData = [
   // --- Category: Apparel ---
@@ -59,9 +62,7 @@ const seedData = [
           metaDescription: "Custom polo t-shirts for branding and events.",
           keywords: ["polo", "t-shirt", "apparel"],
         },
-        products: [
-          
-        ],
+        products: poloTshirts,
       },
       {
         name: "Round Neck T-Shirts",
@@ -73,27 +74,10 @@ const seedData = [
           metaDescription: "Custom round neck t-shirts available in various colors.",
           keywords: ["round neck", "t-shirt", "casual"],
         },
-        products: [
-          {
-            name: "Round Neck T-Shirts",
-            slug: "round-neck-t-shirts-product",
-            description: "Soft cotton round neck t-shirts, perfect for events and giveaways.",
-            price: 12.99,
-            salePrice: null,
-            images: [{ url: "/assets/roundnecktshirt.png", altText: "Round Neck T-Shirt" }],
-            stock: 200,
-            sku: "APP-RND-002",
-            attributes: { color: ["Red", "Grey", "Blue"], size: ["S", "M", "L", "XL", "XXL"], material: "100% Cotton" },
-            tags: ["t-shirt", "round neck", "apparel"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.2, count: 95 },
-            seo: { metaTitle: "Shop Round Neck T-Shirts", metaDescription: "Durable and comfortable round neck shirts.", keywords: ["round neck shirt", "plain tee"] },
-          },
-        ],
+        products: roundNeckTshirts,
       },
       {
-        name: "Shirts",
+        name: "Formal Shirts",
         slug: "shirts",
         description: "Formal and casual shirts for professional settings.",
         image: "/assets/apparel/shirt.webp",
@@ -102,24 +86,7 @@ const seedData = [
           metaDescription: "A selection of formal and casual shirts for various occasions.",
           keywords: ["formal", "shirt", "office wear"],
         },
-        products: [
-          {
-            name: "Shirts",
-            slug: "shirts-product",
-            description: "Crisp formal shirts for faculty and professional events.",
-            price: 24.99,
-            salePrice: null,
-            images: [{ url: "/assets/formalshirt.png", altText: "Formal Shirt" }],
-            stock: 100,
-            sku: "APP-SHRT-004",
-            attributes: { color: ["Light Blue", "White"], size: ["38", "40", "42"], material: "Poplin" },
-            tags: ["shirt", "formal", "office"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.6, count: 45 },
-            seo: { metaTitle: "Custom Formal Shirts", metaDescription: "Professional dress shirts for institutions.", keywords: ["dress shirt", "uniform shirt"] },
-          },
-        ],
+        products: formalShirts,
       },
       {
         name: "Hoodies-Jackets",
