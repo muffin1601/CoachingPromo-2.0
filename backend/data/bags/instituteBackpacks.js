@@ -28,23 +28,23 @@ const instituteBackpacks = [
       metaTitle: "Custom Institute Backpacks",
       metaDescription:
         "Custom institute backpacks with printed or embroidered logos — perfect for students, staff, and events.",
-      keywords: ["custom institute backpacks", "school backpacks", "branded bags"],
+      keywords: ["custom institute backpacks", "school backpacks", "branding bags"],
     },
   },
 
   {
-    name: "Branded Institute Backpacks",
-    slug: "branded-institute-backpacks",
+    name: "Branding Institute Backpacks",
+    slug: "branding-institute-backpacks",
     description:
-      "Promote your coaching institute wherever you go with Branded Backpacks featuring your logo and tagline. Ideal for students, workshops, and events — a perfect mix of utility and branding.",
+      "Promote your coaching institute wherever you go with Branding Backpacks featuring your logo and tagline. Ideal for students, workshops, and events — a perfect mix of utility and branding.",
     price: 849,
     salePrice: 799,
-    images: [{ url: "/assets/backpacks/5.webp", altText: "Branded Institute Backpack" }],
+    images: [{ url: "/assets/backpacks/5.webp", altText: "Branding Institute Backpack" }],
     subImages: [
-      { url: "/assets/backpacks/5.webp", altText: "Branded Institute Backpack Front" },
-      { url: "/assets/backpacks/6.webp", altText: "Branded Institute Backpack Side" },
-      { url: "/assets/backpacks/7.webp", altText: "Branded Institute Backpack Pocket" },
-      { url: "/assets/backpacks/8.webp", altText: "Branded Institute Backpack Back" },
+      { url: "/assets/backpacks/5.webp", altText: "Branding Institute Backpack Front" },
+      { url: "/assets/backpacks/6.webp", altText: "Branding Institute Backpack Side" },
+      { url: "/assets/backpacks/7.webp", altText: "Branding Institute Backpack Pocket" },
+      { url: "/assets/backpacks/8.webp", altText: "Branding Institute Backpack Back" },
     ],
     stock: 800,
     sku: "BAG-002",
@@ -53,15 +53,15 @@ const instituteBackpacks = [
       size: ["Medium"],
       material: "Waterproof Nylon",
     },
-    tags: ["branded", "backpack", "student bag"],
+    tags: ["branding", "backpack", "student bag"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.6, count: 190 },
     seo: {
-      metaTitle: "Branded Institute Backpacks",
+      metaTitle: "Branding Institute Backpacks",
       metaDescription:
-        "Durable branded backpacks with institute logo — stylish and professional for daily use and promotions.",
-      keywords: ["branded backpacks", "college bags", "logo backpacks"],
+        "Durable branding backpacks with institute logo — stylish and professional for daily use and promotions.",
+      keywords: ["branding backpacks", "college bags", "logo backpacks"],
     },
   },
 
@@ -127,7 +127,7 @@ const instituteBackpacks = [
       metaTitle: "Printed Institute Backpacks",
       metaDescription:
         "Printed institute backpacks with logo or tagline — perfect for promotional and daily student use.",
-      keywords: ["printed backpacks", "custom logo bags", "branded backpacks"],
+      keywords: ["printed backpacks", "custom logo bags", "branding backpacks"],
     },
   },
 
@@ -193,7 +193,7 @@ const instituteBackpacks = [
       metaTitle: "Premium Institute Backpacks",
       metaDescription:
         "Premium backpacks for institutes — elegant, comfortable, and durable with branding options.",
-      keywords: ["premium backpacks", "luxury school bags", "custom branded backpacks"],
+      keywords: ["premium backpacks", "luxury school bags", "custom branding backpacks"],
     },
   },
 ];

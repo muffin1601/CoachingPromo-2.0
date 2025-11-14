@@ -11,18 +11,18 @@ const categories = [
         name: "T-Shirts",
         href: "/apparel/t-shirts",
         products: [
-          { name: "Polo T-Shirts", href: "/apparel/t-shirts/polo-t-shirts" },
-          { name: "Round Neck T-Shirts", href: "/apparel/t-shirts/round-neck-t-shirts" }
+          { name: "Polo T-Shirts", href: "/apparel/polo-t-shirts" },
+          { name: "Round Neck T-Shirts", href: "/apparel/round-neck-t-shirts" }
         ]
       },
       {
         name: "Jackets & Hoodies",
         href: "/apparel/jackets-hoodies",
         products: [
-          { name: "Hoodies-Jackets", href: "/apparel/jackets-hoodies/hoodies-jackets" },
+          { name: "Hoodies-Jackets", href: "/apparel/hoodies-jackets" },
           {
             name: "Uniform Jackets",
-            href: "/apparel/jackets-hoodies/uniform-jackets",
+            href: "/apparel/uniform-jackets",
           }
         ]
       },
@@ -32,7 +32,7 @@ const categories = [
         products: [
           {
             name: "Formal & Corporate Shirts",
-            href: "/apparel/shirts/formal-corporate-shirts"
+            href: "/apparel/formal-corporate-shirts"
           }
         ]
       },
@@ -40,18 +40,18 @@ const categories = [
         name: "Graduation Wear",
         href: "/apparel/graduation-wear",
         products: [
-          { name: "Graduation Hat", href: "/apparel/graduation-wear/graduation-hat" },
-          { name: "Graduation Gown", href: "/apparel/graduation-wear/graduation-gown" },
-          { name: "Graduation Stole", href: "/apparel/graduation-wear/graduation-stole" },
-          { name: "Convocation Sash", href: "/apparel/graduation-wear/convocation-sash" },
-          { name: "Graduation Hood", href: "/apparel/graduation-wear/graduation-hood" },
-          { name: "Kids Graduation Gown and Cap", href: "/apparel/graduation-wear/kids-graduation-gown-and-cap" },
+          { name: "Graduation Hat", href: "/apparel/graduation-hat" },
+          { name: "Graduation Gown", href: "/apparel/graduation-gown" },
+          {
+            name: "Stoles & Sashes",
+            href: "/apparel/stoles-and-sashes"
+          },
+          { name: "Graduation Hood", href: "/apparel/graduation-hood" },
+          { name: "Kids Graduation Gown and Cap", href: "/apparel/kids-graduation-gown-and-cap" },
         ]
       }
     ]
   },
-
-
   {
     category: "Bags",
     href: "/categories/bags",
@@ -68,15 +68,15 @@ const categories = [
         name: "Shoulder & Messenger",
         href: "/bags/shoulder-and-messenger",
         products: [
-          { name: "Messenger Bags", href: "/bags/shoulder-and-messenger/messenger-bags" },
-          { name: "Tote Bag", href: "/bags/shoulder-and-messenger/tote-bag" }
+          { name: "Messenger Bags", href: "/bags/messenger-bags" },
+          { name: "Tote Bag", href: "/bags/tote-bag" }
         ]
       },
       {
         name: "Eco Bags",
         href: "/bags/eco-bags",
         products: [
-          { name: "Jute Bag", href: "/bags/eco-bags/jute-bag" }
+          { name: "Jute Bag", href: "/bags/jute-bag" }
         ]
       }
     ]

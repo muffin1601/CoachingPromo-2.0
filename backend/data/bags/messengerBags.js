@@ -27,22 +27,22 @@ const messengerBags = [
       metaTitle: "Custom Messenger Bags",
       metaDescription:
         "Premium custom messenger bags with institute logo and colors — ideal for students, staff, and events.",
-      keywords: ["custom messenger bags", "branded bags", "institute bags"],
+      keywords: ["custom messenger bags", "branding bags", "institute bags"],
     },
   },
 
   {
-    name: "Branded Messenger Bags",
-    slug: "branded-messenger-bags",
+    name: "Branding Messenger Bags",
+    slug: "branding-messenger-bags",
     description:
-      "Enhance your institute’s visibility with Branded Messenger Bags designed for coaching institutes. These stylish and durable bags add a professional touch while promoting your brand at workshops, admission drives, and campus activities.",
+      "Enhance your institute’s visibility with Branding Messenger Bags designed for coaching institutes. These stylish and durable bags add a professional touch while promoting your brand at workshops, admission drives, and campus activities.",
     price: 649,
     salePrice: 599,
-    images: [{ url: "/assets/messengerbags/4.webp", altText: "Branded Messenger Bag" }],
+    images: [{ url: "/assets/messengerbags/4.webp", altText: "Branding Messenger Bag" }],
     subImages: [
-      { url: "/assets/messengerbags/4.webp", altText: "Branded Messenger Bag Front" },
-      { url: "/assets/messengerbags/5.webp", altText: "Branded Messenger Bag Strap" },
-      { url: "/assets/messengerbags/6.webp", altText: "Branded Messenger Bag Inside" }
+      { url: "/assets/messengerbags/4.webp", altText: "Branding Messenger Bag Front" },
+      { url: "/assets/messengerbags/5.webp", altText: "Branding Messenger Bag Strap" },
+      { url: "/assets/messengerbags/6.webp", altText: "Branding Messenger Bag Inside" }
     ],
     stock: 600,
     sku: "MBAG-002",
@@ -51,15 +51,15 @@ const messengerBags = [
       size: ["Medium"],
       material: "Nylon + PU Coating",
     },
-    tags: ["branded", "messenger bag", "professional"],
+    tags: ["branding", "messenger bag", "professional"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.5, count: 180 },
     seo: {
-      metaTitle: "Branded Messenger Bags",
+      metaTitle: "Branding Messenger Bags",
       metaDescription:
-        "Stylish branded messenger bags designed for institutes — durable, professional, and high-quality.",
-      keywords: ["branded messenger bags", "logo bags", "campus bags"],
+        "Stylish branding messenger bags designed for institutes — durable, professional, and high-quality.",
+      keywords: ["branding messenger bags", "logo bags", "campus bags"],
     },
   },
 

@@ -28,23 +28,23 @@ const juteBags = [
       metaTitle: "Custom Jute Bags",
       metaDescription:
         "Custom jute bags with institute branding — eco-friendly, durable, and ideal for students and faculty.",
-      keywords: ["custom jute bags", "eco bags", "branded jute bags"],
+      keywords: ["custom jute bags", "eco bags", "branding jute bags"],
     },
   },
 
   {
-    name: "Branded Jute Bags",
-    slug: "branded-jute-bags",
+    name: "Branding Jute Bags",
+    slug: "branding-jute-bags",
     description:
-      "Upgrade your institute’s identity with Branded Jute Bags designed for students, teachers, and event teams. Stylish, durable, and eco-friendly — perfect for daily use and campus activities.",
+      "Upgrade your institute’s identity with Branding Jute Bags designed for students, teachers, and event teams. Stylish, durable, and eco-friendly — perfect for daily use and campus activities.",
     price: 229,
     salePrice: 209,
-    images: [{ url: "/assets/jutebags/5.webp", altText: "Branded Jute Bag" }],
+    images: [{ url: "/assets/jutebags/5.webp", altText: "Branding Jute Bag" }],
     subImages: [
-      { url: "/assets/jutebags/5.webp", altText: "Branded Jute Bag Front" },
-      { url: "/assets/jutebags/6.webp", altText: "Branded Jute Bag Side" },
-      { url: "/assets/jutebags/7.webp", altText: "Branded Jute Bag Design" },
-      { url: "/assets/jutebags/8.webp", altText: "Branded Jute Bag Handle" },
+      { url: "/assets/jutebags/5.webp", altText: "Branding Jute Bag Front" },
+      { url: "/assets/jutebags/6.webp", altText: "Branding Jute Bag Side" },
+      { url: "/assets/jutebags/7.webp", altText: "Branding Jute Bag Design" },
+      { url: "/assets/jutebags/8.webp", altText: "Branding Jute Bag Handle" },
     ],
     stock: 750,
     sku: "JUTE-002",
@@ -53,15 +53,15 @@ const juteBags = [
       size: ["Medium"],
       material: "Eco-Friendly Jute",
     },
-    tags: ["branded", "jute bag", "campus"],
+    tags: ["branding", "jute bag", "campus"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.5, count: 180 },
     seo: {
-      metaTitle: "Branded Jute Bags",
+      metaTitle: "Branding Jute Bags",
       metaDescription:
-        "Branded jute bags with institute logo — perfect for events, students, and eco-friendly branding.",
-      keywords: ["branded jute bags", "printed eco bags", "school jute bags"],
+        "Branding jute bags with institute logo — perfect for events, students, and eco-friendly branding.",
+      keywords: ["branding jute bags", "printed eco bags", "school jute bags"],
     },
   },
 
@@ -166,7 +166,7 @@ const juteBags = [
     name: "Custom Logo Jute Bags",
     slug: "custom-logo-jute-bags",
     description:
-      "Showcase your institute’s professionalism with Custom Logo Jute Bags featuring high-quality embroidery or print designs for a premium branded look.",
+      "Showcase your institute’s professionalism with Custom Logo Jute Bags featuring high-quality embroidery or print designs for a premium branding look.",
     price: 269,
     salePrice: 249,
     images: [{ url: "/assets/jutebags/19.webp", altText: "Custom Logo Jute Bag" }],

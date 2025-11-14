@@ -34,6 +34,7 @@ const examPads = require('./stationery/examPads.js');
 const instituteBackpacks = require('./bags/instituteBackpacks.js');
 const juteBags = require('./bags/juteBags.js');
 const messengerBags = require('./bags/messengerBags.js');
+const toteBags = require('./bags/toteBags.js');
 
 const seedData = [
   // --- Category: Apparel ---
@@ -88,35 +89,6 @@ const seedData = [
             isActive: true,
             ratings: { average: 4.2, count: 95 },
             seo: { metaTitle: "Shop Round Neck T-Shirts", metaDescription: "Durable and comfortable round neck shirts.", keywords: ["round neck shirt", "plain tee"] },
-          },
-        ],
-      },
-      {
-        name: "Sweatshirts",
-        slug: "sweatshirts",
-        description: "Warm and cozy sweatshirts for cooler weather.",
-        image: "/assets/apparel/sweatshirt.webp",
-        seo: {
-          metaTitle: "Custom Sweatshirts",
-          metaDescription: "Fleece-lined sweatshirts for personalized university or team wear.",
-          keywords: ["sweatshirt", "fleece", "winter wear"],
-        },
-        products: [
-          {
-            name: "Sweatshirts",
-            slug: "sweatshirts-product",
-            description: "High-quality fleece sweatshirts, great for campus winter wear.",
-            price: 19.99,
-            salePrice: 17.99,
-            images: [{ url: "/assets/sweatshirt1.png", altText: "Custom Sweatshirt" }],
-            stock: 80,
-            sku: "APP-SWT-003",
-            attributes: { color: ["Maroon", "Heather Grey"], size: ["M", "L", "XL"], material: "Fleece" },
-            tags: ["sweatshirt", "hoodie", "winter"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.7, count: 60 },
-            seo: { metaTitle: "Buy Branding Sweatshirts", metaDescription: "Order custom printed sweatshirts.", keywords: ["fleece top", "warm jumper"] },
           },
         ],
       },
@@ -471,24 +443,7 @@ const seedData = [
           metaDescription: "Lightweight and versatile canvas tote bags for promotions and daily errands.",
           keywords: ["tote bag", "canvas bag", "shopping bag"],
         },
-        products: [
-          {
-            name: "Tote Bag",
-            slug: "tote-bag-product",
-            description: "Lightweight canvas tote bag, perfect for branding and conference giveaways.",
-            price: 14.99,
-            salePrice: 10.99,
-            images: [{ url: "/assets/totebag.png", altText: "Custom Tote Bag" }],
-            stock: 400,
-            sku: "BAG-TOTE-004",
-            attributes: { color: ["Off-White", "Black"], size: ["Standard"], material: "Canvas" },
-            tags: ["bag", "tote", "canvas"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.3, count: 110 },
-            seo: { metaTitle: "Buy Bulk Tote Bags", metaDescription: "Printed canvas tote bags for events.", keywords: ["carry bag", "shoulder bag"] },
-          },
-        ],
+        products: toteBags,
       }
     ],
   },
