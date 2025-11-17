@@ -35,9 +35,17 @@ const instituteBackpacks = require('./bags/instituteBackpacks.js');
 const juteBags = require('./bags/juteBags.js');
 const messengerBags = require('./bags/messengerBags.js');
 const toteBags = require('./bags/toteBags.js');
+
+//apparel
 const poloTshirts = require('./apparel/poloTshirts.js');
 const roundNeckTshirts = require('./apparel/roundNeckTshirts.js');
 const formalShirts = require('./apparel/formalShirts.js');
+const hoodies = require('./apparel/hoodies.js');
+const nehruJackets = require('./apparel/nehruJackets.js');
+const graduationHats = require('./apparel/graduationHats.js');
+const graduationGowns = require('./apparel/graduationGowns.js');
+const graduationSashes = require('./apparel/graduationSashes.js');
+const graduationHoods = require('./apparel/graduationHoods.js');
 
 const seedData = [
   // --- Category: Apparel ---
@@ -98,82 +106,29 @@ const seedData = [
           metaDescription: "Branding hoodies and jackets for ultimate comfort and team spirit.",
           keywords: ["hoodie", "jacket", "outerwear"],
         },
-        products: [
-          {
-            name: "Hoodies-Jackets",
-            slug: "hoodies-jackets-product",
-            description: "Zipper hoodies and jackets for personalized branding.",
-            price: 19.99,
-            salePrice: null,
-            images: [{ url: "/assets/hoodie.png", altText: "Custom Hoodie" }],
-            stock: 120,
-            sku: "APP-HDJ-005",
-            attributes: { color: ["Black", "Royal Blue"], size: ["S", "M", "L", "XL"], material: "Cotton Fleece" },
-            tags: ["hoodie", "jacket", "zip up"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.4, count: 70 },
-            seo: { metaTitle: "Shop Branding Hoodies", metaDescription: "Customizable high-quality hoodies.", keywords: ["university hoodie", "team jacket"] },
-          },
-        ],
+        products: hoodies,
       },
       {
-        name: "Nehru Jacket",
-        slug: "nehru-jacket",
-        description: "Traditional Nehru jackets for formal Indian attire.",
-        image: "/assets/apparel/nehru.webp",
+        name: "Uniform Jackets",
+        slug: "uniform-jackets",
+        description:
+          "Professional and elegant uniform jackets including Nehru Jackets and Teacher Jackets — perfect for faculty, staff, and formal institute events.",
+        image: "/assets/apparel/uniformjackets.webp",
         seo: {
-          metaTitle: "Nehru Jackets",
-          metaDescription: "Elegant Nehru jackets for traditional and formal ceremonies.",
-          keywords: ["Nehru jacket", "traditional", "ethnic wear"],
+          metaTitle: "Uniform Jackets (Nehru & Teacher Jackets)",
+          metaDescription:
+            "Premium uniform jackets including Nehru jackets and teacher jackets designed for educational institutes, staff, and formal events.",
+          keywords: [
+            "uniform jackets",
+            "nehru jacket",
+            "teacher jacket",
+            "faculty uniform",
+            "institute jackets",
+            "formal wear"
+          ],
         },
-        products: [
-          {
-            name: "Nehru Jacket",
-            slug: "nehru-jacket-product",
-            description: "Classic Nehru jacket, perfect for convocation or formal institute events.",
-            price: 29.99,
-            salePrice: null,
-            images: [{ url: "/assets/nehrujacket.png", altText: "Nehru Jacket" }],
-            stock: 50,
-            sku: "APP-NEH-006",
-            attributes: { color: ["Beige", "Black"], size: ["38", "40", "42", "44"], material: "Khadi" },
-            tags: ["jacket", "nehru", "ethnic"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.8, count: 30 },
-            seo: { metaTitle: "Buy Nehru Jacket", metaDescription: "Formal Nehru jackets for institutions.", keywords: ["modi jacket", "bandhgala"] },
-          },
-        ],
-      },
-      {
-        name: "Teacher Jacket",
-        slug: "teacher-jacket",
-        description: "Professional jackets tailored for teachers and faculty.",
-        image: "/assets/apparel/teacherjacket.webp",
-        seo: {
-          metaTitle: "Teacher Jackets",
-          metaDescription: "Comfortable and professional jackets for educators.",
-          keywords: ["teacher", "faculty jacket", "uniform"],
-        },
-        products: [
-          {
-            name: "Teacher Jacket",
-            slug: "teacher-jacket-product",
-            description: "Durable and professional jackets designed for school and university staff.",
-            price: 29.99,
-            salePrice: null,
-            images: [{ url: "/assets/teacherjacket.png", altText: "Teacher Jacket" }],
-            stock: 75,
-            sku: "APP-TCH-007",
-            attributes: { color: ["Brown", "Navy"], size: ["M", "L", "XL"], material: "Polyester" },
-            tags: ["jacket", "teacher", "uniform"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.5, count: 25 },
-            seo: { metaTitle: "Custom Teacher Jackets", metaDescription: "Professional faculty uniforms.", keywords: ["educator jacket", "staff uniform"] },
-          },
-        ],
+
+        products: nehruJackets,
       },
       {
         name: "Graduation Hat",
@@ -185,24 +140,7 @@ const seedData = [
           metaDescription: "Traditional square graduation caps with tassels.",
           keywords: ["graduation cap", "hat", "mortarboard"],
         },
-        products: [
-          {
-            name: "Graduation Hat",
-            slug: "graduation-hat-product",
-            description: "Classic graduation hat with a tassel, available in various colors.",
-            price: 9.99,
-            salePrice: null,
-            images: [{ url: "/assets/gradcap.png", altText: "Graduation Hat" }],
-            stock: 500,
-            sku: "APP-GRD-CAP",
-            attributes: { color: ["Black", "Blue"], size: ["One Size"], material: "Felt/Polyester" },
-            tags: ["graduation", "cap", "tassel"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.9, count: 200 },
-            seo: { metaTitle: "Buy Graduation Cap", metaDescription: "Order graduation caps in bulk.", keywords: ["mortarboard", "convocation hat"] },
-          },
-        ],
+        products:graduationHats,
       },
       {
         name: "Graduation Gown",
@@ -214,24 +152,7 @@ const seedData = [
           metaDescription: "High-quality academic gowns for convocation ceremonies.",
           keywords: ["graduation gown", "robe", "convocation"],
         },
-        products: [
-          {
-            name: "Graduation Gown",
-            slug: "graduation-gown-product",
-            description: "Full-length graduation gown for students and faculty.",
-            price: 39.99,
-            salePrice: null,
-            images: [{ url: "/assets/gradgown.png", altText: "Graduation Gown" }],
-            stock: 300,
-            sku: "APP-GRD-GOWN",
-            attributes: { color: ["Black", "Navy"], size: ["S", "M", "L", "XL"], material: "Polyester" },
-            tags: ["graduation", "gown", "robe"],
-            isFeatured: true,
-            isActive: true,
-            ratings: { average: 4.8, count: 180 },
-            seo: { metaTitle: "Order Academic Gowns", metaDescription: "Buy or rent graduation robes.", keywords: ["convocation gown", "academic dress"] },
-          },
-        ],
+        products: graduationGowns,
       },
       {
         name: "Graduation Stole",
@@ -243,53 +164,7 @@ const seedData = [
           metaDescription: "Embroidered and printed graduation stoles to recognize achievements.",
           keywords: ["stole", "graduation sash", "honor"],
         },
-        products: [
-          {
-            name: "Graduation Stole",
-            slug: "graduation-stole-product",
-            description: "Satin graduation stole for degree distinction, customizable with logo.",
-            price: 14.99,
-            salePrice: null,
-            images: [{ url: "/assets/gradstole.png", altText: "Graduation Stole" }],
-            stock: 400,
-            sku: "APP-GRD-STOLE",
-            attributes: { color: ["Red", "Gold", "White"], size: ["One Size"], material: "Satin" },
-            tags: ["graduation", "stole", "sash"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.7, count: 150 },
-            seo: { metaTitle: "Custom Graduation Stoles", metaDescription: "Buy personalized graduation sashes.", keywords: ["convocation stole", "satin sash"] },
-          },
-        ],
-      },
-      {
-        name: "Convocation Sash",
-        slug: "convocation-sash",
-        description: "Official sashes for convocation ceremonies.",
-        image: "/assets/apparel/sash.webp",
-        seo: {
-          metaTitle: "Convocation Sashes",
-          metaDescription: "Official printed sashes for convocation ceremonies.",
-          keywords: ["convocation sash", "sash", "ceremony"],
-        },
-        products: [
-          {
-            name: "Convocation Sash",
-            slug: "convocation-sash-product",
-            description: "Printed sash used during university convocation ceremonies.",
-            price: 12.99,
-            salePrice: null,
-            images: [{ url: "/assets/sash.png", altText: "Convocation Sash" }],
-            stock: 350,
-            sku: "APP-GRD-SASH",
-            attributes: { color: ["Red", "Green", "Blue"], size: ["One Size"], material: "Polyester" },
-            tags: ["graduation", "sash", "convocation"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.6, count: 90 },
-            seo: { metaTitle: "Buy Convocation Sash", metaDescription: "Order university convocation sashes.", keywords: ["printed sash", "ceremony wear"] },
-          },
-        ],
+        products: graduationSashes,
       },
       {
         name: "Graduation Hood",
@@ -301,55 +176,8 @@ const seedData = [
           metaDescription: "Colored hoods to represent degree, discipline, and institution.",
           keywords: ["graduation hood", "academic", "degree"],
         },
-        products: [
-          {
-            name: "Graduation Hood",
-            slug: "graduation-hood-product",
-            description: "Traditional academic hood in various colors to signify field of study.",
-            price: 19.99,
-            salePrice: null,
-            images: [{ url: "/assets/gradhood.png", altText: "Graduation Hood" }],
-            stock: 150,
-            sku: "APP-GRD-HOOD",
-            attributes: { color: ["Red/White", "Gold/Black"], size: ["One Size"], material: "Velvet/Satin" },
-            tags: ["graduation", "hood", "academic"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.7, count: 50 },
-            seo: { metaTitle: "Buy Graduation Hoods", metaDescription: "Official academic hoods for convocation.", keywords: ["degree hood", "convocation hood"] },
-          },
-        ],
+        products: graduationHoods,
       },
-      {
-        name: "Kids Graduation Gown & Cap",
-        slug: "kids-graduation-gown-cap",
-        description: "Graduation attire sized for children.",
-        image: "/assets/apparel/kidsgown.webp",
-        seo: {
-          metaTitle: "Kids Graduation Attire",
-          metaDescription: "Cute and comfortable graduation gowns and caps for pre-school and elementary students.",
-          keywords: ["kids graduation", "children's robe", "junior cap"],
-        },
-        products: [
-          {
-            name: "Kids Graduation Gown & Cap",
-            slug: "kids-graduation-gown-cap-product",
-            description: "Miniature graduation gown and cap set for kindergarten and primary school graduations.",
-            price: 24.99,
-            salePrice: null,
-            images: [{ url: "/assets/kidsgraddress.png", altText: "Kids Graduation Attire" }],
-            stock: 180,
-            sku: "APP-GRD-KID",
-            attributes: { color: ["Red", "Yellow"], size: ["XS", "S", "M"], material: "Polyester" },
-            tags: ["graduation", "kids", "children"],
-            isFeatured: false,
-            isActive: true,
-            ratings: { average: 4.7, count: 70 },
-            seo: { metaTitle: "Buy Kids Graduation Set", metaDescription: "Adorable graduation outfits for children.", keywords: ["kindergarten gown", "mini robe"] },
-          },
-        ],
-      },
-    
     ],
   },
   // --- Category: Bags ---

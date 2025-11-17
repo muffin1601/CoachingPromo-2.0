@@ -44,10 +44,10 @@ const categories = [
           { name: "Graduation Gown", href: "/apparel-accessories/graduation-gown" },
           {
             name: "Stoles & Sashes",
-            href: "/apparel-accessories/stoles-and-sashes"
+            href: "/apparel-accessories/graduation-stole"
           },
           { name: "Graduation Hood", href: "/apparel-accessories/graduation-hood" },
-          { name: "Kids Graduation Gown and Cap", href: "/apparel-accessories/kids-graduation-gown-and-cap" },
+          // { name: "Kids Graduation Gown and Cap", href: "/apparel-accessories/kids-graduation-gown-and-cap" },
         ]
       }
     ]
