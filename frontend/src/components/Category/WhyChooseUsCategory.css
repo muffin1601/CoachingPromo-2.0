@@ -1,0 +1,165 @@
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #d17504;
+  --brand-orange-dark: #b26203;
+  --neutral-gray: #555;
+  --text-dark: #222;
+  --light-border: #e4e4e4;
+  --light-bg: #fffaf4;
+  --transition: 0.3s ease;
+}
+
+/* Section Wrapper */
+.whycat-wrapper {
+  max-width: 80%;
+  margin: 60px auto 0px auto;
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+}
+
+/* Heading */
+.whycat-heading {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+/* Description */
+.whycat-description {
+  max-width: 760px;
+  margin: 0 auto 45px;
+  font-size: 16px;
+  color: var(--neutral-gray);
+  line-height: 1.6;
+}
+
+/* Grid */
+.whycat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.whycat-card {
+  background: #fff;
+  border: 1px solid var(--light-border);
+  padding: 22px 20px;
+
+  transition: var(--transition);
+}
+
+.whycat-card:hover {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Icon */
+.whycat-icon {
+  color: var(--brand-orange);
+  margin-bottom: 10px;
+}
+
+/* Card Title */
+.whycat-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+
+/* Card Text */
+.whycat-card p {
+  font-size: 15px;
+  color: var(--neutral-gray);
+  line-height: 1.5;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(15px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* =====================================================
+   RESPONSIVE BEHAVIOR
+===================================================== */
+
+/* 📱 Tablets */
+@media (max-width: 900px) {
+  .whycat-wrapper {
+    max-width: 90%;
+    margin: 60px auto;
+  }
+
+  .whycat-heading {
+    font-size: 26px;
+  }
+
+  .whycat-description {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+
+  .whycat-card {
+    padding: 20px 18px;
+  }
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .whycat-wrapper {
+    max-width: 92%;
+    margin: 50px auto;
+  }
+
+  .whycat-heading {
+    font-size: 24px;
+  }
+
+  .whycat-description {
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 1.55;
+  }
+
+  .whycat-grid {
+    gap: 18px;
+  }
+
+  .whycat-card {
+    padding: 18px 16px;
+  }
+
+  .whycat-card h3 {
+    font-size: 16px;
+  }
+
+  .whycat-card p {
+    font-size: 14px;
+  }
+}
+
+/* 📱 Extra Small Screens */
+@media (max-width: 400px) {
+  .whycat-heading {
+    font-size: 22px;
+  }
+
+  .whycat-description {
+    font-size: 13.5px;
+  }
+
+  .whycat-card {
+    padding: 16px 14px;
+  }
+
+  .whycat-card h3 {
+    font-size: 15px;
+  }
+
+  .whycat-card p {
+    font-size: 13px;
+  }
+}

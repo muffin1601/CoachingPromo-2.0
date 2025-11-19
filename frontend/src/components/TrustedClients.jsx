@@ -22,9 +22,9 @@ const TrustedClients = () => {
   return (
     <section className="trusted-wrapper">
       <div className="trusted-container">
-        <h2 className="trusted-title">Trusted by Coachings, Institutions, and many more Study Centers</h2>
+        <h2 className="trusted-title">Trusted by Coaching Institutes, Schools, Colleges & Educational Training Centers Across India</h2>
         <p className="trusted-subtext">
-          Chemistry Solutions • Photon Classes • Basu Classes • Top Coaching Institutes & More
+          Chemistry Solutions • Photon Classes • Basu Classes • IIT-JEE/NEET Coaching Leaders • Skill Development Institutes • Academic Study Centers & More
         </p>
 
         {/*  Infinite Marquee */}

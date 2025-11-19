@@ -24,7 +24,8 @@ const baseSubcategories = [
     name: "Polo T-Shirts",
     category: "Apparel",
     image: "/assets/home-subcat/polo.webp",
-    slug: "polo-tshirts",
+    catslug: "apparel-accessories",
+    slug: "polo-t-shirts",
     productCount: 152,
     icon: Shirt,
   },
@@ -32,7 +33,8 @@ const baseSubcategories = [
     name: "Round Neck T-Shirts",
     category: "Apparel",
     image: "/assets/home-subcat/round.webp",
-    slug: "round-neck-tshirts",
+    catslug: "apparel-accessories",
+    slug: "round-neck-t-shirts",
     productCount: 189,
     icon: Shirt,
   },
@@ -40,16 +42,18 @@ const baseSubcategories = [
     name: "Hoodies / Jackets",
     category: "Apparel",
     image: "/assets/home-subcat/hoodie.webp",
+    catslug: "apparel-accessories",
     slug: "hoodies-jackets",
     productCount: 121,
     icon: PackageCheck,
   },
 
   {
-    name: "Institute Backpack",
+    name: "Institute Backpacks",
     category: "Bags",
     image: "/assets/home-subcat/bag.webp",
-    slug: "institute-backpack",
+    catslug: "bags",
+    slug: "institute-backpacks",
     productCount: 143,
     icon: ShoppingBag,
   },
@@ -57,6 +61,7 @@ const baseSubcategories = [
     name: "Tote Bag",
     category: "Bags",
     image: "/assets/home-subcat/tote.webp",
+    catslug: "bags",
     slug: "tote-bag",
     productCount: 97,
     icon: ShoppingBag,
@@ -66,6 +71,7 @@ const baseSubcategories = [
     name: "Water Bottle",
     category: "Promotional Items",
     image: "/assets/home-subcat/bottle.webp",
+    catslug: "promotional-items",
     slug: "water-bottle",
     productCount: 202,
     icon: PenLine,
@@ -74,6 +80,7 @@ const baseSubcategories = [
     name: "Diary Set",
     category: "Promotional Items",
     image: "/assets/home-subcat/diary.webp",
+    catslug: "promotional-items",
     slug: "diary-set",
     productCount: 111,
     icon: BookOpen,
@@ -82,6 +89,7 @@ const baseSubcategories = [
     name: "Trophy",
     category: "Promotional Items",
     image: "/assets/home-subcat/trophy.webp",
+    catslug: "promotional-items",
     slug: "trophy",
     productCount: 85,
     icon: Award,
@@ -91,15 +99,17 @@ const baseSubcategories = [
     name: "Notebook",
     category: "Stationery",
     image: "/assets/home-subcat/notbook.webp",
+    catslug: "stationery",
     slug: "notebook",
     productCount: 164,
     icon: Notebook,
   },
   {
-    name: "Metal Pen",
+    name: "Customized Pens",
     category: "Stationery",
     image: "/assets/home-subcat/pen.webp",
-    slug: "metal-pen",
+    catslug: "stationery",
+    slug: "customized-pens",
     productCount: 138,
     icon: PenLine,
   },
@@ -109,7 +119,7 @@ const baseSubcategories = [
 const popularSubcategories = baseSubcategories
   .map((item) => ({
     ...item,
-    href: `/products/${item.slug}`,
+    href: `/${item.catslug}/${item.slug}`,
   }))
   .sort((a, b) => b.productCount - a.productCount)
   .slice(0, 10);
@@ -117,9 +127,13 @@ const popularSubcategories = baseSubcategories
 const PopularSubcategories = () => {
   return (
     <section className="popsub-wrapper">
-      <h2 className="popsub-title">Explore Our Popular Items </h2>
+      <h2 className="popsub-title">
+        Popular Products Preferred by Coaching Institutes & Educational Centers
+      </h2>
+
       <p className="popsub-subtext">
-        Trending choices from top institutes & corporates
+        Explore high-demand apparel, bags, promotional items & stationery used by
+        leading coaching institutes, schools, colleges & training centers across India.
       </p>
 
       <div className="popsub-slider">
@@ -149,7 +163,7 @@ const PopularSubcategories = () => {
                     <img
                       src={sub.image}
                       className="popsub-img"
-                      alt={sub.name}
+                      alt={`${sub.name} for coaching institutes, schools and educational organizations`}
                     />
                     <span className="parent-chip">{sub.category}</span>
                   </div>
@@ -162,7 +176,7 @@ const PopularSubcategories = () => {
                     <h3 className="popsub-name">{sub.name}</h3>
 
                     <p className="popsub-count">
-                      {sub.productCount}+ products
+                      {sub.productCount}+ custom products for institutes
                     </p>
 
                     <a href={sub.href} className="popsub-btn">

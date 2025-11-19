@@ -52,129 +52,159 @@ const seedData = [
   {
     name: "Apparel",
     slug: "apparel-accessories",
-    description: "A wide selection of custom branding apparel for students and faculty.",
+    description:
+      "Discover premium custom-branded apparel designed for coaching institutes, schools, and colleges. From personalized T-shirts and hoodies to formal uniforms and convocation gowns, our high-quality clothing enhances institutional identity, boosts team spirit, and delivers long-lasting comfort and durability.",
+
     image: "/assets/category/apparel.webp",
+
     seo: {
-      metaTitle: "Custom Apparel | T-Shirts, Hoodies, Graduation Gear",
-      metaDescription: "Find custom polo t-shirts, hoodies, graduation gowns, and more for your institution.",
-      keywords: ["apparel", "t-shirts", "hoodies", "graduation", "jackets"],
+      metaTitle: "Custom Apparel | T-Shirts, Hoodies, Uniforms & Graduation Wear",
+      metaDescription:
+        "Explore custom apparel including polo t-shirts, hoodies, uniforms, jackets, and graduation gowns for institutes. Premium quality with professional branding.",
+      keywords: [
+        "custom apparel",
+        "t-shirts",
+        "hoodies",
+        "uniform jackets",
+        "graduation gowns",
+        "institute uniforms",
+        "custom clothing"
+      ],
     },
+
     subcategories: [
       {
         name: "Polo T-Shirts",
         slug: "polo-t-shirts",
-        description: "Comfortable and customizable polo t-shirts.",
+        description:
+          "High-quality customizable polo T-shirts designed for institutes, events, staff uniforms, and student branding. Available in multiple colors and fabrics.",
         image: "/assets/apparel/polo.webp",
         seo: {
-          metaTitle: "Polo T-Shirts",
-          metaDescription: "Custom polo t-shirts for branding and events.",
-          keywords: ["polo", "t-shirt", "apparel"],
+          metaTitle: "Custom Polo T-Shirts",
+          metaDescription:
+            "Premium custom polo T-shirts for institutes, events, uniforms, and branded merchandise.",
+          keywords: ["polo", "custom t-shirt", "polo shirts", "branded apparel"],
         },
         products: poloTshirts,
       },
       {
         name: "Round Neck T-Shirts",
         slug: "round-neck-t-shirts",
-        description: "Versatile round neck t-shirts for casual wear.",
+        description:
+          "Comfortable and versatile round neck T-shirts perfect for student activities, events, branding, and casual institute wear.",
         image: "/assets/apparel/round.webp",
         seo: {
-          metaTitle: "Round Neck T-Shirts",
-          metaDescription: "Custom round neck t-shirts available in various colors.",
-          keywords: ["round neck", "t-shirt", "casual"],
+          metaTitle: "Custom Round Neck T-Shirts",
+          metaDescription:
+            "Custom round neck T-shirts in various colors and designs, ideal for institutes and events.",
+          keywords: ["round neck", "t-shirt", "custom shirts", "student apparel"],
         },
         products: roundNeckTshirts,
       },
       {
         name: "Formal Shirts",
         slug: "shirts",
-        description: "Formal and casual shirts for professional settings.",
+        description:
+          "Premium formal and semi-formal shirts suitable for faculty, office wear, events, and professional institute uniforms.",
         image: "/assets/apparel/shirt.webp",
         seo: {
-          metaTitle: "Formal and Casual Shirts",
-          metaDescription: "A selection of formal and casual shirts for various occasions.",
-          keywords: ["formal", "shirt", "office wear"],
+          metaTitle: "Formal & Casual Shirts",
+          metaDescription:
+            "High-quality formal and casual shirts for faculty, office wear, and institute branding.",
+          keywords: ["formal shirt", "teacher uniform", "office wear", "branded shirts"],
         },
         products: formalShirts,
       },
       {
         name: "Hoodies-Jackets",
         slug: "hoodies-jackets",
-        description: "Stylish and warm hoodies and jackets.",
+        description:
+          "Warm, stylish, and durable hoodies and jackets ideal for winter events, student batches, and institute merchandise branding.",
         image: "/assets/apparel/hoodie.webp",
         seo: {
-          metaTitle: "Hoodies and Jackets",
-          metaDescription: "Branding hoodies and jackets for ultimate comfort and team spirit.",
-          keywords: ["hoodie", "jacket", "outerwear"],
+          metaTitle: "Custom Hoodies & Jackets",
+          metaDescription:
+            "Branded hoodies and jackets designed for institutes, student batches, and winter uniforms.",
+          keywords: ["hoodie", "jacket", "winter wear", "branded outerwear"],
         },
         products: hoodies,
       },
+
       {
         name: "Uniform Jackets",
         slug: "uniform-jackets",
         description:
-          "Professional and elegant uniform jackets including Nehru Jackets and Teacher Jackets — perfect for faculty, staff, and formal institute events.",
+          "Premium uniform jackets including Nehru jackets and teacher jackets designed for faculty, staff, formal events, and official institute representation.",
         image: "/assets/apparel/uniformjackets.webp",
         seo: {
           metaTitle: "Uniform Jackets (Nehru & Teacher Jackets)",
           metaDescription:
-            "Premium uniform jackets including Nehru jackets and teacher jackets designed for educational institutes, staff, and formal events.",
+            "Premium Nehru jackets and teacher jackets made for faculty, staff, and institute events.",
           keywords: [
             "uniform jackets",
             "nehru jacket",
             "teacher jacket",
-            "faculty uniform",
-            "institute jackets",
-            "formal wear"
+            "faculty wear",
+            "formal institute jackets"
           ],
         },
-
         products: nehruJackets,
       },
+
       {
         name: "Graduation Hat",
         slug: "graduation-hat",
-        description: "Essential graduation caps (mortarboards).",
+        description:
+          "Traditional graduation caps (mortarboards) with tassels, perfect for convocation ceremonies and academic celebrations.",
         image: "/assets/apparel/hat.webp",
         seo: {
-          metaTitle: "Graduation Hats (Caps)",
-          metaDescription: "Traditional square graduation caps with tassels.",
-          keywords: ["graduation cap", "hat", "mortarboard"],
+          metaTitle: "Graduation Hats & Caps",
+          metaDescription:
+            "Classic mortarboard graduation caps ideal for convocation ceremonies.",
+          keywords: ["graduation cap", "mortarboard", "graduation hat"],
         },
-        products:graduationHats,
+        products: graduationHats,
       },
       {
         name: "Graduation Gown",
         slug: "graduation-gown",
-        description: "Academic graduation gowns for ceremonies.",
+        description:
+          "High-quality academic graduation gowns designed for convocation ceremonies, degree programs, and formal academic events.",
         image: "/assets/apparel/gown.webp",
         seo: {
           metaTitle: "Graduation Gowns",
-          metaDescription: "High-quality academic gowns for convocation ceremonies.",
-          keywords: ["graduation gown", "robe", "convocation"],
+          metaDescription:
+            "Premium academic gowns designed for convocation and graduation ceremonies.",
+          keywords: ["graduation gown", "convocation robe", "academic wear"],
         },
         products: graduationGowns,
       },
       {
         name: "Graduation Stole",
         slug: "graduation-stole",
-        description: "Customizable honor stoles for graduation.",
+        description:
+          "Customizable honor stoles perfect for graduation ceremonies and academic recognition, with print and embroidery options.",
         image: "/assets/apparel/stole.webp",
         seo: {
           metaTitle: "Graduation Stoles",
-          metaDescription: "Embroidered and printed graduation stoles to recognize achievements.",
-          keywords: ["stole", "graduation sash", "honor"],
+          metaDescription:
+            "Custom printed and embroidered graduation stoles for academic achievements.",
+          keywords: ["graduation stole", "honor sash", "convocation stole"],
         },
         products: graduationSashes,
       },
+
       {
         name: "Graduation Hood",
         slug: "graduation-hood",
-        description: "Academic hoods to denote degree and discipline.",
+        description:
+          "Academic graduation hoods that represent specialization, degree level, and institutional colors for formal ceremonies.",
         image: "/assets/apparel/hood.webp",
         seo: {
           metaTitle: "Academic Graduation Hoods",
-          metaDescription: "Colored hoods to represent degree, discipline, and institution.",
-          keywords: ["graduation hood", "academic", "degree"],
+          metaDescription:
+            "Colored academic hoods symbolizing degrees, disciplines, and institutional identity.",
+          keywords: ["graduation hood", "academic hood", "degree hood"],
         },
         products: graduationHoods,
       },
@@ -184,59 +214,108 @@ const seedData = [
   {
     name: "Bags",
     slug: "bags",
-    description: "A selection of custom branding bags for students and events.",
+
+    description:
+      "Premium custom-branded bags, backpacks, totes, and laptop bags crafted for coaching institutes, schools, colleges, and corporate training programs. Durable, stylish, and ideal for student welcome kits, events, seminars, and day-to-day institutional use.",
+
     image: "/assets/category/bag.webp",
+
     seo: {
-      metaTitle: "Custom Bags | Backpacks, Totes, Messenger",
-      metaDescription: "Durable and customizable backpacks, tote bags, and messenger bags for promotion or daily use.",
-      keywords: ["bags", "backpacks", "tote bag", "messenger"],
+      metaTitle: "Custom Bags | Backpacks, Tote Bags, Laptop & Messenger Bags",
+      metaDescription:
+        "Explore durable and fully customizable backpacks, tote bags, laptop bags, and messenger bags for institutes, events, and student welcome kits.",
+      keywords: [
+        "custom bags",
+        "backpacks",
+        "tote bags",
+        "laptop bags",
+        "messenger bags",
+        "institute bags",
+        "promotional bags"
+      ],
     },
+
     subcategories: [
       {
         name: "Institute Backpacks",
         slug: "institute-backpacks",
-        description: "Heavy-duty backpacks designed for institute use.",
+        description:
+          "High-strength, ergonomic institute backpacks perfect for students, staff, and training programs. Ideal for daily use, branding, and welcome kits.",
         image: "/assets/institutebag.png",
         seo: {
           metaTitle: "Institute Backpacks",
-          metaDescription: "Ergonomic and durable backpacks branding for your educational institution.",
-          keywords: ["institute bag", "school bag", "heavy duty backpack"],
+          metaDescription:
+            "Durable, ergonomic backpacks designed for schools, colleges, and coaching institutes with custom branding options.",
+          keywords: [
+            "institute backpack",
+            "school bag",
+            "college bag",
+            "custom backpack",
+            "branded bag"
+          ],
         },
         products: instituteBackpacks,
       },
+
       {
         name: "Jute Bag",
         slug: "jute-bag",
-        description: "Eco-friendly, reusable jute shopping and tote bags.",
+        description:
+          "Eco-friendly, reusable jute bags perfect for events, seminars, student kits, and sustainable gift packaging.",
         image: "/assets/jutebag.png",
         seo: {
           metaTitle: "Custom Jute Bags",
-          metaDescription: "Sustainable and customizable jute bags for events and retail.",
-          keywords: ["jute bag", "eco-friendly", "reusable"],
+          metaDescription:
+            "Sustainable, reusable jute bags ideal for branding, events, student kits, and eco-friendly packaging.",
+          keywords: [
+            "jute bag",
+            "eco-friendly bag",
+            "reusable tote",
+            "sustainable gifting",
+            "jute tote"
+          ],
         },
         products: juteBags,
       },
+
       {
         name: "Messenger Bags",
         slug: "messenger-bags",
-        description: "Stylish cross-body bags for carrying essentials and laptops.",
+        description:
+          "Practical and stylish messenger bags designed for faculty, staff, and students. Ideal for carrying laptops, documents, and daily essentials.",
         image: "/assets/messengerbag.png",
         seo: {
           metaTitle: "Branding Messenger Bags",
-          metaDescription: "Durable and practical messenger bags with shoulder straps for professionals.",
-          keywords: ["messenger bag", "laptop bag", "cross body"],
+          metaDescription:
+            "Premium messenger bags with custom branding, ideal for laptop use, faculty, staff, and professional events.",
+          keywords: [
+            "messenger bag",
+            "laptop bag",
+            "crossbody bag",
+            "professional bag",
+            "branded messenger bag"
+          ],
         },
         products: messengerBags,
       },
+
       {
         name: "Tote Bag",
         slug: "tote-bag",
-        description: "Simple, large-capacity canvas tote bags.",
+        description:
+          "Lightweight and spacious canvas tote bags perfect for events, seminars, student kits, and everyday carry.",
         image: "/assets/totebag.png",
         seo: {
           metaTitle: "Custom Tote Bags",
-          metaDescription: "Lightweight and versatile canvas tote bags for promotions and daily errands.",
-          keywords: ["tote bag", "canvas bag", "shopping bag"],
+          metaDescription:
+            "Large, durable, and customizable tote bags perfect for events, branding, and student welcome kits.",
+          keywords: [
+            "tote bag",
+            "canvas bag",
+            "shopping bag",
+            "promotional tote",
+            "branded tote"
+          ],
         },
         products: toteBags,
       }
@@ -246,204 +325,264 @@ const seedData = [
   {
     name: "Promotional Items",
     slug: "promotional-items",
-    description: "Custom branding merchandise for marketing and giveaways.",
+
+    description:
+      "Explore premium custom promotional items designed for coaching institutes, schools, colleges, and corporate training programs. From branded mugs and bottles to diaries, stands, clocks, and accessories, our promotional merchandise enhances visibility, strengthens branding, and creates lasting impressions at events, seminars, and giveaways.",
+
     image: "/assets/category/promotional-items.webp",
+
     seo: {
-      metaTitle: "Custom Promotional Items | Mugs, Bottles, Diaries",
-      metaDescription: "High-quality, customizable promotional products for corporate and academic events.",
-      keywords: ["promotional items", "merchandise", "giveaways", "branding"],
+      metaTitle: "Custom Promotional Items | Mugs, Bottles, Clocks, Diaries & Gifts",
+      metaDescription:
+        "Discover customizable promotional items including mugs, bottles, diaries, clocks, and accessories for institutes, events, seminars, and corporate gifting.",
+      keywords: [
+        "promotional items",
+        "custom merchandise",
+        "branded gifts",
+        "corporate giveaways",
+        "event merchandise",
+        "institute branding",
+        "custom printed products"
+      ],
     },
+
     subcategories: [
       {
         name: "Mug",
         slug: "mug",
-        description: "Custom printed ceramic mugs.",
+        description:
+          "Custom-printed ceramic and travel mugs perfect for institute branding, corporate gifting, student kits, and event souvenirs.",
         image: "/assets/mug.png",
         seo: {
           metaTitle: "Custom Branding Mugs",
-          metaDescription: "Ceramic and travel mugs for corporate gifting and promotion.",
-          keywords: ["mug", "coffee mug", "ceramic"],
+          metaDescription:
+            "Personalized ceramic and travel mugs ideal for gifting, branding, and promotional events.",
+          keywords: ["custom mug", "ceramic mug", "branding mug", "coffee mug"],
         },
         products: mugs,
       },
+
       {
         name: "Water Bottle",
         slug: "water-bottle",
-        description: "Branding water bottles in various materials.",
+        description:
+          "Durable and reusable branded water bottles available in steel, plastic, and sipper variants—perfect for student kits, sports events, and institutional gifting.",
         image: "/assets/waterbottle.png",
         seo: {
           metaTitle: "Custom Water Bottles",
-          metaDescription: "Reusable plastic and steel water bottles for sports and hydration.",
-          keywords: ["water bottle", "sipper", "hydration"],
+          metaDescription:
+            "Reusable steel, plastic, and sipper water bottles customized for schools, colleges, events, and sports activities.",
+          keywords: ["water bottle", "sipper", "steel bottle", "branded bottle"],
         },
         products: bottles,
       },
+
       {
         name: "Diary Set",
         slug: "diary-set",
-        description: "Complete gift set including a diary, pen, and sometimes a keyring.",
+        description:
+          "Premium diary gift sets including notebooks, pens, and accessories. Ideal for corporate gifting, student kits, and event giveaways.",
         image: "/assets/diaryset.png",
         seo: {
           metaTitle: "Custom Diary Sets",
-          metaDescription: "Executive diary and pen gift sets for corporate and student use.",
-          keywords: ["diary set", "notebook", "executive gift"],
+          metaDescription:
+            "Executive diary sets with pens and accessories—perfect for gifting, events, and institutional branding.",
+          keywords: ["diary set", "executive gift", "notebook set", "corporate gift"],
         },
         products: diarySets,
       },
+
       {
         name: "Paper Stand",
         slug: "paper-stand",
-        description: "Desk stands for papers, brochures, and fliers.",
+        description:
+          "Custom-branded desk and counter paper stands suitable for brochures, flyers, promotional material, and front-desk displays.",
         image: "/assets/paperstand.png",
         seo: {
           metaTitle: "Custom Paper Stands",
-          metaDescription: "Desk and counter paper stands for displaying promotional material.",
-          keywords: ["paper stand", "brochure holder", "desk accessory"],
+          metaDescription:
+            "Counter and desk paper stands for brochures, promotional material, and display branding.",
+          keywords: ["paper stand", "brochure holder", "desk stand", "display stand"],
         },
         products: paperStands,
       },
+
       {
         name: "Mobile Stand",
         slug: "mobile-stand",
-        description: "Small desk stands for holding mobile phones.",
+        description:
+          "Compact branded mobile stands ideal for desks, offices, and promotional giveaways—great for daily use and high visibility.",
         image: "/assets/mobilestand.png",
         seo: {
           metaTitle: "Custom Mobile Stands",
-          metaDescription: "Branding desktop mobile phone stands and holders.",
-          keywords: ["mobile stand", "phone holder", "desk accessory"],
+          metaDescription:
+            "Desktop mobile stands with branding for offices, events, and giveaways.",
+          keywords: ["mobile stand", "phone holder", "desk accessory", "branding stand"],
         },
         products: mobileStands,
       },
+
       {
         name: "Stress Balls",
         slug: "stress-balls",
-        description: "Squeezable foam stress relief balls.",
+        description:
+          "Custom foam stress balls in various shapes designed for events, seminars, corporate gifting, and student engagement.",
         image: "/assets/stressballs.png",
         seo: {
           metaTitle: "Custom Stress Balls",
-          metaDescription: "Logo-printed foam stress balls in various shapes for stress relief and promotion.",
-          keywords: ["stress ball", "anti-stress", "foam toy"],
+          metaDescription:
+            "Logo-printed foam stress balls for stress relief, promotions, and giveaways.",
+          keywords: ["stress ball", "foam toy", "anti-stress", "squeeze ball"],
         },
         products: stressBalls,
       },
+
       {
         name: "Wall Clocks",
         slug: "wall-clocks",
-        description: "Large, branding clocks for walls.",
+        description:
+          "Large custom-branded wall clocks ideal for offices, classrooms, reception areas, and institutional gifting.",
         image: "/assets/wallclock.png",
         seo: {
           metaTitle: "Custom Branding Wall Clocks",
-          metaDescription: "Large wall clocks with custom logo printing for offices and institutions.",
-          keywords: ["wall clock", "office clock", "timepiece"],
+          metaDescription:
+            "Branded wall clocks with logo printing for offices, institutes, and event gifting.",
+          keywords: ["wall clock", "branding clock", "office clock", "institutional gift"],
         },
         products: wallClocks,
       },
+
       {
         name: "Table Clock",
         slug: "table-clock",
-        description: "Small, compact clocks for desks and tables.",
+        description:
+          "Elegant custom desk clocks perfect for office tables, reception desks, corporate gifting, and institute branding.",
         image: "/assets/tableclock.png",
         seo: {
           metaTitle: "Custom Table Clocks",
-          metaDescription: "Desk clocks and digital time displays for corporate gifting.",
-          keywords: ["table clock", "desk clock", "digital clock"],
+          metaDescription:
+            "Desk and digital table clocks personalized for corporate gifting and branding.",
+          keywords: ["table clock", "desk clock", "digital clock", "branded clock"],
         },
         products: tableClocks,
       },
+
       {
         name: "Mouse Pad",
         slug: "mouse-pad",
-        description: "Custom-printed mouse pads for computer users.",
+        description:
+          "High-quality custom mouse pads ideal for computer labs, corporate offices, student kits, and branded promotional giveaways.",
         image: "/assets/mousepad.png",
         seo: {
           metaTitle: "Custom Branding Mouse Pads",
-          metaDescription: "Personalized mouse pads with logos and images for offices and schools.",
-          keywords: ["mouse pad", "computer accessory", "desk mat"],
+          metaDescription:
+            "Personalized mouse pads with printed logos for offices, schools, and promotional events.",
+          keywords: ["mouse pad", "desk mat", "computer accessory", "printed pad"],
         },
         products: mousePads,
       },
+
       {
         name: "Photo Frame",
         slug: "photo-frame",
-        description: "Branding photo frames for desks and walls.",
+        description:
+          "Custom-branded photo frames designed for office desks, awards, event souvenirs, and corporate gifting.",
         image: "/assets/photoframe.png",
         seo: {
           metaTitle: "Custom Photo Frames",
-          metaDescription: "Logo-engraved or printed photo frames for memories and corporate gifts.",
-          keywords: ["photo frame", "picture holder", "desk accessory"],
+          metaDescription:
+            "Engraved or printed photo frames perfect for gifts, awards, and branded displays.",
+          keywords: ["photo frame", "picture frame", "desk frame", "branded gift"],
         },
         products: photoFrames,
       },
+
       {
         name: "Magic Cube",
         slug: "magic-cube",
-        description: "Customizable twist puzzles (like Rubik's Cube).",
+        description:
+          "Fully customizable magic cubes (twist puzzles) ideal for unique promotional giveaways, events, and student engagement.",
         image: "/assets/magiccube.png",
         seo: {
           metaTitle: "Custom Magic Cubes (Twist Puzzles)",
-          metaDescription: "Logo-printed, customizable twist puzzles for unique promotional toys and brain teasers.",
-          keywords: ["magic cube", "rubik's cube", "puzzle"],
+          metaDescription:
+            "Printed magic cubes for branding, engagement, and unique promotional gifts.",
+          keywords: ["magic cube", "twist puzzle", "rubik's cube", "promotional puzzle"],
         },
         products: cubes,
       },
+
       {
         name: "Planner",
         slug: "planner",
-        description: "Dated and undated organizers for scheduling.",
+        description:
+          "Branded planners and organizers available in dated and undated formats—ideal for faculty, students, office staff, and event gifting.",
         image: "/assets/planner.png",
         seo: {
           metaTitle: "Custom Planners and Organizers",
-          metaDescription: "Branding daily, weekly, and monthly planners for organization.",
-          keywords: ["planner", "organizer", "agenda"],
+          metaDescription:
+            "Branded daily, weekly, and yearly planners for institutes, offices, and corporate gifts.",
+          keywords: ["planner", "organizer", "agenda book", "notebook"],
         },
         products: planners,
       },
+
       {
         name: "Trophy",
         slug: "trophy",
-        description: "Classic metal or acrylic trophies for various achievements.",
+        description:
+          "Premium metal and acrylic trophies ideal for academic achievements, sports events, competitions, and institutional recognition.",
         image: "/assets/trophy.png",
         seo: {
           metaTitle: "Custom Engraved Trophies",
-          metaDescription: "Metal and acrylic trophies for sports, academic, and corporate awards.",
-          keywords: ["trophy", "metal trophy", "acrylic award"],
+          metaDescription:
+            "Metal and acrylic trophies customized for awards, competitions, sports, and academic ceremonies.",
+          keywords: ["trophy", "award", "acrylic trophy", "engraved trophy"],
         },
         products: trophies,
       },
+
       {
         name: "Wooden Trophy",
         slug: "wooden-trophy",
-        description: "Elegant trophies crafted from wood.",
+        description:
+          "Elegant wooden trophies and plaques ideal for institutional awards, recognition programs, academic ceremonies, and corporate events.",
         image: "/assets/woodentrophy.png",
         seo: {
           metaTitle: "Custom Wooden Trophies and Plaques",
-          metaDescription: "Engraved wooden plaques and trophies for a classic, elegant award.",
-          keywords: ["wooden trophy", "plaque", "wood award"],
+          metaDescription:
+            "Engraved wooden trophies and plaques designed for awards, ceremonies, and corporate gifting.",
+          keywords: ["wooden trophy", "wood plaque", "engraved award", "recognition trophy"],
         },
         products: woodenTrophies,
       },
+
       {
         name: "Badges",
         slug: "badges",
-        description: "Custom-printed or metal pin badges.",
+        description:
+          "Custom-printed pin badges, metal badges, and lapel pins perfect for events, student identification, branding, and promotional campaigns.",
         image: "/assets/badges.png",
         seo: {
-          metaTitle: "Custom Pin Badges and Lapel Pins",
-          metaDescription: "Metal, acrylic, and button badges for identification and promotional events.",
-          keywords: ["badges", "lapel pin", "button badge"],
+          metaTitle: "Custom Pin Badges & Lapel Pins",
+          metaDescription:
+            "Printed and metal badges for student ID, events, campaigns, and branded promotions.",
+          keywords: ["badges", "lapel pin", "button badge", "event badge"],
         },
         products: badges,
       },
+
       {
         name: "Medals",
         slug: "medals",
-        description: "Custom-designed medals for awards, recognition, and events.",
+        description:
+          "High-quality custom medals designed for academic rewards, sports competitions, award ceremonies, and corporate recognition.",
         image: "/assets/medals.png",
         seo: {
-          metaTitle: "Custom Medals for Awards and Recognition",
+          metaTitle: "Custom Medals for Awards & Recognition",
           metaDescription:
-            "Premium custom medals with engraving, printing, and personalized designs for ceremonies, sports, and academic achievements.",
-          keywords: ["custom medals", "award medals", "engraved medals"],
+            "Engraved and printed custom medals perfect for sports events, academic achievements, and institutional ceremonies.",
+          keywords: ["medals", "award medals", "engraved medals", "custom recognition"],
         },
         products: medals,
       }
@@ -453,176 +592,210 @@ const seedData = [
   {
     name: "Stationery",
     slug: "stationery",
-    description: "Essential custom-branding office and school supplies.",
+
+    description:
+      "Premium customized stationery including notebooks, pens, calendars, planners, files, and academic essentials. Designed for coaching institutes, schools, colleges, and offices—perfect for student kits, workshops, branding, events, and daily organizational use.",
+
     image: "/assets/category/stationery.webp",
+
     seo: {
-      metaTitle: "Custom Stationery | Notebooks, Pens, Calendars",
-      metaDescription: "Branding notebooks, pens, highlighters, and files for school and office use.",
-      keywords: ["stationery", "office supplies", "school supplies", "notebooks", "pens"],
+      metaTitle: "Custom Stationery | Notebooks, Pens, Calendars & Office Supplies",
+      metaDescription:
+        "Explore custom-branded stationery like notebooks, pens, calendars, files, exam pads, and organizers for schools, colleges, offices, and events.",
+      keywords: [
+        "custom stationery",
+        "notebooks",
+        "pens",
+        "files and folders",
+        "calendars",
+        "office supplies",
+        "school stationery",
+        "branded stationery"
+      ],
     },
+
     subcategories: [
       {
         name: "Table Calendar",
         slug: "table-calendar",
-        description: "Desk-sized calendars for daily reference.",
+        description:
+          "Premium desk calendars with customizable designs—perfect for offices, institutes, annual gifting, and year-round branding visibility.",
         image: "/assets/tablecalender.png",
         seo: {
           metaTitle: "Custom Table Calendars",
-          metaDescription: "Desktop calendars with custom printing for annual corporate gifting.",
-          keywords: ["table calendar", "desk calendar", "annual planner"],
+          metaDescription:
+            "Branded desk calendars ideal for corporate gifting, annual use, and institutional branding.",
+          keywords: ["table calendar", "desk calendar", "custom calendar", "corporate gifting"],
         },
         products: tableCalendars,
       },
+
       {
         name: "Wall Calendar",
         slug: "wall-calendar",
-        description: "Large, custom-printed calendars for hanging on walls.",
+        description:
+          "Large, custom-printed wall calendars ideal for classrooms, offices, and annual institutional branding.",
         image: "/assets/wallcalender.png",
         seo: {
           metaTitle: "Custom Wall Calendars",
-          metaDescription: "Large, monthly wall calendars with custom images and branding.",
-          keywords: ["wall calendar", "hanging calendar", "yearly planner"],
+          metaDescription:
+            "Monthly wall calendars with personalized images and branding for offices, schools, and institutions.",
+          keywords: ["wall calendar", "yearly calendar", "custom wall planner"],
         },
         products: wallCalendars,
       },
+
       {
         name: "Exam Pad",
         slug: "exam-pad",
-        description: "Hardboard pads for writing exams or notes.",
+        description:
+          "Durable, hardboard exam pads with metal clip—ideal for exams, notes, fieldwork, and institutional branding.",
         image: "/assets/exampad.png",
         seo: {
           metaTitle: "Custom Exam Pads",
-          metaDescription: "Hardboard exam pads with clip, fully printable with institutional branding.",
-          keywords: ["exam pad", "writing pad", "clipboard"],
+          metaDescription:
+            "Sturdy writing exam pads with full-print branding for institutes, events, and office use.",
+          keywords: ["exam pad", "clipboard", "writing pad", "branded exam board"],
         },
         products: examPads,
       },
+
       {
         name: "Notebook",
         slug: "notebook",
-        description: "Spiral and stitched notebooks for general note-taking.",
+        description:
+          "High-quality stitched and spiral notebooks ideal for classrooms, offices, student kits, training sessions, and branded giveaways.",
         image: "/assets/notebook.png",
         seo: {
           metaTitle: "Custom Notebooks",
-          metaDescription: "Branding notebooks for school, office, and corporate gifting.",
-          keywords: ["notebook", "diary", "journal"],
+          metaDescription:
+            "Branded notebooks for schools, offices, events, training sessions, and corporate gifting.",
+          keywords: ["notebook", "custom diary", "journal notebook", "school notebook"],
         },
         products: notebooks,
       },
+
       {
         name: "Notepad",
         slug: "notepad",
-        description: "Small pads for quick notes and reminders.",
+        description:
+          "Compact branded notepads perfect for quick notes, meetings, conferences, and event giveaways.",
         image: "/assets/notepad.png",
         seo: {
           metaTitle: "Custom Notepads",
-          metaDescription: "Small, branding notepads and memo pads for quick notes.",
-          keywords: ["notepad", "memo pad", "sticky notes"],
+          metaDescription:
+            "Logo-printed notepads and memo pads for offices, schools, events, and workshops.",
+          keywords: ["notepad", "memo pad", "note pad", "branded stationery"],
         },
         products: notepads,
       },
+
       {
         name: "Customized Pens",
         slug: "customized-pens",
-        description: "Premium engraved metal pens and affordable plastic pens for professional and promotional use. Perfect for institutes, offices, and gifting.",
+        description:
+          "Premium metal pens and affordable printed plastic pens designed for institutional branding, corporate gifting, events, and daily use.",
         image: "/assets/customizedpens.png",
         seo: {
           metaTitle: "Customized Pens (Metal & Plastic)",
           metaDescription:
-            "Explore premium engraved metal pens and custom-printed plastic pens for professional branding and promotional events.",
-          keywords: ["custom pens", "engraved pens", "promotional pens", "metal pens", "plastic pens"],
+            "Engraved metal pens and custom plastic pens for branding, office use, and promotional giveaways.",
+          keywords: ["custom pens", "engraved pens", "promotional pens", "office pens"],
         },
         products: pens,
       },
+
       {
         name: "Branding Files & Folders",
         slug: "branding-files-and-folders",
         description:
-          "A complete range of custom-branding files and folders for professional document storage, binding, and organization. Perfect for institutes, offices, and events.",
+          "Custom-branded files and folders including office files, kobra binders, and document organizers—ideal for professional presentations, student kits, and staff use.",
         image: "/assets/filefolder1.png",
         seo: {
-          metaTitle: "Customized Files and Folders for Branding",
+          metaTitle: "Customized Files & Folders for Branding",
           metaDescription:
-            "Explore premium office files, kobra binders, and paper folders with your institute or company branding. Perfect for professional document organization.",
-          keywords: [
-            "custom files and folders",
-            "office file branding",
-            "document organizers",
-            "kobra files",
-            "paper folders",
-          ],
+            "Office files, binders, and folders with institutional branding for corporate and academic use.",
+          keywords: ["custom folders", "office files", "document organizers", "kobra files"],
         },
         products: filesFolders,
       },
+
       {
         name: "Graduation Degree Folders",
         slug: "graduation-degree-folders",
-        description: "Protective folders for official degree certificates.",
+        description:
+          "Premium degree certificate folders designed to preserve and present convocation certificates safely and professionally.",
         image: "/assets/graddegree.png",
         seo: {
           metaTitle: "Degree Certificate Folders",
-          metaDescription: "Premium folders to safely hold and present degree certificates.",
-          keywords: ["degree folder", "certificate holder", "diploma"],
+          metaDescription:
+            "Durable, high-quality certificate folders ideal for degree presentations and academic documentation.",
+          keywords: ["degree folder", "certificate holder", "convocation folder"],
         },
         products: graduationFolders,
       },
+
       {
         name: "Binder Clips",
         slug: "binder-clips",
         description:
-          "Durable and customizable binder clips for institutes and offices. Perfect for holding documents neatly while showcasing your brand logo.",
+          "Custom-branded binder clips ideal for institutional stationery kits, office organization, promotional gifting, and branding visibility.",
         image: "/assets/binderclips/1.webp",
         seo: {
           metaTitle: "Custom Binder Clips for Branding",
           metaDescription:
-            "Explore custom, branding, and designer binder clips ideal for institutes, offices, and events. Personalize your stationery with logos and colors.",
-          keywords: [
-            "custom binder clips",
-            "branding stationery",
-            "office accessories",
-            "designer clips",
-          ],
+            "Personalized binder clips with logos and colors—perfect for offices, institutes, and promotional stationery.",
+          keywords: ["binder clips", "branding clips", "office accessories", "stationery"],
         },
         products: binderClips,
       },
+
       {
         name: "Handbill",
         slug: "handbill",
-        description: "Custom-printed flyers and promotional handbills.",
+        description:
+          "Custom-printed flyers and promotional handbills ideal for marketing campaigns, event promotions, and student outreach.",
         image: "/assets/handbill.png",
         seo: {
           metaTitle: "Custom Printed Handbills (Flyers)",
-          metaDescription: "Affordable printing service for flyers, handbills, and leaflets for promotion.",
-          keywords: ["handbill", "flyer", "leaflet printing"],
+          metaDescription:
+            "Affordable custom flyers, handbills, and leaflets for marketing and promotional events.",
+          keywords: ["handbill", "flyer printing", "leaflet printing", "promo flyers"],
         },
         products: handbills,
       },
+
       {
         name: "Lanyard and ID Card",
         slug: "lanyard-and-id-card",
-        description: "Branding lanyards and ID card holders/printing.",
+        description:
+          "High-quality branded lanyards and ID cards for staff, students, security teams, and event management.",
         image: "/assets/lanyardid.png",
         seo: {
-          metaTitle: "Custom Lanyards and ID Cards",
-          metaDescription: "Branding lanyards and ID card printing for staff, students, and events.",
-          keywords: ["lanyard", "ID card", "badge holder"],
+          metaTitle: "Custom Lanyards & ID Cards",
+          metaDescription:
+            "Branding lanyards and ID cards for schools, colleges, institutes, staff, and events.",
+          keywords: ["lanyard", "ID card", "badge holder", "identity card"],
         },
         products: lanyards,
       },
+
       {
         name: "Attendance Registers",
         slug: "attendance-registers",
-        description: "Official logbooks for recording attendance.",
+        description:
+          "Official attendance registers designed for academic institutions, offices, training centers, and administrative use.",
         image: "/assets/register.png",
         seo: {
           metaTitle: "Academic Attendance Registers",
-          metaDescription: "Official logbooks for marking and recording student or staff attendance.",
-          keywords: ["attendance register", "logbook", "record book"],
+          metaDescription:
+            "Official attendance registers for student, staff, and classroom record-keeping.",
+          keywords: ["attendance register", "record book", "logbook"],
         },
         products: attendanceRegisters,
       },
     ],
-  },
+  }
 ];
 
 module.exports = seedData;

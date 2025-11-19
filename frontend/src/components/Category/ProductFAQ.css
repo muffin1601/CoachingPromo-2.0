@@ -1,0 +1,161 @@
+:root {
+  --brand-blue: #0b4a8d;
+  --brand-orange: #d17504;
+  --neutral-gray: #555;
+  --text-dark: #222;
+  --light-border: #e6e6e6;
+  --light-bg: #fff7efff;
+  --hover-bg: #fff3e2;
+  --transition: 0.3s ease;
+}
+
+/* Wrapper */
+.product-faq-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* Title */
+.product-faq-title {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+/* FAQ container */
+.product-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Item */
+.product-faq-item {
+  background: var(--light-bg);
+  border: 1px solid var(--light-border);
+  padding: 18px 22px;
+
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.product-faq-item:hover {
+  background: var(--hover-bg);
+  border-color: var(--brand-orange);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Question */
+.product-faq-question {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Answer */
+.product-faq-answer {
+  margin-top: 10px;
+  font-size: 15.5px;
+  color: var(--neutral-gray);
+  line-height: 1.65;
+}
+
+/* -----------------------------------
+          RESPONSIVE DESIGN
+------------------------------------- */
+
+/* Tablets (991px and below) */
+@media (max-width: 991px) {
+  .product-faq-section {
+    max-width: 92%;
+    margin-top: 50px;
+  }
+
+  .product-faq-title {
+    font-size: 28px;
+  }
+
+  .product-faq-item {
+    padding: 16px 20px;
+  }
+}
+
+/* Tablets / Large Mobile (768px and below) */
+@media (max-width: 768px) {
+  .product-faq-title {
+    font-size: 26px;
+  }
+
+  .product-faq-question {
+    font-size: 17px;
+  }
+
+  .product-faq-answer {
+    font-size: 15px;
+  }
+}
+
+/* Mobile (600px and below) */
+@media (max-width: 600px) {
+  .product-faq-section {
+    max-width: 95%;
+    padding: 0 12px;
+  }
+
+  .product-faq-title {
+    font-size: 24px;
+  }
+
+  .product-faq-item {
+    padding: 15px 16px;
+  }
+
+  .product-faq-question {
+    font-size: 16px;
+  }
+
+  .product-faq-answer {
+    font-size: 14.7px;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .product-faq-title {
+    font-size: 22px;
+  }
+
+  .product-faq-item {
+    padding: 14px 14px;
+  }
+
+  .product-faq-question {
+    font-size: 15.5px;
+  }
+
+  .product-faq-answer {
+    font-size: 14.4px;
+  }
+}
+
+/* Extra small phones (360px and below) */
+@media (max-width: 360px) {
+  .product-faq-title {
+    font-size: 20px;
+  }
+
+  .product-faq-question {
+    font-size: 14.8px;
+  }
+
+  .product-faq-answer {
+    font-size: 13.8px;
+  }
+}

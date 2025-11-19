@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import EnquiryModal from "../components/EnquiryModal";
 import "../styles/SingleProductPage.css";
-
 import {
   Heart,
   Facebook,
@@ -21,24 +19,26 @@ import {
   BadgeIndianRupee,
   Star,
 } from "lucide-react";
-
+import CustomizationExperience from "../components/CustomizationExperience";
 import CategoryBanner from "../components/Category/CategoryBanner";
 import SEO from "../components/Category/SEO";
 import BlogSection from "../components/BlogSection";
 import PopularSubcategories from "../components/PopularSubcategories";
 import CatalogueCTA from "../components/CatalogueCTA";
+import WhyChooseUsProduct from "../components/Category/WhyChooseUsProduct";
+import ProductFAQ from "../components/Category/ProductFAQ";
 
 const SingleProductPage = () => {
   const { categorySlug, subSlug, prodSlug } = useParams();
 
   const [product, setProduct] = useState(null);
   const [category, setCategory] = useState(null);
-  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [subcategory, setSubcategory] = useState(null);
   const [activeImage, setActiveImage] = useState(null);
   const [qty, setQty] = useState(1);
-  const navigate = useNavigate();
+  const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
 
+  const navigate = useNavigate();
 
   const fetchProduct = async () => {
     const { data } = await axios.get(
@@ -82,32 +82,42 @@ const SingleProductPage = () => {
     ratings,
     attributes,
   } = product;
-const enquiryImage = images?.length > 0 ? images[0].url : "";
 
-const customizeRoutes = {
-  "polo-t-shirts": `/customize/polotshirt`,
-  "round-neck-t-shirts": `/customize/roundneck`,
-  "institute-backpacks": `/customize/all`,
-};
+  const enquiryImage = images?.[0]?.url || "";
 
-const shouldShowCustomize =
-  subSlug === "polo-t-shirts" ||
-  subSlug === "round-neck-t-shirts" ||
-  subSlug === "institute-backpacks";
+  const customizeRoutes = {
+    "polo-t-shirts": `/customize/polotshirt`,
+    "round-neck-t-shirts": `/customize/roundneck`,
+    "institute-backpacks": `/customize/all`,
+  };
+
+  const shouldShowCustomize =
+    subSlug === "polo-t-shirts" ||
+    subSlug === "round-neck-t-shirts" ||
+    subSlug === "institute-backpacks";
 
   return (
     <>
-      {/*  SEO */}
+      {/* SEO BLOCK */}
       <SEO
-        title={product?.seo?.metaTitle || product?.name}
-        description={product?.seo?.metaDescription || product?.description}
-        keywords={product?.seo?.keywords?.join(",")}
+        title={
+          product?.seo?.metaTitle ||
+          `${product?.name} | Custom Merchandise for Coaching Institutes`
+        }
+        description={
+          product?.seo?.metaDescription ||
+          `Order ${product?.name} for coaching institutes, training centers, universities and schools. Custom printing, logo branding and bulk pricing available.`
+        }
+        keywords={
+          product?.seo?.keywords?.join(",") ||
+          `${product?.name}, ${subcategory?.name}, ${category?.name}, custom institute products, coaching promo merchandise`
+        }
+        canonical={`https://coachingpromo.in/${categorySlug}/${subSlug}/${prodSlug}`}
       />
 
-      {/* Banner */}
       <CategoryBanner
         name={product?.name}
-        image= "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+        image="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
         subtitle={
           typeof product?.description === "string"
             ? product.description
@@ -121,9 +131,7 @@ const shouldShowCustomize =
         ]}
       />
 
-      {/* PRODUCT PAGE */}
       <div className="product-page-container">
-
         {/* LEFT GALLERY */}
         <div className="product-gallery">
           <div className="product-thumb-list">
@@ -131,7 +139,7 @@ const shouldShowCustomize =
               <img
                 key={i}
                 src={img.url}
-                alt={img.altText}
+                alt={img.altText || `${name} custom product image`}
                 className={`thumb-img ${
                   activeImage === img.url ? "thumb-active" : ""
                 }`}
@@ -141,13 +149,17 @@ const shouldShowCustomize =
           </div>
 
           <div className="product-main-img-wrapper">
-            <img src={activeImage} alt={name} className="product-main-img" />
+            <img
+              src={activeImage}
+              alt={`${name} customized product for coaching institutes`}
+              className="product-main-img"
+            />
           </div>
         </div>
 
-        {/* RIGHT DETAILS */}
+        {/* RIGHT PRODUCT DETAILS */}
         <div className="product-info">
-          {/* TAG / RATINGS */}
+          {/* META */}
           <div className="product-meta-line">
             <span className="product-tag">
               <Tag size={14} /> {tags?.join(", ")}
@@ -155,14 +167,13 @@ const shouldShowCustomize =
 
             {ratings?.average > 0 && (
               <span className="product-rating">
-                <Star size={14} className="star-icon" /> {ratings.average}(
-                {ratings.count})
+                <Star size={14} /> {ratings.average} ({ratings.count})
               </span>
             )}
           </div>
 
           {/* TITLE */}
-          <h2 className="product-title">{name}</h2>
+          <h1 className="product-title">{name}</h1>
 
           {/* PRICE */}
           <div className="product-price-block">
@@ -180,14 +191,14 @@ const shouldShowCustomize =
             )}
           </div>
 
-          {/* SHORT DESCRIPTION */}
+          {/* DESCRIPTION */}
           <p className="product-desc">
             {typeof description === "string"
               ? description
               : description?.short || description?.long}
           </p>
 
-          {/*  CTA CUSTOMIZATION BUTTON */}
+          {/* CUSTOMIZATION CTA */}
           {shouldShowCustomize && (
             <button
               className="btn-customize"
@@ -196,16 +207,13 @@ const shouldShowCustomize =
                   window.location.href = "/customize/polotshirt";
                   return;
                 }
-
                 if (subSlug === "round-neck-t-shirts") {
                   window.location.href = "/customize/roundneck";
                   return;
                 }
-
-                // For institute-backpacks or ANY other customizable product
                 navigate("/customize/all", {
                   state: {
-                    productImages: subImages?.length ? subImages.map(img => img.url) : images.map(img => img.url),
+                    productImages: subImages?.map((i) => i.url) ?? images.map((i) => i.url),
                     productName: name,
                     subcategory: subSlug,
                   },
@@ -216,7 +224,7 @@ const shouldShowCustomize =
             </button>
           )}
 
-          {/* Qty + Add to cart */}
+          {/* QTY + Quote */}
           <div className="product-actions">
             <div className="qty-box">
               <button onClick={() => qty > 1 && setQty(qty - 1)}>
@@ -229,7 +237,7 @@ const shouldShowCustomize =
             </div>
 
             <button onClick={() => setIsEnquiryOpen(true)} className="btn-add-cart">
-              <ShoppingCart size={18} /> Get a free quote
+              <ShoppingCart size={18} /> Get a Free Quote
             </button>
 
             <button className="btn-wishlist">
@@ -237,7 +245,7 @@ const shouldShowCustomize =
             </button>
           </div>
 
-          {/* DETAILS STACKED  */}
+          {/* SKU & TAGS */}
           <div className="product-extra-box">
             {sku && (
               <p>
@@ -252,7 +260,7 @@ const shouldShowCustomize =
             )}
           </div>
 
-          {/* Attributes */}
+          {/* ATTRIBUTES */}
           <div className="product-attributes">
             {attributes?.material && (
               <p>
@@ -282,15 +290,25 @@ const shouldShowCustomize =
             <Linkedin size={18} />
           </div>
         </div>
-
       </div>
+      {shouldShowCustomize && <CustomizationExperience />}
+      <WhyChooseUsProduct
+        productName={name}
+        subcategoryName={subcategory?.name}
+        categoryName={category?.name}
+      />
       <CatalogueCTA />
-      <PopularSubcategories/>
-      <BlogSection/>
+      <PopularSubcategories />
+      <ProductFAQ
+        productName={name}
+        subcategoryName={subcategory?.name}
+      />
+      <BlogSection />
+
       <EnquiryModal
         isOpen={isEnquiryOpen}
         onClose={() => setIsEnquiryOpen(false)}
-        image= {enquiryImage }
+        image={enquiryImage}
       />
     </>
   );

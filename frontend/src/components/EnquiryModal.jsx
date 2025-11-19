@@ -4,7 +4,7 @@ import { X, ArrowRight } from "lucide-react";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const EnquiryModal = ({ isOpen, onClose, image}) => {
+const EnquiryModal = ({ isOpen, onClose, image }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -31,7 +31,7 @@ const EnquiryModal = ({ isOpen, onClose, image}) => {
 
       await axios.post(`${import.meta.env.VITE_API_URL}/send-email`, formData);
 
-      toast.success("Thank you! Our Team will be in touch with you shortly.");
+      toast.success("Thank you! Our team will contact you shortly.");
 
       setFormData({
         name: "",
@@ -52,7 +52,7 @@ const EnquiryModal = ({ isOpen, onClose, image}) => {
   return (
     <div className={`enquiry-overlay ${isOpen ? "show" : ""}`}>
       <div className={`enquiry-modal ${isOpen ? "slide" : ""}`}>
-        
+
         {/* Close Button */}
         <button className="enquiry-close-btn" onClick={onClose}>
           <X size={26} />
@@ -60,47 +60,59 @@ const EnquiryModal = ({ isOpen, onClose, image}) => {
 
         {/* Left Image */}
         <div className="enquiry-img-box">
-          <img src={`${image}`} alt="enquiry" />
+          <img
+            src={`${image}`}
+            alt="Custom merchandise enquiry for coaching institutes, schools and colleges"
+          />
         </div>
 
         {/* Form */}
         <form className="enquiry-form" onSubmit={handleSubmit}>
-          <h2 className="enq-title">Let’s Build Your Custom Merchandise!</h2>
+          <h2 className="enq-title">
+            Get a Quote for Custom Merchandise & Institute Branding
+          </h2>
 
-          <p className="enq-subtitle">Submit your requirements to receive quotes, product suggestions, and branding support.</p>
+          <p className="enq-subtitle">
+            Share your requirements to receive pricing, product suggestions,
+            branding guidance & bulk order support for coaching institutes,
+            schools, colleges and training centers.
+          </p>
 
           <div className="enquiry-grid">
             <input
               type="text"
               name="name"
-              placeholder="Full Name"
+              placeholder="Full Name*"
               value={formData.name}
               onChange={handleChange}
+              required
               className="enquiry-input"
             />
 
             <input
               type="text"
               name="companyname"
-              placeholder="Institute / Company"
+              placeholder="Institute / Coaching Center / Company*"
               value={formData.companyname}
               onChange={handleChange}
+              required
               className="enquiry-input"
             />
 
             <input
               type="email"
               name="email"
-              placeholder="Email Address"
+              placeholder="Email Address*"
               value={formData.email}
               onChange={handleChange}
+              required
               className="enquiry-input"
             />
 
             <input
               type="tel"
               name="phone"
-              placeholder="Phone Number*"
+              placeholder="Phone Number (10 digits)*"
               value={formData.phone}
               onChange={handleChange}
               required
@@ -122,7 +134,7 @@ const EnquiryModal = ({ isOpen, onClose, image}) => {
 
           <textarea
             name="message"
-            placeholder="Requirements / Message"
+            placeholder="Tell us what you need: T-shirts, polo uniforms, student welcome kits, bags, water bottles, stationery, promotional items, etc."
             value={formData.message}
             onChange={handleChange}
             className="enquiry-textarea"

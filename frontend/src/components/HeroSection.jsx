@@ -102,7 +102,7 @@ const HeroSection = () => {
               onClick={() => setIsEnquiryOpen(true)}
               className="btn-primary"
             >
-              Get Quote
+              Enquire Now
             </a>
             <a href="#catalogue" className="btn-outline">
               Browse Catalogue
@@ -135,7 +135,7 @@ const HeroSection = () => {
               onClick={() => setIsEnquiryOpen(true)}
               className="btn-primary"
             >
-              Get Quote
+              Enquire Now
             </a>
             <a href="#catalogue" className="btn-outline">
               Browse Catalogue

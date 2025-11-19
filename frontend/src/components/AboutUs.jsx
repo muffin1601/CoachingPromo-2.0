@@ -3,49 +3,50 @@ import "../styles/AboutUs.css";
 
 const AboutUs = () => {
   return (
-    <section className="about-wrapper">
-      {/* ========== HERO ========== */}
-      <div className="about-hero">
-        
-        <p>
-          We are India’s trusted partner for customized promotional merchandise
-          for coaching institutes, schools, colleges, and corporate training
-          organizations.
-        </p>
-      </div>
+    <article className="about-wrapper">
 
-      {/* ========== CONTENT GRID ========== */}
-      <div className="about-content">
+      {/* ========== HERO SECTION ========== */}
+      <header className="about-hero">
+        <h1>About CoachingPromo – India’s Leading Institute Branding Partner</h1>
+        <p>
+          CoachingPromo is India’s most trusted provider of customized promotional
+          merchandise for coaching institutes, schools, colleges, universities, and
+          corporate training organizations. We help institutions strengthen their
+          identity with high-quality branded gifts, apparel, and event merchandise.
+        </p>
+      </header>
+
+      {/* ========== MAIN CONTENT ========== */}
+      <section className="about-content">
         <div className="about-left">
           <h2>Who We Are</h2>
           <p>
-            CoachingPromo is dedicated to helping educational institutions and
-            training organizations enhance branding through quality promotional
-            merchandise. Whether you need customized gifts for students, faculty,
-            events, or convocation branding, we deliver high-quality solutions
-            crafted with creativity and precision.
+            For over a decade, CoachingPromo has been empowering educational and
+            training organizations with premium promotional products that enhance
+            visibility and brand value. From customized student kits to faculty gifts,
+            event merchandise, welcome kits, convocation branding, and more — we
+            offer complete end-to-end solutions.
           </p>
 
           <p>
-            From personalized notebooks, welcome kits, apparel, and bags to
-            premium awards and accessories — we ensure your brand message reaches
-            the right audience in style. Our process is designed to be seamless,
-            offering quick customization, affordable pricing, and nationwide
-            delivery.
+            Our product range includes customized notebooks, t-shirts, hoodies,
+            stationery, backpacks, awards, corporate gifts, orientation kits, and
+            premium merchandise designed with precision. Every product is crafted to
+            reflect your institution’s identity and deliver long-lasting impact.
           </p>
 
           <div className="about-highlights">
             <div>
               <h3>10+ Years</h3>
-              <p>Branding & Merchandise</p>
+              <p>Experience in Branding & Merchandise</p>
             </div>
             <div>
               <h3>500+ Institutes</h3>
-              <p>Served Nationwide</p>
+              <p>Served Across India</p>
             </div>
             <div>
               <h3>10,000+</h3>
-              <p>Customized Orders Delivered</p>
+              <p>Customized Orders Successfully Delivered</p>
             </div>
           </div>
         </div>
@@ -54,50 +55,102 @@ const AboutUs = () => {
           <div className="about-image-box">
             <img
               src="/assets/about.webp"
-              alt="Institute Branding & Promotional Gifts"
+              alt="Custom promotional merchandise and branding solutions for institutes"
+              loading="lazy"
             />
           </div>
         </div>
-      </div>
+      </section>
 
       {/* ========== MISSION BLOCK ========== */}
-      <div className="about-mission">
+      <section className="about-mission">
         <h2>Our Mission</h2>
         <p>
-          To empower educational organizations with meaningful, high-quality
-          branded products that inspire students, strengthen identity, and boost
-          institutional pride. We strive to simplify gifting and merchandising
-          through efficiency, creativity, and innovation.
+          To simplify institute branding with premium, meaningful, and high-quality
+          promotional products that inspire students, create lasting impressions, and
+          build institutional pride. We focus on creativity, innovation, and fast
+          delivery—making merchandising easy and affordable for every organization.
         </p>
-      </div>
+      </section>
 
-      {/* ========== TIMELINE STRIP ========== */}
-      <div className="about-timeline">
+      {/* ========== TIMELINE ========== */}
+      <section className="about-timeline">
+
         <div className="timeline-item">
           <h4>2015</h4>
-          <p>Founded to provide creative branding solutions for institutes.</p>
+          <p>Began offering creative branding solutions for coaching institutes.</p>
         </div>
         <div className="timeline-item">
           <h4>2018</h4>
-          <p>
-            Expanded product lines to apparel, stationery & event gifting.
-          </p>
+          <p>Expanded into apparel, stationery, event gifting & onboarding kits.</p>
         </div>
         <div className="timeline-item">
           <h4>2022</h4>
-          <p>
-            Served 500+ coaching centers, schools & universities across India.
-          </p>
+          <p>Reached 500+ coaching centers, colleges & universities across India.</p>
         </div>
         <div className="timeline-item">
           <h4>Today</h4>
           <p>
-            Leading national provider of customized institute promotional
-            merchandise.
+            Recognized as a leading national provider of custom institute
+            merchandise, onboarding kits, event gifts, and branding accessories.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* ========== FAQ SECTION (SEO BOOSTER) ========== */}
+      <section className="about-faq-1">
+        <h2>Frequently Asked Questions</h2>
+
+        <div className="faq-item-1">
+          <h4>Do you provide customized merchandise for all types of institutes?</h4>
+          <p>
+            Yes, we work with coaching centers, colleges, schools, universities, and training companies across India.
+          </p>
+        </div>
+
+        <div className="faq-item-1">
+          <h4>What products can be customized?</h4>
+          <p>
+            T-shirts, hoodies, bags, stationery, notebooks, bottles, welcome kits,
+            awards, corporate gifts, and more.
+          </p>
+        </div>
+
+        <div className="faq-item-1">
+          <h4>Do you offer bulk discounts?</h4>
+          <p>
+            Yes, bulk orders receive tier-based discounts for institutions.
+          </p>
+        </div>
+
+        {/* NEW FAQ #4 */}
+        <div className="faq-item-1">
+          <h4>What is the minimum order quantity (MOQ)?</h4>
+          <p>
+            Most products have an MOQ of 20–50 units, but it varies based on the item. Some items can be customized even in smaller quantities.
+          </p>
+        </div>
+
+        {/* NEW FAQ #5 */}
+        <div className="faq-item-1">
+          <h4>How long does it take to deliver customized merchandise?</h4>
+          <p>
+            Standard delivery takes 5–12 working days depending on the product type,
+            customization process, and your location.
+          </p>
+        </div>
+
+        {/* NEW FAQ #6 */}
+        <div className="faq-item-1">
+          <h4>Can I see a sample before placing a bulk order?</h4>
+          <p>
+            Yes, we provide digital mockups and physical samples on request so you can
+            approve the design before production.
+          </p>
+        </div>
+      </section>
+
+    </article>
   );
 };
 

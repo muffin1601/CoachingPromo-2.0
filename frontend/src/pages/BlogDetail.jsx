@@ -7,6 +7,7 @@ import "../styles/BlogDetail.css";
 import { Loader2 } from "lucide-react";
 
 import BlogSection from "../components/BlogSection";
+import CustomizationExperience from "../components/CustomizationExperience";
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -198,6 +199,7 @@ const BlogDetails = () => {
           </div>
         </div>
       </div>
+      <CustomizationExperience />
       <BlogSection />
     </>
   );

@@ -39,14 +39,14 @@ const blogList = () => {
   return (
     <>
       <Helmet>
-        <title>blogs | CoachingPromo</title>
+        <title>Blogs | CoachingPromo</title>
         <meta
           name="description"
           content="Explore CoachingPromo blogs for insights on institute promotional products, customization tips, and branding ideas for schools, colleges, and universities."
         />
         <link rel="canonical" href="https://coachingpromo.in/blogs" />
       </Helmet>
-<PageBanner
+      <PageBanner
         title="Blogs"
         background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
         breadcrumb={[{ label: "Blog" }]}

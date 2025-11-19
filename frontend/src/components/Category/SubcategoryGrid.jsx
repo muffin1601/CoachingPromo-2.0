@@ -1,32 +1,55 @@
 import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-const SubcategoryGrid = ({ subcategories ,catSlug}) => {
-  console.log("catSlug =>", catSlug);
-
+const SubcategoryGrid = ({ subcategories, catSlug }) => {
   return (
-    <div className="subcat-list-container">
+    <section className="subcat-list-container">
+      {/* SEO Heading */}
+      
       <div className="subcat-list-grid">
         {subcategories.map((sub) => (
-          <a
+          <article
             key={sub.slug}
-            href={`/${catSlug}/${sub.slug}`}
             className="subcat-card"
+            itemScope
+            itemType="https://schema.org/CollectionPage"
           >
-            <img
-              src={sub.image}
-              alt={sub.name}
-              className="subcat-card-media"
-            />
+            <Link
+              to={`/${catSlug}/${sub.slug}`}
+              className="subcat-card-link"
+              aria-label={`View ${sub.name} products`}
+            >
+              {/* Image */}
+              <figure className="subcat-card-media-wrapper">
+                <img
+                  src={sub.image}
+                  alt={`Customized ${sub.name} for institutes`}
+                  className="subcat-card-media"
+                  loading="lazy"
+                  itemProp="image"
+                />
+              </figure>
 
-            <h3 className="subcat-card-title">{sub.name}</h3>
+              {/* Subcategory Title */}
+              <h3 className="subcat-card-title" itemProp="name">
+                {sub.name}
+              </h3>
 
-            <span className="subcat-readmore-link">
-              View Products <ChevronRight size={18} />
-            </span>
-          </a>
+              {/* Short keyword-rich intro */}
+              <p className="subcat-card-caption">
+                Explore premium custom {sub.name.toLowerCase()} designed for 
+                branding, events, onboarding kits, and promotional needs.
+              </p>
+
+              {/* CTA */}
+              <span className="subcat-readmore-link">
+                View Products <ChevronRight size={18} />
+              </span>
+            </Link>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
@@ -34,121 +57,218 @@ export default SubcategoryGrid;
 
 const css = `
 
+/* ======================================
+   VARIABLES
+====================================== */
 :root {
   --brand-blue: #0b4a8d;
   --brand-orange: #d17504;
+  --brand-orange-dark: #b26203;
   --neutral-gray: #555;
+  --text-dark: #222;
   --light-border: #e4e4e4;
-  --light-bg: #fafafa;
+  --light-bg: #fffaf4;
+  --hover-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  --transition: 0.28s ease;
 }
-
-/* CONTAINER */
-.subcat-list-container {
+  /* REMOVE BLUE UNDERLINE FROM ALL LINKS */
+.subcat-card-link,
+.subcat-card-link:link,
+.subcat-card-link:visited,
+.subcat-card-link:hover,
+.subcat-card-link:active {
+  text-decoration: none !important;
+  color: inherit !important;
   
-  max-width: 80%;
-  margin: 50px auto;
 }
 
-/* GRID */
+
+/* ======================================
+   CONTAINER
+====================================== */
+.subcat-list-container {
+  max-width: 80%;
+  margin: 60px auto;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* HEADING */
+.subcat-heading {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+/* DESCRIPTION */
+.subcat-description {
+  font-size: 16px;
+  color: var(--neutral-gray);
+  max-width: 760px;
+  text-align: center;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+/* ======================================
+   GRID
+====================================== */
 .subcat-list-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 25px;
+  gap: 26px;
 }
 
-/* CARD */
+/* ======================================
+   CARD
+====================================== */
 .subcat-card {
-  background: #fff7efff;
+  background: var(--light-bg);
   border: 1px solid var(--light-border);
   overflow: hidden;
-  transition: all 0.25s ease-in-out;
+  transition: var(--transition);
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-decoration: none;
 }
 
 .subcat-card:hover {
-  box-shadow: 0 10px 25px #0000001a;
+  box-shadow: var(--hover-shadow);
+  transform: translateY(-4px);
 }
 
-/* MEDIA */
+/* ======================================
+   IMAGE
+====================================== */
+.subcat-card-media-wrapper {
+  width: 100%;
+  height:  auto;
+  overflow: hidden;
+}
+
 .subcat-card-media {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  transition: var(--transition);
 }
 
-/* TITLE */
+.subcat-card:hover .subcat-card-media {
+  transform: scale(1.05);
+}
+
+/* ======================================
+   TITLE
+====================================== */
 .subcat-card-title {
   font-size: 19px;
   font-weight: 600;
-  color: #222;
-  line-height: 1.4;
-  padding: 16px 18px 6px 18px;
+  text-decoration: none;
+  color: var(--text-dark);
+  padding: 14px 18px 4px;
 }
 
-/* READ MORE */
+/* ======================================
+   CAPTION
+====================================== */
+.subcat-card-caption {
+  font-size: 14.5px;
+  color: var(--neutral-gray);
+  text-decoration: none;
+  padding: 0 18px 12px;
+  line-height: 1.6;
+}
+
+/* ======================================
+   CTA BUTTON
+====================================== */
 .subcat-readmore-link {
   font-size: 15px;
   font-weight: 600;
+  color: var(--brand-orange);
+  margin: 12px 18px 18px;
   text-decoration: none;
   display: flex;
-  justify-content: center;
-  color: var(--brand-orange);
-  margin: 10px 18px 18px;
-  transition: 0.3s ease;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
 }
 
 .subcat-readmore-link:hover {
-  color: var(--brand-blue);
+  color: var(--brand-orange-dark);
+  transform: translateX(3px);
 }
 
-/* Tablets */
+/* ======================================
+   RESPONSIVE — TABLETS
+====================================== */
 @media (max-width: 900px) {
-  .subcat-card-media {
-    height: 200px;
+  .subcat-card-media-wrapper {
+    height: 190px;
   }
 
   .subcat-card-title {
     font-size: 17px;
   }
+
+  .subcat-description {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
 }
 
-/*  Mobile — 2 items per row */
+/* ======================================
+   RESPONSIVE — MOBILE (2 columns)
+====================================== */
 @media (max-width: 600px) {
+  .subcat-list-container {
+    max-width: 92%;
+    margin: 25px auto;
+  }
+
   .subcat-list-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+    gap: 16px;
   }
-.subcat-list-container {
-  
-  max-width: 90%;
-  margin: 20px auto;
-}
 
-  .subcat-card-media {
-    height: 160px;
+  .subcat-card-media-wrapper {
+    height: 150px;
   }
 
   .subcat-card-title {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
-/*  Extra small — still 2 per row */
+/* ======================================
+   RESPONSIVE — EXTRA SMALL
+====================================== */
 @media (max-width: 400px) {
   .subcat-list-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
 
-  .subcat-card-media {
-    height: 140px;
+  .subcat-card-media-wrapper {
+    height: 135px;
   }
 
   .subcat-card-title {
     font-size: 14px;
+  }
+}
+
+/* ======================================
+   FADE-IN ANIMATION
+====================================== */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

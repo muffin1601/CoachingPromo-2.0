@@ -8,9 +8,11 @@
 
 /* Section container */
 .cex-wrapper {
-  padding: 80px 6%;
+  padding: 80px 0%;
   text-align: center;
   background: var(--light-bg);
+  width: 80%;
+  margin: 1px auto;
 }
 
 /* Heading */
@@ -37,7 +39,7 @@
 /* Each card */
 .cex-card {
   
-  padding: 30px;
+  padding: 30px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,7 +58,7 @@
 /* Text section */
 .cex-info {
   text-align: left;
-  max-width: 50%;
+  max-width: 60%;
 }
 
 .cex-info h3 {
@@ -86,7 +88,7 @@
 
 /* Image block */
 .cex-imgwrap {
-  max-width: 45%;
+  max-width: 50%;
   display: flex;
   justify-content: center;
 }

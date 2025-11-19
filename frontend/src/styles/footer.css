@@ -20,6 +20,7 @@
 }
 
 .footer-heading {
+    margin-top: 20px;
     margin-bottom: 14px;
     font-size: 18px;
     font-weight: 600;
@@ -74,6 +75,14 @@
     display: flex;
     gap: 12px;
     margin-top: 14px;
+}
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .social-icons-1 a {

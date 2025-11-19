@@ -12,34 +12,36 @@ import Testimonials from "../components/Testimonials";
 import Gallery from "../components/Gallery";
 import CatalogueCTA from "../components/CatalogueCTA";
 import BlogSection from "../components/BlogSection";
+import HomeFAQ from "../components/HomeFAQ";
+import ExitIntentPopup from "../components/ExitIntentPopup";
 
 const Home = () => {
   return (
     <div>
       
       <Helmet>
-        <title>Corporate Gifting Solutions | Coaching Promo</title>
+        <title>Promotional Products for Coaching Institutes – CoachingPromo</title>
         <meta
           name="description"
-          content="Discover premium corporate gifting solutions at Coaching Promo. Customize t-shirts, polos, caps, and more for employees, clients, and events with high-quality printing."
+          content="Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your coaching brand today!"
         />
         <link rel="canonical" href="https://coachingpromo.in/" />
       </Helmet>
 
       <HeroSection  />
-      
-       
-      
-        <TrustedClients />
+      <TrustedClients />
       <FeaturedCategories />
       <PopularSubcategories />
       <WhyChooseUs />
       <CustomizationExperience />
       <AboutUsSection />
       <Testimonials />
+      <HomeFAQ />
       <Gallery />
       <CatalogueCTA />
       <BlogSection />
+      <ExitIntentPopup />
+
     </div>
   );
 };

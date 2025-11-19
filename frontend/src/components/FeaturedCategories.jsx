@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
@@ -16,48 +14,64 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-// ✅ Icon map for slugs
+// ----------------------------------
+// STATIC CATEGORY LIST
+// ----------------------------------
+const staticCategories = [
+  {
+    title: "Custom Apparel for Institutes, Staff & Students",
+    slug: "apparel-accessories",
+    image: "/assets/category/apparel.webp",
+    alt: "custom apparel for coaching institutes, staff uniforms and student clothing",
+    items: 12,
+  },
+  {
+    title: "Custom Logo Bags for Students & Faculty",
+    slug: "bags",
+    image: "/assets/category/bag.webp",
+    alt: "coaching institute bags, student welcome kit bags, personalized backpacks",
+    items: 8,
+  },
+  {
+    title: "Promotional Products for Coaching Centers & Education Brands",
+    slug: "promotional-items",
+    image: "/assets/category/promotional-items.webp",
+    alt: "promotional items for coaching centers, institute branding products and marketing merchandise",
+    items: 15,
+  },
+  {
+    title: "Customized Stationery for Coaching Institutes & Schools",
+    slug: "stationery",
+    image: "/assets/category/stationery.webp",
+    alt: "custom stationery kits for coaching institutes, schools and student study centers",
+    items: 20,
+  },
+];
+
+// Icon map for slugs
 const categoryIcons = {
   "apparel-accessories": <Grid3x3 />,
   bags: <Backpack />,
   "promotional-items": <Gift />,
   stationery: <PencilRuler />,
-
-  // ✅ You can add more slugs here
 };
 
 const FeaturedCategories = () => {
-  const [dbCategories, setDbCategories] = useState([]);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_API_URL}/categories/all`
-        );
-        setDbCategories(res.data);
-      } catch (err) {
-        console.error("Error fetching categories:", err);
-      }
-    };
-    fetchCategories();
-  }, []);
-
-  // ✅ Merge backend categories with UI additions
-  const categories = dbCategories.map((cat) => ({
-    title: cat.name,
-    slug: cat.slug,
-    image: cat.image, // comes from backend
-    items: cat.subcategories?.length || 0, // count subcategories
-    icon: categoryIcons[cat.slug] || <Grid3x3 />, // default icon
+  // Merge icons into static categories
+  const categories = staticCategories.map((cat) => ({
+    ...cat,
+    icon: categoryIcons[cat.slug] || <Grid3x3 />,
   }));
 
   return (
-    <div className="featured-wrapper">
-      <h2 className="featured-title">Our Featured Categories</h2>
+    <div id="categories" className="featured-wrapper">
+      <h2 className="featured-title">
+        Our Featured Categories for Coaching Institutes & Educational Organizations
+      </h2>
+
       <p className="featured-subtitle">
-        Explore a wide range of customizable products for your corporate
-        gifting
+        Explore a wide range of customizable products, merchandise, and promotional kits 
+        designed exclusively for coaching centers, schools, colleges, and training institutes across India.
       </p>
 
       <Swiper
@@ -76,32 +90,26 @@ const FeaturedCategories = () => {
         {categories.map((cat, index) => (
           <SwiperSlide key={index}>
             <div className="featured-card">
-              {/* IMAGE + OVERLAY */}
               <div className="featured-card-2">
                 <img
                   src={cat.image}
-                  alt={cat.title}
+                  alt={cat.alt}
                   className="featured-img"
                 />
 
                 <div className="featured-overlay">
                   <p className="overlay-items">{cat.items} Items</p>
-                  <a
-                    href={`/categories/${cat.slug}`}
-                    className="overlay-btn"
-                  >
+
+                  <a href={`/categories/${cat.slug}`} className="overlay-btn">
                     Explore
                   </a>
                 </div>
               </div>
 
-              {/* ICON */}
               <div className="featured-icon">{cat.icon}</div>
 
-              {/* LABEL */}
               <h3 className="featured-label">{cat.title}</h3>
 
-              {/* CTA */}
               <a href={`/categories/${cat.slug}`} className="featured-cta">
                 View Products <ArrowRight size={16} />
               </a>

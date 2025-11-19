@@ -282,7 +282,80 @@
   color: var(--neutral-gray);
 }
 
-/* ✅ Full Responsive Rules */
+/* ===========================================
+   FAQ SECTION
+=========================================== */
+.about-faq-1 {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.about-faq-1 h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--brand-orange);
+  margin-bottom: 35px;
+}
+
+/* FAQ Item Wrapper */
+.faq-item-1 {
+  background: #fff;
+  border: 1px solid var(--light-border);
+  padding: 20px 24px;
+  
+  margin-bottom: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.faq-item-1:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+}
+
+/* Question */
+.faq-item-1 h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 8px;
+}
+
+/* Answer */
+.faq-item-1 p {
+  font-size: 16px;
+  color: var(--neutral-gray);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ===========================================
+   RESPONSIVE FAQ
+=========================================== */
+@media (max-width: 600px) {
+  .about-faq-1 h2 {
+    font-size: 28px;
+  }
+
+  .faq-item-1 {
+    padding: 16px 18px;
+  }
+
+  .faq-item-1 h4 {
+    font-size: 18px;
+  }
+
+  .faq-item-1 p {
+    font-size: 15px;
+  }
+}
+
+
+/*  Full Responsive Rules */
 @media (max-width: 1024px) {
   .about-content {
     gap: 30px;
