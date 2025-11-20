@@ -130,7 +130,11 @@ const RegisterInstituteModal = ({ isOpen, onClose }) => {
             className="enquiry-textarea"
           />
 
-          <button type="submit" className="enquiry-submit-btn">
+          <button
+            type="submit"
+            className="enquiry-submit-btn"
+            aria-label="Register now"
+          >
             Register Now <ArrowRight size={16} />
           </button>
         </form>

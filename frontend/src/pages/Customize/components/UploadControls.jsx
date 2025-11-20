@@ -130,8 +130,20 @@ const UploadControls = ({ canvasRef, updateThumbnail, saveCurrentViewState, acti
 
   return (
     <div className="uc-container">
-      <label className="uc-upload-box" onClick={() => fileInputRef.current?.click()}>
-        <UploadCloud className="uc-icon" />
+
+      <label
+        className="uc-upload-box"
+        onClick={() => fileInputRef.current?.click()}
+        role="button"
+        tabIndex="0"
+        aria-label="Upload logo by clicking or dragging an image"
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            fileInputRef.current?.click();
+          }
+        }}
+      >
+        <UploadCloud className="uc-icon" aria-hidden="true" />
         <p>Click to Upload Logo</p>
         <span className="uc-subtext">or drag & drop on the canvas</span>
       </label>
@@ -142,7 +154,9 @@ const UploadControls = ({ canvasRef, updateThumbnail, saveCurrentViewState, acti
         type="file"
         onChange={handleUpload}
         accept="image/*"
+        aria-label="Choose image file to upload"
       />
+
     </div>
   );
 };

@@ -38,8 +38,19 @@ const UploadControlsPNG = ({ canvasRef, updateThumbnail, saveCurrentViewState, a
 
   return (
     <div className="uc-container">
-      <label className="uc-upload-box" onClick={() => inputRef.current.click()}>
-        <UploadCloud className="uc-icon" />
+      <label
+        className="uc-upload-box"
+        role="button"
+        tabIndex="0"
+        aria-label="Upload logo by selecting an image"
+        onClick={() => inputRef.current.click()}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            inputRef.current.click();
+          }
+        }}
+      >
+        <UploadCloud className="uc-icon" aria-hidden="true" />
         <p>Upload Logo</p>
       </label>
 
@@ -49,9 +60,11 @@ const UploadControlsPNG = ({ canvasRef, updateThumbnail, saveCurrentViewState, a
         type="file"
         accept="image/*"
         onChange={handleUpload}
+        aria-label="Choose an image file to upload"
       />
     </div>
   );
+
 };
 
 export default UploadControlsPNG;

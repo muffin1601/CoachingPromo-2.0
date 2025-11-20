@@ -39,7 +39,11 @@ const ExitIntentPopup = () => {
   return (
     <div className="exit-overlay">
       <div className="exit-modal">
-        <button className="exit-close" onClick={() => setShow(false)}>
+        <button
+          className="exit-close"
+          onClick={() => setShow(false)}
+          aria-label="Close popup"
+        >
           <X size={26} />
         </button>
 

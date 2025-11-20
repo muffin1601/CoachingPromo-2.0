@@ -1,13 +1,4 @@
-:root {
-  --brand-blue: #0b4a8d;
-  --brand-orange: #d17504;
-  --brand-orange-dark: #b26203;
-  --neutral-gray: #555;
-  --text-dark: #222;
-  --light-border: #e4e4e4;
-  --light-bg: #fffaf4;
-  --transition: 0.3s ease;
-}
+
 
 /* Wrapper */
 .catfaq-wrapper {

@@ -190,11 +190,17 @@ const PopularSubcategories = () => {
         </Swiper>
 
         {/*  Custom Navigation Buttons */}
-        <button className="popsub-prev nav-btn-2">
+        <button
+          className="popsub-prev nav-btn-2"
+          aria-label="Previous subcategory"
+        >
           <ChevronLeft size={20} />
         </button>
 
-        <button className="popsub-next nav-btn-2">
+        <button
+          className="popsub-next nav-btn-2"
+          aria-label="Next subcategory"
+        >
           <ChevronRight size={20} />
         </button>
       </div>

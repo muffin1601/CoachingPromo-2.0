@@ -141,48 +141,60 @@ const NameNumberInput = ({ canvasRef, updateThumbnail, saveCurrentViewState, act
 
         {/* Name input */}
         <div className="nn-field">
-          <label className="nn-label">
+          <label className="nn-label" htmlFor="nn-name">
             <Type className="nn-icon" /> Name
           </label>
           <input
+            id="nn-name"
             className="nn-input"
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter name"
+            aria-label="Enter name to add to design"
           />
         </div>
 
         {/* Number input */}
         <div className="nn-field">
-          <label className="nn-label">
+          <label className="nn-label" htmlFor="nn-number">
             <Hash className="nn-icon" /> Number
           </label>
           <input
+            id="nn-number"
             className="nn-input"
             value={number}
             onChange={(e) => setNumber(e.target.value)}
             placeholder="Enter number"
+            aria-label="Enter number to add to design"
           />
         </div>
 
         {/* Color picker */}
         <div className="nn-field">
-          <label className="nn-label">Color</label>
+          <label className="nn-label" htmlFor="nn-color">
+            Color
+          </label>
           <input
+            id="nn-color"
             type="color"
             className="nn-color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
+            aria-label="Select color for name and number"
           />
         </div>
 
         {/* Font selector */}
         <div className="nn-field">
-          <label className="nn-label">Font</label>
+          <label className="nn-label" htmlFor="nn-font">
+            Font
+          </label>
           <select
+            id="nn-font"
             className="nn-select"
             value={font}
             onChange={(e) => setFont(e.target.value)}
+            aria-label="Select font style for name and number"
           >
             {fonts.map((f) => (
               <option key={f} value={f}>
@@ -191,11 +203,18 @@ const NameNumberInput = ({ canvasRef, updateThumbnail, saveCurrentViewState, act
             ))}
           </select>
         </div>
+
       </div>
 
-      <button className="nn-btn" onClick={addNameAndNumber}>
+      {/* Add button */}
+      <button
+        className="nn-btn"
+        onClick={addNameAndNumber}
+        aria-label="Add name and number to canvas design"
+      >
         Add to Design
       </button>
+
     </div>
   );
 };

@@ -1,10 +1,24 @@
 :root {
-  --brand-blue: #0b4a8d;
-  --brand-orange: #d17504;
-  --neutral-gray: #555;
+ 
+  --brand-blue: #0b4a8d;          
+  --brand-blue-dark: #08386c;    
+
+  --brand-orange: #cc6f00;        
+  --brand-orange-dark: #b26203;   
+  --brand-orange-darker: #a85b00; 
+
+ 
+  --text-dark: #222;              
+  --neutral-gray: #555;           
+
+
+  --light-bg: #fffaf4;            
   --light-border: #e4e4e4;
-  --light-bg: #fafafa;
+
+ 
+  --transition: 0.3s ease;        
 }
+
 
 *{
     margin: 0;

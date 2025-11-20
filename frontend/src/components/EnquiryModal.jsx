@@ -140,7 +140,11 @@ const EnquiryModal = ({ isOpen, onClose, image }) => {
             className="enquiry-textarea"
           />
 
-          <button type="submit" className="enquiry-submit-btn">
+          <button
+            type="submit"
+            className="enquiry-submit-btn"
+            aria-label="Submit enquiry"
+          >
             Enquire Now <ArrowRight size={16} />
           </button>
         </form>

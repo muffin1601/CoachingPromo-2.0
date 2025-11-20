@@ -31,7 +31,11 @@ const Sidebar = ({ isOpen, onClose }) => {
             <div className="logo-section-2">
               <img src="/logo.webp" alt="Coaching Promo" className="logo-image-2" />
             </div>
-            <button className="close-btn" onClick={onClose}>
+            <button
+              className="close-btn"
+              onClick={onClose}
+              aria-label="Close sidebar"
+            >
               <X size={26} />
             </button>
           </div>

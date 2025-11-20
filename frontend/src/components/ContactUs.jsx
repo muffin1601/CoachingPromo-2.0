@@ -166,7 +166,11 @@ const ContactUs = () => {
             className="contactus-textarea"
           />
 
-          <button type="submit" className="contactus-submit-btn">
+          <button
+            type="submit"
+            className="contactus-submit-btn"
+            aria-label="Request a call back"
+          >
             Request A Call Back <ArrowRight size={16} />
           </button>
         </form>

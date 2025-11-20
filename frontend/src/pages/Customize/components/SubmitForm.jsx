@@ -26,18 +26,21 @@ const SubmitForm = ({
         <form onSubmit={handleSubmit} className="sf-form">
 
           <div className="sf-field">
-            <label>Company Name</label>
+            <label htmlFor="sf-company">Company Name</label>
             <input
+              id="sf-company"
               type="text"
               placeholder="Company Name"
               value={companyname}
               onChange={(e) => setCompanyName(e.target.value)}
+              aria-label="Enter company name"
             />
           </div>
 
           <div className="sf-field">
-            <label>Phone Number *</label>
+            <label htmlFor="sf-phone">Phone Number *</label>
             <input
+              id="sf-phone"
               type="tel"
               placeholder="10-digit Mobile Number"
               value={phone}
@@ -45,21 +48,29 @@ const SubmitForm = ({
               pattern="[0-9]{10}"
               maxLength="10"
               required
+              aria-label="Enter your 10 digit phone number"
             />
           </div>
 
           <div className="sf-field">
-            <label>Requirement</label>
+            <label htmlFor="sf-message">Requirement</label>
             <input
+              id="sf-message"
               type="text"
               placeholder="Tell us what you need"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              aria-label="Enter your requirement"
             />
           </div>
 
           <div className="sf-buttons">
-            <button type="submit" className="sf-submit" disabled={loading}>
+            <button
+              type="submit"
+              className="sf-submit"
+              disabled={loading}
+              aria-label="Submit details and download design"
+            >
               {loading ? (
                 <>
                   <span className="sf-loader" /> Processing...
@@ -69,7 +80,13 @@ const SubmitForm = ({
               )}
             </button>
 
-            <button type="button" className="sf-cancel" onClick={onCancel} disabled={loading}>
+            <button
+              type="button"
+              className="sf-cancel"
+              onClick={onCancel}
+              disabled={loading}
+              aria-label="Cancel form"
+            >
               Cancel
             </button>
           </div>

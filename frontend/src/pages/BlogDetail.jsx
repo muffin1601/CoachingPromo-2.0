@@ -194,7 +194,12 @@ const BlogDetails = () => {
                   required
                 ></textarea>
 
-                <button type="submit">Post Comment</button>
+                <button
+                  type="submit"
+                  aria-label="Post comment"
+                >
+                  Post Comment
+                </button>
               </form>
             </div>
           </div>

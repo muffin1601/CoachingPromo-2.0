@@ -102,6 +102,11 @@
     height: 200px;
   }
 
+    .page-banner-content {
+  
+      padding: 0 20px;
+    }
+
   .page-banner-content h1 {
     font-size: 24px;
   }

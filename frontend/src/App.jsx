@@ -43,7 +43,11 @@ const LayoutWrapper = ({ children }) => {
   return (
     <>
       {!isAdmin && <Navbar />}
-      {children}
+
+      <main id="main-content" role="main">
+        {children}
+      </main>
+
       {!isAdmin && (
         <>
           <SupplyCities />

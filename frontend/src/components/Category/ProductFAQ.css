@@ -1,13 +1,4 @@
-:root {
-  --brand-blue: #0b4a8d;
-  --brand-orange: #d17504;
-  --neutral-gray: #555;
-  --text-dark: #222;
-  --light-border: #e6e6e6;
-  --light-bg: #fff7efff;
-  --hover-bg: #fff3e2;
-  --transition: 0.3s ease;
-}
+
 
 /* Wrapper */
 .product-faq-section {

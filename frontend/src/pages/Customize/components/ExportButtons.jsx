@@ -146,19 +146,27 @@ const ExportButtons = ({ thumbnailCanvasRefs, viewStates }) => {
         <div className="size-grid">
           {Object.keys(sizes).map((size) => (
             <div className="size-row" key={size}>
-              <label>{size}</label>
+              <label htmlFor={`size-${size}`}>{size}</label>
               <input
+                id={`size-${size}`}
                 type="number"
                 min="0"
                 value={sizes[size]}
                 onChange={(e) => handleSizeChange(e, size)}
+                aria-label={`Enter quantity for size ${size}`}
               />
             </div>
           ))}
 
           <div className="size-row total">
-            <label>Total</label>
-            <input type="number" value={totalQuantity} readOnly />
+            <label htmlFor="total-quantity">Total</label>
+            <input
+              id="total-quantity"
+              type="number"
+              value={totalQuantity}
+              readOnly
+              aria-label="Total quantity"
+            />
           </div>
         </div>
       </div>
@@ -169,14 +177,20 @@ const ExportButtons = ({ thumbnailCanvasRefs, viewStates }) => {
           <Ruler className="icon" /> Specifications
         </h3>
 
-        <select className="export-dropdown">
+        <select
+          className="export-dropdown"
+          aria-label="Select material type"
+        >
           <option value="">Select Material Type</option>
           <option value="cotton">Cotton</option>
           <option value="polycotton">Polycotton</option>
           <option value="dryfit">Dry Fit</option>
         </select>
 
-        <select className="export-dropdown">
+        <select
+          className="export-dropdown"
+          aria-label="Select print type"
+        >
           <option value="">Select Print Type</option>
           <option value="Screen Print">Screen Print</option>
           <option value="Digital Print">Digital Print</option>
@@ -186,11 +200,19 @@ const ExportButtons = ({ thumbnailCanvasRefs, viewStates }) => {
 
       {/* ACTION BUTTONS */}
       <div className="export-actions">
-        <button className="outline-btn" onClick={() => setShowChart(true)}>
+        <button
+          className="outline-btn"
+          onClick={() => setShowChart(true)}
+          aria-label="View size chart"
+        >
           View Size Chart
         </button>
 
-        <button className="primary-btn" onClick={() => setShowForm(true)}>
+        <button
+          className="primary-btn"
+          onClick={() => setShowForm(true)}
+          aria-label="Download design"
+        >
           <FileDown className="icon" />
           Download Design
         </button>
@@ -202,12 +224,21 @@ const ExportButtons = ({ thumbnailCanvasRefs, viewStates }) => {
           <div className="chart-box">
             <div className="chart-header">
               <h2>Size Chart</h2>
-              <button className="close-btn" onClick={() => setShowChart(false)}>
+
+              <button
+                className="close-btn"
+                onClick={() => setShowChart(false)}
+                aria-label="Close size chart"
+              >
                 <X />
               </button>
             </div>
 
-            <img src="/size-chart.webp" alt="Size Chart" className="chart-image" />
+            <img
+              src="/size-chart.webp"
+              alt="Size Chart"
+              className="chart-image"
+            />
           </div>
         </div>
       )}

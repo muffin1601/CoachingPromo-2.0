@@ -6,12 +6,12 @@ import axios from "axios";
 const BlogSection = () => {
   const [blogs, setblogs] = useState([]);
 
-    useEffect(() => {
-      axios
-        .get(`${import.meta.env.VITE_API_URL}/blogs/home/fetch`)
-        .then((res) => setblogs(res.data))
-        .catch((err) => console.error(err));
-    }, []);
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/blogs/home/fetch`)
+      .then((res) => setblogs(res.data))
+      .catch((err) => console.error(err));
+  }, []);
 
   return (
     <section className="blog-section">
@@ -31,19 +31,33 @@ const BlogSection = () => {
 
               <h3 className="blog-heading">{b.title}</h3>
 
-              <button className="blog-btn" onClick={() => window.location.href = `/blogs/${b._id}`}>
-               <ArrowRight/>
+              {/* READ BLOG BUTTON — WITH ARIA LABEL */}
+              <button
+                className="blog-btn"
+                onClick={() => window.location.href = `/blogs/${b._id}`}
+                aria-label={`Read blog: ${b.title}`}
+              >
+                <ArrowRight />
               </button>
             </div>
 
             <div className="blog-right">
-              <img src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${b.media}`} alt={b.title} />
+              <img
+                src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${b.media}`}
+                alt={b.title}
+              />
             </div>
           </div>
         ))}
       </div>
+
       <div className="cta-wrapper">
-        <button className="cta-btn-blog" onClick={() => window.location.href = '/blogs'}>
+        {/* VIEW ALL BLOGS BUTTON — WITH ARIA LABEL */}
+        <button
+          className="cta-btn-blog"
+          onClick={() => window.location.href = '/blogs'}
+          aria-label="View all blogs"
+        >
           View All Blogs
         </button>
       </div>

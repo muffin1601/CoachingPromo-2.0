@@ -1,13 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap");
 
-:root {
-  --brand-blue: #0b4a8d;
-  --brand-blue-dark: #093a6c;
-  --brand-orange: #d17504;
-  --neutral-gray: #555;
-  --light-border: #e4e4e4;
-  --light-bg: #fafafa;
-}
 
 /* Main Page Wrapper */
 .customizer-page {

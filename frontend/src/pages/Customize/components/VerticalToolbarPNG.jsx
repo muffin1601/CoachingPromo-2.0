@@ -18,8 +18,11 @@ const VerticalToolbarPNG = ({ onSelectTool, activeTool }) => {
           key={id}
           className={`vt-btn ${activeTool === id ? "vt-active" : ""}`}
           onClick={() => onSelectTool(id)}
+          aria-label={`Select ${label} tool`}
         >
-          <span className="vt-icon">{icon}</span>
+          <span className="vt-icon" aria-hidden="true">
+            {icon}
+          </span>
           <span className="vt-label">{label}</span>
         </button>
       ))}

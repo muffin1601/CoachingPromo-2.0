@@ -123,7 +123,11 @@ const BlogFormCTA = () => {
                 )}
               </div>
 
-              <button type="submit" className="blogcta-btn">
+              <button
+                type="submit"
+                className="blogcta-btn"
+                aria-label="Post blog"
+              >
                 Post Blog <ArrowRight />
               </button>
             </form>

@@ -31,26 +31,33 @@ const TextControlsPNG = ({ canvasRef, updateThumbnail, saveCurrentViewState, act
 
   return (
     <div className="tc-container">
+
       <h3 className="tc-title">
-        <Type /> Text
+        <Type aria-hidden="true" /> Text
       </h3>
 
+      {/* TEXT INPUT */}
       <div className="tc-field">
-        <label>Text</label>
+        <label htmlFor="tc-text">Text</label>
         <input
+          id="tc-text"
           className="tc-input"
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Enter text"
+          aria-label="Enter text to add to design"
         />
       </div>
 
+      {/* FONT SELECT */}
       <div className="tc-field">
-        <label>Font</label>
+        <label htmlFor="tc-font">Font</label>
         <select
+          id="tc-font"
           className="tc-select"
           value={font}
           onChange={(e) => setFont(e.target.value)}
+          aria-label="Select font style"
         >
           <option>Arial</option>
           <option>Georgia</option>
@@ -59,19 +66,28 @@ const TextControlsPNG = ({ canvasRef, updateThumbnail, saveCurrentViewState, act
         </select>
       </div>
 
+      {/* COLOR PICKER */}
       <div className="tc-field">
-        <label>Color</label>
+        <label htmlFor="tc-color">Color</label>
         <input
+          id="tc-color"
           type="color"
           className="tc-color"
           value={color}
           onChange={(e) => setColor(e.target.value)}
+          aria-label="Select text color"
         />
       </div>
 
-      <button className="tc-btn" onClick={addText}>
+      {/* BUTTON */}
+      <button
+        className="tc-btn"
+        onClick={addText}
+        aria-label="Add text to design"
+      >
         Add Text
       </button>
+
     </div>
   );
 };

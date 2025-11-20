@@ -213,9 +213,14 @@ const PreviewModal = ({ isOpen, onClose, viewStates, globalPartColors = {} }) =>
 
   return (
     <div className="preview-overlay">
+
       <div className="preview-modal">
 
-        <button className="preview-close-btn" onClick={onClose}>
+        <button
+          className="preview-close-btn"
+          onClick={onClose}
+          aria-label="Close preview"
+        >
           <X size={22} />
         </button>
 
@@ -223,14 +228,24 @@ const PreviewModal = ({ isOpen, onClose, viewStates, globalPartColors = {} }) =>
           <Eye className="icon" /> Preview Design
         </h2>
 
-        <button className="download-btn" onClick={() => setShowForm(true)}>
+        <button
+          className="download-btn"
+          onClick={() => setShowForm(true)}
+          aria-label="Download design"
+        >
           <Download className="icon" /> Download Design
         </button>
 
         <div className="preview-grid">
           {canvasRefs.current.map((ref, idx) => (
             <div key={idx} className="preview-card">
-              <canvas ref={ref} width={200} height={200} className="preview-canvas" />
+              <canvas
+                ref={ref}
+                width={200}
+                height={200}
+                className="preview-canvas"
+                aria-label={`Preview view ${labels[idx]}`}
+              />
               <p className="preview-label">{labels[idx]}</p>
             </div>
           ))}

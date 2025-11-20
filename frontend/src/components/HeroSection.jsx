@@ -111,10 +111,19 @@ const HeroSection = () => {
         </div>
 
         {/* Navigation Arrows */}
-        <button className="hero-arrow left" onClick={goPrev}>
+        <button
+          className="hero-arrow left"
+          onClick={goPrev}
+          aria-label="Previous slide"
+        >
           <ArrowLeft size={26} />
         </button>
-        <button className="hero-arrow right" onClick={goNext}>
+
+        <button
+          className="hero-arrow right"
+          onClick={goNext}
+          aria-label="Next slide"
+        >
           <ArrowRight size={26} />
         </button>
 

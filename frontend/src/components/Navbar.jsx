@@ -53,7 +53,7 @@ const Navbar = () => {
                 <img src="/logo.webp" alt="Coaching Promo" className="logo-image" />
               </div>
 
-              <div className="visitor-count desktop-only">Visitors: {visitorCount}</div>
+              <div className="visitor-count desktop-only">Visitors: {visitorCount ? visitorCount : "..."}</div>
             </div>
 
             {/* RIGHT SECTION */}
@@ -92,11 +92,19 @@ const Navbar = () => {
               </a>
 
               {/* User */}
-              <button onClick={() => (window.location.href = "/login")} className="nav-icon-link">
+              <button
+                onClick={() => (window.location.href = "/login")}
+                className="nav-icon-link"
+                aria-label="Login"
+              >
                 <User />
               </button>
 
-              <button onClick={() => setIsRegisterOpen(true)} className="nav-icon-link cart-icon">
+              <button
+                onClick={() => setIsRegisterOpen(true)}
+                className="nav-icon-link cart-icon"
+                aria-label="Register"
+              >
                 <GraduationCap />
               </button>
 

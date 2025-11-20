@@ -83,30 +83,36 @@ const TextControls = ({ canvasRef, updateThumbnail, saveCurrentViewState, active
   /* ---------------- UI ---------------- */
   return (
     <div className="tc-container">
+
       <h3 className="tc-title">
         <Type className="tc-icon" /> Add Text
       </h3>
 
       <div className="tc-grid">
+
         {/* TEXT INPUT */}
         <div className="tc-field">
-          <label>Text</label>
+          <label htmlFor="tc-text">Text</label>
           <input
+            id="tc-text"
             className="tc-input"
             value={text}
             onChange={(e) => setText(e.target.value)}
             placeholder="Enter text..."
             style={{ fontFamily: font }}
+            aria-label="Enter custom text"
           />
         </div>
 
         {/* FONT SELECT */}
         <div className="tc-field">
-          <label>Font</label>
+          <label htmlFor="tc-font">Font</label>
           <select
+            id="tc-font"
             className="tc-select"
             value={font}
             onChange={(e) => setFont(e.target.value)}
+            aria-label="Select font style"
             style={{ fontFamily: font }}
           >
             <option style={{ fontFamily: "Arial" }}>Arial</option>
@@ -122,19 +128,26 @@ const TextControls = ({ canvasRef, updateThumbnail, saveCurrentViewState, active
 
         {/* COLOR PICKER */}
         <div className="tc-field">
-          <label>Color</label>
+          <label htmlFor="tc-color">Color</label>
           <input
+            id="tc-color"
             type="color"
             className="tc-color"
             value={color}
             onChange={(e) => setColor(e.target.value)}
+            aria-label="Select text color"
           />
         </div>
       </div>
 
-      <button className="tc-btn" onClick={addText}>
+      <button
+        className="tc-btn"
+        onClick={addText}
+        aria-label="Add text to design"
+      >
         Add Text
       </button>
+
     </div>
   );
 };

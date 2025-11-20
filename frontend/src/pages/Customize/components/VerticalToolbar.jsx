@@ -14,9 +14,9 @@ const VerticalToolbar = ({ onSelectTool, activeTool, flag, subcategory, productT
   /* FULL TOOL LIST (SVG CUSTOMIZER) */
   const tools = [
     { id: "upload", icon: <FaUpload />, label: "Upload" },
-    { id: "text",  icon: <FaFont />,  label: "Text" },
+    { id: "text", icon: <FaFont />, label: "Text" },
     { id: "color", icon: <FaPalette />, label: "Color" },
-    { id: "name",  icon: <FaUserEdit />, label: "Name" },
+    { id: "name", icon: <FaUserEdit />, label: "Name" },
     { id: "export", icon: <FaSave />, label: "Save" },
     { id: "preview", icon: <FaEye />, label: "Preview" },
   ];
@@ -54,8 +54,9 @@ const VerticalToolbar = ({ onSelectTool, activeTool, flag, subcategory, productT
           key={id}
           className={`vt-btn ${activeTool === id ? "vt-active" : ""}`}
           onClick={() => onSelectTool(id)}
+          aria-label={`Select ${label} tool`}
         >
-          <span className="vt-icon">{icon}</span>
+          <span className="vt-icon" aria-hidden="true">{icon}</span>
           <span className="vt-label">{label}</span>
         </button>
       ))}

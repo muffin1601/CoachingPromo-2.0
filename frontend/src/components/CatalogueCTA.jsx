@@ -59,11 +59,11 @@ const CatalogueCTA = () => {
   };
 
   return (
-    <section  className="catalogue-cta">
+    <section className="catalogue-cta">
       <div className="cta-wrapper">
 
         {/* Right Form */}
-        <div id= "catalogue" className="cta-right">
+        <div id="catalogue" className="cta-right">
           <h2 className="cta-title">Download Catalogue</h2>
           <p className="cta-subtitle">
             Fill details and get complete catalogue.
@@ -72,24 +72,6 @@ const CatalogueCTA = () => {
           <form onSubmit={handleSubmit} className="cta-form">
 
             <div className="form-grid">
-              {/* <input
-                type="text"
-                name="companyname"
-                placeholder="Company / Institute Name*"
-                value={formData.companyname}
-                onChange={handleChange}
-                required
-              /> */}
-
-
-              {/* <input
-                type="email"
-                name="email"
-                placeholder="Email Address*"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              /> */}
 
               <input
                 type="tel"
@@ -100,9 +82,9 @@ const CatalogueCTA = () => {
                 required
                 pattern="\d{10}"
                 title="Phone number must be 10 digits"
+                aria-label="Enter your phone number"
               />
 
-              
               <input
                 type="text"
                 name="location"
@@ -110,18 +92,28 @@ const CatalogueCTA = () => {
                 value={formData.location}
                 onChange={handleChange}
                 required
+                aria-label="Enter your city or location"
               />
-           
+
             </div>
 
-            <button type="submit" className="cta-btn">Download Now <ArrowRight /></button>
+            {/* BUTTON FIXED HERE */}
+            <button
+              type="submit"
+              className="cta-btn"
+              aria-label="Download catalogue"
+            >
+              Download Now <ArrowRight />
+            </button>
+
           </form>
         </div>
-         {/* Left image */}
+
+        {/* Left Image */}
         <div className="cta-left">
           <img
             src="/assets/catalogue-img.webp"
-            alt="Catalogue"
+            alt="Catalogue preview"
             className="cta-img"
           />
         </div>
