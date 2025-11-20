@@ -5,6 +5,8 @@ import { Helmet } from "react-helmet";
 import "../styles/Blog.css";
 import PageBanner from "../components/PageBanner";
 import { ChevronRight } from "lucide-react";
+import ExitIntentPopup from "../components/ExitIntentPopup";
+import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const blogList = () => {
   const [blogs, setblogs] = useState([]);
@@ -151,6 +153,8 @@ const blogList = () => {
           </p>
         </div> */}
       </div>
+      <ExitIntentPopup />
+      <HiddenSEOContent />
     </>
   );
 };

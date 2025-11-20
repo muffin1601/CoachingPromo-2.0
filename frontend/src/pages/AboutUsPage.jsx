@@ -5,6 +5,7 @@ import Gallery from "../components/Gallery";
 import CatalogueCTA from "../components/CatalogueCTA";
 import CustomizationExperience from "../components/CustomizationExperience"; 
 import { Helmet } from "react-helmet";
+import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const AboutUsPage = () => {
   return (
@@ -37,6 +38,7 @@ const AboutUsPage = () => {
 
       {/* CTA */}
       <CatalogueCTA />
+      <HiddenSEOContent />
     </>
   );
 };

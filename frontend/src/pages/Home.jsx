@@ -14,6 +14,7 @@ import CatalogueCTA from "../components/CatalogueCTA";
 import BlogSection from "../components/BlogSection";
 import HomeFAQ from "../components/HomeFAQ";
 import ExitIntentPopup from "../components/ExitIntentPopup";
+import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const Home = () => {
   return (
@@ -41,7 +42,7 @@ const Home = () => {
       <CatalogueCTA />
       <BlogSection />
       <ExitIntentPopup />
-
+      <HiddenSEOContent />
     </div>
   );
 };

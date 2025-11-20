@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { X, ArrowRight } from "lucide-react";
-import "../styles/ExitIntentModal.css";
+import "../styles/ExitIntentPopup.css";
 
 const ExitIntentPopup = () => {
   const [show, setShow] = useState(false);

@@ -14,7 +14,7 @@ const BlogSchema = new mongoose.Schema(
     title: String,
     content: String,
     author: String,
-    image: String,
+    media: String,
     date: { type: Date, default: Date.now },
     comments: [CommentSchema]
   },

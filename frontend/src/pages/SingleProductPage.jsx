@@ -27,6 +27,7 @@ import PopularSubcategories from "../components/PopularSubcategories";
 import CatalogueCTA from "../components/CatalogueCTA";
 import WhyChooseUsProduct from "../components/Category/WhyChooseUsProduct";
 import ProductFAQ from "../components/Category/ProductFAQ";
+import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const SingleProductPage = () => {
   const { categorySlug, subSlug, prodSlug } = useParams();
@@ -304,7 +305,7 @@ const SingleProductPage = () => {
         subcategoryName={subcategory?.name}
       />
       <BlogSection />
-
+<HiddenSEOContent/>
       <EnquiryModal
         isOpen={isEnquiryOpen}
         onClose={() => setIsEnquiryOpen(false)}

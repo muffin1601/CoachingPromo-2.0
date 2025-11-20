@@ -1,17 +1,28 @@
-:root {
+:root{
   --brand-blue: #0b4a8d;
   --brand-orange: #ff8c00;
   --neutral-gray: #555;
   --light-border: #e4e4e4;
   --light-bg: #fafafa;
+
+  /* sizing */
+  --container-width: 100%;
+  --card-padding: 30px;
+  --card-gap: 26px;
+  --card-radius: 0px;
+  --btn-radius: 0px;
+  --max-modal-width: 860px;
+  --overlay-z: 5000;
 }
 
-/* Section container */
+/* ------------------------ */
+/* Section / Wrapper        */
+/* ------------------------ */
 .exit-cex-wrapper {
-  padding: 40px 0%;
+  padding: 40px 0;
   text-align: center;
   background: var(--light-bg);
-  width: 100%;
+  width: var(--container-width);
   margin: 0 auto;
 }
 
@@ -29,29 +40,30 @@
   font-size: 1rem;
 }
 
-/* Card container */
+/* Cards grid */
 .exit-cex-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 26px;
+  gap: var(--card-gap);
 }
 
-/* Each card */
+/* Card */
 .exit-cex-card {
-  padding: 30px 50px;
+  padding: var(--card-padding) 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-height: 260px;
-  transition: 0.3s ease;
-  background: white;
+  transition: box-shadow .25s ease, transform .18s ease;
+  background: #fff;
   border: 1px solid var(--light-border);
-  border-radius: 12px;
+ 
+  overflow: hidden;
 }
 
-/* Hover */
 .exit-cex-card:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
 }
 
 /* Text section */
@@ -73,17 +85,19 @@
   align-items: center;
   gap: 6px;
   background: var(--brand-orange);
-  color: white;
+  color: #fff;
   padding: 10px 24px;
   font-weight: 600;
-  border-radius: 6px;
+ 
   text-decoration: none;
-  transition: 0.25s;
+  transition: opacity .18s ease, transform .12s ease;
+  border: none;
+  cursor: pointer;
 }
 
-.exit-cex-btn:hover {
-  opacity: 0.9;
-}
+.exit-cex-btn:hover { opacity: 0.95; transform: translateY(-1px); }
+.exit-cex-btn:active { transform: translateY(0); }
+.exit-cex-btn:focus { outline: 3px solid color-mix(in srgb, var(--brand-orange) 20%, transparent); outline-offset: 3px; }
 
 /* Image block */
 .exit-cex-imgwrap {
@@ -96,151 +110,33 @@
   width: 100%;
   max-height: 220px;
   object-fit: contain;
+  display: block;
 }
 
-/* ================================ */
-/* FULLY IMPROVED RESPONSIVE SYSTEM */
-/* ================================ */
-
-/* LARGE SCREENS */
-@media (max-width: 1200px) {
-  .exit-cex-toptext h2 {
-    font-size: 2rem;
-  }
-
-  .exit-cex-info h3 {
-    font-size: 1.25rem;
-  }
-}
-
-/* TABLET LANDSCAPE */
-@media (max-width: 992px) {
-  .exit-cex-wrapper {
-    padding: 40px 5%;
-  }
-
-  .exit-cex-card {
-    padding: 25px;
-    min-height: auto;
-  }
-
-  .exit-cex-imgwrap img {
-    max-height: 200px;
-  }
-}
-
-/* TABLET PORTRAIT */
-@media (max-width: 768px) {
-  .exit-cex-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .exit-cex-card {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .exit-cex-info {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .exit-cex-imgwrap {
-    max-width: 80%;
-    margin: 0 auto;
-  }
-
-  .exit-cex-imgwrap img {
-    max-height: 180px;
-  }
-}
-
-/* BIG MOBILE */
-@media (max-width: 576px) {
-  .exit-cex-toptext h2 {
-    font-size: 1.7rem;
-  }
-
-  .exit-cex-card {
-    padding: 22px;
-  }
-
-  .exit-cex-info h3 {
-    font-size: 1.1rem;
-  }
-
-  .exit-cex-btn {
-    padding: 9px 20px;
-    font-size: 0.9rem;
-  }
-
-  .exit-cex-imgwrap img {
-    max-height: 160px;
-  }
-}
-
-/* SMALL MOBILE */
-@media (max-width: 420px) {
-  .exit-cex-toptext h2 {
-    font-size: 1.55rem;
-  }
-
-  .exit-cex-info h3 {
-    font-size: 1rem;
-  }
-
-  .exit-cex-btn {
-    padding: 8px 18px;
-  }
-
-  .exit-cex-imgwrap img {
-    max-height: 145px;
-  }
-}
-
-/* VERY SMALL DEVICES */
-@media (max-width: 350px) {
-  .exit-cex-toptext h2 {
-    font-size: 1.35rem;
-  }
-
-  .exit-cex-info h3 {
-    font-size: 0.95rem;
-  }
-
-  .exit-cex-btn {
-    font-size: 0.8rem;
-    padding: 7px 16px;
-  }
-
-  .exit-cex-imgwrap img {
-    max-height: 130px;
-  }
-}
+/* ------------------------ */
+/* Exit modal / overlay     */
+/* ------------------------ */
 .exit-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0; /* shorthand for top/right/bottom/left */
   background: rgba(0,0,0,0.55);
   backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 5000;
-  animation: fadeIn 0.25s ease;
+  z-index: var(--overlay-z);
+  animation: fadeIn .25s ease;
 }
 
 .exit-modal {
   background: #fff;
   width: 90%;
-  max-width: 860px;
+  max-width: var(--max-modal-width);
   padding: 30px;
-  border-radius: 20px;
   position: relative;
-  animation: slideUp 0.3s ease;
+  
+  animation: slideUp .3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
 
 .exit-close {
@@ -251,7 +147,11 @@
   color: #222;
   border: none;
   cursor: pointer;
+  font-size: 1rem;
+  padding: 6px;
+ 
 }
+.exit-close:focus { outline: 3px solid rgba(11,74,141,0.15); outline-offset: 2px; }
 
 .exit-title {
   font-size: 26px;
@@ -263,11 +163,11 @@
 .exit-subtitle {
   text-align: center;
   font-size: 16px;
-  color: #555;
+  color: var(--neutral-gray);
   margin-bottom: 28px;
 }
 
-/* CARDS */
+/* Exit cards inside modal */
 .exit-cards {
   display: flex;
   gap: 20px;
@@ -275,15 +175,16 @@
 }
 
 .exit-card {
-  background: #fff6e8ff;
+  background: #fff6e8;
   padding: 20px;
-  border-radius: 16px;
   flex: 1;
   min-width: 300px;
   display: flex;
   justify-content: space-between;
   gap: 14px;
   border: 1px solid #f3d9c3;
+  
+  align-items: center;
 }
 
 .exit-item-title {
@@ -294,52 +195,91 @@
 }
 
 .exit-btn {
-  display: inline-block;
   margin-top: 12px;
   background: #d17504;
   padding: 10px 16px;
-  color: white;
-  border-radius: 8px;
+  color: #fff;
+  
   font-weight: 600;
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   width: fit-content;
+  border: none;
+  cursor: pointer;
 }
-
-.exit-btn:hover {
-  background: #b26203;
-}
+.exit-btn:hover { background: #b26203; }
+.exit-btn:focus { outline: 3px solid rgba(209,117,4,0.18); outline-offset: 3px; }
 
 .exit-imgwrap img {
   width: 110px;
   height: auto;
+  display: block;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+/* ------------------------ */
+/* Responsive adjustments   */
+/* ------------------------ */
+
+/* large screens */
+@media (max-width: 1200px) {
+  .exit-cex-toptext h2 { font-size: 2rem; }
+  .exit-cex-info h3 { font-size: 1.25rem; }
 }
 
-@keyframes slideUp {
-  from { transform: translateY(40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+/* tablet landscape */
+@media (max-width: 992px) {
+  .exit-cex-wrapper { padding: 40px 5%; }
+  .exit-cex-card { padding: 25px; min-height: auto; }
+  .exit-cex-imgwrap img { max-height: 200px; }
 }
 
-/* Mobile */
+/* tablet portrait / mobile stacking */
+@media (max-width: 768px) {
+  .exit-cex-cards { grid-template-columns: 1fr; }
+  .exit-cex-card { flex-direction: column; text-align: center; gap: 20px; padding: 20px; }
+  .exit-cex-info { max-width: 100%; text-align: center; }
+  .exit-cex-imgwrap { max-width: 80%; margin: 0 auto; }
+  .exit-cex-imgwrap img { max-height: 180px; }
+}
+
+/* small devices */
+@media (max-width: 576px) {
+  .exit-cex-toptext h2 { font-size: 1.7rem; }
+  .exit-cex-card { padding: 22px; }
+  .exit-cex-info h3 { font-size: 1.1rem; }
+  .exit-cex-btn { padding: 9px 20px; font-size: .9rem; }
+  .exit-cex-imgwrap img { max-height: 160px; }
+}
+
+/* very small */
+@media (max-width: 420px) {
+  .exit-cex-toptext h2 { font-size: 1.55rem; }
+  .exit-cex-info h3 { font-size: 1rem; }
+  .exit-cex-btn { padding: 8px 18px; }
+  .exit-cex-imgwrap img { max-height: 145px; }
+}
+
+@media (max-width: 350px) {
+  .exit-cex-toptext h2 { font-size: 1.35rem; }
+  .exit-cex-info h3 { font-size: .95rem; }
+  .exit-cex-btn { font-size: .8rem; padding: 7px 16px; }
+  .exit-cex-imgwrap img { max-height: 130px; }
+}
+
+/* Modal stacking on small screens */
 @media (max-width: 650px) {
-  .exit-cards {
-    flex-direction: column;
-  }
+  .exit-cards { flex-direction: column; }
+  .exit-card { flex-direction: column; text-align: center; }
+  .exit-imgwrap img { width: 120px; margin: 0 auto; }
+}
 
-  .exit-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .exit-imgwrap img {
-    width: 120px;
-    margin: 0 auto;
-  }
+/* Accessibility: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
 }

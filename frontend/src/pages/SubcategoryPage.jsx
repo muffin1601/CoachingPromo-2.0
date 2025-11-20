@@ -14,6 +14,7 @@ import { subcategoryTitles } from "../data/subcategories";
 import SubcategoryFAQ from "../components/Category/SubcategoryFAQ";
 import WhyChooseUsSubcategory from "../components/Category/WhyChooseUsSubcategory";
 import DynamicSEOContent from "../components/Category/DynamicSEOContent";
+import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const SubcategoryPage = () => {
   const { categorySlug, subSlug } = useParams();
@@ -125,6 +126,7 @@ const SubcategoryPage = () => {
       <DynamicSEOContent slug={subSlug} />
       <SubcategoryFAQ subcategoryName={subcategory.name} />
       <BlogSection />
+      <HiddenSEOContent/>
     </>
   );
 };

@@ -31,7 +31,7 @@ const BlogSection = () => {
 
               <h3 className="blog-heading">{b.title}</h3>
 
-              <button className="blog-btn" onClick={() => window.location.href = '/blogs/${b._id}'}>
+              <button className="blog-btn" onClick={() => window.location.href = `/blogs/${b._id}`}>
                <ArrowRight/>
               </button>
             </div>

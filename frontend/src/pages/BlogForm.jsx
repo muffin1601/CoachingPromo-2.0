@@ -42,7 +42,7 @@ const BlogFormCTA = () => {
 
   return (
     <>
-     <Helmet>
+      <Helmet>
         <title>Create Blog | CoachingPromo</title>
         <meta
           name="description"
@@ -57,79 +57,79 @@ const BlogFormCTA = () => {
         breadcrumb={[{ label: "New Blog" }]}
       />
 
-    <section className="blogcta-section">
-      <div className="blogcta-wrapper">
-        
-        {/* LEFT — IMAGE */}
-        <div className="blogcta-left">
-          <img
-            src="/assets/blog/b2.webp"
-            alt="Post a Blog"
-            className="blogcta-img"
-          />
-        </div>
+      <section className="blogcta-section">
+        <div className="blogcta-wrapper">
 
-        {/* RIGHT — FORM */}
-        <div className="blogcta-right">
-          <h2 className="blogcta-title">Write a Blog</h2>
-          <p className="blogcta-subtitle">
-            Publish your ideas and reach thousands
-          </p>
-
-          <form className="blogcta-form" onSubmit={handleSubmit}>
-
-            <div className="blogform-grid">
-              <input
-                type="text"
-                name="title"
-                placeholder="Blog Title*"
-                value={form.title}
-                onChange={handleChange}
-                required
-              />
-
-              <input
-                type="text"
-                name="author"
-                placeholder="Author Name*"
-                value={form.author}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            <textarea
-              name="content"
-              placeholder="Write your content..."
-              rows="6"
-              value={form.content}
-              onChange={handleChange}
-              required
+          {/* LEFT — IMAGE */}
+          <div className="blogcta-left">
+            <img
+              src="/assets/blog/b2.webp"
+              alt="Post a Blog"
+              className="blogcta-img"
             />
-<div className="blogcta-file-wrapper">
-  <label htmlFor="blogcta-file" className="blogcta-file-label">
-    Upload Image / Video
-  </label>
+          </div>
 
-  <input
-    id="blogcta-file"
-    type="file"
-    accept="image/*,video/*"
-    onChange={(e) => setMedia(e.target.files[0])}
-  />
+          {/* RIGHT — FORM */}
+          <div className="blogcta-right">
+            <h2 className="blogcta-title">Write a Blog</h2>
+            <p className="blogcta-subtitle">
+              Publish your ideas and reach thousands
+            </p>
 
-  {media && (
-    <p className="blogcta-file-name">{media.name}</p>
-  )}
-</div>
+            <form className="blogcta-form" onSubmit={handleSubmit}>
 
-            <button type="submit" className="blogcta-btn">
-              Post Blog <ArrowRight />
-            </button>
-          </form>
+              <div className="blogform-grid">
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Blog Title*"
+                  value={form.title}
+                  onChange={handleChange}
+                  required
+                />
+
+                <input
+                  type="text"
+                  name="author"
+                  placeholder="Author Name*"
+                  value={form.author}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+              <textarea
+                name="content"
+                placeholder="Write your content..."
+                rows="6"
+                value={form.content}
+                onChange={handleChange}
+                required
+              />
+              <div className="blogcta-file-wrapper">
+                <label htmlFor="blogcta-file" className="blogcta-file-label">
+                  Upload Image / Video
+                </label>
+
+                <input
+                  id="blogcta-file"
+                  type="file"
+                  accept="image/*,video/*"
+                  onChange={(e) => setMedia(e.target.files[0])}
+                />
+
+                {media && (
+                  <p className="blogcta-file-name">{media.name}</p>
+                )}
+              </div>
+
+              <button type="submit" className="blogcta-btn">
+                Post Blog <ArrowRight />
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </section></>
+      </section></>
   );
 };
 

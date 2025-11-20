@@ -8,6 +8,7 @@ import { Loader2 } from "lucide-react";
 
 import BlogSection from "../components/BlogSection";
 import CustomizationExperience from "../components/CustomizationExperience";
+import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -201,6 +202,7 @@ const BlogDetails = () => {
       </div>
       <CustomizationExperience />
       <BlogSection />
+      <HiddenSEOContent />
     </>
   );
 };

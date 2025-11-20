@@ -1,57 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
-                      http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+  <!-- Home -->
   <url>
     <loc>https://coachingpromo.in/</loc>
-    <lastmod>2025-07-24T10:57:09+00:00</lastmod>
+    <lastmod>2025-11-20T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Apparel -->
   <url>
-    <loc>https://coachingpromo.in/apparel</loc>
-    <lastmod>2025-07-24T10:57:09+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://coachingpromo.in/bags</loc>
-    <lastmod>2025-07-24T10:57:09+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://coachingpromo.in/promotional-items</loc>
-    <lastmod>2025-07-24T10:57:09+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://coachingpromo.in/stationery</loc>
-    <lastmod>2025-07-24T10:57:09+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://coachingpromo.in/blog</loc>
-    <lastmod>2025-07-24T10:57:09+00:00</lastmod>
+    <loc>https://coachingpromo.in/categories/apparel-accessories</loc>
+    <lastmod>2025-11-20T10:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Bags -->
+  <url>
+    <loc>https://coachingpromo.in/categories/bags</loc>
+    <lastmod>2025-11-20T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Promotional Items -->
+  <url>
+    <loc>https://coachingpromo.in/categories/promotional-items</loc>
+    <lastmod>2025-11-20T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Stationery -->
+  <url>
+    <loc>https://coachingpromo.in/categories/stationery</loc>
+    <lastmod>2025-11-20T10:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://coachingpromo.in/blogs</loc>
+    <lastmod>2025-11-20T10:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About Us -->
+  <url>
+    <loc>https://coachingpromo.in/about</loc>
+    <lastmod>2025-11-20T10:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
+  <!-- Contact Us -->
   <url>
-    <loc>https://coachingpromo.in/about</loc>
-    <lastmod>2025-07-24T10:57:09+00:00</lastmod>
+    <loc>https://coachingpromo.in/contact</loc>
+    <lastmod>2025-11-20T10:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
 
 </urlset>

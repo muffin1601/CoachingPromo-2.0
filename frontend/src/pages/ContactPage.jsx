@@ -2,6 +2,7 @@ import React from "react";
 import PageBanner from "../components/PageBanner";
 // import { Contact } from "lucide-react";
 import ContactUs from "../components/ContactUs";
+import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const ContactPage = () => {
   return (
@@ -14,6 +15,7 @@ const ContactPage = () => {
         ]}
       />
       <ContactUs />
+      <HiddenSEOContent />
     </>
   );
 };

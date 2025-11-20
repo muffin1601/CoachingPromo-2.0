@@ -9,6 +9,7 @@ import SEO from "../components/Category/SEO";
 import axios from "axios";
 import WhyChooseUsCategory from "../components/Category/WhyChooseUsCategory";
 import CategoryFAQ from "../components/Category/CategoryFAQ";
+import HiddenSEOContent from "../components/HiddenSEOContent";
 
 
 const CategoryPage = () => {
@@ -109,7 +110,7 @@ const CategoryPage = () => {
      <WhyChooseUsCategory categoryName={category.name} />
       <CatalogueCTA />
       <CategoryFAQ categoryName={category.name} />
-
+<HiddenSEOContent />
     </>
   );
 };
