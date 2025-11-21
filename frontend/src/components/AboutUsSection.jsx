@@ -41,8 +41,10 @@ const AboutUsSection = () => {
             upgrade their branding.
           </p>
 
-          <a href="/about" className="about-btn">
-            Learn More <ArrowRight size={18} />
+          <a href="/about" className="about-btn" title="About CoachingPromo">
+            Learn More
+            <span className="sr-only"> about CoachingPromo</span>
+            <ArrowRight size={18} />
           </a>
         </div>
 

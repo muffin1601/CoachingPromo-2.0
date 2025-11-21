@@ -1,4 +1,6 @@
-/* WRAPPER */
+/* ==============================
+   WRAPPER — CLS FIXED
+============================== */
 .supply-wrapper {
   background: #fff;
   padding: 40px 6%;
@@ -7,66 +9,98 @@
   color: var(--neutral-gray);
   max-width: 80%;
   margin: 0 auto;
+
+  /* CLS FIX */
+  min-height: 420px;
+  overflow: hidden;
 }
 
-/* HEADING */
+/* ==============================
+   HEADING
+============================== */
 .supply-heading {
   font-size: 22px;
   font-weight: 600;
   color: var(--brand-blue);
+
   display: flex;
   align-items: center;
   gap: 10px;
   margin-bottom: 26px;
+
+  /* Prevent heading jump */
+  min-height: 32px;
 }
 
 .supply-icon {
   width: 24px;
   height: 24px;
+  flex-shrink: 0;
   color: var(--brand-orange);
 }
 
-/* GRID */
+/* ==============================
+   GRID — CLS FIX
+============================== */
 .supply-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 40px;
+
+  /* Prevent grid from resizing on load */
+  min-height: 300px;
 }
 
-/* COLUMNS */
+/* ==============================
+   COLUMNS — CLS FIX
+============================== */
 .supply-col {
   list-style: none;
   padding: 0;
   margin: 0;
+
+  /* Prevent column collapse */
+  min-height: 240px;
 }
 
-/* STATE NAME */
+/* ==============================
+   STATE NAME
+============================== */
 .state-name {
   color: var(--brand-blue);
   font-weight: 600;
   font-size: 16px;
   margin-bottom: 8px;
   display: block;
-  /* border-left: 3px solid var(--brand-orange); */
   padding-left: 6px;
+
+  /* Prevent height jump */
+  min-height: 20px;
 }
 
-/* CITY LIST */
+/* ==============================
+   CITY LIST
+============================== */
 .city-list {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 12px;
+
+  /* Prevent shifting when icons load */
+  min-height: 80px;
 }
 
-/* CITY ITEM */
 .city-name {
   font-size: 14px;
   color: var(--neutral-gray);
+
   display: flex;
   align-items: center;
   gap: 6px;
   transition: 0.25s;
+
+  /* Prevent item jump */
+  min-height: 20px;
 }
 
 .city-name:hover {
@@ -74,10 +108,10 @@
   padding-left: 4px;
 }
 
-/* CITY ICON */
 .city-icon {
   width: 14px;
   height: 14px;
+  flex-shrink: 0;
   opacity: 0.6;
   transition: 0.25s;
 }
@@ -86,11 +120,18 @@
   opacity: 1;
 }
 
-/* RESPONSIVE */
+/* ==============================
+   RESPONSIVE — CLS SAFE
+============================== */
 @media (max-width: 950px) {
   .supply-grid {
     grid-template-columns: repeat(2, 1fr);
+    min-height: 450px;
     gap: 30px;
+  }
+
+  .supply-col {
+    min-height: 200px;
   }
 }
 
@@ -98,5 +139,14 @@
   .supply-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+    min-height: auto;
+  }
+
+  .supply-wrapper {
+    min-height: auto;
+  }
+
+  .supply-col {
+    min-height: auto;
   }
 }

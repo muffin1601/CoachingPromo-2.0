@@ -68,8 +68,13 @@ const Testimonials = () => {
       </div>
 
       <div className="testimonial-nav">
-        <button className="testimonial-nav-1"><ChevronLeft /></button>
-        <button className="testimonial-nav-1"><ChevronRight /></button>
+        <button className="testimonial-nav-1" aria-label="Previous testimonial">
+          <ChevronLeft />
+        </button>
+
+        <button className="testimonial-nav-1" aria-label="Next testimonial">
+          <ChevronRight />
+        </button>
       </div>
     </section>
   );

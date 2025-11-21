@@ -1,11 +1,17 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import PageBanner from "../components/PageBanner";
-import AboutUs from "../components/AboutUs";
-import Gallery from "../components/Gallery";
-import CatalogueCTA from "../components/CatalogueCTA";
-import CustomizationExperience from "../components/CustomizationExperience"; 
 import { Helmet } from "react-helmet";
-import HiddenSEOContent from "../components/HiddenSEOContent";
+
+/*  Lazy-load heavy components */
+const AboutUs = lazy(() => import("../components/AboutUs"));
+const Gallery = lazy(() => import("../components/Gallery"));
+const CatalogueCTA = lazy(() => import("../components/CatalogueCTA"));
+const CustomizationExperience = lazy(() =>
+  import("../components/CustomizationExperience")
+);
+const HiddenSEOContent = lazy(() =>
+  import("../components/HiddenSEOContent")
+);
 
 const AboutUsPage = () => {
   return (
@@ -19,26 +25,29 @@ const AboutUsPage = () => {
         <link rel="canonical" href="https://coachingpromo.in/about" />
       </Helmet>
 
+      {/* Always keep banner non-lazy for SEO & CLS stability */}
       <PageBanner
         title="About Us"
         background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
-        breadcrumb={[
-          { label: "About" },
-        ]}
+        breadcrumb={[{ label: "About" }]}
       />
 
-      {/* ABOUT SECTION */}
-      <AboutUs />
+      {/*  Lazy load all heavy components */}
+      <Suspense fallback={null}>
+        <AboutUs />
 
-      {/* CUSTOMIZATION EXPERIENCE SECTION (Added here) */}
-      <CustomizationExperience />
+        {/* Custom T-Shirt Experience */}
+        <CustomizationExperience />
 
-      {/* GALLERY */}
-      <Gallery />
+        {/* Gallery */}
+        <Gallery />
 
-      {/* CTA */}
-      <CatalogueCTA />
-      <HiddenSEOContent />
+        {/* Catalogue CTA */}
+        <CatalogueCTA />
+
+        {/* Hidden SEO Content */}
+        <HiddenSEOContent />
+      </Suspense>
     </>
   );
 };

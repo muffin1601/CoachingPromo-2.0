@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { GraduationCap, PhoneCall } from "lucide-react";
 import "../styles/FloatingButtons.css";
 
-import EnquiryModal from "./EnquiryModal";
-import RegisterInstituteModal from "./RegisterInstituteModal";
+/* ✅ Lazy-loaded modals */
+const EnquiryModal = lazy(() => import("./EnquiryModal"));
+const RegisterInstituteModal = lazy(() => import("./RegisterInstituteModal"));
 
 const FloatingButtons = () => {
   const [showScroll, setShowScroll] = useState(false);
@@ -13,10 +14,7 @@ const FloatingButtons = () => {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) setShowScroll(true);
-      else setShowScroll(false);
-    };
+    const handleScroll = () => setShowScroll(window.scrollY > 300);
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -55,17 +53,16 @@ const FloatingButtons = () => {
 
       {/* RIGHT — REGISTER + WHATSAPP + ENQUIRY */}
       <div className="floatingRight">
-        {/*  REGISTER INSTITUTE BUTTON */}
+        {/* REGISTER INSTITUTE */}
         <button
           onClick={() => setIsRegisterOpen(true)}
           className="floatingBtn registerBtn-1"
           aria-label="Register Institute"
-          title="Register Institute"
         >
           <GraduationCap size={28} />
         </button>
 
-        {/*  WHATSAPP */}
+        {/* WHATSAPP */}
         <a
           href="https://wa.me/918750708222"
           target="_blank"
@@ -76,7 +73,7 @@ const FloatingButtons = () => {
           <FaWhatsapp size={28} />
         </a>
 
-        {/*  ENQUIRY */}
+        {/* ENQUIRY */}
         <div className="enquiryHint">
           <PhoneCall size={16} strokeWidth={2.5} />
           Request a Call
@@ -90,17 +87,23 @@ const FloatingButtons = () => {
         </button>
       </div>
 
-      {/*  MODALS */}
-      <EnquiryModal
-        isOpen={isEnquiryOpen}
-        onClose={() => setIsEnquiryOpen(false)}
-        image="/assets/enquiry.webp"
-      />
+      {/* MODALS — Lazy Rendered */}
+      <Suspense fallback={null}>
+        {isEnquiryOpen && (
+          <EnquiryModal
+            isOpen={isEnquiryOpen}
+            onClose={() => setIsEnquiryOpen(false)}
+            image="/assets/enquiry.webp"
+          />
+        )}
 
-      <RegisterInstituteModal
-        isOpen={isRegisterOpen}
-        onClose={() => setIsRegisterOpen(false)}
-      />
+        {isRegisterOpen && (
+          <RegisterInstituteModal
+            isOpen={isRegisterOpen}
+            onClose={() => setIsRegisterOpen(false)}
+          />
+        )}
+      </Suspense>
     </>
   );
 };

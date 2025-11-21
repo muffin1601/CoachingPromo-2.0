@@ -1,45 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "../styles/Blog.css";
-import PageBanner from "../components/PageBanner";
 import { ChevronRight } from "lucide-react";
-import ExitIntentPopup from "../components/ExitIntentPopup";
-import HiddenSEOContent from "../components/HiddenSEOContent";
 
-const blogList = () => {
-  const [blogs, setblogs] = useState([]);
+/*  Lazy-loaded components */
+const PageBanner = lazy(() => import("../components/PageBanner"));
+const ExitIntentPopup = lazy(() => import("../components/ExitIntentPopup"));
+const HiddenSEOContent = lazy(() => import("../components/HiddenSEOContent"));
 
-  // ⬇ pagination states
+const BlogList = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  // pagination
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 8;
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/blogs`)
-      .then((res) => setblogs(res.data))
+      .then((res) => setBlogs(res.data))
       .catch((err) => console.error(err));
   }, []);
 
-  //  Pagination Calculation
+  // Pagination logic
   const totalPages = Math.ceil(blogs.length / blogsPerPage);
   const indexOfLast = currentPage * blogsPerPage;
   const indexOfFirst = indexOfLast - blogsPerPage;
-  const currentblgs = blogs.slice(indexOfFirst, indexOfLast);
+  const currentBlogs = blogs.slice(indexOfFirst, indexOfLast);
 
   const goToPage = (num) => setCurrentPage(num);
-
-  const nextPage = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
-  };
-
-  const prevPage = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
-  };
+  const nextPage = () => currentPage < totalPages && setCurrentPage(currentPage + 1);
+  const prevPage = () => currentPage > 1 && setCurrentPage(currentPage - 1);
 
   return (
     <>
+      {/* SEO */}
       <Helmet>
         <title>Blogs | CoachingPromo</title>
         <meta
@@ -48,14 +45,18 @@ const blogList = () => {
         />
         <link rel="canonical" href="https://coachingpromo.in/blogs" />
       </Helmet>
-      <PageBanner
-        title="Blogs"
-        background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
-        breadcrumb={[{ label: "Blog" }]}
-      />
+
+      {/*  Lazy-loaded banner */}
+      <Suspense fallback={null}>
+        <PageBanner
+          title="Blogs"
+          background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+          breadcrumb={[{ label: "Blog" }]}
+        />
+      </Suspense>
+
       <div className="blg-list-container">
-        
-        {/* HEADER */}
+        {/* Header */}
         <div className="blg-list-header">
           <h2 className="blg-list-title">Latest Articles</h2>
           <Link to="/blogs/post" className="blg-create-button">
@@ -63,9 +64,9 @@ const blogList = () => {
           </Link>
         </div>
 
-        {/* blg GRID */}
+        {/* Blog grid */}
         <div className="blg-list-grid">
-          {currentblgs.map((blog) => (
+          {currentBlogs.map((blog) => (
             <div className="blg-card" key={blog._id}>
               <h3 className="blg-card-title">{blog.title}</h3>
 
@@ -80,18 +81,21 @@ const blogList = () => {
                 </span>
               </div>
 
+              {/* Media */}
               {blog.media &&
                 (blog.media.includes("mp4") ? (
                   <video
                     className="blg-card-media"
                     width="100%"
                     controls
+                    preload="metadata"
                     src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${blog.media}`}
                   />
                 ) : (
                   <img
                     className="blg-card-media"
                     loading="lazy"
+                    decoding="async"
                     src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${blog.media}`}
                     alt={blog.title}
                     width="100%"
@@ -109,7 +113,7 @@ const blogList = () => {
           ))}
         </div>
 
-        {/*  PAGINATION */}
+        {/* Pagination */}
         {totalPages > 1 && (
           <div className="blg-pagination">
             <button
@@ -141,22 +145,15 @@ const blogList = () => {
             </button>
           </div>
         )}
-
-        {/* EXTRA INFO
-        <div className="blg-list-extra-content">
-          <p>
-            Discover how promotional items like custom t-shirts, bags, diaries,
-            and stationery can help boost your institute or business branding.
-            Our latest blgs share creative ideas, real client stories, and
-            trending corporate gifting solutions for 2025. Stay updated, grow
-            organically, and make your brand memorable.
-          </p>
-        </div> */}
       </div>
-      <ExitIntentPopup />
-      <HiddenSEOContent />
+
+      {/* Lazy-loaded footer extras */}
+      <Suspense fallback={null}>
+        <ExitIntentPopup />
+        <HiddenSEOContent />
+      </Suspense>
     </>
   );
 };
 
-export default blogList;
+export default BlogList;

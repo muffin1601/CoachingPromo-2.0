@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import EnquiryModal from "../components/EnquiryModal";
 import "../styles/SingleProductPage.css";
+
 import {
   Heart,
   Facebook,
@@ -12,22 +12,38 @@ import {
   Minus,
   Plus,
   Sparkles,
-  Palette,
-  Upload,
-  Info,
   Tag,
   BadgeIndianRupee,
   Star,
+  Info,
+  Palette,
 } from "lucide-react";
-import CustomizationExperience from "../components/CustomizationExperience";
-import CategoryBanner from "../components/Category/CategoryBanner";
+
+/*  Lazy Load Heavy Components */
+const EnquiryModal = lazy(() => import("../components/EnquiryModal"));
+const CustomizationExperience = lazy(() =>
+  import("../components/CustomizationExperience")
+);
+const CategoryBanner = lazy(() =>
+  import("../components/Category/CategoryBanner")
+);
+const BlogSection = lazy(() => import("../components/BlogSection"));
+const PopularSubcategories = lazy(() =>
+  import("../components/PopularSubcategories")
+);
+const CatalogueCTA = lazy(() => import("../components/CatalogueCTA"));
+const WhyChooseUsProduct = lazy(() =>
+  import("../components/Category/WhyChooseUsProduct")
+);
+const ProductFAQ = lazy(() =>
+  import("../components/Category/ProductFAQ")
+);
+const HiddenSEOContent = lazy(() =>
+  import("../components/HiddenSEOContent")
+);
+
+/*  Keep SEO component non-lazy */
 import SEO from "../components/Category/SEO";
-import BlogSection from "../components/BlogSection";
-import PopularSubcategories from "../components/PopularSubcategories";
-import CatalogueCTA from "../components/CatalogueCTA";
-import WhyChooseUsProduct from "../components/Category/WhyChooseUsProduct";
-import ProductFAQ from "../components/Category/ProductFAQ";
-import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const SingleProductPage = () => {
   const { categorySlug, subSlug, prodSlug } = useParams();
@@ -73,24 +89,16 @@ const SingleProductPage = () => {
 
   const {
     name,
-    price,
-    salePrice,
     description,
     images,
     subImages,
-    sku,
     tags,
     ratings,
+    sku,
     attributes,
   } = product;
 
   const enquiryImage = images?.[0]?.url || "";
-
-  const customizeRoutes = {
-    "polo-t-shirts": `/customize/polotshirt`,
-    "round-neck-t-shirts": `/customize/roundneck`,
-    "institute-backpacks": `/customize/all`,
-  };
 
   const shouldShowCustomize =
     subSlug === "polo-t-shirts" ||
@@ -99,7 +107,7 @@ const SingleProductPage = () => {
 
   return (
     <>
-      {/* SEO BLOCK */}
+      {/* SEO (Not Lazy Loaded) */}
       <SEO
         title={
           product?.seo?.metaTitle ||
@@ -107,31 +115,35 @@ const SingleProductPage = () => {
         }
         description={
           product?.seo?.metaDescription ||
-          `Order ${product?.name} for coaching institutes, training centers, universities and schools. Custom printing, logo branding and bulk pricing available.`
+          `Order ${product?.name} for coaching institutes, schools and colleges. Custom printing and bulk pricing available.`
         }
         keywords={
           product?.seo?.keywords?.join(",") ||
-          `${product?.name}, ${subcategory?.name}, ${category?.name}, custom institute products, coaching promo merchandise`
+          `${product?.name}, ${subcategory?.name}, ${category?.name}`
         }
         canonical={`https://coachingpromo.in/${categorySlug}/${subSlug}/${prodSlug}`}
       />
 
-      <CategoryBanner
-        name={product?.name}
-        image="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
-        subtitle={
-          typeof product?.description === "string"
-            ? product.description
-            : product?.description?.short
-        }
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: category?.name, href: `/categories/${categorySlug}` },
-          { label: subcategory?.name, href: `/${categorySlug}/${subSlug}` },
-          { label: product?.name },
-        ]}
-      />
+      {/* Lazy Loaded Components Below */}
+      <Suspense fallback={<div></div>}>
+        <CategoryBanner
+          name={product?.name}
+          image="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+          subtitle={
+            typeof product?.description === "string"
+              ? product.description
+              : product?.description?.short
+          }
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: category?.name, href: `/categories/${categorySlug}` },
+            { label: subcategory?.name, href: `/${categorySlug}/${subSlug}` },
+            { label: product?.name },
+          ]}
+        />
+      </Suspense>
 
+      {/* ========== MAIN PRODUCT PAGE ========== */}
       <div className="product-page-container">
         {/* LEFT GALLERY */}
         <div className="product-gallery">
@@ -140,10 +152,11 @@ const SingleProductPage = () => {
               <img
                 key={i}
                 src={img.url}
-                alt={img.altText || `${name} custom product image`}
+                alt={img.altText || `${name} - product view`}
                 className={`thumb-img ${
                   activeImage === img.url ? "thumb-active" : ""
                 }`}
+                loading="lazy"
                 onClick={() => setActiveImage(img.url)}
               />
             ))}
@@ -152,19 +165,22 @@ const SingleProductPage = () => {
           <div className="product-main-img-wrapper">
             <img
               src={activeImage}
-              alt={`${name} customized product for coaching institutes`}
+              loading="eager"
+              alt={`${name} - main product`}
               className="product-main-img"
             />
           </div>
         </div>
 
-        {/* RIGHT PRODUCT DETAILS */}
+        {/* RIGHT DETAILS */}
         <div className="product-info">
           {/* META */}
           <div className="product-meta-line">
-            <span className="product-tag">
-              <Tag size={14} /> {tags?.join(", ")}
-            </span>
+            {tags?.length > 0 && (
+              <span className="product-tag">
+                <Tag size={14} /> {tags.join(", ")}
+              </span>
+            )}
 
             {ratings?.average > 0 && (
               <span className="product-rating">
@@ -173,26 +189,8 @@ const SingleProductPage = () => {
             )}
           </div>
 
-          {/* TITLE */}
           <h1 className="product-title">{name}</h1>
 
-          {/* PRICE */}
-          <div className="product-price-block">
-            {salePrice ? (
-              <>
-                <span className="sale-price">
-                  <BadgeIndianRupee size={18} /> {salePrice}
-                </span>
-                <span className="main-price">₹{price}</span>
-              </>
-            ) : (
-              <span className="regular-price">
-                <BadgeIndianRupee size={18} /> {price}
-              </span>
-            )}
-          </div>
-
-          {/* DESCRIPTION */}
           <p className="product-desc">
             {typeof description === "string"
               ? description
@@ -204,28 +202,27 @@ const SingleProductPage = () => {
             <button
               className="btn-customize"
               onClick={() => {
-                if (subSlug === "polo-t-shirts") {
-                  window.location.href = "/customize/polotshirt";
-                  return;
-                }
-                if (subSlug === "round-neck-t-shirts") {
-                  window.location.href = "/customize/roundneck";
-                  return;
-                }
+                if (subSlug === "polo-t-shirts")
+                  return (window.location.href = "/customize/polotshirt");
+                if (subSlug === "round-neck-t-shirts")
+                  return (window.location.href = "/customize/roundneck");
+
                 navigate("/customize/all", {
                   state: {
-                    productImages: subImages?.map((i) => i.url) ?? images.map((i) => i.url),
+                    productImages:
+                      subImages?.map((i) => i.url) ??
+                      images.map((i) => i.url),
                     productName: name,
                     subcategory: subSlug,
                   },
                 });
               }}
             >
-              <Sparkles size={18} /> Add Your Logo & Customize Now
+              <Sparkles size={18} /> Customize with Logo
             </button>
           )}
 
-          {/* QTY + Quote */}
+          {/* qty + quote */}
           <div className="product-actions">
             <div className="qty-box">
               <button onClick={() => qty > 1 && setQty(qty - 1)}>
@@ -237,8 +234,11 @@ const SingleProductPage = () => {
               </button>
             </div>
 
-            <button onClick={() => setIsEnquiryOpen(true)} className="btn-add-cart">
-              <ShoppingCart size={18} /> Get a Free Quote
+            <button
+              onClick={() => setIsEnquiryOpen(true)}
+              className="btn-add-cart"
+            >
+              <ShoppingCart size={18} /> Get Free Quote
             </button>
 
             <button className="btn-wishlist">
@@ -246,17 +246,11 @@ const SingleProductPage = () => {
             </button>
           </div>
 
-          {/* SKU & TAGS */}
+          {/* EXTRA INFO */}
           <div className="product-extra-box">
             {sku && (
               <p>
                 <Info size={16} /> <strong>SKU:</strong> {sku}
-              </p>
-            )}
-
-            {tags?.length > 0 && (
-              <p>
-                <Tag size={16} /> <strong>Tags:</strong> {tags.join(", ")}
               </p>
             )}
           </div>
@@ -292,25 +286,33 @@ const SingleProductPage = () => {
           </div>
         </div>
       </div>
-      {shouldShowCustomize && <CustomizationExperience />}
-      <WhyChooseUsProduct
-        productName={name}
-        subcategoryName={subcategory?.name}
-        categoryName={category?.name}
-      />
-      <CatalogueCTA />
-      <PopularSubcategories />
-      <ProductFAQ
-        productName={name}
-        subcategoryName={subcategory?.name}
-      />
-      <BlogSection />
-<HiddenSEOContent/>
-      <EnquiryModal
-        isOpen={isEnquiryOpen}
-        onClose={() => setIsEnquiryOpen(false)}
-        image={enquiryImage}
-      />
+
+      {/* ========= Lazy Loaded Page Extras ========= */}
+
+      <Suspense fallback={<div></div>}>
+        {shouldShowCustomize && <CustomizationExperience />}
+
+        <WhyChooseUsProduct
+          productName={name}
+          subcategoryName={subcategory?.name}
+          categoryName={category?.name}
+        />
+
+        <CatalogueCTA />
+        <PopularSubcategories />
+
+        <ProductFAQ productName={name} subcategoryName={subcategory?.name} />
+
+        <BlogSection />
+        <HiddenSEOContent />
+
+        {/* Modal */}
+        <EnquiryModal
+          isOpen={isEnquiryOpen}
+          onClose={() => setIsEnquiryOpen(false)}
+          image={enquiryImage}
+        />
+      </Suspense>
     </>
   );
 };

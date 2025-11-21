@@ -1,18 +1,20 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, lazy, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 import axios from "axios";
 import "../styles/HeroSection.css";
-import EnquiryModal from "./EnquiryModal";
+
+/*  Lazy load EnquiryModal */
+const EnquiryModal = lazy(() => import("./EnquiryModal"));
 
 const HeroSection = () => {
-  const [slides, setSlides] = useState([]); 
+  const [slides, setSlides] = useState([]);
   const [current, setCurrent] = useState(0);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [paused, setPaused] = useState(false);
   const timeoutRef = useRef(null);
 
-  //  Fetch slides from backend
+  // Fetch slides
   useEffect(() => {
     const fetchSlides = async () => {
       try {
@@ -27,7 +29,7 @@ const HeroSection = () => {
 
   const length = slides.length;
 
-  //  Only start autoplay if slides are loaded
+  // Autoplay
   useEffect(() => {
     if (!paused && length > 0) {
       timeoutRef.current = setTimeout(
@@ -41,7 +43,8 @@ const HeroSection = () => {
   const goNext = () => setCurrent((prev) => (prev + 1) % length);
   const goPrev = () => setCurrent((prev) => (prev - 1 + length) % length);
 
-  if (length === 0) return null; // or show a loader/spinner
+  if (length === 0) return null;
+  const slide = slides[current];
 
   return (
     <>
@@ -50,39 +53,66 @@ const HeroSection = () => {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        {/* Background Change */}
-        <AnimatePresence>
-          <motion.div
-            key={current}
-            className="hero-bg-wrapper"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-          >
-            {slides[current].type === "video" ? (
+          {/* FIRST SLIDE — NO ANIMATION FOR BETTER PERFORMANCE */}
+        {current === 0 ? (
+          <div className="hero-bg-wrapper">
+            {slide.type === "video" ? (
               <video
                 className="hero-bg-media"
-                src={slides[current].src}
+                src={slide.src}
                 autoPlay
                 muted
                 loop
+                preload="auto"
               />
             ) : (
               <img
                 className="hero-bg-media"
-                src={slides[current].src}
-                alt=""
+                src={slide.src}
+                alt={slide.title || "Banner"}
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
               />
             )}
-          </motion.div>
-        </AnimatePresence>
+          </div>
+        ) : (
+          /*  OTHER SLIDES — WITH ANIMATION */
+          <AnimatePresence>
+            <motion.div
+              key={current}
+              className="hero-bg-wrapper"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+            >
+              {slide.type === "video" ? (
+                <video
+                  className="hero-bg-media"
+                  src={slide.src}
+                  autoPlay
+                  muted
+                  loop
+                  preload="metadata"
+                />
+              ) : (
+                <img
+                  className="hero-bg-media"
+                  src={slide.src}
+                  alt={slide.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+            </motion.div>
+          </AnimatePresence>
+        )}
 
         {/* LEFT CONTENT */}
         <div className="hero-content">
-          <h1 className="hero-title">{slides[current].title}</h1>
-
-          <p className="hero-subtext">{slides[current].subtitle}</p>
+          <h1 className="hero-title">{slide.title}</h1>
+          <p className="hero-subtext">{slide.subtitle}</p>
 
           <ul className="hero-usps">
             <li>
@@ -97,33 +127,24 @@ const HeroSection = () => {
           </ul>
 
           <div className="hero-cta-group">
-            <a
-              href="#"
+            <button
               onClick={() => setIsEnquiryOpen(true)}
               className="btn-primary"
             >
               Enquire Now
-            </a>
+            </button>
             <a href="#catalogue" className="btn-outline">
               Browse Catalogue
             </a>
           </div>
         </div>
 
-        {/* Navigation Arrows */}
-        <button
-          className="hero-arrow left"
-          onClick={goPrev}
-          aria-label="Previous slide"
-        >
+        {/* Arrows */}
+        <button className="hero-arrow left" onClick={goPrev} aria-label="Previous slide">
           <ArrowLeft size={26} />
         </button>
 
-        <button
-          className="hero-arrow right"
-          onClick={goNext}
-          aria-label="Next slide"
-        >
+        <button className="hero-arrow right" onClick={goNext} aria-label="Next slide">
           <ArrowRight size={26} />
         </button>
 
@@ -138,24 +159,27 @@ const HeroSection = () => {
           ))}
         </div>
       </section>
-      <div className="hero-cta-group-2">
-            <a
-              href="#"
-              onClick={() => setIsEnquiryOpen(true)}
-              className="btn-primary"
-            >
-              Enquire Now
-            </a>
-            <a href="#catalogue" className="btn-outline">
-              Browse Catalogue
-            </a>
-          </div>
 
-      <EnquiryModal
-        isOpen={isEnquiryOpen}
-        onClose={() => setIsEnquiryOpen(false)}
-        image="/assets/enquiry.webp"
-      />
+      {/* Mobile CTA */}
+      <div className="hero-cta-group-2">
+        <button onClick={() => setIsEnquiryOpen(true)} className="btn-primary">
+          Enquire Now
+        </button>
+        <a href="#catalogue" className="btn-outline">
+          Browse Catalogue
+        </a>
+      </div>
+
+      {/*  Lazy Modal */}
+      <Suspense fallback={null}>
+        {isEnquiryOpen && (
+          <EnquiryModal
+            isOpen={isEnquiryOpen}
+            onClose={() => setIsEnquiryOpen(false)}
+            image="/assets/enquiry.webp"
+          />
+        )}
+      </Suspense>
     </>
   );
 };

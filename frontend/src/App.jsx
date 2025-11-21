@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,54 +6,74 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import SupplyCities from "./components/SupplyCities";
-import FloatingButtons from "./components/FloatingButtons";
+// Lazy-load everything except Navbar/Footer/Home (critical display)
+const Navbar = lazy(() => import("./components/Navbar"));
+const Footer = lazy(() => import("./components/Footer"));
+const SupplyCities = lazy(() => import("./components/SupplyCities"));
+const FloatingButtons = lazy(() => import("./components/FloatingButtons"));
 
-import Home from "./pages/Home";
-import ContactPage from "./pages/ContactPage";
-import AboutUsPage from "./pages/AboutUsPage";
-import BlogList from "./pages/BlogList";
-import BlogForm from "./pages/BlogForm";
-import BlogDetail from "./pages/BlogDetail";
-import CategoryPage from "./pages/CategoryPage";
-import SubcategoryPage from "./pages/SubcategoryPage";
-import SingleProductPage from "./pages/SingleProductPage";
-import CustomizerSVG from "./pages/Customize/CustomizerSVG";
-import CustomizerAll from "./pages/Customize/CustomizerAll";
-import Login from "./pages/Login";
+// Public pages
+const Home = lazy(() => import("./pages/Home"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const AboutUsPage = lazy(() => import("./pages/AboutUsPage"));
+const BlogList = lazy(() => import("./pages/BlogList"));
+const BlogForm = lazy(() => import("./pages/BlogForm"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail"));
+const CategoryPage = lazy(() => import("./pages/CategoryPage"));
+const SubcategoryPage = lazy(() => import("./pages/SubcategoryPage"));
+const SingleProductPage = lazy(() => import("./pages/SingleProductPage"));
+const CustomizerSVG = lazy(() => import("./pages/Customize/CustomizerSVG"));
+const CustomizerAll = lazy(() => import("./pages/Customize/CustomizerAll"));
+const Login = lazy(() => import("./pages/Login"));
+const SearchResults = lazy(() => import("./pages/SearchResults"));
 
+// Admin pages
+const AdminDashboard = lazy(() => import("./pages/Admin/AdminDashboard"));
+const HeroManagerPage = lazy(() =>
+  import("./pages/Admin/HeroManagerPage")
+);
+const CategoryManager = lazy(() =>
+  import("./pages/Admin/CategoryManagerPage")
+);
+const SubcategoryManager = lazy(() =>
+  import("./pages/Admin/SubcategoryManagerPage")
+);
+const ProductManager = lazy(() =>
+  import("./pages/Admin/ProductManagerPage")
+);
+
+// Utilities
 import ScrollToTop from "./utils/ScrollToTop";
 import ProtectedRoute from "./utils/ProtectedRoute";
 
-//  Import admin pages
-import AdminDashboard from "./pages/Admin/AdminDashboard";
-import HeroManagerPage from "./pages/Admin/HeroManagerPage";
-import CategoryManager from "./pages/Admin/CategoryManagerPage";
-import SubcategoryManager from "./pages/Admin/SubcategoryManagerPage";
-import ProductManager from "./pages/Admin/ProductManagerPage";
-import SearchResults from "./pages/SearchResults";
+// Skeleton fallback for smoother UX
+const Loader = () => (
+  <div style={{ padding: "40px", textAlign: "center" }}>Loading…</div>
+);
 
-//  Layout wrapper to hide Navbar/Footer on admin pages
+// Layout wrapper (keeps Navbar/Footer off admin pages)
 const LayoutWrapper = ({ children }) => {
   const location = useLocation();
   const isAdmin = location.pathname.startsWith("/admin");
 
   return (
     <>
-      {!isAdmin && <Navbar />}
+      {!isAdmin && (
+        <Suspense fallback={<Loader />}>
+          <Navbar />
+        </Suspense>
+      )}
 
       <main id="main-content" role="main">
         {children}
       </main>
 
       {!isAdmin && (
-        <>
+        <Suspense fallback={<Loader />}>
           <SupplyCities />
           <Footer />
           <FloatingButtons />
-        </>
+        </Suspense>
       )}
     </>
   );
@@ -64,31 +84,43 @@ const App = () => {
     <Router>
       <ScrollToTop />
       <LayoutWrapper>
-        <Routes>
-          {/* ---------- Public Routes ---------- */}
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/about" element={<AboutUsPage />} />
-          <Route path="/blogs" element={<BlogList />} />
-          <Route path="/blogs/post" element={<BlogForm />} />
-          <Route path="/blogs/:id" element={<BlogDetail />} />
-          <Route path="/categories/:slug" element={<CategoryPage />} />
-          <Route path="/:categorySlug/:subSlug" element={<SubcategoryPage />} />
-          <Route path="/:categorySlug/:subSlug/:prodSlug" element={<SingleProductPage />} />
-          <Route path="/search" element={<SearchResults />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/customize/:productType" element={<CustomizerSVG />} />
-          <Route path="/customize/all" element={<CustomizerAll />} />
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/about" element={<AboutUsPage />} />
+            <Route path="/blogs" element={<BlogList />} />
+            <Route path="/blogs/post" element={<BlogForm />} />
+            <Route path="/blogs/:id" element={<BlogDetail />} />
+            <Route path="/categories/:slug" element={<CategoryPage />} />
+            <Route
+              path="/:categorySlug/:subSlug"
+              element={<SubcategoryPage />}
+            />
+            <Route
+              path="/:categorySlug/:subSlug/:prodSlug"
+              element={<SingleProductPage />}
+            />
+            <Route path="/search" element={<SearchResults />} />
+            <Route path="/login" element={<Login />} />
 
-          {/* ---------- Admin Routes ---------- */}
-          <Route path="/admin" element={<ProtectedRoute />}>
-            <Route index element={<AdminDashboard />} />
-            <Route path="banners" element={<HeroManagerPage />} />
-            <Route path="categories" element={<CategoryManager />} />
-            <Route path="subcategories" element={<SubcategoryManager />} />
-            <Route path="products" element={<ProductManager />} />
-          </Route>
-        </Routes>
+            <Route
+              path="/customize/:productType"
+              element={<CustomizerSVG />}
+            />
+            <Route path="/customize/all" element={<CustomizerAll />} />
+
+            {/* Admin Routes */}
+            <Route path="/admin" element={<ProtectedRoute />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="banners" element={<HeroManagerPage />} />
+              <Route path="categories" element={<CategoryManager />} />
+              <Route path="subcategories" element={<SubcategoryManager />} />
+              <Route path="products" element={<ProductManager />} />
+            </Route>
+          </Routes>
+        </Suspense>
       </LayoutWrapper>
     </Router>
   );

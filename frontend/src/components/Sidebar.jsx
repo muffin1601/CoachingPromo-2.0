@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import EnquiryModal from "./EnquiryModal";
-
+import React, { useState, lazy, Suspense } from "react";
 import {
   X,
   ChevronDown,
@@ -8,8 +6,12 @@ import {
   Phone,
   MessageCircle
 } from "lucide-react";
+
 import categories from "../data/categories";
 import "../styles/Sidebar.css";
+
+/*  LAZY-LOAD ENQUIRY MODAL */
+const EnquiryModal = lazy(() => import("./EnquiryModal"));
 
 const Sidebar = ({ isOpen, onClose }) => {
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
@@ -31,11 +33,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             <div className="logo-section-2">
               <img src="/logo.webp" alt="Coaching Promo" className="logo-image-2" />
             </div>
-            <button
-              className="close-btn"
-              onClick={onClose}
-              aria-label="Close sidebar"
-            >
+            <button className="close-btn" onClick={onClose} aria-label="Close sidebar">
               <X size={26} />
             </button>
           </div>
@@ -49,13 +47,11 @@ const Sidebar = ({ isOpen, onClose }) => {
               placeholder="Search products..."
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") handleSearch();
-              }}
+              onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             />
           </div>
 
-          {/* Categories */}
+          {/* Menu Items */}
           <ul className="sidebar-list">
             <li><a href="/">Home</a></li>
 
@@ -70,6 +66,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                   {cat.subcategories.map((sub, i) => (
                     <div key={i} className="sidebar-sub">
                       <p className="sub-title">{sub.name}</p>
+
                       <ul>
                         {sub.products.map((prod, j) => (
                           <li key={j}>
@@ -88,12 +85,12 @@ const Sidebar = ({ isOpen, onClose }) => {
             <li><a href="/contact">Contact Us</a></li>
           </ul>
 
-          {/* CTA */}
-          <a className="sidebar-cta" onClick={() => setIsEnquiryOpen(true)}>
+          {/* CTA Button */}
+          <button className="sidebar-cta" onClick={() => setIsEnquiryOpen(true)}>
             Get Quote
-          </a>
+          </button>
 
-          {/* Phone & WhatsApp Buttons */}
+          {/* Contact Buttons */}
           <div className="sidebar-contact-buttons">
             <a href="tel:+918750708222" className="sidebar-contact-item">
               <Phone size={20} /> Call Us
@@ -108,16 +105,19 @@ const Sidebar = ({ isOpen, onClose }) => {
               <MessageCircle size={20} /> WhatsApp
             </a>
           </div>
-
         </div>
       </div>
 
-      {/* Modal */}
-      <EnquiryModal
-        isOpen={isEnquiryOpen}
-        onClose={() => setIsEnquiryOpen(false)}
-        image="/assets/enquiry.webp"
-      />
+      {/*  LAZY-LOADED MODAL */}
+      <Suspense fallback={null}>
+        {isEnquiryOpen && (
+          <EnquiryModal
+            isOpen={isEnquiryOpen}
+            onClose={() => setIsEnquiryOpen(false)}
+            image="/assets/enquiry.webp"
+          />
+        )}
+      </Suspense>
     </>
   );
 };

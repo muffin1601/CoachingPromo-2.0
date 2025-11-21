@@ -32,7 +32,7 @@ const ProductGrid = ({ products, catSlug, subSlug }) => {
                 <h3 className="product-card-title">{name}</h3>
 
                 {/* PRICE */}
-                <div className="product-price-wrapper">
+                {/* <div className="product-price-wrapper">
                   {salePrice ? (
                     <>
                       <span className="product-sale-price">₹{salePrice}</span>
@@ -41,7 +41,7 @@ const ProductGrid = ({ products, catSlug, subSlug }) => {
                   ) : (
                     <span className="product-regular-price">₹{price}</span>
                   )}
-                </div>
+                </div> */}
 
                 {/* RATING */}
                 {ratings?.average > 0 && (

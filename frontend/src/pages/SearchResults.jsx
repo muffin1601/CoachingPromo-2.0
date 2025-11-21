@@ -1,14 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 
-import CategoryBanner from "../components/Category/CategoryBanner";
-import SearchGrid from "../components/Category/SearchGrid";
+/*  Lazy-loaded components */
+const CategoryBanner = lazy(() =>
+  import("../components/Category/CategoryBanner")
+);
+const SearchGrid = lazy(() =>
+  import("../components/Category/SearchGrid")
+);
+const CatalogueCTA = lazy(() =>
+  import("../components/CatalogueCTA")
+);
+const PopularSubcategories = lazy(() =>
+  import("../components/PopularSubcategories")
+);
+const BlogSection = lazy(() =>
+  import("../components/BlogSection")
+);
 
+/* DO NOT lazy-load SEO for Google */
 import SEO from "../components/Category/SEO";
-import CatalogueCTA from "../components/CatalogueCTA";
-import PopularSubcategories from "../components/PopularSubcategories";
-import BlogSection from "../components/BlogSection";
 
 const SearchPage = () => {
   const [params] = useSearchParams();
@@ -37,30 +49,33 @@ const SearchPage = () => {
 
   return (
     <>
-      {/* SEO */}
+      {/* ---- SEO ---- */}
       <SEO
         title={`Search results for "${query}"`}
         description={`Search results for ${query}`}
         keywords={query}
       />
 
-      {/* Banner */}
-      <CategoryBanner
-        name={`Search Results`}
-        subtitle={`Showing results for "${query}"`}
-        image="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg"
-        breadcrumbs={[
-          { label: "Home", href: "/" },
-          { label: "Search", href: `/search?q=${query}` },
-        ]}
-      />
+      {/* ---- Lazy-loaded content ---- */}
+      <Suspense fallback={<div></div>}>
+        <CategoryBanner
+          name="Search Results"
+          subtitle={`Showing results for "${query}"`}
+          image="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg"
+          breadcrumbs={[
+            { label: "Home", href: "/" },
+            { label: "Search", href: `/search?q=${query}` },
+          ]}
+        />
 
-      {/* Products */}
-      <SearchGrid products={products} />
+        {/* Products */}
+        <SearchGrid products={products} />
 
-      <CatalogueCTA />
-      <PopularSubcategories />
-      <BlogSection />
+        {/* Extra Components */}
+        <CatalogueCTA />
+        <PopularSubcategories />
+        <BlogSection />
+      </Suspense>
     </>
   );
 };

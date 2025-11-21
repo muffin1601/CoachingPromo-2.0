@@ -1,25 +1,29 @@
-import React, { useRef } from "react";
+import React, { Suspense, lazy } from "react";
 import { Helmet } from "react-helmet";
 
-import HeroSection from "../components/HeroSection";
-import WhyChooseUs from "../components/WhyChooseUs";
-import FeaturedCategories from "../components/FeaturedCategories";
-import TrustedClients from "../components/TrustedClients";
-import PopularSubcategories from "../components/PopularSubcategories";
-import CustomizationExperience from "../components/CustomizationExperience";
-import AboutUsSection from "../components/AboutUsSection";
-import Testimonials from "../components/Testimonials";
-import Gallery from "../components/Gallery";
-import CatalogueCTA from "../components/CatalogueCTA";
-import BlogSection from "../components/BlogSection";
-import HomeFAQ from "../components/HomeFAQ";
-import ExitIntentPopup from "../components/ExitIntentPopup";
-import HiddenSEOContent from "../components/HiddenSEOContent";
+import HeroSection from "../components/HeroSection"; 
+import TrustedClients from "../components/TrustedClients"; 
+
+// Lazy-load heavy sections
+const FeaturedCategories = lazy(() => import("../components/FeaturedCategories"));
+const PopularSubcategories = lazy(() => import("../components/PopularSubcategories"));
+const WhyChooseUs = lazy(() => import("../components/WhyChooseUs"));
+const CustomizationExperience = lazy(() => import("../components/CustomizationExperience"));
+const AboutUsSection = lazy(() => import("../components/AboutUsSection"));
+const Testimonials = lazy(() => import("../components/Testimonials"));
+const Gallery = lazy(() => import("../components/Gallery"));
+const CatalogueCTA = lazy(() => import("../components/CatalogueCTA"));
+const BlogSection = lazy(() => import("../components/BlogSection"));
+const HomeFAQ = lazy(() => import("../components/HomeFAQ"));
+const ExitIntentPopup = lazy(() => import("../components/ExitIntentPopup"));
+const HiddenSEOContent = lazy(() => import("../components/HiddenSEOContent"));
+
+// Fallback
+const Loader = () => <div style={{ height: "60px" }}></div>;
 
 const Home = () => {
   return (
     <div>
-      
       <Helmet>
         <title>Promotional Products for Coaching Institutes – CoachingPromo</title>
         <meta
@@ -29,20 +33,24 @@ const Home = () => {
         <link rel="canonical" href="https://coachingpromo.in/" />
       </Helmet>
 
-      <HeroSection  />
+      {/* 🚀 Only 2 components render immediately */}
+      <HeroSection />
       <TrustedClients />
-      <FeaturedCategories />
-      <PopularSubcategories />
-      <WhyChooseUs />
-      <CustomizationExperience />
-      <AboutUsSection />
-      <Testimonials />
-      <HomeFAQ />
-      <Gallery />
-      <CatalogueCTA />
-      <BlogSection />
-      <ExitIntentPopup />
-      <HiddenSEOContent />
+
+      <Suspense fallback={<Loader />}>
+        <FeaturedCategories />
+        <PopularSubcategories />
+        <WhyChooseUs />
+        <CustomizationExperience />
+        <AboutUsSection />
+        <Testimonials />
+        <HomeFAQ />
+        <Gallery />
+        <CatalogueCTA />
+        <BlogSection />
+        <ExitIntentPopup />
+        <HiddenSEOContent />
+      </Suspense>
     </div>
   );
 };

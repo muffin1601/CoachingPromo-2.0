@@ -49,9 +49,12 @@ const EnquiryModal = ({ isOpen, onClose, image }) => {
     }
   };
 
+  // ❌ If the modal is closed, DO NOT RENDER IT AT ALL
+  if (!isOpen) return null;
+
   return (
-    <div className={`enquiry-overlay ${isOpen ? "show" : ""}`}>
-      <div className={`enquiry-modal ${isOpen ? "slide" : ""}`}>
+    <div className="enquiry-overlay show">
+      <div className="enquiry-modal slide">
 
         {/* Close Button */}
         <button className="enquiry-close-btn" onClick={onClose}>
@@ -61,8 +64,8 @@ const EnquiryModal = ({ isOpen, onClose, image }) => {
         {/* Left Image */}
         <div className="enquiry-img-box">
           <img
-            src={`${image}`}
-            alt="Custom merchandise enquiry for coaching institutes, schools and colleges"
+            src={image}
+            alt="Custom merchandise enquiry for institutes"
           />
         </div>
 
@@ -74,8 +77,7 @@ const EnquiryModal = ({ isOpen, onClose, image }) => {
 
           <p className="enq-subtitle">
             Share your requirements to receive pricing, product suggestions,
-            branding guidance & bulk order support for coaching institutes,
-            schools, colleges and training centers.
+            branding guidance & bulk order support.
           </p>
 
           <div className="enquiry-grid">
@@ -88,7 +90,6 @@ const EnquiryModal = ({ isOpen, onClose, image }) => {
               required
               className="enquiry-input"
             />
-
             <input
               type="text"
               name="companyname"
@@ -98,7 +99,6 @@ const EnquiryModal = ({ isOpen, onClose, image }) => {
               required
               className="enquiry-input"
             />
-
             <input
               type="email"
               name="email"
@@ -108,7 +108,6 @@ const EnquiryModal = ({ isOpen, onClose, image }) => {
               required
               className="enquiry-input"
             />
-
             <input
               type="tel"
               name="phone"
@@ -134,17 +133,13 @@ const EnquiryModal = ({ isOpen, onClose, image }) => {
 
           <textarea
             name="message"
-            placeholder="Tell us what you need: T-shirts, polo uniforms, student welcome kits, bags, water bottles, stationery, promotional items, etc."
+            placeholder="Tell us what you need (T-shirts, uniforms, bags, kits etc.)"
             value={formData.message}
             onChange={handleChange}
             className="enquiry-textarea"
           />
 
-          <button
-            type="submit"
-            className="enquiry-submit-btn"
-            aria-label="Submit enquiry"
-          >
+          <button type="submit" className="enquiry-submit-btn">
             Enquire Now <ArrowRight size={16} />
           </button>
         </form>

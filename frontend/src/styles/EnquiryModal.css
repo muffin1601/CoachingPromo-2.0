@@ -1,5 +1,3 @@
-
-
 /* ===== OVERLAY ===== */
 .enquiry-overlay {
   position: fixed;
@@ -7,9 +5,12 @@
   background: rgba(0,0,0,0.45);
   backdrop-filter: blur(3px);
   opacity: 0;
- align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;     /* Required for slide from top */
+  padding-top: 0;
   pointer-events: none;
-  transition: 0.3s ease;
+  transition: opacity 0.3s ease;
   z-index: 99999;
 }
 
@@ -18,30 +19,30 @@
   pointer-events: auto;
 }
 
-/* ===== MODAL ===== */
+/* ===== MODAL (START POSITION) ===== */
 .enquiry-modal {
   width: 90%;
   max-width: 850px;
   background: var(--light-bg);
- align-self: center;
   padding: 0;
   display: flex;
   justify-content: center;
   gap: 0;
   opacity: 0;
-  transform: translateY(-120%);
-  transition: 0.45s ease;
+  transform: translateY(-150px);  /* starts above top */
+  transition: transform 0.45s ease, opacity 0.45s ease;
   position: relative;
-  margin: 0px auto;
-  top: 18px;
   border: 1px solid var(--light-border);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* ===== MODAL (SLIDE DOWN) ===== */
 .enquiry-modal.slide {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(40px);  /* slides down */
+  pointer-events: auto;
 }
+
 
 /* ===== LEFT SIDE IMAGE ===== */
 .enquiry-img-box {

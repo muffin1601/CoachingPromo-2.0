@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import "../styles/Navbar.css";
 import {
   Search,
@@ -11,9 +11,11 @@ import {
 } from "lucide-react";
 import categories from "../data/categories";
 import axios from "axios";
-import EnquiryModal from "./EnquiryModal";
-import RegisterInstituteModal from "./RegisterInstituteModal";
 import Sidebar from "./Sidebar";
+
+/*  LAZY LOAD HEAVY MODALS */
+const EnquiryModal = lazy(() => import("./EnquiryModal"));
+const RegisterInstituteModal = lazy(() => import("./RegisterInstituteModal"));
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,14 +27,12 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 60);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Visitor Count
+  /* Visitor Count */
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_API_URL}/visitors/count`)
@@ -47,13 +47,14 @@ const Navbar = () => {
           
           {/* TOP BAR */}
           <div className="navbar-top-bar">
-
             <div className="top-bar-left">
               <div className="logo-section">
                 <img src="/logo.webp" alt="Coaching Promo" className="logo-image" />
               </div>
 
-              <div className="visitor-count desktop-only">Visitors: {visitorCount ? visitorCount : "..."}</div>
+              <div className="visitor-count desktop-only">
+                Visitors: {visitorCount ? visitorCount : "..."}
+              </div>
             </div>
 
             {/* RIGHT SECTION */}
@@ -91,7 +92,7 @@ const Navbar = () => {
                 <MessageCircle size={18} /> WhatsApp
               </a>
 
-              {/* User */}
+              {/* User Icon */}
               <button
                 onClick={() => (window.location.href = "/login")}
                 className="nav-icon-link"
@@ -100,6 +101,7 @@ const Navbar = () => {
                 <User />
               </button>
 
+              {/* Register Institute Modal */}
               <button
                 onClick={() => setIsRegisterOpen(true)}
                 className="nav-icon-link cart-icon"
@@ -108,18 +110,23 @@ const Navbar = () => {
                 <GraduationCap />
               </button>
 
-              {/* CTA */}
-              <a href="#" onClick={() => setIsEnquiryOpen(true)} className="primary-cta-btn">
+              {/* CTA – Get Quote */}
+              <button
+                onClick={() => setIsEnquiryOpen(true)}
+                className="primary-cta-btn"
+              >
                 Get Quote
-              </a>
+              </button>
 
             </div>
 
             {/* MOBILE HAMBURGER */}
-            <button className="hamburger-btn mobile-only" onClick={() => setMobileMenuOpen(true)}>
+            <button
+              className="hamburger-btn mobile-only"
+              onClick={() => setMobileMenuOpen(true)}
+            >
               <Menu size={28} />
             </button>
-
           </div>
 
           {/* DESKTOP MENU */}
@@ -156,9 +163,9 @@ const Navbar = () => {
                             <div className="mega-column" key={columnIndex}>
                               {subGroup.map((sub, subIndex) => (
                                 <div className="dropdown-category" key={subIndex}>
-                                  <li href={sub.href} className="dropdown-category-title">
+                                  <a href={sub.href} className="dropdown-category-title">
                                     {sub.name}
-                                  </li>
+                                  </a>
 
                                   <ul>
                                     {sub.products?.map((prod, j) => (
@@ -181,7 +188,6 @@ const Navbar = () => {
               <li><a href="/blogs">Blog</a></li>
               <li><a href="/about">About Us</a></li>
               <li><a href="/contact">Contact Us</a></li>
-
             </ul>
           </nav>
 
@@ -191,17 +197,23 @@ const Navbar = () => {
       {/* SIDEBAR MOBILE MENU */}
       <Sidebar isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
 
-      {/* MODALS */}
-      <EnquiryModal
-        isOpen={isEnquiryOpen}
-        onClose={() => setIsEnquiryOpen(false)}
-        image="/assets/enquiry.webp"
-      />
+      {/*  LAZY-LOADED MODALS */}
+      <Suspense fallback={null}>
+        {isEnquiryOpen && (
+          <EnquiryModal
+            isOpen={isEnquiryOpen}
+            onClose={() => setIsEnquiryOpen(false)}
+            image="/assets/enquiry.webp"
+          />
+        )}
 
-      <RegisterInstituteModal
-        isOpen={isRegisterOpen}
-        onClose={() => setIsRegisterOpen(false)}
-      />
+        {isRegisterOpen && (
+          <RegisterInstituteModal
+            isOpen={isRegisterOpen}
+            onClose={() => setIsRegisterOpen(false)}
+          />
+        )}
+      </Suspense>
     </>
   );
 };

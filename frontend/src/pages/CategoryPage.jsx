@@ -1,16 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
-
-import CategoryBanner from "../components/Category/CategoryBanner";
-import SubcategoryGrid from "../components/Category/SubcategoryGrid";
-import CatalogueCTA from "../components/CatalogueCTA";
-
-import SEO from "../components/Category/SEO"; 
 import axios from "axios";
-import WhyChooseUsCategory from "../components/Category/WhyChooseUsCategory";
-import CategoryFAQ from "../components/Category/CategoryFAQ";
-import HiddenSEOContent from "../components/HiddenSEOContent";
 
+/*  Lazy-load heavy components */
+const CategoryBanner = lazy(() =>
+  import("../components/Category/CategoryBanner")
+);
+const SubcategoryGrid = lazy(() =>
+  import("../components/Category/SubcategoryGrid")
+);
+const CatalogueCTA = lazy(() => import("../components/CatalogueCTA"));
+const WhyChooseUsCategory = lazy(() =>
+  import("../components/Category/WhyChooseUsCategory")
+);
+const CategoryFAQ = lazy(() =>
+  import("../components/Category/CategoryFAQ")
+);
+const HiddenSEOContent = lazy(() =>
+  import("../components/HiddenSEOContent")
+);
+
+/*  Keep SEO immediate (should NOT be lazy) */
+import SEO from "../components/Category/SEO";
 
 const CategoryPage = () => {
   const { slug } = useParams();
@@ -22,47 +33,42 @@ const CategoryPage = () => {
   const [loading, setLoading] = useState(true);
 
   const categoryTitles = {
-  Apparel: "Custom Apparel & Branded Clothing for Institutes",
-  Bags: "Custom Bags, Backpacks & Corporate Gift Bags",
-  "Promotional Items": "Promotional Products & Branding Merchandise",
-  Stationery: "Custom Stationery, Notebooks & Writing Essentials"
-};
-
-
-  const getCategoryData = async (slug, page = 1, sort = "default") => {
-    const res = await axios.get(
-      `${import.meta.env.VITE_API_URL}/categories/${slug}`,
-      { params: { page, sort } }
-    );
-    return res.data;
+    Apparel: "Custom Apparel & Branded Clothing for Institutes",
+    Bags: "Custom Bags, Backpacks & Corporate Gift Bags",
+    "Promotional Items": "Promotional Products & Branding Merchandise",
+    Stationery: "Custom Stationery, Notebooks & Writing Essentials",
   };
 
-  useEffect(() => {
-    fetchCategory();
-  }, [slug, page, sort]);
-
-  const fetchCategory = async () => {
+  const loadCategory = async () => {
     setLoading(true);
     try {
-      const data = await getCategoryData(slug, page, sort);
-      setCategory(data.category);
-      setSubcategories(data.subcategories || []);
-      setProducts(data.products || []);
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/categories/${slug}`,
+        { params: { page, sort } }
+      );
+
+      setCategory(res.data.category);
+      setSubcategories(res.data.subcategories || []);
+      setProducts(res.data.products || []);
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
     setLoading(false);
   };
+
+  useEffect(() => {
+    loadCategory();
+  }, [slug, page, sort]);
 
   if (loading || !category) return <div>Loading...</div>;
 
   /** Breadcrumbs */
   const breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: category.name }
+    { label: category.name },
   ];
 
-  /** Dynamic SEO values with fallback */
+  /**  SEO Setup */
   const metaTitle =
     category?.seo?.metaTitle ||
     `${category.name} – Custom Printed & Promotional Products | CoachingPromo`;
@@ -76,13 +82,11 @@ const CategoryPage = () => {
       ? category.seo.keywords.join(",")
       : `${category.name}, promotional products, customized gifts`;
 
-  /**  Dynamic Canonical URL */
   const canonicalURL = `https://coachingpromo.in/categories/${slug}`;
-
 
   return (
     <>
-      {/*  Full SEO Helmet */}
+      {/* ✔ Non-lazy SEO (critical) */}
       <SEO
         title={metaTitle}
         description={metaDescription}
@@ -90,27 +94,24 @@ const CategoryPage = () => {
         canonical={canonicalURL}
       />
 
-      <CategoryBanner
-        name={categoryTitles[category.name] || category.name}
-        image="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
-        subtitle={category?.description}
-        breadcrumbs={breadcrumbs}
-      />
+      {/* Lazy-loaded content wrapper */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <CategoryBanner
+          name={categoryTitles[category.name] || category.name}
+          image="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+          subtitle={category.description}
+          breadcrumbs={breadcrumbs}
+        />
 
+        <SubcategoryGrid subcategories={subcategories} catSlug={slug} />
 
-      {/* SEO Supporting Text */}
-      {/* <p className="subcat-description">
-        Discover our wide range of <strong>{category.name}</strong>   
-        products designed for coaching institutes, schools, colleges, and universities. 
-        Choose a subcategory below to explore customized merchandise, branding solutions, 
-        and promotional items tailored for educational organizations across India.
-      </p> */}
+        <WhyChooseUsCategory categoryName={category.name} />
+        <CatalogueCTA />
+        <CategoryFAQ categoryName={category.name} />
 
-      <SubcategoryGrid subcategories={subcategories} catSlug={slug} />
-     <WhyChooseUsCategory categoryName={category.name} />
-      <CatalogueCTA />
-      <CategoryFAQ categoryName={category.name} />
-<HiddenSEOContent />
+        {/* extra SEO text */}
+        <HiddenSEOContent />
+      </Suspense>
     </>
   );
 };

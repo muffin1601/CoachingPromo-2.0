@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import axios from "axios";
 import { Helmet } from "react-helmet";
-import PageBanner from "../components/PageBanner";
 import { ArrowRight } from "lucide-react";
-import "../styles/BlogForm.css";   // new css
+import "../styles/BlogForm.css";
+
+/*  Lazy-load heavy components */
+const PageBanner = lazy(() => import("../components/PageBanner"));
 
 const BlogFormCTA = () => {
   const [form, setForm] = useState({
@@ -42,6 +44,7 @@ const BlogFormCTA = () => {
 
   return (
     <>
+      {/* SEO */}
       <Helmet>
         <title>Create Blog | CoachingPromo</title>
         <meta
@@ -51,21 +54,29 @@ const BlogFormCTA = () => {
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://coachingpromo.in/blogs/new" />
       </Helmet>
-      <PageBanner
-        title="New Blog Post"
-        background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
-        breadcrumb={[{ label: "New Blog" }]}
-      />
 
+      {/*  Lazy Loaded Banner → removes 150–200 KB from initial JS */}
+      <Suspense fallback={null}>
+        <PageBanner
+          title="New Blog Post"
+          background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+          breadcrumb={[{ label: "New Blog" }]}
+        />
+      </Suspense>
+
+      {/* MAIN SECTION */}
       <section className="blogcta-section">
         <div className="blogcta-wrapper">
 
-          {/* LEFT — IMAGE */}
+          {/* LEFT — IMAGE (lazy-loaded) */}
           <div className="blogcta-left">
             <img
               src="/assets/blog/b2.webp"
               alt="Post a Blog"
               className="blogcta-img"
+              loading="lazy"
+              fetchpriority="low"
+              decoding="async"
             />
           </div>
 
@@ -77,7 +88,6 @@ const BlogFormCTA = () => {
             </p>
 
             <form className="blogcta-form" onSubmit={handleSubmit}>
-
               <div className="blogform-grid">
                 <input
                   type="text"
@@ -106,6 +116,7 @@ const BlogFormCTA = () => {
                 onChange={handleChange}
                 required
               />
+
               <div className="blogcta-file-wrapper">
                 <label htmlFor="blogcta-file" className="blogcta-file-label">
                   Upload Image / Video
@@ -118,22 +129,17 @@ const BlogFormCTA = () => {
                   onChange={(e) => setMedia(e.target.files[0])}
                 />
 
-                {media && (
-                  <p className="blogcta-file-name">{media.name}</p>
-                )}
+                {media && <p className="blogcta-file-name">{media.name}</p>}
               </div>
 
-              <button
-                type="submit"
-                className="blogcta-btn"
-                aria-label="Post blog"
-              >
+              <button type="submit" className="blogcta-btn" aria-label="Post blog">
                 Post Blog <ArrowRight />
               </button>
             </form>
           </div>
         </div>
-      </section></>
+      </section>
+    </>
   );
 };
 

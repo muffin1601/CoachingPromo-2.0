@@ -1,23 +1,56 @@
 :root {
- 
-  --brand-blue: #0b4a8d;          
-  --brand-blue-dark: #08386c;    
+  /* ──────────────────────────────── */
+  /* BRAND COLORS – WCAG AA COMPLIANT */
+  /* ──────────────────────────────── */
 
-  --brand-orange: #cc6f00;        
-  --brand-orange-dark: #b26203;   
-  --brand-orange-darker: #a85b00; 
+  /* Primary Blue (Your brand blue, contrast improved) */
+  --brand-blue: #083c71;          /* base (AA pass on white) */
+  --brand-blue-dark: #062f59;     /* darker hover */
+  --brand-blue-light: #0b4a8d;    /* subtle accent, non-text only */
 
- 
-  --text-dark: #222;              
-  --neutral-gray: #555;           
+  /* Primary Orange (Your updated AA-safe orange) */
+  --brand-orange: #d35400;         /* base */
+  --brand-orange-dark: #b34700;    /* hover on buttons */
+  --brand-orange-darker: #8e3900;  /* deep tone for emphasis */
+  --brand-orange-light: #ff7a00;   /* decorative only, not for text */
 
+  /* ──────────────────────────────── */
+  /* NEUTRALS – ACCESSIBILITY SAFE   */
+  /* ──────────────────────────────── */
 
-  --light-bg: #fffaf4;            
-  --light-border: #e4e4e4;
+  --text-dark: #222;               /* main body text */
+  --text-medium: #444;             /* paragraphs */
+  --neutral-gray: #555;            /* subtitles / secondary text */
+  --neutral-light: #777;           /* muted labels */
 
- 
-  --transition: 0.3s ease;        
+  /* Backgrounds */
+  --white: #ffffff;
+  --light-bg: #fdf8f2;             /* softer alternative to #fffaf4 */
+  --light-bg-2: #fafafa;           /* section separators */
+
+  /* Borders */
+  --light-border: #e1e1e1;
+  --medium-border: #cccccc;
+
+  /* Overlays / effects */
+  --overlay-dark: rgba(0, 0, 0, 0.55);   /* hero/category overlays */
+  --overlay-medium: rgba(0, 0, 0, 0.35);
+  --overlay-light: rgba(0, 0, 0, 0.15);
+
+  /* ──────────────────────────────── */
+  /* UTILITIES                       */
+  /* ──────────────────────────────── */
+
+  --transition: 0.3s ease;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-medium: 0 6px 20px rgba(0,0,0,0.12);
 }
+
 
 
 *{

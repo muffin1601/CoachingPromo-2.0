@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet";
@@ -6,9 +6,14 @@ import PageBanner from "../components/PageBanner";
 import "../styles/BlogDetail.css";
 import { Loader2 } from "lucide-react";
 
-import BlogSection from "../components/BlogSection";
-import CustomizationExperience from "../components/CustomizationExperience";
-import HiddenSEOContent from "../components/HiddenSEOContent";
+/*  Lazy-loaded heavy components */
+const BlogSection = lazy(() => import("../components/BlogSection"));
+const CustomizationExperience = lazy(() =>
+  import("../components/CustomizationExperience")
+);
+const HiddenSEOContent = lazy(() =>
+  import("../components/HiddenSEOContent")
+);
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -57,8 +62,7 @@ const BlogDetails = () => {
         }
       );
 
-      // Re-fetch updated comments
-      fetchBlog();
+      fetchBlog(); // reload comments
 
       setCommentData({
         name: "",
@@ -100,11 +104,11 @@ const BlogDetails = () => {
         ]}
       />
 
+      {/* BLOG CONTENT */}
       <div className="blg-details-container">
         <div className="blg-two-col">
-          {/* LEFT - Blog Content */}
+          {/* LEFT */}
           <div className="blg-left">
-            {/* HEADER */}
             <div className="blg-details-header">
               <h1>{blog.title}</h1>
 
@@ -120,7 +124,7 @@ const BlogDetails = () => {
               </div>
             </div>
 
-            {/* COVER IMAGE / MEDIA */}
+            {/* MEDIA */}
             {blog.media && (
               <>
                 {blog.media.includes("mp4") ? (
@@ -146,12 +150,11 @@ const BlogDetails = () => {
             ></div>
           </div>
 
-          {/* RIGHT - Comments */}
+          {/* RIGHT — COMMENTS */}
           <div className="blg-right">
             <div className="blg-comments-section">
               <h2>Comments</h2>
 
-              {/* Existing Comments */}
               <div className="blg-comments-list">
                 {comments.length > 0 ? (
                   comments.map((c, i) => (
@@ -172,7 +175,7 @@ const BlogDetails = () => {
                 )}
               </div>
 
-              {/* Comment Form */}
+              {/* FORM */}
               <form className="blg-comment-form" onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -194,10 +197,7 @@ const BlogDetails = () => {
                   required
                 ></textarea>
 
-                <button
-                  type="submit"
-                  aria-label="Post comment"
-                >
+                <button type="submit" aria-label="Post comment">
                   Post Comment
                 </button>
               </form>
@@ -205,9 +205,13 @@ const BlogDetails = () => {
           </div>
         </div>
       </div>
-      <CustomizationExperience />
-      <BlogSection />
-      <HiddenSEOContent />
+
+      {/*  Lazy Loaded Below-the-Fold Sections */}
+      <Suspense fallback={null}>
+        <CustomizationExperience />
+        <BlogSection />
+        <HiddenSEOContent />
+      </Suspense>
     </>
   );
 };

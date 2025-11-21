@@ -1,19 +1,27 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, lazy, Suspense } from "react";
 import { fabric } from "fabric";
 import { useLocation } from "react-router-dom";
-
-
-import CanvasToolbar from "./components/CanvasToolbar";
-import ThumbnailGalleryPNG from "./components/ThumbnailGalleryPNG";
-import VerticalToolbarPNG from "./components/VerticalToolbarPNG";
-import UploadControlsPNG from "./components/UploadControlsPNG";
-import TextControlsPNG from "./components/TextControlsPNG";
-import ExportButtons from "./components/ExportButtons";
-import ProductCustomizerPNG from "./components/ProductCustomizerPNG";
-import PreviewModalPNG from "./components/PreviewModalPNG";
-
-
 import "./styles/CustomizerSVG.css";
+
+/* ⭐ Lazy Load Heavy Components */
+const CanvasToolbar = lazy(() => import("./components/CanvasToolbar"));
+const ThumbnailGalleryPNG = lazy(() =>
+  import("./components/ThumbnailGalleryPNG")
+);
+const VerticalToolbarPNG = lazy(() =>
+  import("./components/VerticalToolbarPNG")
+);
+const UploadControlsPNG = lazy(() =>
+  import("./components/UploadControlsPNG")
+);
+const TextControlsPNG = lazy(() => import("./components/TextControlsPNG"));
+const ExportButtons = lazy(() => import("./components/ExportButtons"));
+const ProductCustomizerPNG = lazy(() =>
+  import("./components/ProductCustomizerPNG")
+);
+const PreviewModalPNG = lazy(() =>
+  import("./components/PreviewModalPNG")
+);
 
 const CustomizeAll = () => {
   const canvasRef = useRef(null);
@@ -22,14 +30,14 @@ const CustomizeAll = () => {
     React.createRef(),
     React.createRef(),
     React.createRef(),
-    React.createRef(),
+    React.createRef()
   ]);
 
   const location = useLocation();
   const {
     productImages = [],
     productName = "",
-    subcategory = "",
+    subcategory = ""
   } = location.state || {};
 
   const [viewStates, setViewStates] = useState([null, null, null, null]);
@@ -39,15 +47,15 @@ const CustomizeAll = () => {
   const [redoStack, setRedoStack] = useState([]);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 
-  /* ---------------- Force export-only categories ---------------- */
+  /* ---------------- Force export-only mode for some subcategories ---------------- */
   useEffect(() => {
-    const forced = ["Aprons", "Corporate Shirts", "Winter Wear"];
-    if (forced.map(x => x.toLowerCase()).includes(subcategory.toLowerCase())) {
+    const forced = ["aprons", "corporate shirts", "winter wear"];
+    if (forced.includes(subcategory.toLowerCase())) {
       setActiveTool("export");
     }
   }, [subcategory]);
 
-  /* ---------------- Save canvas state ---------------- */
+  /* ---------------- Save current canvas state ---------------- */
   const saveCurrentViewState = () => {
     const canvas = canvasRef.current?.fabricCanvas;
     if (!canvas) return;
@@ -58,33 +66,40 @@ const CustomizeAll = () => {
       json.backgroundImageUrl = canvas.backgroundImage.getSrc();
     }
 
-    const updated = [...viewStates];
-    updated[activeIndex] = json;
-    setViewStates(updated);
+    setViewStates((prev) => {
+      const copy = [...prev];
+      copy[activeIndex] = json;
+      return copy;
+    });
   };
 
-  /* ---------------- Update thumbnail image ---------------- */
+  /* ---------------- Debounced Thumbnail Update ---------------- */
+  const thumbUpdateRef = useRef(null);
+
   const updateThumbnail = (index) => {
-    const srcCanvas = canvasRef.current?.fabricCanvas;
-    const dst = thumbnailCanvasRefs.current[index]?.current;
-    if (!srcCanvas || !dst) return;
+    clearTimeout(thumbUpdateRef.current);
+    thumbUpdateRef.current = setTimeout(() => {
+      const srcCanvas = canvasRef.current?.fabricCanvas;
+      const dst = thumbnailCanvasRefs.current[index]?.current;
+      if (!srcCanvas || !dst) return;
 
-    const thumbCanvas = new fabric.StaticCanvas(dst);
-    const dataUrl = srcCanvas.toDataURL({ format: "png" });
+      const thumbCanvas = new fabric.StaticCanvas(dst);
+      const dataUrl = srcCanvas.toDataURL({ format: "png" });
 
-    fabric.Image.fromURL(dataUrl, (img) => {
-      const scale = Math.min(dst.width / img.width, dst.height / img.height);
+      fabric.Image.fromURL(dataUrl, (img) => {
+        const scale = Math.min(dst.width / img.width, dst.height / img.height);
 
-      img.scale(scale);
-      img.set({
-        left: (dst.width - img.width * scale) / 2,
-        top: (dst.height - img.height * scale) / 2,
+        img.scale(scale);
+        img.set({
+          left: (dst.width - img.width * scale) / 2,
+          top: (dst.height - img.height * scale) / 2
+        });
+
+        thumbCanvas.clear();
+        thumbCanvas.add(img);
+        thumbCanvas.renderAll();
       });
-
-      thumbCanvas.clear();
-      thumbCanvas.add(img);
-      thumbCanvas.renderAll();
-    });
+    }, 150);
   };
 
   /* ---------------- Undo Logic ---------------- */
@@ -92,11 +107,11 @@ const CustomizeAll = () => {
     const canvas = canvasRef.current?.fabricCanvas;
     if (!canvas || undoStack.length === 0) return;
 
-    const prevState = undoStack.pop();
-    const currState = canvas.toJSON(["id"]);
-    setRedoStack((p) => [...p, currState]);
+    const prev = undoStack.pop();
+    const current = canvas.toJSON(["id"]);
+    setRedoStack((r) => [...r, current]);
 
-    canvas.loadFromJSON(prevState, () => {
+    canvas.loadFromJSON(prev, () => {
       canvas.renderAll();
       updateThumbnail(activeIndex);
     });
@@ -109,11 +124,11 @@ const CustomizeAll = () => {
     const canvas = canvasRef.current?.fabricCanvas;
     if (!canvas || redoStack.length === 0) return;
 
-    const nextState = redoStack.pop();
-    const currState = canvas.toJSON(["id"]);
-    setUndoStack((p) => [...p, currState]);
+    const next = redoStack.pop();
+    const current = canvas.toJSON(["id"]);
+    setUndoStack((u) => [...u, current]);
 
-    canvas.loadFromJSON(nextState, () => {
+    canvas.loadFromJSON(next, () => {
       canvas.renderAll();
       updateThumbnail(activeIndex);
     });
@@ -121,7 +136,7 @@ const CustomizeAll = () => {
     setRedoStack([...redoStack]);
   };
 
-  /* ---------------- Change View ---------------- */
+  /* ---------------- Switch view (front/back/side) ---------------- */
   const handleThumbnailClick = (index) => {
     if (index === activeIndex) return;
 
@@ -130,17 +145,19 @@ const CustomizeAll = () => {
 
     const canvas = canvasRef.current?.fabricCanvas;
     if (canvas && viewStates[index]) {
-      canvas.loadFromJSON(viewStates[index], () => canvas.renderAll());
+      canvas.loadFromJSON(viewStates[index], () => {
+        canvas.renderAll();
+      });
     }
   };
 
-  /* ---------------- Tool Change ---------------- */
+  /* ---------------- Switch tools ---------------- */
   const handleToolChange = (tool) => {
     saveCurrentViewState();
     setActiveTool(tool);
   };
 
-  /* ---------------- Preview ---------------- */
+  /* ---------------- Preview Mode ---------------- */
   useEffect(() => {
     if (activeTool === "preview") {
       saveCurrentViewState();
@@ -150,24 +167,16 @@ const CustomizeAll = () => {
     }
   }, [activeTool]);
 
-  /* ---------------- Update thumbnails after preview ---------------- */
-  useEffect(() => {
-    if (!isPreviewOpen) return;
-
-    setTimeout(() => {
-      [...Array(4).keys()].forEach(updateThumbnail);
-    }, 300);
-  }, [isPreviewOpen]);
-
   return (
     <div className="customizer-page">
-
-      {/* HEADER SAME AS SVG */}
+      {/* HEADER */}
       <div className="customizer-header">
         <h2>{productName}</h2>
-
         <div className="header-actions">
-          <button className="preview-btn" onClick={() => setActiveTool("preview")}>
+          <button
+            className="preview-btn"
+            onClick={() => setActiveTool("preview")}
+          >
             Preview
           </button>
         </div>
@@ -175,81 +184,91 @@ const CustomizeAll = () => {
 
       {/* TOP TOOLBAR + THUMBNAILS */}
       <div className="top-tools-bar">
-        <CanvasToolbar
-          canvasRef={canvasRef}
-          onUndo={handleUndo}
-          onRedo={handleRedo}
-        />
+        <Suspense fallback={<div />}>
+          <CanvasToolbar
+            canvasRef={canvasRef}
+            onUndo={handleUndo}
+            onRedo={handleRedo}
+          />
+        </Suspense>
 
         <div className="thumbnail-bar">
-          <ThumbnailGalleryPNG
-            activeIndex={activeIndex}
-            thumbnailCanvasRefs={thumbnailCanvasRefs}
-            onThumbnailClick={handleThumbnailClick}
-            productImages={productImages}
-          />
+          <Suspense fallback={<div />}>
+            <ThumbnailGalleryPNG
+              activeIndex={activeIndex}
+              thumbnailCanvasRefs={thumbnailCanvasRefs}
+              onThumbnailClick={handleThumbnailClick}
+              productImages={productImages}
+            />
+          </Suspense>
         </div>
       </div>
 
-      {/* MAIN BODY (SVG Layout Style) */}
+      {/* MAIN BODY */}
       <div className="customizer-body">
-
         {/* LEFT TOOLBAR */}
         <aside className="left-toolbar">
-          <VerticalToolbarPNG
-            onSelectTool={handleToolChange}
-            activeTool={activeTool}
-          />
+          <Suspense fallback={<div />}>
+            <VerticalToolbarPNG
+              onSelectTool={handleToolChange}
+              activeTool={activeTool}
+            />
+          </Suspense>
         </aside>
 
-        {/* RIGHT SIDEBAR CONTROLS */}
+        {/* RIGHT SIDEBAR */}
         <aside className="right-sidebar">
-          {activeTool === "upload" && (
-            <UploadControlsPNG
-              canvasRef={canvasRef}
-              updateThumbnail={() => updateThumbnail(activeIndex)}
-              saveCurrentViewState={saveCurrentViewState}
-              activeIndex={activeIndex}
-            />
-          )}
+          <Suspense fallback={<div />}>
+            {activeTool === "upload" && (
+              <UploadControlsPNG
+                canvasRef={canvasRef}
+                updateThumbnail={() => updateThumbnail(activeIndex)}
+                saveCurrentViewState={saveCurrentViewState}
+                activeIndex={activeIndex}
+              />
+            )}
 
-          {activeTool === "text" && (
-            <TextControlsPNG
-              canvasRef={canvasRef}
-              updateThumbnail={() => updateThumbnail(activeIndex)}
-              saveCurrentViewState={saveCurrentViewState}
-              activeIndex={activeIndex}
-            />
-          )}
+            {activeTool === "text" && (
+              <TextControlsPNG
+                canvasRef={canvasRef}
+                updateThumbnail={() => updateThumbnail(activeIndex)}
+                saveCurrentViewState={saveCurrentViewState}
+                activeIndex={activeIndex}
+              />
+            )}
 
-          {activeTool === "export" && (
-            <ExportButtons
-              canvasRef={canvasRef}
-              viewStates={viewStates}
-              onOpenPreview={() => setActiveTool("preview")}
-            />
-          )}
+            {activeTool === "export" && (
+              <ExportButtons
+                canvasRef={canvasRef}
+                viewStates={viewStates}
+                onOpenPreview={() => setActiveTool("preview")}
+              />
+            )}
+          </Suspense>
         </aside>
 
         {/* MAIN CANVAS AREA */}
         <main className="canvas-area">
           <div className="canvas-container">
-            <ProductCustomizerPNG
-              canvasRef={canvasRef}
-              mainImageUrl={productImages[activeIndex]}
-              savedState={viewStates[activeIndex]}
-            />
+            <Suspense fallback={<div className="loader"></div>}>
+              <ProductCustomizerPNG
+                canvasRef={canvasRef}
+                mainImageUrl={productImages[activeIndex]}
+                savedState={viewStates[activeIndex]}
+              />
+            </Suspense>
           </div>
         </main>
       </div>
 
       {/* PREVIEW MODAL */}
-      <PreviewModalPNG
-        isOpen={isPreviewOpen}
-        onClose={() => setActiveTool("upload")}
-        viewStates={viewStates}
-      />
-
+      <Suspense fallback={<div></div>}>
+        <PreviewModalPNG
+          isOpen={isPreviewOpen}
+          onClose={() => setActiveTool("upload")}
+          viewStates={viewStates}
+        />
+      </Suspense>
     </div>
   );
 };

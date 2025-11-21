@@ -49,26 +49,27 @@ const RegisterInstituteModal = ({ isOpen, onClose }) => {
     }
   };
 
-  return (
-    <div className={`enquiry-overlay ${isOpen ? "show" : ""}`}>
-      <div className={`enquiry-modal ${isOpen ? "slide" : ""}`}>
+  // ❌ Prevent rendering when closed
+  if (!isOpen) return null;
 
-        {/* Close */}
+  return (
+    <div className="enquiry-overlay show">
+      <div className="enquiry-modal slide">
+
         <button className="enquiry-close-btn" onClick={onClose}>
           <X size={26} />
         </button>
 
-        {/* LEFT IMAGE */}
         <div className="enquiry-img-box">
           <img src="/assets/enquiry.webp" alt="register-institute" />
         </div>
 
-        {/* FORM */}
         <form className="enquiry-form" onSubmit={handleSubmit}>
           <h2 className="enq-title">Register Your Institute With Us</h2>
 
           <p className="enq-subtitle">
-            Join our network and get access to premium customized merchandise, promotional products & branding support.
+            Join our network and get access to premium customized merchandise,
+            promotional products & branding support.
           </p>
 
           <div className="enquiry-grid">
@@ -130,11 +131,7 @@ const RegisterInstituteModal = ({ isOpen, onClose }) => {
             className="enquiry-textarea"
           />
 
-          <button
-            type="submit"
-            className="enquiry-submit-btn"
-            aria-label="Register now"
-          >
+          <button type="submit" className="enquiry-submit-btn">
             Register Now <ArrowRight size={16} />
           </button>
         </form>
