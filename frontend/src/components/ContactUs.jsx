@@ -94,14 +94,14 @@ const ContactUs = () => {
 
       {/*  MAP + FORM SECTION */}
       <div className="contactus-body">
-        <div className="contactus-map-box">
+        {/* <div className="contactus-map-box">
           <iframe
             title="office-map"
             src="https://maps.google.com/maps?q=india&t=&z=13&ie=UTF8&iwloc=&output=embed"
             className="contactus-map-frame"
             loading="lazy"
           ></iframe>
-        </div>
+        </div> */}
 
         <form className="contactus-form" onSubmit={handleSubmit}>
           <div className="contactus-form-grid">
