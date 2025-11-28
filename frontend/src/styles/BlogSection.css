@@ -115,7 +115,7 @@
 }
 
 /* CTA wrapper */
-.cta-wrapper {
+.cta-wrapper-2 {
   margin-top: 40px;
   width: 90%;
   max-width: 1245px;
@@ -126,7 +126,7 @@
 }
 
 /* CTA button */
-.cta-btn-blog {
+.cta-btn-blog-2 {
   background: var(--brand-blue);
   color: #fff;
   border: none;
@@ -138,7 +138,7 @@
   font-weight: 500;
 }
 
-.cta-btn-blog:hover {
+.cta-btn-blog-2:hover {
   background: var(--brand-orange);
 }
 

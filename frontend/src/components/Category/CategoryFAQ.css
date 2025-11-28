@@ -91,6 +91,32 @@
   margin-top: 14px;
 }
 
+.cta-wrapper-3 {
+  margin-top: 40px;
+  width: 90%;
+  max-width: 1245px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA button */
+.cta-btn-blog-3 {
+  background: var(--brand-blue);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-family: 'outfit', sans-serif;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.cta-btn-blog-3:hover {
+  background: var(--brand-orange);
+}
 /* -----------------------------------
    RESPONSIVE BREAKPOINTS
 ------------------------------------ */

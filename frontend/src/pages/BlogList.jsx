@@ -149,7 +149,7 @@ const BlogList = () => {
 
       {/* Lazy-loaded footer extras */}
       <Suspense fallback={null}>
-        <ExitIntentPopup />
+        {/* <ExitIntentPopup /> */}
         <HiddenSEOContent />
       </Suspense>
     </>

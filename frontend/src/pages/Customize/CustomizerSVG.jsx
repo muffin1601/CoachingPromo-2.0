@@ -324,7 +324,7 @@ const CustomizerSVG = () => {
       <div className="customizer-header">
         <h2>Create your design</h2>
         <button
-          className="preview-btn"
+          className="preview-btn-top"
           onClick={() => setActiveTool("preview")}
         >
           Preview

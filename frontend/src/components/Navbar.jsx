@@ -163,7 +163,7 @@ const Navbar = () => {
                             <div className="mega-column" key={columnIndex}>
                               {subGroup.map((sub, subIndex) => (
                                 <div className="dropdown-category" key={subIndex}>
-                                  <a href={sub.href} className="dropdown-category-title">
+                                  <a className="dropdown-category-title">
                                     {sub.name}
                                   </a>
 

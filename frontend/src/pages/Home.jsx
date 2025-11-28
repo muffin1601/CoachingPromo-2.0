@@ -48,7 +48,7 @@ const Home = () => {
         <Gallery />
         <CatalogueCTA />
         <BlogSection />
-        <ExitIntentPopup />
+        {/* <ExitIntentPopup /> */}
         <HiddenSEOContent />
       </Suspense>
     </div>

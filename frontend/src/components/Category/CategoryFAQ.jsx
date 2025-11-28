@@ -54,8 +54,8 @@ const CategoryFAQ = ({ categoryName }) => {
           </div>
         ))}
       </div>
-      <div className="cta-wrapper">
-        <button className="cta-btn-blog" onClick={() => window.location.href = '/contact'}>
+      <div className="cta-wrapper-3">
+        <button className="cta-btn-blog-3" onClick={() => window.location.href = '/contact'}>
           Start Your Bulk Order – Contact Us
         </button>
       </div>

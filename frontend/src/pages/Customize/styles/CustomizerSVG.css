@@ -35,7 +35,7 @@
   color: var(--brand-blue);
 }
 
-.header-actions .preview-btn {
+.header-actions  {
   padding: 8px 16px;
  
   border: none;
@@ -48,7 +48,23 @@
   transition: 0.25s ease;
 }
 
-.header-actions .preview-btn:hover {
+.preview-btn-top {
+  padding: 8px 16px;
+ 
+  border: none;
+  background: var(--brand-blue);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+   font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+.preview-btn-top:hover {
+  background: var(--brand-blue-dark);
+}
+
+.header-actions:hover {
   background: var(--brand-blue-dark);
 }
 .top-tools-bar {

@@ -51,10 +51,10 @@ const BlogSection = () => {
         ))}
       </div>
 
-      <div className="cta-wrapper">
+      <div className="cta-wrapper-2">
         {/* VIEW ALL BLOGS BUTTON — WITH ARIA LABEL */}
         <button
-          className="cta-btn-blog"
+          className="cta-btn-blog-2"
           onClick={() => window.location.href = '/blogs'}
           aria-label="View all blogs"
         >
