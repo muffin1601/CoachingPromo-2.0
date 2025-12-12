@@ -19,7 +19,6 @@ const subCategorySchema = new mongoose.Schema(
       keywords: [String],
     },
 
-    // FIX  — only store product references
     products: [
       { type: mongoose.Schema.Types.ObjectId, ref: "Product" }
     ],
