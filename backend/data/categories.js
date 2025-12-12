@@ -31,7 +31,7 @@ const wallCalendars = require('./stationery/wallCalenders.js');
 const examPads = require('./stationery/examPads.js');
 
 //bags
-const instituteBackpacks = require('./bags/instituteBackpacks.js');
+const InstituteBackpacks = require('./bags/InstituteBackpacks.js');
 const juteBags = require('./bags/juteBags.js');
 const messengerBags = require('./bags/messengerBags.js');
 const toteBags = require('./bags/toteBags.js');
@@ -53,21 +53,21 @@ const seedData = [
     name: "Apparel",
     slug: "apparel-accessories",
     description:
-      "Discover premium custom-branded apparel designed for coaching institutes, schools, and colleges. From personalized T-shirts and hoodies to formal uniforms and convocation gowns, our high-quality clothing enhances institutional identity, boosts team spirit, and delivers long-lasting comfort and durability.",
+      "Discover premium custom-branded apparel designed for Coaching Institutes, schools, and colleges. From personalized T-shirts and hoodies to formal uniforms and convocation gowns, our high-quality clothing enhances institutional identity, boosts team spirit, and delivers long-lasting comfort and durability.",
 
     image: "/assets/category/apparel.webp",
 
     seo: {
       metaTitle: "Custom Apparel | T-Shirts, Hoodies, Uniforms & Graduation Wear",
       metaDescription:
-        "Explore custom apparel including polo t-shirts, hoodies, uniforms, jackets, and graduation gowns for institutes. Premium quality with professional branding.",
+        "Explore custom apparel including polo t-shirts, hoodies, uniforms, jackets, and graduation gowns for Institutes. Premium quality with professional branding.",
       keywords: [
         "custom apparel",
         "t-shirts",
         "hoodies",
         "uniform jackets",
         "graduation gowns",
-        "institute uniforms",
+        "Institute uniforms",
         "custom clothing"
       ],
     },
@@ -76,12 +76,12 @@ const seedData = [
         name: "Polo T-Shirts",
         slug: "polo-t-shirts",
         description:
-          "High-quality customizable polo T-shirts designed for institutes, events, staff uniforms, and student branding. Available in multiple colors and fabrics.",
+          "High-quality customizable polo T-shirts designed for Institutes, events, staff uniforms, and student branding. Available in multiple colors and fabrics.",
         image: "/assets/apparel/polo.webp",
         seo: {
           metaTitle: "Custom Polo T-Shirts with Logo for Coaching Institutes",
           metaDescription:
-            "Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your coaching brand today!",
+            "Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your Coaching brand today!",
           keywords: ["polo", "custom t-shirt", "polo shirts", "branded apparel"],
         },
         products: poloTshirts,
@@ -91,7 +91,7 @@ const seedData = [
         name: "Round Neck T-Shirts",
         slug: "round-neck-t-shirts",
         description:
-          "Comfortable and versatile round neck T-shirts perfect for student activities, events, branding, and casual institute wear.",
+          "Comfortable and versatile round neck T-shirts perfect for student activities, events, branding, and casual Institute wear.",
         image: "/assets/apparel/round.webp",
         seo: {
           metaTitle: "Custom Round Neck T-Shirts for Coaching Institutes",
@@ -106,12 +106,12 @@ const seedData = [
         name: "Formal Shirts",
         slug: "shirts",
         description:
-          "Premium formal and semi-formal shirts suitable for faculty, office wear, events, and professional institute uniforms.",
+          "Premium formal and semi-formal shirts suitable for faculty, office wear, events, and professional Institute uniforms.",
         image: "/assets/apparel/shirt.webp",
         seo: {
           metaTitle: "Custom Formal Shirts for Coaching Staff – Logo Branding",
           metaDescription:
-            "Custom Formal Shirts for Coaching Staff with Logo Branding. Stylish, comfortable, and perfect for institute events, staff uniforms & bulk orders. Fast delivery available!",
+            "Custom Formal Shirts for Coaching Staff with Logo Branding. Stylish, comfortable, and perfect for Institute events, staff uniforms & bulk orders. Fast delivery available!",
           keywords: ["formal shirt", "teacher uniform", "office wear", "branded shirts"],
         },
         products: formalShirts,
@@ -121,12 +121,12 @@ const seedData = [
         name: "Hoodies-Jackets",
         slug: "hoodies-jackets",
         description:
-          "Warm, stylish, and durable hoodies and jackets ideal for winter events, student batches, and institute merchandise branding.",
+          "Warm, stylish, and durable hoodies and jackets ideal for winter events, student batches, and Institute merchandise branding.",
         image: "/assets/apparel/hoodie.webp",
         seo: {
           metaTitle: "Custom Jackets and Hoodies Tailored for Coaching Institutes",
           metaDescription:
-            "Upgrade your coaching institute’s style with Custom Jackets and Hoodies. Perfect for staff, students & events. Durable, stylish, customizable with your logo, and available with fast bulk delivery!",
+            "Upgrade your Coaching Institute’s style with Custom Jackets and Hoodies. Perfect for staff, students & events. Durable, stylish, customizable with your logo, and available with fast bulk delivery!",
           keywords: ["hoodie", "jacket", "winter wear", "branded outerwear"],
         },
         products: hoodies,
@@ -136,18 +136,18 @@ const seedData = [
         name: "Uniform Jackets",
         slug: "uniform-jackets",
         description:
-          "Premium uniform jackets including Nehru jackets and teacher jackets designed for faculty, staff, formal events, and official institute representation.",
+          "Premium uniform jackets including Nehru jackets and teacher jackets designed for faculty, staff, formal events, and official Institute representation.",
         image: "/assets/nehrujackets/5.webp",
         seo: {
           metaTitle: "Teacher Jackets with Logo – Custom Apparel for Coaching",
           metaDescription:
-            "Upgrade your coaching institute’s look with Teacher Jackets featuring your logo. Stylish, comfortable & perfect for staff, events & promotions. Available with fast bulk delivery!",
+            "Upgrade your Coaching Institute’s look with Teacher Jackets featuring your logo. Stylish, comfortable & perfect for staff, events & promotions. Available with fast bulk delivery!",
           keywords: [
             "uniform jackets",
             "nehru jacket",
             "teacher jacket",
             "faculty wear",
-            "formal institute jackets",
+            "formal Institute jackets",
           ],
         },
         products: nehruJackets,
@@ -209,7 +209,7 @@ const seedData = [
           metaTitle:
             "Premium Custom Graduation Hoods for Coaching Institutes | CoachingPromo",
           metaDescription:
-            "Elevate your coaching institute’s ceremonies with Premium Custom Graduation Hoods. Perfect for students, staff & events. Stylish, high-quality & available with fast bulk delivery!",
+            "Elevate your Coaching Institute’s ceremonies with Premium Custom Graduation Hoods. Perfect for students, staff & events. Stylish, high-quality & available with fast bulk delivery!",
           keywords: ["graduation hood", "academic hood", "degree hood"],
         },
         products: graduationHoods,
@@ -222,21 +222,21 @@ const seedData = [
     slug: "bags",
 
     description:
-      "Premium custom-branded bags, backpacks, totes, and laptop bags crafted for coaching institutes, schools, colleges, and corporate training programs. Durable, stylish, and ideal for student welcome kits, events, seminars, and day-to-day institutional use.",
+      "Premium custom-branded bags, backpacks, totes, and laptop bags crafted for Coaching Institutes, schools, colleges, and corporate training programs. Durable, stylish, and ideal for student welcome kits, events, seminars, and day-to-day institutional use.",
 
     image: "/assets/category/bag.webp",
 
     seo: {
       metaTitle: "Custom Bags | Backpacks, Tote Bags, Laptop & Messenger Bags",
       metaDescription:
-        "Explore durable and fully customizable backpacks, tote bags, laptop bags, and messenger bags for institutes, events, and student welcome kits.",
+        "Explore durable and fully customizable backpacks, tote bags, laptop bags, and messenger bags for Institutes, events, and student welcome kits.",
       keywords: [
         "custom bags",
         "backpacks",
         "tote bags",
         "laptop bags",
         "messenger bags",
-        "institute bags",
+        "Institute bags",
         "promotional bags"
       ],
     },
@@ -244,23 +244,23 @@ const seedData = [
     subcategories: [
       {
         name: "Institute Backpacks",
-        slug: "institute-backpacks",
+        slug: "Institute-backpacks",
         description:
-          "High-strength, ergonomic institute backpacks perfect for students, staff, and training programs. Ideal for daily use, branding, and welcome kits.",
+          "High-strength, ergonomic Institute backpacks perfect for students, staff, and training programs. Ideal for daily use, branding, and welcome kits.",
         image: "/assets/backpacks/9.webp",
         seo: {
           metaTitle: "Institute Backpacks – Custom Logo Bags for Coaching",
           metaDescription:
             "Institute Backpacks – Custom Logo Bags for Coaching Institutes. Durable, stylish & perfect for students, staff & promotional events. Available in bulk with fast delivery!",
           keywords: [
-            "institute backpack",
+            "Institute backpack",
             "school bag",
             "college bag",
             "custom backpack",
             "branded bag"
           ],
         },
-        products: instituteBackpacks,
+        products: InstituteBackpacks,
       },
       {
         name: "Jute Bag",
@@ -332,21 +332,21 @@ const seedData = [
     slug: "promotional-items",
 
     description:
-      "Explore premium custom promotional items designed for coaching institutes, schools, colleges, and corporate training programs. From branded mugs and bottles to diaries, stands, clocks, and accessories, our promotional merchandise enhances visibility, strengthens branding, and creates lasting impressions at events, seminars, and giveaways.",
+      "Explore premium custom promotional items designed for Coaching Institutes, schools, colleges, and corporate training programs. From branded mugs and bottles to diaries, stands, clocks, and accessories, our promotional merchandise enhances visibility, strengthens branding, and creates lasting impressions at events, seminars, and giveaways.",
 
     image: "/assets/category/promotional-items.webp",
 
     seo: {
       metaTitle: "Custom Promotional Items | Mugs, Bottles, Clocks, Diaries & Gifts",
       metaDescription:
-        "Discover customizable promotional items including mugs, bottles, diaries, clocks, and accessories for institutes, events, seminars, and corporate gifting.",
+        "Discover customizable promotional items including mugs, bottles, diaries, clocks, and accessories for Institutes, events, seminars, and corporate gifting.",
       keywords: [
         "promotional items",
         "custom merchandise",
         "branded gifts",
         "corporate giveaways",
         "event merchandise",
-        "institute branding",
+        "Institute branding",
         "custom printed products"
       ],
     },
@@ -356,12 +356,12 @@ const seedData = [
         name: "Mug",
         slug: "mug",
         description:
-          "Custom-printed ceramic and travel mugs perfect for institute branding, corporate gifting, student kits, and event souvenirs.",
+          "Custom-printed ceramic and travel mugs perfect for Institute branding, corporate gifting, student kits, and event souvenirs.",
         image: "/assets/mug/mug (1).webp",
         seo: {
           metaTitle: "Custom Logo Mugs – Promotional Gifts for Coaching Brands",
           metaDescription:
-            "Boost your coaching brand with Custom Logo Mugs – perfect promotional gifts for students, staff & events. Stylish, durable & available with fast bulk delivery!",
+            "Boost your Coaching brand with Custom Logo Mugs – perfect promotional gifts for students, staff & events. Stylish, durable & available with fast bulk delivery!",
           keywords: ["custom mug", "ceramic mug", "branding mug", "coffee mug"],
         },
         products: mugs,
@@ -377,7 +377,7 @@ const seedData = [
           metaTitle:
             "Custom Water Bottles for Coaching Institutes | Promotional Gifts",
           metaDescription:
-            "Promote your coaching institute with Custom Water Bottles – ideal promotional gifts for students, staff & events. Stylish, durable & available with fast bulk delivery!",
+            "Promote your Coaching Institute with Custom Water Bottles – ideal promotional gifts for students, staff & events. Stylish, durable & available with fast bulk delivery!",
           keywords: ["water bottle", "sipper", "steel bottle", "branded bottle"],
         },
         products: bottles,
@@ -456,7 +456,7 @@ const seedData = [
         seo: {
           metaTitle: "Custom Wall Clocks – Printed with Your Logo",
           metaDescription:
-            "Enhance your coaching institute’s space with Custom Wall Clocks printed with your Logo. Perfect for staff rooms, events & promotional gifts. Durable & available with fast bulk delivery!",
+            "Enhance your Coaching Institute’s space with Custom Wall Clocks printed with your Logo. Perfect for staff rooms, events & promotional gifts. Durable & available with fast bulk delivery!",
           keywords: ["wall clock", "branding clock", "office clock", "institutional gift"],
         },
         products: wallClocks,
@@ -466,12 +466,12 @@ const seedData = [
         name: "Table Clock",
         slug: "table-clock",
         description:
-          "Elegant custom desk clocks perfect for office tables, reception desks, corporate gifting, and institute branding.",
+          "Elegant custom desk clocks perfect for office tables, reception desks, corporate gifting, and Institute branding.",
         image: "/assets/clocks/7.webp",
         seo: {
           metaTitle: "Custom Table Clocks – Logo Printed Promotional Gift",
           metaDescription:
-            "Promote your coaching institute with Custom Table Clocks – Logo Printed Promotional Gifts. Perfect for staff, students & events. Stylish, durable & available with fast bulk delivery!",
+            "Promote your Coaching Institute with Custom Table Clocks – Logo Printed Promotional Gifts. Perfect for staff, students & events. Stylish, durable & available with fast bulk delivery!",
           keywords: ["table clock", "desk clock", "digital clock", "branded clock"],
         },
         products: tableClocks,
@@ -486,7 +486,7 @@ const seedData = [
         seo: {
           metaTitle: "Custom Mouse Pads with Logo Printing | CoachingPromo",
           metaDescription:
-            "Upgrade your institute’s workspace with Custom Mouse Pads featuring Logo Printing. Ideal for students, staff & promotional events. Durable, stylish & bulk delivery!",
+            "Upgrade your Institute’s workspace with Custom Mouse Pads featuring Logo Printing. Ideal for students, staff & promotional events. Durable, stylish & bulk delivery!",
           keywords: ["mouse pad", "desk mat", "computer accessory", "printed pad"],
         },
         products: mousePads,
@@ -580,7 +580,7 @@ const seedData = [
         seo: {
           metaTitle: "Custom Promotional Badges – CoachingPromo",
           metaDescription:
-            "Custom Promotional Badges by CoachingPromo – Perfect for coaching institutes, staff & student events. Stylish, durable & available in bulk with fast delivery!",
+            "Custom Promotional Badges by CoachingPromo – Perfect for Coaching Institutes, staff & student events. Stylish, durable & available in bulk with fast delivery!",
           keywords: ["badges", "lapel pin", "button badge", "event badge"],
         },
         products: badges,
@@ -609,7 +609,7 @@ const seedData = [
     slug: "stationery",
 
     description:
-      "Premium customized stationery including notebooks, pens, calendars, planners, files, and academic essentials. Designed for coaching institutes, schools, colleges, and offices—perfect for student kits, workshops, branding, events, and daily organizational use.",
+      "Premium customized stationery including notebooks, pens, calendars, planners, files, and academic essentials. Designed for Coaching Institutes, schools, colleges, and offices—perfect for student kits, workshops, branding, events, and daily organizational use.",
 
     image: "/assets/category/stationery.webp",
 
@@ -634,13 +634,13 @@ const seedData = [
         name: "Table Calendar",
         slug: "table-calendar",
         description:
-          "Premium desk calendars with customizable designs—perfect for offices, institutes, annual gifting, and year-round branding visibility.",
+          "Premium desk calendars with customizable designs—perfect for offices, Institutes, annual gifting, and year-round branding visibility.",
         image: "/assets/tablecalendars/3.webp",
         seo: {
           metaTitle:
             "Custom Table Calendars with Logo – Daily Brand Visibility",
           metaDescription:
-            "Promote your institute daily with Custom Table Calendars featuring your Logo. Perfect for students, staff & events. Stylish, durable & fast bulk delivery available!",
+            "Promote your Institute daily with Custom Table Calendars featuring your Logo. Perfect for students, staff & events. Stylish, durable & fast bulk delivery available!",
           keywords: ["table calendar", "desk calendar", "custom calendar", "corporate gifting"],
         },
         products: tableCalendars,
@@ -656,7 +656,7 @@ const seedData = [
           metaTitle:
             "Custom Wall Calendars with Logo – Promote Your Brand",
           metaDescription:
-            "Promote your coaching brand with Custom Wall Calendars featuring your Logo. Perfect for students, staff & events. Stylish, durable & available in bulk delivery!",
+            "Promote your Coaching brand with Custom Wall Calendars featuring your Logo. Perfect for students, staff & events. Stylish, durable & available in bulk delivery!",
           keywords: ["wall calendar", "yearly calendar", "custom wall planner"],
         },
         products: wallCalendars,
@@ -736,7 +736,7 @@ const seedData = [
           metaTitle:
             "Custom Handbill Printing for Coaching Institutes | CoachingPromo",
           metaDescription:
-            "Promote your institute with Custom Handbill Printing by CoachingPromo. Perfect for events, branding & student engagement. Stylish, high-quality & bulk delivery!",
+            "Promote your Institute with Custom Handbill Printing by CoachingPromo. Perfect for events, branding & student engagement. Stylish, high-quality & bulk delivery!",
           keywords: ["handbill", "flyer printing", "leaflet printing", "promo flyers"],
         },
         products: handbills,
@@ -752,7 +752,7 @@ const seedData = [
           metaTitle:
             "Custom Lanyards & ID Cards for Coaching Institutes | Branding",
           metaDescription:
-            "Brand your institute with Custom Lanyards & ID Cards. Perfect for students, staff & events. Durable, stylish & available in bulk with fast delivery!",
+            "Brand your Institute with Custom Lanyards & ID Cards. Perfect for students, staff & events. Durable, stylish & available in bulk with fast delivery!",
           keywords: ["lanyard", "ID card", "badge holder", "identity card"],
         },
         products: lanyards,
@@ -784,7 +784,7 @@ const seedData = [
           metaTitle:
             "Custom Pencils with Logo Printing for Coaching Institutes",
           metaDescription:
-            "Promote your brand with Custom Pencils featuring Logo Printing. Perfect for students, staff & coaching events. Stylish, durable & fast bulk delivery available!",
+            "Promote your brand with Custom Pencils featuring Logo Printing. Perfect for students, staff & Coaching events. Stylish, durable & fast bulk delivery available!",
           keywords: ["custom pens", "engraved pens", "promotional pens", "office pens"],
         },
         products: pens,

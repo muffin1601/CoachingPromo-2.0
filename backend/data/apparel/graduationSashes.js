@@ -3,7 +3,7 @@ const graduationSashes = [
     name: "Custom Convocation Sashes",
     slug: "custom-convocation-sashes",
     description:
-      "Celebrate your coaching institute’s achievements with Custom Convocation Sashes. Personalize them with your logo, name, or brand colors to give students, faculty, and staff a polished and memorable look during graduation ceremonies.",
+      "Celebrate your Coaching Institute’s achievements with Custom Convocation Sashes. Personalize them with your logo, name, or brand colors to give students, faculty, and staff a polished and memorable look during graduation ceremonies.",
     price: 299,
     salePrice: 279,
     images: [{ url: "/assets/sashes/1.webp", altText: "Custom Convocation Sash" }],
@@ -26,7 +26,7 @@ const graduationSashes = [
     seo: {
       metaTitle: "Custom Convocation Sashes",
       metaDescription:
-        "Premium satin convocation sashes personalized with institute logos, names, and colors.",
+        "Premium satin convocation sashes personalized with Institute logos, names, and colors.",
       keywords: ["custom sashes", "graduation sashes", "convocation wear"],
     },
   },
@@ -35,7 +35,7 @@ const graduationSashes = [
     name: "Branding Convocation Sashes",
     slug: "branding-convocation-sashes",
     description:
-      "Enhance your institute’s identity with Branding Convocation Sashes designed for students, teachers, and staff. These elegant sashes add a touch of class and professionalism to graduation events.",
+      "Enhance your Institute’s identity with Branding Convocation Sashes designed for students, teachers, and staff. These elegant sashes add a touch of class and professionalism to graduation events.",
     price: 279,
     salePrice: 259,
     images: [{ url: "/assets/sashes/4.webp", altText: "Branding Convocation Sash" }],
@@ -58,7 +58,7 @@ const graduationSashes = [
     seo: {
       metaTitle: "Branding Convocation Sashes",
       metaDescription:
-        "Elegant branding convocation sashes for institutes and universities.",
+        "Elegant branding convocation sashes for Institutes and universities.",
       keywords: ["branding sashes", "convocation accessories"],
     },
   },
@@ -67,7 +67,7 @@ const graduationSashes = [
     name: "Customized Convocation Sashes",
     slug: "customized-convocation-sashes",
     description:
-      "Make ceremonies special with Customized Convocation Sashes crafted for your institute. Add embroidery, logos, or institute colors for a unified and elegant convocation appearance.",
+      "Make ceremonies special with Customized Convocation Sashes crafted for your Institute. Add embroidery, logos, or Institute colors for a unified and elegant convocation appearance.",
     price: 329,
     salePrice: 309,
     images: [{ url: "/assets/sashes/7.webp", altText: "Customized Convocation Sash" }],
@@ -90,7 +90,7 @@ const graduationSashes = [
     seo: {
       metaTitle: "Customized Convocation Sashes",
       metaDescription:
-        "Custom-embroidered convocation sashes for institutes and ceremonies.",
+        "Custom-embroidered convocation sashes for Institutes and ceremonies.",
       keywords: ["customized sashes", "embroidered convocation sash"],
     },
   },
@@ -99,7 +99,7 @@ const graduationSashes = [
     name: "Printed Convocation Sashes",
     slug: "printed-convocation-sashes",
     description:
-      "Promote your coaching institute’s brand with Printed Convocation Sashes featuring your logo or event design. Perfect for graduation days, farewell events, and photoshoots.",
+      "Promote your Coaching Institute’s brand with Printed Convocation Sashes featuring your logo or event design. Perfect for graduation days, farewell events, and photoshoots.",
     price: 249,
     salePrice: 229,
     images: [{ url: "/assets/sashes/10.webp", altText: "Printed Convocation Sash" }],
@@ -122,7 +122,7 @@ const graduationSashes = [
     seo: {
       metaTitle: "Printed Convocation Sashes",
       metaDescription:
-        "Full-color printed convocation sashes with institute logos and themes.",
+        "Full-color printed convocation sashes with Institute logos and themes.",
       keywords: ["printed sashes", "graduation print accessories"],
     },
   },
@@ -163,7 +163,7 @@ const graduationSashes = [
     name: "Custom Logo Convocation Sashes",
     slug: "custom-logo-convocation-sashes",
     description:
-      "Showcase your institute’s pride with Custom Logo Convocation Sashes featuring high-quality embroidery or printing. Designed for a polished and premium convocation appearance.",
+      "Showcase your Institute’s pride with Custom Logo Convocation Sashes featuring high-quality embroidery or printing. Designed for a polished and premium convocation appearance.",
     price: 319,
     salePrice: 289,
     images: [{ url: "/assets/sashes/16.webp", altText: "Custom Logo Sash" }],
@@ -186,7 +186,7 @@ const graduationSashes = [
     seo: {
       metaTitle: "Custom Logo Convocation Sashes",
       metaDescription:
-        "Premium embroidered logo convocation sashes for institutes and universities.",
+        "Premium embroidered logo convocation sashes for Institutes and universities.",
       keywords: ["logo sashes", "custom embroidered sash"],
     },
   },

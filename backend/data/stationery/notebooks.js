@@ -3,7 +3,7 @@ const notebooks = [
     name: "Custom Notebooks",
     slug: "custom-notebooks",
     description:
-      "Stay organized and promote your institute’s identity with Custom Notebooks. Personalize each notebook with your logo, name, or tagline to provide students, faculty, and staff with a practical and branding writing companion.",
+      "Stay organized and promote your Institute’s identity with Custom Notebooks. Personalize each notebook with your logo, name, or tagline to provide students, faculty, and staff with a practical and branding writing companion.",
     price: 199,
     salePrice: 179,
     images: [{ url: "/assets/notebooks/1.webp", altText: "Custom Notebook" }],
@@ -26,7 +26,7 @@ const notebooks = [
     seo: {
       metaTitle: "Custom Notebooks",
       metaDescription:
-        "Custom notebooks with personalized logos, names, or taglines — ideal for institutes and corporate branding.",
+        "Custom notebooks with personalized logos, names, or taglines — ideal for Institutes and corporate branding.",
       keywords: ["custom notebooks", "personalized notebooks", "branding stationery"],
     },
   },
@@ -35,7 +35,7 @@ const notebooks = [
     name: "Branding Notebooks",
     slug: "branding-notebooks",
     description:
-      "Enhance your institute’s visibility with Branding Notebooks designed for classrooms, offices, and events. Durable and stylish, they reflect your institute’s professionalism while keeping your brand in focus every day.",
+      "Enhance your Institute’s visibility with Branding Notebooks designed for classrooms, offices, and events. Durable and stylish, they reflect your Institute’s professionalism while keeping your brand in focus every day.",
     price: 179,
     salePrice: 159,
     images: [{ url: "/assets/notebooks/4.webp", altText: "Branding Notebook" }],
@@ -67,7 +67,7 @@ const notebooks = [
     name: "Personalized Notebooks",
     slug: "personalized-notebooks",
     description:
-      "Create a unique and memorable experience with Personalized Notebooks featuring individual names, motivational quotes, or institute branding. Perfect for students, faculty, and event participants.",
+      "Create a unique and memorable experience with Personalized Notebooks featuring individual names, motivational quotes, or Institute branding. Perfect for students, faculty, and event participants.",
     price: 229,
     salePrice: 209,
     images: [{ url: "/assets/notebooks/7.webp", altText: "Personalized Notebook" }],
@@ -90,7 +90,7 @@ const notebooks = [
     seo: {
       metaTitle: "Personalized Notebooks",
       metaDescription:
-        "Personalized notebooks with names, motivational quotes, and institute branding for events and staff.",
+        "Personalized notebooks with names, motivational quotes, and Institute branding for events and staff.",
       keywords: ["personalized notebooks", "custom printed notebooks", "gift notebooks"],
     },
   },
@@ -99,7 +99,7 @@ const notebooks = [
     name: "Printed Notebooks",
     slug: "printed-notebooks",
     description:
-      "Boost your institute’s branding with Printed Notebooks showcasing logos, slogans, or custom designs. Ideal for academic use, seminars, or giveaways — combining functionality with promotional value.",
+      "Boost your Institute’s branding with Printed Notebooks showcasing logos, slogans, or custom designs. Ideal for academic use, seminars, or giveaways — combining functionality with promotional value.",
     price: 159,
     salePrice: 139,
     images: [{ url: "/assets/notebooks/10.webp", altText: "Printed Notebook" }],
@@ -131,7 +131,7 @@ const notebooks = [
     name: "Designer Notebooks",
     slug: "designer-notebooks",
     description:
-      "Add elegance and creativity to everyday writing with Designer Notebooks made from premium-quality materials and stylish layouts. Perfect for staff gifts, student awards, or institute events.",
+      "Add elegance and creativity to everyday writing with Designer Notebooks made from premium-quality materials and stylish layouts. Perfect for staff gifts, student awards, or Institute events.",
     price: 279,
     salePrice: 259,
     images: [{ url: "/assets/notebooks/13.webp", altText: "Designer Notebook" }],
@@ -163,7 +163,7 @@ const notebooks = [
     name: "Custom Logo Notebooks",
     slug: "custom-logo-notebooks",
     description:
-      "Showcase your institute’s pride with Custom Logo Notebooks featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, events, and daily use — keeping your brand visible while adding a professional touch.",
+      "Showcase your Institute’s pride with Custom Logo Notebooks featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, events, and daily use — keeping your brand visible while adding a professional touch.",
     price: 219,
     salePrice: 199,
     images: [{ url: "/assets/notebooks/16.webp", altText: "Custom Logo Notebook" }],
@@ -186,7 +186,7 @@ const notebooks = [
     seo: {
       metaTitle: "Custom Logo Notebooks",
       metaDescription:
-        "Custom logo notebooks with foil stamping, embossing, and premium paper — ideal for corporate or institute branding.",
+        "Custom logo notebooks with foil stamping, embossing, and premium paper — ideal for corporate or Institute branding.",
       keywords: ["logo notebooks", "foil print notebooks", "custom branding notebooks"],
     },
   },

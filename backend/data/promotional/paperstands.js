@@ -3,7 +3,7 @@ const paperStands = [
         name: "Custom Paper Stands",
         slug: "custom-paper-stands",
         description:
-            "Keep your coaching institute’s documents and displays organized with Custom Paper Stands. Personalize each stand with your logo, name, or tagline to create a professional and elegant setup for classrooms, offices, and events.",
+            "Keep your Coaching Institute’s documents and displays organized with Custom Paper Stands. Personalize each stand with your logo, name, or tagline to create a professional and elegant setup for classrooms, offices, and events.",
         price: 149,
         salePrice: 129,
         images: [{ url: "/assets/paperstands/1.webp", altText: "Custom Paper Stand" }],
@@ -34,7 +34,7 @@ const paperStands = [
         name: "Branding Paper Stands",
         slug: "branding-paper-stands",
         description:
-            "Promote your institute’s identity with Branding Paper Stands designed for offices, classrooms, workshops, and events. Durable and stylish, they are perfect for organizing documents while enhancing your institute’s brand visibility.",
+            "Promote your Institute’s identity with Branding Paper Stands designed for offices, classrooms, workshops, and events. Durable and stylish, they are perfect for organizing documents while enhancing your Institute’s brand visibility.",
         price: 129,
         salePrice: 109,
         images: [{ url: "/assets/paperstands/3.webp", altText: "Branding Paper Stand" }],
@@ -65,7 +65,7 @@ const paperStands = [
         name: "Personalized Paper Stands",
         slug: "personalized-paper-stands",
         description:
-            "Make every workspace and display memorable with Personalized Paper Stands crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create unique and thoughtful stands for staff and students.",
+            "Make every workspace and display memorable with Personalized Paper Stands crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create unique and thoughtful stands for staff and students.",
         price: 179,
         salePrice: 159,
         images: [{ url: "/assets/paperstands/5.webp", altText: "Personalized Paper Stand" }],
@@ -96,7 +96,7 @@ const paperStands = [
         name: "Printed Paper Stands",
         slug: "printed-paper-stands",
         description:
-            "Boost your institute’s branding with Printed Paper Stands featuring vibrant logos, inscriptions, or slogans. Ideal for offices, classrooms, events, and gifting — combining functionality with professional visibility.",
+            "Boost your Institute’s branding with Printed Paper Stands featuring vibrant logos, inscriptions, or slogans. Ideal for offices, classrooms, events, and gifting — combining functionality with professional visibility.",
         price: 119,
         salePrice: 99,
         images: [{ url: "/assets/paperstands/7.webp", altText: "Printed Paper Stand" }],

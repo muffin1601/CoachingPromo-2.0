@@ -3,7 +3,7 @@ const wallClocks = [
         name: "Custom Wall Clocks",
         slug: "custom-wall-clocks",
         description:
-            "Keep your coaching institute’s brand timely and professional with Custom Wall Clocks. Personalize each clock with your logo, name, or colors to create a cohesive and elegant look for classrooms, offices, and staff areas.",
+            "Keep your Coaching Institute’s brand timely and professional with Custom Wall Clocks. Personalize each clock with your logo, name, or colors to create a cohesive and elegant look for classrooms, offices, and staff areas.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/wallclocks/1.webp", altText: "Custom Wall Clock" }],
@@ -26,7 +26,7 @@ const wallClocks = [
         seo: {
             metaTitle: "Custom Wall Clocks",
             metaDescription:
-                "Custom wall clocks with institute branding and stylish designs.",
+                "Custom wall clocks with Institute branding and stylish designs.",
             keywords: ["custom wall clocks", "personalized clocks", "branding clocks"],
         },
     },
@@ -35,7 +35,7 @@ const wallClocks = [
         name: "Branding Wall Clocks",
         slug: "branding-wall-clocks",
         description:
-            "Promote your institute’s identity with Branding Wall Clocks designed for daily visibility and events. Durable and stylish, they are perfect for classrooms, reception areas, seminars, and workshops while enhancing brand recognition.",
+            "Promote your Institute’s identity with Branding Wall Clocks designed for daily visibility and events. Durable and stylish, they are perfect for classrooms, reception areas, seminars, and workshops while enhancing brand recognition.",
         price: 249,
         salePrice: 229,
         images: [{ url: "/assets/wallclocks/4.webp", altText: "Branding Wall Clock" }],
@@ -67,7 +67,7 @@ const wallClocks = [
         name: "Personalized Wall Clocks",
         slug: "personalized-wall-clocks",
         description:
-            "Make every space memorable with Personalized Wall Clocks crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create unique and thoughtful displays for staff and students.",
+            "Make every space memorable with Personalized Wall Clocks crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create unique and thoughtful displays for staff and students.",
         price: 329,
         salePrice: 309,
         images: [{ url: "/assets/wallclocks/7.webp", altText: "Personalized Wall Clock" }],
@@ -90,7 +90,7 @@ const wallClocks = [
         seo: {
             metaTitle: "Personalized Wall Clocks",
             metaDescription:
-                "Personalized wall clocks with names, quotes, and institute branding.",
+                "Personalized wall clocks with names, quotes, and Institute branding.",
             keywords: ["personalized wall clocks", "custom wall clocks", "name clocks"],
         },
     },
@@ -99,7 +99,7 @@ const wallClocks = [
         name: "Printed Wall Clocks",
         slug: "printed-wall-clocks",
         description:
-            "Boost your institute’s branding with Printed Wall Clocks featuring vibrant designs, logos, or slogans. Ideal for classrooms, offices, events, and promotions — combining functionality with professional visibility.",
+            "Boost your Institute’s branding with Printed Wall Clocks featuring vibrant designs, logos, or slogans. Ideal for classrooms, offices, events, and promotions — combining functionality with professional visibility.",
         price: 199,
         salePrice: 179,
         images: [{ url: "/assets/wallclocks/10.webp", altText: "Printed Wall Clock" }],
@@ -131,7 +131,7 @@ const wallClocks = [
         name: "Designer Wall Clocks",
         slug: "designer-wall-clocks",
         description:
-            "Stay stylish and professional with Designer Wall Clocks made from premium materials and modern designs. Perfect for classrooms, staff rooms, and reception areas, they reflect your institute’s elegance and class.",
+            "Stay stylish and professional with Designer Wall Clocks made from premium materials and modern designs. Perfect for classrooms, staff rooms, and reception areas, they reflect your Institute’s elegance and class.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/wallclocks/13.webp", altText: "Designer Wall Clock" }],
@@ -163,7 +163,7 @@ const wallClocks = [
         name: "Custom Logo Wall Clocks",
         slug: "custom-logo-wall-clocks",
         description:
-            "Showcase your institute’s pride with Custom Logo Wall Clocks featuring high-quality printing or embossing. Ideal for gifting, events, or staff recognition, these clocks serve as a lasting reminder of your institute’s professionalism and identity.",
+            "Showcase your Institute’s pride with Custom Logo Wall Clocks featuring high-quality printing or embossing. Ideal for gifting, events, or staff recognition, these clocks serve as a lasting reminder of your Institute’s professionalism and identity.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/wallclocks/16.webp", altText: "Custom Logo Wall Clock" }],

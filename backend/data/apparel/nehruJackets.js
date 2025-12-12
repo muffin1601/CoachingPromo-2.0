@@ -3,7 +3,7 @@ const nehruJackets = [
     name: "Custom Nehru Jackets",
     slug: "custom-nehru-jackets",
     description:
-      "Create a unique and professional look for your coaching institute with Custom Nehru Jackets. Add your logo, embroidery, or colors to make staff and faculty look polished and confident during seminars and events.",
+      "Create a unique and professional look for your Coaching Institute with Custom Nehru Jackets. Add your logo, embroidery, or colors to make staff and faculty look polished and confident during seminars and events.",
     price: 899,
     salePrice: 849,
     images: [{ url: "/assets/nehrujackets/1.webp", altText: "Custom Nehru Jacket" }],
@@ -27,8 +27,8 @@ const nehruJackets = [
     seo: {
       metaTitle: "Custom Nehru Jackets",
       metaDescription:
-        "Custom Nehru jackets personalized with institute logos, embroidery, and premium fabrics.",
-      keywords: ["custom nehru jacket", "teacher uniform", "institute jackets"],
+        "Custom Nehru jackets personalized with Institute logos, embroidery, and premium fabrics.",
+      keywords: ["custom nehru jacket", "teacher uniform", "Institute jackets"],
     },
   },
 
@@ -36,7 +36,7 @@ const nehruJackets = [
     name: "Branding Nehru Jackets",
     slug: "branding-nehru-jackets",
     description:
-      "Enhance your coaching institute’s identity with Branding Nehru Jackets. Designed for faculty, mentors, and counselors, these jackets combine comfort, style, and durable branding for a professional and cohesive appearance.",
+      "Enhance your Coaching Institute’s identity with Branding Nehru Jackets. Designed for faculty, mentors, and counselors, these jackets combine comfort, style, and durable branding for a professional and cohesive appearance.",
     price: 799,
     salePrice: 749,
     images: [{ url: "/assets/nehrujackets/5.webp", altText: "Branding Nehru Jacket" }],
@@ -60,8 +60,8 @@ const nehruJackets = [
     seo: {
       metaTitle: "Branding Nehru Jackets",
       metaDescription:
-        "Professional branding Nehru jackets perfect for faculty and coaching staff.",
-      keywords: ["branding nehru jacket", "institute jackets"],
+        "Professional branding Nehru jackets perfect for faculty and Coaching staff.",
+      keywords: ["branding nehru jacket", "Institute jackets"],
     },
   },
 
@@ -69,7 +69,7 @@ const nehruJackets = [
     name: "Customized Nehru Jackets",
     slug: "customized-nehru-jackets",
     description:
-      "Stand out with Customized Nehru Jackets made especially for coaching staff and faculty. Personalize with embroidery, logos, and institute colors to represent your brand at events, workshops, and admissions drives.",
+      "Stand out with Customized Nehru Jackets made especially for Coaching staff and faculty. Personalize with embroidery, logos, and Institute colors to represent your brand at events, workshops, and admissions drives.",
     price: 949,
     salePrice: 899,
     images: [{ url: "/assets/nehrujackets/9.webp", altText: "Customized Nehru Jacket" }],
@@ -102,7 +102,7 @@ const nehruJackets = [
     name: "Printed Nehru Jackets",
     slug: "printed-nehru-jackets",
     description:
-      "Promote your institute with Printed Nehru Jackets featuring your logo or design. Perfect for teachers and faculty during seminars, workshops, and functions.",
+      "Promote your Institute with Printed Nehru Jackets featuring your logo or design. Perfect for teachers and faculty during seminars, workshops, and functions.",
     price: 799,
     salePrice: 729,
     images: [{ url: "/assets/nehrujackets/13.webp", altText: "Printed Nehru Jacket" }],
@@ -119,14 +119,14 @@ const nehruJackets = [
       size: ["S", "M", "L", "XL"],
       material: "Cotton Blend with Print Panel",
     },
-    tags: ["printed", "logo jacket", "institute wear"],
+    tags: ["printed", "logo jacket", "Institute wear"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.4, count: 140 },
     seo: {
       metaTitle: "Printed Nehru Jackets",
       metaDescription:
-        "Stylish printed Nehru jackets featuring custom institute logos and patterns.",
+        "Stylish printed Nehru jackets featuring custom Institute logos and patterns.",
       keywords: ["printed nehru jacket", "logo jackets"],
     },
   },
@@ -160,7 +160,7 @@ const nehruJackets = [
       metaTitle: "Premium Cotton Nehru Jackets",
       metaDescription:
         "Soft and breathable cotton Nehru jackets ideal for teachers and staff.",
-      keywords: ["cotton nehru jacket", "premium institute jacket"],
+      keywords: ["cotton nehru jacket", "premium Institute jacket"],
     },
   },
 
@@ -168,7 +168,7 @@ const nehruJackets = [
     name: "Custom Logo Nehru Jackets",
     slug: "custom-logo-nehru-jackets",
     description:
-      "Promote your institute’s brand with Custom Logo Nehru Jackets featuring high-quality embroidery or printing. These jackets offer comfort, professionalism, and strong brand visibility for staff and teachers.",
+      "Promote your Institute’s brand with Custom Logo Nehru Jackets featuring high-quality embroidery or printing. These jackets offer comfort, professionalism, and strong brand visibility for staff and teachers.",
     price: 899,
     salePrice: 859,
     images: [{ url: "/assets/nehrujackets/21.webp", altText: "Custom Logo Nehru Jacket" }],
@@ -192,7 +192,7 @@ const nehruJackets = [
     seo: {
       metaTitle: "Custom Logo Nehru Jackets",
       metaDescription:
-        "Nehru jackets with premium logo embroidery and printing for institute branding.",
+        "Nehru jackets with premium logo embroidery and printing for Institute branding.",
       keywords: ["custom logo jacket", "nehru jackets"],
     },
   }

@@ -1,9 +1,9 @@
 const hoodies = [
   {
     name: "Promotional Hoodies for Coaching",
-    slug: "promotional-hoodies-for-coaching",
+    slug: "promotional-hoodies-for-Coaching",
     description:
-      "Create a unique look for your coaching institute with Promotional Hoodies. Add logos, colors, or branding to give your students and staff a professional and stylish appearance.",
+      "Create a unique look for your Coaching Institute with Promotional Hoodies. Add logos, colors, or branding to give your students and staff a professional and stylish appearance.",
     price: 899,
     salePrice: 849,
     images: [{ url: "/assets/hoodies/1.webp", altText: "Promotional Coaching Hoodie" }],
@@ -29,7 +29,7 @@ const hoodies = [
     name: "Branding Hoodies",
     slug: "branding-hoodies",
     description:
-      "Enhance your institute’s visibility with Branding Hoodies perfect for events, seminars, or daily wear. Stylish, warm, and durable for a cohesive team identity.",
+      "Enhance your Institute’s visibility with Branding Hoodies perfect for events, seminars, or daily wear. Stylish, warm, and durable for a cohesive team identity.",
     price: 849,
     salePrice: 799,
     images: [{ url: "/assets/hoodies/6.webp", altText: "Branding Hoodie" }],
@@ -46,7 +46,7 @@ const hoodies = [
       size: ["S", "M", "L", "XL"],
       material: "Poly-Cotton Blend",
     },
-    tags: ["branding hoodie", "institute wear", "team"],
+    tags: ["branding hoodie", "Institute wear", "team"],
     isFeatured: false,
     isActive: true,
   },
@@ -55,7 +55,7 @@ const hoodies = [
     name: "Customized Hoodies",
     slug: "customized-hoodies",
     description:
-      "Stand out with Customized Hoodies tailored for your coaching institute. Add embroidery, printed logos, or institute colors for a personalized and stylish uniform.",
+      "Stand out with Customized Hoodies tailored for your Coaching Institute. Add embroidery, printed logos, or Institute colors for a personalized and stylish uniform.",
     price: 999,
     salePrice: 949,
     images: [{ url: "/assets/hoodies/10.webp", altText: "Customized Hoodie" }],
@@ -81,7 +81,7 @@ const hoodies = [
     name: "Logo Printed Hoodies",
     slug: "logo-printed-hoodies",
     description:
-      "Make a statement with Logo Printed Hoodies featuring your institute’s branding. Ideal for workshops, admission drives, and promotional events.",
+      "Make a statement with Logo Printed Hoodies featuring your Institute’s branding. Ideal for workshops, admission drives, and promotional events.",
     price: 899,
     salePrice: 829,
     images: [{ url: "/assets/hoodies/14.webp", altText: "Logo Printed Hoodie" }],
@@ -108,7 +108,7 @@ const hoodies = [
     name: "Promotional Men Hoodies",
     slug: "promotional-men-hoodies",
     description:
-      "Keep your staff and students comfortable with Promotional Men Hoodies made from soft, breathable fabric—perfect for daily wear and institute events.",
+      "Keep your staff and students comfortable with Promotional Men Hoodies made from soft, breathable fabric—perfect for daily wear and Institute events.",
     price: 949,
     salePrice: 899,
     images: [{ url: "/assets/hoodies/18.webp", altText: "Men Promotional Hoodie" }],
@@ -134,7 +134,7 @@ const hoodies = [
     name: "Cotton Hoodies",
     slug: "cotton-hoodies",
     description:
-      "Lightweight, breathable, and durable—Cotton Hoodies are perfect for staff and students during seminars, coaching sessions, or daily campus wear.",
+      "Lightweight, breathable, and durable—Cotton Hoodies are perfect for staff and students during seminars, Coaching sessions, or daily campus wear.",
     price: 799,
     salePrice: 749,
     images: [{ url: "/assets/hoodies/22.webp", altText: "Cotton Hoodie" }],
@@ -151,7 +151,7 @@ const hoodies = [
       size: ["S", "M", "L", "XL", "XXL"],
       material: "100% Cotton",
     },
-    tags: ["cotton hoodie", "daily wear", "institute"],
+    tags: ["cotton hoodie", "daily wear", "Institute"],
     isFeatured: false,
     isActive: true,
   },
@@ -212,7 +212,7 @@ const hoodies = [
     name: "Winter Custom Hoodies",
     slug: "winter-custom-hoodies",
     description:
-      "Premium Winter Custom Hoodies for institutes — thick, warm, and stylish with custom prints or embroidery.",
+      "Premium Winter Custom Hoodies for Institutes — thick, warm, and stylish with custom prints or embroidery.",
     price: 1149,
     salePrice: 1099,
     images: [{ url: "/assets/hoodies/33.webp", altText: "Winter Custom Hoodie" }],
@@ -235,7 +235,7 @@ const hoodies = [
 
   {
     name: "Premium Institute Hoodies",
-    slug: "premium-institute-hoodies",
+    slug: "premium-Institute-hoodies",
     description:
       "Premium Institute Hoodies designed with ultra-soft fleece, strong stitching, and classy branding — ideal for faculty and star students.",
     price: 1199,
@@ -253,7 +253,7 @@ const hoodies = [
       size: ["M", "L", "XL"],
       material: "Ultra Soft Fleece",
     },
-    tags: ["premium hoodie", "institute wear", "branding"],
+    tags: ["premium hoodie", "Institute wear", "branding"],
     isFeatured: true,
     isActive: true,
   },

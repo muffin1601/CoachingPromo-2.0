@@ -3,7 +3,7 @@ const graduationGowns = [
     name: "Custom Graduation Gowns",
     slug: "custom-graduation-gowns",
     description:
-      "Celebrate your coaching institute’s success with Custom Graduation Gowns. Personalize them with your institute’s logo, name, or brand colors to give students and faculty a polished, professional, and memorable look during convocation ceremonies.",
+      "Celebrate your Coaching Institute’s success with Custom Graduation Gowns. Personalize them with your Institute’s logo, name, or brand colors to give students and faculty a polished, professional, and memorable look during convocation ceremonies.",
     price: 899,
     salePrice: 849,
     images: [{ url: "/assets/graduationgowns/1.webp", altText: "Custom Graduation Gown" }],
@@ -29,7 +29,7 @@ const graduationGowns = [
     name: "Branding Graduation Gowns",
     slug: "branding-graduation-gowns",
     description:
-      "Enhance your institute’s identity with Branding Graduation Gowns designed for students, teachers, and staff. These elegant gowns add a touch of class and professionalism to graduation ceremonies.",
+      "Enhance your Institute’s identity with Branding Graduation Gowns designed for students, teachers, and staff. These elegant gowns add a touch of class and professionalism to graduation ceremonies.",
     price: 849,
     salePrice: 799,
     images: [{ url: "/assets/graduationgowns/5.webp", altText: "Branding Graduation Gown" }],
@@ -55,7 +55,7 @@ const graduationGowns = [
     name: "Customized Graduation Gowns",
     slug: "customized-graduation-gowns",
     description:
-      "Make every ceremony special with Customized Graduation Gowns crafted exclusively for your institute. Add embroidery, logos, or institute colors for a unified and elegant appearance during convocation and award events.",
+      "Make every ceremony special with Customized Graduation Gowns crafted exclusively for your Institute. Add embroidery, logos, or Institute colors for a unified and elegant appearance during convocation and award events.",
     price: 929,
     salePrice: 879,
     images: [{ url: "/assets/graduationgowns/9.webp", altText: "Customized Graduation Gown" }],
@@ -80,7 +80,7 @@ const graduationGowns = [
     name: "Printed Graduation Gowns",
     slug: "printed-graduation-gowns",
     description:
-      "Promote your coaching institute’s brand with Printed Graduation Gowns featuring your logo or event design. Ideal for convocation days, farewell events, and photo sessions.",
+      "Promote your Coaching Institute’s brand with Printed Graduation Gowns featuring your logo or event design. Ideal for convocation days, farewell events, and photo sessions.",
     price: 799,
     salePrice: 749,
     images: [{ url: "/assets/graduationgowns/12.webp", altText: "Printed Graduation Gown" }],
@@ -105,7 +105,7 @@ const graduationGowns = [
     name: "Custom Logo Graduation Gowns",
     slug: "custom-logo-graduation-gowns",
     description:
-      "Showcase your institute’s pride with Custom Logo Graduation Gowns featuring premium embroidery or printing. Designed for a refined, professional look during important milestones.",
+      "Showcase your Institute’s pride with Custom Logo Graduation Gowns featuring premium embroidery or printing. Designed for a refined, professional look during important milestones.",
     price: 969,
     salePrice: 899,
     images: [{ url: "/assets/graduationgowns/15.webp", altText: "Custom Logo Graduation Gown" }],

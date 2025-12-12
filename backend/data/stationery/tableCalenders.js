@@ -3,7 +3,7 @@ const tableCalendars = [
     name: "Custom Table Calendars",
     slug: "custom-table-calendars",
     description:
-      "Stay organized and showcase your institute’s identity with Custom Table Calendars. Personalize each calendar with your logo, name, or tagline to provide students, staff, and visitors with a practical yet branding daily companion.",
+      "Stay organized and showcase your Institute’s identity with Custom Table Calendars. Personalize each calendar with your logo, name, or tagline to provide students, staff, and visitors with a practical yet branding daily companion.",
     price: 299,
     salePrice: 279,
     images: [{ url: "/assets/tablecalendars/1.webp", altText: "Custom Table Calendar" }],
@@ -34,7 +34,7 @@ const tableCalendars = [
     name: "Branding Table Calendars",
     slug: "branding-table-calendars",
     description:
-      "Enhance your institute’s visibility with Branding Table Calendars designed for events, seminars, and promotions. Durable and stylish, they reflect your institute’s professionalism while keeping your brand in focus all year.",
+      "Enhance your Institute’s visibility with Branding Table Calendars designed for events, seminars, and promotions. Durable and stylish, they reflect your Institute’s professionalism while keeping your brand in focus all year.",
     price: 259,
     salePrice: 239,
     images: [{ url: "/assets/tablecalendars/3.webp", altText: "Branding Table Calendar" }],
@@ -56,7 +56,7 @@ const tableCalendars = [
     seo: {
       metaTitle: "Branding Table Calendars",
       metaDescription:
-        "Branding table calendars for offices, classrooms, and events — perfect for year-round institute branding.",
+        "Branding table calendars for offices, classrooms, and events — perfect for year-round Institute branding.",
       keywords: ["branding calendars", "desk calendars", "corporate calendars"],
     },
   },
@@ -65,7 +65,7 @@ const tableCalendars = [
     name: "Personalized Table Calendars",
     slug: "personalized-table-calendars",
     description:
-      "Create a unique gifting experience with Personalized Table Calendars featuring individual names, important dates, or institute branding. Perfect for faculty, students, and event participants, they leave a lasting impression.",
+      "Create a unique gifting experience with Personalized Table Calendars featuring individual names, important dates, or Institute branding. Perfect for faculty, students, and event participants, they leave a lasting impression.",
     price: 329,
     salePrice: 309,
     images: [{ url: "/assets/tablecalendars/5.webp", altText: "Personalized Table Calendar" }],
@@ -87,7 +87,7 @@ const tableCalendars = [
     seo: {
       metaTitle: "Personalized Table Calendars",
       metaDescription:
-        "Personalized table calendars with custom names and institute branding — ideal for faculty and staff gifting.",
+        "Personalized table calendars with custom names and Institute branding — ideal for faculty and staff gifting.",
       keywords: ["personalized calendars", "custom table calendars", "name calendars"],
     },
   },
@@ -96,7 +96,7 @@ const tableCalendars = [
     name: "Printed Table Calendars",
     slug: "printed-table-calendars",
     description:
-      "Boost your institute’s branding with Printed Table Calendars showcasing logos, slogans, or yearly highlights. Ideal for seminars, student gifts, or staff desks — combining practicality with promotional appeal.",
+      "Boost your Institute’s branding with Printed Table Calendars showcasing logos, slogans, or yearly highlights. Ideal for seminars, student gifts, or staff desks — combining practicality with promotional appeal.",
     price: 219,
     salePrice: 199,
     images: [{ url: "/assets/tablecalendars/7.webp", altText: "Printed Table Calendar" }],
@@ -127,7 +127,7 @@ const tableCalendars = [
     name: "Designer Table Calendars",
     slug: "designer-table-calendars",
     description:
-      "Add elegance to daily planning with Designer Table Calendars made from premium materials and creative layouts. Perfect for academic events, staff gifts, or institute milestones, they reflect sophistication and style.",
+      "Add elegance to daily planning with Designer Table Calendars made from premium materials and creative layouts. Perfect for academic events, staff gifts, or Institute milestones, they reflect sophistication and style.",
     price: 399,
     salePrice: 379,
     images: [{ url: "/assets/tablecalendars/9.webp", altText: "Designer Table Calendar" }],
@@ -159,7 +159,7 @@ const tableCalendars = [
     name: "Custom Logo Table Calendars",
     slug: "custom-logo-table-calendars",
     description:
-      "Showcase your institute’s pride with Custom Logo Table Calendars featuring high-quality printing or embossing. Ideal for gifting, events, and everyday use — keeping your institute’s brand visible while adding a professional touch.",
+      "Showcase your Institute’s pride with Custom Logo Table Calendars featuring high-quality printing or embossing. Ideal for gifting, events, and everyday use — keeping your Institute’s brand visible while adding a professional touch.",
     price: 349,
     salePrice: 329,
     images: [{ url: "/assets/tablecalendars/11.webp", altText: "Custom Logo Table Calendar" }],
@@ -190,7 +190,7 @@ const tableCalendars = [
     name: "Eco Table Calendars",
     slug: "eco-table-calendars",
     description:
-      "Go green with Eco Table Calendars crafted from recycled materials. Promote sustainability while keeping your institute’s branding front and center all year long.",
+      "Go green with Eco Table Calendars crafted from recycled materials. Promote sustainability while keeping your Institute’s branding front and center all year long.",
     price: 319,
     salePrice: 299,
     images: [{ url: "/assets/tablecalendars/14.webp", altText: "Eco Table Calendar" }],

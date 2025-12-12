@@ -3,7 +3,7 @@ const pens = [
     name: "Custom Metal Pen",
     slug: "custom-metal-pen",
     description:
-      "Enhance writing and promote your institute’s identity with Custom Metal Pens. Personalize each pen with your logo, name, or tagline to provide students, faculty, and staff with a practical, branding writing tool.",
+      "Enhance writing and promote your Institute’s identity with Custom Metal Pens. Personalize each pen with your logo, name, or tagline to provide students, faculty, and staff with a practical, branding writing tool.",
     price: 99,
     salePrice: 89,
     images: [{ url: "/assets/pens/1.webp", altText: "Custom Metal Pen" }],
@@ -35,7 +35,7 @@ const pens = [
     name: "Branding Plastic Pen",
     slug: "branding-plastic-pen",
     description:
-      "Showcase your institute’s professionalism with Branding Plastic Pens designed for classrooms, offices, and events. Sleek and durable, they keep your brand visible while supporting daily writing tasks.",
+      "Showcase your Institute’s professionalism with Branding Plastic Pens designed for classrooms, offices, and events. Sleek and durable, they keep your brand visible while supporting daily writing tasks.",
     price: 49,
     salePrice: 39,
     images: [{ url: "/assets/pens/4.webp", altText: "Branding Plastic Pen" }],
@@ -67,7 +67,7 @@ const pens = [
     name: "Custom Logo Plastic Pen",
     slug: "custom-logo-plastic-pen",
     description:
-      "Showcase your institute’s pride with Custom Logo Plastic Pens featuring high-quality printing and logo detailing. Ideal for gifting, events, or daily use — keeping your brand visible every day.",
+      "Showcase your Institute’s pride with Custom Logo Plastic Pens featuring high-quality printing and logo detailing. Ideal for gifting, events, or daily use — keeping your brand visible every day.",
     price: 69,
     salePrice: 59,
     images: [{ url: "/assets/pens/7.webp", altText: "Custom Logo Plastic Pen" }],
@@ -100,7 +100,7 @@ const pens = [
     name: "Printed Paper Pen",
     slug: "printed-paper-pen",
     description:
-      "Go eco-friendly with Printed Paper Pens crafted from recyclable paper. Personalize each pen with your logo or slogan — perfect for environmentally conscious institutes and events.",
+      "Go eco-friendly with Printed Paper Pens crafted from recyclable paper. Personalize each pen with your logo or slogan — perfect for environmentally conscious Institutes and events.",
     price: 79,
     salePrice: 69,
     images: [{ url: "/assets/pens/11.webp", altText: "Printed Paper Pen" }],
@@ -133,7 +133,7 @@ const pens = [
     name: "Eco Bamboo Pen",
     slug: "eco-bamboo-pen",
     description:
-      "Write with purpose using Eco Bamboo Pens crafted from natural bamboo wood. A sustainable and elegant way to promote your institute’s commitment to eco-conscious practices.",
+      "Write with purpose using Eco Bamboo Pens crafted from natural bamboo wood. A sustainable and elegant way to promote your Institute’s commitment to eco-conscious practices.",
     price: 99,
     salePrice: 89,
     images: [{ url: "/assets/pens/15.webp", altText: "Eco Bamboo Pen" }],
@@ -166,7 +166,7 @@ const pens = [
     name: "Custom Eco Corn Pens",
     slug: "custom-eco-corn-pens",
     description:
-      "Promote sustainability with Custom Eco Corn Pens made from biodegradable cornstarch. Personalize them with your institute’s name or logo — the perfect green giveaway item.",
+      "Promote sustainability with Custom Eco Corn Pens made from biodegradable cornstarch. Personalize them with your Institute’s name or logo — the perfect green giveaway item.",
     price: 89,
     salePrice: 79,
     images: [{ url: "/assets/pens/19.webp", altText: "Custom Eco Corn Pen" }],

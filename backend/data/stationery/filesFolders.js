@@ -3,7 +3,7 @@ const filesFolders = [
     name: "Custom Files & Folders",
     slug: "custom-files-and-folders",
     description:
-      "Stay organized and promote your institute’s identity with Custom Files & Folders. Personalize each folder with your logo, name, or tagline to provide students, faculty, and staff with a practical, branding document management solution.",
+      "Stay organized and promote your Institute’s identity with Custom Files & Folders. Personalize each folder with your logo, name, or tagline to provide students, faculty, and staff with a practical, branding document management solution.",
     price: 249,
     salePrice: 229,
     images: [{ url: "/assets/filesfolders/1.webp", altText: "Custom File & Folder" }],
@@ -26,7 +26,7 @@ const filesFolders = [
     seo: {
       metaTitle: "Custom Files & Folders",
       metaDescription:
-        "Custom files and folders with institute branding and personalization options for professional documentation.",
+        "Custom files and folders with Institute branding and personalization options for professional documentation.",
       keywords: ["custom file folder", "personalized folders", "branding stationery"],
     },
   },
@@ -35,7 +35,7 @@ const filesFolders = [
     name: "Branding Kobra Files",
     slug: "branding-kobra-files",
     description:
-      "Enhance your institute’s visibility with Branding Kobra Files designed for classrooms, offices, and events. Durable and stylish, they reflect your institute’s professionalism while keeping your brand in focus every day.",
+      "Enhance your Institute’s visibility with Branding Kobra Files designed for classrooms, offices, and events. Durable and stylish, they reflect your Institute’s professionalism while keeping your brand in focus every day.",
     price: 199,
     salePrice: 179,
     images: [{ url: "/assets/filesfolders/4.webp", altText: "Branding Kobra File" }],
@@ -58,7 +58,7 @@ const filesFolders = [
     seo: {
       metaTitle: "Branding Kobra Files",
       metaDescription:
-        "Durable branding kobra files for institutes, offices, and events. Perfect for professional document storage.",
+        "Durable branding kobra files for Institutes, offices, and events. Perfect for professional document storage.",
       keywords: ["kobra file", "branding files", "office stationery"],
     },
   },
@@ -67,7 +67,7 @@ const filesFolders = [
     name: "Personalized Paper Folders",
     slug: "personalized-paper-folders",
     description:
-      "Make every document unique with Personalized Paper Folders featuring individual names, motivational quotes, or institute branding. Ideal for distributing during events, workshops, or awards ceremonies.",
+      "Make every document unique with Personalized Paper Folders featuring individual names, motivational quotes, or Institute branding. Ideal for distributing during events, workshops, or awards ceremonies.",
     price: 179,
     salePrice: 159,
     images: [{ url: "/assets/filesfolders/7.webp", altText: "Personalized Paper Folder" }],
@@ -90,7 +90,7 @@ const filesFolders = [
     seo: {
       metaTitle: "Personalized Paper Folders",
       metaDescription:
-        "Custom paper folders with institute names, logos, or motivational quotes for professional branding.",
+        "Custom paper folders with Institute names, logos, or motivational quotes for professional branding.",
       keywords: ["paper folders", "custom file folders", "personalized stationery"],
     },
   },
@@ -99,7 +99,7 @@ const filesFolders = [
     name: "Printed Files & Folders",
     slug: "printed-files-and-folders",
     description:
-      "Boost your institute’s branding with Printed Files & Folders showcasing logos, slogans, or custom designs. Ideal for workshops, seminars, classroom use, or giveaways — combining functionality with promotional appeal.",
+      "Boost your Institute’s branding with Printed Files & Folders showcasing logos, slogans, or custom designs. Ideal for workshops, seminars, classroom use, or giveaways — combining functionality with promotional appeal.",
     price: 149,
     salePrice: 129,
     images: [{ url: "/assets/filesfolders/10.webp", altText: "Printed File & Folder" }],
@@ -122,7 +122,7 @@ const filesFolders = [
     seo: {
       metaTitle: "Printed Files & Folders",
       metaDescription:
-        "Printed files and folders with custom logos, designs, and institute branding for events or offices.",
+        "Printed files and folders with custom logos, designs, and Institute branding for events or offices.",
       keywords: ["printed folders", "custom printed files", "logo stationery"],
     },
   },
@@ -131,7 +131,7 @@ const filesFolders = [
     name: "Designer Files & Folders",
     slug: "designer-files-and-folders",
     description:
-      "Add elegance and creativity to document organization with Designer Files & Folders made from premium-quality materials and stylish layouts. Perfect for staff gifts, student awards, or institute events.",
+      "Add elegance and creativity to document organization with Designer Files & Folders made from premium-quality materials and stylish layouts. Perfect for staff gifts, student awards, or Institute events.",
     price: 299,
     salePrice: 279,
     images: [{ url: "/assets/filesfolders/13.webp", altText: "Designer File & Folder" }],
@@ -163,7 +163,7 @@ const filesFolders = [
     name: "Custom Logo Files & Folders",
     slug: "custom-logo-files-and-folders",
     description:
-      "Showcase your institute’s pride with Custom Logo Files & Folders featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, events, and daily use — keeping your brand visible while adding a professional touch.",
+      "Showcase your Institute’s pride with Custom Logo Files & Folders featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, events, and daily use — keeping your brand visible while adding a professional touch.",
     price: 229,
     salePrice: 209,
     images: [{ url: "/assets/filesfolders/16.webp", altText: "Custom Logo File & Folder" }],

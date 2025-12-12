@@ -3,7 +3,7 @@ const messengerBags = [
     name: "Custom Messenger Bags",
     slug: "custom-messenger-bags",
     description:
-      "Carry your coaching institute’s identity with pride using Custom Messenger Bags. Personalize them with your institute’s logo, name, or brand colors to create a professional and unified look for students, faculty, and staff. Ideal for daily use, seminars, and events.",
+      "Carry your Coaching Institute’s identity with pride using Custom Messenger Bags. Personalize them with your Institute’s logo, name, or brand colors to create a professional and unified look for students, faculty, and staff. Ideal for daily use, seminars, and events.",
     price: 699,
     salePrice: 649,
     images: [{ url: "/assets/messengerbags/1.webp", altText: "Custom Messenger Bag" }],
@@ -26,8 +26,8 @@ const messengerBags = [
     seo: {
       metaTitle: "Custom Messenger Bags",
       metaDescription:
-        "Premium custom messenger bags with institute logo and colors — ideal for students, staff, and events.",
-      keywords: ["custom messenger bags", "branding bags", "institute bags"],
+        "Premium custom messenger bags with Institute logo and colors — ideal for students, staff, and events.",
+      keywords: ["custom messenger bags", "branding bags", "Institute bags"],
     },
   },
 
@@ -35,7 +35,7 @@ const messengerBags = [
     name: "Branding Messenger Bags",
     slug: "branding-messenger-bags",
     description:
-      "Enhance your institute’s visibility with Branding Messenger Bags designed for coaching institutes. These stylish and durable bags add a professional touch while promoting your brand at workshops, admission drives, and campus activities.",
+      "Enhance your Institute’s visibility with Branding Messenger Bags designed for Coaching Institutes. These stylish and durable bags add a professional touch while promoting your brand at workshops, admission drives, and campus activities.",
     price: 649,
     salePrice: 599,
     images: [{ url: "/assets/messengerbags/4.webp", altText: "Branding Messenger Bag" }],
@@ -58,7 +58,7 @@ const messengerBags = [
     seo: {
       metaTitle: "Branding Messenger Bags",
       metaDescription:
-        "Stylish branding messenger bags designed for institutes — durable, professional, and high-quality.",
+        "Stylish branding messenger bags designed for Institutes — durable, professional, and high-quality.",
       keywords: ["branding messenger bags", "logo bags", "campus bags"],
     },
   },
@@ -67,7 +67,7 @@ const messengerBags = [
     name: "Customized Messenger Bags",
     slug: "customized-messenger-bags",
     description:
-      "Stand out with Customized Messenger Bags crafted exclusively for your coaching institute. Add embroidery, printed logos, or personalized designs to create a distinctive look that reflects your institute’s professionalism and pride.",
+      "Stand out with Customized Messenger Bags crafted exclusively for your Coaching Institute. Add embroidery, printed logos, or personalized designs to create a distinctive look that reflects your Institute’s professionalism and pride.",
     price: 749,
     salePrice: 699,
     images: [{ url: "/assets/messengerbags/7.webp", altText: "Customized Messenger Bag" }],
@@ -90,7 +90,7 @@ const messengerBags = [
     seo: {
       metaTitle: "Customized Messenger Bags",
       metaDescription:
-        "Customized messenger bags with embroidery or logo print — perfect for institute branding and gifting.",
+        "Customized messenger bags with embroidery or logo print — perfect for Institute branding and gifting.",
       keywords: ["customized messenger bags", "embroidered bags", "personalized bags"],
     },
   },
@@ -99,7 +99,7 @@ const messengerBags = [
     name: "Custom Logo Messenger Bags",
     slug: "custom-logo-messenger-bags",
     description:
-      "Highlight your brand with Custom Logo Messenger Bags featuring high-quality logo printing or embroidery. Designed for a polished and professional presentation, these bags represent your coaching institute’s excellence at every event.",
+      "Highlight your brand with Custom Logo Messenger Bags featuring high-quality logo printing or embroidery. Designed for a polished and professional presentation, these bags represent your Coaching Institute’s excellence at every event.",
     price: 799,
     salePrice: 749,
     images: [{ url: "/assets/messengerbags/10.webp", altText: "Custom Logo Messenger Bag" }],

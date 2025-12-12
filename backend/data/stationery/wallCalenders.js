@@ -3,7 +3,7 @@ const wallCalendars = [
     name: "Custom Wall Calendars",
     slug: "custom-wall-calendars",
     description:
-      "Stay organized and display your institute’s identity with Custom Wall Calendars. Personalize each calendar with your logo, name, or tagline to create a functional and branding visual for classrooms, offices, and common areas.",
+      "Stay organized and display your Institute’s identity with Custom Wall Calendars. Personalize each calendar with your logo, name, or tagline to create a functional and branding visual for classrooms, offices, and common areas.",
     price: 279,
     salePrice: 259,
     images: [{ url: "/assets/wallcalendars/1.webp", altText: "Custom Wall Calendar" }],
@@ -34,7 +34,7 @@ const wallCalendars = [
     name: "Branding Wall Calendars",
     slug: "branding-wall-calendars",
     description:
-      "Promote your institute’s professionalism with Branding Wall Calendars designed for classrooms, offices, and seminar halls. Durable and stylish, they ensure your brand remains visible throughout the year.",
+      "Promote your Institute’s professionalism with Branding Wall Calendars designed for classrooms, offices, and seminar halls. Durable and stylish, they ensure your brand remains visible throughout the year.",
     price: 249,
     salePrice: 229,
     images: [{ url: "/assets/wallcalendars/3.webp", altText: "Branding Wall Calendar" }],
@@ -65,7 +65,7 @@ const wallCalendars = [
     name: "Personalized Wall Calendars",
     slug: "personalized-wall-calendars",
     description:
-      "Create a memorable and practical gifting option with Personalized Wall Calendars featuring individual names, important dates, or institute branding. Ideal for students, faculty, and event participants.",
+      "Create a memorable and practical gifting option with Personalized Wall Calendars featuring individual names, important dates, or Institute branding. Ideal for students, faculty, and event participants.",
     price: 299,
     salePrice: 279,
     images: [{ url: "/assets/wallcalendars/5.webp", altText: "Personalized Wall Calendar" }],
@@ -96,7 +96,7 @@ const wallCalendars = [
     name: "Printed Wall Calendars",
     slug: "printed-wall-calendars",
     description:
-      "Enhance your institute’s visibility with Printed Wall Calendars displaying logos, slogans, or yearly highlights. Perfect for events, annual functions, and everyday office or classroom use — combining utility with promotional appeal.",
+      "Enhance your Institute’s visibility with Printed Wall Calendars displaying logos, slogans, or yearly highlights. Perfect for events, annual functions, and everyday office or classroom use — combining utility with promotional appeal.",
     price: 229,
     salePrice: 209,
     images: [{ url: "/assets/wallcalendars/7.webp", altText: "Printed Wall Calendar" }],
@@ -127,7 +127,7 @@ const wallCalendars = [
     name: "Designer Wall Calendars",
     slug: "designer-wall-calendars",
     description:
-      "Add elegance to walls with Designer Wall Calendars made from premium-quality materials and creative layouts. Ideal for academic milestones, staff gifts, and institute events, reflecting style and professionalism.",
+      "Add elegance to walls with Designer Wall Calendars made from premium-quality materials and creative layouts. Ideal for academic milestones, staff gifts, and Institute events, reflecting style and professionalism.",
     price: 349,
     salePrice: 329,
     images: [{ url: "/assets/wallcalendars/9.webp", altText: "Designer Wall Calendar" }],
@@ -157,7 +157,7 @@ const wallCalendars = [
     name: "Custom Logo Wall Calendars",
     slug: "custom-logo-wall-calendars",
     description:
-      "Showcase your institute’s pride with Custom Logo Wall Calendars featuring high-quality printing or embossing. Perfect for gifting, events, or daily display — keeping your brand visible while adding a polished, professional touch.",
+      "Showcase your Institute’s pride with Custom Logo Wall Calendars featuring high-quality printing or embossing. Perfect for gifting, events, or daily display — keeping your brand visible while adding a polished, professional touch.",
     price: 319,
     salePrice: 299,
     images: [{ url: "/assets/wallcalendars/11.webp", altText: "Custom Logo Wall Calendar" }],

@@ -1,9 +1,9 @@
 const poloTshirts = [
   {
     name: "Institute Events Polo T-Shirts",
-    slug: "institute-events-polo-tshirts",
+    slug: "Institute-events-polo-tshirts",
     description:
-      "Upgrade your institute’s identity with custom Polo T-Shirts featuring premium fabric, vibrant prints, and durable stitching — perfect for staff, students, and events branding.",
+      "Upgrade your Institute’s identity with custom Polo T-Shirts featuring premium fabric, vibrant prints, and durable stitching — perfect for staff, students, and events branding.",
     price: 499,
     salePrice: 449,
     images: [{ url: "/assets/polotshirts/1.webp", altText: "Institute Events Polo T-Shirt" }],
@@ -20,23 +20,23 @@ const poloTshirts = [
       size: ["S", "M", "L", "XL", "XXL"],
       material: "Poly-Cotton",
     },
-    tags: ["institute", "events", "polo tshirt"],
+    tags: ["Institute", "events", "polo tshirt"],
     isFeatured: true,
     isActive: true,
     ratings: { average: 4.8, count: 320 },
     seo: {
       metaTitle: "Institute Events Polo T-Shirts",
       metaDescription:
-        "Premium polo T-shirts for institute events with durable print and fabric.",
-      keywords: ["institute polo tshirts", "event tshirts", "custom polo"],
+        "Premium polo T-shirts for Institute events with durable print and fabric.",
+      keywords: ["Institute polo tshirts", "event tshirts", "custom polo"],
     },
   },
 
   {
     name: "Coaching Promotional Polo T-Shirts",
-    slug: "coaching-promotional-polo-tshirts",
+    slug: "Coaching-promotional-polo-tshirts",
     description:
-      "Enhance your coaching institute’s image with custom Promotional Polo T-Shirts designed for comfort, style, and strong brand visibility — ideal for staff, batches, and seminars.",
+      "Enhance your Coaching Institute’s image with custom Promotional Polo T-Shirts designed for comfort, style, and strong brand visibility — ideal for staff, batches, and seminars.",
     price: 479,
     salePrice: 429,
     images: [{ url: "/assets/polotshirts/5.webp", altText: "Coaching Promotional Polo T-Shirt" }],
@@ -53,15 +53,15 @@ const poloTshirts = [
       size: ["S", "M", "L", "XL", "XXL"],
       material: "Premium Cotton",
     },
-    tags: ["coaching", "promotional", "polo tshirt"],
+    tags: ["Coaching", "promotional", "polo tshirt"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.5, count: 250 },
     seo: {
       metaTitle: "Coaching Promotional Polo T-Shirts",
       metaDescription:
-        "High-quality promotional polo t-shirts for coaching institutes.",
-      keywords: ["promotional polo", "coaching tshirts", "branded polos"],
+        "High-quality promotional polo t-shirts for Coaching Institutes.",
+      keywords: ["promotional polo", "Coaching tshirts", "branded polos"],
     },
   },
 
@@ -69,7 +69,7 @@ const poloTshirts = [
     name: "Sports Polo T-Shirts",
     slug: "sports-polo-tshirts",
     description:
-      "Get high-quality Sports Polo T-Shirts crafted for comfort and performance — perfect for coaching sports events, training sessions, and team identity.",
+      "Get high-quality Sports Polo T-Shirts crafted for comfort and performance — perfect for Coaching sports events, training sessions, and team identity.",
     price: 529,
     salePrice: 489,
     images: [{ url: "/assets/polotshirts/9.webp", altText: "Sports Polo T-Shirt" }],
@@ -93,7 +93,7 @@ const poloTshirts = [
     seo: {
       metaTitle: "Sports Polo T-Shirts",
       metaDescription:
-        "Performance-driven sports polo t-shirts for coaching and campus sports events.",
+        "Performance-driven sports polo t-shirts for Coaching and campus sports events.",
       keywords: ["sports polos", "dryfit polo tshirts", "team wear"],
     },
   },
@@ -102,7 +102,7 @@ const poloTshirts = [
     name: "Sports Uniform Polo T-Shirts",
     slug: "sports-uniform-polo-tshirts",
     description:
-      "Custom Sports Uniform Polo T-Shirts made with breathable fabric, stylish design, and long-lasting print quality — perfect for institute sports teams.",
+      "Custom Sports Uniform Polo T-Shirts made with breathable fabric, stylish design, and long-lasting print quality — perfect for Institute sports teams.",
     price: 559,
     salePrice: 509,
     images: [{ url: "/assets/polotshirts/13.webp", altText: "Sports Uniform Polo" }],
@@ -126,16 +126,16 @@ const poloTshirts = [
     seo: {
       metaTitle: "Sports Uniform Polo T-Shirts",
       metaDescription:
-        "Custom sports uniform polo t-shirts ideal for institutes and teams.",
+        "Custom sports uniform polo t-shirts ideal for Institutes and teams.",
       keywords: ["team polos", "sports uniforms", "sports tshirts"],
     },
   },
 
   {
     name: "Institute Polo T-Shirts",
-    slug: "institute-polo-tshirts",
+    slug: "Institute-polo-tshirts",
     description:
-      "Give your institute a professional look with custom Polo T-Shirts featuring premium fabric, perfect fit, and logo printing for staff and students.",
+      "Give your Institute a professional look with custom Polo T-Shirts featuring premium fabric, perfect fit, and logo printing for staff and students.",
     price: 499,
     salePrice: 459,
     images: [{ url: "/assets/polotshirts/17.webp", altText: "Institute Polo T-Shirt" }],
@@ -152,21 +152,21 @@ const poloTshirts = [
       size: ["S", "M", "L", "XL", "XXL"],
       material: "Rich Cotton",
     },
-    tags: ["institute", "uniform polo"],
+    tags: ["Institute", "uniform polo"],
     isFeatured: true,
     isActive: true,
     ratings: { average: 4.8, count: 260 },
     seo: {
       metaTitle: "Institute Polo T-Shirts",
       metaDescription:
-        "Premium institute polo t-shirts for staff and students.",
-      keywords: ["institute uniform", "polo t-shirts", "custom polos"],
+        "Premium Institute polo t-shirts for staff and students.",
+      keywords: ["Institute uniform", "polo t-shirts", "custom polos"],
     },
   },
 
   {
     name: "Institute Cotton Polo T-Shirts",
-    slug: "institute-cotton-polo-tshirts",
+    slug: "Institute-cotton-polo-tshirts",
     description:
       "Comfortable and durable Cotton Polo T-Shirts with premium fabric, custom logo printing, and perfect fit — ideal for daily wear and events.",
     price: 469,
@@ -185,24 +185,24 @@ const poloTshirts = [
       size: ["S", "M", "L", "XL"],
       material: "100% Cotton",
     },
-    tags: ["cotton", "polo tshirt", "institute wear"],
+    tags: ["cotton", "polo tshirt", "Institute wear"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.4, count: 200 },
     seo: {
       metaTitle: "Institute Cotton Polo T-Shirts",
       metaDescription:
-        "Soft and durable cotton polo t-shirts for institutes.",
-      keywords: ["cotton polo", "institute tshirt", "daily wear"],
+        "Soft and durable cotton polo t-shirts for Institutes.",
+      keywords: ["cotton polo", "Institute tshirt", "daily wear"],
     },
   },
 
   // LAST 3 — Only 3 subimages
   {
     name: "Printed Coaching Polo T-Shirts",
-    slug: "printed-coaching-polo-tshirts",
+    slug: "printed-Coaching-polo-tshirts",
     description:
-      "Boost your coaching brand with Printed Polo T-Shirts that offer comfort, durability, and stylish designs — perfect for staff uniforms and student batches.",
+      "Boost your Coaching brand with Printed Polo T-Shirts that offer comfort, durability, and stylish designs — perfect for staff uniforms and student batches.",
     price: 449,
     salePrice: 409,
     images: [{ url: "/assets/polotshirts/25.webp", altText: "Printed Coaching Polo" }],
@@ -218,21 +218,21 @@ const poloTshirts = [
       size: ["S", "M", "L", "XL"],
       material: "Poly-Cotton Blend",
     },
-    tags: ["printed", "coaching tshirt"],
+    tags: ["printed", "Coaching tshirt"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.6, count: 190 },
     seo: {
       metaTitle: "Printed Coaching Polo T-Shirts",
       metaDescription:
-        "Stylish printed coaching polo t-shirts for students and staff.",
-      keywords: ["printed polo", "coaching wear"],
+        "Stylish printed Coaching polo t-shirts for students and staff.",
+      keywords: ["printed polo", "Coaching wear"],
     },
   },
 
   {
     name: "Premium Institute Polo T-Shirts",
-    slug: "premium-institute-polo-tshirts",
+    slug: "premium-Institute-polo-tshirts",
     description:
       "Premium Institute Polo T-Shirts crafted with high-end fabric, precision stitching, and elegant branding — perfect for special events and faculty wear.",
     price: 599,
@@ -257,7 +257,7 @@ const poloTshirts = [
     seo: {
       metaTitle: "Premium Institute Polo T-Shirts",
       metaDescription:
-        "High-end polo t-shirts for institutes — premium fabric and elegant design.",
+        "High-end polo t-shirts for Institutes — premium fabric and elegant design.",
       keywords: ["premium polo", "faculty tshirts"],
     },
   },
@@ -266,7 +266,7 @@ const poloTshirts = [
     name: "Event Branding Polo T-Shirts",
     slug: "event-branding-polo-tshirts",
     description:
-      "Perfect for seminars, events, and promotions — Event Branding Polo T-Shirts offer the right balance of style, comfort, and visibility for institute branding.",
+      "Perfect for seminars, events, and promotions — Event Branding Polo T-Shirts offer the right balance of style, comfort, and visibility for Institute branding.",
     price: 459,
     salePrice: 419,
     images: [{ url: "/assets/polotshirts/31.webp", altText: "Event Branding Polo" }],
@@ -289,7 +289,7 @@ const poloTshirts = [
     seo: {
       metaTitle: "Event Branding Polo T-Shirts",
       metaDescription:
-        "Polo t-shirts designed for events, promotions, and institute branding.",
+        "Polo t-shirts designed for events, promotions, and Institute branding.",
       keywords: ["event polo tshirts", "branding tshirts"],
     },
   },

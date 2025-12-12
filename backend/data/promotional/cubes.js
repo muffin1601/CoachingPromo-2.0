@@ -3,7 +3,7 @@ const cubes = [
         name: "Custom Magic Cubes",
         slug: "custom-magic-cubes",
         description:
-            "Encourage creativity and promote your institute’s brand with Custom Magic Cubes. Personalize each cube with your logo, name, or colors to create an engaging and memorable promotional tool for students and events.",
+            "Encourage creativity and promote your Institute’s brand with Custom Magic Cubes. Personalize each cube with your logo, name, or colors to create an engaging and memorable promotional tool for students and events.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/cubes/1.webp", altText: "Custom Magic Cube" }],
@@ -25,7 +25,7 @@ const cubes = [
         seo: {
             metaTitle: "Custom Magic Cubes",
             metaDescription:
-                "Custom Magic Cubes with personalized branding for institutes and events.",
+                "Custom Magic Cubes with personalized branding for Institutes and events.",
             keywords: ["custom magic cubes", "personalized cubes", "branding cubes"],
         },
     },
@@ -34,7 +34,7 @@ const cubes = [
         name: "Branding Magic Cubes",
         slug: "branding-magic-cubes",
         description:
-            "Strengthen your institute’s identity with Branding Magic Cubes designed for interactive learning and promotions. Durable and stylish, they’re perfect for seminars, exhibitions, and giveaways, enhancing your brand visibility.",
+            "Strengthen your Institute’s identity with Branding Magic Cubes designed for interactive learning and promotions. Durable and stylish, they’re perfect for seminars, exhibitions, and giveaways, enhancing your brand visibility.",
         price: 249,
         salePrice: 229,
         images: [{ url: "/assets/cubes/3.webp", altText: "Branding Magic Cube" }],
@@ -55,7 +55,7 @@ const cubes = [
         ratings: { average: 4.4, count: 160 },
         seo: {
             metaTitle: "Branding Magic Cubes",
-            metaDescription: "Branding Magic Cubes for institutes, events, and promotions.",
+            metaDescription: "Branding Magic Cubes for Institutes, events, and promotions.",
             keywords: ["branding cubes", "event magic cubes", "promotional cubes"],
         },
     },
@@ -64,7 +64,7 @@ const cubes = [
         name: "Personalized Magic Cubes",
         slug: "personalized-magic-cubes",
         description:
-            "Make learning fun and personal with Personalized Magic Cubes customized with individual names, institute logos, or motivational quotes — ideal for student gifts and event souvenirs.",
+            "Make learning fun and personal with Personalized Magic Cubes customized with individual names, Institute logos, or motivational quotes — ideal for student gifts and event souvenirs.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/cubes/5.webp", altText: "Personalized Magic Cube" }],
@@ -126,7 +126,7 @@ const cubes = [
         name: "Designer Magic Cubes",
         slug: "designer-magic-cubes",
         description:
-            "Add a touch of innovation with Designer Magic Cubes crafted from premium materials and modern designs. Perfect for faculty desks, events, and creative displays that reflect your institute’s smart and stylish image.",
+            "Add a touch of innovation with Designer Magic Cubes crafted from premium materials and modern designs. Perfect for faculty desks, events, and creative displays that reflect your Institute’s smart and stylish image.",
         price: 399,
         salePrice: 369,
         images: [{ url: "/assets/cubes/9.webp", altText: "Designer Magic Cube" }],
@@ -157,7 +157,7 @@ const cubes = [
         name: "Custom Logo Magic Cubes",
         slug: "custom-logo-magic-cubes",
         description:
-            "Showcase your institute’s pride with Custom Logo Magic Cubes featuring high-quality logo printing or embossing. Ideal for gifting, branding events, and giveaways — a unique way to keep your brand in hand and in mind.",
+            "Showcase your Institute’s pride with Custom Logo Magic Cubes featuring high-quality logo printing or embossing. Ideal for gifting, branding events, and giveaways — a unique way to keep your brand in hand and in mind.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/cubes/11.webp", altText: "Custom Logo Magic Cube" }],

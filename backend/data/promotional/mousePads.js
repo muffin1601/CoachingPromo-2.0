@@ -3,7 +3,7 @@ const mousePads = [
         name: "Custom Mouse Pads",
         slug: "custom-mouse-pads",
         description:
-            "Keep your coaching institute’s workspace professional and branding with Custom Mouse Pads. Personalize each pad with your logo, name, or colors to create a cohesive and stylish look for faculty desks, student workstations, and offices.",
+            "Keep your Coaching Institute’s workspace professional and branding with Custom Mouse Pads. Personalize each pad with your logo, name, or colors to create a cohesive and stylish look for faculty desks, student workstations, and offices.",
         price: 149,
         salePrice: 129,
         images: [{ url: "/assets/mousepads/1.webp", altText: "Custom Mouse Pad" }],
@@ -26,7 +26,7 @@ const mousePads = [
         seo: {
             metaTitle: "Custom Mouse Pads",
             metaDescription:
-                "Custom mouse pads with institute branding, personalization, and elegant designs.",
+                "Custom mouse pads with Institute branding, personalization, and elegant designs.",
             keywords: ["custom mouse pads", "personalized mouse pads", "branding mouse pads"],
         },
     },
@@ -35,7 +35,7 @@ const mousePads = [
         name: "Branding Mouse Pads",
         slug: "branding-mouse-pads",
         description:
-            "Promote your institute’s identity with Branding Mouse Pads designed for daily use and events. Durable and sleek, they are perfect for classrooms, offices, and staff workspaces while enhancing brand recognition.",
+            "Promote your Institute’s identity with Branding Mouse Pads designed for daily use and events. Durable and sleek, they are perfect for classrooms, offices, and staff workspaces while enhancing brand recognition.",
         price: 129,
         salePrice: 109,
         images: [{ url: "/assets/mousepads/4.webp", altText: "Branding Mouse Pad" }],
@@ -67,7 +67,7 @@ const mousePads = [
         name: "Personalized Mouse Pads",
         slug: "personalized-mouse-pads",
         description:
-            "Make every workstation unique with Personalized Mouse Pads crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create thoughtful and custom displays for students and staff.",
+            "Make every workstation unique with Personalized Mouse Pads crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create thoughtful and custom displays for students and staff.",
         price: 179,
         salePrice: 159,
         images: [{ url: "/assets/mousepads/7.webp", altText: "Personalized Mouse Pad" }],
@@ -91,7 +91,7 @@ const mousePads = [
         seo: {
             metaTitle: "Personalized Mouse Pads",
             metaDescription:
-                "Personalized mouse pads with names, quotes, and institute branding.",
+                "Personalized mouse pads with names, quotes, and Institute branding.",
             keywords: ["personalized mouse pads", "custom printed mouse pads", "name mouse pad"],
         },
     },
@@ -100,7 +100,7 @@ const mousePads = [
         name: "Printed Mouse Pads",
         slug: "printed-mouse-pads",
         description:
-            "Boost your institute’s branding with Printed Mouse Pads featuring vibrant designs, logos, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional visibility.",
+            "Boost your Institute’s branding with Printed Mouse Pads featuring vibrant designs, logos, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional visibility.",
         price: 119,
         salePrice: 99,
         images: [{ url: "/assets/mousepads/11.webp", altText: "Printed Mouse Pad" }],
@@ -131,7 +131,7 @@ const mousePads = [
         name: "Designer Mouse Pads",
         slug: "designer-mouse-pads",
         description:
-            "Stay stylish and professional with Designer Mouse Pads made from premium materials and modern designs. Perfect for faculty desks, staff areas, and student workspaces, they reflect your institute’s elegance and class.",
+            "Stay stylish and professional with Designer Mouse Pads made from premium materials and modern designs. Perfect for faculty desks, staff areas, and student workspaces, they reflect your Institute’s elegance and class.",
         price: 199,
         salePrice: 179,
         images: [{ url: "/assets/mousepads/13.webp", altText: "Designer Mouse Pad" }],

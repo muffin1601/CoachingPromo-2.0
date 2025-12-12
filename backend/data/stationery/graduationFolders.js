@@ -26,7 +26,7 @@ const graduationFolders = [
     seo: {
       metaTitle: "Custom Graduation Folders",
       metaDescription:
-        "Custom graduation folders featuring your institute’s logo and design — perfect for degree presentations and ceremonies.",
+        "Custom graduation folders featuring your Institute’s logo and design — perfect for degree presentations and ceremonies.",
       keywords: [
         "custom graduation folders",
         "personalized degree folders",
@@ -39,7 +39,7 @@ const graduationFolders = [
     name: "Branding Degree Folders",
     slug: "branding-degree-folders",
     description:
-      "Promote your institute’s identity with Branding Degree Folders designed for formal ceremonies and presentations. Stylish, elegant, and durable — they reinforce your brand image with every award handed out.",
+      "Promote your Institute’s identity with Branding Degree Folders designed for formal ceremonies and presentations. Stylish, elegant, and durable — they reinforce your brand image with every award handed out.",
     price: 399,
     salePrice: 379,
     images: [{ url: "/assets/graduationfolders/4.webp", altText: "Branding Degree Folder" }],
@@ -103,7 +103,7 @@ const graduationFolders = [
     name: "Printed Degree Folders",
     slug: "printed-degree-folders",
     description:
-      "Boost your brand visibility with Printed Degree Folders showcasing your institute’s logo, emblem, and color theme. Ideal for convocations, certifications, or awards.",
+      "Boost your brand visibility with Printed Degree Folders showcasing your Institute’s logo, emblem, and color theme. Ideal for convocations, certifications, or awards.",
     price: 349,
     salePrice: 329,
     images: [{ url: "/assets/graduationfolders/9.webp", altText: "Printed Degree Folder" }],
@@ -126,7 +126,7 @@ const graduationFolders = [
     seo: {
       metaTitle: "Printed Degree Folders",
       metaDescription:
-        "Printed degree folders with vibrant institute logos and event branding — ideal for ceremonies and award events.",
+        "Printed degree folders with vibrant Institute logos and event branding — ideal for ceremonies and award events.",
       keywords: ["printed folders", "custom degree folder", "graduation stationery"],
     },
   },

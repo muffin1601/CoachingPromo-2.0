@@ -3,7 +3,7 @@ const tableClocks = [
         name: "Custom Table Clocks",
         slug: "custom-table-clocks",
         description:
-            "Keep your coaching institute’s brand professional and punctual with Custom Table Clocks. Personalize each clock with your logo, name, or colors to create a cohesive and elegant look for faculty tables, offices, and counseling areas.",
+            "Keep your Coaching Institute’s brand professional and punctual with Custom Table Clocks. Personalize each clock with your logo, name, or colors to create a cohesive and elegant look for faculty tables, offices, and counseling areas.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/clocks/1.webp", altText: "Custom Table Clock" }],
@@ -26,7 +26,7 @@ const tableClocks = [
         seo: {
             metaTitle: "Custom Table Clocks",
             metaDescription:
-                "Custom table clocks with institute branding and professional designs.",
+                "Custom table clocks with Institute branding and professional designs.",
             keywords: ["custom table clocks", "personalized clocks", "desk clocks"],
         },
     },
@@ -35,7 +35,7 @@ const tableClocks = [
         name: "Branding Table Clocks",
         slug: "branding-table-clocks",
         description:
-            "Promote your institute’s identity with Branding Table Clocks designed for everyday use and events. Durable and stylish, they are perfect for faculty desks, reception areas, workshops, and seminars while enhancing brand recognition.",
+            "Promote your Institute’s identity with Branding Table Clocks designed for everyday use and events. Durable and stylish, they are perfect for faculty desks, reception areas, workshops, and seminars while enhancing brand recognition.",
         price: 249,
         salePrice: 229,
         images: [{ url: "/assets/clocks/4.webp", altText: "Branding Table Clock" }],
@@ -58,7 +58,7 @@ const tableClocks = [
         seo: {
             metaTitle: "Branding Table Clocks",
             metaDescription:
-                "Branding table clocks for institutes, events, offices, and faculty desks.",
+                "Branding table clocks for Institutes, events, offices, and faculty desks.",
             keywords: ["branding clocks", "promotional clocks", "desk clocks"],
         },
     },
@@ -67,7 +67,7 @@ const tableClocks = [
         name: "Personalized Table Clocks",
         slug: "personalized-table-clocks",
         description:
-            "Make every workspace memorable with Personalized Table Clocks crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create unique and thoughtful displays for staff and students.",
+            "Make every workspace memorable with Personalized Table Clocks crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create unique and thoughtful displays for staff and students.",
         price: 329,
         salePrice: 309,
         images: [{ url: "/assets/clocks/7.webp", altText: "Personalized Table Clock" }],
@@ -99,7 +99,7 @@ const tableClocks = [
         name: "Printed Table Clocks",
         slug: "printed-table-clocks",
         description:
-            "Boost your institute’s branding with Printed Table Clocks featuring vibrant designs, logos, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional visibility.",
+            "Boost your Institute’s branding with Printed Table Clocks featuring vibrant designs, logos, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional visibility.",
         price: 199,
         salePrice: 179,
         images: [{ url: "/assets/clocks/10.webp", altText: "Printed Table Clock" }],
@@ -131,7 +131,7 @@ const tableClocks = [
         name: "Designer Table Clocks",
         slug: "designer-table-clocks",
         description:
-            "Stay stylish and professional with Designer Table Clocks made from premium materials and modern designs. Perfect for faculty tables, staff rooms, and reception areas, they reflect your institute’s elegance and class.",
+            "Stay stylish and professional with Designer Table Clocks made from premium materials and modern designs. Perfect for faculty tables, staff rooms, and reception areas, they reflect your Institute’s elegance and class.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/clocks/13.webp", altText: "Designer Table Clock" }],
@@ -162,7 +162,7 @@ const tableClocks = [
         name: "Custom Logo Table Clocks",
         slug: "custom-logo-table-clocks",
         description:
-            "Showcase your institute’s pride with Custom Logo Table Clocks featuring high-quality printing or embossing. Ideal for gifting, events, or staff recognition, these clocks serve as a lasting reminder of your institute’s professionalism and identity.",
+            "Showcase your Institute’s pride with Custom Logo Table Clocks featuring high-quality printing or embossing. Ideal for gifting, events, or staff recognition, these clocks serve as a lasting reminder of your Institute’s professionalism and identity.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/clocks/15.webp", altText: "Custom Logo Table Clock" }],

@@ -3,7 +3,7 @@ const juteBags = [
     name: "Custom Jute Bags",
     slug: "custom-jute-bags",
     description:
-      "Carry your coaching institute’s pride with Custom Jute Bags. Personalize them with your logo, name, or colors for a smart, uniform, and professional look for students and staff.",
+      "Carry your Coaching Institute’s pride with Custom Jute Bags. Personalize them with your logo, name, or colors for a smart, uniform, and professional look for students and staff.",
     price: 249,
     salePrice: 229,
     images: [{ url: "/assets/jutebags/1.webp", altText: "Custom Jute Bag" }],
@@ -27,7 +27,7 @@ const juteBags = [
     seo: {
       metaTitle: "Custom Jute Bags",
       metaDescription:
-        "Custom jute bags with institute branding — eco-friendly, durable, and ideal for students and faculty.",
+        "Custom jute bags with Institute branding — eco-friendly, durable, and ideal for students and faculty.",
       keywords: ["custom jute bags", "eco bags", "branding jute bags"],
     },
   },
@@ -36,7 +36,7 @@ const juteBags = [
     name: "Branding Jute Bags",
     slug: "branding-jute-bags",
     description:
-      "Upgrade your institute’s identity with Branding Jute Bags designed for students, teachers, and event teams. Stylish, durable, and eco-friendly — perfect for daily use and campus activities.",
+      "Upgrade your Institute’s identity with Branding Jute Bags designed for students, teachers, and event teams. Stylish, durable, and eco-friendly — perfect for daily use and campus activities.",
     price: 229,
     salePrice: 209,
     images: [{ url: "/assets/jutebags/5.webp", altText: "Branding Jute Bag" }],
@@ -60,7 +60,7 @@ const juteBags = [
     seo: {
       metaTitle: "Branding Jute Bags",
       metaDescription:
-        "Branding jute bags with institute logo — perfect for events, students, and eco-friendly branding.",
+        "Branding jute bags with Institute logo — perfect for events, students, and eco-friendly branding.",
       keywords: ["branding jute bags", "printed eco bags", "school jute bags"],
     },
   },
@@ -69,7 +69,7 @@ const juteBags = [
     name: "Customized Jute Bags",
     slug: "customized-jute-bags",
     description:
-      "Make your brand stand out with Customized Jute Bags featuring embroidery, logo printing, or institute colors for a polished and unified appearance.",
+      "Make your brand stand out with Customized Jute Bags featuring embroidery, logo printing, or Institute colors for a polished and unified appearance.",
     price: 279,
     salePrice: 259,
     images: [{ url: "/assets/jutebags/9.webp", altText: "Customized Jute Bag" }],
@@ -93,7 +93,7 @@ const juteBags = [
     seo: {
       metaTitle: "Customized Jute Bags",
       metaDescription:
-        "Customized jute bags with embroidery or print — a perfect accessory for institute branding.",
+        "Customized jute bags with embroidery or print — a perfect accessory for Institute branding.",
       keywords: ["customized jute bags", "embroidered jute bag", "personalized eco bags"],
     },
   },
@@ -102,7 +102,7 @@ const juteBags = [
     name: "Printed Jute Bags",
     slug: "printed-jute-bags",
     description:
-      "Promote your coaching institute wherever you go with Printed Jute Bags showcasing your logo or tagline. Ideal for students, seminars, and promotional events.",
+      "Promote your Coaching Institute wherever you go with Printed Jute Bags showcasing your logo or tagline. Ideal for students, seminars, and promotional events.",
     price: 199,
     salePrice: 179,
     images: [{ url: "/assets/jutebags/13.webp", altText: "Printed Jute Bag" }],
@@ -166,7 +166,7 @@ const juteBags = [
     name: "Custom Logo Jute Bags",
     slug: "custom-logo-jute-bags",
     description:
-      "Showcase your institute’s professionalism with Custom Logo Jute Bags featuring high-quality embroidery or print designs for a premium branding look.",
+      "Showcase your Institute’s professionalism with Custom Logo Jute Bags featuring high-quality embroidery or print designs for a premium branding look.",
     price: 269,
     salePrice: 249,
     images: [{ url: "/assets/jutebags/19.webp", altText: "Custom Logo Jute Bag" }],
@@ -189,7 +189,7 @@ const juteBags = [
     seo: {
       metaTitle: "Custom Logo Jute Bags",
       metaDescription:
-        "Custom logo jute bags with premium embroidery or printing — perfect for institutes and events.",
+        "Custom logo jute bags with premium embroidery or printing — perfect for Institutes and events.",
       keywords: ["custom logo jute bags", "embroidered jute bag", "premium eco bags"],
     },
   },

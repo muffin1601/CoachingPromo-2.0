@@ -1,7 +1,7 @@
 const formalShirts = [
   {
     name: "Formal Shirts for Coaching (Teachers)",
-    slug: "formal-shirts-for-coaching-teachers",
+    slug: "formal-shirts-for-Coaching-teachers",
     description:
       "Upgrade your office style with premium Formal Shirts for Coaching Teachers — tailored for comfort, perfect fit, and professional appeal. Ideal for faculty, staff, and meetings.",
     price: 699,
@@ -20,15 +20,15 @@ const formalShirts = [
       size: ["S", "M", "L", "XL", "XXL"],
       material: "Premium Cotton Blend",
     },
-    tags: ["formal shirt", "coaching wear", "teacher uniform"],
+    tags: ["formal shirt", "Coaching wear", "teacher uniform"],
     isFeatured: true,
     isActive: true,
     ratings: { average: 4.8, count: 260 },
     seo: {
       metaTitle: "Formal Shirts for Coaching Teachers",
       metaDescription:
-        "Premium formal shirts for coaching teachers, tailored for comfort, style, and professional appearance.",
-      keywords: ["teacher formal shirts", "coaching uniforms", "formal office shirts"],
+        "Premium formal shirts for Coaching teachers, tailored for comfort, style, and professional appearance.",
+      keywords: ["teacher formal shirts", "Coaching uniforms", "formal office shirts"],
     },
   },
 
@@ -100,9 +100,9 @@ const formalShirts = [
 
   {
     name: "Institute Logo Printed Shirts",
-    slug: "institute-logo-printed-shirts",
+    slug: "Institute-logo-printed-shirts",
     description:
-      "Create a consistent brand image with Institute Logo Printed Shirts — custom-made, logo-printed, and crafted from high-quality fabrics to enhance your institute’s professional identity.",
+      "Create a consistent brand image with Institute Logo Printed Shirts — custom-made, logo-printed, and crafted from high-quality fabrics to enhance your Institute’s professional identity.",
     price: 729,
     salePrice: 689,
     images: [{ url: "/assets/formalshirts/13.webp", altText: "Institute Logo Printed Shirt" }],
@@ -119,15 +119,15 @@ const formalShirts = [
       size: ["S", "M", "L", "XL"],
       material: "Cotton Polyester Blend",
     },
-    tags: ["institute shirt", "logo printed", "formal wear"],
+    tags: ["Institute shirt", "logo printed", "formal wear"],
     isFeatured: false,
     isActive: true,
     ratings: { average: 4.6, count: 190 },
     seo: {
       metaTitle: "Institute Logo Printed Shirts",
       metaDescription:
-        "Logo-printed formal shirts for institutes and universities.",
-      keywords: ["institute shirts", "logo shirts", "uniform shirts"],
+        "Logo-printed formal shirts for Institutes and universities.",
+      keywords: ["Institute shirts", "logo shirts", "uniform shirts"],
     },
   },
 
@@ -225,7 +225,7 @@ const formalShirts = [
     seo: {
       metaTitle: "Premium Office Formal Shirts",
       metaDescription:
-        "High-end premium formal shirts for office professionals and institute faculty.",
+        "High-end premium formal shirts for office professionals and Institute faculty.",
       keywords: ["office shirts", "formal shirts", "premium workwear"],
     },
   },

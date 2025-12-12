@@ -3,7 +3,7 @@ const notepads = [
     name: "Custom Notepads",
     slug: "custom-notepads",
     description:
-      "Stay organized and enhance your institute’s identity with Custom Notepads. Personalize each notepad with your logo, name, or tagline to provide students, faculty, and staff with a practical, branding stationery companion.",
+      "Stay organized and enhance your Institute’s identity with Custom Notepads. Personalize each notepad with your logo, name, or tagline to provide students, faculty, and staff with a practical, branding stationery companion.",
     price: 149,
     salePrice: 129,
     images: [{ url: "/assets/notepads/1.webp", altText: "Custom Notepad" }],
@@ -26,7 +26,7 @@ const notepads = [
     seo: {
       metaTitle: "Custom Notepads",
       metaDescription:
-        "Custom printed notepads with logos, taglines, and branding — perfect for institutes and offices.",
+        "Custom printed notepads with logos, taglines, and branding — perfect for Institutes and offices.",
       keywords: ["custom notepads", "personalized notepads", "branding stationery"],
     },
   },
@@ -35,7 +35,7 @@ const notepads = [
     name: "Branding Notepads",
     slug: "branding-notepads",
     description:
-      "Promote your institute’s professionalism with Branding Notepads designed for classrooms, offices, and events. Durable and stylish, they ensure your brand remains visible while supporting daily note-taking and planning.",
+      "Promote your Institute’s professionalism with Branding Notepads designed for classrooms, offices, and events. Durable and stylish, they ensure your brand remains visible while supporting daily note-taking and planning.",
     price: 129,
     salePrice: 109,
     images: [{ url: "/assets/notepads/4.webp", altText: "Branding Notepad" }],
@@ -59,7 +59,7 @@ const notepads = [
       metaTitle: "Branding Notepads",
       metaDescription:
         "Branding notepads for classrooms, offices, and events — durable and stylish stationery for professional use.",
-      keywords: ["branding notepads", "office stationery", "institute notepads"],
+      keywords: ["branding notepads", "office stationery", "Institute notepads"],
     },
   },
 
@@ -67,7 +67,7 @@ const notepads = [
     name: "Personalized Notepads",
     slug: "personalized-notepads",
     description:
-      "Create a unique and memorable stationery item with Personalized Notepads featuring individual names, motivational quotes, or institute branding. Ideal for students, faculty, and event participants.",
+      "Create a unique and memorable stationery item with Personalized Notepads featuring individual names, motivational quotes, or Institute branding. Ideal for students, faculty, and event participants.",
     price: 169,
     salePrice: 149,
     images: [{ url: "/assets/notepads/7.webp", altText: "Personalized Notepad" }],
@@ -90,7 +90,7 @@ const notepads = [
     seo: {
       metaTitle: "Personalized Notepads",
       metaDescription:
-        "Personalized notepads with names, quotes, or logos — ideal for institutes, students, and staff gifting.",
+        "Personalized notepads with names, quotes, or logos — ideal for Institutes, students, and staff gifting.",
       keywords: ["personalized notepads", "custom printed notepads", "gift stationery"],
     },
   },
@@ -99,7 +99,7 @@ const notepads = [
     name: "Printed Notepads",
     slug: "printed-notepads",
     description:
-      "Boost your institute’s visibility with Printed Notepads showcasing logos, slogans, or custom designs. Perfect for workshops, seminars, classroom use, or giveaways — combining utility with promotional appeal.",
+      "Boost your Institute’s visibility with Printed Notepads showcasing logos, slogans, or custom designs. Perfect for workshops, seminars, classroom use, or giveaways — combining utility with promotional appeal.",
     price: 119,
     salePrice: 99,
     images: [{ url: "/assets/notepads/10.webp", altText: "Printed Notepad" }],
@@ -131,7 +131,7 @@ const notepads = [
     name: "Designer Notepads",
     slug: "designer-notepads",
     description:
-      "Add elegance and creativity to everyday note-taking with Designer Notepads made from premium-quality materials and stylish layouts. Perfect for staff gifts, student awards, or institute events.",
+      "Add elegance and creativity to everyday note-taking with Designer Notepads made from premium-quality materials and stylish layouts. Perfect for staff gifts, student awards, or Institute events.",
     price: 199,
     salePrice: 179,
     images: [{ url: "/assets/notepads/13.webp", altText: "Designer Notepad" }],
@@ -163,7 +163,7 @@ const notepads = [
     name: "Custom Logo Notepads",
     slug: "custom-logo-notepads",
     description:
-      "Showcase your institute’s pride with Custom Logo Notepads featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, events, or daily use — keeping your brand visible while adding a professional touch.",
+      "Showcase your Institute’s pride with Custom Logo Notepads featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, events, or daily use — keeping your brand visible while adding a professional touch.",
     price: 159,
     salePrice: 139,
     images: [{ url: "/assets/notepads/16.webp", altText: "Custom Logo Notepad" }],
@@ -186,7 +186,7 @@ const notepads = [
     seo: {
       metaTitle: "Custom Logo Notepads",
       metaDescription:
-        "Custom logo notepads with foil or emboss printing — great for institutes, corporate branding, or daily use.",
+        "Custom logo notepads with foil or emboss printing — great for Institutes, corporate branding, or daily use.",
       keywords: ["logo notepads", "emboss printed notepads", "branding stationery"],
     },
   },

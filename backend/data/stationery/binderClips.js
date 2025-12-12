@@ -3,7 +3,7 @@ const binderClips = [
         name: "Custom Binder Clips",
         slug: "custom-binder-clips",
         description:
-            "Keep your coaching institute’s documents neat and professional with Custom Binder Clips. Personalize each clip with your logo, name, or colors to create a cohesive and branding look for classrooms, offices, and events.",
+            "Keep your Coaching Institute’s documents neat and professional with Custom Binder Clips. Personalize each clip with your logo, name, or colors to create a cohesive and branding look for classrooms, offices, and events.",
         price: 99,
         salePrice: 79,
         images: [{ url: "/assets/binderclips/1.webp", altText: "Custom Binder Clip" }],
@@ -35,7 +35,7 @@ const binderClips = [
         name: "Branding Binder Clips",
         slug: "branding-binder-clips",
         description:
-            "Promote your institute’s identity with Branding Binder Clips designed for classrooms, offices, and seminars. Strong and stylish, they hold documents securely while subtly showcasing your brand logo.",
+            "Promote your Institute’s identity with Branding Binder Clips designed for classrooms, offices, and seminars. Strong and stylish, they hold documents securely while subtly showcasing your brand logo.",
         price: 89,
         salePrice: 69,
         images: [{ url: "/assets/binderclips/4.webp", altText: "Branding Binder Clip" }],
@@ -58,7 +58,7 @@ const binderClips = [
         seo: {
             metaTitle: "Branding Binder Clips",
             metaDescription:
-                "Durable branding binder clips for institutes, offices, and classrooms.",
+                "Durable branding binder clips for Institutes, offices, and classrooms.",
             keywords: ["branding binder clips", "office clips", "stationery branding"],
         },
     },
@@ -67,7 +67,7 @@ const binderClips = [
         name: "Printed Binder Clips",
         slug: "printed-binder-clips",
         description:
-            "Boost your institute’s visibility with Printed Binder Clips featuring vibrant logos, taglines, or motivational quotes. Ideal for offices, classrooms, and workshops — combining practicality with professional flair.",
+            "Boost your Institute’s visibility with Printed Binder Clips featuring vibrant logos, taglines, or motivational quotes. Ideal for offices, classrooms, and workshops — combining practicality with professional flair.",
         price: 79,
         salePrice: 59,
         images: [{ url: "/assets/binderclips/7.webp", altText: "Printed Binder Clip" }],
@@ -99,7 +99,7 @@ const binderClips = [
         name: "Designer Binder Clips",
         slug: "designer-binder-clips",
         description:
-            "Add a touch of sophistication to your institute’s stationery with Designer Binder Clips crafted from premium materials. Perfect for offices, awards, and faculty tables, they combine durability with elegant aesthetics.",
+            "Add a touch of sophistication to your Institute’s stationery with Designer Binder Clips crafted from premium materials. Perfect for offices, awards, and faculty tables, they combine durability with elegant aesthetics.",
         price: 119,
         salePrice: 99,
         images: [{ url: "/assets/binderclips/10.webp", altText: "Designer Binder Clip" }],

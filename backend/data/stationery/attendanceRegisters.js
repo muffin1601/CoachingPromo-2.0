@@ -3,7 +3,7 @@ const attendanceRegisters = [
     name: "Custom Attendance Registers",
     slug: "custom-attendance-registers",
     description:
-      "Keep attendance organized and efficient with Custom Attendance Registers. Personalize each register with your institute’s logo, name, or tagline to provide faculty and staff with a practical, branding record-keeping solution.",
+      "Keep attendance organized and efficient with Custom Attendance Registers. Personalize each register with your Institute’s logo, name, or tagline to provide faculty and staff with a practical, branding record-keeping solution.",
     price: 249,
     salePrice: 229,
     images: [{ url: "/assets/attendance/1.webp", altText: "Custom Attendance Register" }],
@@ -26,7 +26,7 @@ const attendanceRegisters = [
     seo: {
       metaTitle: "Custom Attendance Registers",
       metaDescription:
-        "Custom attendance registers with logo printing and personalized covers — ideal for institutes and schools.",
+        "Custom attendance registers with logo printing and personalized covers — ideal for Institutes and schools.",
       keywords: ["custom attendance registers", "personalized attendance book", "branding registers"],
     },
   },
@@ -35,7 +35,7 @@ const attendanceRegisters = [
     name: "Branding Attendance Registers",
     slug: "branding-attendance-registers",
     description:
-      "Promote your institute’s professionalism with Branding Attendance Registers designed for classrooms, offices, and events. Durable and neat, they ensure your brand remains visible while supporting accurate attendance tracking.",
+      "Promote your Institute’s professionalism with Branding Attendance Registers designed for classrooms, offices, and events. Durable and neat, they ensure your brand remains visible while supporting accurate attendance tracking.",
     price: 199,
     salePrice: 179,
     images: [{ url: "/assets/attendance/4.webp", altText: "Branding Attendance Register" }],
@@ -67,7 +67,7 @@ const attendanceRegisters = [
     name: "Personalized Attendance Registers",
     slug: "personalized-attendance-registers",
     description:
-      "Create a unique and functional record-keeping tool with Personalized Attendance Registers featuring individual class details, headings, or institute branding. Perfect for faculty, staff, and administrative use.",
+      "Create a unique and functional record-keeping tool with Personalized Attendance Registers featuring individual class details, headings, or Institute branding. Perfect for faculty, staff, and administrative use.",
     price: 269,
     salePrice: 249,
     images: [{ url: "/assets/attendance/7.webp", altText: "Personalized Attendance Register" }],
@@ -90,7 +90,7 @@ const attendanceRegisters = [
     seo: {
       metaTitle: "Personalized Attendance Registers",
       metaDescription:
-        "Personalized attendance registers with custom names, subjects, and institute branding — perfect for teachers.",
+        "Personalized attendance registers with custom names, subjects, and Institute branding — perfect for teachers.",
       keywords: ["personalized registers", "custom attendance books", "faculty record book"],
     },
   },
@@ -99,7 +99,7 @@ const attendanceRegisters = [
     name: "Printed Attendance Registers",
     slug: "printed-attendance-registers",
     description:
-      "Enhance your institute’s visibility with Printed Attendance Registers showcasing logos, headings, or custom layouts. Ideal for classrooms, workshops, and seminars — combining organization with branding.",
+      "Enhance your Institute’s visibility with Printed Attendance Registers showcasing logos, headings, or custom layouts. Ideal for classrooms, workshops, and seminars — combining organization with branding.",
     price: 189,
     salePrice: 169,
     images: [{ url: "/assets/attendance/10.webp", altText: "Printed Attendance Register" }],
@@ -122,7 +122,7 @@ const attendanceRegisters = [
     seo: {
       metaTitle: "Printed Attendance Registers",
       metaDescription:
-        "Printed attendance registers with custom logos, layouts, and branding — great for schools and training institutes.",
+        "Printed attendance registers with custom logos, layouts, and branding — great for schools and training Institutes.",
       keywords: ["printed registers", "custom attendance sheets", "branding attendance books"],
     },
   },
@@ -163,7 +163,7 @@ const attendanceRegisters = [
     name: "Custom Logo Attendance Registers",
     slug: "custom-logo-attendance-registers",
     description:
-      "Showcase your institute’s pride with Custom Logo Attendance Registers featuring high-quality printing or embossing. Ideal for daily use, events, and administrative purposes — keeping your brand visible while maintaining professional organization.",
+      "Showcase your Institute’s pride with Custom Logo Attendance Registers featuring high-quality printing or embossing. Ideal for daily use, events, and administrative purposes — keeping your brand visible while maintaining professional organization.",
     price: 259,
     salePrice: 239,
     images: [{ url: "/assets/attendance/15.webp", altText: "Custom Logo Attendance Register" }],

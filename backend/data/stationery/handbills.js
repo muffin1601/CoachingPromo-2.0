@@ -3,7 +3,7 @@ const handbills = [
     name: "Custom Handbills",
     slug: "custom-handbills",
     description:
-      "Effectively communicate and enhance your institute’s identity with Custom Handbills. Personalize each handbill with your logo, name, or tagline to provide students, parents, and staff with a visually appealing, branding message.",
+      "Effectively communicate and enhance your Institute’s identity with Custom Handbills. Personalize each handbill with your logo, name, or tagline to provide students, parents, and staff with a visually appealing, branding message.",
     price: 29,
     salePrice: 24,
     images: [{ url: "/assets/handbills/1.webp", altText: "Custom Handbill" }],
@@ -25,7 +25,7 @@ const handbills = [
     seo: {
       metaTitle: "Custom Handbills & Flyers",
       metaDescription:
-        "Custom handbills and flyers with institute logos, taglines, and colors — perfect for promotions and announcements.",
+        "Custom handbills and flyers with Institute logos, taglines, and colors — perfect for promotions and announcements.",
       keywords: ["custom handbills", "personalized flyers", "printed pamphlets"],
     },
   },
@@ -34,7 +34,7 @@ const handbills = [
     name: "Personalized Handbills",
     slug: "personalized-handbills",
     description:
-      "Create a memorable and impactful communication tool with Personalized Handbills featuring individual messages, motivational quotes, or institute branding. Ideal for students, faculty, and event participants.",
+      "Create a memorable and impactful communication tool with Personalized Handbills featuring individual messages, motivational quotes, or Institute branding. Ideal for students, faculty, and event participants.",
     price: 35,
     salePrice: 30,
     images: [{ url: "/assets/handbills/3.webp", altText: "Personalized Handbill" }],
@@ -65,7 +65,7 @@ const handbills = [
     name: "Custom Logo Handbills",
     slug: "custom-logo-handbills",
     description:
-      "Showcase your institute’s pride with Custom Logo Handbills featuring high-quality printing, embossing, or foil stamping. Ideal for admissions, events, and promotions — keeping your brand visible while adding a professional touch.",
+      "Showcase your Institute’s pride with Custom Logo Handbills featuring high-quality printing, embossing, or foil stamping. Ideal for admissions, events, and promotions — keeping your brand visible while adding a professional touch.",
     price: 39,
     salePrice: 34,
     images: [{ url: "/assets/handbills/5.webp", altText: "Custom Logo Handbill" }],
@@ -87,7 +87,7 @@ const handbills = [
     seo: {
       metaTitle: "Custom Logo Handbills & Flyers",
       metaDescription:
-        "Custom logo handbills with foil stamping, embossing, or vibrant printing — ideal for institutes and event promotions.",
+        "Custom logo handbills with foil stamping, embossing, or vibrant printing — ideal for Institutes and event promotions.",
       keywords: ["logo handbills", "foil printed flyers", "branding pamphlets"],
     },
   },

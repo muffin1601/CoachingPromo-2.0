@@ -1,9 +1,9 @@
-const instituteBackpacks = [
+const InstituteBackpacks = [
   {
     name: "Custom Institute Backpacks",
-    slug: "custom-institute-backpacks",
+    slug: "custom-Institute-backpacks",
     description:
-      "Carry your coaching institute’s brand with pride using Custom Institute Backpacks. Personalize them with your logo, name, or colors to give students and staff a polished, uniform, and professional look.",
+      "Carry your Coaching Institute’s brand with pride using Custom Institute Backpacks. Personalize them with your logo, name, or colors to give students and staff a polished, uniform, and professional look.",
     price: 899,
     salePrice: 849,
     images: [{ url: "/assets/backpacks/1.webp", altText: "Custom Institute Backpack" }],
@@ -27,16 +27,16 @@ const instituteBackpacks = [
     seo: {
       metaTitle: "Custom Institute Backpacks",
       metaDescription:
-        "Custom institute backpacks with printed or embroidered logos — perfect for students, staff, and events.",
-      keywords: ["custom institute backpacks", "school backpacks", "branding bags"],
+        "Custom Institute backpacks with printed or embroidered logos — perfect for students, staff, and events.",
+      keywords: ["custom Institute backpacks", "school backpacks", "branding bags"],
     },
   },
 
   {
     name: "Branding Institute Backpacks",
-    slug: "branding-institute-backpacks",
+    slug: "branding-Institute-backpacks",
     description:
-      "Promote your coaching institute wherever you go with Branding Backpacks featuring your logo and tagline. Ideal for students, workshops, and events — a perfect mix of utility and branding.",
+      "Promote your Coaching Institute wherever you go with Branding Backpacks featuring your logo and tagline. Ideal for students, workshops, and events — a perfect mix of utility and branding.",
     price: 849,
     salePrice: 799,
     images: [{ url: "/assets/backpacks/5.webp", altText: "Branding Institute Backpack" }],
@@ -60,16 +60,16 @@ const instituteBackpacks = [
     seo: {
       metaTitle: "Branding Institute Backpacks",
       metaDescription:
-        "Durable branding backpacks with institute logo — stylish and professional for daily use and promotions.",
+        "Durable branding backpacks with Institute logo — stylish and professional for daily use and promotions.",
       keywords: ["branding backpacks", "college bags", "logo backpacks"],
     },
   },
 
   {
     name: "Customized Institute Backpacks",
-    slug: "customized-institute-backpacks",
+    slug: "customized-Institute-backpacks",
     description:
-      "Make your coaching institute stand out with Customized Backpacks that reflect your brand’s personality. Add embroidery, printing, or institute colors for a smart and cohesive appearance.",
+      "Make your Coaching Institute stand out with Customized Backpacks that reflect your brand’s personality. Add embroidery, printing, or Institute colors for a smart and cohesive appearance.",
     price: 999,
     salePrice: 949,
     images: [{ url: "/assets/backpacks/9.webp", altText: "Customized Institute Backpack" }],
@@ -93,16 +93,16 @@ const instituteBackpacks = [
     seo: {
       metaTitle: "Customized Institute Backpacks",
       metaDescription:
-        "Customized backpacks for institutes — available with embroidery, print, or logo personalization.",
-      keywords: ["customized backpacks", "embroidered bags", "personalized institute bags"],
+        "Customized backpacks for Institutes — available with embroidery, print, or logo personalization.",
+      keywords: ["customized backpacks", "embroidered bags", "personalized Institute bags"],
     },
   },
 
   {
     name: "Printed Institute Backpacks",
-    slug: "printed-institute-backpacks",
+    slug: "printed-Institute-backpacks",
     description:
-      "Promote your coaching institute wherever you go with Printed Backpacks featuring your logo and tagline. Ideal for students, workshops, and events — a perfect mix of utility and branding.",
+      "Promote your Coaching Institute wherever you go with Printed Backpacks featuring your logo and tagline. Ideal for students, workshops, and events — a perfect mix of utility and branding.",
     price: 799,
     salePrice: 749,
     images: [{ url: "/assets/backpacks/13.webp", altText: "Printed Institute Backpack" }],
@@ -126,16 +126,16 @@ const instituteBackpacks = [
     seo: {
       metaTitle: "Printed Institute Backpacks",
       metaDescription:
-        "Printed institute backpacks with logo or tagline — perfect for promotional and daily student use.",
+        "Printed Institute backpacks with logo or tagline — perfect for promotional and daily student use.",
       keywords: ["printed backpacks", "custom logo bags", "branding backpacks"],
     },
   },
 
   {
     name: "Sleek Institute Backpacks",
-    slug: "sleek-institute-backpacks",
+    slug: "sleek-Institute-backpacks",
     description:
-      "Keep it stylish and practical with Sleek Institute Backpacks made from durable, lightweight fabric. Perfect for coaching students and faculty who need comfort and a professional look.",
+      "Keep it stylish and practical with Sleek Institute Backpacks made from durable, lightweight fabric. Perfect for Coaching students and faculty who need comfort and a professional look.",
     price: 1099,
     salePrice: 999,
     images: [{ url: "/assets/backpacks/17.webp", altText: "Sleek Institute Backpack" }],
@@ -160,15 +160,15 @@ const instituteBackpacks = [
       metaTitle: "Sleek Institute Backpacks",
       metaDescription:
         "Sleek and durable backpacks designed for professional and student use — lightweight, modern, and premium.",
-      keywords: ["sleek backpacks", "modern bags", "nylon institute backpacks"],
+      keywords: ["sleek backpacks", "modern bags", "nylon Institute backpacks"],
     },
   },
 
   {
     name: "Premium Institute Backpacks",
-    slug: "premium-institute-backpacks",
+    slug: "premium-Institute-backpacks",
     description:
-      "Upgrade your institute’s accessories with Premium Backpacks designed for comfort and branding. These elegant, long-lasting backpacks reflect your coaching institute’s high standards.",
+      "Upgrade your Institute’s accessories with Premium Backpacks designed for comfort and branding. These elegant, long-lasting backpacks reflect your Coaching Institute’s high standards.",
     price: 1299,
     salePrice: 1199,
     images: [{ url: "/assets/backpacks/21.webp", altText: "Premium Institute Backpack" }],
@@ -185,17 +185,17 @@ const instituteBackpacks = [
       size: ["Large"],
       material: "PU Leather + Nylon",
     },
-    tags: ["premium", "institute bag", "luxury"],
+    tags: ["premium", "Institute bag", "luxury"],
     isFeatured: true,
     isActive: true,
     ratings: { average: 5.0, count: 160 },
     seo: {
       metaTitle: "Premium Institute Backpacks",
       metaDescription:
-        "Premium backpacks for institutes — elegant, comfortable, and durable with branding options.",
+        "Premium backpacks for Institutes — elegant, comfortable, and durable with branding options.",
       keywords: ["premium backpacks", "luxury school bags", "custom branding backpacks"],
     },
   },
 ];
 
-module.exports = instituteBackpacks;
+module.exports = InstituteBackpacks;

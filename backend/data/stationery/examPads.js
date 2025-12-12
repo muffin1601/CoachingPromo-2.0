@@ -28,7 +28,7 @@ const examPads = [
       metaTitle: "Custom Exam Pads",
       metaDescription:
         "Custom exam pads with your logo and branding — perfect for student exams, workshops, and daily use.",
-      keywords: ["custom exam pads", "branding exam pads", "institute exam boards"],
+      keywords: ["custom exam pads", "branding exam pads", "Institute exam boards"],
     },
   },
 
@@ -36,7 +36,7 @@ const examPads = [
     name: "Branding Exam Pads",
     slug: "branding-exam-pads",
     description:
-      "Promote your institute’s professionalism with Branding Exam Pads designed for classrooms, offices, and examination sessions. Durable and functional, they keep your brand visible while supporting daily study and exam preparation.",
+      "Promote your Institute’s professionalism with Branding Exam Pads designed for classrooms, offices, and examination sessions. Durable and functional, they keep your brand visible while supporting daily study and exam preparation.",
     price: 179,
     salePrice: 159,
     images: [{ url: "/assets/exampads/5.webp", altText: "Branding Exam Pad" }],
@@ -60,7 +60,7 @@ const examPads = [
     seo: {
       metaTitle: "Branding Exam Pads",
       metaDescription:
-        "Branding exam pads with printed logos and names — durable and professional for schools and institutes.",
+        "Branding exam pads with printed logos and names — durable and professional for schools and Institutes.",
       keywords: ["branding writing pads", "exam pads", "logo exam boards"],
     },
   },
@@ -69,7 +69,7 @@ const examPads = [
     name: "Personalized Exam Pads",
     slug: "personalized-exam-pads",
     description:
-      "Create a unique and memorable experience with Personalized Exam Pads featuring individual names, motivational quotes, or institute branding. Perfect for students, faculty, and event participants.",
+      "Create a unique and memorable experience with Personalized Exam Pads featuring individual names, motivational quotes, or Institute branding. Perfect for students, faculty, and event participants.",
     price: 229,
     salePrice: 209,
     images: [{ url: "/assets/exampads/9.webp", altText: "Personalized Exam Pad" }],
@@ -102,7 +102,7 @@ const examPads = [
     name: "Printed Exam Pads",
     slug: "printed-exam-pads",
     description:
-      "Boost your institute’s branding with Printed Exam Pads showcasing logos, slogans, or custom designs. Ideal for exams, workshops, or giveaways — combining functionality with promotional value.",
+      "Boost your Institute’s branding with Printed Exam Pads showcasing logos, slogans, or custom designs. Ideal for exams, workshops, or giveaways — combining functionality with promotional value.",
     price: 159,
     salePrice: 139,
     images: [{ url: "/assets/exampads/13.webp", altText: "Printed Exam Pad" }],
@@ -135,7 +135,7 @@ const examPads = [
     name: "Designer Exam Pads",
     slug: "designer-exam-pads",
     description:
-      "Add elegance and creativity to daily exam preparation with Designer Exam Pads made from premium-quality paper and stylish layouts. Perfect for student use, faculty evaluations, or institute events.",
+      "Add elegance and creativity to daily exam preparation with Designer Exam Pads made from premium-quality paper and stylish layouts. Perfect for student use, faculty evaluations, or Institute events.",
     price: 249,
     salePrice: 229,
     images: [{ url: "/assets/exampads/17.webp", altText: "Designer Exam Pad" }],
@@ -168,7 +168,7 @@ const examPads = [
     name: "Custom Logo Exam Pads",
     slug: "custom-logo-exam-pads",
     description:
-      "Showcase your institute’s pride with Custom Logo Exam Pads featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, exams, or everyday use — keeping your brand visible while adding a professional touch.",
+      "Showcase your Institute’s pride with Custom Logo Exam Pads featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, exams, or everyday use — keeping your brand visible while adding a professional touch.",
     price: 189,
     salePrice: 169,
     images: [{ url: "/assets/exampads/21.webp", altText: "Custom Logo Exam Pad" }],

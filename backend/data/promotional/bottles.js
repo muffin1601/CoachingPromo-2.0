@@ -3,7 +3,7 @@ const bottles = [
     name: "Custom Water Bottles",
     slug: "custom-water-bottles",
     description:
-      "Keep your coaching institute’s brand refreshed with Custom Water Bottles that blend practicality and style. Personalize each bottle with your logo, name, or colors to create a unified and professional look for students, teachers, and staff.",
+      "Keep your Coaching Institute’s brand refreshed with Custom Water Bottles that blend practicality and style. Personalize each bottle with your logo, name, or colors to create a unified and professional look for students, teachers, and staff.",
     price: 499,
     salePrice: 449,
     images: [{ url: "/assets/bottle/1 image.webp", altText: "Custom Water Bottle" }],
@@ -26,7 +26,7 @@ const bottles = [
     seo: {
       metaTitle: "Custom Water Bottles",
       metaDescription:
-        "Personalized water bottles custom-printed with your coaching institute branding.",
+        "Personalized water bottles custom-printed with your Coaching Institute branding.",
       keywords: ["custom water bottle", "promo bottle", "branding"],
     },
   },
@@ -35,7 +35,7 @@ const bottles = [
     name: "Branding Water Bottles",
     slug: "branding-water-bottles",
     description:
-      "Promote your institute’s identity with Branding Water Bottles designed for daily use, events, and giveaways. Durable and sleek, these bottles elevate brand visibility during classrooms, seminars, and sports activities.",
+      "Promote your Institute’s identity with Branding Water Bottles designed for daily use, events, and giveaways. Durable and sleek, these bottles elevate brand visibility during classrooms, seminars, and sports activities.",
     price: 249,
     salePrice: 199,
     images: [{ url: "/assets/bottle/4 image.webp", altText: "Branding Water Bottle" }],
@@ -58,7 +58,7 @@ const bottles = [
     seo: {
       metaTitle: "Branding Water Bottles",
       metaDescription:
-        "Promotional branding water bottles ideal for institutes, seminars & sports.",
+        "Promotional branding water bottles ideal for Institutes, seminars & sports.",
       keywords: ["branding bottle", "promotional bottle", "logo bottle"],
     },
   },
@@ -67,7 +67,7 @@ const bottles = [
     name: "Personalized Water Bottles",
     slug: "personalized-water-bottles",
     description:
-      "Make hydration meaningful with Personalized Water Bottles crafted exclusively for your coaching institute. Add individual names, motivational quotes, or your logo to create exclusive gifts for students and faculty.",
+      "Make hydration meaningful with Personalized Water Bottles crafted exclusively for your Coaching Institute. Add individual names, motivational quotes, or your logo to create exclusive gifts for students and faculty.",
     price: 899,
     salePrice: 799,
     images: [
@@ -139,7 +139,7 @@ const bottles = [
     name: "Stainless Steel Water Bottles",
     slug: "stainless-steel-water-bottles",
     description:
-      "Stay stylish and sustainable with Stainless Steel Water Bottles made from premium, rust-resistant materials. Designed for daily use to keep beverages hot or cold while showcasing your institute’s class.",
+      "Stay stylish and sustainable with Stainless Steel Water Bottles made from premium, rust-resistant materials. Designed for daily use to keep beverages hot or cold while showcasing your Institute’s class.",
     price: 399,
     salePrice: 349,
     images: [
@@ -179,7 +179,7 @@ const bottles = [
     name: "Custom Logo Water Bottles",
     slug: "custom-logo-water-bottles",
     description:
-      "Showcase your institute’s pride with Custom Logo Water Bottles featuring premium printing or engraving — ideal for gifting, events, and giveaways.",
+      "Showcase your Institute’s pride with Custom Logo Water Bottles featuring premium printing or engraving — ideal for gifting, events, and giveaways.",
     price: 499,
     salePrice: 450,
     images: [

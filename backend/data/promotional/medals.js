@@ -3,7 +3,7 @@ const medals = [
         name: "Custom Medals",
         slug: "custom-medals",
         description:
-            "Celebrate achievements in style with Custom Medals designed exclusively for your coaching institute. Personalize each medal with your logo, name, or event title to create a lasting symbol of excellence and pride for students, teachers, and achievers.",
+            "Celebrate achievements in style with Custom Medals designed exclusively for your Coaching Institute. Personalize each medal with your logo, name, or event title to create a lasting symbol of excellence and pride for students, teachers, and achievers.",
         price: 149,
         salePrice: 129,
         images: [{ url: "/assets/medals/1.webp", altText: "Custom Medal" }],
@@ -25,7 +25,7 @@ const medals = [
         seo: {
             metaTitle: "Custom Medals",
             metaDescription:
-                "Custom engraved and personalized medals for institutes, events, and recognition.",
+                "Custom engraved and personalized medals for Institutes, events, and recognition.",
             keywords: ["custom medals", "engraved medals", "award medals"],
         },
     },
@@ -34,7 +34,7 @@ const medals = [
         name: "Branding Medals",
         slug: "branding-medals",
         description:
-            "Promote your institute’s spirit and achievements with Branding Medals crafted for award ceremonies, sports days, and academic events. Durable and elegant, they perfectly represent your institute’s commitment to excellence and recognition.",
+            "Promote your Institute’s spirit and achievements with Branding Medals crafted for award ceremonies, sports days, and academic events. Durable and elegant, they perfectly represent your Institute’s commitment to excellence and recognition.",
         price: 129,
         salePrice: 109,
         images: [{ url: "/assets/medals/3.webp", altText: "Branding Medal" }],
@@ -65,7 +65,7 @@ const medals = [
         name: "Personalized Medals",
         slug: "personalized-medals",
         description:
-            "Make every victory special with Personalized Medals customized with names, institute logos, or event details. Ideal for academic achievers, sports champions, and dedicated staff, these medals serve as meaningful keepsakes of accomplishment.",
+            "Make every victory special with Personalized Medals customized with names, Institute logos, or event details. Ideal for academic achievers, sports champions, and dedicated staff, these medals serve as meaningful keepsakes of accomplishment.",
         price: 179,
         salePrice: 159,
         images: [{ url: "/assets/medals/5.webp", altText: "Personalized Medal" }],
@@ -96,7 +96,7 @@ const medals = [
         name: "Printed Medals",
         slug: "printed-medals",
         description:
-            "Boost your institute’s identity with Printed Medals featuring vibrant designs, logos, and messages. Perfect for competitions, farewell functions, or annual events — combining elegant design with promotional value.",
+            "Boost your Institute’s identity with Printed Medals featuring vibrant designs, logos, and messages. Perfect for competitions, farewell functions, or annual events — combining elegant design with promotional value.",
         price: 119,
         salePrice: 99,
         images: [{ url: "/assets/medals/7.webp", altText: "Printed Medal" }],
@@ -127,7 +127,7 @@ const medals = [
         name: "Designer Medals",
         slug: "designer-medals",
         description:
-            "Add a touch of class to your award ceremonies with Designer Medals made from premium-quality metals and stylish finishes. These medals reflect your institute’s sophistication and dedication to rewarding excellence.",
+            "Add a touch of class to your award ceremonies with Designer Medals made from premium-quality metals and stylish finishes. These medals reflect your Institute’s sophistication and dedication to rewarding excellence.",
         price: 199,
         salePrice: 179,
         images: [{ url: "/assets/medals/9.webp", altText: "Designer Medal" }],
@@ -158,7 +158,7 @@ const medals = [
         name: "Custom Logo Medals",
         slug: "custom-logo-medals",
         description:
-            "Showcase your institute’s pride with Custom Logo Medals featuring high-quality engraving or embossing. Ideal for events, ceremonies, and student recognition, they represent professionalism, achievement, and honor for your brand.",
+            "Showcase your Institute’s pride with Custom Logo Medals featuring high-quality engraving or embossing. Ideal for events, ceremonies, and student recognition, they represent professionalism, achievement, and honor for your brand.",
         price: 159,
         salePrice: 139,
         images: [{ url: "/assets/medals/11.webp", altText: "Custom Logo Medal" }],

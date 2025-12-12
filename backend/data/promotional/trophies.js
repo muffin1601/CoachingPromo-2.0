@@ -3,7 +3,7 @@ const trophies = [
         name: "Custom Trophies",
         slug: "custom-trophies",
         description:
-            "Keep your coaching institute’s achievements celebrated in style with Custom Trophies. Personalize each trophy with your logo, name, or tagline to create a prestigious and elegant award for students, staff, and faculty.",
+            "Keep your Coaching Institute’s achievements celebrated in style with Custom Trophies. Personalize each trophy with your logo, name, or tagline to create a prestigious and elegant award for students, staff, and faculty.",
         price: 399,
         salePrice: 379,
         images: [{ url: "/assets/trophies/1.webp", altText: "Custom Trophy" }],
@@ -25,7 +25,7 @@ const trophies = [
         seo: {
             metaTitle: "Custom Trophies",
             metaDescription:
-                "Custom trophies with institute branding, personalization, and premium finishes.",
+                "Custom trophies with Institute branding, personalization, and premium finishes.",
             keywords: ["custom trophies", "engraved trophies", "personalized awards"],
         },
     },
@@ -34,7 +34,7 @@ const trophies = [
         name: "Branding Trophies",
         slug: "branding-trophies",
         description:
-            "Promote your institute’s identity with Branding Trophies designed for award ceremonies, events, and competitions. Durable and stylish, they are perfect for recognizing excellence while enhancing your institute’s brand visibility.",
+            "Promote your Institute’s identity with Branding Trophies designed for award ceremonies, events, and competitions. Durable and stylish, they are perfect for recognizing excellence while enhancing your Institute’s brand visibility.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/trophies/3.webp", altText: "Branding Trophy" }],
@@ -56,7 +56,7 @@ const trophies = [
         seo: {
             metaTitle: "Branding Trophies",
             metaDescription:
-                "Branding trophies for ceremonies, competitions, and institute recognition.",
+                "Branding trophies for ceremonies, competitions, and Institute recognition.",
             keywords: ["branding trophies", "event trophies", "award trophies"],
         },
     },
@@ -65,7 +65,7 @@ const trophies = [
         name: "Personalized Trophies",
         slug: "personalized-trophies",
         description:
-            "Make every achievement memorable with Personalized Trophies crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create unique and thoughtful awards for students and faculty.",
+            "Make every achievement memorable with Personalized Trophies crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create unique and thoughtful awards for students and faculty.",
         price: 449,
         salePrice: 429,
         images: [{ url: "/assets/trophies/5.webp", altText: "Personalized Trophy" }],
@@ -96,7 +96,7 @@ const trophies = [
         name: "Printed Trophies",
         slug: "printed-trophies",
         description:
-            "Boost your institute’s recognition with Printed Trophies featuring logos, inscriptions, or slogans. Ideal for awards, events, and gifting — combining elegance with professional visibility.",
+            "Boost your Institute’s recognition with Printed Trophies featuring logos, inscriptions, or slogans. Ideal for awards, events, and gifting — combining elegance with professional visibility.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/trophies/7.webp", altText: "Printed Trophy" }],
@@ -127,7 +127,7 @@ const trophies = [
         name: "Designer Trophies",
         slug: "designer-trophies",
         description:
-            "Stay stylish and prestigious with Designer Trophies made from premium materials and modern designs. Perfect for ceremonies, staff recognition, and student awards, they reflect your institute’s class and excellence.",
+            "Stay stylish and prestigious with Designer Trophies made from premium materials and modern designs. Perfect for ceremonies, staff recognition, and student awards, they reflect your Institute’s class and excellence.",
         price: 599,
         salePrice: 569,
         images: [{ url: "/assets/trophies/9.webp", altText: "Designer Trophy" }],
@@ -158,7 +158,7 @@ const trophies = [
         name: "Custom Logo Trophies",
         slug: "custom-logo-trophies",
         description:
-            "Showcase your institute’s pride with Custom Logo Trophies featuring high-quality engraving or embossing. Ideal for gifting, awards, or event recognition, these trophies serve as a lasting symbol of your institute’s professionalism and achievements.",
+            "Showcase your Institute’s pride with Custom Logo Trophies featuring high-quality engraving or embossing. Ideal for gifting, awards, or event recognition, these trophies serve as a lasting symbol of your Institute’s professionalism and achievements.",
         price: 379,
         salePrice: 359,
         images: [{ url: "/assets/trophies/11.webp", altText: "Custom Logo Trophy" }],

@@ -2,7 +2,7 @@ const badges = [
     {
         name: "Custom Badges",
         slug: "custom-badges",
-        description: "Keep your coaching institute's recognition and branding professional with Custom Badges. Personalize each badge with your logo, name, or colors to create a cohesive and elegant look for students, faculty, and staff.",
+        description: "Keep your Coaching Institute's recognition and branding professional with Custom Badges. Personalize each badge with your logo, name, or colors to create a cohesive and elegant look for students, faculty, and staff.",
         price: 199,
         salePrice: 179,
         images: [{ url: "/assets/badges/1.webp", altText: "Custom Badge" }],
@@ -24,14 +24,14 @@ const badges = [
         ratings: { average: 4.6, count: 250 },
         seo: {
             metaTitle: "Custom Badges",
-            metaDescription: "Professional custom badges for coaching institutes with personalized branding.",
-            keywords: ["custom badges", "personalized badges", "institute badges"],
+            metaDescription: "Professional custom badges for Coaching Institutes with personalized branding.",
+            keywords: ["custom badges", "personalized badges", "Institute badges"],
         },
     },
     {
         name: "Branding Badges",
         slug: "branding-badges",
-        description: "Promote your institute's identity with Branding Badges designed for everyday use and events. Durable and stylish, they are perfect for uniforms, seminars, workshops, and ceremonies while enhancing brand recognition.",
+        description: "Promote your Institute's identity with Branding Badges designed for everyday use and events. Durable and stylish, they are perfect for uniforms, seminars, workshops, and ceremonies while enhancing brand recognition.",
         price: 149,
         salePrice: 129,
         images: [{ url: "/assets/badges/3.webp", altText: "Branding Badge" }],
@@ -53,14 +53,14 @@ const badges = [
         ratings: { average: 4.4, count: 180 },
         seo: {
             metaTitle: "Branding Badges",
-            metaDescription: "Professional branding badges for institutes and events.",
-            keywords: ["branding badges", "event badges", "institute badges"],
+            metaDescription: "Professional branding badges for Institutes and events.",
+            keywords: ["branding badges", "event badges", "Institute badges"],
         },
     },
     {
         name: "Personalized Badges",
         slug: "personalized-badges",
-        description: "Make every event and achievement memorable with Personalized Badges crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create unique and thoughtful badges for students and staff.",
+        description: "Make every event and achievement memorable with Personalized Badges crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create unique and thoughtful badges for students and staff.",
         price: 249,
         salePrice: 229,
         images: [{ url: "/assets/badges/5.webp", altText: "Personalized Badge" }],
@@ -89,7 +89,7 @@ const badges = [
     {
         name: "Printed Badges",
         slug: "printed-badges",
-        description: "Boost your institute's branding with Printed Badges featuring vibrant designs, logos, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional visibility.",
+        description: "Boost your Institute's branding with Printed Badges featuring vibrant designs, logos, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional visibility.",
         price: 99,
         salePrice: 89,
         images: [{ url: "/assets/badges/7.webp", altText: "Printed Badge" }],
@@ -118,7 +118,7 @@ const badges = [
     {
         name: "Designer Badges",
         slug: "designer-badges",
-        description: "Stay stylish and professional with Designer Badges made from premium materials and modern designs. Perfect for students, faculty, and staff, they reflect your institute's elegance and class.",
+        description: "Stay stylish and professional with Designer Badges made from premium materials and modern designs. Perfect for students, faculty, and staff, they reflect your Institute's elegance and class.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/badges/9.webp", altText: "Designer Badge" }],
@@ -147,7 +147,7 @@ const badges = [
     {
         name: "Custom Logo Badges",
         slug: "custom-logo-badges",
-        description: "Showcase your institute's pride with Custom Logo Badges featuring high-quality printing, embossing, or engraving. Ideal for gifting, events, or staff recognition, these badges serve as a lasting reminder of your institute's professionalism and identity.",
+        description: "Showcase your Institute's pride with Custom Logo Badges featuring high-quality printing, embossing, or engraving. Ideal for gifting, events, or staff recognition, these badges serve as a lasting reminder of your Institute's professionalism and identity.",
         price: 199,
         salePrice: 179,
         images: [{ url: "/assets/badges/11.webp", altText: "Custom Logo Badge" }],

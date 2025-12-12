@@ -3,7 +3,7 @@ const mugs = [
     name: "Custom Mugs",
     slug: "custom-mugs",
     description:
-      "Celebrate your coaching institute’s identity with Custom Mugs that combine style and branding. Personalize each mug with your logo, name, or brand colors to create a professional and memorable impression for students, faculty, and staff.",
+      "Celebrate your Coaching Institute’s identity with Custom Mugs that combine style and branding. Personalize each mug with your logo, name, or brand colors to create a professional and memorable impression for students, faculty, and staff.",
     price: 249,
     salePrice: 199,
     images: [{ url: "/assets/mug/mug (13).webp", altText: "Custom Mugs" }],
@@ -22,7 +22,7 @@ const mugs = [
     seo: {
       metaTitle: "Custom Mugs",
       metaDescription:
-        "Personalized mugs printed with your coaching institute logo and color theme.",
+        "Personalized mugs printed with your Coaching Institute logo and color theme.",
       keywords: ["custom mug", "branding", "personalized mugs"],
     },
   },
@@ -31,7 +31,7 @@ const mugs = [
     name: "Branding Mugs",
     slug: "branding-mugs",
     description:
-      "Enhance your institute’s visibility with Branding Mugs designed for daily use, events, and gifting. These high-quality mugs feature elegant printing and smooth finishes that reflect your coaching institute’s pride and professionalism.",
+      "Enhance your Institute’s visibility with Branding Mugs designed for daily use, events, and gifting. These high-quality mugs feature elegant printing and smooth finishes that reflect your Coaching Institute’s pride and professionalism.",
     price: 279,
     salePrice: 239,
     images: [{ url: "/assets/mug/mug (11).webp", altText: "Branding Mugs" }],
@@ -63,7 +63,7 @@ const mugs = [
     name: "Personalized Mugs",
     slug: "personalized-mugs",
     description:
-      "Make every event special with Personalized Mugs crafted exclusively for your coaching institute. Add names, logos, or motivational quotes to create thoughtful gifts for students, teachers, and visitors.",
+      "Make every event special with Personalized Mugs crafted exclusively for your Coaching Institute. Add names, logos, or motivational quotes to create thoughtful gifts for students, teachers, and visitors.",
     price: 320,
     salePrice: 280,
     images: [{ url: "/assets/mug/mug (1).webp", altText: "Personalized Mug" }],
@@ -95,7 +95,7 @@ const mugs = [
     name: "Printed Mugs",
     slug: "printed-mugs",
     description:
-      "Promote your coaching institute with Printed Mugs showcasing your brand design, logo, or slogan in vibrant colors. Ideal for seminars, farewell events, and staff gifts.",
+      "Promote your Coaching Institute with Printed Mugs showcasing your brand design, logo, or slogan in vibrant colors. Ideal for seminars, farewell events, and staff gifts.",
     price: 299,
     salePrice: 249,
     images: [{ url: "/assets/mug/mug (3).webp", altText: "Printed Mug" }],
@@ -150,7 +150,7 @@ const mugs = [
     seo: {
       metaTitle: "Premium Ceramic Mugs",
       metaDescription:
-        "Glossy ceramic mugs ideal for corporate gifting & institute branding.",
+        "Glossy ceramic mugs ideal for corporate gifting & Institute branding.",
       keywords: ["ceramic mugs", "premium mug", "gift"],
     },
   },
@@ -159,7 +159,7 @@ const mugs = [
   //   name: "Custom Logo Mugs",
   //   slug: "custom-logo-mugs",
   //   description:
-  //     "Showcase your institute’s pride with Custom Logo Mugs featuring sharp, long-lasting prints or embossed designs. Ideal for branding, corporate gifting, and daily use.",
+  //     "Showcase your Institute’s pride with Custom Logo Mugs featuring sharp, long-lasting prints or embossed designs. Ideal for branding, corporate gifting, and daily use.",
   //   price: 399,
   //   salePrice: 349,
   //   images: [{ url: "/assets/mug/mug (1).webp", altText: "Custom Logo Mug" }],
@@ -178,7 +178,7 @@ const mugs = [
   //   seo: {
   //     metaTitle: "Custom Logo Mugs",
   //     metaDescription:
-  //       "Long-lasting printed mugs featuring institute logo & branding.",
+  //       "Long-lasting printed mugs featuring Institute logo & branding.",
   //     keywords: ["logo mug", "brand mug", "corporate gifting"],
   //   },
   // },

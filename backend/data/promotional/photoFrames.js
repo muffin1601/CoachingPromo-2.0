@@ -3,7 +3,7 @@ const photoFrames = [
         name: "Custom Photo Frames",
         slug: "custom-photo-frames",
         description:
-            "Preserve your coaching institute’s proud moments in style with Custom Photo Frames. Personalize each frame with your logo, name, or tagline to create elegant keepsakes for students, staff, and special events.",
+            "Preserve your Coaching Institute’s proud moments in style with Custom Photo Frames. Personalize each frame with your logo, name, or tagline to create elegant keepsakes for students, staff, and special events.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/photoframes/1.webp", altText: "Custom Photo Frame" }],
@@ -26,7 +26,7 @@ const photoFrames = [
         seo: {
             metaTitle: "Custom Photo Frames",
             metaDescription:
-                "Custom photo frames with institute branding and elegant finishing.",
+                "Custom photo frames with Institute branding and elegant finishing.",
             keywords: ["custom photo frames", "personalized frames", "brand frames"],
         },
     },
@@ -35,7 +35,7 @@ const photoFrames = [
         name: "Branding Photo Frames",
         slug: "branding-photo-frames",
         description:
-            "Enhance your institute’s identity with Branding Photo Frames designed for offices, classrooms, and award ceremonies. Durable and stylish, these frames beautifully display achievements while promoting your brand.",
+            "Enhance your Institute’s identity with Branding Photo Frames designed for offices, classrooms, and award ceremonies. Durable and stylish, these frames beautifully display achievements while promoting your brand.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/photoframes/4.webp", altText: "Branding Photo Frame" }],
@@ -67,7 +67,7 @@ const photoFrames = [
         name: "Personalized Photo Frames",
         slug: "personalized-photo-frames",
         description:
-            "Make every memory meaningful with Personalized Photo Frames crafted exclusively for your coaching institute. Add individual names, institute logos, or inspiring quotes to create thoughtful and memorable gifts.",
+            "Make every memory meaningful with Personalized Photo Frames crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or inspiring quotes to create thoughtful and memorable gifts.",
         price: 399,
         salePrice: 379,
         images: [{ url: "/assets/photoframes/7.webp", altText: "Personalized Photo Frame" }],
@@ -99,7 +99,7 @@ const photoFrames = [
         name: "Printed Photo Frames",
         slug: "printed-photo-frames",
         description:
-            "Boost your institute’s visibility with Printed Photo Frames featuring vibrant logos, taglines, or event details. Ideal for awards, recognition ceremonies, and gifting — combining visual appeal with professional branding.",
+            "Boost your Institute’s visibility with Printed Photo Frames featuring vibrant logos, taglines, or event details. Ideal for awards, recognition ceremonies, and gifting — combining visual appeal with professional branding.",
         price: 249,
         salePrice: 229,
         images: [{ url: "/assets/photoframes/10.webp", altText: "Printed Photo Frame" }],
@@ -131,7 +131,7 @@ const photoFrames = [
         name: "Designer Photo Frames",
         slug: "designer-photo-frames",
         description:
-            "Add a touch of sophistication with Designer Photo Frames made from premium materials and contemporary designs. Perfect for office décor, events, and student recognition, they reflect your institute’s class and elegance.",
+            "Add a touch of sophistication with Designer Photo Frames made from premium materials and contemporary designs. Perfect for office décor, events, and student recognition, they reflect your Institute’s class and elegance.",
         price: 449,
         salePrice: 429,
         images: [{ url: "/assets/photoframes/13.webp", altText: "Designer Photo Frame" }],
@@ -163,7 +163,7 @@ const photoFrames = [
         name: "Custom Logo Photo Frames",
         slug: "custom-logo-photo-frames",
         description:
-            "Showcase your institute’s pride with Custom Logo Photo Frames featuring high-quality printing or engraving. Ideal for gifting, awards, or staff recognition, these frames serve as lasting reminders of your institute’s professionalism and success.",
+            "Showcase your Institute’s pride with Custom Logo Photo Frames featuring high-quality printing or engraving. Ideal for gifting, awards, or staff recognition, these frames serve as lasting reminders of your Institute’s professionalism and success.",
         price: 329,
         salePrice: 309,
         images: [{ url: "/assets/photoframes/16.webp", altText: "Custom Logo Photo Frame" }],

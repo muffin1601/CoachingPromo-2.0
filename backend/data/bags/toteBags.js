@@ -1,9 +1,9 @@
 const toteBags = [
   {
     name: "Custom Institute Tote Bags",
-    slug: "custom-institute-tote-bags",
+    slug: "custom-Institute-tote-bags",
     description:
-      "Carry your coaching institute’s brand with pride using Custom Institute Tote Bags. Personalize them with your logo, name, or colors to create a professional, elegant, and unified look for students, teachers, and staff.",
+      "Carry your Coaching Institute’s brand with pride using Custom Institute Tote Bags. Personalize them with your logo, name, or colors to create a professional, elegant, and unified look for students, teachers, and staff.",
     price: 349,
     salePrice: 329,
     images: [{ url: "/assets/totebags/1.webp", altText: "Custom Institute Tote Bag" }],
@@ -27,16 +27,16 @@ const toteBags = [
     seo: {
       metaTitle: "Custom Institute Tote Bags",
       metaDescription:
-        "Custom tote bags with institute logo and colors — perfect for students, staff, and events.",
+        "Custom tote bags with Institute logo and colors — perfect for students, staff, and events.",
       keywords: ["custom tote bags", "branding", "canvas bags"],
     },
   },
 
   {
     name: "Branding Institute Tote Bags",
-    slug: "branding-institute-tote-bags",
+    slug: "branding-Institute-tote-bags",
     description:
-      "Enhance your coaching institute’s identity with Branding Tote Bags designed for students, faculty, and events. These stylish and durable bags combine practicality, comfort, and branding — perfect for seminars, workshops, and daily use.",
+      "Enhance your Coaching Institute’s identity with Branding Tote Bags designed for students, faculty, and events. These stylish and durable bags combine practicality, comfort, and branding — perfect for seminars, workshops, and daily use.",
     price: 299,
     salePrice: 279,
     images: [{ url: "/assets/totebags/5.webp", altText: "Branding Institute Tote Bag" }],
@@ -60,16 +60,16 @@ const toteBags = [
     seo: {
       metaTitle: "Branding Institute Tote Bags",
       metaDescription:
-        "Durable and stylish branding tote bags for institutes — ideal for workshops and daily use.",
-      keywords: ["branding tote bags", "printed tote bags", "institute bags"],
+        "Durable and stylish branding tote bags for Institutes — ideal for workshops and daily use.",
+      keywords: ["branding tote bags", "printed tote bags", "Institute bags"],
     },
   },
 
   {
     name: "Customized Institute Tote Bags",
-    slug: "customized-institute-tote-bags",
+    slug: "customized-Institute-tote-bags",
     description:
-      "Make your coaching institute stand out with Customized Tote Bags that reflect your brand’s personality. Add embroidery, printing, or institute colors to create a smart, cohesive, and eco-friendly accessory for your team.",
+      "Make your Coaching Institute stand out with Customized Tote Bags that reflect your brand’s personality. Add embroidery, printing, or Institute colors to create a smart, cohesive, and eco-friendly accessory for your team.",
     price: 399,
     salePrice: 369,
     images: [{ url: "/assets/totebags/9.webp", altText: "Customized Institute Tote Bag" }],
@@ -100,9 +100,9 @@ const toteBags = [
 
   {
     name: "Printed Institute Tote Bags",
-    slug: "printed-institute-tote-bags",
+    slug: "printed-Institute-tote-bags",
     description:
-      "Promote your coaching institute wherever you go with Printed Tote Bags featuring your logo, tagline, or custom designs. Ideal for admission drives, giveaways, and events — blending functionality with impactful branding.",
+      "Promote your Coaching Institute wherever you go with Printed Tote Bags featuring your logo, tagline, or custom designs. Ideal for admission drives, giveaways, and events — blending functionality with impactful branding.",
     price: 229,
     salePrice: 199,
     images: [{ url: "/assets/totebags/13.webp", altText: "Printed Institute Tote Bag" }],
@@ -125,7 +125,7 @@ const toteBags = [
     seo: {
       metaTitle: "Printed Institute Tote Bags",
       metaDescription:
-        "High-quality printed tote bags with institute branding — stylish and affordable.",
+        "High-quality printed tote bags with Institute branding — stylish and affordable.",
       keywords: ["printed tote bags", "logo tote bags", "promotional tote bags"],
     },
   },
@@ -157,16 +157,16 @@ const toteBags = [
     seo: {
       metaTitle: "Promotional Tote Bags",
       metaDescription:
-        "Eco-friendly promotional tote bags — durable, stylish, and sustainable for institutes.",
+        "Eco-friendly promotional tote bags — durable, stylish, and sustainable for Institutes.",
       keywords: ["eco tote bags", "jute tote bags", "promotional bags"],
     },
   },
 
   {
     name: "Custom Logo Institute Tote Bags",
-    slug: "custom-logo-institute-tote-bags",
+    slug: "custom-logo-Institute-tote-bags",
     description:
-      "Showcase your coaching institute’s professionalism with Custom Logo Tote Bags featuring premium printing or embroidery. Ideal for everyday use, workshops, and promotional events — a perfect reflection of your brand’s professionalism.",
+      "Showcase your Coaching Institute’s professionalism with Custom Logo Tote Bags featuring premium printing or embroidery. Ideal for everyday use, workshops, and promotional events — a perfect reflection of your brand’s professionalism.",
     price: 379,
     salePrice: 349,
     images: [{ url: "/assets/totebags/19.webp", altText: "Custom Logo Tote Bag" }],
@@ -189,7 +189,7 @@ const toteBags = [
     seo: {
       metaTitle: "Custom Logo Institute Tote Bags",
       metaDescription:
-        "Premium custom logo tote bags with high-quality printing or embroidery — perfect for institutes.",
+        "Premium custom logo tote bags with high-quality printing or embroidery — perfect for Institutes.",
       keywords: ["custom logo tote bags", "embroidered bags", "branding bags"],
     },
   },

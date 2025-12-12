@@ -3,7 +3,7 @@ const graduationHoods = [
     name: "Custom Graduation Hoods",
     slug: "custom-graduation-hoods",
     description:
-      "Celebrate your coaching institute’s achievements with Custom Graduation Hoods. Personalize them with your logo, name, or brand colors to give students, faculty, and staff a polished, professional, and memorable look during graduation and award ceremonies.",
+      "Celebrate your Coaching Institute’s achievements with Custom Graduation Hoods. Personalize them with your logo, name, or brand colors to give students, faculty, and staff a polished, professional, and memorable look during graduation and award ceremonies.",
     price: 499,
     salePrice: 459,
     images: [{ url: "/assets/graduationhoods/1.webp", altText: "Custom Graduation Hood" }],
@@ -26,7 +26,7 @@ const graduationHoods = [
     seo: {
       metaTitle: "Custom Graduation Hoods",
       metaDescription:
-        "Custom-designed graduation hoods personalized with institute branding and colors.",
+        "Custom-designed graduation hoods personalized with Institute branding and colors.",
       keywords: ["custom graduation hoods", "convocation hood", "graduation wear"],
     },
   },
@@ -35,7 +35,7 @@ const graduationHoods = [
     name: "Branding Graduation Hoods",
     slug: "branding-graduation-hoods",
     description:
-      "Enhance your institute’s identity with Branding Graduation Hoods designed for students, teachers, and staff. These elegant hoods add a touch of class and professionalism, reflecting your institute’s pride and reputation.",
+      "Enhance your Institute’s identity with Branding Graduation Hoods designed for students, teachers, and staff. These elegant hoods add a touch of class and professionalism, reflecting your Institute’s pride and reputation.",
     price: 469,
     salePrice: 439,
     images: [{ url: "/assets/graduationhoods/4.webp", altText: "Branding Graduation Hood" }],
@@ -58,7 +58,7 @@ const graduationHoods = [
     seo: {
       metaTitle: "Branding Graduation Hoods",
       metaDescription:
-        "High-quality branding graduation hoods for institutes and universities.",
+        "High-quality branding graduation hoods for Institutes and universities.",
       keywords: ["branding hoods", "graduation ceremony wear"],
     },
   },
@@ -67,7 +67,7 @@ const graduationHoods = [
     name: "Printed Graduation Hoods",
     slug: "printed-graduation-hoods",
     description:
-      "Promote your coaching institute’s brand with Printed Graduation Hoods featuring your logo or event design. Ideal for graduation days, farewell events, and photography sessions.",
+      "Promote your Coaching Institute’s brand with Printed Graduation Hoods featuring your logo or event design. Ideal for graduation days, farewell events, and photography sessions.",
     price: 449,
     salePrice: 419,
     images: [{ url: "/assets/graduationhoods/7.webp", altText: "Printed Graduation Hood" }],
@@ -90,7 +90,7 @@ const graduationHoods = [
     seo: {
       metaTitle: "Printed Graduation Hoods",
       metaDescription:
-        "Printed graduation hoods with institute logos and themed designs.",
+        "Printed graduation hoods with Institute logos and themed designs.",
       keywords: ["printed hoods", "graduation print wear"],
     },
   }

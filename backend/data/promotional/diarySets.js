@@ -3,7 +3,7 @@ const diarySets = [
         name: "Custom Diary Sets",
         slug: "custom-diary-sets",
         description:
-            "Keep your coaching institute’s organization and branding professional with Custom Diary Sets. Personalize each diary with your logo, name, or colors to create a cohesive and elegant look for students, faculty, and staff.",
+            "Keep your Coaching Institute’s organization and branding professional with Custom Diary Sets. Personalize each diary with your logo, name, or colors to create a cohesive and elegant look for students, faculty, and staff.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/diarysets/1.webp", altText: "Custom Diary Set" }],
@@ -26,8 +26,8 @@ const diarySets = [
         seo: {
             metaTitle: "Custom Diary Sets",
             metaDescription:
-                "Custom diary sets with institute branding, personalization, and elegant designs.",
-            keywords: ["custom diary sets", "personalized diaries", "coaching diaries"],
+                "Custom diary sets with Institute branding, personalization, and elegant designs.",
+            keywords: ["custom diary sets", "personalized diaries", "Coaching diaries"],
         },
     },
 
@@ -35,7 +35,7 @@ const diarySets = [
         name: "Branding Diary Sets",
         slug: "branding-diary-sets",
         description:
-            "Promote your institute’s identity with Branding Diary Sets designed for daily use and events. Durable and stylish, they are perfect for classrooms, workshops, seminars, and gifting while enhancing brand recognition.",
+            "Promote your Institute’s identity with Branding Diary Sets designed for daily use and events. Durable and stylish, they are perfect for classrooms, workshops, seminars, and gifting while enhancing brand recognition.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/diarysets/4.webp", altText: "Branding Diary Set" }],
@@ -57,7 +57,7 @@ const diarySets = [
         ratings: { average: 4.4, count: 180 },
         seo: {
             metaTitle: "Branding Diary Sets",
-            metaDescription: "Professional branding diary sets for events and institute use.",
+            metaDescription: "Professional branding diary sets for events and Institute use.",
             keywords: ["branding diaries", "event diaries", "professional diaries"],
         },
     },
@@ -66,7 +66,7 @@ const diarySets = [
         name: "Personalized Diary Sets",
         slug: "personalized-diary-sets",
         description:
-            "Make every plan and note memorable with Personalized Diary Sets crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create unique and thoughtful diaries for students and staff.",
+            "Make every plan and note memorable with Personalized Diary Sets crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create unique and thoughtful diaries for students and staff.",
         price: 399,
         salePrice: 379,
         images: [{ url: "/assets/diarysets/7.webp", altText: "Personalized Diary Set" }],
@@ -98,7 +98,7 @@ const diarySets = [
         name: "Printed Diary Sets",
         slug: "printed-diary-sets",
         description:
-            "Boost your institute’s branding with Printed Diary Sets featuring vibrant covers, logos, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional visibility.",
+            "Boost your Institute’s branding with Printed Diary Sets featuring vibrant covers, logos, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional visibility.",
         price: 249,
         salePrice: 229,
         images: [{ url: "/assets/diarysets/10.webp", altText: "Printed Diary Set" }],
@@ -130,7 +130,7 @@ const diarySets = [
         name: "Designer Diary Sets",
         slug: "designer-diary-sets",
         description:
-            "Stay stylish and professional with Designer Diary Sets made from premium-quality materials and modern designs. Perfect for students, faculty, and staff, they reflect your institute’s elegance and class.",
+            "Stay stylish and professional with Designer Diary Sets made from premium-quality materials and modern designs. Perfect for students, faculty, and staff, they reflect your Institute’s elegance and class.",
         price: 449,
         salePrice: 429,
         images: [{ url: "/assets/diarysets/13.webp", altText: "Designer Diary Set" }],
@@ -162,7 +162,7 @@ const diarySets = [
         name: "Custom Logo Diary Sets",
         slug: "custom-logo-diary-sets",
         description:
-            "Showcase your institute’s pride with Custom Logo Diary Sets featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, events, or staff recognition, these diaries serve as a lasting reminder of your institute’s professionalism and identity.",
+            "Showcase your Institute’s pride with Custom Logo Diary Sets featuring high-quality printing, embossing, or foil stamping. Ideal for gifting, events, or staff recognition, these diaries serve as a lasting reminder of your Institute’s professionalism and identity.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/diarysets/16.webp", altText: "Custom Logo Diary Set" }],

@@ -3,7 +3,7 @@ const graduationHats = [
     name: "Custom Graduation Hats",
     slug: "custom-graduation-hats",
     description:
-      "Celebrate your coaching institute’s success with Custom Graduation Hats. Personalize them with your institute’s logo, colors, or name to give students and faculty a memorable and professional convocation look.",
+      "Celebrate your Coaching Institute’s success with Custom Graduation Hats. Personalize them with your Institute’s logo, colors, or name to give students and faculty a memorable and professional convocation look.",
     price: 249,
     salePrice: 229,
     images: [{ url: "/assets/graduationhats/1.webp", altText: "Custom Graduation Hat" }],
@@ -28,7 +28,7 @@ const graduationHats = [
     name: "Branding Graduation Hats",
     slug: "branding-graduation-hats",
     description:
-      "Enhance your institute’s brand image with Branding Graduation Hats designed for students, faculty, and staff. These elegant caps add a professional touch to graduation ceremonies.",
+      "Enhance your Institute’s brand image with Branding Graduation Hats designed for students, faculty, and staff. These elegant caps add a professional touch to graduation ceremonies.",
     price: 229,
     salePrice: 209,
     images: [{ url: "/assets/graduationhats/4.webp", altText: "Branding Graduation Hat" }],
@@ -53,7 +53,7 @@ const graduationHats = [
     name: "Customized Graduation Hats",
     slug: "customized-graduation-hats",
     description:
-      "Make every graduation special with Customized Graduation Hats crafted for your institute. Add embroidery, logos, and brand colors for a unique and unified convocation appearance.",
+      "Make every graduation special with Customized Graduation Hats crafted for your Institute. Add embroidery, logos, and brand colors for a unique and unified convocation appearance.",
     price: 269,
     salePrice: 249,
     images: [{ url: "/assets/graduationhats/7.webp", altText: "Customized Graduation Hat" }],
@@ -78,7 +78,7 @@ const graduationHats = [
     name: "Printed Graduation Hats",
     slug: "printed-graduation-hats",
     description:
-      "Promote your institute’s identity with Printed Graduation Hats featuring your logo or custom designs — perfect for ceremonies, photoshoots, and farewell events.",
+      "Promote your Institute’s identity with Printed Graduation Hats featuring your logo or custom designs — perfect for ceremonies, photoshoots, and farewell events.",
     price: 239,
     salePrice: 219,
     images: [{ url: "/assets/graduationhats/10.webp", altText: "Printed Graduation Hat" }],
@@ -128,7 +128,7 @@ const graduationHats = [
     name: "Custom Logo Graduation Hats",
     slug: "custom-logo-graduation-hats",
     description:
-      "Showcase your institute’s branding with Custom Logo Graduation Hats featuring premium printing or embroidery — ideal for polished convocation events.",
+      "Showcase your Institute’s branding with Custom Logo Graduation Hats featuring premium printing or embroidery — ideal for polished convocation events.",
     price: 279,
     salePrice: 259,
     images: [{ url: "/assets/graduationhats/15.webp", altText: "Custom Logo Graduation Hat" }],

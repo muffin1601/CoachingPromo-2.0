@@ -3,7 +3,7 @@ const planners = [
         name: "Custom Planners",
         slug: "custom-planners",
         description:
-            "Keep your coaching institute organized and professional with Custom Planners. Personalize each planner with your logo, name, or tagline to create a practical and elegant tool for students, faculty, and staff.",
+            "Keep your Coaching Institute organized and professional with Custom Planners. Personalize each planner with your logo, name, or tagline to create a practical and elegant tool for students, faculty, and staff.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/planners/1.webp", altText: "Custom Planner" }],
@@ -26,8 +26,8 @@ const planners = [
         seo: {
             metaTitle: "Custom Planners",
             metaDescription:
-                "Custom planners with institute branding, personalization, and elegant designs.",
-            keywords: ["custom planners", "personalized planners", "coaching planners"],
+                "Custom planners with Institute branding, personalization, and elegant designs.",
+            keywords: ["custom planners", "personalized planners", "Coaching planners"],
         },
     },
 
@@ -35,7 +35,7 @@ const planners = [
         name: "Branding Planners",
         slug: "branding-planners",
         description:
-            "Promote your institute’s identity with Branding Planners designed for daily use, workshops, and events. Durable and stylish, they are perfect for planning, scheduling, and enhancing your institute’s brand visibility.",
+            "Promote your Institute’s identity with Branding Planners designed for daily use, workshops, and events. Durable and stylish, they are perfect for planning, scheduling, and enhancing your Institute’s brand visibility.",
         price: 249,
         salePrice: 229,
         images: [{ url: "/assets/planners/4.webp", altText: "Branding Planner" }],
@@ -67,7 +67,7 @@ const planners = [
         name: "Personalized Planners",
         slug: "personalized-planners",
         description:
-            "Make every day organized and memorable with Personalized Planners crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create unique and thoughtful planners for students and staff.",
+            "Make every day organized and memorable with Personalized Planners crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create unique and thoughtful planners for students and staff.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/planners/7.webp", altText: "Personalized Planner" }],
@@ -99,7 +99,7 @@ const planners = [
         name: "Printed Planners",
         slug: "printed-planners",
         description:
-            "Boost your institute’s recognition with Printed Planners featuring logos, inscriptions, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional branding.",
+            "Boost your Institute’s recognition with Printed Planners featuring logos, inscriptions, or slogans. Ideal for classrooms, offices, events, and gifting — combining functionality with professional branding.",
         price: 199,
         salePrice: 179,
         images: [{ url: "/assets/planners/10.webp", altText: "Printed Planner" }],
@@ -131,7 +131,7 @@ const planners = [
         name: "Designer Planners",
         slug: "designer-planners",
         description:
-            "Stay stylish and productive with Designer Planners made from premium materials and modern layouts. Perfect for students, faculty, and staff, they reflect your institute’s elegance and commitment to excellence.",
+            "Stay stylish and productive with Designer Planners made from premium materials and modern layouts. Perfect for students, faculty, and staff, they reflect your Institute’s elegance and commitment to excellence.",
         price: 399,
         salePrice: 379,
         images: [{ url: "/assets/planners/13.webp", altText: "Designer Planner" }],
@@ -163,7 +163,7 @@ const planners = [
         name: "Custom Logo Planners",
         slug: "custom-logo-planners",
         description:
-            "Showcase your institute’s pride with Custom Logo Planners featuring high-quality printing, embossing, or engraving. Ideal for gifting, events, or daily use, these planners serve as a lasting symbol of your institute’s professionalism and organized approach.",
+            "Showcase your Institute’s pride with Custom Logo Planners featuring high-quality printing, embossing, or engraving. Ideal for gifting, events, or daily use, these planners serve as a lasting symbol of your Institute’s professionalism and organized approach.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/planners/16.webp", altText: "Custom Logo Planner" }],

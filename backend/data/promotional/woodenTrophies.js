@@ -3,7 +3,7 @@ const woodenTrophies = [
         name: "Custom Wooden Trophies",
         slug: "custom-wooden-trophies",
         description:
-            "Keep your coaching institute’s achievements celebrated in style with Custom Wooden Trophies. Personalize each trophy with your logo, name, or tagline to create a prestigious and elegant award for students, staff, and faculty.",
+            "Keep your Coaching Institute’s achievements celebrated in style with Custom Wooden Trophies. Personalize each trophy with your logo, name, or tagline to create a prestigious and elegant award for students, staff, and faculty.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/woodentrophies/1.webp", altText: "Custom Wooden Trophy" }],
@@ -34,7 +34,7 @@ const woodenTrophies = [
         name: "Branding Wooden Trophies",
         slug: "branding-wooden-trophies",
         description:
-            "Promote your institute’s identity with Branding Wooden Trophies designed for award ceremonies, events, and competitions. Durable and stylish, they are perfect for recognizing excellence while enhancing your institute’s brand visibility.",
+            "Promote your Institute’s identity with Branding Wooden Trophies designed for award ceremonies, events, and competitions. Durable and stylish, they are perfect for recognizing excellence while enhancing your Institute’s brand visibility.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/woodentrophies/3.webp", altText: "Branding Wooden Trophy" }],
@@ -65,7 +65,7 @@ const woodenTrophies = [
         name: "Personalized Wooden Trophies",
         slug: "personalized-wooden-trophies",
         description:
-            "Make every achievement memorable with Personalized Wooden Trophies crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create unique and thoughtful awards for students and faculty.",
+            "Make every achievement memorable with Personalized Wooden Trophies crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create unique and thoughtful awards for students and faculty.",
         price: 399,
         salePrice: 379,
         images: [{ url: "/assets/woodentrophies/5.webp", altText: "Personalized Wooden Trophy" }],
@@ -96,7 +96,7 @@ const woodenTrophies = [
         name: "Printed Wooden Trophies",
         slug: "printed-wooden-trophies",
         description:
-            "Boost your institute’s recognition with Printed Wooden Trophies featuring logos, inscriptions, or slogans. Ideal for awards, events, and gifting — combining elegance with professional visibility.",
+            "Boost your Institute’s recognition with Printed Wooden Trophies featuring logos, inscriptions, or slogans. Ideal for awards, events, and gifting — combining elegance with professional visibility.",
         price: 279,
         salePrice: 259,
         images: [{ url: "/assets/woodentrophies/7.webp", altText: "Printed Wooden Trophy" }],
@@ -127,7 +127,7 @@ const woodenTrophies = [
         name: "Designer Wooden Trophies",
         slug: "designer-wooden-trophies",
         description:
-            "Stay stylish and prestigious with Designer Wooden Trophies made from premium wood and modern designs. Perfect for ceremonies, staff recognition, and student awards, they reflect your institute’s class and excellence.",
+            "Stay stylish and prestigious with Designer Wooden Trophies made from premium wood and modern designs. Perfect for ceremonies, staff recognition, and student awards, they reflect your Institute’s class and excellence.",
         price: 499,
         salePrice: 479,
         images: [{ url: "/assets/woodentrophies/9.webp", altText: "Designer Wooden Trophy" }],
@@ -158,7 +158,7 @@ const woodenTrophies = [
         name: "Custom Logo Wooden Trophies",
         slug: "custom-logo-wooden-trophies",
         description:
-            "Showcase your institute’s pride with Custom Logo Wooden Trophies featuring high-quality engraving or embossing. Ideal for gifting, awards, or event recognition, these trophies serve as a lasting symbol of your institute’s professionalism and achievements.",
+            "Showcase your Institute’s pride with Custom Logo Wooden Trophies featuring high-quality engraving or embossing. Ideal for gifting, awards, or event recognition, these trophies serve as a lasting symbol of your Institute’s professionalism and achievements.",
         price: 349,
         salePrice: 329,
         images: [{ url: "/assets/woodentrophies/11.webp", altText: "Custom Logo Wooden Trophy" }],

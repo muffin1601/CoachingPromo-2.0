@@ -3,7 +3,7 @@ const stressBalls = [
         name: "Custom Stress Balls",
         slug: "custom-stress-balls",
         description:
-            "Enhance focus and reduce anxiety at your coaching institute with Custom Stress Balls. Personalize each stress ball with your logo, name, or colors to create a fun and branding way to promote relaxation among students and staff.",
+            "Enhance focus and reduce anxiety at your Coaching Institute with Custom Stress Balls. Personalize each stress ball with your logo, name, or colors to create a fun and branding way to promote relaxation among students and staff.",
         price: 149,
         salePrice: 129,
         images: [{ url: "/assets/stressballs/1.webp", altText: "Custom Stress Ball" }],
@@ -26,7 +26,7 @@ const stressBalls = [
         seo: {
             metaTitle: "Custom Stress Balls",
             metaDescription:
-                "Custom stress balls with institute branding for relaxation and focus.",
+                "Custom stress balls with Institute branding for relaxation and focus.",
             keywords: ["custom stress balls", "relaxation balls", "branding stress balls"],
         },
     },
@@ -35,7 +35,7 @@ const stressBalls = [
         name: "Personalized Stress Balls",
         slug: "personalized-stress-balls",
         description:
-            "Make stress relief personal with Personalized Stress Balls customized with individual names, institute logos, or motivational quotes. Ideal for gifting to students, faculty, or event participants.",
+            "Make stress relief personal with Personalized Stress Balls customized with individual names, Institute logos, or motivational quotes. Ideal for gifting to students, faculty, or event participants.",
         price: 179,
         salePrice: 159,
         images: [{ url: "/assets/stressballs/4.webp", altText: "Personalized Stress Ball" }],

@@ -3,7 +3,7 @@ const mobileStands = [
         name: "Custom Mobile Stands",
         slug: "custom-mobile-stands",
         description:
-            "Keep your coaching institute’s workspaces organized and professional with Custom Mobile Stands. Personalize each stand with your logo, name, or tagline to create a functional and stylish accessory for students, faculty, and staff.",
+            "Keep your Coaching Institute’s workspaces organized and professional with Custom Mobile Stands. Personalize each stand with your logo, name, or tagline to create a functional and stylish accessory for students, faculty, and staff.",
         price: 199,
         salePrice: 179,
         images: [{ url: "/assets/mobilestands/1.webp", altText: "Custom Mobile Stand" }],
@@ -26,7 +26,7 @@ const mobileStands = [
         seo: {
             metaTitle: "Custom Mobile Stands",
             metaDescription:
-                "Custom mobile stands with institute branding and personalization options.",
+                "Custom mobile stands with Institute branding and personalization options.",
             keywords: ["custom mobile stands", "personalized mobile stand", "desk stand"],
         },
     },
@@ -34,7 +34,7 @@ const mobileStands = [
         name: "Branding Mobile Stands",
         slug: "branding-mobile-stands",
         description:
-            "Promote your institute’s identity with Branding Mobile Stands designed for classrooms, offices, and events. Durable and sleek, they enhance device accessibility while maintaining your institute’s professional image.",
+            "Promote your Institute’s identity with Branding Mobile Stands designed for classrooms, offices, and events. Durable and sleek, they enhance device accessibility while maintaining your Institute’s professional image.",
         price: 149,
         salePrice: 129,
         images: [{ url: "/assets/mobilestands/4.webp", altText: "Branding Mobile Stand" }],
@@ -58,7 +58,7 @@ const mobileStands = [
             metaTitle: "Branding Mobile Stands",
             metaDescription:
                 "Branding mobile stands for classrooms, events, offices, and promotions.",
-            keywords: ["branding mobile stands", "event mobile stands", "institute stands"],
+            keywords: ["branding mobile stands", "event mobile stands", "Institute stands"],
         },
     },
 
@@ -66,7 +66,7 @@ const mobileStands = [
         name: "Personalized Mobile Stands",
         slug: "personalized-mobile-stands",
         description:
-            "Make every desk and workspace unique with Personalized Mobile Stands crafted exclusively for your coaching institute. Add individual names, institute logos, or motivational quotes to create thoughtful and practical accessories.",
+            "Make every desk and workspace unique with Personalized Mobile Stands crafted exclusively for your Coaching Institute. Add individual names, Institute logos, or motivational quotes to create thoughtful and practical accessories.",
         price: 249,
         salePrice: 229,
         images: [{ url: "/assets/mobilestands/7.webp", altText: "Personalized Mobile Stand" }],
@@ -98,7 +98,7 @@ const mobileStands = [
         name: "Printed Mobile Stands",
         slug: "printed-mobile-stands",
         description:
-            "Boost your institute’s branding with Printed Mobile Stands featuring vibrant logos, designs, or slogans. Ideal for classrooms, faculty desks, reception areas, and gifting — combining practicality with high visibility.",
+            "Boost your Institute’s branding with Printed Mobile Stands featuring vibrant logos, designs, or slogans. Ideal for classrooms, faculty desks, reception areas, and gifting — combining practicality with high visibility.",
         price: 129,
         salePrice: 109,
         images: [{ url: "/assets/mobilestands/10.webp", altText: "Printed Mobile Stand" }],
@@ -130,7 +130,7 @@ const mobileStands = [
         name: "Designer Mobile Stands",
         slug: "designer-mobile-stands",
         description:
-            "Stay stylish and professional with Designer Mobile Stands made from premium materials and modern designs. Perfect for faculty tables, student areas, and offices, they reflect your institute’s elegance and functionality.",
+            "Stay stylish and professional with Designer Mobile Stands made from premium materials and modern designs. Perfect for faculty tables, student areas, and offices, they reflect your Institute’s elegance and functionality.",
         price: 299,
         salePrice: 279,
         images: [{ url: "/assets/mobilestands/13.webp", altText: "Designer Mobile Stand" }],
@@ -161,7 +161,7 @@ const mobileStands = [
         name: "Custom Logo Mobile Stands",
         slug: "custom-logo-mobile-stands",
         description:
-            "Showcase your institute’s pride with Custom Logo Mobile Stands. Featuring high-quality printing or engraving, these stands help keep workspaces organized while promoting your institute’s identity.",
+            "Showcase your Institute’s pride with Custom Logo Mobile Stands. Featuring high-quality printing or engraving, these stands help keep workspaces organized while promoting your Institute’s identity.",
         price: 249,
         salePrice: 229,
         images: [{ url: "/assets/mobilestands/16.webp", altText: "Custom Logo Mobile Stand" }],
@@ -192,7 +192,7 @@ const mobileStands = [
         name: "Eco-Friendly Mobile Stands",
         slug: "eco-friendly-mobile-stands",
         description:
-            "Support sustainability with Eco-Friendly Mobile Stands made from recycled and biodegradable materials. Ideal for environmentally conscious institutes looking to combine functionality with responsibility.",
+            "Support sustainability with Eco-Friendly Mobile Stands made from recycled and biodegradable materials. Ideal for environmentally conscious Institutes looking to combine functionality with responsibility.",
         price: 199,
         salePrice: 179,
         images: [{ url: "/assets/mobilestands/19.webp", altText: "Eco-Friendly Mobile Stand" }],
