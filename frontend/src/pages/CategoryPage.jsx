@@ -75,7 +75,7 @@ const CategoryPage = () => {
 
   const metaDescription =
     category?.seo?.metaDescription ||
-    `Explore premium ${category.name} at CoachingPromo. Custom printing, branded merchandise, and promotional gifts for coaching institutes, schools, and colleges.`;
+    `Explore premium ${category.name} at CoachingPromo. Custom printing, branded merchandise, and promotional gifts for Coaching institutes, schools, and colleges.`;
 
   const metaKeywords =
     category?.seo?.keywords?.length > 0

@@ -24,7 +24,7 @@ const CategoryFAQ = ({ categoryName }) => {
     },
     {
       q: `Do you offer bulk pricing for ${categoryName} orders?`,
-      a: `Yes, we offer tier-based bulk pricing to help institutes, schools, and coaching centers save more on large orders.`,
+      a: `Yes, we offer tier-based bulk pricing to help institutes, schools, and Coaching centers save more on large orders.`,
     },
   ];
 

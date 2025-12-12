@@ -14,12 +14,12 @@ const WhyChooseUsSubcategory = ({ subcategoryName }) => {
     {
       icon: BadgeCheck,
       title: "Trusted by Top Institutes",
-      desc: `Leading coaching centers, schools, and colleges across India prefer our ${subcategoryName} for branding, events, and student kits.`,
+      desc: `Leading Coaching centers, schools, and colleges across India prefer our ${subcategoryName} for branding, events, and student kits.`,
     },
     {
       icon: Sparkles,
       title: "Premium Customization",
-      desc: `High-quality logo printing, institute branding, and personalization available on all ${subcategoryName}.`,
+      desc: `High-quality logo printing, Institute branding, and personalization available on all ${subcategoryName}.`,
     },
     {
       icon: Truck,
@@ -29,7 +29,7 @@ const WhyChooseUsSubcategory = ({ subcategoryName }) => {
     {
       icon: Handshake,
       title: "Bulk Order Pricing",
-      desc: `Special pricing and bulk discounts for coaching institutes, academic organizations, and training centers.`,
+      desc: `Special pricing and bulk discounts for Coaching institutes, academic organizations, and training centers.`,
     },
     {
       icon: ShieldCheck,
@@ -51,7 +51,7 @@ const WhyChooseUsSubcategory = ({ subcategoryName }) => {
 
       <p className="why-subcat-subtitle">
         Reliable, high-quality, and fully customizable {subcategoryName} for
-        coaching institutes, schools, colleges, training academies, and
+        Coaching institutes, schools, colleges, training academies, and
         educational brands across India.
       </p>
 

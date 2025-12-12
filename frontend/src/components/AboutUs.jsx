@@ -10,7 +10,7 @@ const AboutUs = () => {
         <h1>About CoachingPromo – India’s Leading Institute Branding Partner</h1>
         <p>
           CoachingPromo is India’s most trusted provider of customized promotional
-          merchandise for coaching institutes, schools, colleges, universities, and
+          merchandise for Coaching institutes, schools, colleges, universities, and
           corporate training organizations. We help institutions strengthen their
           identity with high-quality branded gifts, apparel, and event merchandise.
         </p>
@@ -66,7 +66,7 @@ const AboutUs = () => {
       <section className="about-mission">
         <h2>Our Mission</h2>
         <p>
-          To simplify institute branding with premium, meaningful, and high-quality
+          To simplify Institute branding with premium, meaningful, and high-quality
           promotional products that inspire students, create lasting impressions, and
           build institutional pride. We focus on creativity, innovation, and fast
           delivery—making merchandising easy and affordable for every organization.
@@ -78,7 +78,7 @@ const AboutUs = () => {
 
         <div className="timeline-item">
           <h4>2015</h4>
-          <p>Began offering creative branding solutions for coaching institutes.</p>
+          <p>Began offering creative branding solutions for Coaching institutes.</p>
         </div>
         <div className="timeline-item">
           <h4>2018</h4>
@@ -86,7 +86,7 @@ const AboutUs = () => {
         </div>
         <div className="timeline-item">
           <h4>2022</h4>
-          <p>Reached 500+ coaching centers, colleges & universities across India.</p>
+          <p>Reached 500+ Coaching centers, colleges & universities across India.</p>
         </div>
         <div className="timeline-item">
           <h4>Today</h4>
@@ -104,7 +104,7 @@ const AboutUs = () => {
         <div className="faq-item-1">
           <h4>Do you provide customized merchandise for all types of institutes?</h4>
           <p>
-            Yes, we work with coaching centers, colleges, schools, universities, and training companies across India.
+            Yes, we work with Coaching centers, colleges, schools, universities, and training companies across India.
           </p>
         </div>
 

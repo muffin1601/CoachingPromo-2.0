@@ -10,7 +10,7 @@ const WhyChooseUsCategory = ({ categoryName }) => {
 
       <p className="whycat-description">
         At CoachingPromo, we specialize in delivering high-quality, fully customizable 
-        <strong> {categoryName} </strong> products that help coaching institutes, 
+        <strong> {categoryName} </strong> products that help Coaching institutes, 
         schools, colleges, and training organizations strengthen their branding. 
         Here’s why thousands of institutions trust us.
       </p>
@@ -30,7 +30,7 @@ const WhyChooseUsCategory = ({ categoryName }) => {
           <Sparkles className="whycat-icon" size={36} />
           <h3>Custom Branding</h3>
           <p>
-            Your institute logos, colors, and themes are applied with precision 
+            Your Institute logos, colors, and themes are applied with precision 
             for perfect branding and memorable presentation.
           </p>
         </div>
@@ -48,7 +48,7 @@ const WhyChooseUsCategory = ({ categoryName }) => {
           <ShieldCheck className="whycat-icon" size={36} />
           <h3>Trusted by 500+ Institutes</h3>
           <p>
-            From coaching centers to universities, institutions choose us for 
+            From Coaching centers to universities, institutions choose us for 
             reliable service, quality, and competitive pricing.
           </p>
         </div>

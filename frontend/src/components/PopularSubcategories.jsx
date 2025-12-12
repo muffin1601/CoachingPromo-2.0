@@ -133,7 +133,7 @@ const PopularSubcategories = () => {
 
       <p className="popsub-subtext">
         Explore high-demand apparel, bags, promotional items & stationery used by
-        leading coaching institutes, schools, colleges & training centers across India.
+        leading Coaching institutes, schools, colleges & training centers across India.
       </p>
 
       <div className="popsub-slider">
@@ -163,7 +163,7 @@ const PopularSubcategories = () => {
                     <img
                       src={sub.image}
                       className="popsub-img"
-                      alt={`${sub.name} for coaching institutes, schools and educational organizations`}
+                      alt={`${sub.name} for Coaching institutes, schools and educational organizations`}
                     />
                     <span className="parent-chip">{sub.category}</span>
                   </div>

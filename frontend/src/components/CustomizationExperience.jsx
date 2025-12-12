@@ -12,7 +12,7 @@ const CustomizationExperience = () => {
       img: "/round.webp",
       bg: "#fff6e8ff",
       alt:
-        "custom round neck t shirt for coaching institutes schools colleges logo printing",
+        "custom round neck t shirt for Coaching institutes schools colleges logo printing",
     },
     {
       title:

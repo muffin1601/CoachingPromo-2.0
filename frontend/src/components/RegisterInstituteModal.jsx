@@ -31,7 +31,7 @@ const RegisterInstituteModal = ({ isOpen, onClose }) => {
 
       await axios.post(`${import.meta.env.VITE_API_URL}/send-email`, formData);
 
-      toast.success("Thank you! Your institute registration request has been submitted.");
+      toast.success("Thank you! Your Institute registration request has been submitted.");
 
       setFormData({
         name: "",
@@ -125,7 +125,7 @@ const RegisterInstituteModal = ({ isOpen, onClose }) => {
 
           <textarea
             name="message"
-            placeholder="Tell us more about your institute & requirements"
+            placeholder="Tell us more about your Institute & requirements"
             value={formData.message}
             onChange={handleChange}
             className="enquiry-textarea"

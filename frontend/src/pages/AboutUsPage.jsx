@@ -20,7 +20,7 @@ const AboutUsPage = () => {
         <title>About Us | CoachingPromo</title>
         <meta
           name="description"
-          content="Learn about CoachingPromo – India's trusted supplier for custom T-shirts, bags, student kits, event merchandise and promotional products for coaching institutes, schools, colleges and universities."
+          content="Learn about CoachingPromo – India's trusted supplier for custom T-shirts, bags, student kits, event merchandise and promotional products for Coaching institutes, schools, colleges and universities."
         />
         <link rel="canonical" href="https://coachingpromo.in/about" />
       </Helmet>

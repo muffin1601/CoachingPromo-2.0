@@ -71,8 +71,8 @@ const ContactUs = () => {
           </div>
           <h3 className="contactus-card-title">Our Email Address</h3>
           <p className="contactus-card-text">
-            <a href="mailto:sales@coachingpromo.com" className="contactus-link">
-              sales@coachingpromo.com
+            <a href="mailto:sales@Coachingpromo.com" className="contactus-link">
+              sales@Coachingpromo.com
             </a>
             <br />
             <a href="mailto:sales@mfglobalservices.com" className="contactus-link">

@@ -41,7 +41,7 @@ const BlogList = () => {
         <title>Blogs | CoachingPromo</title>
         <meta
           name="description"
-          content="Explore CoachingPromo blogs for insights on institute promotional products, customization tips, and branding ideas for schools, colleges, and universities."
+          content="Explore CoachingPromo blogs for insights on Institute promotional products, customization tips, and branding ideas for schools, colleges, and universities."
         />
         <link rel="canonical" href="https://coachingpromo.in/blogs" />
       </Helmet>

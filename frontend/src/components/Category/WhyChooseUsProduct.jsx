@@ -15,12 +15,12 @@ const WhyChooseUsProduct = ({ productName, subcategoryName, categoryName }) => {
     {
       icon: BadgeCheck,
       title: "Trusted by Top Institutes Across India",
-      desc: `Schools, coaching institutes, colleges, and universities rely on us for premium-quality ${productName} and consistent branding.`,
+      desc: `Schools, Coaching institutes, colleges, and universities rely on us for premium-quality ${productName} and consistent branding.`,
     },
     {
       icon: Sparkles,
       title: `High-Quality Customization`,
-      desc: `Get vibrant logo printing, embroidery, personalization, and institute branding on all ${subcategoryName}. Long-lasting and professional finish guaranteed.`,
+      desc: `Get vibrant logo printing, embroidery, personalization, and Institute branding on all ${subcategoryName}. Long-lasting and professional finish guaranteed.`,
     },
     {
       icon: ShieldCheck,
@@ -35,7 +35,7 @@ const WhyChooseUsProduct = ({ productName, subcategoryName, categoryName }) => {
     {
       icon: Handshake,
       title: "Bulk Order Pricing",
-      desc: `Special bulk discounts for coaching institutes, training centers, universities, and event organizers ordering large quantities.`,
+      desc: `Special bulk discounts for Coaching institutes, training centers, universities, and event organizers ordering large quantities.`,
     },
     {
       icon: Headset,
@@ -51,7 +51,7 @@ const WhyChooseUsProduct = ({ productName, subcategoryName, categoryName }) => {
       </h2>
 
       <p className="wcu-product-subtitle">
-        Delivering premium-quality {subcategoryName} for coaching institutes, schools,
+        Delivering premium-quality {subcategoryName} for Coaching institutes, schools,
         colleges, universities, and training centers across India.
       </p>
 

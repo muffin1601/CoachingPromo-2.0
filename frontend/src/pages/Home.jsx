@@ -28,7 +28,7 @@ const Home = () => {
         <title>Promotional Products for Coaching Institutes – CoachingPromo</title>
         <meta
           name="description"
-          content="Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your coaching brand today!"
+          content="Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your Coaching brand today!"
         />
         <link rel="canonical" href="https://coachingpromo.in/" />
       </Helmet>

@@ -115,7 +115,7 @@ const SingleProductPage = () => {
         }
         description={
           product?.seo?.metaDescription ||
-          `Order ${product?.name} for coaching institutes, schools and colleges. Custom printing and bulk pricing available.`
+          `Order ${product?.name} for Coaching institutes, schools and colleges. Custom printing and bulk pricing available.`
         }
         keywords={
           product?.seo?.keywords?.join(",") ||

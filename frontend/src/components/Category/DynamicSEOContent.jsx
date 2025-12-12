@@ -16,7 +16,7 @@ const DynamicSEOContent = ({ slug }) => {
       {/* INTRO */}
       <p className="seo-dynamic-p">
         {productName} are one of the most popular branding choices for{" "}
-        <mark>coaching institutes</mark>,{" "}
+        <mark>Coaching institutes</mark>,{" "}
         <mark>colleges</mark>, <mark>universities</mark>, and{" "}
         <mark>training academies</mark> across India. They help strengthen your
         institute’s identity and provide a professional, trustworthy look to
@@ -47,7 +47,7 @@ const DynamicSEOContent = ({ slug }) => {
       </p>
 
       {/* USE CASES */}
-      <h3 className="seo-dynamic-h3">
+      {/* <h3 className="seo-dynamic-h3">
         Best Use Cases for {productName} in Educational Institutes
       </h3>
       <ul className="seo-dynamic-ul">
@@ -56,8 +56,8 @@ const DynamicSEOContent = ({ slug }) => {
         <li>Seminars & academic events</li>
         <li>Open houses & orientation programs</li>
         <li>Examination drives</li>
-        <li>University clubs & activity groups</li>
-      </ul>
+        <li>University clubs & activity groups</li>CD ..
+      </ul> */}
 
       {/* BENEFITS */}
       <h3 className="seo-dynamic-h3">
@@ -73,7 +73,7 @@ const DynamicSEOContent = ({ slug }) => {
       {/* ORDER */}
       <h3 className="seo-dynamic-h3">Ordering & Delivery</h3>
       <p className="seo-dynamic-p">
-        We offer fast delivery across India with bulk pricing for coaching
+        We offer fast delivery across India with bulk pricing for Coaching
         centres and universities. Share your logo, quantity, and requirements to
         receive a <mark>free mockup</mark> and quotation.
       </p>

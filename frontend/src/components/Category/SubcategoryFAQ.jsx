@@ -4,12 +4,12 @@ import "./SubcategoryFAQ.css";
 const SubcategoryFAQ = ({ subcategoryName }) => {
   const faqs = [
     {
-      q: `What types of ${subcategoryName} are available for coaching institutes and schools?`,
-      a: `We offer a variety of ${subcategoryName} designed for coaching institutes, schools, colleges, and training centers. All products support custom printing, logo branding, and bulk ordering.`,
+      q: `What types of ${subcategoryName} are available for Coaching institutes and schools?`,
+      a: `We offer a variety of ${subcategoryName} designed for Coaching institutes, schools, colleges, and training centers. All products support custom printing, logo branding, and bulk ordering.`,
     },
     {
       q: `Do you provide logo printing and customization on all ${subcategoryName}?`,
-      a: `Yes. We offer full customization on all ${subcategoryName} including logo printing, institute branding, student personalization, event printing, and corporate-style finishing.`,
+      a: `Yes. We offer full customization on all ${subcategoryName} including logo printing, Institute branding, student personalization, event printing, and corporate-style finishing.`,
     },
     {
       q: `Is bulk ordering available for ${subcategoryName}?`,
@@ -29,7 +29,7 @@ const SubcategoryFAQ = ({ subcategoryName }) => {
     },
     {
       q: `Do you ship customized ${subcategoryName} across India?`,
-      a: `Yes. We offer reliable Pan-India shipping to coaching institutes, schools, colleges, training organizations, and companies in every major city.`,
+      a: `Yes. We offer reliable Pan-India shipping to Coaching institutes, schools, colleges, training organizations, and companies in every major city.`,
     },
   ];
 

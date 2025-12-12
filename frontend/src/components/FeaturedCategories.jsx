@@ -22,28 +22,28 @@ const staticCategories = [
     title: "Custom Apparel for Institutes, Staff & Students",
     slug: "apparel-accessories",
     image: "/assets/category/apparel.webp",
-    alt: "custom apparel for coaching institutes, staff uniforms and student clothing",
+    alt: "custom apparel for Coaching institutes, staff uniforms and student clothing",
     items: 12,
   },
   {
     title: "Custom Logo Bags for Students & Faculty",
     slug: "bags",
     image: "/assets/category/bag.webp",
-    alt: "coaching institute bags, student welcome kit bags, personalized backpacks",
+    alt: "Coaching Institute bags, student welcome kit bags, personalized backpacks",
     items: 8,
   },
   {
     title: "Promotional Products for Coaching Centers & Education Brands",
     slug: "promotional-items",
     image: "/assets/category/promotional-items.webp",
-    alt: "promotional items for coaching centers, institute branding products and marketing merchandise",
+    alt: "promotional items for Coaching centers, Institute branding products and marketing merchandise",
     items: 15,
   },
   {
     title: "Customized Stationery for Coaching Institutes & Schools",
     slug: "stationery",
     image: "/assets/category/stationery.webp",
-    alt: "custom stationery kits for coaching institutes, schools and student study centers",
+    alt: "custom stationery kits for Coaching institutes, schools and student study centers",
     items: 20,
   },
 ];
@@ -71,7 +71,7 @@ const FeaturedCategories = () => {
 
       <p className="featured-subtitle">
         Explore a wide range of customizable products, merchandise, and promotional kits 
-        designed exclusively for coaching centers, schools, colleges, and training institutes across India.
+        designed exclusively for Coaching centers, schools, colleges, and training institutes across India.
       </p>
 
       <Swiper

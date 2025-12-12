@@ -13,7 +13,7 @@ const ExitIntentPopup = () => {
       href: "/customize/roundneck",
       img: "/round.webp",
       alt:
-        "custom round neck t shirt for coaching institutes schools colleges logo printing",
+        "custom round neck t shirt for Coaching institutes schools colleges logo printing",
     },
     {
       title:
@@ -49,7 +49,7 @@ const ExitIntentPopup = () => {
 
         <h2 className="exit-title">Customize Your T-Shirts Instantly</h2>
         <p className="exit-subtitle">
-          Add logo, change colors & preview live — trusted by coaching institutes, schools & colleges across India.
+          Add logo, change colors & preview live — trusted by Coaching institutes, schools & colleges across India.
         </p>
 
         <div className="exit-cards">

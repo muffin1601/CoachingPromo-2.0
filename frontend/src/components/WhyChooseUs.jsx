@@ -14,7 +14,7 @@ const features = [
   { 
     title: "Lowest MOQ for Institutes", 
     icon: BadgeCheck, 
-    desc: "Place small-quantity orders perfect for coaching institutes, schools, colleges, and training centers without extra premium charges." 
+    desc: "Place small-quantity orders perfect for Coaching institutes, schools, colleges, and training centers without extra premium charges." 
   },
   { 
     title: "Bulk Discounts for Education Orders", 
@@ -24,22 +24,22 @@ const features = [
   { 
     title: "Fast & Reliable Delivery", 
     icon: Truck, 
-    desc: "Pan-India quick dispatch ensuring timely delivery to coaching institutes, academies, and educational organizations." 
+    desc: "Pan-India quick dispatch ensuring timely delivery to Coaching institutes, academies, and educational organizations." 
   },
   { 
     title: "Custom Printing & Branding", 
     icon: Sparkles, 
-    desc: "Full customization with logo printing, institute branding, student personalization, and promotional design support." 
+    desc: "Full customization with logo printing, Institute branding, student personalization, and promotional design support." 
   },
   { 
     title: "Pan-India Institute Coverage", 
     icon: Globe, 
-    desc: "We supply coaching centers, schools, colleges, and universities across every region in India." 
+    desc: "We supply Coaching centers, schools, colleges, and universities across every region in India." 
   },
   { 
     title: "Dedicated Expert Support", 
     icon: Headset, 
-    desc: "Expert assistance for product selection, branding, order planning, and institute requirements." 
+    desc: "Expert assistance for product selection, branding, order planning, and Institute requirements." 
   },
 ];
 
@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
         </h2>
 
         <p className="wcu-subtitle-2">
-          Trusted by coaching institutes, schools, and colleges across India — we
+          Trusted by Coaching institutes, schools, and colleges across India — we
           deliver top-quality custom merchandise, fast service, and unmatched pricing.
         </p>
       </div>

@@ -83,7 +83,7 @@ const SubcategoryPage = () => {
 
   const metaDescription =
     subcategory?.seo?.metaDescription ||
-    `Discover premium ${subcategory.name} under ${category?.name}. Perfect for coaching institutes, schools, colleges, and events with custom branding options.`;
+    `Discover premium ${subcategory.name} under ${category?.name}. Perfect for Coaching institutes, schools, colleges, and events with custom branding options.`;
 
   const metaKeywords =
     subcategory?.seo?.keywords?.length > 0

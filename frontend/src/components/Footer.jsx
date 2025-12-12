@@ -27,8 +27,8 @@ const Footer = () => {
 
           <p className="footer-text" itemProp="description">
             Coaching Promo is India’s leading supplier of
-            <strong>custom T-shirts, hoodies, student kits, event merchandise, diaries, bottles, and trophies</strong>
-            for coaching institutes, schools, colleges, and universities. We help education brands elevate their identity with premium customized products.
+            <strong> custom T-shirts, hoodies, student kits, event merchandise, diaries, bottles, and trophies</strong>
+            for Coaching Institutes, Schools, Colleges, and Universities. We help education brands elevate their identity with premium customized products.
           </p>
         </div>
 
@@ -157,10 +157,10 @@ const Footer = () => {
 
         {/* Hidden SEO Keywords for Google */}
         <p className="visually-hidden">
-          Custom merchandise for coaching institutes, branded T-shirts India, corporate gifting for schools,
+          Custom merchandise for Coaching institutes, branded T-shirts India, corporate gifting for schools,
           promotional products supplier Delhi NCR, custom event kits India, onboarding kits for colleges,
           student welcome kits, custom hoodies, branded diaries, custom bottles, corporate awards,
-          trophy manufacturer India, educational institute branding.
+          trophy manufacturer India, educational Institute branding.
         </p>
       </div>
 

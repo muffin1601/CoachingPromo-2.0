@@ -4,16 +4,16 @@ import "./ProductFAQ.css";
 const ProductFAQ = ({ productName, subcategoryName }) => {
   const faqs = [
     {
-      q: `What makes these ${productName} suitable for coaching institutes and colleges?`,
-      a: `Our ${productName} are designed specifically for educational institutions. They offer high durability, professional branding, and comfort for daily classroom and campus use. Perfect for coaching staff, students, university events, and academic branding.`,
+      q: `What makes these ${productName} suitable for Coaching institutes and colleges?`,
+      a: `Our ${productName} are designed specifically for educational institutions. They offer high durability, professional branding, and comfort for daily classroom and campus use. Perfect for Coaching staff, students, university events, and academic branding.`,
     },
     {
-      q: `Can we customize the ${productName} with our institute logo or event details?`,
-      a: `Yes, all ${subcategoryName} support full customization. You can add institute logos, batch names, event branding, departments, or student personalization using high-quality print or embroidery.`,
+      q: `Can we customize the ${productName} with our Institute logo or event details?`,
+      a: `Yes, all ${subcategoryName} support full customization. You can add Institute logos, batch names, event branding, departments, or student personalization using high-quality print or embroidery.`,
     },
     {
-      q: `Do you offer bulk pricing for large institute orders?`,
-      a: `Absolutely. CoachingPromo offers competitive bulk pricing for coaching centers, colleges, universities, and training academies. The more you order, the better the price.`,
+      q: `Do you offer bulk pricing for large Institute orders?`,
+      a: `Absolutely. CoachingPromo offers competitive bulk pricing for Coaching centers, colleges, universities, and training academies. The more you order, the better the price.`,
     },
     {
       q: `What is the delivery timeline for custom ${productName}?`,
