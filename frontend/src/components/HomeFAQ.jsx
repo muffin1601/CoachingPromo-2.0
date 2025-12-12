@@ -5,11 +5,11 @@ const HomeFAQ = () => {
   const faqs = [
     {
       q: "What types of custom merchandise do you provide for Coaching institutes and schools?",
-      a: "We offer a wide range of products including custom T-shirts, polo uniforms, student welcome kits, tote bags, notebooks, branded stationery, bottles, trophies, and promotional items. All products are tailored specifically for Coaching institutes, schools, colleges, and educational centers across India."
+      a: "We offer a wide range of products including custom T-shirts, uniforms, student welcome kits, tote bags, notebooks, branded stationery, bottles, trophies, and promotional items. All products are tailored specifically for Coaching Institutes, Schools, Colleges, and Educational centers across India."
     },
     {
       q: "Can I order custom T-shirts and uniforms with my Coaching Institute logo?",
-      a: "Yes, you can fully customize round-neck T-shirts, polo T-shirts, hoodies, jackets, and staff uniforms with your Institute logo, name, tagline, and colors. Our printing options include screen printing, DTF, embroidery, and premium digital printing."
+      a: "Yes, you can fully customize round-neck T-shirts, polo T-shirts, hoodies, jackets, and staff uniforms with your Institute logo, name, tagline, and colors. Our printing options include screen printing, embroidery, and premium digital printing."
     },
     {
       q: "Do you provide student welcome kits for Coaching centers and colleges?",

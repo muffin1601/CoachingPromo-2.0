@@ -52,9 +52,9 @@ const Navbar = () => {
                 <img src="/logo.webp" alt="Coaching Promo" className="logo-image" />
               </div>
 
-              <div className="visitor-count desktop-only">
+              {/* <div className="visitor-count desktop-only">
                 Visitors: {visitorCount ? visitorCount : "..."}
-              </div>
+              </div> */}
             </div>
 
             {/* RIGHT SECTION */}

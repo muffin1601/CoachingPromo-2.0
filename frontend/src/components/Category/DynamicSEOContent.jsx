@@ -16,9 +16,8 @@ const DynamicSEOContent = ({ slug }) => {
       {/* INTRO */}
       <p className="seo-dynamic-p">
         {productName} are one of the most popular branding choices for{" "}
-        <mark>Coaching institutes</mark>,{" "}
-        <mark>colleges</mark>, <mark>universities</mark>, and{" "}
-        <mark>training academies</mark> across India. They help strengthen your
+        <mark>coaching <iframe src="" frameborder="0"></iframe>nstitutes</mark>,{" "}
+        <mark>colleges</mark>, and{" "} <mark>universities</mark> across India. They help strengthen your
         institute’s identity and provide a professional, trustworthy look to
         students, staff, and faculty members.
       </p>
