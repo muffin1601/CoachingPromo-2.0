@@ -11,8 +11,8 @@ const ContactPage = () => {
   return (
     <>
     <SEO
-        title="Contact CoachingPromo | Corporate & Custom Gifting Solutions"
-        description="Get in touch with Printkee for corporate gifting, custom merchandise, bulk orders, and branding solutions. Our team is ready to assist you."
+        title="CoachingPromo | Corporate & Promotional Gifting Delhi "
+        description="Get in touch with CoachingPromo for custom corporate gifts, promotional items, diaries, calendars & branding solutions in Delhi NCR. Call or WhatsApp now."
         keywords="contact printkee, corporate gifting contact, custom merchandise support, bulk gifting enquiry"
         canonical={canonicalURL}
       />
