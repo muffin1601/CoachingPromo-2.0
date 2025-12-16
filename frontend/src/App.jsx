@@ -45,6 +45,7 @@ const ProductManager = lazy(() =>
 // Utilities
 import ScrollToTop from "./utils/ScrollToTop";
 import ProtectedRoute from "./utils/ProtectedRoute";
+import Chatbot from "./components/Chatbot/Chatbot";
 
 // Skeleton fallback for smoother UX
 const Loader = () => (
@@ -70,6 +71,7 @@ const LayoutWrapper = ({ children }) => {
 
       {!isAdmin && (
         <Suspense fallback={<Loader />}>
+          <Chatbot />
           <SupplyCities />
           <Footer />
           <FloatingButtons />

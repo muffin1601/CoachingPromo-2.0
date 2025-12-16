@@ -1,0 +1,240 @@
+.chat-launcher-wrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.chat-launcher-bubble {
+  position: relative;
+  background: var(--white);
+  color: var(--text-dark);
+  padding: 10px 15px;
+  border: 2px solid var(--light-border);
+  border-radius: 25px;
+  box-shadow: var(--shadow-soft);
+  max-width: 240px;
+  animation: bubbleFloat 3.5s ease-in-out infinite;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.chat-launcher-bubble::after {
+  content: "";
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 14px;
+  height: 14px;
+  background: var(--white);
+  /* border-right: 2px solid var(--light-border);
+  border-bottom: 2px solid var(--light-border); */
+}
+
+.bubble-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.bubble-hidden {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+.launcher-text {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.chat-launcher {
+  position: relative;
+  width: 66px;
+  height: 66px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: var(--brand-blue);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 0 0 rgba(8, 60, 113, 0.45),
+    var(--shadow-medium);
+  animation: launcherPulse 3s infinite;
+  transition: var(--transition);
+}
+
+.chat-launcher:hover {
+  background: var(--brand-blue-dark);
+}
+
+.launcher-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.launcher-icon {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--brand-orange);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--white);
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes launcherPulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(8, 60, 113, 0.45),
+      var(--shadow-medium);
+  }
+  70% {
+    box-shadow:
+      0 0 0 14px rgba(8, 60, 113, 0),
+      var(--shadow-medium);
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(8, 60, 113, 0),
+      var(--shadow-medium);
+  }
+}
+
+/* ===============================
+   RESPONSIVE CHAT LAUNCHER
+================================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .chat-launcher-wrapper {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .chat-launcher {
+    width: 60px;
+    height: 60px;
+  }
+
+  .launcher-avatar {
+    width: 48px;
+    height: 48px;
+  }
+
+  .launcher-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .chat-launcher-bubble {
+    max-width: 220px;
+    font-size: 13px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .chat-launcher-wrapper {
+    bottom: 16px;
+    right: 16px;
+    gap: 10px;
+  }
+
+  .chat-launcher {
+    width: 56px;
+    height: 56px;
+  }
+
+  .launcher-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .launcher-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .chat-launcher-bubble {
+    padding: 8px 12px;
+    max-width: 200px;
+  }
+
+  .launcher-text {
+    font-size: 13px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .chat-launcher-wrapper {
+    bottom: 14px;
+    right: 14px;
+  }
+
+  /* Hide bubble for clean mobile UX */
+  .chat-launcher-bubble {
+    display: none;
+  }
+
+  .chat-launcher {
+    width: 54px;
+    height: 54px;
+  }
+
+  .launcher-avatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .launcher-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .chat-launcher {
+    width: 50px;
+    height: 50px;
+  }
+
+  .launcher-avatar {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .chat-launcher-wrapper {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

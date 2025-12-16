@@ -13,9 +13,9 @@ import categories from "../data/categories";
 import axios from "axios";
 import Sidebar from "./Sidebar";
 
-/*  LAZY LOAD HEAVY MODALS */
+
 const EnquiryModal = lazy(() => import("./EnquiryModal"));
-const RegisterInstituteModal = lazy(() => import("./RegisterInstituteModal"));
+const RegisterInstituteModal = lazy(() => import("./RegisterInstituteModal")); 
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

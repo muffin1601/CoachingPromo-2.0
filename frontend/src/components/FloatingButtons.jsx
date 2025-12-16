@@ -51,9 +51,9 @@ const FloatingButtons = () => {
         </button>
       )}
 
-      {/* RIGHT — REGISTER + WHATSAPP + ENQUIRY */}
-      <div className="floatingRight">
-        {/* REGISTER INSTITUTE */}
+      
+      {/* <div className="floatingRight">
+        
         <button
           onClick={() => setIsRegisterOpen(true)}
           className="floatingBtn registerBtn-1"
@@ -62,7 +62,7 @@ const FloatingButtons = () => {
           <GraduationCap size={28} />
         </button>
 
-        {/* WHATSAPP */}
+        
         <a
           href="https://wa.me/918750708222"
           target="_blank"
@@ -73,7 +73,7 @@ const FloatingButtons = () => {
           <FaWhatsapp size={28} />
         </a>
 
-        {/* ENQUIRY */}
+        
         <div className="enquiryHint">
           <PhoneCall size={16} strokeWidth={2.5} />
           Request a Call
@@ -87,7 +87,7 @@ const FloatingButtons = () => {
         </button>
       </div>
 
-      {/* MODALS — Lazy Rendered */}
+       */}
       <Suspense fallback={null}>
         {isEnquiryOpen && (
           <EnquiryModal

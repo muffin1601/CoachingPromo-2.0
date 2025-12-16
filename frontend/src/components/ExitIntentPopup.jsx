@@ -62,8 +62,9 @@ const ExitIntentPopup = () => {
                   {item.offer} <ArrowRight size={18} />
                 </a>
               </div>
+1
 
-              <div className="exit-imgwrap">
+              <div className="exit-imgwrap">.1  
                 <img src={item.img} alt={item.alt} className="exit-img" />
               </div>
             </div>
