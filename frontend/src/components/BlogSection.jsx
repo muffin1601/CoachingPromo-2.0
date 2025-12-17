@@ -13,6 +13,17 @@ const BlogSection = () => {
       .catch((err) => console.error(err));
   }, []);
 
+  const formatDate = (dateStr) => {
+  if (!dateStr) return "";
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+};
+
+
   return (
     <section className="blog-section">
 
@@ -26,7 +37,7 @@ const BlogSection = () => {
               <span className="blog-chip">{b.tag || "Promotional Branding"}</span>
 
               <p className="blog-meta">
-                By {b.author} &nbsp; • &nbsp; {b.date}
+                By {b.author} &nbsp; • &nbsp; {formatDate(b.date)}
               </p>
 
               <h3 className="blog-heading">{b.title}</h3>

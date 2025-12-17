@@ -2,6 +2,8 @@ import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "../styles/SingleProductPage.css";
+import SubcategoryStaticContent from "../components/Category/SubcategoryStaticContent";
+
 
 import {
   Heart,
@@ -290,6 +292,8 @@ const SingleProductPage = () => {
       {/* ========= Lazy Loaded Page Extras ========= */}
 
       <Suspense fallback={<div></div>}>
+      <SubcategoryStaticContent subSlug={subSlug} />
+
         {shouldShowCustomize && <CustomizationExperience />}
 
         <WhyChooseUsProduct
