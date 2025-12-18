@@ -137,6 +137,81 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
+"hoodies-jackets": `
+<section class="subcategory-static-content">
+  <h2>{{PRODUCT_NAME}}</h2>
+
+  <p>
+    {{PRODUCT_NAME}} are designed to provide warmth, comfort, and a professional appearance
+    for educational institutions, coaching centers, and corporate organizations. Suitable for
+    winter seasons and air-conditioned environments, these hoodies and jackets combine
+    functionality with modern styling. Made from premium-quality fabric with strong stitching,
+    they ensure durability, long-term use, and everyday comfort. Ideal for students, faculty,
+    staff, and promotional campaigns, these garments help institutions maintain uniformity
+    while enhancing brand visibility across campuses, events, and professional settings.
+  </p>
+
+  <p>
+    With custom logo branding and versatile design options, these hoodies and jackets create
+    a polished and contemporary identity while offering practical value for daily wear and
+    outdoor activities.
+  </p>
+
+  <h3>Customization & Branding Details</h3>
+
+  <p>
+    {{PRODUCT_NAME}} can be fully customized to align with your institute or organization’s
+    branding requirements.
+  </p>
+
+  <p>Available branding options include:</p>
+
+  <ul>
+    <li>Front chest logo printing or embroidery</li>
+    <li>Back-side institute or company name</li>
+    <li>Sleeve branding (optional)</li>
+    <li>Custom colors matching brand identity</li>
+  </ul>
+
+  <p>Customization methods available:</p>
+
+  <ul>
+    <li>Screen Printing</li>
+    <li>Heat Transfer Printing</li>
+    <li>Embroidery (recommended for premium finish)</li>
+  </ul>
+
+  <h3>Use Cases / Applications</h3>
+
+  <p>{{PRODUCT_NAME}} are widely used for:</p>
+
+  <ul>
+    <li>Student & Faculty Winter Wear</li>
+    <li>Coaching Institute & College Uniforms</li>
+    <li>Corporate Staff Jackets & Hoodies</li>
+    <li>Promotional & Branding Campaigns</li>
+    <li>Seminars, Workshops & Outdoor Events</li>
+  </ul>
+
+  <h3>Bulk Order & Pricing Information</h3>
+
+  <p>
+    {{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:
+  </p>
+
+  <ul>
+    <li>Order quantity</li>
+    <li>Fabric type, thickness, and lining</li>
+    <li>Printing or embroidery method</li>
+    <li>Number of branding locations</li>
+  </ul>
+
+  <p>
+    For exact pricing, please use the Get Free Quote option and share your requirements.
+    Bulk orders receive competitive pricing with assured quality and timely delivery.
+  </p>
+</section>
+`,
 "uniform-jackets": `
 <section class="subcategory-static-content">
   <h2>{{PRODUCT_NAME}}</h2>
