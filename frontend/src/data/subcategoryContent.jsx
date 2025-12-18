@@ -1,22 +1,24 @@
 export const subcategoryContent = {
   "polo-t-shirts": `
 <section class="subcategory-static-content">
-  <h2>Institute Events Polo T-Shirts</h2>
-
-  <p><strong>Polo T-Shirt for Institute and college</strong></p>
+  <h2>{{PRODUCT_NAME}} for Institutes and Colleges</h2>
 
   <p>
-    Institute Events Polo T-Shirts are specially designed for schools, colleges,
-    coaching institutes, and professional events. These polo T-shirts come with a
-    comfortable fit, premium-quality fabric, and custom logo printing, giving your
-    institute a professional and uniform appearance. Ideal for bulk orders, these
-    T-shirts are durable, long-lasting, and suitable for regular and daily use.
-  </p>
+  {{PRODUCT_NAME}} are specially designed for schools, colleges, coaching institutes,
+  and professional events where a smart and uniform appearance is essential. These
+  polo t-shirts offer a comfortable fit with premium-quality fabric that ensures
+  breathability, durability, and long-lasting wear even with regular use. With
+  high-quality custom logo printing options, institutes can showcase their branding
+  clearly and professionally. Ideal for bulk orders, these t-shirts maintain color,
+  shape, and print quality over time, making them perfect for daily wear, staff
+  uniforms, student events, promotional activities, and large-scale institutional
+  requirements.
+</p>
 
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Institute Events Polo T-Shirts can be fully customized with your institute’s logo,
+    {{PRODUCT_NAME}} can be fully customized with your institute’s logo,
     event name, or department branding.
   </p>
 
@@ -29,13 +31,11 @@ export const subcategoryContent = {
   </ul>
 
   <p>
-    These polo T-shirts can be customized using screen printing, heat transfer, or
+    These {{PRODUCT_NAME}} can be customized using screen printing, heat transfer, or
     embroidery methods, depending on the design and order quantity.
   </p>
 
   <h3>Use Cases / Applications</h3>
-
-  <p>These polo T-shirts are widely used for:</p>
 
   <ul>
     <li>School & College Events</li>
@@ -49,7 +49,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Institute Events Polo T-Shirts are available in bulk quantities. Pricing depends on:
+    {{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:
   </p>
 
   <ul>
@@ -65,17 +65,20 @@ export const subcategoryContent = {
 </section>
 `,
 
-  "round-neck-t-shirts": `
+ "round-neck-t-shirts": `
 <section class="subcategory-static-content">
-  <h2>Institute Events Round Neck T-Shirts</h2>
-
-  <p><strong>Round Neck T-Shirt for Institute and College</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Institute Events Round Neck T-Shirts are specially designed for schools, colleges, coaching
-    institutes, and corporate events. These round neck T-shirts offer a comfortable fit, breathable
-    premium-quality fabric, and high-quality custom logo printing, giving your institute a clean,
-    modern, and professional appearance.
+    {{PRODUCT_NAME}} are specially designed for schools, colleges, coaching
+    institutes, and corporate events where comfort and brand visibility are equally
+    important. These round neck t-shirts feature a comfortable fit combined with
+    breathable, premium-quality fabric that ensures all-day wearability. High-quality
+    custom logo printing helps institutes maintain a clean, modern, and professional
+    appearance during events, promotions, and daily activities. Ideal for bulk orders,
+    these t-shirts are durable, color-fast, and retain their shape and print quality
+    even after repeated use, making them suitable for regular event wear and daily
+    institutional requirements.
   </p>
 
   <p>
@@ -86,7 +89,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Institute Events Round Neck T-Shirts can be fully customized according to your institute’s
+    {{PRODUCT_NAME}} can be fully customized according to your institute’s
     branding requirements.
   </p>
 
@@ -119,7 +122,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Institute Events Round Neck T-Shirts are available in bulk quantities. Pricing depends on:
+    {{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:
   </p>
 
   <ul>
@@ -134,92 +137,19 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "hoodies-jackets": `
+"uniform-jackets": `
 <section class="subcategory-static-content">
-  <h2>Promotional Hoodies for Coaching</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Promotional Hoodies for Coaching Institutes</strong></p>
-
-  <p>
-    Promotional Hoodies for Coaching Institutes are designed to provide comfort, warmth, and
-    strong brand visibility during promotional campaigns and institutional events. Made from
-    premium-quality fabric, these hoodies offer a stylish fit with durable stitching and long-lasting
-    custom logo printing.
-  </p>
 
   <p>
-    Ideal for student promotions, staff uniforms, and winter branding campaigns, these hoodies
-    help create a modern and professional identity for coaching institutes and educational
-    organizations.
-  </p>
-
-  <h3>Customization & Branding Details</h3>
-
-  <p>
-    Promotional Hoodies can be fully customized to match your institute’s branding needs.
-  </p>
-
-  <p>Available branding options include:</p>
-
-  <ul>
-    <li>Front chest logo</li>
-    <li>Back-side institute name or tagline</li>
-    <li>Sleeve branding (optional)</li>
-  </ul>
-
-  <p>Customization methods available:</p>
-
-  <ul>
-    <li>Screen Printing</li>
-    <li>Heat Transfer Printing</li>
-    <li>Embroidery (recommended for premium look)</li>
-  </ul>
-
-  <p>
-    Customization method depends on design complexity and order quantity.
-  </p>
-
-  <h3>Use Cases / Applications</h3>
-
-  <p>These promotional hoodies are widely used for:</p>
-
-  <ul>
-    <li>Coaching Institute Promotions</li>
-    <li>Student & Faculty Winter Uniforms</li>
-    <li>Entrance Exam Campaigns</li>
-    <li>Seminars & Workshops</li>
-    <li>Brand Awareness Events</li>
-    <li>Corporate & Institutional Gifting</li>
-  </ul>
-
-  <h3>Bulk Order & Pricing Information</h3>
-
-  <p>Promotional Hoodies are available in bulk quantities. Pricing depends on:</p>
-
-  <ul>
-    <li>Order quantity</li>
-    <li>Fabric type and thickness</li>
-    <li>Printing or embroidery method</li>
-  </ul>
-
-  <p>
-    For exact pricing, please use the Get Free Quote option and share your requirements. Bulk
-    orders receive the best competitive pricing and timely delivery.
-  </p>
-</section>
-`,
-
-  "uniform-jackets": `
-<section class="subcategory-static-content">
-  <h2>Custom Nehru Jackets</h2>
-
-  <p><strong>Custom Nehru Jackets for College staff</strong></p>
-
-  <p>
-    Custom Nehru Jackets are a premium branding solution for corporate events, institutional
-    functions, and official gatherings. Designed with a classic Indian silhouette, these jackets offer a
-    professional and elegant look while showcasing your brand identity.
+    {{PRODUCT_NAME}} are a premium branding solution for corporate events,
+    institutional functions, and official gatherings. Designed with a classic Indian
+    silhouette, these jackets offer a professional and elegant appearance while
+    showcasing your brand identity. Crafted using high-quality fabric with fine
+    stitching, these jackets are ideal for leadership uniforms, formal ceremonies, and
+    premium promotional use, ensuring long-lasting wear and a refined institutional
+    presence.
   </p>
 
   <p>
@@ -230,7 +160,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Custom Nehru Jackets can be tailored and branded as per your organization’s requirements.
+    {{PRODUCT_NAME}} can be tailored and branded as per your organization’s requirements.
   </p>
 
   <p>Available customization options include:</p>
@@ -254,7 +184,7 @@ export const subcategoryContent = {
 
   <h3>Use Cases / Applications</h3>
 
-  <p>Custom Nehru Jackets are commonly used for:</p>
+  <p>{{PRODUCT_NAME}} are commonly used for:</p>
 
   <ul>
     <li>Corporate & Institutional Events</li>
@@ -267,7 +197,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Nehru Jackets are available for bulk orders. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available for bulk orders. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -281,18 +211,17 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "shirts": `
+"shirts": `
 <section class="subcategory-static-content">
-  <h2>Formal Shirts for Coaching Teachers</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Formal Shirts for Coaching Teachers & Institutional Staff</strong></p>
+
 
   <p>
-    Formal Shirts for Coaching Teachers are designed to create a professional, disciplined, and
-    polished appearance for faculty members. Made from premium-quality fabric, these shirts offer
-    all-day comfort, a smart fit, and long-lasting durability, making them ideal for regular teaching
-    hours and official institute events.
+    {{PRODUCT_NAME}} are designed to create a professional, disciplined, and
+    polished appearance for faculty members. Made from premium-quality fabric, these
+    shirts offer all-day comfort, a smart fit, and long-lasting durability, making them
+    ideal for regular teaching hours and official institute events.
   </p>
 
   <p>
@@ -303,7 +232,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Formal Shirts for Coaching Teachers can be customized as per institutional branding
+    {{PRODUCT_NAME}} can be customized as per institutional branding
     requirements.
   </p>
 
@@ -339,7 +268,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Formal Shirts for Coaching Teachers are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -353,18 +282,15 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "graduation-hat": `
+"graduation-hat": `
 <section class="subcategory-static-content">
-  <h2>Custom Graduation Hats</h2>
-
-  <p><strong>Custom Graduation Hats for Colleges & Universities</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Graduation Hats, also known as mortar boards, are an essential part of graduation
-    ceremonies for colleges, and universities. Designed for comfort and durability, these hats are
-    made from premium-quality materials and provide a perfect fit for students during convocation
-    and graduation events.
+    {{PRODUCT_NAME}}, also known as mortar boards, are an essential part of graduation
+    ceremonies for colleges and universities. Designed for comfort and durability,
+    these hats are made from premium-quality materials and provide a perfect fit for
+    students during convocation and graduation events.
   </p>
 
   <p>
@@ -375,7 +301,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Custom Graduation Hats can be personalized according to institutional requirements.
+    {{PRODUCT_NAME}} can be personalized according to institutional requirements.
   </p>
 
   <p>Available customization options include:</p>
@@ -396,7 +322,7 @@ export const subcategoryContent = {
 
   <h3>Use Cases / Applications</h3>
 
-  <p>Custom Graduation Hats are widely used for:</p>
+  <p>{{PRODUCT_NAME}} are widely used for:</p>
 
   <ul>
     <li>College Graduation Ceremonies</li>
@@ -407,7 +333,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Graduation Hats are available for bulk orders. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available for bulk orders. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -420,17 +346,15 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "graduation-gown": `
+"graduation-gown": `
 <section class="subcategory-static-content">
-  <h2>Custom Graduation Gowns</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Graduation Gowns for Convocation & Academic Ceremonies</strong></p>
 
   <p>
-    Custom Graduation Gowns are designed to offer a dignified and professional appearance during
-    graduation and convocation ceremonies. Crafted from high-quality, lightweight fabric, these
-    gowns ensure comfort while maintaining a formal academic look.
+    {{PRODUCT_NAME}} are designed to offer a dignified and professional appearance during
+    graduation and convocation ceremonies. Crafted from high-quality, lightweight fabric,
+    these gowns ensure comfort while maintaining a formal academic look.
   </p>
 
   <p>
@@ -441,7 +365,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Graduation Gowns can be customized as per academic requirements.
+    {{PRODUCT_NAME}} can be customized as per academic requirements.
   </p>
 
   <p>Available customization options include:</p>
@@ -461,7 +385,7 @@ export const subcategoryContent = {
 
   <h3>Use Cases / Applications</h3>
 
-  <p>Custom Graduation Gowns are used for:</p>
+  <p>{{PRODUCT_NAME}} are used for:</p>
 
   <ul>
     <li>College Convocation Ceremonies</li>
@@ -471,7 +395,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Graduation Gowns are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -484,17 +408,15 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "graduation-stole": `
+"graduation-stole": `
 <section class="subcategory-static-content">
-  <h2>Custom Graduation Stoles & Sashes</h2>
-
-  <p><strong>Custom Graduation Stoles & Sashes for Academic Ceremonies</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Graduation Stoles and Sashes add elegance and distinction to graduation ceremonies.
-    Designed to represent academic achievement, departments, or institutional identity, these stoles
-    and sashes are made from premium-quality fabric with a smooth finish and vibrant colors.
+    {{PRODUCT_NAME}} add elegance and distinction to graduation ceremonies.
+    Designed to represent academic achievement, departments, or institutional identity,
+    these stoles and sashes are made from premium-quality fabric with a smooth finish
+    and vibrant colors.
   </p>
 
   <p>
@@ -505,7 +427,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Graduation Stoles & Sashes can be fully customized.
+    {{PRODUCT_NAME}} can be fully customized.
   </p>
 
   <p>Available customization options include:</p>
@@ -525,7 +447,7 @@ export const subcategoryContent = {
 
   <h3>Use Cases / Applications</h3>
 
-  <p>These stoles and sashes are commonly used for:</p>
+  <p>{{PRODUCT_NAME}} are commonly used for:</p>
 
   <ul>
     <li>College Graduation Ceremonies</li>
@@ -535,7 +457,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Graduation Stoles & Sashes are available for bulk orders. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available for bulk orders. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -548,17 +470,15 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "graduation-hood": `
+"graduation-hood": `
 <section class="subcategory-static-content">
-  <h2>Custom Graduation Hoods</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Graduation Hoods for Universities & Academic Institutions</strong></p>
 
   <p>
-    Custom Graduation Hoods are a traditional academic accessory used to signify degree levels,
-    faculties, and academic achievements. Made from premium-quality fabric, these hoods are
-    designed for comfort, durability, and an authentic ceremonial look.
+    {{PRODUCT_NAME}} are a traditional academic accessory used to signify degree levels,
+    faculties, and academic achievements. Made from premium-quality fabric, these hoods
+    are designed for comfort, durability, and an authentic ceremonial look.
   </p>
 
   <p>
@@ -568,7 +488,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Graduation Hoods can be customized as per academic standards.
+    {{PRODUCT_NAME}} can be customized as per academic standards.
   </p>
 
   <p>Available customization options include:</p>
@@ -588,7 +508,7 @@ export const subcategoryContent = {
 
   <h3>Use Cases / Applications</h3>
 
-  <p>Custom Graduation Hoods are used for:</p>
+  <p>{{PRODUCT_NAME}} are used for:</p>
 
   <ul>
     <li>University Convocation Ceremonies</li>
@@ -598,7 +518,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Graduation Hoods are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -611,16 +531,20 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-  "institute-backpacks": `
+"institute-backpacks": `
 <section class="subcategory-static-content">
-  <h2>Custom Institute Backpacks</h2>
-
-  <p><strong>Custom Institute Backpacks for Schools, Colleges & Coaching Institutes</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Institute Backpacks are designed to combine functionality, durability, and effective
-    brand visibility for educational institutions. Made from high-quality, sturdy materials, these
-    backpacks are suitable for daily student use while maintaining a professional institutional look.
+    {{PRODUCT_NAME}} are designed to combine functionality, durability, and effective
+    brand visibility for educational institutions. Made from high-quality, sturdy
+    materials, these backpacks are suitable for daily student use while maintaining
+    a professional institutional look. They are built to withstand regular academic
+    routines, heavy usage, and long-term wear while offering comfort and convenience.
+    With a well-balanced design and reinforced stitching, these backpacks support
+    books, laptops, and accessories efficiently, making them a reliable choice for
+    students, faculty members, and institutional staff across schools, colleges, and
+    coaching institutes.
   </p>
 
   <p>
@@ -631,7 +555,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Custom Institute Backpacks can be fully personalized to match your institute’s branding
+    {{PRODUCT_NAME}} can be fully personalized to match your institute’s branding
     requirements.
   </p>
 
@@ -667,7 +591,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Institute Backpacks are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -681,18 +605,19 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "jute-bag": `
+"jute-bag": `
 <section class="subcategory-static-content">
-  <h2>Custom Jute Bags</h2>
-
-  <p><strong>Custom Jute Bags for Institutional Branding</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Jute Bags are a sustainable and effective branding solution for schools, colleges,
-    coaching institutes, and corporate promotions. Made from high-quality natural jute fabric, these
-    bags are strong, reusable, and designed for long-term use, making them ideal for daily carrying
-    and promotional distribution.
+    {{PRODUCT_NAME}} are a sustainable and effective branding solution for schools,
+    colleges, coaching institutes, and corporate promotions. Made from high-quality
+    natural jute fabric, these bags are strong, reusable, and designed for long-term
+    use. They are ideal for daily carrying, event distribution, and promotional
+    campaigns while supporting eco-friendly practices. Their sturdy construction,
+    natural texture, and wide branding surface make them a preferred choice for
+    institutions looking to combine environmental responsibility with strong and
+    consistent brand visibility.
   </p>
 
   <p>
@@ -704,7 +629,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Custom Jute Bags can be personalized as per branding requirements.
+    {{PRODUCT_NAME}} can be personalized as per branding requirements.
   </p>
 
   <p>Available customization options include:</p>
@@ -717,7 +642,7 @@ export const subcategoryContent = {
 
   <h3>Use Cases / Applications</h3>
 
-  <p>Custom Jute Bags are widely used for:</p>
+  <p>{{PRODUCT_NAME}} are widely used for:</p>
 
   <ul>
     <li>School & College Events</li>
@@ -729,7 +654,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Jute Bags are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -742,17 +667,17 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "messenger-bags": `
+"messenger-bags": `
 <section class="subcategory-static-content">
-  <h2>Custom Messenger Bags</h2>
-
-  <p><strong>Custom Messenger Bags for Institutes & Corporate Branding</strong></p>
-
+  <h2>{{PRODUCT_NAME}}</h2>
   <p>
-    Custom Messenger Bags are a stylish and functional branding solution for educational
-    institutions and corporate organizations. Designed for daily use, these bags offer ample space
-    for books, documents, and laptops while maintaining a modern and professional look.
+    {{PRODUCT_NAME}} are a stylish and functional branding solution for educational
+    institutions and corporate organizations. Designed for daily use, these bags
+    provide ample space for books, documents, and laptops while maintaining a modern
+    and professional appearance. Built with durable materials and reinforced seams,
+    they are suitable for long-term usage by students, faculty members, and staff.
+    Their balanced design makes them ideal for academic routines, office work, and
+    institutional promotions across multiple environments.
   </p>
 
   <p>
@@ -763,7 +688,7 @@ export const subcategoryContent = {
   <h3>Customization & Branding Details</h3>
 
   <p>
-    Custom Messenger Bags can be fully customized.
+    {{PRODUCT_NAME}} can be fully customized.
   </p>
 
   <p>Available customization options include:</p>
@@ -785,7 +710,7 @@ export const subcategoryContent = {
 
   <h3>Use Cases / Applications</h3>
 
-  <p>These messenger bags are commonly used for:</p>
+  <p>{{PRODUCT_NAME}} are commonly used for:</p>
 
   <ul>
     <li>Student & Faculty Utility Bags</li>
@@ -796,7 +721,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Messenger Bags are available for bulk orders. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available for bulk orders. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -809,17 +734,18 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "tote-bag": `
+"tote-bag": `
 <section class="subcategory-static-content">
-  <h2>Custom Institute Tote Bags</h2>
-
-  <p><strong>Custom Institute Tote Bags for Promotional</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Institute Tote Bags are lightweight, practical, and cost-effective bags ideal for daily
-    use and promotional events. Made from durable fabric options such as canvas or cotton, these
-    tote bags offer ample space and comfortable handles for easy carrying.
+    {{PRODUCT_NAME}} are lightweight, practical, and cost-effective bags ideal for daily
+    use and promotional events. Made from durable fabric options such as canvas or cotton,
+    these tote bags offer ample storage space along with comfortable handles for easy
+    carrying. Designed for repeated use, they help reduce single-use plastics while
+    promoting your brand effectively. Their simple yet versatile design makes them suitable
+    for students, staff, and event attendees, ensuring consistent brand visibility during
+    academic programs, seminars, exhibitions, and institutional activities.
   </p>
 
   <p>
@@ -843,7 +769,7 @@ export const subcategoryContent = {
 
   <h3>Use Cases / Applications</h3>
 
-  <p>Custom Institute Tote Bags are widely used for:</p>
+  <p>{{PRODUCT_NAME}} are widely used for:</p>
 
   <ul>
     <li>College Events</li>
@@ -854,7 +780,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Institute Tote Bags are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -867,18 +793,19 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "mug": `
+"mug": `
 <section class="subcategory-static-content">
-  <h2>Custom Printed Mugs</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Printed Mugs for Institutional & Promotional Branding</strong></p>
 
   <p>
-    Custom Printed Mugs are a practical and popular branding solution for colleges, coaching
-    institutes, and office corporate promotions. Made from high-quality ceramic material, these
-    mugs are durable, long-lasting. With custom logo or message printing, mugs help enhance
-    brand visibility while offering a useful gifting option for events, staff.
+    {{PRODUCT_NAME}} are practical and popular branding solutions for colleges,
+    coaching institutes, and corporate promotions. Made from high-quality ceramic
+    material, these mugs are durable, long-lasting, and suitable for everyday use.
+    With custom logo or message printing, they help enhance brand visibility while
+    offering a functional gifting option. Ideal for staff, students, and event
+    participants, these mugs ensure repeated brand exposure during daily routines,
+    meetings, and office use.
   </p>
 
   <h3>Customization & Branding Details</h3>
@@ -902,7 +829,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Printed Mugs are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -915,18 +842,18 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "water-bottle": `
+"water-bottle": `
 <section class="subcategory-static-content">
-  <h2>Custom Water Bottles</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Water Bottles for office & Corporate Branding</strong></p>
 
   <p>
-    Custom Water Bottles are a useful and long-lasting promotional product for educational
-    institutions and office . Made from durable materials like plastic or steel, these bottles are ideal
-    for daily use while promoting your institute or office brand through custom logo printing. They
-    are suitable for, staff, and office employees, ensuring regular brand visibility.
+    {{PRODUCT_NAME}} are useful and long-lasting promotional products for educational
+    institutions and office environments. Made from durable materials such as plastic
+    or stainless steel, these bottles are ideal for daily use while promoting your
+    institute or office brand through custom logo printing. Suitable for students,
+    staff, and employees, they ensure repeated brand visibility while supporting
+    hydration during work, study, meetings, sports, and institutional events.
   </p>
 
   <p>
@@ -952,7 +879,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Water Bottle are available in bulk quantities. Pricing varies based on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing varies based on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -965,19 +892,18 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "diary-set": `
+"diary-set": `
 <section class="subcategory-static-content">
-  <h2>Custom Diary Sets for office</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Diary Sets for office & Institutional Branding</strong></p>
 
   <p>
-    Custom Water Bottles are a useful and long-lasting promotional product for educational
-    institutions and office environments. Made from durable materials like plastic or steel, these
-    bottles are ideal for daily use while promoting your institute or office brand through custom
-    logo printing. They are suitable for students, staff, and office employees, ensuring regular
-    brand visibility.
+    {{PRODUCT_NAME}} are practical and professional promotional items widely used in
+    educational institutions and office environments. Designed with quality paper,
+    durable covers, and refined finishing, these diary sets support daily note-taking,
+    planning, and record keeping. With custom logo branding, they enhance brand
+    visibility while offering long-term utility for students, teachers, and office
+    staff, making them ideal for academic sessions, corporate gifting, and events.
   </p>
 
   <h3>Customization & Branding Details</h3>
@@ -998,7 +924,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Diary Sets are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1011,23 +937,22 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "mobile-stand": `
+"mobile-stand": `
 <section class="subcategory-static-content">
-  <h2>Custom Mobile Stands</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Mobile Stands for Promotional Branding</strong></p>
 
   <p>
-    Custom Mobile Stands are compact and highly useful promotional items suitable for office use.
-    Designed to hold smartphones securely, they make video calls, online classes, and content
-    viewing more convenient.
+    {{PRODUCT_NAME}} are compact and highly useful promotional items suitable for
+    office and institutional use. Designed to hold smartphones securely, they make
+    video calls, online classes, meetings, and content viewing more convenient.
+    With custom logo branding, these mobile stands offer excellent brand recall
+    at an affordable cost while remaining visible on desks every day.
   </p>
 
   <p>
-    With logo branding, they offer excellent brand recall at an affordable cost. Ideal for offices,
-    educational institutions, and corporate gifting, these mobile stands add practicality while
-    keeping your brand visible every day.
+    Ideal for offices, educational institutions, and corporate gifting, these mobile stands add
+    practicality while keeping your brand visible every day.
   </p>
 
   <h3>Customization & Branding Details</h3>
@@ -1049,7 +974,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Mobile Stands are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1062,23 +987,18 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "planner": `
+"planner": `
 <section class="subcategory-static-content">
-  <h2>Custom Planners</h2>
-
-  <p><strong>Custom Planners for Academic & Corporate Use</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Planners help students, teachers, office staff, and professionals organize schedules
-    efficiently. Designed with premium paper and attractive branding, these planners offer both
-    functionality and strong brand visibility.
-  </p>
-
-  <p>
-    They are ideal for daily task planning, goal tracking, and academic or office use throughout the
-    year. Custom planners are widely used in institutes, offices, seminars, and corporate events,
-    making them a practical promotional item.
+    {{PRODUCT_NAME}} help students, teachers, office staff, and professionals organize
+    schedules efficiently and stay productive throughout the year. Designed with
+    premium-quality paper, structured layouts, and attractive branding, these planners
+    combine functionality with strong brand visibility. They support daily task
+    planning, goal tracking, academic scheduling, and office organization while serving
+    as a long-term promotional product. Widely used in institutes, offices, seminars,
+    and corporate events, planners ensure your brand remains visible every day.
   </p>
 
   <p>
@@ -1102,7 +1022,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Planners are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1115,20 +1035,20 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "stress-balls": `
+"stress-balls": `
 <section class="subcategory-static-content">
-  <h2>Custom Stress Balls</h2>
-
-  <p><strong>Custom Stress Balls for Promotional Campaigns</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Stress Balls are lightweight promotional products used to reduce stress while promoting
-    your brand. They are ideal for events, awareness campaigns, and corporate promotions.
+    {{PRODUCT_NAME}} are lightweight promotional products designed to reduce stress
+    while promoting your brand in a subtle and engaging way. These items are widely
+    used during events, awareness campaigns, and corporate promotions due to their
+    simplicity and effectiveness. Easy to carry and fun to use, stress balls are popular
+    among students, office staff, and professionals, helping improve focus while
+    creating positive brand association and long-lasting recall.
   </p>
 
   <p>
-    Easy to carry and use, stress balls are popular among students, office staff, and professionals.
     With logo branding, they help create a positive brand impression while supporting relaxation
     and focus.
   </p>
@@ -1149,7 +1069,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Stress Balls are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1162,16 +1082,18 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-  "magic-cube": `
+"magic-cube": `
 <section class="subcategory-static-content">
-  <h2>Custom Magic Cube</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Magic Cube for Branding & Giveaways</strong></p>
 
   <p>
-    Custom Magic Cube are interactive promotional items that attract attention and
-    increase engagement. They are fun, challenging, and suitable for students as
-    well as office professionals.
+    {{PRODUCT_NAME}} are interactive promotional items that attract attention and
+    increase engagement through fun and problem-solving activity. Suitable for
+    students as well as office professionals, these cubes offer entertainment while
+    promoting your brand. Logo branding on each side ensures repeated exposure and
+    long-term recall. Perfect for events, exhibitions, school promotions, and corporate
+    gifting, magic cubes make your brand memorable in a creative and innovative way.
   </p>
 
   <p>
@@ -1202,11 +1124,11 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Magic Cube are available for bulk orders at competitive pricing. Bulk
+    {{PRODUCT_NAME}} are available for bulk orders at competitive pricing. Bulk
     quantity options make them cost-effective for large campaigns and events.
   </p>
 
-  <p>Custom Magic Cube are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1219,17 +1141,19 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "photo-frame": `
+"photo-frame": `
 <section class="subcategory-static-content">
-  <h2>Custom Photo Frames</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Photo Frames for Institutional Gifting</strong></p>
 
   <p>
-    Custom Photo Frames are elegant gifting items ideal for awards, events, and
-    institutional recognition. Made with quality materials and fine finishing, they
-    enhance the value of photographs and certificates.
+    {{PRODUCT_NAME}} are elegant gifting items ideal for awards, events, and
+    institutional recognition programs. Crafted using quality materials with fine
+    finishing, these frames enhance the value of photographs, certificates, and
+    memorable moments. With custom logo branding or engraving, they add a
+    professional and premium touch to presentations. Widely used in offices,
+    corporate events, and employee recognition programs, photo frames help
+    preserve memories while strengthening brand identity.
   </p>
 
   <p>
@@ -1255,7 +1179,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Photo Frames are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1268,17 +1192,18 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "mouse-pad": `
+"mouse-pad": `
 <section class="subcategory-static-content">
-  <h2>Custom Mouse Pads</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Mouse Pads for Office & Promotional Use</strong></p>
 
   <p>
-    Custom Mouse Pads are practical desk accessories that provide continuous
-    brand exposure during daily use. Designed for smooth mouse movement and
-    comfort, they are ideal for office desks and study tables.
+    {{PRODUCT_NAME}} are practical desk accessories that provide continuous brand
+    exposure during daily use. Designed to ensure smooth mouse movement and
+    comfort, they improve work efficiency while keeping your brand visible on desks
+    throughout the day. Ideal for offices, institutes, seminars, and corporate
+    giveaways, mouse pads offer long-term promotional value with repeated brand
+    impressions in professional environments.
   </p>
 
   <p>
@@ -1303,7 +1228,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Mouse Pads are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1316,22 +1241,21 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-  "wall-clocks": `
+"wall-clocks": `
 <section class="subcategory-static-content">
-  <h2>Custom Clocks</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Wall Clocks for Instituti Branding</strong></p>
 
   <p>
-    Custom Wall Clocks are premium promotional products designed to keep your brand visible
-    every day. Available in both wall and table models, these clocks combine functionality with
-    effective marketing. Made from high-quality materials, they are durable, reliable, and
-    long-lasting, ensuring your brand stays in front of clients, employees, or students for years to
-    come.
+    {{PRODUCT_NAME}} are premium promotional products designed to keep your brand
+    visible every day. Available in wall and table models, these clocks combine
+    functionality with effective marketing. Made from high-quality materials, they
+    are durable, reliable, and long-lasting, ensuring your brand remains visible in
+    offices, classrooms, and institutions for years to come.
   </p>
 
   <p>
-    Perfect for corporate offices, classrooms, r these clocks are not just timekeepers but also
+    Perfect for corporate offices, classrooms, these clocks are not just timekeepers but also
     powerful branding tools that leave a lasting impression.
   </p>
 
@@ -1354,7 +1278,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Wall Clocks are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1368,19 +1292,19 @@ export const subcategoryContent = {
 
   <hr />
 
-  <p><strong>Custom Wall Clocks for Offices</strong></p>
+  <p><strong>{{PRODUCT_NAME}} for Offices</strong></p>
 
   <p>
-    Custom Wall Clocks are an excellent way to combine functionality with effective branding.
-    Designed to provide high brand visibility, these clocks not only help keep time accurately but
-    also serve as a constant reminder of your brand.
+    {{PRODUCT_NAME}} are an excellent way to combine functionality with effective
+    branding. Designed to provide high brand visibility, these clocks not only help
+    keep time accurately but also serve as a constant reminder of your brand.
   </p>
 
   <p>
     Ideal for institutions, offices, classrooms, and corporate spaces, they enhance the
-    professional look of any environment while subtly promoting your organization. Made with
-    durable materials and precise mechanisms, these clocks are long-lasting and practical,
-    making them a valuable addition to your branding strategy.
+    professional look of any environment while subtly promoting your organization.
+    Made with durable materials and precise mechanisms, these clocks are long-lasting
+    and practical.
   </p>
 
   <h3>Customization & Branding Details</h3>
@@ -1402,7 +1326,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Wall Clocks are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1415,25 +1339,21 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "table-clock": `
+"table-clock": `
 <section class="subcategory-static-content">
-  <h2>Custom Table Clocks</h2>
-
-  <p><strong>Custom Table Clocks for Corporate Gifting</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Table Clocks are premium desk accessories that combine style, functionality,
-    and effective branding. Perfect for offices, corporate spaces, and professional
-    environments, these clocks serve as both a practical timekeeping solution and a subtle
-    promotional tool.
+    {{PRODUCT_NAME}} are premium desk accessories that combine style, functionality,
+    and effective branding. Perfect for offices and professional environments, these
+    clocks serve as both a practical timekeeping solution and a subtle promotional tool.
+    Crafted with high-quality materials, they are durable, long-lasting, and designed
+    to enhance any desk or workspace while ensuring daily brand visibility.
   </p>
 
   <p>
-    Crafted with high-quality materials, they are durable, long-lasting, and designed to
-    enhance any desk or workspace. Whether used for employee desks, client offices these
-    table clocks provide a daily reminder of your brand while adding a touch of elegance and
-    professionalism.
+    Whether used for employee desks, client offices these table clocks provide a daily
+    reminder of your brand while adding a touch of elegance and professionalism.
   </p>
 
   <h3>Customization & Branding Details</h3>
@@ -1455,7 +1375,7 @@ export const subcategoryContent = {
 
   <h3>Bulk Order & Pricing Information</h3>
 
-  <p>Custom Table Clocks are available in bulk quantities. Pricing depends on:</p>
+  <p>{{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:</p>
 
   <ul>
     <li>Order quantity</li>
@@ -1468,17 +1388,18 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "trophy": `
+"trophy": `
 <section class="subcategory-static-content">
-  <h2>Custom Trophy</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Trophy for Awards & Recognition</strong></p>
 
   <p>
-    Custom Trophy are specially designed to celebrate achievements, recognize
-    excellence, and commemorate milestones at academic, corporate, and
-    professional events.
+    {{PRODUCT_NAME}} are specially designed to celebrate achievements, recognize
+    excellence, and commemorate milestones at academic, corporate, and professional
+    events. These trophies serve as meaningful symbols of success and appreciation,
+    helping institutions and organizations honor outstanding performance in a
+    memorable way. Suitable for award ceremonies of all scales, they reflect prestige,
+    achievement, and recognition while leaving a lasting impression on recipients.
   </p>
 
   <p>
@@ -1508,7 +1429,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Trophy are available in bulk quantities, making them ideal for academic,
+    {{PRODUCT_NAME}} are available in bulk quantities, making them ideal for academic,
     sports, and corporate events. Pricing depends on the following factors:
   </p>
 
@@ -1525,17 +1446,16 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "badges": `
+"badges": `
 <section class="subcategory-static-content">
-  <h2>Custom Badges</h2>
-
-  <p><strong>Custom Badges for Schools & Institutions</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Badges are versatile and practical branding tools widely used for identification,
-    events, and promotional purposes. They help create a professional identity while
-    improving visibility and recognition for institutions and organizations.
+    {{PRODUCT_NAME}} are versatile and practical branding tools widely used for
+    identification, events, and promotional purposes. They help create a professional
+    identity while improving visibility and recognition for institutions and
+    organizations. Designed for daily use, these badges support clear identification
+    while reinforcing institutional branding across campuses, offices, and events.
   </p>
 
   <p>
@@ -1563,7 +1483,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Badges are available in bulk quantities and are ideal for institutions, events,
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for institutions, events,
     and corporate branding. Pricing depends on the following factors:
   </p>
 
@@ -1580,17 +1500,16 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "medals": `
+"medals": `
 <section class="subcategory-static-content">
-  <h2>Custom Medals</h2>
-
-  <p><strong>Custom Medals for Sports & Academic Events</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Medals achievements in sports, academics, and competitive events. Designed
-    to recognize effort, excellence, and success, these medals serve as lasting symbols of
-    accomplishment.
+    {{PRODUCT_NAME}} celebrate achievements in sports, academics, and competitive
+    events. Designed to recognize effort, excellence, and success, these medals serve
+    as lasting symbols of accomplishment. They motivate participants while creating
+    memorable moments that reflect dedication, hard work, and achievement across
+    various institutional and competitive platforms.
   </p>
 
   <p>
@@ -1619,7 +1538,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Medals are available in bulk quantities and are ideal for sports events,
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for sports events,
     academic competitions, and corporate award programs. Pricing depends on the
     following factors:
   </p>
@@ -1637,16 +1556,17 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
- "table-calendar": `
+"table-calendar": `
 <section class="subcategory-static-content">
-  <h2>Custom Table Calendars</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Table Calendars for Corporate</strong></p>
 
   <p>
-    Custom Table Calendars are practical and effective promotional tools designed for daily brand
-    visibility. Placed on office desks, reception counters, and workstations, these calendars keep
-    your brand in front of users throughout the year.
+    {{PRODUCT_NAME}} are practical and effective promotional tools designed for daily
+    brand visibility. Placed on office desks, reception counters, and workstations, these
+    calendars ensure your brand remains visible throughout the year. They help
+    reinforce brand recall while serving a functional purpose in professional and
+    academic environments.
   </p>
 
   <p>
@@ -1676,7 +1596,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Table Calendars are available in bulk quantities and are ideal for promotional and
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for promotional and
     corporate use. Pricing depends on the following factors:
   </p>
 
@@ -1693,17 +1613,16 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "wall-calendar": `
+"wall-calendar": `
 <section class="subcategory-static-content">
-  <h2>Custom Wall Calendar</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Wall Calendar for Corporate & Institutional Promotion</strong></p>
 
   <p>
-    Custom Wall Calendars are one of the most effective long-term branding products, offering high
-    visibility throughout the year. Displayed in offices, classrooms, shops, and homes, they ensure
-    continuous brand exposure every day.
+    {{PRODUCT_NAME}} are one of the most effective long-term branding products,
+    offering high visibility throughout the year. Displayed in offices, classrooms,
+    shops, and homes, they ensure continuous brand exposure every day while
+    maintaining a strong professional presence.
   </p>
 
   <p>
@@ -1733,7 +1652,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Wall Calendars are available in bulk quantities and are ideal for corporate and
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for corporate and
     institutional promotion. Pricing depends on the following factors:
   </p>
 
@@ -1750,17 +1669,19 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "customized-pens": `
+"customized-pens": `
 <section class="subcategory-static-content">
-  <h2>Custom Metal Pens</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Metal Pens for Corporate & Promotional Branding</strong></p>
 
   <p>
-    Custom Metal Pens are premium writing instruments designed for corporate branding,
-    promotions, and professional gifting. With a sleek metallic finish and smooth writing
-    performance, these pens reflect quality and sophistication.
+    {{PRODUCT_NAME}} are premium writing instruments designed for corporate branding,
+    promotions, and professional gifting. Featuring a sleek metallic finish and smooth
+    writing performance, these pens reflect quality, reliability, and sophistication.
+    Ideal for daily office use, meetings, seminars, and institutional activities, they
+    provide continuous brand exposure. Durable and stylish, custom metal pens are
+    valued for their long-term usability and make a strong impression on clients,
+    employees, students, and event participants while reinforcing brand recall.
   </p>
 
   <p>
@@ -1789,7 +1710,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Metal Pens are available in bulk quantities and are ideal for promotional and corporate
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for promotional and corporate
     use. Pricing depends on the following factors:
   </p>
 
@@ -1806,17 +1727,16 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "binder-clips": `
+"binder-clips": `
 <section class="subcategory-static-content">
-  <h2>Custom Binder Clips</h2>
-
-  <p><strong>Custom Binder Clips for Office & Institutional Branding</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Binder Clips are practical office stationery items widely used for organizing documents
-    while promoting your brand. Ideal for offices, schools, colleges, and coaching institutes, these
-    clips offer daily utility and consistent brand visibility.
+    {{PRODUCT_NAME}} are practical office stationery items widely used for organizing
+    documents while promoting your brand. Ideal for offices, schools, colleges, and
+    coaching institutes, these clips provide daily utility and consistent brand visibility.
+    Designed with a strong grip and durable construction, they help keep papers secure
+    while maintaining a neat and professional appearance across workspaces.
   </p>
 
   <p>
@@ -1845,7 +1765,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Binder Clips are available in bulk quantities and are ideal for institutional and
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for institutional and
     corporate use. Pricing depends on the following factors:
   </p>
 
@@ -1861,17 +1781,17 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "handbill": `
+"handbill": `
 <section class="subcategory-static-content">
-  <h2>Custom Handbills</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Handbills for Promotional & Institutional Campaigns</strong></p>
 
   <p>
-    Custom Handbills are cost-effective and impactful marketing tools used for promotions,
-    announcements, and brand awareness. Commonly used by educational institutions, coaching
-    centers, events, and businesses, handbills help communicate messages clearly and effectively.
+    {{PRODUCT_NAME}} are cost-effective and impactful marketing tools used for
+    promotions, announcements, and brand awareness. Commonly used by educational
+    institutions, coaching centers, events, and businesses, handbills help communicate
+    messages clearly and effectively. Their compact format and clear visuals make
+    them ideal for mass distribution, local promotions, and awareness drives.
   </p>
 
   <p>
@@ -1900,7 +1820,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Handbills are available in bulk quantities and are ideal for promotional campaigns.
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for promotional campaigns.
     Pricing depends on the following factors:
   </p>
 
@@ -1916,17 +1836,17 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "lanyard-and-id-card": `
+"lanyard-and-id-card": `
 <section class="subcategory-static-content">
-  <h2>Custom Lanyards & ID Cards</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Lanyards & ID Cards for Institutional & Corporate Use</strong></p>
 
   <p>
-    Custom Lanyards and ID Cards are essential identification solutions for schools, colleges,
-    coaching institutes, offices, and corporate environments. They help maintain security, improve
-    organization, and create a professional appearance.
+    {{PRODUCT_NAME}} are essential identification solutions for schools, colleges,
+    coaching institutes, offices, and corporate environments. They help maintain
+    security, improve organization, and create a professional appearance. Designed
+    for daily use, lanyards are comfortable and durable, while ID cards provide clear
+    identification and long-term usability across institutions.
   </p>
 
   <p>
@@ -1956,7 +1876,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Lanyards and ID Cards are available in bulk quantities and are ideal for institutional and
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for institutional and
     corporate use. Pricing depends on the following factors:
   </p>
 
@@ -1972,17 +1892,16 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "attendance-registers": `
+"attendance-registers": `
 <section class="subcategory-static-content">
-  <h2>Custom Attendance Registers</h2>
-
-  <p><strong>Custom Attendance Registers for Schools & Office</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Attendance Registers are essential record-keeping tools used in educational institutions
-    and offices to track daily attendance efficiently. Designed for regular use, these registers are
-    durable, easy to handle, and professionally printed.
+    {{PRODUCT_NAME}} are essential record-keeping tools used in educational
+    institutions and offices to track daily attendance efficiently. Designed for
+    regular use, these registers are durable, easy to handle, and professionally
+    printed. They help maintain organized records while ensuring long-term usability
+    across academic sessions, training programs, and office environments.
   </p>
 
   <p>
@@ -2010,7 +1929,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Attendance Registers are available in bulk quantities and are ideal for institutional use.
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for institutional use.
     Pricing depends on the following factors:
   </p>
 
@@ -2026,17 +1945,16 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-  "branding-files-and-folders": `
+"branding-files-and-folders": `
 <section class="subcategory-static-content">
-  <h2>Custom Files & Folders</h2>
-
-  <p><strong>Custom Files & Folders for Corporate & Institutional Branding</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Files and Folders are essential stationery products used for organizing, storing, and
-    presenting documents in a professional manner. Ideal for offices, schools, colleges, coaching
-    institutes, and corporate environments, these files and folders help maintain order while
-    enhancing brand visibility.
+    {{PRODUCT_NAME}} are essential stationery products used for organizing, storing,
+    and presenting documents in a professional manner. Ideal for offices, schools,
+    colleges, coaching institutes, and corporate environments, they help maintain
+    order while enhancing brand visibility. Their structured design and durable
+    material ensure repeated use in daily administrative and academic tasks.
   </p>
 
   <p>
@@ -2065,7 +1983,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Files & Folders are available in bulk quantities and are ideal for corporate and
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for corporate and
     institutional use. Pricing depends on the following factors:
   </p>
 
@@ -2081,16 +1999,17 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "graduation-degree-folders": `
+"graduation-degree-folders": `
 <section class="subcategory-static-content">
-  <h2>Custom Graduation Folders</h2>
-
-  <p><strong>Custom Graduation Folders for Academic Ceremonies</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Graduation Folders are specially designed to present certificates, mark sheets, and
-    academic documents during graduation and convocation ceremonies.
+    {{PRODUCT_NAME}} are specially designed to present certificates, mark sheets,
+    and academic documents during graduation and convocation ceremonies. These
+    folders add elegance, structure, and professionalism to academic achievements
+    while protecting important documents. Widely used by schools, colleges,
+    universities, and educational institutions, they help create a memorable
+    experience for students while reflecting institutional prestige.
   </p>
 
   <p>
@@ -2121,7 +2040,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Graduation Folders are available in bulk quantities and are ideal for educational
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for educational
     institutions. Pricing depends on the following factors:
   </p>
 
@@ -2137,16 +2056,16 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "notebook": `
+"notebook": `
 <section class="subcategory-static-content">
-  <h2>Custom Notebooks</h2>
-
-  <p><strong>Custom Notebooks for Corporate & Institutional Use</strong></p>
+  <h2>{{PRODUCT_NAME}}</h2>
 
   <p>
-    Custom Notebooks are essential stationery products widely used in educational institutions,
-    offices, and corporate environments.
+    {{PRODUCT_NAME}} are essential stationery products widely used in educational institutions,
+    offices, and corporate environments. Designed to support everyday writing needs, they help
+    students, professionals, and staff record information clearly and efficiently. Their structured
+    layout, durable build, and professional appearance make them suitable for long-term academic,
+    administrative, and office use while reinforcing consistent brand visibility.
   </p>
 
   <p>
@@ -2176,7 +2095,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Notebooks are available in bulk quantities and are ideal for institutional and corporate
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for institutional and corporate
     use. Pricing depends on the following factors:
   </p>
 
@@ -2192,16 +2111,16 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "notepad": `
+"notepad": `
 <section class="subcategory-static-content">
-  <h2>Custom Notepads</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Notepads for Branding</strong></p>
-
+ 
   <p>
-    Custom Notepads are practical and cost-effective stationery items used for quick notes,
-    reminders, and everyday writing.
+    {{PRODUCT_NAME}} are practical and cost-effective stationery items used for quick notes,
+    reminders, and everyday writing. Commonly found on office desks, reception counters, and
+    workstations, they support frequent use while offering repeated brand exposure. Their compact
+    format and clear layout make them ideal for daily communication and internal documentation.
   </p>
 
   <p>
@@ -2231,7 +2150,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Notepads are available in bulk quantities and are ideal for promotional and institutional
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for promotional and institutional
     use. Pricing depends on the following factors:
   </p>
 
@@ -2247,16 +2166,17 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "exam-pad": `
+"exam-pad": `
 <section class="subcategory-static-content">
-  <h2>Custom Exam Pads</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Exam Pads for Schools & Coaching Institutes</strong></p>
+
 
   <p>
-    Custom Exam Pads are specially designed writing boards used during examinations and
-    classroom assessments.
+    {{PRODUCT_NAME}} are specially designed writing boards used during examinations and
+    classroom assessments. They provide a stable writing surface that supports accuracy and
+    comfort for students during tests and evaluations. Their lightweight yet sturdy construction
+    ensures ease of handling while maintaining durability across repeated academic use.
   </p>
 
   <p>
@@ -2285,7 +2205,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Exam Pads are available in bulk quantities and are ideal for educational institutions.
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for educational institutions.
     Pricing depends on the following factors:
   </p>
 
@@ -2301,15 +2221,17 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-  "paper-stand": `
+"paper-stand": `
 <section class="subcategory-static-content">
-  <h2>Custom Paper Stands</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Paper Stands for Promotional Branding</strong></p>
 
   <p>
-    Custom Paper Stands are practical and eco-friendly promotional products ideal for office
-    desks, and promotional campaigns.
+    {{PRODUCT_NAME}} are practical and eco-friendly promotional products ideal for office
+    desks, and promotional campaigns. Designed for daily visibility, they help keep documents,
+    notes, and printed materials organized while reinforcing brand presence. Their lightweight
+    structure and sustainable material make them a preferred choice for institutions focused on
+    functional yet responsible branding solutions.
   </p>
 
   <p>
@@ -2344,7 +2266,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Paper Stands are available in bulk quantities. Pricing depends on:
+    {{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:
   </p>
 
   <ul>
@@ -2358,16 +2280,18 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
-
-  "wooden-trophy": `
+"wooden-trophy": `
 <section class="subcategory-static-content">
-  <h2>Custom Wooden Trophy</h2>
+  <h2>{{PRODUCT_NAME}}</h2>
 
-  <p><strong>Custom Wooden Trophy for Awards & Recognition</strong></p>
+
 
   <p>
-    Custom Wooden Trophies are a premium and eco-friendly choice for awards, recognition
-    programs, and special occasions.
+    {{PRODUCT_NAME}} are a premium and eco-friendly choice for awards, recognition
+    programs, and special occasions. Designed to symbolize achievement and appreciation,
+    they combine natural aesthetics with professional craftsmanship. Their solid build and
+    timeless appeal make them suitable for institutions and organizations seeking meaningful
+    recognition solutions with lasting value.
   </p>
 
   <p>
@@ -2406,7 +2330,7 @@ export const subcategoryContent = {
   <h3>Bulk Order & Pricing Information</h3>
 
   <p>
-    Custom Wooden Trophies are available in bulk quantities. Pricing depends on:
+    {{PRODUCT_NAME}} are available in bulk quantities. Pricing depends on:
   </p>
 
   <ul>

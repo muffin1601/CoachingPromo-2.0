@@ -2,10 +2,12 @@ import React from "react";
 import { subcategoryContent } from "../../data/subcategoryContent";
 import "./SubcategoryStaticContent.css";
 
-const SubcategoryStaticContent = ({ subSlug }) => {
-  const html = subcategoryContent[subSlug];
+const SubcategoryStaticContent = ({ subSlug, productName }) => {
+  let html = subcategoryContent[subSlug];
 
-  if (!html) return null;
+  if (!html || !productName) return null;
+
+  html = html.replaceAll("{{PRODUCT_NAME}}", productName);
 
   return (
     <div

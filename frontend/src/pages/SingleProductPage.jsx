@@ -292,7 +292,7 @@ const SingleProductPage = () => {
       {/* ========= Lazy Loaded Page Extras ========= */}
 
       <Suspense fallback={<div></div>}>
-      <SubcategoryStaticContent subSlug={subSlug} />
+      <SubcategoryStaticContent subSlug={subSlug} productName={product?.name} />
 
         {shouldShowCustomize && <CustomizationExperience />}
 
