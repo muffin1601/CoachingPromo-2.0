@@ -1,7 +1,7 @@
 const TypingIndicator = () => {
   return (
     <div className="chat-row bot">
-      <img src="/agent.webp" className="chat-avatar" />
+      <img src="/agent.webp" alt="Sana - Support Agent" className="chat-avatar" />
       <div className="typing-bubble">
         <span></span>
         <span></span>

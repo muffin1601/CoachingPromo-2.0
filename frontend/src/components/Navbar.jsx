@@ -33,12 +33,12 @@ const Navbar = () => {
   }, []);
 
   /* Visitor Count */
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/visitors/count`)
-      .then((res) => setVisitorCount(res.data.totalVisitors))
-      .catch((err) => console.error("Failed to fetch visitor count", err));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_API_URL}/visitors/count`)
+  //     .then((res) => setVisitorCount(res.data.totalVisitors))
+  //     .catch((err) => console.error("Failed to fetch visitor count", err));
+  // }, []);
 
   return (
     <>

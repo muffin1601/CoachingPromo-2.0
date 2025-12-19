@@ -163,7 +163,12 @@ const Chatbot = () => {
               onKeyDown={e => e.key === "Enter" && send()}
               disabled={typing}
             />
-            <button onClick={() => send()} disabled={typing}>
+            <button
+              onClick={() => send()}
+              disabled={typing}
+              aria-label="Send message"
+              title="Send message"
+            >
               <ArrowRight size={18} />
             </button>
           </div>
