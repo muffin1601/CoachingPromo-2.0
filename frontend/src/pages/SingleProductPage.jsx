@@ -21,7 +21,7 @@ import {
   Palette,
 } from "lucide-react";
 
-/*  Lazy Load Heavy Components */
+
 const EnquiryModal = lazy(() => import("../components/EnquiryModal"));
 const CustomizationExperience = lazy(() =>
   import("../components/CustomizationExperience")
@@ -44,7 +44,7 @@ const HiddenSEOContent = lazy(() =>
   import("../components/HiddenSEOContent")
 );
 
-/*  Keep SEO component non-lazy */
+
 import SEO from "../components/Category/SEO";
 
 const SingleProductPage = () => {
@@ -89,16 +89,18 @@ const SingleProductPage = () => {
 
   if (!product) return <div>Loading...</div>;
 
-  const {
-    name,
-    description,
-    images,
-    subImages,
-    tags,
-    ratings,
-    sku,
-    attributes,
-  } = product;
+const {
+  name,
+  description,
+  images,
+  subImages,
+  tags,
+  ratings,
+  sku,
+  attributes,
+  specifications,
+  additionalInfo,
+} = product;
 
   const enquiryImage = images?.[0]?.url || "";
 
@@ -259,33 +261,62 @@ const SingleProductPage = () => {
 
           {/* ATTRIBUTES */}
           <div className="product-attributes">
-            {attributes?.material && (
-              <p>
-                <Palette size={16} /> <strong>Material:</strong>{" "}
-                {attributes.material}
-              </p>
-            )}
+            {(attributes || specifications?.length || additionalInfo?.length) && (
+  <div className="product-specifications-box">
+    <h3 className="product-spec-heading">Product Specifications</h3>
 
-            {!!attributes?.size?.length && (
-              <p>
-                <strong>Sizes:</strong> {attributes.size.join(", ")}
-              </p>
-            )}
+    <table className="product-spec-table">
+      <tbody>
+        {/* ATTRIBUTES */}
+        {attributes?.material && (
+          <tr>
+            <td>Material</td>
+            <td>{attributes.material}</td>
+          </tr>
+        )}
 
-            {!!attributes?.color?.length && (
-              <p>
-                <strong>Colors:</strong> {attributes.color.join(", ")}
-              </p>
-            )}
+        {!!attributes?.size?.length && (
+          <tr>
+            <td>Available Sizes</td>
+            <td>{attributes.size.join(", ")}</td>
+          </tr>
+        )}
+
+        {!!attributes?.color?.length && (
+          <tr>
+            <td>Available Colors</td>
+            <td>{attributes.color.join(", ")}</td>
+          </tr>
+        )}
+
+        {/* SPECIFICATIONS */}
+        {specifications?.map((spec, index) => (
+          <tr key={`spec-${index}`}>
+            <td>{spec.key}</td>
+            <td>{spec.value}</td>
+          </tr>
+        ))}
+
+        {/* ADDITIONAL INFO */}
+        {additionalInfo?.map((info, index) => (
+          <tr key={`info-${index}`}>
+            <td>{info.label}</td>
+            <td>{info.value}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}
           </div>
 
           {/* SHARE */}
-          <div className="product-share">
+          {/* <div className="product-share">
             <span>Share:</span>
             <Facebook size={18} />
             <Twitter size={18} />
             <Linkedin size={18} />
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -301,7 +332,7 @@ const SingleProductPage = () => {
           subcategoryName={subcategory?.name}
           categoryName={category?.name}
         />
-
+        
         <CatalogueCTA />
         <PopularSubcategories />
 

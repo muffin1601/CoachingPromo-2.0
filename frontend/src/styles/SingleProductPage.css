@@ -210,7 +210,7 @@
 .product-extra-box {
   background: #fff5f0;
   padding: 15px;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   border: 1px solid var(--light-border);
   margin: 20px 0;
 }
@@ -311,5 +311,108 @@
 
   .product-main-img {
     max-height: 360px;
+  }
+}
+
+/* =======================================
+   PRODUCT SPECIFICATIONS BOX
+======================================= */
+.product-specifications-box {
+  margin-top: 25px;
+  border: 1px solid var(--light-border);
+  /* border-radius: 10px; */
+  background: #fff;
+  overflow: hidden;
+}
+
+.product-spec-heading {
+  padding: 14px 18px;
+  font-size: 18px;
+  font-weight: 600;
+  background: #fafafa;
+  border-bottom: 1px solid var(--light-border);
+}
+
+/* TABLE */
+.product-spec-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-spec-table tr {
+  border-bottom: 1px solid var(--light-border);
+}
+
+.product-spec-table tr:last-child {
+  border-bottom: none;
+}
+
+.product-spec-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.product-spec-table td:first-child {
+  width: 40%;
+  font-weight: 600;
+  color: #333;
+  background: #fcfcfc;
+}
+
+.product-spec-table td:last-child {
+  color: var(--neutral-gray);
+}
+
+/* =======================================
+   RESPONSIVE STYLES
+======================================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .product-spec-heading {
+    font-size: 17px;
+  }
+
+  .product-spec-table td {
+    font-size: 13.5px;
+    padding: 12px 14px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .product-specifications-box {
+    margin-top: 20px;
+  }
+
+  .product-spec-table td:first-child {
+    width: 45%;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 600px) {
+  .product-spec-heading {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+
+  .product-spec-table td {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .product-spec-table td:first-child {
+    width: 50%;
+  }
+}
+
+/* EXTRA SMALL MOBILE */
+@media (max-width: 400px) {
+  .product-spec-table td {
+    font-size: 12.5px;
+    padding: 9px 10px;
   }
 }
