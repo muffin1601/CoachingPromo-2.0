@@ -44,11 +44,11 @@ const ProductGrid = ({ products, catSlug, subSlug }) => {
                 </div> */}
 
                 {/* RATING */}
-                {ratings?.average > 0 && (
+                {/* {ratings?.average > 0 && (
                   <p className="product-rating">
                     <Star size={16} /> {ratings.average} ({ratings.count})
                   </p>
-                )}
+                )} */}
 
                 {/* CTA */}
                 <span className="product-readmore-link">

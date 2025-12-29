@@ -97,7 +97,7 @@ const BlogDetails = () => {
       {/* BANNER */}
       <PageBanner
         title={blog.title}
-        background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+        background="/apparel.webp"
         breadcrumb={[
           { label: "Blog", path: "/blogs" },
           { label: blog.title },

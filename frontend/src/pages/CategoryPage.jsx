@@ -39,6 +39,17 @@ const CategoryPage = () => {
     Stationery: "Custom Stationery, Notebooks & Writing Essentials",
   };
 
+  const categoryBannerImages = {
+  "apparel-accessories": "/apparel.webp",
+  bags: "/bags.webp",
+  stationery: "/stationary.webp",
+  "promotional-items": "/promo.webp",
+};
+
+const bannerImage =
+  categoryBannerImages[slug] ||
+  "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg";
+
   const loadCategory = async () => {
     setLoading(true);
     try {
@@ -68,7 +79,6 @@ const CategoryPage = () => {
     { label: category.name },
   ];
 
-  /**  SEO Setup */
   const metaTitle =
     category?.seo?.metaTitle ||
     `${category.name} – Custom Printed & Promotional Products | CoachingPromo`;
@@ -98,7 +108,7 @@ const CategoryPage = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <CategoryBanner
           name={categoryTitles[category.name] || category.name}
-          image="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+          image={bannerImage}
           subtitle={category.description}
           breadcrumbs={breadcrumbs}
         />

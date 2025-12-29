@@ -61,7 +61,7 @@ const SearchPage = () => {
         <CategoryBanner
           name="Search Results"
           subtitle={`Showing results for "${query}"`}
-          image="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg"
+          image="/apparel.webp"
           breadcrumbs={[
             { label: "Home", href: "/" },
             { label: "Search", href: `/search?q=${query}` },

@@ -50,7 +50,7 @@ const BlogList = () => {
       <Suspense fallback={null}>
         <PageBanner
           title="Blogs"
-          background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+          background="/apparel.webp"
           breadcrumb={[{ label: "Blog" }]}
         />
       </Suspense>

@@ -466,7 +466,7 @@ const ProductManager = () => {
         <button className="hm-add-btn" onClick={() => addKV("additionalInfo")}><Plus size={14}/> Add Row</button>
         {form.additionalInfo.map((row, i) => (
           <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr auto", gap: 8, marginTop: 8 }}>
-            <FormInput label="Label" value={row.label} onChange={(e) => updateKV("additionalInfo", i, "label", e.target.value)}/>
+            <FormInput label="Title" value={row.label} onChange={(e) => updateKV("additionalInfo", i, "label", e.target.value)}/>
             <FormInput label="Value" value={row.value} onChange={(e) => updateKV("additionalInfo", i, "value", e.target.value)}/>
             <button className="hm-delete-btn-2" onClick={() => removeKV("additionalInfo", i)}>Remove</button>
           </div>
@@ -477,9 +477,9 @@ const ProductManager = () => {
         <button className="hm-add-btn" onClick={addSpec}><Plus size={14}/> Add Spec</button>
         {form.specifications.map((row, i) => (
           <div key={i} style={{ display: "grid", gridTemplateColumns: "1fr 1fr auto", gap: 8, marginTop: 8 }}>
-            <FormInput label="Key" value={row.key} onChange={(e) => updateSpec(i, "key", e.target.value)}/>
+            <FormInput label="Title" value={row.key} onChange={(e) => updateSpec(i, "key", e.target.value)}/>
             <FormInput label="Value" value={row.value} onChange={(e) => updateSpec(i, "value", e.target.value)}/>
-            <button className="hm-delete-btn" onClick={() => removeSpec(i)}>Remove</button>
+            <button className="hm-delete-btn-2" onClick={() => removeSpec(i)}>Remove</button>
           </div>
         ))}
 

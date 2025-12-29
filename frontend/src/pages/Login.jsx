@@ -44,7 +44,7 @@ const Login = ({ onLoginSuccess }) => {
       {/* Background video */}
       <video autoPlay muted loop playsInline className="login-bg-video">
         <source
-          src="https://videos.pexels.com/video-files/1448735/1448735-hd_1920_1080_25fps.mp4"
+          src="https://www.pexels.com/download/video/35351618/"
           type="video/mp4"
         />
       </video>

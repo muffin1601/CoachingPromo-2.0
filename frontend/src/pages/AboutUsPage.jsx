@@ -28,7 +28,7 @@ const AboutUsPage = () => {
       {/* Always keep banner non-lazy for SEO & CLS stability */}
       <PageBanner
         title="About Us"
-        background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+        background="/apparel.webp"
         breadcrumb={[{ label: "About" }]}
       />
 

@@ -26,6 +26,17 @@ const SubcategoryPage = () => {
   const [sort, setSort] = useState("default");
   const [loading, setLoading] = useState(true);
 
+    const categoryBannerImages = {
+  "apparel-accessories": "/apparel.webp",
+  bags: "/bags.webp",
+  stationery: "/stationary.webp",
+  "promotional-items": "/promo.webp",
+};
+
+const bannerImage =
+  categoryBannerImages[categorySlug] ||
+  "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg";
+
   const getSubcategoryData = async (categorySlug, subSlug, page, sort) => {
     const res = await axios.get(
       `${import.meta.env.VITE_API_URL}/subcategories/${categorySlug}/${subSlug}`,
@@ -106,7 +117,7 @@ const SubcategoryPage = () => {
       {/* Banner */}
       <CategoryBanner
         name={subcategoryTitles[subSlug] || subcategory.name}
-        image="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+        image={bannerImage}
         subtitle={subcategory?.description}
         breadcrumbs={breadcrumbs}
       />

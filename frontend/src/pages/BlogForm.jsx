@@ -59,7 +59,7 @@ const BlogFormCTA = () => {
       <Suspense fallback={null}>
         <PageBanner
           title="New Blog Post"
-          background="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+          background="/apparel.webp"
           breadcrumb={[{ label: "New Blog" }]}
         />
       </Suspense>

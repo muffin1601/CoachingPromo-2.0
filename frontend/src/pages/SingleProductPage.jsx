@@ -59,6 +59,17 @@ const SingleProductPage = () => {
 
   const navigate = useNavigate();
 
+   const categoryBannerImages = {
+  "apparel-accessories": "/apparel.webp",
+  bags: "/bags.webp",
+  stationery: "/stationary.webp",
+  "promotional-items": "/promo.webp",
+};
+
+const bannerImage =
+  categoryBannerImages[categorySlug] ||
+  "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg";
+
   const fetchProduct = async () => {
     const { data } = await axios.get(
       `${import.meta.env.VITE_API_URL}/products/${prodSlug}`
@@ -132,7 +143,7 @@ const {
       <Suspense fallback={<div></div>}>
         <CategoryBanner
           name={product?.name}
-          image="https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg"
+          image={bannerImage}
           subtitle={
             typeof product?.description === "string"
               ? product.description
@@ -186,11 +197,11 @@ const {
               </span>
             )}
 
-            {ratings?.average > 0 && (
+            {/* {ratings?.average > 0 && (
               <span className="product-rating">
                 <Star size={14} /> {ratings.average} ({ratings.count})
               </span>
-            )}
+            )} */}
           </div>
 
           <h1 className="product-title">{name}</h1>
