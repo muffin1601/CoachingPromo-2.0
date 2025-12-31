@@ -12,7 +12,8 @@ const categories = [
         href: "/apparel/t-shirts",
         products: [
           { name: "Polo T-Shirts", href: "/apparel-accessories/polo-t-shirts" },
-          { name: "Round Neck T-Shirts", href: "/apparel-accessories/round-neck-t-shirts" }
+          { name: "Round Neck T-Shirts", href: "/apparel-accessories/round-neck-t-shirts" },
+          { name: "Sports Jersey", href: "/apparel-accessories/sports-jersey" }
         ]
       },
       {

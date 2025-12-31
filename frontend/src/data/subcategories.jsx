@@ -4,6 +4,7 @@ export const subcategoryTitles = {
   // ================================
   "polo-t-shirts": "Custom Polo T-Shirts for Institutes & Events",
   "round-neck-t-shirts": "Custom Round Neck T-Shirts for Students & Teams",
+  "sports-jersey": "Promotional Sports Jersey for Teams & Events",
   "shirts": "Formal & Casual Shirts for Faculty & Office Wear",
   "hoodies-jackets": "Custom Hoodies & Jackets for Winter Branding",
   "uniform-jackets": "Uniform Jackets – Nehru & Teacher Jackets for Institutes",

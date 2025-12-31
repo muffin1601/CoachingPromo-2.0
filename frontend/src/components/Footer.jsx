@@ -106,7 +106,7 @@ const Footer = () => {
             <a href="https://www.instagram.com/coachingpromo.in/" title="Coaching Promo Instagram">
               <Instagram size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/mycoaching-promo-a0b4ba380" title="Coaching Promo LinkedIn">
+            <a href="https://www.linkedin.com/company/110923935/admin/dashboard/" title="Coaching Promo LinkedIn">
               <Linkedin size={20} />
             </a>
           </div>
@@ -139,7 +139,7 @@ const Footer = () => {
             <img src="/partners/tradeindia.webp" alt="TradeIndia Supplier - Coaching Promo" />
           </a>
 
-          <a
+          {/* <a
             href="https://www.justdial.com/"
             target="_blank"
             rel="noopener noreferrer"
@@ -147,7 +147,7 @@ const Footer = () => {
             title="Coaching Promo on JustDial"
           >
             <img src="/partners/justdial.webp" alt="JustDial Business Listing - Coaching Promo" />
-          </a>
+          </a> */}
         </div>
       </div>
 
