@@ -1,0 +1,85 @@
+const express = require("express");
+const router = express.Router();
+
+const Category = require("../models/category");
+const Subcategory = require("../models/subcategory");
+const Product = require("../models/product");
+const Blog = require("../models/blog");
+
+router.get("/sitemap.xml", async (req, res) => {
+
+const base = "https://www.coachingpromo.in";
+
+const categories = await Category.find().lean();
+
+const subcategories = await Subcategory.find()
+.populate("category")
+.lean();
+
+const products = await Product.find()
+.populate("category")
+.populate("subcategory")
+.lean();
+
+const blogs = await Blog.find().lean();
+
+let urls = [];
+
+// Static pages
+urls.push(`${base}/`);
+urls.push(`${base}/about`);
+urls.push(`${base}/contact`);
+urls.push(`${base}/blogs`);
+
+
+// Categories
+categories.forEach(cat => {
+  urls.push(`${base}/categories/${cat.slug}`);
+});
+
+
+// Subcategories
+subcategories.forEach(sub => {
+  if (sub.category) {
+    urls.push(`${base}/${sub.category.slug}/${sub.slug}`);
+  }
+});
+
+
+// Products
+products.forEach(prod => {
+  if (prod.category && prod.subcategory) {
+    urls.push(`${base}/${prod.category.slug}/${prod.subcategory.slug}/${prod.slug}`);
+  }
+});
+
+
+// Blogs
+blogs.forEach(blog => {
+  urls.push(`${base}/blogs/${blog._id}`);
+});
+
+
+let xml = `<?xml version="1.0" encoding="UTF-8"?>`;
+
+xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+
+urls.forEach(url => {
+
+xml += `
+<url>
+<loc>${url}</loc>
+<changefreq>weekly</changefreq>
+<priority>0.8</priority>
+</url>`;
+
+});
+
+xml += `</urlset>`;
+
+res.header("Content-Type", "application/xml");
+res.send(xml);
+
+});
+
+module.exports = router;

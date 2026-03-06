@@ -1,4 +1,15 @@
 User-agent: *
+
 Allow: /
 
-Sitemap: https://coachingpromo.in/sitemap.xml
+# Block admin and API routes
+Disallow: /admin
+Disallow: /api
+Disallow: /login
+Disallow: /customize
+
+# Optional: block search result pages
+Disallow: /search
+
+# Sitemap location
+Sitemap: https://www.coachingpromo.in/sitemap.xml
