@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "../styles/SingleProductPage.css";
 import SubcategoryStaticContent from "../components/Category/SubcategoryStaticContent";
+import { useCart } from "../context/CartContext";
+import { useFavorites } from "../context/FavoritesContext";
 
 
 import {
@@ -56,6 +58,8 @@ const SingleProductPage = () => {
   const [activeImage, setActiveImage] = useState(null);
   const [qty, setQty] = useState(1);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
+  const { addToCart } = useCart();
+  const { addToFavorites, isFavorite } = useFavorites();
 
   const navigate = useNavigate();
 
@@ -250,14 +254,21 @@ const {
             </div>
 
             <button
-              onClick={() => setIsEnquiryOpen(true)}
+              onClick={() => {
+                addToCart(product, qty, attributes?.color?.[0] || "Default", attributes?.size?.[0] || "Default");
+                navigate("/cart");
+              }}
               className="btn-add-cart"
             >
-              <ShoppingCart size={18} /> Get Free Quote
+              <ShoppingCart size={18} /> Add to Cart
             </button>
 
-            <button className="btn-wishlist">
-              <Heart size={18} />
+            <button 
+              className="btn-wishlist"
+              onClick={() => addToFavorites({ ...product, href: `/${categorySlug}/${subSlug}/${prodSlug}` })}
+              style={{ color: isFavorite(product._id || product.id) ? "#ff4d4f" : "var(--neutral-gray)" }}
+            >
+              <Heart size={18} fill={isFavorite(product._id || product.id) ? "#ff4d4f" : "none"} />
             </button>
           </div>
 

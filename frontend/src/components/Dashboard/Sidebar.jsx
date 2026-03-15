@@ -6,6 +6,7 @@ import {
   Layers,
   Package,
   ShoppingBag,
+  ShoppingCart,
 } from "lucide-react";
 
 
@@ -59,6 +60,13 @@ const Sidebar = () => {
             <span>Products</span>
           </NavLink>
         </li>
+
+        <li>
+          <NavLink to="/admin/orders">
+            <ShoppingCart className="icon" />
+            <span>Orders</span>
+          </NavLink>
+        </li>
       </ul>
     </aside>
   );
@@ -88,6 +96,7 @@ const css = `
   flex-direction: column;
   justify-content: flex-start;
   padding: 25px 15px;
+
   // box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
   border-right: 1px solid var(--light-border);
   transition: width 0.3s ease;

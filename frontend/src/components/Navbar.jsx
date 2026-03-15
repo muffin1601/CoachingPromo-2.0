@@ -7,11 +7,15 @@ import {
   GraduationCap,
   Phone,
   MessageCircle,
-  Menu
+  Menu,
+  ShoppingCart
 } from "lucide-react";
 import categories from "../data/categories";
 import axios from "axios";
 import Sidebar from "./Sidebar";
+import UserProfileSidebar from "./UserProfileSidebar";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 
 const EnquiryModal = lazy(() => import("./EnquiryModal"));
@@ -25,6 +29,9 @@ const Navbar = () => {
   const [searchInput, setSearchInput] = useState("");
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [profileSidebarOpen, setProfileSidebarOpen] = useState(false);
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 60);
@@ -69,12 +76,16 @@ const Navbar = () => {
                   value={searchInput}
                   onChange={(e) => setSearchInput(e.target.value)}
                   onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                      window.location.href = `/search?q=${searchInput}`;
+                    if (e.key === "Enter" && searchInput.trim()) {
+                      navigate(`/search?q=${searchInput}`);
                     }
                   }}
                 />
-                <Search className="search-icon" />
+                <Search 
+                  className="search-icon" 
+                  onClick={() => searchInput.trim() && navigate(`/search?q=${searchInput}`)} 
+                  style={{ cursor: "pointer" }}
+                />
               </div>
 
               {/* Phone */}
@@ -94,12 +105,14 @@ const Navbar = () => {
 
               {/* User Icon */}
               <button
-                onClick={() => (window.location.href = "/login")}
+                onClick={() => user ? setProfileSidebarOpen(true) : navigate("/login")}
                 className="nav-icon-link"
-                aria-label="Login"
+                aria-label={user ? "Profile Sidebar" : "Login"}
+                title={user ? `Hello, ${user.name}` : "Log in"}
               >
                 <User />
               </button>
+              
 
               {/* Register Institute Modal */}
               <button
@@ -196,6 +209,9 @@ const Navbar = () => {
 
       {/* SIDEBAR MOBILE MENU */}
       <Sidebar isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+
+      {/* USER PROFILE SIDEBAR */}
+      <UserProfileSidebar isOpen={profileSidebarOpen} onClose={() => setProfileSidebarOpen(false)} />
 
       {/*  LAZY-LOADED MODALS */}
       <Suspense fallback={null}>

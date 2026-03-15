@@ -1,61 +1,121 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Star, ArrowRight } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { Star, ArrowRight, Trash2, ShoppingCart } from "lucide-react";
+import { useCart } from "../../context/CartContext";
 
-const ProductGrid = ({ products, catSlug, subSlug }) => {
+const ProductGrid = ({ products, catSlug, subSlug, onRemove, isFavoritesPage = false }) => {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  // Helper to ensure image URLs are absolute
+  const getImageUrl = (imagePath) => {
+    let img = imagePath;
+
+    // Handle object with url property (common in Favorites)
+    if (img && typeof img === "object" && img.url) {
+      img = img.url;
+    }
+
+    if (Array.isArray(img) && img.length > 0) {
+      img = img[0];
+      if (img && typeof img === "object" && img.url) {
+        img = img.url;
+      }
+    }
+
+    if (!img || typeof img !== "string") return "/placeholder.jpg";
+    if (img.startsWith("http")) return img;
+    if (img.startsWith("/uploads")) {
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || "https://coachingpromo.in";
+      return `${baseUrl}${img}`;
+    }
+    return img;
+  };
+
   if (!products?.length)
     return <p className="text-center p-8">No Products Found</p>;
 
   return (
     <div className="product-list-container">
       <div className="product-list-grid">
-        {products.map((product) => {
-          const { _id, slug, name, images, price, salePrice, ratings } = product;
+        {products.map((item) => {
+          // item might be a product from API or a Favorite item from context
+          const { _id, slug, name, images, price, salePrice, ratings, product, href, image } = item;
+          
+          const itemId = _id || product;
+          const finalName = name;
+          const finalPrice = price;
+          // Use item.image if available (fav items), otherwise images[0] (api items)
+          const finalImageUrl = getImageUrl(image || images?.[0]?.url || images?.[0]);
+          
+          // Determine the target URL
+          let targetUrl = href;
+          if (!targetUrl) {
+            targetUrl = slug ? `/${catSlug}/${subSlug}/${slug}` : `/product/${itemId}`;
+          }
 
           return (
-            <Link
-              key={_id}
-              to={`/${catSlug}/${subSlug}/${slug}`}
-              className="product-card"
-            >
-              {/* BADGE IF SALE
-              {salePrice && <span className="sale-badge">Sale</span>} */}
+            <div key={itemId} className="product-card">
+              {/* REMOVE BUTTON (only on favorites page) */}
+              {isFavoritesPage && onRemove && (
+                <button 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    onRemove(itemId);
+                  }}
+                  className="product-card-remove-btn"
+                  title="Remove from favorites"
+                >
+                  <Trash2 size={16} />
+                </button>
+              )}
 
-              <img
-                src={images?.[0]?.url}
-                alt={images?.[0]?.altText || name}
-                className="product-card-media"
-                loading="lazy"
-              />
+              <Link to={targetUrl} className="product-card-inner-link">
+                <img
+                  src={finalImageUrl}
+                  alt={finalName}
+                  className="product-card-media"
+                  loading="lazy"
+                />
 
-              <div className="product-content">
-                <h3 className="product-card-title">{name}</h3>
+                <div className="product-content">
+                  <h3 className="product-card-title">{finalName}</h3>
 
-                {/* PRICE */}
-                {/* <div className="product-price-wrapper">
-                  {salePrice ? (
-                    <>
-                      <span className="product-sale-price">₹{salePrice}</span>
-                      <span className="product-main-price">₹{price}</span>
-                    </>
-                  ) : (
-                    <span className="product-regular-price">₹{price}</span>
-                  )}
-                </div> */}
+                  {/* PRICE */}
+                  <div className="product-price-wrapper">
+                    <span className="product-regular-price">₹{finalPrice}</span>
+                  </div>
 
-                {/* RATING */}
-                {/* {ratings?.average > 0 && (
-                  <p className="product-rating">
-                    <Star size={16} /> {ratings.average} ({ratings.count})
-                  </p>
-                )} */}
-
-                {/* CTA */}
-                <span className="product-readmore-link">
-                  View Details <ArrowRight size={16} />
-                </span>
-              </div>
-            </Link>
+                  {/* FOOTER ACTIONS */}
+                  <div className="product-card-footer">
+                    {isFavoritesPage ? (
+                      <button 
+                         onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            const productToCart = {
+                              _id: itemId,
+                              name: finalName,
+                              images: [{ url: finalImageUrl }],
+                              price: finalPrice
+                            };
+                            addToCart(productToCart, 1, "Default", "Default");
+                            navigate("/cart");
+                         }}
+                         className="product-card-fav-add-btn"
+                      >
+                         <ShoppingCart size={16} /> Add to Cart
+                      </button>
+                    ) : (
+                      <span className="product-readmore-link">
+                        View Details <ArrowRight size={16} />
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </Link>
+            </div>
           );
         })}
       </div>
@@ -187,7 +247,7 @@ const css = `
 /* Tablet */
 @media (max-width: 900px) {
   .product-card-media {
-    height: 200px;
+     height: 200px;
   }
 
   .product-card-title {
@@ -235,6 +295,44 @@ padding: 0px;
   .product-card-title {
     font-size: 14px;
   }
+}
+
+/* FAVORITES SPECIFIC STYLES (ADDED) */
+.product-card-remove-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 50% !important;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  color: #ff4d4f;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.product-card-fav-add-btn {
+  width: 100%;
+  padding: 10px;
+  background: var(--brand-orange);
+  color: white;
+  border: none;
+  border-radius: 0;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+.product-card-inner-link {
+  text-decoration: none;
+  color: inherit;
 }
 `;
 

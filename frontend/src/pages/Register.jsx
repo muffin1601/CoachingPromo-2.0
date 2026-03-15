@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import { X, Mail, Lock, Loader2, Eye, EyeOff } from "lucide-react";
+import { X, Mail, Lock, User, Loader2, Eye, EyeOff } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
-import "../styles/Login.css";
+import "../styles/Login.css"; // Reuse login styles
 
-const Login = ({ onLoginSuccess }) => {
+const Register = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { loginUser } = useAuth();
+  const { registerUser } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -18,21 +19,9 @@ const Login = ({ onLoginSuccess }) => {
     setError("");
     setLoading(true);
 
-    const res = await loginUser(email, password);
+    const res = await registerUser(name, email, password);
     if (res.success) {
-      const storedUser = JSON.parse(localStorage.getItem("userInfo"));
-      // Emulate old behavior of setting token for backward compatibility
-      if (storedUser && storedUser.token) {
-        localStorage.setItem("token", storedUser.token);
-      }
-      
-      if (onLoginSuccess) {
-        onLoginSuccess(storedUser);
-      } else if (storedUser?.role === "admin") {
-        window.location.href = "/admin";
-      } else {
-        navigate("/");
-      }
+      navigate("/");
     } else {
       setError(res.message);
     }
@@ -41,26 +30,31 @@ const Login = ({ onLoginSuccess }) => {
 
   return (
     <div className="login-wrapper">
-      {/* Background video */}
       <video autoPlay muted loop playsInline className="login-bg-video">
-        <source
-          src="https://www.pexels.com/download/video/35351618/"
-          type="video/mp4"
-        />
+        <source src="https://www.pexels.com/download/video/35351618/" type="video/mp4" />
       </video>
 
       <div className="login-card">
-        <button
-          className="login-close"
-          onClick={() => navigate("/")}
-        >
+        <button className="login-close" onClick={() => navigate("/")}>
           <X />
         </button>
 
-        <h2 className="login-title">Welcome Back</h2>
-        <p className="login-subtitle">Log in to your account</p>
+        <h2 className="login-title">Create Account</h2>
+        <p className="login-subtitle">Join us today!</p>
 
         <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <User className="input-icon" />
+            <input
+              type="text"
+              value={name}
+              required
+              placeholder="Full Name"
+              onChange={(e) => setName(e.target.value)}
+              disabled={loading}
+            />
+          </div>
+
           <div className="input-group">
             <Mail className="input-icon" />
             <input
@@ -89,11 +83,7 @@ const Login = ({ onLoginSuccess }) => {
               onClick={() => setShowPassword(!showPassword)}
               tabIndex={-1}
             >
-              {showPassword ? (
-                <EyeOff className="toggle-icon" />
-              ) : (
-                <Eye className="toggle-icon" />
-              )}
+              {showPassword ? <EyeOff className="toggle-icon" /> : <Eye className="toggle-icon" />}
             </button>
           </div>
 
@@ -102,16 +92,15 @@ const Login = ({ onLoginSuccess }) => {
           <button className="login-button" disabled={loading}>
             {loading ? (
               <span className="loader-container">
-                <Loader2 className="spinner" />
-                Logging in...
+                <Loader2 className="spinner" /> Signing up...
               </span>
             ) : (
-              "Log in"
+              "Sign Up"
             )}
           </button>
           <div style={{ textAlign: "center", marginTop: "1rem" }}>
-            <Link to="/register" style={{ color: "var(--accent-color, #4facfe)", textDecoration: "none" }}>
-              Don't have an account? Register
+            <Link to="/login" style={{ color: "var(--accent-color, #4facfe)", textDecoration: "none" }}>
+              Already have an account? Log in
             </Link>
           </div>
         </form>
@@ -120,4 +109,4 @@ const Login = ({ onLoginSuccess }) => {
   );
 };
 
-export default Login;
+export default Register;

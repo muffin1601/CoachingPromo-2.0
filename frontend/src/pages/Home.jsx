@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Helmet } from "react-helmet";
 
 import HeroSection from "../components/HeroSection"; 
+import UserDashboardBanner from "../components/UserDashboardBanner";
 import TrustedClients from "../components/TrustedClients"; 
 
 // Lazy-load heavy sections
@@ -33,8 +34,9 @@ const Home = () => {
         <link rel="canonical" href="https://coachingpromo.in/" />
       </Helmet>
 
-      {/* 🚀 Only 2 components render immediately */}
+      
       <HeroSection />
+      {/* <UserDashboardBanner /> */}
       <TrustedClients />
 
       <Suspense fallback={<Loader />}>

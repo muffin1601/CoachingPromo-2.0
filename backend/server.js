@@ -57,11 +57,17 @@ const searchRoutes = require("./routes/searchRoutes");
 const instituteRoutes = require("./routes/instituteRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 const visitorRoutes = require("./routes/visitor");
+const userRoutes = require("./routes/userRoutes");
+const orderRoutes = require("./routes/orderRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
 
 app.use("/", require("./routes/sitemap"));
 
 app.use("/api/blogs", blogRoutes);
 app.use("/api/visitors", visitorRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/payment", paymentRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/subcategories", subcategoryRoutes);
 app.use("/api/products", productRoutes);

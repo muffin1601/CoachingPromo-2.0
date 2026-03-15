@@ -25,7 +25,12 @@ const SingleProductPage = lazy(() => import("./pages/SingleProductPage"));
 const CustomizerSVG = lazy(() => import("./pages/Customize/CustomizerSVG"));
 const CustomizerAll = lazy(() => import("./pages/Customize/CustomizerAll"));
 const Login = lazy(() => import("./pages/Login"));
+const Register = lazy(() => import("./pages/Register"));
+const Profile = lazy(() => import("./pages/Profile"));
+const Cart = lazy(() => import("./pages/Cart"));
+const Checkout = lazy(() => import("./pages/Checkout"));
 const SearchResults = lazy(() => import("./pages/SearchResults"));
+const Favorites = lazy(() => import("./pages/Favorites"));
 
 // Admin pages
 const AdminDashboard = lazy(() => import("./pages/Admin/AdminDashboard"));
@@ -40,6 +45,9 @@ const SubcategoryManager = lazy(() =>
 );
 const ProductManager = lazy(() =>
   import("./pages/Admin/ProductManagerPage")
+);
+const OrderManager = lazy(() =>
+  import("./pages/Admin/OrderManagerPage")
 );
 
 // Utilities
@@ -104,9 +112,14 @@ const App = () => {
               path="/:categorySlug/:subSlug/:prodSlug"
               element={<SingleProductPage />}
             />
+            <Route path="/product/:prodSlug" element={<SingleProductPage />} />
             <Route path="/search" element={<SearchResults />} />
             <Route path="/login" element={<Login />} />
-
+            <Route path="/register" element={<Register />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/favorites" element={<Favorites />} />
             <Route
               path="/customize/:productType"
               element={<CustomizerSVG />}
@@ -120,6 +133,7 @@ const App = () => {
               <Route path="categories" element={<CategoryManager />} />
               <Route path="subcategories" element={<SubcategoryManager />} />
               <Route path="products" element={<ProductManager />} />
+              <Route path="orders" element={<OrderManager />} />
             </Route>
           </Routes>
         </Suspense>

@@ -97,13 +97,13 @@ const FeaturedCategories = () => {
                   className="featured-img"
                 />
 
-                <div className="featured-overlay">
+                {/* <div className="featured-overlay">
                   <p className="overlay-items">{cat.items} Items</p>
 
                   <a href={`/categories/${cat.slug}`} className="overlay-btn">
                     Explore
                   </a>
-                </div>
+                </div> */}
               </div>
 
               <div className="featured-icon">{cat.icon}</div>
