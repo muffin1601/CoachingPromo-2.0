@@ -30,9 +30,9 @@ const Register = () => {
 
   return (
     <div className="login-wrapper">
-      <video autoPlay muted loop playsInline className="login-bg-video">
+      {/* <video autoPlay muted loop playsInline className="login-bg-video">
         <source src="https://www.pexels.com/download/video/35351618/" type="video/mp4" />
-      </video>
+      </video> */}
 
       <div className="login-card">
         <button className="login-close" onClick={() => navigate("/")}>
@@ -98,9 +98,10 @@ const Register = () => {
               "Sign Up"
             )}
           </button>
-          <div style={{ textAlign: "center", marginTop: "1rem" }}>
-            <Link to="/login" style={{ color: "var(--accent-color, #4facfe)", textDecoration: "none" }}>
-              Already have an account? Log in
+          <div className="auth-footer">
+            Already have an account? 
+            <Link to="/login" className="auth-link">
+              Log in
             </Link>
           </div>
         </form>

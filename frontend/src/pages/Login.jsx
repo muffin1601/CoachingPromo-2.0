@@ -41,13 +41,13 @@ const Login = ({ onLoginSuccess }) => {
 
   return (
     <div className="login-wrapper">
-      {/* Background video */}
-      <video autoPlay muted loop playsInline className="login-bg-video">
+      {/* Background video removed as per user request to keep bg white */}
+      {/* <video autoPlay muted loop playsInline className="login-bg-video">
         <source
           src="https://www.pexels.com/download/video/35351618/"
           type="video/mp4"
         />
-      </video>
+      </video> */}
 
       <div className="login-card">
         <button
@@ -109,9 +109,10 @@ const Login = ({ onLoginSuccess }) => {
               "Log in"
             )}
           </button>
-          <div style={{ textAlign: "center", marginTop: "1rem" }}>
-            <Link to="/register" style={{ color: "var(--accent-color, #4facfe)", textDecoration: "none" }}>
-              Don't have an account? Register
+          <div className="auth-footer">
+            Don't have an account? 
+            <Link to="/register" className="auth-link">
+              Register
             </Link>
           </div>
         </form>
