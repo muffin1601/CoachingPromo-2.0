@@ -5,6 +5,7 @@ const visitorSchema = new mongoose.Schema({
   count: { type: Number, default: 0 },
   visitors: [
     {
+      visitorId: String,
       ip: String,
       city: String,
       region: String,

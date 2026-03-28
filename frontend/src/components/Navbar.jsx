@@ -23,7 +23,6 @@ const RegisterInstituteModal = lazy(() => import("./RegisterInstituteModal"));
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [visitorCount, setVisitorCount] = useState(0);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
   const [searchInput, setSearchInput] = useState("");
@@ -39,13 +38,25 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* Visitor Count */
-  // useEffect(() => {
-  //   axios
-  //     .get(`${import.meta.env.VITE_API_URL}/visitors/count`)
-  //     .then((res) => setVisitorCount(res.data.totalVisitors))
-  //     .catch((err) => console.error("Failed to fetch visitor count", err));
-  // }, []);
+  /* Visitor Count (Silent Capture) */
+  useEffect(() => {
+    // Generate or retrieve a persistent visitor ID
+    let visitorId = localStorage.getItem("visitorId");
+    if (!visitorId) {
+      // Modern browsers support crypto.randomUUID()
+      if (window.crypto && window.crypto.randomUUID) {
+        visitorId = window.crypto.randomUUID();
+      } else {
+        // Fallback for older browsers
+        visitorId = Math.random().toString(36).substring(2) + Date.now().toString(36);
+      }
+      localStorage.setItem("visitorId", visitorId);
+    }
+
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/visitors/count?vid=${visitorId}`)
+      .catch((err) => console.error("Visitor capture failed", err));
+  }, []);
 
   return (
     <>
@@ -58,10 +69,6 @@ const Navbar = () => {
               <div className="logo-section">
                 <img src="/logo.webp" alt="Coaching Promo" className="logo-image" />
               </div>
-
-              {/* <div className="visitor-count desktop-only">
-                Visitors: {visitorCount ? visitorCount : "..."}
-              </div> */}
             </div>
 
             {/* RIGHT SECTION */}
