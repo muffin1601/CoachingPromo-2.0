@@ -11,8 +11,10 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
   const { registerUser } = useAuth();
   const navigate = useNavigate();
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,10 +32,6 @@ const Register = () => {
 
   return (
     <div className="login-wrapper">
-      {/* <video autoPlay muted loop playsInline className="login-bg-video">
-        <source src="https://www.pexels.com/download/video/35351618/" type="video/mp4" />
-      </video> */}
-
       <div className="login-card">
         <button className="login-close" onClick={() => navigate("/")}>
           <X />
@@ -109,5 +107,7 @@ const Register = () => {
     </div>
   );
 };
+
+
 
 export default Register;

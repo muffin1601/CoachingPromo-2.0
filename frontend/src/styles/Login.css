@@ -236,8 +236,75 @@
   justify-content: center;
 }
 
+/* ===== REGISTER GRID ===== */
+.register-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Custom Scrollbar for registration form */
+.register-form-grid::-webkit-scrollbar {
+  width: 6px;
+}
+.register-form-grid::-webkit-scrollbar-track {
+  background: var(--light-border);
+}
+.register-form-grid::-webkit-scrollbar-thumb {
+  background: var(--brand-orange);
+  border-radius: 3px;
+}
+
+.form-section h3 {
+  font-size: 18px;
+  color: var(--brand-blue);
+  margin-bottom: 15px;
+  border-bottom: 2px solid var(--brand-orange);
+  display: inline-block;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.state-select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--medium-border);
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  background: #fff;
+  color: var(--text-dark);
+  cursor: pointer;
+  margin-bottom: 22px;
+}
+
+.checkbox-group {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.shipping-section {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--medium-border);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 480px) {
+
   .login-card {
     width: 90%;
     padding: 32px 24px;

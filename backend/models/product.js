@@ -79,8 +79,14 @@ const productSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId, 
       ref: "Subcategory",
     },
+    gstRate: { type: Number, default: 0 },
+    hsnCode: { type: String, default: "" },
+    discount: { type: Number, default: 0 },
+    isOfferProduct: { type: Boolean, default: false },
   },
   { timestamps: true }
 );
+
+
 
 module.exports = mongoose.model("Product", productSchema);

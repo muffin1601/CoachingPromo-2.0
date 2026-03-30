@@ -40,22 +40,45 @@ const ProductGrid = ({ products, catSlug, subSlug, onRemove, isFavoritesPage = f
       <div className="product-list-grid">
         {products.map((item) => {
           // item might be a product from API or a Favorite item from context
-          const { _id, slug, name, images, price, salePrice, ratings, product, href, image } = item;
+          const { _id, slug, name, images, price, salePrice, ratings, product, href, image, category, subcategory, discount } = item;
           
           const itemId = _id || product;
           const finalName = name;
           const finalPrice = price;
+          // Calculate discounted price if discount exists and salePrice is not already set
+          const finalSalePrice = salePrice || (discount > 0 ? Math.round(price * (1 - discount / 100)) : null);
+          
           // Use item.image if available (fav items), otherwise images[0] (api items)
           const finalImageUrl = getImageUrl(image || images?.[0]?.url || images?.[0]);
           
           // Determine the target URL
           let targetUrl = href;
           if (!targetUrl) {
-            targetUrl = slug ? `/${catSlug}/${subSlug}/${slug}` : `/product/${itemId}`;
+            const cSlug = catSlug || category?.slug;
+            const sSlug = subSlug || subcategory?.slug;
+            targetUrl = (cSlug && sSlug && slug) ? `/${cSlug}/${sSlug}/${slug}` : `/product/${itemId}`;
           }
 
           return (
             <div key={itemId} className="product-card">
+              {/* DISCOUNT BADGE */}
+              {discount > 0 && (
+                <div style={{
+                  position: 'absolute',
+                  top: '10px',
+                  left: '10px',
+                  background: 'var(--brand-orange)',
+                  color: '#fff',
+                  padding: '4px 8px',
+                  borderRadius: '4px',
+                  fontSize: '12px',
+                  fontWeight: 'bold',
+                  zIndex: 5
+                }}>
+                  {discount}% OFF
+                </div>
+              )}
+              
               {/* REMOVE BUTTON (only on favorites page) */}
               {isFavoritesPage && onRemove && (
                 <button 
@@ -84,7 +107,14 @@ const ProductGrid = ({ products, catSlug, subSlug, onRemove, isFavoritesPage = f
 
                   {/* PRICE */}
                   <div className="product-price-wrapper">
-                    <span className="product-regular-price">₹{finalPrice}</span>
+                    {finalSalePrice ? (
+                      <>
+                        <span className="product-sale-price">₹{finalSalePrice}</span>
+                        <span className="product-main-price">₹{finalPrice}</span>
+                      </>
+                    ) : (
+                      <span className="product-regular-price">₹{finalPrice}</span>
+                    )}
                   </div>
 
                   {/* FOOTER ACTIONS */}
@@ -98,7 +128,7 @@ const ProductGrid = ({ products, catSlug, subSlug, onRemove, isFavoritesPage = f
                               _id: itemId,
                               name: finalName,
                               images: [{ url: finalImageUrl }],
-                              price: finalPrice
+                              price: finalSalePrice || finalPrice
                             };
                             addToCart(productToCart, 1, "Default", "Default");
                             navigate("/cart");

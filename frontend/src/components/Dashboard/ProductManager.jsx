@@ -25,7 +25,13 @@ const emptyForm = {
   seo: { metaTitle: "", metaDescription: "", keywords: "" }, // comma in UI
   category: "",
   subcategory: "",
+  gstRate: 0,
+  hsnCode: "",
+  discount: 0,
+  isOfferProduct: false,
 };
+
+
 
 const ProductManager = () => {
   const [items, setItems] = useState([]);
@@ -151,7 +157,13 @@ const ProductManager = () => {
       },
       category: p.category?._id || "",
       subcategory: p.subcategory?._id || "",
+      gstRate: p.gstRate || 0,
+      hsnCode: p.hsnCode || "",
+      discount: p.discount || 0,
+      isOfferProduct: !!p.isOfferProduct,
     });
+
+
     setIsModalOpen(true);
   };
 
@@ -392,6 +404,10 @@ const ProductManager = () => {
         <h4 style={{ marginTop: 16 }}>Pricing</h4>
         <FormInput label="Price" type="number" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })}/>
         <FormInput label="Sale Price (optional)" type="number" value={form.salePrice} onChange={(e) => setForm({ ...form, salePrice: e.target.value })}/>
+        <FormInput label="GST Rate (%)" type="number" value={form.gstRate} onChange={(e) => setForm({ ...form, gstRate: Number(e.target.value) })}/>
+        <FormInput label="HSN Code" value={form.hsnCode} onChange={(e) => setForm({ ...form, hsnCode: e.target.value })}/>
+        <FormInput label="Discount (%)" type="number" value={form.discount} onChange={(e) => setForm({ ...form, discount: Number(e.target.value) })}/>
+
 
         {/* CATEGORY/SUB */}
         <h4 style={{ marginTop: 16 }}>Categorization</h4>
@@ -450,12 +466,32 @@ const ProductManager = () => {
         <h4 style={{ marginTop: 16 }}>Inventory</h4>
         <FormInput label="SKU" value={form.sku} onChange={(e) => setForm({ ...form, sku: e.target.value })}/>
         <FormInput label="Stock" type="number" value={form.stock} onChange={(e) => setForm({ ...form, stock: Number(e.target.value) })}/>
+        
         <div style={{ display: "flex", gap: 12, marginTop: 8 }}>
           <label><input type="checkbox" checked={form.isActive} onChange={(e) => setForm({ ...form, isActive: e.target.checked })}/> Active</label>
           <label><input type="checkbox" checked={form.isFeatured} onChange={(e) => setForm({ ...form, isFeatured: e.target.checked })}/> Featured</label>
         </div>
 
+        {/* PROMOTION */}
+        <h4 style={{ marginTop: 16 }}>Promotion</h4>
+        <div style={{ padding: '10px', background: '#fff4e6', border: '1px solid #ffd8a8', borderRadius: '6px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer', fontWeight: 'bold', color: '#d17504' }}>
+            <input 
+              type="checkbox" 
+              checked={form.isOfferProduct} 
+              onChange={(e) => setForm({ ...form, isOfferProduct: e.target.checked })}
+              style={{ width: '18px', height: '18px' }}
+            /> 
+            Mark as Special Offer Product
+          </label>
+          <p style={{ margin: '5px 0 0 28px', fontSize: '12px', color: '#666' }}>
+            This will display the product on the Special Offers page.
+          </p>
+        </div>
+
+
         {/* SEO */}
+
         <h4 style={{ marginTop: 16 }}>SEO</h4>
         <FormInput label="Meta Title" value={form.seo.metaTitle} onChange={(e) => setForm({ ...form, seo: { ...form.seo, metaTitle: e.target.value }})}/>
         <FormInput label="Meta Description" value={form.seo.metaDescription} onChange={(e) => setForm({ ...form, seo: { ...form.seo, metaDescription: e.target.value }})}/>

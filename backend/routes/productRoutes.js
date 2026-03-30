@@ -5,6 +5,8 @@ const path = require("path");
 const fs = require("fs");
 
 const Product = require("../models/product");
+const OfferProduct = require("../models/offerProduct");
+
 
 // Auto-create folder
 const UPLOAD_DIR = "uploads/products";
@@ -29,6 +31,31 @@ router.post("/upload-multi", upload.array("images", 10), (req, res) => {
   const urls = req.files.map(f => `${req.protocol}://${req.get("host")}/uploads/products/${f.filename}`);
   res.json({ urls });
 });
+
+// ---- List products from the OfferProduct collection ----
+router.get("/discounted", async (req, res) => {
+  try {
+    const offerEntries = await OfferProduct.find()
+      .populate({
+        path: "product",
+        populate: [
+          { path: "category", select: "name slug" },
+          { path: "subcategory", select: "name slug" }
+        ]
+      })
+      .sort({ createdAt: -1 });
+
+    const products = offerEntries
+      .filter(entry => entry.product) // Filter out null products if deleted
+      .map(entry => entry.product);
+
+    res.json({ success: true, count: products.length, products });
+  } catch (err) {
+    res.status(500).json({ message: "Server error", error: err.message });
+  }
+});
+
+
 
 // ---- List with pagination & search ----
 router.get("/all", async (req, res) => {
@@ -65,6 +92,8 @@ router.get("/all", async (req, res) => {
     res.status(500).json({ message: "Server error", error: err.message });
   }
 });
+
+
 
 // ---- Create ----
 router.post("/create", async (req, res) => {
@@ -115,9 +144,26 @@ router.post("/create", async (req, res) => {
 
       category: b.category || null,
       subcategory: b.subcategory || null,
+
+      gstRate: b.gstRate || 0,
+      hsnCode: b.hsnCode || "",
+      discount: b.discount || 0,
+      isOfferProduct: !!b.isOfferProduct,
     });
 
+
+
     const saved = await product.save();
+
+    // Sync with OfferProduct collection
+    if (!!b.isOfferProduct) {
+      await OfferProduct.findOneAndUpdate(
+        { product: saved._id },
+        { product: saved._id },
+        { upsert: true }
+      );
+    }
+
     res.status(201).json({ success: true, product: saved });
   } catch (err) {
     res.status(400).json({ message: "Error creating product", error: err.message });
@@ -170,12 +216,36 @@ router.put("/update/:id", async (req, res) => {
 
       category: b.category || null,
       subcategory: b.subcategory || null,
+
+      gstRate: b.gstRate || 0,
+      hsnCode: b.hsnCode || "",
+      discount: b.discount || 0,
+      isOfferProduct: !!b.isOfferProduct,
     };
 
+
+
+    console.log(`Updating product ${req.params.id}. isOfferProduct in body:`, b.isOfferProduct);
     const updated = await Product.findByIdAndUpdate(req.params.id, updates, { new: true });
     if (!updated) return res.status(404).json({ message: "Product not found" });
 
+    console.log(`Product updated. isOfferProduct in doc:`, updated.isOfferProduct);
+
+    // Sync with OfferProduct collection
+    if (updated.isOfferProduct) {
+      console.log(`Adding ${updated._id} to OfferProduct collection...`);
+      await OfferProduct.findOneAndUpdate(
+        { product: updated._id },
+        { product: updated._id },
+        { upsert: true }
+      );
+    } else {
+      console.log(`Removing ${updated._id} from OfferProduct collection...`);
+      await OfferProduct.findOneAndDelete({ product: updated._id });
+    }
+
     res.json({ success: true, product: updated });
+
   } catch (err) {
     res.status(400).json({ message: "Error updating product", error: err.message });
   }

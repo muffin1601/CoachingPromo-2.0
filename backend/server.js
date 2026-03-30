@@ -60,6 +60,7 @@ const visitorRoutes = require("./routes/visitor");
 const userRoutes = require("./routes/userRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
+const leadRoutes = require("./routes/leadRoutes");
 
 app.use("/", require("./routes/sitemap"));
 
@@ -68,6 +69,8 @@ app.use("/api/visitors", visitorRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/payment", paymentRoutes);
+app.use("/api/leads", leadRoutes);
+
 app.use("/api/categories", categoryRoutes);
 app.use("/api/subcategories", subcategoryRoutes);
 app.use("/api/products", productRoutes);

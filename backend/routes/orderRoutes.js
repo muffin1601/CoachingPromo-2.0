@@ -10,6 +10,8 @@ router.post("/", protect, async (req, res) => {
   const {
     orderItems,
     shippingAddress,
+    billingDetails,
+    gstNumber,
     paymentMethod,
     itemsPrice,
     taxPrice,
@@ -26,12 +28,15 @@ router.post("/", protect, async (req, res) => {
         orderItems,
         user: req.user._id,
         shippingAddress,
+        billingDetails,
+        gstNumber,
         paymentMethod,
         itemsPrice,
         taxPrice,
         shippingPrice,
         totalPrice,
       });
+
 
       const createdOrder = await order.save();
       res.status(201).json(createdOrder);

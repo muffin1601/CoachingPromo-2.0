@@ -56,6 +56,7 @@ export const AuthProvider = ({ children }) => {
       setUser(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       return { success: true };
+
     } catch (error) {
       return {
         success: false,
@@ -63,6 +64,7 @@ export const AuthProvider = ({ children }) => {
       };
     }
   };
+
 
   const logoutUser = () => {
     setUser(null);

@@ -99,7 +99,13 @@ const Login = ({ onLoginSuccess }) => {
 
           {error && <p className="error">{error}</p>}
 
-          <button className="login-button" disabled={loading}>
+          <div className="auth-footer" style={{ marginTop: "10px", textAlign: "right" }}>
+            <Link to="/forgot-password" style={{ color: "var(--brand-orange)", textDecoration: "none", fontSize: "13px" }}>
+              Forgot Password?
+            </Link>
+          </div>
+
+          <button className="login-button" disabled={loading} style={{ marginTop: "15px" }}>
             {loading ? (
               <span className="loader-container">
                 <Loader2 className="spinner" />
@@ -115,6 +121,7 @@ const Login = ({ onLoginSuccess }) => {
               Register
             </Link>
           </div>
+
         </form>
       </div>
     </div>

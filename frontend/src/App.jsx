@@ -1,9 +1,10 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
+  useNavigate,
 } from "react-router-dom";
 
 // Lazy-load everything except Navbar/Footer/Home (critical display)
@@ -26,11 +27,19 @@ const CustomizerSVG = lazy(() => import("./pages/Customize/CustomizerSVG"));
 const CustomizerAll = lazy(() => import("./pages/Customize/CustomizerAll"));
 const Login = lazy(() => import("./pages/Login"));
 const Register = lazy(() => import("./pages/Register"));
+const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
+const ResetPassword = lazy(() => import("./pages/ResetPassword"));
 const Profile = lazy(() => import("./pages/Profile"));
+const OffersPage = lazy(() => import("./pages/OffersPage"));
+
 const Cart = lazy(() => import("./pages/Cart"));
 const Checkout = lazy(() => import("./pages/Checkout"));
 const SearchResults = lazy(() => import("./pages/SearchResults"));
 const Favorites = lazy(() => import("./pages/Favorites"));
+
+// Components
+import OfferModal from "./components/OfferModal";
+import LeadFormModal from "./components/LeadFormModal";
 
 // Admin pages
 const AdminDashboard = lazy(() => import("./pages/Admin/AdminDashboard"));
@@ -63,14 +72,30 @@ const Loader = () => (
 // Layout wrapper (keeps Navbar/Footer off admin pages)
 const LayoutWrapper = ({ children }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isAdmin = location.pathname.startsWith("/admin");
+  const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
+
 
   return (
     <>
       {!isAdmin && (
-        <Suspense fallback={<Loader />}>
-          <Navbar />
-        </Suspense>
+        <>
+          {location.pathname === "/" && (
+            <OfferModal onBannerClick={() => setIsLeadFormOpen(true)} />
+          )}
+          <LeadFormModal 
+            isOpen={isLeadFormOpen} 
+            onClose={() => setIsLeadFormOpen(false)} 
+            onSuccess={() => {
+              setIsLeadFormOpen(false);
+              navigate("/offers");
+            }} 
+          />
+          <Suspense fallback={<Loader />}>
+            <Navbar />
+          </Suspense>
+        </>
       )}
 
       <main id="main-content" role="main">
@@ -116,9 +141,13 @@ const App = () => {
             <Route path="/search" element={<SearchResults />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/resetpassword/:token" element={<ResetPassword />} />
             <Route path="/profile" element={<Profile />} />
+
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/offers" element={<OffersPage />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route
               path="/customize/:productType"
@@ -141,5 +170,7 @@ const App = () => {
     </Router>
   );
 };
+
+
 
 export default App;
