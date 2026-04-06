@@ -6,7 +6,7 @@ Allow: /
 Disallow: /admin
 Disallow: /api
 Disallow: /login
-Disallow: /customize
+
 
 # Optional: block search result pages
 Disallow: /search

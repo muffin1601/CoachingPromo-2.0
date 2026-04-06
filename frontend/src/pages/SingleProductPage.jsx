@@ -21,6 +21,7 @@ import {
   Star,
   Info,
   Palette,
+  Play,
 } from "lucide-react";
 
 
@@ -55,7 +56,7 @@ const SingleProductPage = () => {
   const [product, setProduct] = useState(null);
   const [category, setCategory] = useState(null);
   const [subcategory, setSubcategory] = useState(null);
-  const [activeImage, setActiveImage] = useState(null);
+  const [activeMedia, setActiveMedia] = useState(null);
   const [qty, setQty] = useState(1);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const { addToCart } = useCart();
@@ -79,7 +80,7 @@ const bannerImage =
       `${import.meta.env.VITE_API_URL}/products/${prodSlug}`
     );
     setProduct(data.product);
-    setActiveImage(data.product?.images?.[0]?.url);
+    setActiveMedia(data.product?.images?.[0]);
   };
 
   const getCategoryData = async () => {
@@ -168,26 +169,50 @@ const {
         <div className="product-gallery">
           <div className="product-thumb-list">
             {(subImages?.length ? subImages : images)?.map((img, i) => (
-              <img
+              <div
                 key={i}
-                src={img.url}
-                alt={img.altText || `${name} - product view`}
-                className={`thumb-img ${
-                  activeImage === img.url ? "thumb-active" : ""
+                className={`thumb-item ${
+                  activeMedia?.url === img.url ? "thumb-active" : ""
                 }`}
-                loading="lazy"
-                onClick={() => setActiveImage(img.url)}
-              />
+                onClick={() => setActiveMedia(img)}
+              >
+                {img.type === "video" ? (
+                  <div className="thumb-video-wrapper">
+                    <video src={img.url} muted className="thumb-img" />
+                    <div className="play-overlay">
+                      <Play size={12} fill="white" />
+                    </div>
+                  </div>
+                ) : (
+                  <img
+                    src={img.url}
+                    alt={img.altText || `${name} - product view`}
+                    className="thumb-img"
+                    loading="lazy"
+                  />
+                )}
+              </div>
             ))}
           </div>
 
           <div className="product-main-img-wrapper">
-            <img
-              src={activeImage}
-              loading="eager"
-              alt={`${name} - main product`}
-              className="product-main-img"
-            />
+            {activeMedia?.type === "video" ? (
+              <video
+                src={activeMedia.url}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="product-main-img"
+              />
+            ) : (
+              <img
+                src={activeMedia?.url}
+                loading="eager"
+                alt={`${name} - main product`}
+                className="product-main-img"
+              />
+            )}
           </div>
         </div>
 

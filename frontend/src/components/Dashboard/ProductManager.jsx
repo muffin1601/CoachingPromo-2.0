@@ -196,7 +196,8 @@ const ProductManager = () => {
       const urls = [];
       for (const f of files) {
         const url = await uploadSingle(f);
-        urls.push({ url, altText: "" });
+        const type = f.type.startsWith("video") ? "video" : "image";
+        urls.push({ url, altText: "", type });
       }
       setForm((prev) => ({ ...prev, images: [...prev.images, ...urls] }));
       alert("Primary images uploaded ✅");
@@ -213,7 +214,8 @@ const ProductManager = () => {
       const urls = [];
       for (const f of files) {
         const url = await uploadSingle(f);
-        urls.push({ url, altText: "" });
+        const type = f.type.startsWith("video") ? "video" : "image";
+        urls.push({ url, altText: "", type });
       }
       setForm((prev) => ({ ...prev, subImages: [...prev.subImages, ...urls] }));
       alert("Sub images uploaded ✅");
@@ -435,7 +437,11 @@ const ProductManager = () => {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
           {form.images.map((img, i) => (
             <div key={i} style={{ border: "1px solid #e4e4e4", padding: 8 }}>
-              <img src={img.url} alt="" style={{ width: "100%", height: 100, objectFit: "cover" }}/>
+              {img.type === "video" ? (
+                <video src={img.url} muted style={{ width: "100%", height: 100, objectFit: "cover" }} />
+              ) : (
+                <img src={img.url} alt="" style={{ width: "100%", height: 100, objectFit: "cover" }}/>
+              )}
               <FormInput label="Alt text" value={img.altText} onChange={(e) => updateImageAlt("images", i, e.target.value)}/>
               <button className="hm-delete-btn" onClick={() => removeImage("images", i)}>Remove</button>
             </div>
@@ -443,13 +449,17 @@ const ProductManager = () => {
         </div>
 
         <div className="hm-upload-group" style={{ marginTop: 10 }}>
-          <label className="hm-input-label">Upload Sub Images</label>
-          <input type="file" accept="image/*" multiple onChange={handleUploadSecondary}/>
+          <label className="hm-input-label">Upload Sub Images/Videos (5-10s)</label>
+          <input type="file" accept="image/*,video/*" multiple onChange={handleUploadSecondary}/>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 10 }}>
           {form.subImages.map((img, i) => (
             <div key={i} style={{ border: "1px solid #e4e4e4", padding: 8 }}>
-              <img src={img.url} alt="" style={{ width: "100%", height: 100, objectFit: "cover" }}/>
+              {img.type === "video" ? (
+                <video src={img.url} muted style={{ width: "100%", height: 100, objectFit: "cover" }} />
+              ) : (
+                <img src={img.url} alt="" style={{ width: "100%", height: 100, objectFit: "cover" }}/>
+              )}
               <FormInput label="Alt text" value={img.altText} onChange={(e) => updateImageAlt("subImages", i, e.target.value)}/>
               <button className="hm-delete-btn" onClick={() => removeImage("subImages", i)}>Remove</button>
             </div>

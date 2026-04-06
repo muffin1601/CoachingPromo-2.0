@@ -22,13 +22,13 @@ const upload = multer({ storage });
 // ---- Uploads ----
 router.post("/upload", upload.single("image"), (req, res) => {
   if (!req.file) return res.status(400).json({ message: "No file uploaded" });
-  const url = `${req.protocol}://${req.get("host")}/uploads/products/${req.file.filename}`;
+  const url = `/uploads/products/${req.file.filename}`;
   res.json({ url });
 });
 
 router.post("/upload-multi", upload.array("images", 10), (req, res) => {
   if (!req.files || !req.files.length) return res.status(400).json({ message: "No files uploaded" });
-  const urls = req.files.map(f => `${req.protocol}://${req.get("host")}/uploads/products/${f.filename}`);
+  const urls = req.files.map(f => `/uploads/products/${f.filename}`);
   res.json({ urls });
 });
 
@@ -114,8 +114,8 @@ router.post("/create", async (req, res) => {
       price: b.price,
       salePrice: b.salePrice || null,
 
-      images: (b.images || []).map((it) => ({ url: it.url, altText: it.altText || "" })),
-      subImages: (b.subImages || []).map((it) => ({ url: it.url, altText: it.altText || "" })),
+      images: (b.images || []).map((it) => ({ url: it.url, altText: it.altText || "", type: it.type || "image" })),
+      subImages: (b.subImages || []).map((it) => ({ url: it.url, altText: it.altText || "", type: it.type || "image" })),
 
       stock: b.stock || 0,
       sku: b.sku || null,
@@ -188,8 +188,8 @@ router.put("/update/:id", async (req, res) => {
       price: b.price,
       salePrice: b.salePrice || null,
 
-      images: (b.images || []).map((it) => ({ url: it.url, altText: it.altText || "" })),
-      subImages: (b.subImages || []).map((it) => ({ url: it.url, altText: it.altText || "" })),
+      images: (b.images || []).map((it) => ({ url: it.url, altText: it.altText || "", type: it.type || "image" })),
+      subImages: (b.subImages || []).map((it) => ({ url: it.url, altText: it.altText || "", type: it.type || "image" })),
 
       stock: b.stock || 0,
       sku: b.sku || null,

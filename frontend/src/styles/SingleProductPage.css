@@ -27,16 +27,18 @@
   overflow-y: auto;
 }
 
-.thumb-img {
+.thumb-item {
   width: 80px;
   height: 80px;
-  object-fit: cover;
   cursor: pointer;
   border: 1px solid var(--light-border);
   transition: 0.2s ease;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.thumb-img:hover {
+.thumb-item:hover {
   opacity: 0.85;
 }
 
@@ -44,17 +46,50 @@
   border: 2px solid var(--brand-orange);
 }
 
+.thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thumb-video-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
 .product-main-img-wrapper {
   flex: 1;
   border: 1px solid var(--light-border);
   background: var(--light-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
 }
 
 .product-main-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   max-height: 580px;
   object-fit: contain;
+  display: block;
 }
 
 /* =======================================
@@ -269,7 +304,7 @@
     gap: 8px;
   }
 
-  .thumb-img {
+  .thumb-item {
     width: 70px;
     height: 70px;
   }
@@ -304,7 +339,7 @@
 
 /* EXTRA SMALL MOBILE */
 @media (max-width: 400px) {
-  .thumb-img {
+  .thumb-item {
     width: 60px;
     height: 60px;
   }
