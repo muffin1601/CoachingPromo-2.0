@@ -81,9 +81,9 @@ const LayoutWrapper = ({ children }) => {
     <>
       {!isAdmin && (
         <>
-          {location.pathname === "/" && (
+          {/* {location.pathname === "/" && (
             <OfferModal onBannerClick={() => setIsLeadFormOpen(true)} />
-          )}
+          )} */}
           <LeadFormModal 
             isOpen={isLeadFormOpen} 
             onClose={() => setIsLeadFormOpen(false)} 

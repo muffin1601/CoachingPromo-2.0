@@ -122,7 +122,8 @@ const categories = [
         href: "/promotional-items/other",
         products: [
           { name: "Photo Frame", href: "/promotional-items/photo-frame" },
-          { name: "Mouse Pad", href: "/promotional-items/mouse-pad" }
+          { name: "Mouse Pad", href: "/promotional-items/mouse-pad" },
+          { name: "Umbrella", href: "/promotional-items/umbrella"}
           // { name: "Graduation Accessories", href: "/promotional-items/graduation-accessories" },
           // { name: "Graduation Honor Cards", href: "/promotional-items/other/graduation-honor-cards" }
         ]

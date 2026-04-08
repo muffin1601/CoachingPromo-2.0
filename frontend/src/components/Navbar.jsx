@@ -96,8 +96,8 @@ const Navbar = () => {
               </div>
 
               {/* Phone */}
-              <a href="tel:+918750708222" className="phone-btn">
-                <Phone size={18} /> Call
+              <a href="tel:+918800898643" className="phone-link">
+                <Phone size={18} /> 88008 98643
               </a>
 
               {/* WhatsApp */}
