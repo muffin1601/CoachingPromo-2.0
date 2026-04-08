@@ -18,6 +18,7 @@ const productSchema = new mongoose.Schema(
       {
         url: String,
         altText: String,
+        type: { type: String, enum: ["image", "video"], default: "image" },
       },
     ],
 
@@ -25,6 +26,7 @@ const productSchema = new mongoose.Schema(
       {
         url: String,
         altText: String,
+        type: { type: String, enum: ["image", "video"], default: "image" },
       },
     ],
 
