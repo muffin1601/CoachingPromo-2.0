@@ -93,7 +93,7 @@ const Sidebar = ({ isOpen, onClose }) => {
           {/* Contact Buttons */}
           <div className="sidebar-contact-buttons">
             <a href="tel:+918750708222" className="sidebar-contact-item">
-              <Phone size={20} /> Call Us
+              <Phone size={20} /> +91 87507 08222
             </a>
 
             <a
