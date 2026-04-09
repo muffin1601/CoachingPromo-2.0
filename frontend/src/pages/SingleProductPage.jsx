@@ -29,9 +29,6 @@ const EnquiryModal = lazy(() => import("../components/EnquiryModal"));
 const CustomizationExperience = lazy(() =>
   import("../components/CustomizationExperience")
 );
-const CategoryBanner = lazy(() =>
-  import("../components/Category/CategoryBanner")
-);
 const BlogSection = lazy(() => import("../components/BlogSection"));
 const PopularSubcategories = lazy(() =>
   import("../components/PopularSubcategories")
@@ -63,17 +60,6 @@ const SingleProductPage = () => {
   const { addToFavorites, isFavorite } = useFavorites();
 
   const navigate = useNavigate();
-
-   const categoryBannerImages = {
-  "apparel-accessories": "/apparel.webp",
-  bags: "/bags.webp",
-  stationery: "/stationary.webp",
-  "promotional-items": "/promo.webp",
-};
-
-const bannerImage =
-  categoryBannerImages[categorySlug] ||
-  "https://images.pexels.com/photos/2325447/pexels-photo-2325447.jpeg";
 
   const fetchProduct = async () => {
     const { data } = await axios.get(
@@ -144,24 +130,18 @@ const {
         canonical={`https://coachingpromo.in/${categorySlug}/${subSlug}/${prodSlug}`}
       />
 
-      {/* Lazy Loaded Components Below */}
-      <Suspense fallback={<div></div>}>
-        <CategoryBanner
-          name={product?.name}
-          image={bannerImage}
-          subtitle={
-            typeof product?.description === "string"
-              ? product.description
-              : product?.description?.short
-          }
-          breadcrumbs={[
-            { label: "Home", href: "/" },
-            { label: category?.name, href: `/categories/${categorySlug}` },
-            { label: subcategory?.name, href: `/${categorySlug}/${subSlug}` },
-            { label: product?.name },
-          ]}
-        />
-      </Suspense>
+      {/* ========== BREADCRUMBS ========== */}
+      <div className="product-breadcrumb">
+        <div className="breadcrumb-container">
+          <a href="/">Home</a>
+          <span className="breadcrumb-divider">/</span>
+          <a href={`/categories/${categorySlug}`}>{category?.name}</a>
+          <span className="breadcrumb-divider">/</span>
+          <a href={`/${categorySlug}/${subSlug}`}>{subcategory?.name}</a>
+          <span className="breadcrumb-divider">/</span>
+          <span className="breadcrumb-current">{product?.name}</span>
+        </div>
+      </div>
 
       {/* ========== MAIN PRODUCT PAGE ========== */}
       <div className="product-page-container">

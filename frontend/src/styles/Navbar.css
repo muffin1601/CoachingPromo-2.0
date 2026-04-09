@@ -40,7 +40,28 @@
 .top-bar-right {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 16px; /* Optimized gap */
+}
+
+.phone-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--brand-blue);
+  font-size: 14px;
+  white-space: nowrap;
+  transition: .22s ease;
+}
+
+.phone-link:hover {
+  color: var(--brand-orange);
+}
+
+.phone-link svg {
+  color: var(--brand-blue);
+  flex-shrink: 0;
 }
 
 /* LOGO */
@@ -90,18 +111,18 @@ width: 120px;
   transition: .25s ease;
 }
 
+.full-search-container:hover {
+  border-color: var(--brand-blue);
+}
+
 .full-search-input {
   border: none;
   outline: none;
-  width: 220px;
-  font-size: 15px;
-font-family: "Outfit", sans-serif;
+  width: 180px; /* Slightly reduced to give more space */
+  font-size: 14px;
+  font-family: "Outfit", sans-serif;
   color: #444;
   background: transparent;
-}
-
-.full-search-container:hover {
-  border-color: var(--brand-blue);
 }
 
 .search-icon-wrapper svg,
@@ -161,7 +182,7 @@ font-family: "Outfit", sans-serif;
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 28px;
+  gap: 20px; /* Reduced to prevent wrapping */
   margin: 0;
   padding: 0;
 }
@@ -170,13 +191,14 @@ font-family: "Outfit", sans-serif;
   text-decoration: none;
   color: #222;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.95rem;
   padding: 6px 4px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   transition: .22s ease;
   border-bottom: 2px solid transparent;
+  white-space: nowrap; /* Prevent wrapping like 'Promotional Items' */
 }
 
 .nav-links li a.active {
