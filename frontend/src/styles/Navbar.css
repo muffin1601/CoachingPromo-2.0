@@ -303,22 +303,20 @@ width: 120px;
   color: #444;
 }
 
-/*  Call Button */
-.phone-btn {
+/*  Phone Number Link */
+.phone-link {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: var(--brand-blue);
-  padding: 6px 14px;
+  color: var(--brand-blue);
   font-weight: 600;
-  color: #fff;
   font-size: 14px;
   text-decoration: none;
-  transition: .25s ease;
+  transition: color .22s ease;
 }
 
-.phone-btn:hover {
-  background: var(--brand-orange);
+.phone-link:hover {
+  color: var(--brand-orange);
 }
 
 
