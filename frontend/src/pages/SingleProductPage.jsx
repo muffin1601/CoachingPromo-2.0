@@ -30,6 +30,7 @@ const CustomizationExperience = lazy(() =>
   import("../components/CustomizationExperience")
 );
 const BlogSection = lazy(() => import("../components/BlogSection"));
+const RelatedProducts = lazy(() => import("../components/RelatedProducts"));
 const PopularSubcategories = lazy(() =>
   import("../components/PopularSubcategories")
 );
@@ -352,7 +353,7 @@ const {
       <Suspense fallback={<div></div>}>
       <SubcategoryStaticContent subSlug={subSlug} productName={product?.name} />
 
-        {shouldShowCustomize && <CustomizationExperience />}
+        {/* {shouldShowCustomize && <CustomizationExperience />} */}
 
         <WhyChooseUsProduct
           productName={name}
@@ -361,7 +362,11 @@ const {
         />
         
         <CatalogueCTA />
-        <PopularSubcategories />
+        <RelatedProducts 
+          categorySlug={categorySlug} 
+          subSlug={subSlug} 
+          currentProdSlug={prodSlug} 
+        />
 
         <ProductFAQ productName={name} subcategoryName={subcategory?.name} />
 
