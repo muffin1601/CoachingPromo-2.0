@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import PageBanner from "../components/PageBanner";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 /*  Lazy-load heavy components */
 const AboutUs = lazy(() => import("../components/AboutUs"));

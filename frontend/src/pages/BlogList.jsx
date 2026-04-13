@@ -1,7 +1,7 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import "../styles/Blog.css";
 import { ChevronRight } from "lucide-react";
 

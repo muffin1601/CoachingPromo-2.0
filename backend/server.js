@@ -87,7 +87,36 @@ app.use("/api/admin", require("./routes/adminstatsRoutes"));
    SERVE REACT BUILD
 ============================== */
 
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+
+// Serve static files from the React dist folder (assets, images, etc.)
+// index: false prevents serving raw index.html for the root path
+app.use(express.static(path.join(__dirname, "../frontend/dist"), { index: false }));
+
+/* ===================================================
+   HOME PAGE SSR
+=================================================== */
+
+app.get("/", (req, res) => {
+  const title = "Promotional Products for Coaching Institutes – CoachingPromo";
+  const description = "Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your Coaching brand today!";
+  const canonical = "https://www.coachingpromo.in/";
+  const seoContent = `
+<section class="seo-home">
+  <h1>Promotional Products for Coaching Institutes</h1>
+  <p>Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your Coaching brand today!</p>
+</section>
+`;
+
+  const html = renderSEO({
+    title,
+    description,
+    canonical,
+    seoContent
+  });
+
+  res.send(html);
+});
 
 /* ===================================================
    CATEGORY PAGE SSR
@@ -251,6 +280,57 @@ schools and colleges with custom branding and bulk order options.
 });
 
 /* ===================================================
+   SINGLE PRODUCT PAGE (DIRECT) SSR
+=================================================== */
+
+app.get("/product/:prodSlug", async (req, res) => {
+
+  try {
+
+    const product = await Product.findOne({
+      slug: req.params.prodSlug
+    })
+      .populate("category")
+      .populate("subcategory")
+      .lean();
+
+    if (!product) {
+      return res.sendFile(
+        path.join(__dirname, "../frontend/dist/index.html")
+      );
+    }
+
+    const title =
+      product.seo?.metaTitle ||
+      `${product.name} | CoachingPromo`;
+
+    const description =
+      product.seo?.metaDescription ||
+      product.description?.short ||
+      "Custom promotional products for coaching institutes";
+
+    const canonical =
+      `https://www.coachingpromo.in/product/${product.slug}`;
+
+    const html = renderSEO({
+      title,
+      description,
+      canonical,
+      seoContent: "" // Add content if needed
+    });
+
+    res.send(html);
+
+  } catch (err) {
+
+    console.error(err);
+    res.status(500).send("Server Error");
+
+  }
+
+});
+
+/* ===================================================
    SUBCATEGORY PAGE SSR
 =================================================== */
 
@@ -325,12 +405,24 @@ These products offer durability, comfort and custom branding options.
 
 });
 
-/* ===================================================
-   REACT ROUTER FALLBACK
+/* ==============================
+   SERVE REACT BUILD & FALLBACK
 =================================================== */
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  // Use defaults for unknown routes
+  const title = "CoachingPromo – Premium Promotional Products";
+  const description = "Buy premium promotional products for coaching institutes, schools, and colleges.";
+  const canonical = `https://www.coachingpromo.in${req.path}`;
+  
+  const html = renderSEO({
+    title,
+    description,
+    canonical,
+    seoContent: ""
+  });
+
+  res.send(html);
 });
 
 /* ==============================

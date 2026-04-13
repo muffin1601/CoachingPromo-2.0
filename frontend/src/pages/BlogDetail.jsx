@@ -1,7 +1,7 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import PageBanner from "../components/PageBanner";
 import "../styles/BlogDetail.css";
 import { Loader2 } from "lucide-react";

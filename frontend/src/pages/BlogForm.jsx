@@ -1,6 +1,6 @@
 import React, { useState, lazy, Suspense } from "react";
 import axios from "axios";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import "../styles/BlogForm.css";
 
