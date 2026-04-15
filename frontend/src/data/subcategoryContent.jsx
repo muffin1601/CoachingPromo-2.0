@@ -1,7 +1,7 @@
 export const subcategoryContent = {
   "polo-t-shirts": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}} for Institutes and Colleges</h2>
+  <h2>Description</h2>
 
   <p>
   {{PRODUCT_NAME}} are specially designed for schools, colleges, coaching institutes,
@@ -67,7 +67,7 @@ export const subcategoryContent = {
 
  "round-neck-t-shirts": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are specially designed for schools, colleges, coaching
@@ -139,7 +139,7 @@ export const subcategoryContent = {
 `,
 "hoodies-jackets": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are designed to provide warmth, comfort, and a professional appearance
@@ -214,7 +214,7 @@ export const subcategoryContent = {
 `,
 "uniform-jackets": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -288,7 +288,7 @@ export const subcategoryContent = {
 `,
 "shirts": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
 
@@ -359,7 +359,7 @@ export const subcategoryContent = {
 `,
 "graduation-hat": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}}, also known as mortar boards, are an essential part of graduation
@@ -423,7 +423,7 @@ export const subcategoryContent = {
 `,
 "graduation-gown": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -485,7 +485,7 @@ export const subcategoryContent = {
 `,
 "graduation-stole": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} add elegance and distinction to graduation ceremonies.
@@ -547,7 +547,7 @@ export const subcategoryContent = {
 `,
 "graduation-hood": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -608,7 +608,7 @@ export const subcategoryContent = {
 `,
 "institute-backpacks": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are designed to combine functionality, durability, and effective
@@ -682,7 +682,7 @@ export const subcategoryContent = {
 `,
 "jute-bag": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are a sustainable and effective branding solution for schools,
@@ -744,7 +744,7 @@ export const subcategoryContent = {
 `,
 "messenger-bags": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
   <p>
     {{PRODUCT_NAME}} are a stylish and functional branding solution for educational
     institutions and corporate organizations. Designed for daily use, these bags
@@ -811,7 +811,7 @@ export const subcategoryContent = {
 `,
 "tote-bag": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are lightweight, practical, and cost-effective bags ideal for daily
@@ -870,7 +870,7 @@ export const subcategoryContent = {
 `,
 "mug": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -919,7 +919,7 @@ export const subcategoryContent = {
 `,
 "water-bottle": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -969,7 +969,7 @@ export const subcategoryContent = {
 `,
 "diary-set": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1014,7 +1014,7 @@ export const subcategoryContent = {
 `,
 "mobile-stand": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1064,7 +1064,7 @@ export const subcategoryContent = {
 `,
 "planner": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} help students, teachers, office staff, and professionals organize
@@ -1112,7 +1112,7 @@ export const subcategoryContent = {
 `,
 "stress-balls": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are lightweight promotional products designed to reduce stress
@@ -1159,7 +1159,7 @@ export const subcategoryContent = {
 `,
 "magic-cube": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1218,7 +1218,7 @@ export const subcategoryContent = {
 `,
 "photo-frame": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1269,7 +1269,7 @@ export const subcategoryContent = {
 `,
 "mouse-pad": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1318,7 +1318,7 @@ export const subcategoryContent = {
 `,
 "wall-clocks": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1416,7 +1416,7 @@ export const subcategoryContent = {
 `,
 "table-clock": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are premium desk accessories that combine style, functionality,
@@ -1465,7 +1465,7 @@ export const subcategoryContent = {
 `,
 "trophy": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1523,7 +1523,7 @@ export const subcategoryContent = {
 `,
 "badges": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are versatile and practical branding tools widely used for
@@ -1577,7 +1577,7 @@ export const subcategoryContent = {
 `,
 "medals": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} celebrate achievements in sports, academics, and competitive
@@ -1633,7 +1633,7 @@ export const subcategoryContent = {
 `,
 "table-calendar": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1690,7 +1690,7 @@ export const subcategoryContent = {
 `,
 "wall-calendar": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1746,7 +1746,7 @@ export const subcategoryContent = {
 `,
 "customized-pens": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1804,7 +1804,7 @@ export const subcategoryContent = {
 `,
 "binder-clips": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are practical office stationery items widely used for organizing
@@ -1858,7 +1858,7 @@ export const subcategoryContent = {
 `,
 "handbill": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1913,7 +1913,7 @@ export const subcategoryContent = {
 `,
 "lanyard-and-id-card": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -1969,7 +1969,7 @@ export const subcategoryContent = {
 `,
 "attendance-registers": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are essential record-keeping tools used in educational
@@ -2022,7 +2022,7 @@ export const subcategoryContent = {
 `,
 "branding-files-and-folders": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are essential stationery products used for organizing, storing,
@@ -2076,7 +2076,7 @@ export const subcategoryContent = {
 `,
 "graduation-degree-folders": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are specially designed to present certificates, mark sheets,
@@ -2133,7 +2133,7 @@ export const subcategoryContent = {
 `,
 "notebook": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
   <p>
     {{PRODUCT_NAME}} are essential stationery products widely used in educational institutions,
@@ -2188,7 +2188,7 @@ export const subcategoryContent = {
 `,
 "notepad": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
  
   <p>
@@ -2243,7 +2243,7 @@ export const subcategoryContent = {
 `,
 "exam-pad": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
 
@@ -2298,7 +2298,7 @@ export const subcategoryContent = {
 `,
 "paper-stand": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
   <p>
@@ -2357,7 +2357,7 @@ export const subcategoryContent = {
 `,
 "wooden-trophy": `
 <section class="subcategory-static-content">
-  <h2>{{PRODUCT_NAME}}</h2>
+  <h2>Description</h2>
 
 
 
@@ -2420,5 +2420,65 @@ export const subcategoryContent = {
   </p>
 </section>
 `,
+
+"umbrella": `
+<section class="subcategory-static-content">
+  <h2>Description</h2>
+
+  <p>
+    {{PRODUCT_NAME}} are highly practical and impactful promotional products that offer excellent
+    brand visibility in everyday outdoor settings. Whether used during rain or shine, a branded
+    umbrella keeps your logo prominently in front of a wide audience. Durable, stylish, and
+    functional, custom umbrellas are ideal for corporate gifting, event giveaways, and
+    institutional promotions.
+  </p>
+
+  <p>
+    Widely used by schools, colleges, coaching institutes, corporate offices, and businesses,
+    custom printed umbrellas combine daily utility with strong brand recall. Available in a
+    variety of sizes, styles, and colors, they make a memorable impression for clients,
+    employees, students, and event participants.
+  </p>
+
+  <h3>Customization & Branding Details</h3>
+
+  <ul>
+    <li>Logo and brand name printing on canopy panels</li>
+    <li>Choice of umbrella size, frame type, and handle style</li>
+    <li>Custom color combinations to match brand identity</li>
+    <li>High-quality fabric with UV protection and waterproofing</li>
+    <li>Single or multi-panel printing options</li>
+  </ul>
+
+  <h3>Use Cases / Applications</h3>
+
+  <ul>
+    <li>Corporate gifting for clients, partners, and employees</li>
+    <li>Promotional events, exhibitions, and trade fairs</li>
+    <li>Institutional branding for schools, colleges, and coaching centers</li>
+    <li>Outdoor events, sports meets, and awareness campaigns</li>
+    <li>Festive and seasonal promotional giveaways</li>
+  </ul>
+
+  <h3>Bulk Order & Pricing Information</h3>
+
+  <p>
+    {{PRODUCT_NAME}} are available in bulk quantities and are ideal for corporate and
+    institutional promotional use. Pricing depends on the following factors:
+  </p>
+
+  <ul>
+    <li>Order quantity</li>
+    <li>Umbrella size, type, and material</li>
+    <li>Number of panels printed and design complexity</li>
+    <li>Handle and frame customization</li>
+  </ul>
+
+  <p>
+    Request a Free Quote to receive detailed pricing and discuss your customization options,
+    branding requirements, and delivery timelines.
+  </p>
+</section>
+`
 
 };

@@ -3,9 +3,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
-const prerender = require("prerender-node");
 
 const app = express();
+
+/* ==============================
+   BASIC MIDDLEWARE
+============================== */
 
 app.use(cors());
 app.use(express.json({ limit: "50mb" }));
@@ -13,13 +16,25 @@ app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.set("trust proxy", true);
 
 /* ==============================
-   PRERENDER MIDDLEWARE
+   DATABASE
 ============================== */
 
-prerender.set("prerenderToken", process.env.PRERENDER_TOKEN);
-prerender.set("protocol", "https");
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ MongoDB Connected"))
+  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
-app.use(prerender);
+/* ==============================
+   STATIC FILES (IMPORTANT FIRST)
+============================== */
+
+// React build
+app.use(express.static(path.join(__dirname, "../frontend/dist"), {
+  index: false,
+  maxAge: "30d"
+}));
+
+// Uploads
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 /* ==============================
    IMPORT UTILITIES
@@ -32,90 +47,50 @@ const Subcategory = require("./models/subcategory");
 const Product = require("./models/product");
 
 /* ==============================
-   DATABASE
-============================== */
-
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ MongoDB Connected"))
-  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
-
-/* ==============================
-   STATIC FILES
-============================== */
-
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-
-/* ==============================
    API ROUTES
 ============================== */
 
-const categoryRoutes = require("./routes/categoryRoutes");
-const subcategoryRoutes = require("./routes/subcategoryRoutes");
-const productRoutes = require("./routes/productRoutes");
-const emailRoutes = require("./routes/emailRoutes");
-const adminRoutes = require("./routes/adminRoutes");
-const bannerRoutes = require("./routes/bannerRoutes");
-const searchRoutes = require("./routes/searchRoutes");
-const instituteRoutes = require("./routes/instituteRoutes");
-const blogRoutes = require("./routes/blogRoutes");
-const visitorRoutes = require("./routes/visitor");
-const userRoutes = require("./routes/userRoutes");
-const orderRoutes = require("./routes/orderRoutes");
-const paymentRoutes = require("./routes/paymentRoutes");
-const leadRoutes = require("./routes/leadRoutes");
-
 app.use("/", require("./routes/sitemap"));
 
-app.use("/api/blogs", blogRoutes);
-app.use("/api/visitors", visitorRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/orders", orderRoutes);
-app.use("/api/payment", paymentRoutes);
-app.use("/api/leads", leadRoutes);
+app.use("/api/blogs", require("./routes/blogRoutes"));
+app.use("/api/visitors", require("./routes/visitor"));
+app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/orders", require("./routes/orderRoutes"));
+app.use("/api/payment", require("./routes/paymentRoutes"));
+app.use("/api/leads", require("./routes/leadRoutes"));
 
-app.use("/api/categories", categoryRoutes);
-app.use("/api/subcategories", subcategoryRoutes);
-app.use("/api/products", productRoutes);
-app.use("/api", emailRoutes);
-app.use("/api", adminRoutes);
-app.use("/api/slides", bannerRoutes);
-app.use("/api/products-search", searchRoutes);
-app.use("/api", instituteRoutes);
+app.use("/api/categories", require("./routes/categoryRoutes"));
+app.use("/api/subcategories", require("./routes/subcategoryRoutes"));
+app.use("/api/products", require("./routes/productRoutes"));
+app.use("/api", require("./routes/emailRoutes"));
+app.use("/api", require("./routes/adminRoutes"));
+app.use("/api/slides", require("./routes/bannerRoutes"));
+app.use("/api/products-search", require("./routes/searchRoutes"));
+app.use("/api", require("./routes/instituteRoutes"));
 app.use("/api/admin", require("./routes/adminstatsRoutes"));
 
 /* ==============================
-   SERVE REACT BUILD
+   HELPER → FORCE HTML RESPONSE
 ============================== */
 
-
-
-// Serve static files from the React dist folder (assets, images, etc.)
-// index: false prevents serving raw index.html for the root path
-app.use(express.static(path.join(__dirname, "../frontend/dist"), { index: false }));
+const sendHTML = (res, html) => {
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.send(html);
+};
 
 /* ===================================================
    HOME PAGE SSR
 =================================================== */
 
 app.get("/", (req, res) => {
-  const title = "Promotional Products for Coaching Institutes – CoachingPromo";
-  const description = "Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your Coaching brand today!";
-  const canonical = "https://www.coachingpromo.in/";
-  const seoContent = `
-<section class="seo-home">
-  <h1>Promotional Products for Coaching Institutes</h1>
-  <p>Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your Coaching brand today!</p>
-</section>
-`;
-
   const html = renderSEO({
-    title,
-    description,
-    canonical,
-    seoContent
+    title: "Promotional Products for Coaching Institutes – CoachingPromo",
+    description: "Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes.",
+    canonical: "https://www.coachingpromo.in/",
+    seoContent: `<h1>Promotional Products for Coaching Institutes</h1>`
   });
 
-  res.send(html);
+  sendHTML(res, html);
 });
 
 /* ===================================================
@@ -123,73 +98,26 @@ app.get("/", (req, res) => {
 =================================================== */
 
 app.get("/categories/:slug", async (req, res) => {
-
   try {
-
-    const category = await Category.findOne({
-      slug: req.params.slug
-    }).lean();
+    const category = await Category.findOne({ slug: req.params.slug }).lean();
 
     if (!category) {
-      return res.sendFile(
-        path.join(__dirname, "../frontend/dist/index.html")
-      );
+      return res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
     }
 
-    const title =
-      category.seo?.metaTitle ||
-      `${category.name} | CoachingPromo`;
-
-    const description =
-      category.seo?.metaDescription ||
-      category.description ||
-      "Promotional products for coaching institutes";
-
-    const canonical =
-      `https://www.coachingpromo.in/categories/${category.slug}`;
-
-    const seoContent = `
-<section class="seo-category">
-
-<h1>${category.name}</h1>
-
-<p>${category.description || ""}</p>
-
-<p>
-Explore premium <strong>${category.name}</strong> products designed
-for coaching institutes, schools and educational organizations.
-These products help institutions build a strong brand identity.
-</p>
-
-<h2>Popular Products</h2>
-
-<ul>
-<li>Polo T-Shirts</li>
-<li>Round Neck T-Shirts</li>
-<li>Nehru Jackets</li>
-<li>Hoodies</li>
-<li>Graduation Gowns</li>
-</ul>
-
-</section>
-`;
-
     const html = renderSEO({
-      title,
-      description,
-      canonical,
-      seoContent
+      title: category.name + " | CoachingPromo",
+      description: category.description || "",
+      canonical: `https://www.coachingpromo.in/categories/${category.slug}`,
+      seoContent: `<h1>${category.name}</h1>`
     });
 
-    res.send(html);
+    sendHTML(res, html);
 
   } catch (err) {
-
-    console.error(err);
-    res.status(500).send("Server Error");
-
+    console.error("CATEGORY ERROR:", err);
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
   }
-
 });
 
 /* ===================================================
@@ -197,232 +125,103 @@ These products help institutions build a strong brand identity.
 =================================================== */
 
 app.get("/:categorySlug/:subSlug/:prodSlug", async (req, res) => {
-
   try {
-
-    const product = await Product.findOne({
-      slug: req.params.prodSlug
-    })
+    const product = await Product.findOne({ slug: req.params.prodSlug })
       .populate("category")
       .populate("subcategory")
       .lean();
 
     if (!product) {
-      return res.sendFile(
-        path.join(__dirname, "../frontend/dist/index.html")
-      );
+      return res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
     }
 
-    const title =
-      product.seo?.metaTitle ||
-      `${product.name} | CoachingPromo`;
-
-    const description =
-      product.seo?.metaDescription ||
-      product.description?.short ||
-      "Custom promotional products for coaching institutes";
-
-    const canonical =
-      `https://www.coachingpromo.in/${req.params.categorySlug}/${req.params.subSlug}/${product.slug}`;
-
-    const seoContent = `
-<article class="seo-product">
-
-<h1>${product.name}</h1>
-
-<p>
-${product.description?.short || product.seo?.metaDescription || ""}
-</p>
-
-<h2>Product Details</h2>
-
-<ul>
-<li><strong>Price:</strong> ₹${product.price}</li>
-<li><strong>Material:</strong> ${product.attributes?.material || "Premium Quality Fabric"}</li>
-<li><strong>Available Colors:</strong> ${product.attributes?.color?.join(", ") || "Multiple Colors"}</li>
-<li><strong>Sizes:</strong> ${product.attributes?.size?.join(", ") || "Various Sizes Available"}</li>
-</ul>
-
-${product.specifications?.length
-        ? `
-<h2>Specifications</h2>
-<ul>
-${product.specifications.map(s => `<li>${s.key}: ${s.value}</li>`).join("")}
-</ul>
-`
-        : ""
-      }
-
-<p>
-Buy <strong>${product.name}</strong> for coaching institutes,
-schools and colleges with custom branding and bulk order options.
-</p>
-
-</article>
-`;
-
     const html = renderSEO({
-      title,
-      description,
-      canonical,
-      seoContent
+      title: product.name + " | CoachingPromo",
+      description: product.description?.short || "",
+      canonical: `https://www.coachingpromo.in/${req.params.categorySlug}/${req.params.subSlug}/${product.slug}`,
+      seoContent: `<h1>${product.name}</h1>`
     });
 
-    res.send(html);
+    sendHTML(res, html);
 
   } catch (err) {
-
-    console.error(err);
-    res.status(500).send("Server Error");
-
+    console.error("PRODUCT ERROR:", err);
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
   }
-
 });
 
 /* ===================================================
-   SINGLE PRODUCT PAGE (DIRECT) SSR
+   SINGLE PRODUCT PAGE
 =================================================== */
 
 app.get("/product/:prodSlug", async (req, res) => {
-
   try {
-
-    const product = await Product.findOne({
-      slug: req.params.prodSlug
-    })
-      .populate("category")
-      .populate("subcategory")
-      .lean();
+    const product = await Product.findOne({ slug: req.params.prodSlug }).lean();
 
     if (!product) {
-      return res.sendFile(
-        path.join(__dirname, "../frontend/dist/index.html")
-      );
+      return res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
     }
 
-    const title =
-      product.seo?.metaTitle ||
-      `${product.name} | CoachingPromo`;
-
-    const description =
-      product.seo?.metaDescription ||
-      product.description?.short ||
-      "Custom promotional products for coaching institutes";
-
-    const canonical =
-      `https://www.coachingpromo.in/product/${product.slug}`;
-
     const html = renderSEO({
-      title,
-      description,
-      canonical,
-      seoContent: "" // Add content if needed
+      title: product.name + " | CoachingPromo",
+      description: product.description?.short || "",
+      canonical: `https://www.coachingpromo.in/product/${product.slug}`,
+      seoContent: `<h1>${product.name}</h1>`
     });
 
-    res.send(html);
+    sendHTML(res, html);
 
   } catch (err) {
-
-    console.error(err);
-    res.status(500).send("Server Error");
-
+    console.error("SINGLE PRODUCT ERROR:", err);
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
   }
-
 });
 
 /* ===================================================
-   SUBCATEGORY PAGE SSR
+   SUBCATEGORY PAGE
 =================================================== */
 
 app.get("/:categorySlug/:subSlug", async (req, res) => {
-
   try {
-
-    const subcategory = await Subcategory.findOne({
-      slug: req.params.subSlug
-    })
-      .populate("category")
-      .lean();
+    const subcategory = await Subcategory.findOne({ slug: req.params.subSlug }).lean();
 
     if (!subcategory) {
-      return res.sendFile(
-        path.join(__dirname, "../frontend/dist/index.html")
-      );
+      return res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
     }
 
-    const title =
-      subcategory.seo?.metaTitle ||
-      `${subcategory.name} | CoachingPromo`;
-
-    const description =
-      subcategory.seo?.metaDescription ||
-      subcategory.description ||
-      "Promotional products for coaching institutes";
-
-    const canonical =
-      `https://www.coachingpromo.in/${req.params.categorySlug}/${subcategory.slug}`;
-
-    const seoContent = `
-<section class="seo-subcategory">
-
-<h1>${subcategory.name}</h1>
-
-<p>${subcategory.description || ""}</p>
-
-<p>
-Browse our premium <strong>${subcategory.name}</strong>
-collection designed for institutes, schools and educational events.
-These products offer durability, comfort and custom branding options.
-</p>
-
-<h2>Benefits</h2>
-
-<ul>
-<li>Custom branding available</li>
-<li>Bulk ordering for institutes</li>
-<li>Premium material quality</li>
-<li>Perfect for events and uniforms</li>
-</ul>
-
-</section>
-`;
-
     const html = renderSEO({
-      title,
-      description,
-      canonical,
-      seoContent
+      title: subcategory.name + " | CoachingPromo",
+      description: subcategory.description || "",
+      canonical: `https://www.coachingpromo.in/${req.params.categorySlug}/${subcategory.slug}`,
+      seoContent: `<h1>${subcategory.name}</h1>`
     });
 
-    res.send(html);
+    sendHTML(res, html);
 
   } catch (err) {
-
-    console.error(err);
-    res.status(500).send("Server Error");
-
+    console.error("SUBCATEGORY ERROR:", err);
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
   }
-
 });
 
 /* ==============================
-   SERVE REACT BUILD & FALLBACK
-=================================================== */
+   FINAL FALLBACK (ONLY ONE)
+============================== */
 
 app.get("*", (req, res) => {
-  // Use defaults for unknown routes
-  const title = "CoachingPromo – Premium Promotional Products";
-  const description = "Buy premium promotional products for coaching institutes, schools, and colleges.";
-  const canonical = `https://www.coachingpromo.in${req.path}`;
-  
-  const html = renderSEO({
-    title,
-    description,
-    canonical,
-    seoContent: ""
-  });
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+});
 
-  res.send(html);
+/* ==============================
+   GLOBAL ERROR HANDLING
+============================== */
+
+process.on("uncaughtException", (err) => {
+  console.error("UNCAUGHT EXCEPTION:", err);
+});
+
+process.on("unhandledRejection", (err) => {
+  console.error("UNHANDLED PROMISE:", err);
 });
 
 /* ==============================

@@ -1,0 +1,138 @@
+.recently-viewed-section {
+    padding: 60px 5%;
+    background: #fdfdfd;
+    border-top: 1px solid #eee;
+}
+
+.recently-viewed-header {
+    margin-bottom: 40px;
+    /* text-align: center; */
+}
+
+.rv-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.rv-icon {
+    color: var(--primary-color, #d17504);
+}
+
+.recently-viewed-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.recently-viewed-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.recently-viewed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.rv-product-card {
+    background: white;
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.rv-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.rv-product-image-wrap {
+    display: block;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background: #f9f9f9;
+}
+
+.rv-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.rv-product-card:hover .rv-product-image {
+    transform: scale(1.08);
+}
+
+.rv-product-content {
+    padding: 20px;
+}
+
+.rv-product-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 15px 0;
+    height: 2.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.rv-product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.rv-product-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color, #d17504);
+}
+
+.rv-product-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.rv-product-btn:hover {
+    color: var(--primary-color, #d17504);
+}
+
+@media (max-width: 768px) {
+    .recently-viewed-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .recently-viewed-title {
+        font-size: 1.5rem;
+    }
+    
+    .rv-product-name {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .recently-viewed-grid {
+        grid-template-columns: 1fr;
+    }
+}

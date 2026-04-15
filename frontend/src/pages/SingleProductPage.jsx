@@ -6,7 +6,6 @@ import SubcategoryStaticContent from "../components/Category/SubcategoryStaticCo
 import { useCart } from "../context/CartContext";
 import { useFavorites } from "../context/FavoritesContext";
 
-
 import {
   Heart,
   Facebook,
@@ -29,7 +28,6 @@ const EnquiryModal = lazy(() => import("../components/EnquiryModal"));
 const CustomizationExperience = lazy(() =>
   import("../components/CustomizationExperience")
 );
-const BlogSection = lazy(() => import("../components/BlogSection"));
 const RelatedProducts = lazy(() => import("../components/RelatedProducts"));
 const PopularSubcategories = lazy(() =>
   import("../components/PopularSubcategories")
@@ -41,6 +39,8 @@ const WhyChooseUsProduct = lazy(() =>
 const ProductFAQ = lazy(() =>
   import("../components/Category/ProductFAQ")
 );
+const RecentlyViewedProducts = lazy(() => import("../components/RecentlyViewedProducts"));
+const CTASection = lazy(() => import("../components/CTASection"));
 const HiddenSEOContent = lazy(() =>
   import("../components/HiddenSEOContent")
 );
@@ -89,6 +89,44 @@ const SingleProductPage = () => {
     getCategoryData();
     getSubcategoryData();
   }, [prodSlug]);
+
+  useEffect(() => {
+    if (product) {
+      const trackRecentlyViewed = () => {
+        const stored = localStorage.getItem("recentlyViewed");
+        let viewed = [];
+        if (stored) {
+          try {
+            viewed = JSON.parse(stored);
+          } catch (e) {
+            console.error("Error parsing recently viewed", e);
+          }
+        }
+
+        // Remove if already exists to move to top
+        viewed = viewed.filter(p => p.slug !== product.slug);
+
+        // Add current product with minimal required data
+        const productData = {
+          id: product._id || product.id,
+          name: product.name,
+          slug: product.slug,
+          images: product.images,
+          price: product.price,
+          categorySlug,
+          subSlug
+        };
+
+        viewed.unshift(productData);
+
+        // Keep only top 10
+        const limited = viewed.slice(0, 10);
+        localStorage.setItem("recentlyViewed", JSON.stringify(limited));
+      };
+
+      trackRecentlyViewed();
+    }
+  }, [product, categorySlug, subSlug]);
 
   if (!product) return <div>Loading...</div>;
 
@@ -370,7 +408,8 @@ const {
 
         <ProductFAQ productName={name} subcategoryName={subcategory?.name} />
 
-        <BlogSection />
+        <RecentlyViewedProducts currentProdSlug={prodSlug} />
+        <CTASection />
         <HiddenSEOContent />
 
         {/* Modal */}

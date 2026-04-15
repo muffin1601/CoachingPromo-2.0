@@ -87,7 +87,7 @@ const ContactUs = () => {
           </div>
           <h3 className="contactus-card-title">Contact Phone Number</h3>
           <p className="contactus-card-text">
-            +91 8750708222
+            +91 8800898643
           </p>
         </div>
       </div>

@@ -102,7 +102,7 @@ const Navbar = () => {
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/918750708222"
+                href="https://wa.me/918800898643"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-btn"
