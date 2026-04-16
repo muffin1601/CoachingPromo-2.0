@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ShoppingCart } from "lucide-react";
 import "../styles/RelatedProducts.css";
 
-const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug }) => {
+const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug, onEnquiryClick }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -69,17 +69,13 @@ const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug }) => {
             <div className="related-product-content">
               <span className="related-product-category">{subSlug.replace(/-/g, ' ')}</span>
               <h3 className="related-product-name">{product.name}</h3>
-              
               <div className="related-product-footer">
-                <div className="related-product-price">
-                  {product.salePrice ? (
-                    <>
-                      <span style={{ color: '#d17504', marginRight: '8px' }}>₹{product.salePrice}</span>
-                      <span style={{ textDecoration: 'line-through', fontSize: '0.85rem', color: '#999' }}>₹{product.price}</span>
-                    </>
-                  ) : (
-                    <span>₹{product.price}</span>
-                  )}
+                <div 
+                  className="related-product-price" 
+                  onClick={onEnquiryClick}
+                  title="Click to get a quote"
+                >
+                  <span>Get a Quote</span>
                 </div>
                 <Link to={`/${categorySlug}/${subSlug}/${product.slug}`} className="related-product-btn">
                   View Detail <ArrowRight size={16} />

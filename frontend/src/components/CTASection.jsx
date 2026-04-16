@@ -25,8 +25,17 @@ const CTASection = () => {
             </a>
           </div>
         </div>
+
+        <div className="cta-image-wrapper">
+          <img 
+            src="/assets/cta-img.png" 
+            alt="Customized Merchandise Showcase" 
+            className="cta-image"
+            loading="lazy"
+          />
+        </div>
         
-        <div className="cta-badges">
+        {/* <div className="cta-badges">
           <div className="cta-badge-item">
             <span className="badge-num">500+</span>
             <span className="badge-txt">Happy Institutes</span>
@@ -41,7 +50,7 @@ const CTASection = () => {
             <span className="badge-num">7-10</span>
             <span className="badge-txt">Days Delivery</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

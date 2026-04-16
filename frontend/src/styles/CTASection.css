@@ -7,12 +7,12 @@
 }
 
 .cta-container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 0.8fr auto;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
     padding: 80px 6%;
     position: relative;
     z-index: 1;
@@ -99,6 +99,26 @@
     box-shadow: 0 8px 24px rgba(8, 60, 113, 0.15);
 }
 
+/* ─── Image Wrapper ─── */
+.cta-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cta-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-image-wrapper:hover .cta-image {
+    transform: scale(1.05) rotate(-2deg);
+}
+
 /* ─── Right — Stats Column ─── */
 .cta-badges {
     display: flex;
@@ -177,6 +197,15 @@
 
     .cta-actions {
         justify-content: center;
+    }
+
+    .cta-image-wrapper {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .cta-image {
+        max-height: 250px;
     }
 
     .cta-badges {
