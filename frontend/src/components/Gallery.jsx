@@ -16,7 +16,16 @@ const Gallery = () => {
 
       <div className="gallery-grid">
         {gallery.map((img, idx) => (
-          <img key={idx} src={img} alt="Custom Order" />
+          <img 
+            key={idx} 
+            src={img} 
+            alt="Custom Order" 
+            loading="lazy"
+            decoding="async"
+            width={400}
+            height={300}
+            style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          />
         ))}
       </div>
     </section>

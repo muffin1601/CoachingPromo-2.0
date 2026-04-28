@@ -13,6 +13,8 @@
   /* CLS FIX */
   min-height: 420px;
   overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: 640px;
 }
 
 /* ==============================

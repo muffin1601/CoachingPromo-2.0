@@ -126,9 +126,14 @@ const Chatbot = () => {
           <div className="chat-header">
             <div className="chat-title">
               <img
-                src="/agent.webp"
+                src="/agent-96.webp"
                 alt="Sana - Support Agent"
                 className="agent-avatar"
+                width={44}
+                height={44}
+                decoding="async"
+                loading="lazy"
+                sizes="44px"
               />
 
               <div className="agent-info">

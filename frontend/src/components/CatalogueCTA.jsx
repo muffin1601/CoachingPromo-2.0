@@ -115,6 +115,10 @@ const CatalogueCTA = () => {
             src="/assets/catalogue-img.webp"
             alt="Catalogue preview"
             className="cta-img"
+            loading="lazy"
+            decoding="async"
+            width={600}
+            height={400}
           />
         </div>
       </div>

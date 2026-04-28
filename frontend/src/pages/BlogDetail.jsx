@@ -138,6 +138,11 @@ const BlogDetails = () => {
                     className="blg-details-media"
                     src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${blog.media}`}
                     alt={blog.title}
+                    width={800}
+                    height={500}
+                    decoding="async"
+                    loading="eager"
+                    style={{ width: "100%", height: "auto", objectFit: "cover" }}
                   />
                 )}
               </>

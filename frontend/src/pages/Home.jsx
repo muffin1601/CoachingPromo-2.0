@@ -1,26 +1,19 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { Helmet } from "react-helmet-async";
 
 import HeroSection from "../components/HeroSection"; 
-import UserDashboardBanner from "../components/UserDashboardBanner";
 import TrustedClients from "../components/TrustedClients"; 
-
-// Lazy-load heavy sections
-const FeaturedCategories = lazy(() => import("../components/FeaturedCategories"));
-const PopularSubcategories = lazy(() => import("../components/PopularSubcategories"));
-const WhyChooseUs = lazy(() => import("../components/WhyChooseUs"));
-const CustomizationExperience = lazy(() => import("../components/CustomizationExperience"));
-const AboutUsSection = lazy(() => import("../components/AboutUsSection"));
-const Testimonials = lazy(() => import("../components/Testimonials"));
-const Gallery = lazy(() => import("../components/Gallery"));
-const CatalogueCTA = lazy(() => import("../components/CatalogueCTA"));
-const BlogSection = lazy(() => import("../components/BlogSection"));
-const HomeFAQ = lazy(() => import("../components/HomeFAQ"));
-const ExitIntentPopup = lazy(() => import("../components/ExitIntentPopup"));
-const HiddenSEOContent = lazy(() => import("../components/HiddenSEOContent"));
-
-// Fallback
-const Loader = () => <div style={{ height: "60px" }}></div>;
+import FeaturedCategories from "../components/FeaturedCategories";
+import PopularSubcategories from "../components/PopularSubcategories";
+import WhyChooseUs from "../components/WhyChooseUs";
+import CustomizationExperience from "../components/CustomizationExperience";
+import AboutUsSection from "../components/AboutUsSection";
+import Testimonials from "../components/Testimonials";
+import Gallery from "../components/Gallery";
+import CatalogueCTA from "../components/CatalogueCTA";
+import BlogSection from "../components/BlogSection";
+import HomeFAQ from "../components/HomeFAQ";
+import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const Home = () => {
   return (
@@ -39,20 +32,17 @@ const Home = () => {
       {/* <UserDashboardBanner /> */}
       <TrustedClients />
 
-      <Suspense fallback={<Loader />}>
-        <FeaturedCategories />
-        <PopularSubcategories />
-        <WhyChooseUs />
-        <CustomizationExperience />
-        <AboutUsSection />
-        <Testimonials />
-        <HomeFAQ />
-        <Gallery />
-        <CatalogueCTA />
-        <BlogSection />
-        {/* <ExitIntentPopup /> */}
-        <HiddenSEOContent />
-      </Suspense>
+      <FeaturedCategories />
+      <PopularSubcategories />
+      <WhyChooseUs />
+      <CustomizationExperience />
+      <AboutUsSection />
+      <Testimonials />
+      <HomeFAQ />
+      <Gallery />
+      <CatalogueCTA />
+      <BlogSection />
+      <HiddenSEOContent />
     </div>
   );
 };

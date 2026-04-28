@@ -12,9 +12,12 @@
   background: var(--brand-orange);
   color: #fff;
   display: inline-block;
-  padding: 4px 18px;
+  padding: 8px 18px;
   margin-bottom: 6px;
   font-weight: 600;
+  min-height: 32px;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Section title */

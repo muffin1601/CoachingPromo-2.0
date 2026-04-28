@@ -67,7 +67,15 @@ const UserProfileSidebar = ({ isOpen, onClose }) => {
           
           {/* Logo */}
           <div style={{ marginBottom: "30px", borderBottom: "1px solid var(--light-border)", paddingBottom: "20px" }}>
-            <img src="/logo.webp" alt="Coaching Promo" style={{ height: "40px", objectFit: "contain" }} />
+            <img 
+              src="/logo.webp" 
+              alt="Coaching Promo" 
+              style={{ height: "40px", objectFit: "contain", width: "auto" }} 
+              width={160}
+              height={70}
+              decoding="async"
+              loading="lazy"
+            />
           </div>
 
           {/* Welcome Header */}

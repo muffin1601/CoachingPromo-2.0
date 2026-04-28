@@ -80,10 +80,12 @@
   margin: 50px auto 10px;
   font-family: 'outfit', sans-serif ;
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 8px;
   cursor: pointer;
   transition: 0.3s;
+  min-height: 48px;
 }
 
 .cta-btn:hover {

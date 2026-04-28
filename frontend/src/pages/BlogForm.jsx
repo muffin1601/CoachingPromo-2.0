@@ -77,6 +77,8 @@ const BlogFormCTA = () => {
               loading="lazy"
               fetchpriority="low"
               decoding="async"
+              width={500}
+              height={400}
             />
           </div>
 

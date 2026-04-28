@@ -26,7 +26,11 @@ const SubcategoryGrid = ({ subcategories, catSlug }) => {
                   alt={`Customized ${sub.name} for institutes`}
                   className="subcat-card-media"
                   loading="lazy"
+                  decoding="async"
                   itemProp="image"
+                  width={300}
+                  height={300}
+                  style={{ width: "100%", height: "auto", objectFit: "cover" }}
                 />
               </figure>
 

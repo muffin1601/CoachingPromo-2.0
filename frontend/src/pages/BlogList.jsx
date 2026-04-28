@@ -98,7 +98,9 @@ const BlogList = () => {
                     decoding="async"
                     src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${blog.media}`}
                     alt={blog.title}
-                    width="100%"
+                    width={400}
+                    height={250}
+                    style={{ width: "100%", height: "auto", objectFit: "cover" }}
                   />
                 ))}
 

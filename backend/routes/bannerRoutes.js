@@ -3,27 +3,46 @@ const Slide = require('../models/banner');
 const router = express.Router();
 
 const multer = require("multer");
+const fs = require("fs/promises");
 const path = require("path");
+const sharp = require("sharp");
 
-//  Storage setup
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/slides");
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({ storage });
+const upload = multer({ storage: multer.memoryStorage() });
 
 //  Upload route
-router.post("/upload", upload.single("file"), (req, res) => {
-  if (!req.file) return res.status(400).json({ message: "No file uploaded" });
+router.post("/upload", upload.single("file"), async (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ message: "No file uploaded" });
+  }
 
-  const fileUrl = `/uploads/slides/${req.file.filename}`;
+  try {
+    const uploadDir = path.join(process.cwd(), "uploads", "slides");
+    await fs.mkdir(uploadDir, { recursive: true });
 
-  res.json({ url: fileUrl });
+    const isImage = req.file.mimetype?.startsWith("image/");
+    const baseName = `${Date.now()}`;
+    let fileName = `${baseName}${path.extname(req.file.originalname)}`;
+    let outputBuffer = req.file.buffer;
+
+    if (isImage) {
+      fileName = `${baseName}.webp`;
+      outputBuffer = await sharp(req.file.buffer)
+        .resize({
+          width: 1600,
+          height: 900,
+          fit: "inside",
+          withoutEnlargement: true,
+        })
+        .webp({ quality: 74, effort: 6 })
+        .toBuffer();
+    }
+
+    await fs.writeFile(path.join(uploadDir, fileName), outputBuffer);
+
+    res.json({ url: `/uploads/slides/${fileName}` });
+  } catch (error) {
+    res.status(500).json({ message: "Upload processing failed" });
+  }
 });
 
 router.get("/banners", async (req, res) => {

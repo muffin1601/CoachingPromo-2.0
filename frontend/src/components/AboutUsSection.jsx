@@ -45,6 +45,10 @@ const AboutUsSection = () => {
           <img
             src="/assets/about.webp"
             alt="custom merchandise for Coaching institutes branded T shirts student welcome kits corporate gifting for schools colleges"
+            loading="lazy"
+            decoding="async"
+            width={600}
+            height={400}
           />
         </div>
       </div>

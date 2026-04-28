@@ -19,6 +19,10 @@ const Sidebar = () => {
             src="/logo.webp"
             alt="Logo"
             className="admin-sidebar-logo"
+            width={180}
+            height={80}
+            decoding="async"
+            loading="lazy"
             style={{ width: 180, height: 80, objectFit: "contain", borderRadius: 6, display: "flex",  justifyContent: "center", }}
           />
         </NavLink>

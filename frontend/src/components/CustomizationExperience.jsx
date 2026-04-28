@@ -55,6 +55,10 @@ const CustomizationExperience = () => {
                 src={item.img}
                 alt={item.alt}
                 className="cex-img"
+                loading="lazy"
+                decoding="async"
+                width={400}
+                height={220}
               />
             </div>
           </div>

@@ -67,7 +67,14 @@ const Navbar = () => {
           <div className="navbar-top-bar">
             <div className="top-bar-left">
               <div className="logo-section">
-                <img src="/logo.webp" alt="Coaching Promo" className="logo-image" />
+                <img 
+                  src="/logo.webp" 
+                  alt="Coaching Promo" 
+                  className="logo-image"
+                  width={160}
+                  height={70}
+                  decoding="async"
+                />
               </div>
             </div>
 
@@ -144,6 +151,7 @@ const Navbar = () => {
             <button
               className="hamburger-btn mobile-only"
               onClick={() => setMobileMenuOpen(true)}
+              aria-label="Toggle navigation menu"
             >
               <Menu size={28} />
             </button>

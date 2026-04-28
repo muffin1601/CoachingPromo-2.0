@@ -208,6 +208,9 @@ const {
                     alt={img.altText || `${name} - product view`}
                     className="thumb-img"
                     loading="lazy"
+                    decoding="async"
+                    width={100}
+                    height={100}
                   />
                 )}
               </div>
@@ -230,6 +233,9 @@ const {
                 loading="eager"
                 alt={`${name} - main product`}
                 className="product-main-img"
+                width={600}
+                height={600}
+                decoding="async"
               />
             )}
           </div>

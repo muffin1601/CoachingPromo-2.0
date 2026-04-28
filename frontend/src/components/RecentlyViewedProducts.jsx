@@ -59,6 +59,10 @@ const RecentlyViewedProducts = ({ currentProdSlug }) => {
                 alt={product.name}
                 className="rv-product-image"
                 loading="lazy"
+                decoding="async"
+                width={200}
+                height={200}
+                style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             </Link>
 

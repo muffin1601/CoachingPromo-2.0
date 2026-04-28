@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,14 +7,14 @@ import {
   useNavigate,
 } from "react-router-dom";
 
-// Lazy-load everything except Navbar/Footer/Home (critical display)
-const Navbar = lazy(() => import("./components/Navbar"));
-const Footer = lazy(() => import("./components/Footer"));
-const SupplyCities = lazy(() => import("./components/SupplyCities"));
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import SupplyCities from "./components/SupplyCities";
+const Chatbot = lazy(() => import("./components/Chatbot/Chatbot"));
 const FloatingButtons = lazy(() => import("./components/FloatingButtons"));
 
 // Public pages
-const Home = lazy(() => import("./pages/Home"));
+import Home from "./pages/Home";
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const AboutUsPage = lazy(() => import("./pages/AboutUsPage"));
 const BlogList = lazy(() => import("./pages/BlogList"));
@@ -37,8 +37,6 @@ const Checkout = lazy(() => import("./pages/Checkout"));
 const SearchResults = lazy(() => import("./pages/SearchResults"));
 const Favorites = lazy(() => import("./pages/Favorites"));
 
-// Components
-import OfferModal from "./components/OfferModal";
 import LeadFormModal from "./components/LeadFormModal";
 
 // Admin pages
@@ -62,7 +60,6 @@ const OrderManager = lazy(() =>
 // Utilities
 import ScrollToTop from "./utils/ScrollToTop";
 import ProtectedRoute from "./utils/ProtectedRoute";
-import Chatbot from "./components/Chatbot/Chatbot";
 
 // Skeleton fallback for smoother UX
 const Loader = () => (
@@ -75,6 +72,33 @@ const LayoutWrapper = ({ children }) => {
   const navigate = useNavigate();
   const isAdmin = location.pathname.startsWith("/admin");
   const [isLeadFormOpen, setIsLeadFormOpen] = useState(false);
+  const [showDeferredUi, setShowDeferredUi] = useState(false);
+
+  useEffect(() => {
+    if (isAdmin) {
+      setShowDeferredUi(false);
+      return undefined;
+    }
+
+    let timeoutId;
+    const idleCallbackId = window.requestIdleCallback?.(
+      () => setShowDeferredUi(true),
+      { timeout: 1500 }
+    );
+
+    if (!idleCallbackId) {
+      timeoutId = window.setTimeout(() => setShowDeferredUi(true), 900);
+    }
+
+    return () => {
+      if (idleCallbackId) {
+        window.cancelIdleCallback?.(idleCallbackId);
+      }
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
+  }, [isAdmin, location.pathname]);
 
 
   return (
@@ -92,9 +116,7 @@ const LayoutWrapper = ({ children }) => {
               navigate("/offers");
             }} 
           />
-          <Suspense fallback={<Loader />}>
-            <Navbar />
-          </Suspense>
+          <Navbar />
         </>
       )}
 
@@ -102,11 +124,15 @@ const LayoutWrapper = ({ children }) => {
         {children}
       </main>
 
-      {!isAdmin && (
-        <Suspense fallback={<Loader />}>
+      {!isAdmin && <SupplyCities />}
+      {!isAdmin && <Footer />}
+      {!isAdmin && showDeferredUi && (
+        <Suspense fallback={null}>
           <Chatbot />
-          <SupplyCities />
-          <Footer />
+        </Suspense>
+      )}
+      {!isAdmin && showDeferredUi && (
+        <Suspense fallback={null}>
           <FloatingButtons />
         </Suspense>
       )}

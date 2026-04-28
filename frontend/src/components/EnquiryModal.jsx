@@ -66,6 +66,10 @@ const EnquiryModal = ({ isOpen, onClose, image }) => {
           <img
             src={image}
             alt="Custom merchandise enquiry for institutes"
+            width={400}
+            height={350}
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
