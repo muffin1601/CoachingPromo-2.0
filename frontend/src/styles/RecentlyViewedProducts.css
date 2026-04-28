@@ -1,5 +1,5 @@
 .recently-viewed-section {
-    padding: 60px 5%;
+    padding: 60px 12%;
     background: #fdfdfd;
     border-top: 1px solid #eee;
 }
@@ -96,9 +96,21 @@
 }
 
 .rv-product-price {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: var(--primary-color, #d17504);
+    color: var(--brand-blue, #083c71);
+    background: #f0f7ff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.rv-product-price:hover {
+    background: #e1efff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .rv-product-btn {

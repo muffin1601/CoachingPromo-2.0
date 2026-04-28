@@ -1,40 +1,19 @@
 .cta-section {
     padding: 0;
-    background: var(--brand-blue);
+    background: #ffffff;
     position: relative;
     overflow: hidden;
-}
-
-.cta-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 40%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 60%);
-    pointer-events: none;
-}
-
-.cta-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    background: rgba(211, 84, 0, 0.08);
-    pointer-events: none;
+    border-top: 1px solid var(--light-border);
 }
 
 .cta-container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 0.8fr auto;
     align-items: center;
-    gap: 60px;
-    padding: 70px 6%;
+    gap: 40px;
+    padding: 80px 6%;
     position: relative;
     z-index: 1;
 }
@@ -48,7 +27,7 @@
 
 .cta-eyebrow {
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -57,17 +36,17 @@
 }
 
 .cta-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 20px;
-    color: #ffffff;
+    color: var(--brand-blue);
     font-family: 'Outfit', sans-serif;
 }
 
 .cta-description {
-    font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    color: var(--text-medium);
     line-height: 1.7;
     margin-bottom: 36px;
     max-width: 580px;
@@ -76,15 +55,16 @@
 /* ─── Action Buttons ─── */
 .cta-actions {
     display: flex;
+    flex-direction: row;
     gap: 16px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .cta-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 15px 30px;
+    padding: 16px 32px;
     border-radius: 0;
     font-size: 1rem;
     font-weight: 600;
@@ -106,38 +86,37 @@
     box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
 }
 
-.cta-btn-primary svg {
-    flex-shrink: 0;
-}
-
 .cta-btn-secondary {
     background: transparent;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--brand-blue);
+    border: 2px solid var(--brand-blue);
 }
 
 .cta-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
-}
-
-/* ─── WhatsApp Icon Accent ─── */
-.cta-whatsapp-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    background: #25D366;
+    background: var(--brand-blue);
     color: #fff;
-    flex-shrink: 0;
-    animation: whatsappPulse 2.5s ease-in-out infinite;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(8, 60, 113, 0.15);
 }
 
-@keyframes whatsappPulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-    50% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+/* ─── Image Wrapper ─── */
+.cta-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cta-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1));
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-image-wrapper:hover .cta-image {
+    transform: scale(1.05) rotate(-2deg);
 }
 
 /* ─── Right — Stats Column ─── */
@@ -145,11 +124,12 @@
     display: flex;
     flex-direction: column;
     gap: 0;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--light-bg);
+    border: 1px solid var(--light-border);
     border-radius: 0;
     padding: 0;
-    min-width: 200px;
+    min-width: 240px;
+    box-shadow: var(--shadow-soft);
 }
 
 .cta-badge-item {
@@ -157,32 +137,33 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 28px 32px;
+    padding: 32px 40px;
 }
 
 .cta-badge-divider {
     height: 1px;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--light-border);
     width: 60%;
     margin: 0 auto;
 }
 
 .badge-num {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 800;
     color: var(--brand-orange);
     line-height: 1;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-family: 'Outfit', sans-serif;
 }
 
 .badge-txt {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.85rem;
+    color: var(--neutral-gray);
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: 600;
 }
+
 
 /* ============================================ */
 /*  RESPONSIVE                                  */
@@ -216,6 +197,15 @@
 
     .cta-actions {
         justify-content: center;
+    }
+
+    .cta-image-wrapper {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    .cta-image {
+        max-height: 250px;
     }
 
     .cta-badges {

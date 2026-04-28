@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, History } from "lucide-react";
 import "../styles/RecentlyViewedProducts.css";
 
-const RecentlyViewedProducts = ({ currentProdSlug }) => {
+const RecentlyViewedProducts = ({ currentProdSlug, onEnquiryClick }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -69,7 +69,13 @@ const RecentlyViewedProducts = ({ currentProdSlug }) => {
             <div className="rv-product-content">
               <h3 className="rv-product-name">{product.name}</h3>
               <div className="rv-product-footer">
-                <span className="rv-product-price">₹{product.price}</span>
+                <span 
+                  className="rv-product-price" 
+                  onClick={onEnquiryClick}
+                  title="Click to get a quote"
+                >
+                  Get a Quote
+                </span>
                 <Link to={`/${product.categorySlug}/${product.subSlug}/${product.slug}`} className="rv-product-btn">
                   View Detail <ArrowRight size={14} />
                 </Link>

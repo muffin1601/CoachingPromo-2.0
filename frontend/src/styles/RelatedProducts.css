@@ -105,9 +105,19 @@
 }
 
 .related-product-price {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: #0b4a8d;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #d17504;
+  background: #fff8f0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.related-product-price:hover {
+  background: #ffecd6;
+  transform: translateY(-1px);
 }
 
 .related-product-btn {

@@ -410,11 +410,15 @@ const {
           categorySlug={categorySlug} 
           subSlug={subSlug} 
           currentProdSlug={prodSlug} 
+          onEnquiryClick={() => setIsEnquiryOpen(true)}
         />
 
         <ProductFAQ productName={name} subcategoryName={subcategory?.name} />
 
-        <RecentlyViewedProducts currentProdSlug={prodSlug} />
+        <RecentlyViewedProducts 
+          currentProdSlug={prodSlug} 
+          onEnquiryClick={() => setIsEnquiryOpen(true)}
+        />
         <CTASection />
         <HiddenSEOContent />
 
