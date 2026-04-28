@@ -31,17 +31,6 @@ export default defineConfig({
           if (id.includes('node_modules/swiper')) {
             return 'vendor-swiper';
           }
-          
-          // Heavy component chunks - lazy loaded pages
-          if (id.includes('AdminDashboard.jsx') || id.includes('HeroManagerPage') || id.includes('CategoryManagerPage') || id.includes('SubcategoryManagerPage') || id.includes('ProductManagerPage') || id.includes('OrderManagerPage')) {
-            return 'admin-pages';
-          }
-          if (id.includes('CustomizerSVG') || id.includes('CustomizerAll')) {
-            return 'customizer-pages';
-          }
-          if (id.includes('Checkout.jsx')) {
-            return 'checkout-page';
-          }
         }
       }
     },

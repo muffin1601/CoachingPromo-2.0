@@ -1,5 +1,4 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
-import axios from "axios";
 
 export const AuthContext = createContext();
 
@@ -22,15 +21,20 @@ export const AuthProvider = ({ children }) => {
 
   const loginUser = async (email, password) => {
     try {
-      const config = {
-        headers: { "Content-Type": "application/json" },
-      };
-      // Assume API endpoint is on the same host or proxied via Vite config
-      const { data } = await axios.post(
+      const response = await fetch(
         `${import.meta.env.VITE_API_BASE_URL || ""}/api/users/login`,
-        { email, password },
-        config
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
       );
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data?.message || "Login failed");
+      }
+
       setUser(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       // In a real app we would consider storing the token more securely
@@ -38,21 +42,27 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       return {
         success: false,
-        message: error.response?.data?.message || "Login failed",
+        message: error.message || "Login failed",
       };
     }
   };
 
   const registerUser = async (name, email, password) => {
     try {
-      const config = {
-        headers: { "Content-Type": "application/json" },
-      };
-      const { data } = await axios.post(
+      const response = await fetch(
         `${import.meta.env.VITE_API_BASE_URL || ""}/api/users/register`,
-        { name, email, password },
-        config
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, password }),
+        }
       );
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data?.message || "Registration failed");
+      }
+
       setUser(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       return { success: true };
@@ -60,7 +70,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       return {
         success: false,
-        message: error.response?.data?.message || "Registration failed",
+        message: error.message || "Registration failed",
       };
     }
   };

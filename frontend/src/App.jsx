@@ -81,19 +81,29 @@ const LayoutWrapper = ({ children }) => {
     }
 
     let timeoutId;
-    const idleCallbackId = window.requestIdleCallback?.(
-      () => setShowDeferredUi(true),
-      { timeout: 1500 }
-    );
+    const triggerEvents = ["pointerdown", "keydown", "touchstart", "scroll"];
+    const showUi = () => {
+      setShowDeferredUi(true);
+      triggerEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, showUi);
+      });
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
 
-    if (!idleCallbackId) {
-      timeoutId = window.setTimeout(() => setShowDeferredUi(true), 900);
-    }
+    triggerEvents.forEach((eventName) => {
+      window.addEventListener(eventName, showUi, {
+        passive: true,
+        once: true,
+      });
+    });
+    timeoutId = window.setTimeout(showUi, 15000);
 
     return () => {
-      if (idleCallbackId) {
-        window.cancelIdleCallback?.(idleCallbackId);
-      }
+      triggerEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, showUi);
+      });
       if (timeoutId) {
         window.clearTimeout(timeoutId);
       }

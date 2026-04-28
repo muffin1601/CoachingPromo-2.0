@@ -6,8 +6,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.pexels.com" crossorigin>
-<link rel="preload" as="image" href="/banners/banner-1-1360.webp" fetchpriority="high" />
+<link rel="preload" as="image" href="/banners/banner-1-640.webp" fetchpriority="high" media="(max-width: 576px)" />
+<link rel="preload" as="image" href="/banners/banner-1-1360.webp" fetchpriority="high" media="(min-width: 577px)" />
 
 <link
 href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap"
@@ -16,7 +16,7 @@ media="print"
 onload="this.media='all'"
 />
 
-<link rel="icon" type="image/png" href="/favicon.png" />
+<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -57,28 +57,36 @@ __SEO_CONTENT__
 
 <script type="module" src="/src/main.jsx" defer></script>
 
-<!-- Google Tag Manager (gtag.js) - Optimized for performance -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V5X01S40FC"></script>
-
 <script>
 window.dataLayer = window.dataLayer || [];
 
 function gtag(){dataLayer.push(arguments);}
 const analyticsId = 'G-V5X01S40FC';
 
-gtag('js', new Date());
+// Load analytics after user intent, with a late fallback for passive visits.
+let analyticsLoaded = false;
+const loadAnalytics = () => {
+  if (analyticsLoaded) return;
+  analyticsLoaded = true;
 
-// Delay initialization to avoid blocking page rendering
-const idleRunner = window.requestIdleCallback || function (callback) {
-  return window.setTimeout(callback, 1);
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
+  script.onload = () => {
+    gtag('js', new Date());
+    gtag('config', analyticsId, {
+      'allow_google_signals': false,
+      'allow_ad_personalization_signals': false
+    });
+  };
+  document.head.appendChild(script);
 };
 
-idleRunner(() => {
-  gtag('config', analyticsId, {
-    'allow_google_signals': false,
-    'allow_ad_personalization_signals': false
-  });
-}, { timeout: 2000 });
+['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach((eventName) => {
+  window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
+});
+
+window.setTimeout(loadAnalytics, 15000);
 </script>
 
 </body>

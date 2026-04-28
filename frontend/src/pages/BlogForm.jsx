@@ -1,6 +1,6 @@
 import React, { useState, lazy, Suspense } from "react";
 import axios from "axios";
-import { Helmet } from "react-helmet-async";
+import PageMeta from "../components/PageMeta";
 import { ArrowRight } from "lucide-react";
 import "../styles/BlogForm.css";
 
@@ -44,16 +44,12 @@ const BlogFormCTA = () => {
 
   return (
     <>
-      {/* SEO */}
-      <Helmet>
-        <title>Create Blog | CoachingPromo</title>
-        <meta
-          name="description"
-          content="Write and publish a new blog on CoachingPromo."
-        />
-        <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://coachingpromo.in/blogs/new" />
-      </Helmet>
+      <PageMeta
+        title="Create Blog | CoachingPromo"
+        description="Write and publish a new blog on CoachingPromo."
+        robots="noindex, follow"
+        canonical="https://coachingpromo.in/blogs/new"
+      />
 
       {/*  Lazy Loaded Banner → removes 150–200 KB from initial JS */}
       <Suspense fallback={null}>

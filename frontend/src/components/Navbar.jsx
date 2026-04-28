@@ -7,11 +7,9 @@ import {
   GraduationCap,
   Phone,
   MessageCircle,
-  Menu,
-  ShoppingCart
+  Menu
 } from "lucide-react";
 import categories from "../data/categories";
-import axios from "axios";
 import Sidebar from "./Sidebar";
 import UserProfileSidebar from "./UserProfileSidebar";
 import { useAuth } from "../context/AuthContext";
@@ -40,22 +38,48 @@ const Navbar = () => {
 
   /* Visitor Count (Silent Capture) */
   useEffect(() => {
-    // Generate or retrieve a persistent visitor ID
-    let visitorId = localStorage.getItem("visitorId");
-    if (!visitorId) {
-      // Modern browsers support crypto.randomUUID()
-      if (window.crypto && window.crypto.randomUUID) {
-        visitorId = window.crypto.randomUUID();
-      } else {
-        // Fallback for older browsers
-        visitorId = Math.random().toString(36).substring(2) + Date.now().toString(36);
+    let timeoutId;
+    let cancelled = false;
+
+    const captureVisitor = () => {
+      if (cancelled) return;
+
+      // Generate or retrieve a persistent visitor ID
+      let visitorId = localStorage.getItem("visitorId");
+      if (!visitorId) {
+        // Modern browsers support crypto.randomUUID()
+        if (window.crypto && window.crypto.randomUUID) {
+          visitorId = window.crypto.randomUUID();
+        } else {
+          // Fallback for older browsers
+          visitorId = Math.random().toString(36).substring(2) + Date.now().toString(36);
+        }
+        localStorage.setItem("visitorId", visitorId);
       }
-      localStorage.setItem("visitorId", visitorId);
+
+      fetch(`${import.meta.env.VITE_API_URL}/visitors/count?vid=${visitorId}`, {
+        keepalive: true,
+      })
+        .catch((err) => console.error("Visitor capture failed", err));
+    };
+
+    const scheduleVisitorCapture = () => {
+      timeoutId = window.setTimeout(captureVisitor, 15000);
+    };
+
+    if (document.readyState === "complete") {
+      scheduleVisitorCapture();
+    } else {
+      window.addEventListener("load", scheduleVisitorCapture, { once: true });
     }
 
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/visitors/count?vid=${visitorId}`)
-      .catch((err) => console.error("Visitor capture failed", err));
+    return () => {
+      cancelled = true;
+      window.removeEventListener("load", scheduleVisitorCapture);
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   return (

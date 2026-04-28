@@ -1,7 +1,7 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import PageMeta from "../components/PageMeta";
 import "../styles/Blog.css";
 import { ChevronRight } from "lucide-react";
 
@@ -36,15 +36,11 @@ const BlogList = () => {
 
   return (
     <>
-      {/* SEO */}
-      <Helmet>
-        <title>Blogs | CoachingPromo</title>
-        <meta
-          name="description"
-          content="Explore CoachingPromo blogs for insights on Institute promotional products, customization tips, and branding ideas for schools, colleges, and universities."
-        />
-        <link rel="canonical" href="https://coachingpromo.in/blogs" />
-      </Helmet>
+      <PageMeta
+        title="Blogs | CoachingPromo"
+        description="Explore CoachingPromo blogs for insights on Institute promotional products, customization tips, and branding ideas for schools, colleges, and universities."
+        canonical="https://coachingpromo.in/blogs"
+      />
 
       {/*  Lazy-loaded banner */}
       <Suspense fallback={null}>

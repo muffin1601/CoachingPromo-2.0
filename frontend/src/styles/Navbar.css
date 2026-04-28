@@ -374,7 +374,6 @@ width: 120px;
   padding: 8px;
   min-height: 44px;
   min-width: 44px;
-  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -388,7 +387,7 @@ width: 120px;
 
 @media (max-width: 700px) {
   .hamburger-btn {
-    display: block;
+    display: flex;
   }
   /* LOGO */
 .logo-image {

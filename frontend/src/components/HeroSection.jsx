@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef, lazy, Suspense } from "react";
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
-import axios from "axios";
 import "../styles/HeroSection.css";
 
 const EnquiryModal = lazy(() => import("./EnquiryModal"));
@@ -8,6 +7,7 @@ const EnquiryModal = lazy(() => import("./EnquiryModal"));
 const fallbackSlides = [
   {
     src: "/banners/banner-1-1360.webp",
+    mobileSrc: "/banners/banner-1-640.webp",
     title: "Custom Promotional Products for Coaching Institutes",
     subtitle:
       "Branded apparel, student kits, stationery and gifting solutions with fast pan-India delivery.",
@@ -30,18 +30,50 @@ const HeroSection = () => {
   const timeoutRef = useRef(null);
 
   useEffect(() => {
+    let cancelled = false;
+    let timeoutId;
+    const triggerEvents = ["pointerdown", "keydown", "touchstart", "scroll"];
+
     const fetchSlides = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/slides/banners`);
-        if (Array.isArray(res.data) && res.data.length > 0) {
-          setSlides(res.data);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/slides/banners`);
+        const data = await res.json();
+
+        if (!cancelled && Array.isArray(data) && data.length > 0) {
+          setSlides((currentSlides) => [currentSlides[0], ...data.slice(1)]);
         }
       } catch (err) {
         console.error("Error fetching banners:", err);
       }
     };
 
-    fetchSlides();
+    const runAfterIntent = () => {
+      triggerEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, runAfterIntent);
+      });
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+      fetchSlides();
+    };
+
+    triggerEvents.forEach((eventName) => {
+      window.addEventListener(eventName, runAfterIntent, {
+        passive: true,
+        once: true,
+      });
+    });
+    timeoutId = window.setTimeout(runAfterIntent, 15000);
+
+    return () => {
+      cancelled = true;
+      triggerEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, runAfterIntent);
+      });
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   const length = slides.length;
@@ -79,18 +111,27 @@ const HeroSection = () => {
               preload={current === 0 ? "auto" : "metadata"}
             />
           ) : (
-            <img
-              className="hero-bg-media"
-              src={slide.src}
-              alt={slide.title || "Banner"}
-              fetchpriority={current === 0 ? "high" : undefined}
-              loading={current === 0 ? "eager" : "lazy"}
-              decoding="async"
-              width={1280}
-              height={512}
-              sizes="100vw"
-              style={{ width: "100%", height: "auto", objectFit: "cover", display: "block" }}
-            />
+            <picture>
+              {slide.mobileSrc && (
+                <source
+                  srcSet={slide.mobileSrc}
+                  media="(max-width: 576px)"
+                  width={640}
+                  height={256}
+                />
+              )}
+              <img
+                className="hero-bg-media"
+                src={slide.src}
+                alt={slide.title || "Banner"}
+                fetchPriority={current === 0 ? "high" : "auto"}
+                loading={current === 0 ? "eager" : "lazy"}
+                decoding="async"
+                width={1280}
+                height={512}
+                sizes="100vw"
+              />
+            </picture>
           )}
         </div>
 
