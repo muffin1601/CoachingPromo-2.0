@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight, History } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { History } from "lucide-react";
 import "../styles/RecentlyViewedProducts.css";
 
 const RecentlyViewedProducts = ({ currentProdSlug, onEnquiryClick }) => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -51,34 +52,46 @@ const RecentlyViewedProducts = ({ currentProdSlug, onEnquiryClick }) => {
       </div>
 
       <div className="recently-viewed-grid">
-        {products.map((product) => (
-          <div key={product._id || product.id} className="rv-product-card">
-            <Link to={`/${product.categorySlug}/${product.subSlug}/${product.slug}`} className="rv-product-image-wrap">
-              <img
-                src={getImageUrl(product.images)}
-                alt={product.name}
-                className="rv-product-image"
-                loading="lazy"
-              />
-            </Link>
+        {products.map((product) => {
+          const productUrl = `/${product.categorySlug}/${product.subSlug}/${product.slug}`;
+          return (
+            <div
+              key={product._id || product.id}
+              className="rv-product-card"
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate(productUrl)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") navigate(productUrl);
+              }}
+            >
+              <div className="rv-product-image-wrap">
+                <img
+                  src={getImageUrl(product.images)}
+                  alt={product.name}
+                  className="rv-product-image"
+                  loading="lazy"
+                />
+              </div>
 
-            <div className="rv-product-content">
-              <h3 className="rv-product-name">{product.name}</h3>
-              <div className="rv-product-footer">
-                <span 
-                  className="rv-product-price" 
-                  onClick={onEnquiryClick}
-                  title="Click to get a quote"
-                >
-                  Get a Quote
-                </span>
-                <Link to={`/${product.categorySlug}/${product.subSlug}/${product.slug}`} className="rv-product-btn">
-                  View Detail <ArrowRight size={14} />
-                </Link>
+              <div className="rv-product-content">
+                <h3 className="rv-product-name">{product.name}</h3>
+                <div className="rv-product-footer">
+                  <button
+                    className="rv-product-quote-btn"
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onEnquiryClick?.();
+                    }}
+                  >
+                    Get a Quote
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

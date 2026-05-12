@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import { ArrowRight, ShoppingCart } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import "../styles/RelatedProducts.css";
 
 const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug, onEnquiryClick }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchRelatedProducts = async () => {
@@ -54,36 +54,47 @@ const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug, onEnquiryClic
       </div>
 
       <div className="related-products-grid">
-        {products.map((product) => (
-          <div key={product._id} className="related-product-card">
-            <Link to={`/${categorySlug}/${subSlug}/${product.slug}`} className="related-product-image-wrap">
-              <img
-                src={getImageUrl(product.images)}
-                alt={product.name}
-                className="related-product-image"
-                loading="lazy"
-              />
-              {product.salePrice && <div className="product-badge">SALE</div>}
-            </Link>
+        {products.map((product) => {
+          const productUrl = `/${categorySlug}/${subSlug}/${product.slug}`;
+          return (
+            <div
+              key={product._id}
+              className="related-product-card"
+              role="button"
+              tabIndex={0}
+              onClick={() => navigate(productUrl)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") navigate(productUrl);
+              }}
+            >
+              <div className="related-product-image-wrap">
+                <img
+                  src={getImageUrl(product.images)}
+                  alt={product.name}
+                  className="related-product-image"
+                  loading="lazy"
+                />
+                {product.salePrice && <div className="product-badge">SALE</div>}
+              </div>
 
-            <div className="related-product-content">
-              <span className="related-product-category">{subSlug.replace(/-/g, ' ')}</span>
-              <h3 className="related-product-name">{product.name}</h3>
-              <div className="related-product-footer">
-                <div 
-                  className="related-product-price" 
-                  onClick={onEnquiryClick}
-                  title="Click to get a quote"
-                >
-                  <span>Get a Quote</span>
+              <div className="related-product-content">
+                <h3 className="related-product-name">{product.name}</h3>
+                <div className="related-product-footer">
+                  <button
+                    className="related-product-quote-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onEnquiryClick?.();
+                    }}
+                    type="button"
+                  >
+                    Get a Quote
+                  </button>
                 </div>
-                <Link to={`/${categorySlug}/${subSlug}/${product.slug}`} className="related-product-btn">
-                  View Detail <ArrowRight size={16} />
-                </Link>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

@@ -89,43 +89,44 @@
 
 .rv-product-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-top: 1px solid #f0f0f0;
     padding-top: 15px;
 }
 
+.rv-product-quote-btn,
 .rv-product-price {
-    font-size: 1rem;
+    width: 100%;
+    max-width: 240px;
+    background: var(--brand-orange, #d17504);
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 12px 16px;
+    font-size: 0.95rem;
     font-weight: 700;
-    color: var(--brand-blue, #083c71);
-    background: #f0f7ff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
+.rv-product-quote-btn:hover,
 .rv-product-price:hover {
-    background: #e1efff;
+    background: #f36f1f;
     transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .rv-product-btn {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #333;
-    text-decoration: none;
-    transition: color 0.2s;
+    display: none;
 }
 
-.rv-product-btn:hover {
-    color: var(--primary-color, #d17504);
+.rv-product-card {
+    cursor: pointer;
+}
+
+.rv-product-card:focus-visible {
+    outline: 2px solid rgba(209, 117, 4, 0.8);
+    outline-offset: 4px;
 }
 
 @media (max-width: 768px) {

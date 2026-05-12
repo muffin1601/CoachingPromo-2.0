@@ -92,12 +92,12 @@ const Sidebar = ({ isOpen, onClose }) => {
 
           {/* Contact Buttons */}
           <div className="sidebar-contact-buttons">
-            <a href="tel:+918800898643" className="sidebar-contact-item">
-              <Phone size={20} /> +91 88008 98643
+            <a href="tel:+918750708222" className="sidebar-contact-item">
+              <Phone size={20} /> +91 87507 08222
             </a>
 
             <a
-              href="https://wa.me/918800898643"
+              href="https://wa.me/918750708222"
               target="_blank"
               rel="noopener noreferrer"
               className="sidebar-contact-item whatsapp"

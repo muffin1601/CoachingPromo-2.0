@@ -15,13 +15,13 @@ const CTASection = () => {
           </p>
           
           <div className="cta-actions">
-            <a href="https://wa.me/918800898643" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-primary">
+            <a href="https://wa.me/918750708222" target="_blank" rel="noopener noreferrer" className="cta-btn cta-btn-primary">
               <FaWhatsapp size={22} />
               Chat on WhatsApp
             </a>
-            <a href="tel:+918800898643" className="cta-btn cta-btn-secondary">
+            <a href="tel:+918750708222" className="cta-btn cta-btn-secondary">
               <Phone size={20} />
-              +91 8800898643
+              +91 8750708222
             </a>
           </div>
         </div>

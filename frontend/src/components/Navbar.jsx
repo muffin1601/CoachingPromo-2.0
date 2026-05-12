@@ -96,13 +96,13 @@ const Navbar = () => {
               </div>
 
               {/* Phone */}
-              <a href="tel:+918800898643" className="phone-link">
-                <Phone size={18} /> 88008 98643
+              <a href="tel:+918750708222" className="phone-link">
+                <Phone size={18} /> 87507 08222
               </a>
 
               {/* WhatsApp */}
               <a
-                href="https://wa.me/918800898643"
+                href="https://wa.me/918750708222"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-btn"

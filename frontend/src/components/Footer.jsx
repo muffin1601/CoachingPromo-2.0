@@ -89,7 +89,7 @@ const Footer = () => {
 
           <p className="contact-item">
             <Phone size={18} />
-            <a href="tel:+918800898643" itemProp="telephone">+91 8800898643</a>
+            <a href="tel:+918750708222" itemProp="telephone">+91 8750708222</a>
           </p>
 
           <p className="contact-item">
