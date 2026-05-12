@@ -23,6 +23,10 @@ const Footer = () => {
             alt="Coaching Promo - Custom Merchandise Supplier for Institutes"
             className="footer-logo"
             itemProp="logo"
+            width={160}
+            height={70}
+            decoding="async"
+            loading="lazy"
           />
 
           <p className="footer-text" itemProp="description">
@@ -126,7 +130,14 @@ const Footer = () => {
             className="partner-logo-box"
             title="Coaching Promo on IndiaMART"
           >
-            <img src="/partners/indiamart.webp" alt="IndiaMART Supplier - Coaching Promo" />
+            <img 
+              src="/partners/indiamart.webp" 
+              alt="IndiaMART Supplier - Coaching Promo"
+              width={140}
+              height={57}
+              loading="lazy"
+              decoding="async"
+            />
           </a>
 
           <a
@@ -136,7 +147,14 @@ const Footer = () => {
             className="partner-logo-box"
             title="Coaching Promo on TradeIndia"
           >
-            <img src="/partners/tradeindia.webp" alt="TradeIndia Supplier - Coaching Promo" />
+            <img 
+              src="/partners/tradeindia.webp" 
+              alt="TradeIndia Supplier - Coaching Promo"
+              width={140}
+              height={36}
+              loading="lazy"
+              decoding="async"
+            />
           </a>
 
           {/* <a

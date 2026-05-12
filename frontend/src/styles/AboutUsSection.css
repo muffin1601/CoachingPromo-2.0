@@ -59,12 +59,13 @@
 .about-btn {
   background-color: var(--brand-orange);
   padding: 12px 26px;
-  
+  min-height: 44px;
   font-weight: 600;
   text-decoration: none;
   color: #fff;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   transition: 0.3s ease;
   /* box-shadow: 0 8px 18px rgba(255, 140, 0, 0.4); */

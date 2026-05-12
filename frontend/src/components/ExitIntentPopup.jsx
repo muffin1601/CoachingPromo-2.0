@@ -62,10 +62,17 @@ const ExitIntentPopup = () => {
                   {item.offer} <ArrowRight size={18} />
                 </a>
               </div>
-1
 
-              <div className="exit-imgwrap">.1  
-                <img src={item.img} alt={item.alt} className="exit-img" />
+              <div className="exit-imgwrap">
+                <img 
+                  src={item.img} 
+                  alt={item.alt} 
+                  className="exit-img" 
+                  loading="lazy"
+                  decoding="async"
+                  width={400}
+                  height={220}
+                />
               </div>
             </div>
           ))}

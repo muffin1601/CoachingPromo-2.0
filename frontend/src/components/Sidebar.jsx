@@ -31,7 +31,14 @@ const Sidebar = ({ isOpen, onClose }) => {
           {/* Header */}
           <div className="sidebar-header">
             <div className="logo-section-2">
-              <img src="/logo.webp" alt="Coaching Promo" className="logo-image-2" />
+              <img 
+                src="/logo.webp" 
+                alt="Coaching Promo" 
+                className="logo-image-2"
+                width={160}
+                height={60}
+                decoding="async"
+              />
             </div>
             <button className="close-btn" onClick={onClose} aria-label="Close sidebar">
               <X size={26} />

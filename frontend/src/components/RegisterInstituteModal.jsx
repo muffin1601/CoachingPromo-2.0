@@ -61,7 +61,14 @@ const RegisterInstituteModal = ({ isOpen, onClose }) => {
         </button>
 
         <div className="enquiry-img-box">
-          <img src="/assets/enquiry.webp" alt="register-institute" />
+          <img 
+            src="/assets/enquiry.webp" 
+            alt="register-institute" 
+            width={400}
+            height={300}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <form className="enquiry-form" onSubmit={handleSubmit}>

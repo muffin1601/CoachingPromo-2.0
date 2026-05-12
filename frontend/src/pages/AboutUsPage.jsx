@@ -1,8 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import PageBanner from "../components/PageBanner";
-import { Helmet } from "react-helmet-async";
+import PageMeta from "../components/PageMeta";
 
-/*  Lazy-load heavy components */
 const AboutUs = lazy(() => import("../components/AboutUs"));
 const Gallery = lazy(() => import("../components/Gallery"));
 const CatalogueCTA = lazy(() => import("../components/CatalogueCTA"));
@@ -16,36 +15,23 @@ const HiddenSEOContent = lazy(() =>
 const AboutUsPage = () => {
   return (
     <>
-      <Helmet>
-        <title>About Us | CoachingPromo</title>
-        <meta
-          name="description"
-          content="Learn about CoachingPromo – India's trusted supplier for custom T-shirts, bags, student kits, event merchandise and promotional products for Coaching institutes, schools, colleges and universities."
-        />
-        <link rel="canonical" href="https://coachingpromo.in/about" />
-      </Helmet>
+      <PageMeta
+        title="About Us | CoachingPromo"
+        description="Learn about CoachingPromo - India's trusted supplier for custom T-shirts, bags, student kits, event merchandise and promotional products for Coaching institutes, schools, colleges and universities."
+        canonical="https://coachingpromo.in/about"
+      />
 
-      {/* Always keep banner non-lazy for SEO & CLS stability */}
       <PageBanner
         title="About Us"
         background="/apparel.webp"
         breadcrumb={[{ label: "About" }]}
       />
 
-      {/*  Lazy load all heavy components */}
       <Suspense fallback={null}>
         <AboutUs />
-
-        {/* Custom T-Shirt Experience */}
         <CustomizationExperience />
-
-        {/* Gallery */}
         <Gallery />
-
-        {/* Catalogue CTA */}
         <CatalogueCTA />
-
-        {/* Hidden SEO Content */}
         <HiddenSEOContent />
       </Suspense>
     </>

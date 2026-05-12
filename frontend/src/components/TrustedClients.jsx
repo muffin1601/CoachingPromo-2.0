@@ -32,14 +32,28 @@ const TrustedClients = () => {
           <div className="marquee-track">
             {logos.map((logo, index) => (
               <div key={index} className="trusted-logo">
-                <img src={logo.src} alt={logo.name} />
+                <img 
+                  src={logo.src} 
+                  alt={logo.name}
+                  loading="lazy"
+                  decoding="async"
+                  width={180}
+                  height={80}
+                />
               </div>
             ))}
 
             {/* Duplicate for seamless loop */}
             {logos.map((logo, index) => (
               <div key={"dup-" + index} className="trusted-logo">
-                <img src={logo.src} alt={logo.name} />
+                <img 
+                  src={logo.src} 
+                  alt={logo.name}
+                  loading="lazy"
+                  decoding="async"
+                  width={180}
+                  height={80}
+                />
               </div>
             ))}
           </div>

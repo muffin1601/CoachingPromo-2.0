@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "../styles/CatalogueCTA.css";
@@ -12,6 +12,31 @@ const CatalogueCTA = () => {
     companyname: "",
     location: "",
   });
+  const [showCatalogueVisual, setShowCatalogueVisual] = useState(() => {
+    if (typeof window === "undefined") {
+      return true;
+    }
+
+    return window.matchMedia("(min-width: 601px)").matches;
+  });
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
+    const mediaQuery = window.matchMedia("(min-width: 601px)");
+    const updateVisualVisibility = (event) => {
+      setShowCatalogueVisual(event.matches);
+    };
+
+    setShowCatalogueVisual(mediaQuery.matches);
+    mediaQuery.addEventListener("change", updateVisualVisibility);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateVisualVisibility);
+    };
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -110,13 +135,20 @@ const CatalogueCTA = () => {
         </div>
 
         {/* Left Image */}
-        <div className="cta-left">
-          <img
-            src="/assets/catalogue-img.webp"
-            alt="Catalogue preview"
-            className="cta-img"
-          />
-        </div>
+        {showCatalogueVisual && (
+          <div className="cta-left" aria-hidden="true">
+            <img
+              src="/assets/catalogue-img.webp"
+              alt="Catalogue preview"
+              className="cta-img"
+              loading="lazy"
+              decoding="async"
+              fetchPriority="low"
+              width={600}
+              height={400}
+            />
+          </div>
+        )}
       </div>
     </section>
   );

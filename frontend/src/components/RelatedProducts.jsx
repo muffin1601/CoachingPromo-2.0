@@ -73,6 +73,10 @@ const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug, onEnquiryClic
                   alt={product.name}
                   className="related-product-image"
                   loading="lazy"
+                  decoding="async"
+                  width={250}
+                  height={250}
+                  style={{ width: "100%", height: "auto", objectFit: "cover" }}
                 />
                 {product.salePrice && <div className="product-badge">SALE</div>}
               </div>

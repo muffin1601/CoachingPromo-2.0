@@ -4,7 +4,7 @@ const slides = [
     type: "image",
     title: "Branded Kits That Impress Students & Staff",
     subtitle: "From notebooks to lanyards — showcase your institute’s identity.",
-    src: "/banners/banner (1).webp",
+    src: "/banners/banner-1-1360.webp",
     ctaText: "View Products",
     ctaLink: "/products",
   },

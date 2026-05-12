@@ -100,6 +100,10 @@ const ProductGrid = ({ products, catSlug, subSlug, onRemove, isFavoritesPage = f
                   alt={finalName}
                   className="product-card-media"
                   loading="lazy"
+                  decoding="async"
+                  width={250}
+                  height={250}
+                  style={{ width: "100%", height: "auto", objectFit: "cover" }}
                 />
 
                 <div className="product-content">

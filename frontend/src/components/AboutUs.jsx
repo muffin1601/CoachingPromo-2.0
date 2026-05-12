@@ -57,6 +57,9 @@ const AboutUs = () => {
               src="/assets/about.webp"
               alt="Custom promotional merchandise and branding solutions for institutes"
               loading="lazy"
+              decoding="async"
+              width={600}
+              height={500}
             />
           </div>
         </div>

@@ -67,11 +67,12 @@
 .cex-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
   background: var(--brand-orange);
   color: white;
   padding: 10px 24px;
-  
+  min-height: 44px;
   font-weight: 600;
   text-decoration: none;
   transition: 0.25s;

@@ -16,9 +16,14 @@ const ChatLauncher = ({ onClick, isOpen }) => {
 
       <button className="chat-launcher" aria-label="Open chat">
         <img
-          src="/agent.webp"
+          src="/agent-96.webp"
           alt="Sana - Support Agent"
           className="launcher-avatar"
+          loading="lazy"
+          decoding="async"
+          width={54}
+          height={54}
+          sizes="54px"
         />
         <span className="launcher-icon">
           <MessageCircle size={14} strokeWidth={1.8} />

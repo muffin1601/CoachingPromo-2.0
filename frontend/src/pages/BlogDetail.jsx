@@ -1,7 +1,7 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Helmet } from "react-helmet-async";
+import PageMeta from "../components/PageMeta";
 import PageBanner from "../components/PageBanner";
 import "../styles/BlogDetail.css";
 import { Loader2 } from "lucide-react";
@@ -84,15 +84,11 @@ const BlogDetails = () => {
 
   return (
     <>
-      {/* SEO Friendly Helmet */}
-      <Helmet>
-        <title>{blog.title} | CoachingPromo</title>
-        <meta
-          name="description"
-          content={blog.metaDesc || blog.content?.slice(0, 150)}
-        />
-        <link rel="canonical" href={`https://coachingpromo.in/blogs/${id}`} />
-      </Helmet>
+      <PageMeta
+        title={`${blog.title} | CoachingPromo`}
+        description={blog.metaDesc || blog.content?.slice(0, 150)}
+        canonical={`https://coachingpromo.in/blogs/${id}`}
+      />
 
       {/* BANNER */}
       <PageBanner
@@ -138,6 +134,11 @@ const BlogDetails = () => {
                     className="blg-details-media"
                     src={`${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${blog.media}`}
                     alt={blog.title}
+                    width={800}
+                    height={500}
+                    decoding="async"
+                    loading="eager"
+                    style={{ width: "100%", height: "auto", objectFit: "cover" }}
                   />
                 )}
               </>

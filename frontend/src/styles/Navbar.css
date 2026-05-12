@@ -342,13 +342,17 @@ width: 120px;
 /*  CTA – Get Quote */
 .primary-cta-btn {
   background: var(--brand-orange);
-  padding: 8px 20px;
+  padding: 12px 24px;
+  min-height: 44px;
   border: none;
   font-family: 'Outfit', sans-serif;
   color: #fff !important;
   font-weight: 700;
   text-decoration: none;
   transition: .25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .primary-cta-btn:hover {
@@ -367,11 +371,23 @@ width: 120px;
   display: none;
   border: none;
   background: transparent;
+  padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--brand-blue);
+  transition: .22s ease;
+}
+
+.hamburger-btn:hover {
+  background: rgba(11, 74, 141, 0.08);
 }
 
 @media (max-width: 700px) {
   .hamburger-btn {
-    display: block;
+    display: flex;
   }
   /* LOGO */
 .logo-image {

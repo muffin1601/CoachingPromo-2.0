@@ -1,8 +1,4 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 import "../styles/PopularSubcategories.css";
 
 import {
@@ -14,11 +10,8 @@ import {
   ArrowRight,
   PackageCheck,
   BookOpen,
-  ChevronRight,
-  ChevronLeft,
 } from "lucide-react";
 
-//  Base Data
 const baseSubcategories = [
   {
     name: "Polo T-Shirts",
@@ -47,7 +40,6 @@ const baseSubcategories = [
     productCount: 121,
     icon: PackageCheck,
   },
-
   {
     name: "Institute Backpacks",
     category: "Bags",
@@ -66,7 +58,6 @@ const baseSubcategories = [
     productCount: 97,
     icon: ShoppingBag,
   },
-
   {
     name: "Water Bottle",
     category: "Promotional Items",
@@ -94,7 +85,6 @@ const baseSubcategories = [
     productCount: 85,
     icon: Award,
   },
-
   {
     name: "Notebook",
     category: "Stationery",
@@ -115,7 +105,6 @@ const baseSubcategories = [
   },
 ];
 
-//  Final sorted, top 10 list with redirect
 const popularSubcategories = baseSubcategories
   .map((item) => ({
     ...item,
@@ -136,73 +125,44 @@ const PopularSubcategories = () => {
         leading Coaching institutes, schools, colleges & training centers across India.
       </p>
 
-      <div className="popsub-slider">
-        <Swiper
-          breakpoints={{
-            320: { slidesPerView: 1.2, spaceBetween: 16 },
-            450: { slidesPerView: 1.6, spaceBetween: 18 },
-            576: { slidesPerView: 2, spaceBetween: 18 },
-            768: { slidesPerView: 2.8, spaceBetween: 20 },
-            992: { slidesPerView: 3.2, spaceBetween: 22 },
-            1200: { slidesPerView: 4, spaceBetween: 22 },
-          }}
-          navigation={{
-            nextEl: ".popsub-next",
-            prevEl: ".popsub-prev",
-          }}
-          autoplay={{ delay: 3000 }}
-          loop={true}
-          modules={[Navigation, Autoplay]}
-        >
-          {popularSubcategories.map((sub, i) => {
-            const Icon = sub.icon;
-            return (
-              <SwiperSlide key={i}>
-                <div className="popsub-card">
-                  <div className="popsub-img-wrap">
-                    <img
-                      src={sub.image}
-                      className="popsub-img"
-                      alt={`${sub.name} for Coaching institutes, schools and educational organizations`}
-                    />
-                    <span className="parent-chip">{sub.category}</span>
-                  </div>
+      <div className="popsub-slider" role="list">
+        {popularSubcategories.map((sub) => {
+          const Icon = sub.icon;
 
-                  <div className="popsub-content">
-                    <div className="icon-wrap">
-                      <Icon size={22} />
-                    </div>
+          return (
+            <article key={sub.href} className="popsub-card" role="listitem">
+              <div className="popsub-img-wrap">
+                <img
+                  src={sub.image}
+                  className="popsub-img"
+                  alt={`${sub.name} for Coaching institutes, schools and educational organizations`}
+                  loading="lazy"
+                  decoding="async"
+                  width={320}
+                  height={220}
+                  sizes="(max-width: 420px) 180px, (max-width: 576px) 220px, (max-width: 992px) 45vw, (max-width: 1200px) 30vw, 280px"
+                />
+                <span className="parent-chip">{sub.category}</span>
+              </div>
 
-                    <h3 className="popsub-name">{sub.name}</h3>
-
-                    <p className="popsub-count">
-                      {sub.productCount}+ custom products for institutes
-                    </p>
-
-                    <a href={sub.href} className="popsub-btn">
-                      View Products <ArrowRight size={16} />
-                    </a>
-                  </div>
+              <div className="popsub-content">
+                <div className="icon-wrap">
+                  <Icon size={22} />
                 </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
 
-        {/*  Custom Navigation Buttons */}
-        <button
-          className="popsub-prev nav-btn-2"
-          aria-label="Previous subcategory"
-        >
-          <ChevronLeft size={20} />
-        </button>
+                <h3 className="popsub-name">{sub.name}</h3>
 
-        <button
-          className="popsub-next nav-btn-2"
-          aria-label="Next subcategory"
-        >
-          <ChevronRight size={20} />
-        </button>
+                <p className="popsub-count">
+                  {sub.productCount}+ custom products for institutes
+                </p>
+
+                <a href={sub.href} className="popsub-btn">
+                  View Products <ArrowRight size={16} />
+                </a>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

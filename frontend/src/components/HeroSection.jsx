@@ -1,35 +1,83 @@
 import React, { useEffect, useState, useRef, lazy, Suspense } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
-import axios from "axios";
 import "../styles/HeroSection.css";
 
-/*  Lazy load EnquiryModal */
 const EnquiryModal = lazy(() => import("./EnquiryModal"));
 
+const fallbackSlides = [
+  {
+    src: "/banners/banner-1-1360.webp",
+    mobileSrc: "/banners/banner-1-640.webp",
+    title: "Custom Promotional Products for Coaching Institutes",
+    subtitle:
+      "Branded apparel, student kits, stationery and gifting solutions with fast pan-India delivery.",
+    type: "image",
+  },
+  {
+    src: "/banners/banner%20(2).webp",
+    title: "Bulk Merchandise Designed for Education Brands",
+    subtitle:
+      "Launch events, admissions and welcome kits with consistent branding across every product.",
+    type: "image",
+  },
+];
+
 const HeroSection = () => {
-  const [slides, setSlides] = useState([]);
+  const [slides, setSlides] = useState(fallbackSlides);
   const [current, setCurrent] = useState(0);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [paused, setPaused] = useState(false);
   const timeoutRef = useRef(null);
 
-  // Fetch slides
   useEffect(() => {
+    let cancelled = false;
+    let timeoutId;
+    const triggerEvents = ["pointerdown", "keydown", "touchstart", "scroll"];
+
     const fetchSlides = async () => {
       try {
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/slides/banners`);
-        setSlides(res.data);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/slides/banners`);
+        const data = await res.json();
+
+        if (!cancelled && Array.isArray(data) && data.length > 0) {
+          setSlides((currentSlides) => [currentSlides[0], ...data.slice(1)]);
+        }
       } catch (err) {
         console.error("Error fetching banners:", err);
       }
     };
-    fetchSlides();
+
+    const runAfterIntent = () => {
+      triggerEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, runAfterIntent);
+      });
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+      fetchSlides();
+    };
+
+    triggerEvents.forEach((eventName) => {
+      window.addEventListener(eventName, runAfterIntent, {
+        passive: true,
+        once: true,
+      });
+    });
+    timeoutId = window.setTimeout(runAfterIntent, 15000);
+
+    return () => {
+      cancelled = true;
+      triggerEvents.forEach((eventName) => {
+        window.removeEventListener(eventName, runAfterIntent);
+      });
+      if (timeoutId) {
+        window.clearTimeout(timeoutId);
+      }
+    };
   }, []);
 
   const length = slides.length;
 
-  // Autoplay
   useEffect(() => {
     if (!paused && length > 0) {
       timeoutRef.current = setTimeout(
@@ -37,13 +85,12 @@ const HeroSection = () => {
         4500
       );
     }
+
     return () => clearTimeout(timeoutRef.current);
   }, [current, paused, length]);
 
   const goNext = () => setCurrent((prev) => (prev + 1) % length);
   const goPrev = () => setCurrent((prev) => (prev - 1 + length) % length);
-
-  if (length === 0) return null;
   const slide = slides[current];
 
   return (
@@ -53,63 +100,41 @@ const HeroSection = () => {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-          {/* FIRST SLIDE — NO ANIMATION FOR BETTER PERFORMANCE */}
-        {current === 0 ? (
-          <div className="hero-bg-wrapper">
-            {slide.type === "video" ? (
-              <video
-                className="hero-bg-media"
-                src={slide.src}
-                autoPlay
-                muted
-                loop
-                preload="auto"
-              />
-            ) : (
+        <div className={`hero-bg-wrapper ${current === 0 ? "" : "hero-bg-fade"}`}>
+          {slide.type === "video" ? (
+            <video
+              className="hero-bg-media"
+              src={slide.src}
+              autoPlay
+              muted
+              loop
+              preload={current === 0 ? "auto" : "metadata"}
+            />
+          ) : (
+            <picture>
+              {slide.mobileSrc && (
+                <source
+                  srcSet={slide.mobileSrc}
+                  media="(max-width: 576px)"
+                  width={640}
+                  height={256}
+                />
+              )}
               <img
                 className="hero-bg-media"
                 src={slide.src}
                 alt={slide.title || "Banner"}
-                fetchpriority="high"
-                loading="eager"
+                fetchPriority={current === 0 ? "high" : "auto"}
+                loading={current === 0 ? "eager" : "lazy"}
                 decoding="async"
+                width={1280}
+                height={512}
+                sizes="100vw"
               />
-            )}
-          </div>
-        ) : (
-          /*  OTHER SLIDES — WITH ANIMATION */
-          <AnimatePresence>
-            <motion.div
-              key={current}
-              className="hero-bg-wrapper"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-            >
-              {slide.type === "video" ? (
-                <video
-                  className="hero-bg-media"
-                  src={slide.src}
-                  autoPlay
-                  muted
-                  loop
-                  preload="metadata"
-                />
-              ) : (
-                <img
-                  className="hero-bg-media"
-                  src={slide.src}
-                  alt={slide.title}
-                  loading="lazy"
-                  decoding="async"
-                />
-              )}
-            </motion.div>
-          </AnimatePresence>
-        )}
+            </picture>
+          )}
+        </div>
 
-        {/* LEFT CONTENT */}
         <div className="hero-content">
           <h1 className="hero-title">{slide.title}</h1>
           <p className="hero-subtext">{slide.subtitle}</p>
@@ -139,7 +164,6 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Arrows */}
         <button className="hero-arrow left" onClick={goPrev} aria-label="Previous slide">
           <ArrowLeft size={26} />
         </button>
@@ -148,7 +172,6 @@ const HeroSection = () => {
           <ArrowRight size={26} />
         </button>
 
-        {/* Dots */}
         <div className="hero-dots">
           {slides.map((_, i) => (
             <div
@@ -160,7 +183,6 @@ const HeroSection = () => {
         </div>
       </section>
 
-      {/* Mobile CTA */}
       <div className="hero-cta-group-2">
         <button onClick={() => setIsEnquiryOpen(true)} className="btn-primary">
           Enquire Now
@@ -170,7 +192,6 @@ const HeroSection = () => {
         </a>
       </div>
 
-      {/*  Lazy Modal */}
       <Suspense fallback={null}>
         {isEnquiryOpen && (
           <EnquiryModal
