@@ -18,7 +18,7 @@ const AboutUsPage = () => {
       <PageMeta
         title="About Us | CoachingPromo"
         description="Learn about CoachingPromo - India's trusted supplier for custom T-shirts, bags, student kits, event merchandise and promotional products for Coaching institutes, schools, colleges and universities."
-        canonical="https://coachingpromo.in/about"
+        canonical={`${import.meta.env.VITE_FRONTEND_URL}/about`}
       />
 
       <PageBanner

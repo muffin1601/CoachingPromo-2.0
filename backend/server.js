@@ -86,7 +86,7 @@ app.get("/", (req, res) => {
   const html = renderSEO({
     title: "Promotional Products for Coaching Institutes – CoachingPromo",
     description: "Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes.",
-    canonical: "https://www.coachingpromo.in/",
+    canonical: `${process.env.FRONTEND_URL}/`,
     seoContent: `<h1>Promotional Products for Coaching Institutes</h1>`
   });
 
@@ -106,9 +106,9 @@ app.get("/categories/:slug", async (req, res) => {
     }
 
     const html = renderSEO({
-      title: category.name + " | CoachingPromo",
-      description: category.description || "",
-      canonical: `https://www.coachingpromo.in/categories/${category.slug}`,
+      title: category.seo?.metaTitle || (category.name + " | CoachingPromo"),
+      description: category.seo?.metaDescription || category.description || "",
+      canonical: `${process.env.FRONTEND_URL}/categories/${category.slug}`,
       seoContent: `<h1>${category.name}</h1>`
     });
 
@@ -136,9 +136,9 @@ app.get("/:categorySlug/:subSlug/:prodSlug", async (req, res) => {
     }
 
     const html = renderSEO({
-      title: product.name + " | CoachingPromo",
-      description: product.description?.short || "",
-      canonical: `https://www.coachingpromo.in/${req.params.categorySlug}/${req.params.subSlug}/${product.slug}`,
+      title: product.seo?.metaTitle || (product.name + " | CoachingPromo"),
+      description: product.seo?.metaDescription || product.description?.short || "",
+      canonical: `${process.env.FRONTEND_URL}/${req.params.categorySlug}/${req.params.subSlug}/${product.slug}`,
       seoContent: `<h1>${product.name}</h1>`
     });
 
@@ -163,9 +163,9 @@ app.get("/product/:prodSlug", async (req, res) => {
     }
 
     const html = renderSEO({
-      title: product.name + " | CoachingPromo",
-      description: product.description?.short || "",
-      canonical: `https://www.coachingpromo.in/product/${product.slug}`,
+      title: product.seo?.metaTitle || (product.name + " | CoachingPromo"),
+      description: product.seo?.metaDescription || product.description?.short || "",
+      canonical: `${process.env.FRONTEND_URL}/product/${product.slug}`,
       seoContent: `<h1>${product.name}</h1>`
     });
 
@@ -190,9 +190,9 @@ app.get("/:categorySlug/:subSlug", async (req, res) => {
     }
 
     const html = renderSEO({
-      title: subcategory.name + " | CoachingPromo",
-      description: subcategory.description || "",
-      canonical: `https://www.coachingpromo.in/${req.params.categorySlug}/${subcategory.slug}`,
+      title: subcategory.seo?.metaTitle || (subcategory.name + " | CoachingPromo"),
+      description: subcategory.seo?.metaDescription || subcategory.description || "",
+      canonical: `${process.env.FRONTEND_URL}/${req.params.categorySlug}/${subcategory.slug}`,
       seoContent: `<h1>${subcategory.name}</h1>`
     });
 
@@ -204,12 +204,65 @@ app.get("/:categorySlug/:subSlug", async (req, res) => {
   }
 });
 
+/* ===================================================
+   BLOG PAGES SSR
+=================================================== */
+
+app.get("/blogs", (req, res) => {
+  const html = renderSEO({
+    title: "Latest Articles & Branding Tips | CoachingPromo",
+    description: "Explore CoachingPromo blogs for insights on Institute promotional products, customization tips, and branding ideas.",
+    canonical: `${process.env.FRONTEND_URL}/blogs`,
+    seoContent: `<h1>CoachingPromo Blogs</h1>`
+  });
+  sendHTML(res, html);
+});
+
+app.get("/blogs/:id", async (req, res) => {
+  try {
+    const blog = await require("./models/blog").findById(req.params.id).lean();
+    if (!blog) {
+       return res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+    }
+    const html = renderSEO({
+      title: `${blog.title} | CoachingPromo`,
+      description: blog.metaDesc || blog.content?.slice(0, 150),
+      canonical: `${process.env.FRONTEND_URL}/blogs/${blog._id}`,
+      seoContent: `<h1>${blog.title}</h1>`
+    });
+    sendHTML(res, html);
+  } catch (err) {
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  }
+});
+
 /* ==============================
    FINAL FALLBACK (ONLY ONE)
 ============================== */
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  // Exclude static files from SSR to prevent 502/404 issues on missing assets
+  if (req.url.match(/\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|otf|webp)$/)) {
+    return res.status(404).send("Not Found");
+  }
+
+  try {
+    const html = renderSEO({
+      title: "CoachingPromo | Promotional Products for Institutes",
+      description: "Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding.",
+      canonical: `${process.env.FRONTEND_URL || "https://www.coachingpromo.in"}${req.originalUrl}`,
+      seoContent: ""
+    });
+
+    if (!html) {
+      return res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+    }
+
+    sendHTML(res, html);
+  } catch (err) {
+    console.error("WILDCARD ERROR:", err);
+    res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  }
 });
 
 /* ==============================

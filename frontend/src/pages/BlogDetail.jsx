@@ -87,7 +87,7 @@ const BlogDetails = () => {
       <PageMeta
         title={`${blog.title} | CoachingPromo`}
         description={blog.metaDesc || blog.content?.slice(0, 150)}
-        canonical={`https://coachingpromo.in/blogs/${id}`}
+        canonical={`${import.meta.env.VITE_FRONTEND_URL}/blogs/${id}`}
       />
 
       {/* BANNER */}

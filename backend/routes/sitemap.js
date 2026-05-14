@@ -8,7 +8,7 @@ const Blog = require("../models/blog");
 
 router.get("/sitemap.xml", async (req, res) => {
 
-const base = "https://www.coachingpromo.in";
+const base = process.env.FRONTEND_URL;
 
 const categories = await Category.find().lean();
 

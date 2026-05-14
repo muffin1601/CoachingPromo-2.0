@@ -85,7 +85,7 @@ const bannerImage =
   ];
 
   /** Canonical URL */
-  const canonicalURL = `https://coachingpromo.in/${categorySlug}/${subSlug}`;
+  const canonicalURL = `${import.meta.env.VITE_FRONTEND_URL}/${categorySlug}/${subSlug}`;
 
   /** SEO Fallbacks */
   const metaTitle =

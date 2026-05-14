@@ -91,6 +91,25 @@ router.post("/:id/comments", async (req, res) => {
   }
 });
 
+// ➤ UPDATE BLOG
+router.put("/:id", upload.single('media'), async (req, res) => {
+  try {
+    const { title, content, author } = req.body;
+    const updateData = { title, content, author };
+    
+    if (req.file) {
+      updateData.media = req.file.filename;
+    }
+
+    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, updateData, { new: true });
+    if (!updatedBlog) return res.status(404).json({ message: "Not found" });
+    
+    res.json(updatedBlog);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
+
 // ➤ DELETE BLOG
 router.delete("/:id", async (req, res) => {
   try {

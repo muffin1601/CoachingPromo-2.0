@@ -39,7 +39,7 @@ const BlogList = () => {
       <PageMeta
         title="Blogs | CoachingPromo"
         description="Explore CoachingPromo blogs for insights on Institute promotional products, customization tips, and branding ideas for schools, colleges, and universities."
-        canonical="https://coachingpromo.in/blogs"
+        canonical={`${import.meta.env.VITE_FRONTEND_URL}/blogs`}
       />
 
       {/*  Lazy-loaded banner */}
@@ -64,17 +64,19 @@ const BlogList = () => {
         <div className="blg-list-grid">
           {currentBlogs.map((blog) => (
             <div className="blg-card" key={blog._id}>
-              <h3 className="blg-card-title">{blog.title}</h3>
+              <div className="blg-card-top">
+                <h3 className="blg-card-title">{blog.title}</h3>
 
-              <div className="blg-card-meta">
-                <span className="blg-card-author">By {blog.author}</span> |{" "}
-                <span className="blg-card-date">
-                  {new Date(blog.createdAt).toLocaleDateString("en-IN", {
-                    day: "numeric",
-                    month: "short",
-                    year: "numeric",
-                  })}
-                </span>
+                <div className="blg-card-meta">
+                  <span className="blg-card-author">By {blog.author}</span> |{" "}
+                  <span className="blg-card-date">
+                    {new Date(blog.createdAt).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "short",
+                      year: "numeric",
+                    })}
+                  </span>
+                </div>
               </div>
 
               {/* Media */}
@@ -96,7 +98,7 @@ const BlogList = () => {
                     alt={blog.title}
                     width={400}
                     height={250}
-                    style={{ width: "100%", height: "auto", objectFit: "cover" }}
+                    style={{ width: "100%", objectFit: "cover" }}
                   />
                 ))}
 

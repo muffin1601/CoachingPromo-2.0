@@ -33,7 +33,7 @@ const RecentlyViewedProducts = ({ currentProdSlug, onEnquiryClick }) => {
     const img = images?.[0]?.url || images?.[0];
     if (!img) return "/placeholder.jpg";
     if (img.startsWith("http")) return img;
-    const baseUrl = import.meta.env.VITE_API_BASE_URL || "https://coachingpromo.in";
+    const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
     return img.startsWith("/uploads") ? `${baseUrl}${img}` : img;
   };
 

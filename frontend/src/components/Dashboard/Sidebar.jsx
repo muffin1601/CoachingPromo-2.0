@@ -7,6 +7,7 @@ import {
   Package,
   ShoppingBag,
   ShoppingCart,
+  FileText
 } from "lucide-react";
 
 
@@ -69,6 +70,13 @@ const Sidebar = () => {
           <NavLink to="/admin/orders">
             <ShoppingCart className="icon" />
             <span>Orders</span>
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to="/admin/blogs">
+            <FileText className="icon" />
+            <span>Blogs</span>
           </NavLink>
         </li>
       </ul>

@@ -5,7 +5,12 @@ const router = express.Router();
 const multer = require("multer");
 const fs = require("fs/promises");
 const path = require("path");
-const sharp = require("sharp");
+let sharp;
+try {
+  sharp = require("sharp");
+} catch (e) {
+  console.warn("⚠️ sharp module not found. Image resizing/webp conversion will be skipped.");
+}
 
 const upload = multer({ storage: multer.memoryStorage() });
 
@@ -24,17 +29,23 @@ router.post("/upload", upload.single("file"), async (req, res) => {
     let fileName = `${baseName}${path.extname(req.file.originalname)}`;
     let outputBuffer = req.file.buffer;
 
-    if (isImage) {
+    if (isImage && sharp) {
       fileName = `${baseName}.webp`;
-      outputBuffer = await sharp(req.file.buffer)
-        .resize({
-          width: 1600,
-          height: 900,
-          fit: "inside",
-          withoutEnlargement: true,
-        })
-        .webp({ quality: 74, effort: 6 })
-        .toBuffer();
+      try {
+        outputBuffer = await sharp(req.file.buffer)
+          .resize({
+            width: 1600,
+            height: 900,
+            fit: "inside",
+            withoutEnlargement: true,
+          })
+          .webp({ quality: 74, effort: 6 })
+          .toBuffer();
+      } catch (err) {
+        console.error("Sharp processing failed:", err);
+        // Fallback to original buffer and name
+        fileName = `${baseName}${path.extname(req.file.originalname)}`;
+      }
     }
 
     await fs.writeFile(path.join(uploadDir, fileName), outputBuffer);

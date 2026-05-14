@@ -166,7 +166,7 @@ const {
           product?.seo?.keywords?.join(",") ||
           `${product?.name}, ${subcategory?.name}, ${category?.name}`
         }
-        canonical={`https://coachingpromo.in/${categorySlug}/${subSlug}/${prodSlug}`}
+        canonical={`${import.meta.env.VITE_FRONTEND_URL}/${categorySlug}/${subSlug}/${prodSlug}`}
       />
 
       {/* ========== BREADCRUMBS ========== */}

@@ -92,7 +92,7 @@ const bannerImage =
       ? category.seo.keywords.join(",")
       : `${category.name}, promotional products, customized gifts`;
 
-  const canonicalURL = `https://coachingpromo.in/categories/${slug}`;
+  const canonicalURL = `${import.meta.env.VITE_FRONTEND_URL}/categories/${slug}`;
 
   return (
     <>

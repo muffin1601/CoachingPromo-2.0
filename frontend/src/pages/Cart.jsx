@@ -27,7 +27,7 @@ const Cart = () => {
     if (!img || typeof img !== "string") return "/placeholder.jpg";
     if (img.startsWith("http")) return img;
     if (img.startsWith("/uploads")) {
-      const baseUrl = import.meta.env.VITE_API_BASE_URL || "https://coachingpromo.in";
+      const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
       return `${baseUrl}${img}`;
     }
     return img;

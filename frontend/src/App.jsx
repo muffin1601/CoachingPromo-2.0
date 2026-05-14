@@ -33,6 +33,7 @@ const Profile = lazy(() => import("./pages/Profile"));
 const OffersPage = lazy(() => import("./pages/OffersPage"));
 
 const Cart = lazy(() => import("./pages/Cart"));
+
 const Checkout = lazy(() => import("./pages/Checkout"));
 const SearchResults = lazy(() => import("./pages/SearchResults"));
 const Favorites = lazy(() => import("./pages/Favorites"));
@@ -56,11 +57,13 @@ const ProductManager = lazy(() =>
 const OrderManager = lazy(() =>
   import("./pages/Admin/OrderManagerPage")
 );
+const BlogManager = lazy(() =>
+  import("./pages/Admin/BlogManagerPage")
+);
 
 // Utilities
 import ScrollToTop from "./utils/ScrollToTop";
 import ProtectedRoute from "./utils/ProtectedRoute";
-
 // Skeleton fallback for smoother UX
 const Loader = () => (
   <div style={{ padding: "40px", textAlign: "center" }}>Loading…</div>
@@ -199,6 +202,7 @@ const App = () => {
               <Route path="subcategories" element={<SubcategoryManager />} />
               <Route path="products" element={<ProductManager />} />
               <Route path="orders" element={<OrderManager />} />
+              <Route path="blogs" element={<BlogManager />} />
             </Route>
           </Routes>
         </Suspense>

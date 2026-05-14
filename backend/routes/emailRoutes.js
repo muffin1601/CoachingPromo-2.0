@@ -8,8 +8,8 @@ router.post("/send-email", async (req, res) => {
   const { name, email, phone, companyname, location, message } = req.body;
   try {
     const response = await resend.emails.send({
-      from: "no-reply@coachingpromo.in",
-      to: "sales@coachingpromo.in",
+      from: process.env.EMAIL_FROM,
+      to: process.env.EMAIL_TO,
       reply_to: email,
       subject: "New Enquiry from CoachingPromo",
       text: `

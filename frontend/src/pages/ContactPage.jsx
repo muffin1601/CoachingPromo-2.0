@@ -7,7 +7,7 @@ const HiddenSEOContent = lazy(() => import("../components/HiddenSEOContent"));
 import SEO from "../components/Category/SEO";
 
 const ContactPage = () => {
-  const canonicalURL = `https://coachingpromo.in/contact`;
+  const canonicalURL = `${import.meta.env.VITE_FRONTEND_URL}/contact`;
   return (
     <>
     <SEO

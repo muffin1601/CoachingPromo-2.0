@@ -94,7 +94,7 @@ const Home = () => {
       <PageMeta
         title="Promotional Products for Coaching Institutes - CoachingPromo"
         description="Custom T-shirts, Bags, Stationery & Gifts for Coaching Institutes. Fast delivery, bulk orders & logo branding. Boost your Coaching brand today!"
-        canonical="https://coachingpromo.in/"
+        canonical={`${import.meta.env.VITE_FRONTEND_URL}`}
       />
 
       <HeroSection />

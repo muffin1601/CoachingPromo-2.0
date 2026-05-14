@@ -63,8 +63,9 @@
 /* MEDIA */
 .blg-card-media {
   width: 100%;
-  height: 220px;
+  height: 220px; /* Fixed height for consistency */
   object-fit: cover;
+  display: block;
 }
 
 /* INFO */
@@ -94,6 +95,13 @@
   color: var(--neutral-gray);
 }
 
+.blg-card-top {
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 /* TITLE */
 .blg-card-title {
   font-size: 19px;
@@ -101,7 +109,12 @@
   color: #222;
   line-height: 1.4;
   margin: 18px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  height: 54px; /* Fixed height for 2 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* READ MORE */
@@ -177,6 +190,11 @@
 
   .blg-card-title {
     font-size: 17px;
+    height: 48px; /* Fixed height for 2 lines on mobile */
+  }
+
+  .blg-card-top {
+    min-height: 110px;
   }
 
   .blg-create-button {

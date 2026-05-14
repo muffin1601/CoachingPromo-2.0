@@ -32,8 +32,8 @@ router.post("/", async (req, res) => {
       if (process.env.RESEND_API_KEY) {
         console.log("Attempting to send email notification...");
         const emailRes = await resend.emails.send({
-          from: "no-reply@coachingpromo.in",
-          to: "sales@coachingpromo.in",
+          from: process.env.EMAIL_FROM,
+          to: process.env.EMAIL_TO,
           subject: "New Offer Enquiry - CoachingPromo",
           text: `
             New lead captured from Special Offer Banner:

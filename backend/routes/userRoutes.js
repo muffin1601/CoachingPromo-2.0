@@ -119,7 +119,7 @@ router.post("/forgotpassword", async (req, res) => {
 
     try {
       await resend.emails.send({
-        from: "no-reply@coachingpromo.in",
+        from: process.env.EMAIL_FROM,
         to: user.email,
         subject: "Password reset token",
         text: message,

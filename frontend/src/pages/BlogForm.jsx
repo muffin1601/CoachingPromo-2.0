@@ -48,7 +48,7 @@ const BlogFormCTA = () => {
         title="Create Blog | CoachingPromo"
         description="Write and publish a new blog on CoachingPromo."
         robots="noindex, follow"
-        canonical="https://coachingpromo.in/blogs/new"
+        canonical={`${import.meta.env.VITE_FRONTEND_URL}/blogs/new`}
       />
 
       {/*  Lazy Loaded Banner → removes 150–200 KB from initial JS */}
