@@ -106,8 +106,8 @@ app.get("/categories/:slug", async (req, res) => {
     }
 
     const html = renderSEO({
-      title: category.seo?.metaTitle || (category.name + " | CoachingPromo"),
-      description: category.seo?.metaDescription || category.description || "",
+      title: category.seo?.metaTitle || `${category.name} | CoachingPromo`,
+      description: category.seo?.metaDescription || category.description || `Explore our ${category.name} collection at CoachingPromo.`,
       canonical: `${process.env.FRONTEND_URL}/categories/${category.slug}`,
       seoContent: `<h1>${category.name}</h1>`
     });
@@ -135,10 +135,13 @@ app.get("/:categorySlug/:subSlug/:prodSlug", async (req, res) => {
       return res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
     }
 
+    const catSlug = product.category?.slug || req.params.categorySlug;
+    const subSlug = product.subcategory?.slug || req.params.subSlug;
+
     const html = renderSEO({
-      title: product.seo?.metaTitle || (product.name + " | CoachingPromo"),
-      description: product.seo?.metaDescription || product.description?.short || "",
-      canonical: `${process.env.FRONTEND_URL}/${req.params.categorySlug}/${req.params.subSlug}/${product.slug}`,
+      title: product.seo?.metaTitle || `${product.name} | CoachingPromo`,
+      description: product.seo?.metaDescription || product.description?.short || `Buy ${product.name} at CoachingPromo. Custom promotional products for coaching institutes.`,
+      canonical: `${process.env.FRONTEND_URL}/${catSlug}/${subSlug}/${product.slug}`,
       seoContent: `<h1>${product.name}</h1>`
     });
 
@@ -163,8 +166,8 @@ app.get("/product/:prodSlug", async (req, res) => {
     }
 
     const html = renderSEO({
-      title: product.seo?.metaTitle || (product.name + " | CoachingPromo"),
-      description: product.seo?.metaDescription || product.description?.short || "",
+      title: product.seo?.metaTitle || `${product.name} | CoachingPromo`,
+      description: product.seo?.metaDescription || product.description?.short || `Buy ${product.name} at CoachingPromo. High-quality promotional products for coaching institutes.`,
       canonical: `${process.env.FRONTEND_URL}/product/${product.slug}`,
       seoContent: `<h1>${product.name}</h1>`
     });
@@ -183,16 +186,20 @@ app.get("/product/:prodSlug", async (req, res) => {
 
 app.get("/:categorySlug/:subSlug", async (req, res) => {
   try {
-    const subcategory = await Subcategory.findOne({ slug: req.params.subSlug }).lean();
+    const subcategory = await Subcategory.findOne({ slug: req.params.subSlug })
+      .populate("category")
+      .lean();
 
     if (!subcategory) {
       return res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
     }
 
+    const catSlug = subcategory.category?.slug || req.params.categorySlug;
+
     const html = renderSEO({
-      title: subcategory.seo?.metaTitle || (subcategory.name + " | CoachingPromo"),
-      description: subcategory.seo?.metaDescription || subcategory.description || "",
-      canonical: `${process.env.FRONTEND_URL}/${req.params.categorySlug}/${subcategory.slug}`,
+      title: subcategory.seo?.metaTitle || `${subcategory.name} | ${subcategory.category?.name || ""} | CoachingPromo`,
+      description: subcategory.seo?.metaDescription || subcategory.description || `Browse our ${subcategory.name} collection at CoachingPromo.`,
+      canonical: `${process.env.FRONTEND_URL}/${catSlug}/${subcategory.slug}`,
       seoContent: `<h1>${subcategory.name}</h1>`
     });
 
