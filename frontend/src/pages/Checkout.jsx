@@ -315,26 +315,13 @@ const Checkout = () => {
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", borderBottom: "1px solid var(--light-border)", paddingBottom: "15px", marginBottom: "15px" }}>
             {cartItems.map((item, index) => (
               <div key={index} style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", fontSize: "0.95rem", color: "var(--text-dark)" }}>
-                <span style={{ maxWidth: "70%", lineHeight: "1.4" }}>{item.name} <span style={{ color: "var(--neutral-light)" }}>(x{item.qty})</span></span>
-                <span style={{ fontWeight: "500" }}>₹{item.qty * item.price}</span>
+                <span style={{ maxWidth: "100%", lineHeight: "1.4" }}>{item.name} <span style={{ color: "var(--neutral-light)" }}>(x{item.qty})</span></span>
               </div>
             ))}
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px", color: "var(--neutral-gray)", fontSize: "1rem" }}>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <span>Items Total:</span> <span>₹{itemsPrice}</span>
-            </div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <span>Shipping:</span> <span style={{ color: shippingPrice === 0 ? "#52c41a" : "inherit" }}>{shippingPrice === 0 ? "FREE" : `₹${shippingPrice}`}</span>
-            </div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <span>Tax (18% GST):</span> <span>₹{taxPrice}</span>
-            </div>
-          </div>
-          
-          <div style={{ display: "flex", justifyContent: "space-between", margin: "20px 0", fontSize: "1.4rem", fontWeight: "bold", color: "var(--text-dark)", borderTop: "1px solid var(--light-border)", paddingTop: "15px" }}>
-            <span>Total:</span> <span style={{ color: "var(--brand-orange)" }}>₹{totalPrice.toFixed(2)}</span>
+          <div style={{ display: "none" }}>
+            
           </div>
           
           {error && <div style={{ background: "#fff1f0", color: "#cf1322", padding: "10px 15px", borderRadius: "6px", border: "1px solid #ffa39e", marginBottom: "20px", fontSize: "0.9rem" }}>{error}</div>}

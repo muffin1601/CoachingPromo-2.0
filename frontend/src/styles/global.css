@@ -105,3 +105,13 @@ html, body {
     margin: 0 5px 0 5px;
   }
 }
+
+/* Hide Prices Globally */
+.product-price-wrapper,
+.product-sale-price,
+.product-main-price,
+.product-regular-price,
+.product-price-block,
+.rv-product-price {
+    display: none !important;
+}

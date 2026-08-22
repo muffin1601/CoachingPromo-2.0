@@ -71,8 +71,7 @@ const Cart = () => {
                   <div>
                     <h4 style={{ margin: "0 0 8px 0", fontSize: "1.1rem", color: "var(--text-dark)" }}>{item.name}</h4>
                     <p style={{ margin: 0, fontSize: "14px", color: "var(--neutral-gray)" }}>
-                      <strong style={{ color: "var(--brand-blue)" }}>₹{item.price}</strong> 
-                      {item.color !== "Default" && ` | Col: ${item.color}`} 
+                      {item.color !== "Default" && `Col: ${item.color}`} 
                       {item.size !== "Default" && ` | Size: ${item.size}`}
                     </p>
                   </div>
@@ -90,7 +89,7 @@ const Cart = () => {
                   </div>
                   
                   <div style={{ fontWeight: "bold", color: "var(--text-dark)", width: "80px", textAlign: "right", fontSize: "1.1rem" }}>
-                    ₹{(item.qty * item.price).toFixed(2)}
+                    
                   </div>
 
                   <button 
@@ -117,7 +116,7 @@ const Cart = () => {
               <span style={{ fontWeight: "600", color: "var(--text-dark)" }}>{cartItems.reduce((acc, item) => acc + item.qty, 0)}</span>
             </div>
             
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "25px", fontSize: "1.3rem", fontWeight: "bold", color: "var(--text-dark)", borderTop: "1px solid var(--light-border)", paddingTop: "15px" }}>
+            <div style={{ display: "none", justifyContent: "space-between", marginBottom: "25px", fontSize: "1.3rem", fontWeight: "bold", color: "var(--text-dark)", borderTop: "1px solid var(--light-border)", paddingTop: "15px" }}>
               <span>Cart Subtotal</span>
               <span style={{ color: "var(--brand-orange)" }}>₹{total.toFixed(2)}</span>
             </div>
