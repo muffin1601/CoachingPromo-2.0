@@ -117,6 +117,12 @@ const {
   additionalInfo,
 } = product;
 
+  const shortDescription = typeof description === "string" ? description : description?.short;
+  const longDescription = typeof description === "object" ? description?.long : null;
+  const cleanDescription = (value) => String(value || "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+  const shortCopy = cleanDescription(shortDescription);
+  const longCopy = cleanDescription(longDescription);
+
   const enquiryImage = images?.[0]?.url || "";
 
   const shouldShowCustomize =
@@ -239,10 +245,15 @@ const {
           <h1 className="product-title">{name}</h1>
 
           <p className="product-desc">
-            {typeof description === "string"
-              ? description
-              : description?.short || description?.long}
+            {shortCopy || longCopy}
           </p>
+
+          {longCopy && longCopy !== shortCopy && (
+            <section className="product-long-description" aria-labelledby="product-description-heading">
+              <h2 id="product-description-heading">About {name}</h2>
+              <p>{longCopy}</p>
+            </section>
+          )}
 
           {/* CUSTOMIZATION CTA */}
           {shouldShowCustomize && (
@@ -392,6 +403,7 @@ const {
           subSlug={subSlug} 
           currentProdSlug={prodSlug} 
           onEnquiryClick={() => setIsEnquiryOpen(true)}
+          initialProducts={initialData?.relatedProducts || []}
         />
 
         <ProductFAQ productName={name} subcategoryName={subcategory?.name} />

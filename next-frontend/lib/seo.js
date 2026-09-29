@@ -30,7 +30,12 @@ export function breadcrumbSchema(items) {
 }
 
 export function productSchema(product, path) {
-  const description = [product?.description?.short, product?.description?.long, product?.seo?.metaDescription]
+  const description = [
+    typeof product?.description === 'string' ? product.description : null,
+    product?.description?.short,
+    product?.description?.long,
+    product?.seo?.metaDescription,
+  ]
     .find(value => typeof value === 'string' && value.trim());
   const images = (product?.images || []).map(imageUrl).filter(Boolean);
   const price = Number(product?.salePrice > 0 && product.salePrice < product.price ? product.salePrice : product?.price);

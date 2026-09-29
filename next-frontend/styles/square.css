@@ -346,6 +346,21 @@
   line-height:1.75;
   color:#52606d;
 }
+.cp-store.cp-square .product-detail-page .product-long-description {
+  margin:20px 0 0;
+  padding:20px 0;
+  border-block:1px solid var(--cp-line);
+}
+.cp-store.cp-square .product-detail-page .product-long-description h2 {
+  margin:0 0 8px;
+  font-size:20px;
+  line-height:1.25;
+}
+.cp-store.cp-square .product-detail-page .product-long-description p {
+  margin:0;
+  color:var(--cp-muted);
+  line-height:1.7;
+}
 .cp-store.cp-square .product-detail-page .product-tag {
   padding:7px 10px;
   border:1px solid #d7d7d2;

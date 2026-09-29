@@ -55,6 +55,9 @@ for (let index = 0; index < sitemapUrls.length; index += 5) {
 }
 console.log(`PASS sitemap: ${sitemapUrls.length} canonical, directly indexable URLs, including legacy articles`);
 
+assert(product.html.includes('class="related-product-link"'), 'product must expose crawlable related-product links in server HTML');
+console.log('PASS product internal links are crawlable without client-side navigation');
+
 assert.equal(robots.response.status, 200);
 assert(robots.html.includes(`${canonicalHost}/sitemap.xml`), 'robots sitemap URL');
 console.log('PASS robots.txt');

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "@/lib/react-router";
+import { Link } from "@/lib/react-router";
 import { History } from "lucide-react";
 import "../styles/RecentlyViewedProducts.css";
 
 const RecentlyViewedProducts = ({ currentProdSlug, onEnquiryClick }) => {
-  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -55,41 +54,38 @@ const RecentlyViewedProducts = ({ currentProdSlug, onEnquiryClick }) => {
         {products.map((product) => {
           const productUrl = `/${product.categorySlug}/${product.subSlug}/${product.slug}`;
           return (
-            <div
+            <article
               key={product._id || product.id}
               className="rv-product-card"
-              role="button"
-              tabIndex={0}
-              onClick={() => navigate(productUrl)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") navigate(productUrl);
-              }}
             >
-              <div className="rv-product-image-wrap">
-                <img
-                  src={getImageUrl(product.images)}
-                  alt={product.name}
-                  className="rv-product-image"
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="rv-product-content">
-                <h3 className="rv-product-name">{product.name}</h3>
+              <Link to={productUrl} className="rv-product-link" aria-label={`View ${product.name}`}>
+                <div className="rv-product-image-wrap">
+                  <img
+                    src={getImageUrl(product.images)}
+                    alt={product.name}
+                    className="rv-product-image"
+                    loading="lazy"
+                    decoding="async"
+                    width={280}
+                    height={280}
+                  />
+                </div>
+                <div className="rv-product-content">
+                  <h3 className="rv-product-name">{product.name}</h3>
+                </div>
+              </Link>
+              <div className="rv-product-content rv-product-actions">
                 <div className="rv-product-footer">
                   <button
                     className="rv-product-quote-btn"
                     type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onEnquiryClick?.();
-                    }}
+                    onClick={() => onEnquiryClick?.()}
                   >
                     Get a Quote
                   </button>
                 </div>
               </div>
-            </div>
+            </article>
           );
         })}
       </div>

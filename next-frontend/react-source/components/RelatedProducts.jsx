@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "@/lib/react-router";
+import { Link } from "@/lib/react-router";
 import "../styles/RelatedProducts.css";
 
-const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug, onEnquiryClick }) => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
+const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug, onEnquiryClick, initialProducts = [] }) => {
+  const [products, setProducts] = useState(initialProducts);
+  const [loading, setLoading] = useState(initialProducts.length === 0);
 
   useEffect(() => {
     const fetchRelatedProducts = async () => {
@@ -28,10 +27,11 @@ const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug, onEnquiryClic
       }
     };
 
+    if (initialProducts.length > 0) return;
     if (categorySlug && subSlug) {
       fetchRelatedProducts();
     }
-  }, [categorySlug, subSlug, currentProdSlug]);
+  }, [categorySlug, subSlug, currentProdSlug, initialProducts]);
 
   const getImageUrl = (images) => {
     const img = images?.[0]?.url || images?.[0];
@@ -57,46 +57,40 @@ const RelatedProducts = ({ categorySlug, subSlug, currentProdSlug, onEnquiryClic
         {products.map((product) => {
           const productUrl = `/${categorySlug}/${subSlug}/${product.slug}`;
           return (
-            <div
+            <article
               key={product._id}
               className="related-product-card"
-              role="button"
-              tabIndex={0}
-              onClick={() => navigate(productUrl)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") navigate(productUrl);
-              }}
             >
-              <div className="related-product-image-wrap">
-                <img
-                  src={getImageUrl(product.images)}
-                  alt={product.name}
-                  className="related-product-image"
-                  loading="lazy"
-                  decoding="async"
-                  width={250}
-                  height={250}
-                  style={{ width: "100%", height: "auto", objectFit: "cover" }}
-                />
-                {product.salePrice && <div className="product-badge">SALE</div>}
-              </div>
-
-              <div className="related-product-content">
-                <h3 className="related-product-name">{product.name}</h3>
+              <Link to={productUrl} className="related-product-link" aria-label={`View ${product.name}`}>
+                <div className="related-product-image-wrap">
+                  <img
+                    src={getImageUrl(product.images)}
+                    alt={product.name}
+                    className="related-product-image"
+                    loading="lazy"
+                    decoding="async"
+                    width={250}
+                    height={250}
+                    style={{ width: "100%", height: "auto", objectFit: "cover" }}
+                  />
+                  {product.salePrice && <div className="product-badge">SALE</div>}
+                </div>
+                <div className="related-product-content">
+                  <h3 className="related-product-name">{product.name}</h3>
+                </div>
+              </Link>
+              <div className="related-product-content related-product-actions">
                 <div className="related-product-footer">
                   <button
                     className="related-product-quote-btn"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onEnquiryClick?.();
-                    }}
+                    onClick={() => onEnquiryClick?.()}
                     type="button"
                   >
                     Get a Quote
                   </button>
                 </div>
               </div>
-            </div>
+            </article>
           );
         })}
       </div>
