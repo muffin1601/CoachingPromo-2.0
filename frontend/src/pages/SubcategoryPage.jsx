@@ -14,7 +14,6 @@ import { subcategoryTitles } from "../data/subcategories";
 import SubcategoryFAQ from "../components/Category/SubcategoryFAQ";
 import WhyChooseUsSubcategory from "../components/Category/WhyChooseUsSubcategory";
 import DynamicSEOContent from "../components/Category/DynamicSEOContent";
-import HiddenSEOContent from "../components/HiddenSEOContent";
 
 const SubcategoryPage = () => {
   const { categorySlug, subSlug } = useParams();
@@ -22,8 +21,8 @@ const SubcategoryPage = () => {
   const [subcategory, setSubcategory] = useState(null);
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState(null);
-  const [page, setPage] = useState(1);
-  const [sort, setSort] = useState("default");
+  const [page] = useState(1);
+  const [sort] = useState("default");
   const [loading, setLoading] = useState(true);
 
     const categoryBannerImages = {
@@ -137,7 +136,6 @@ const bannerImage =
       <DynamicSEOContent slug={subSlug} />
       <SubcategoryFAQ subcategoryName={subcategory.name} />
       <BlogSection />
-      <HiddenSEOContent/>
     </>
   );
 };

@@ -1,0 +1,97 @@
+.home-priority-sections {
+  min-height: 0;
+}
+
+.home-deferred-sections {
+  background: var(--light-bg);
+}
+
+.home-reserved-section {
+  content-visibility: auto;
+  overflow: hidden;
+}
+
+.home-reserved-popular {
+  min-height: 620px;
+  contain-intrinsic-size: auto 620px;
+}
+
+.home-reserved-why {
+  min-height: 720px;
+  contain-intrinsic-size: auto 720px;
+}
+
+.home-reserved-customize {
+  min-height: 520px;
+  contain-intrinsic-size: auto 520px;
+}
+
+.home-reserved-about {
+  min-height: 520px;
+  contain-intrinsic-size: auto 520px;
+}
+
+.home-reserved-testimonials {
+  min-height: 520px;
+  contain-intrinsic-size: auto 520px;
+}
+
+.home-reserved-faq {
+  min-height: 480px;
+  contain-intrinsic-size: auto 480px;
+}
+
+.home-reserved-gallery {
+  min-height: 420px;
+  contain-intrinsic-size: auto 420px;
+}
+
+.home-reserved-catalogue {
+  min-height: 560px;
+  contain-intrinsic-size: auto 560px;
+}
+
+.home-reserved-blog {
+  min-height: 620px;
+  contain-intrinsic-size: auto 620px;
+}
+
+@media (max-width: 992px) {
+  .home-reserved-popular {
+    min-height: 760px;
+    contain-intrinsic-size: auto 760px;
+  }
+
+  .home-reserved-why {
+    min-height: 880px;
+    contain-intrinsic-size: auto 880px;
+  }
+
+  .home-reserved-customize,
+  .home-reserved-about,
+  .home-reserved-testimonials,
+  .home-reserved-catalogue {
+    min-height: 620px;
+    contain-intrinsic-size: auto 620px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-priority-sections {
+    min-height: 760px;
+    background: var(--light-bg);
+  }
+
+  .home-reserved-popular,
+  .home-reserved-why,
+  .home-reserved-customize,
+  .home-reserved-about,
+  .home-reserved-testimonials,
+  .home-reserved-faq,
+  .home-reserved-gallery,
+  .home-reserved-catalogue,
+  .home-reserved-blog {
+    min-height: 0;
+    contain-intrinsic-size: auto 1px;
+  }
+}

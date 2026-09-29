@@ -45,7 +45,7 @@ const BlogSection = () => {
               {/* READ BLOG BUTTON — WITH ARIA LABEL */}
               <button
                 className="blog-btn"
-                onClick={() => window.location.href = `/blogs/${b._id}`}
+                onClick={() => window.location.href = `/blogs/${b.slug || b._id}`}
                 aria-label={`Read blog: ${b.title}`}
               >
                 <ArrowRight />

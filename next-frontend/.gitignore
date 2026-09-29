@@ -1,0 +1,6 @@
+node_modules/
+.next/
+.next-dev/
+.env.local
+.env.production.local
+# react-source/ and public/ are now owned, versioned application files.

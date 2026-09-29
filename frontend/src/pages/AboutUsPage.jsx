@@ -8,9 +8,6 @@ const CatalogueCTA = lazy(() => import("../components/CatalogueCTA"));
 const CustomizationExperience = lazy(() =>
   import("../components/CustomizationExperience")
 );
-const HiddenSEOContent = lazy(() =>
-  import("../components/HiddenSEOContent")
-);
 
 const AboutUsPage = () => {
   return (
@@ -32,7 +29,6 @@ const AboutUsPage = () => {
         <CustomizationExperience />
         <Gallery />
         <CatalogueCTA />
-        <HiddenSEOContent />
       </Suspense>
     </>
   );

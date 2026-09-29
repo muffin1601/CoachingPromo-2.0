@@ -1,19 +1,21 @@
 import React, { useState, useEffect, lazy, Suspense } from "react";
 import "../styles/Navbar.css";
 import {
-  Search,
   User,
   ChevronDown,
   GraduationCap,
   Phone,
   MessageCircle,
-  Menu
+  Menu,
+  Heart,
+  ShoppingBag
 } from "lucide-react";
 import categories from "../data/categories";
 import Sidebar from "./Sidebar";
 import UserProfileSidebar from "./UserProfileSidebar";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import SearchBox from "./SearchBox";
 
 
 const EnquiryModal = lazy(() => import("./EnquiryModal"));
@@ -23,7 +25,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
-  const [searchInput, setSearchInput] = useState("");
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [profileSidebarOpen, setProfileSidebarOpen] = useState(false);
@@ -86,11 +87,16 @@ const Navbar = () => {
     <>
       <header className="navbar-flory">
         <div className={`navbar-container ${isScrolled ? "top-bar-hidden" : ""}`}>
+          <div className="site-utility-bar desktop-only">
+            <span>Bulk order support</span>
+            <span>Custom branding assistance</span>
+            <a href="tel:+918750708222">Talk to sales: 87507 08222</a>
+          </div>
           
           {/* TOP BAR */}
           <div className="navbar-top-bar">
             <div className="top-bar-left">
-              <div className="logo-section">
+              <a href="/" className="logo-section" aria-label="CoachingPromo home">
                 <img 
                   src="/logo.webp" 
                   alt="Coaching Promo" 
@@ -99,32 +105,14 @@ const Navbar = () => {
                   height={70}
                   decoding="async"
                 />
-              </div>
+              </a>
             </div>
 
             {/* RIGHT SECTION */}
             <div className="top-bar-right desktop-only">
 
               {/* Search */}
-              <div className="full-search-container">
-                <input
-                  type="text"
-                  placeholder="Search products..."
-                  className="full-search-input"
-                  value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && searchInput.trim()) {
-                      navigate(`/search?q=${searchInput}`);
-                    }
-                  }}
-                />
-                <Search 
-                  className="search-icon" 
-                  onClick={() => searchInput.trim() && navigate(`/search?q=${searchInput}`)} 
-                  style={{ cursor: "pointer" }}
-                />
-              </div>
+              <SearchBox />
 
               {/* Phone */}
               <a href="tel:+918750708222" className="phone-link">
@@ -150,6 +138,9 @@ const Navbar = () => {
               >
                 <User />
               </button>
+
+              <button className="nav-icon-link" onClick={() => navigate("/favorites")} aria-label="Favorites" title="Favorites"><Heart /></button>
+              <button className="nav-icon-link" onClick={() => navigate("/cart")} aria-label="Shopping cart" title="Shopping cart"><ShoppingBag /></button>
               
 
               {/* Register Institute Modal */}
@@ -172,14 +163,13 @@ const Navbar = () => {
             </div>
 
             {/* MOBILE HAMBURGER */}
-            <button
-              className="hamburger-btn mobile-only"
-              onClick={() => setMobileMenuOpen(true)}
-              aria-label="Toggle navigation menu"
-            >
-              <Menu size={28} />
-            </button>
+            <div className="mobile-header-actions">
+              <button className="hamburger-btn mobile-only" onClick={() => setMobileMenuOpen(true)} aria-label="Open navigation menu"><Menu size={24} /></button>
+              <button className="nav-icon-link mobile-only" onClick={() => navigate("/cart")} aria-label="Shopping cart"><ShoppingBag /></button>
+            </div>
           </div>
+
+          <div className="mobile-search-row"><SearchBox mobile /></div>
 
           {/* DESKTOP MENU */}
           <nav className={`navbar-bottom-menu desktop-only ${isScrolled ? "sticky" : ""}`}>

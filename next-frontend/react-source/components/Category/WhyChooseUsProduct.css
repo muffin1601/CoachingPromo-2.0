@@ -1,0 +1,81 @@
+.wcu-product-wrapper {
+  max-width: 80%;
+  margin: 60px auto;
+  padding: 0 0px;
+}
+
+.wcu-product-title {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.wcu-product-subtitle {
+  font-size: 16px;
+  text-align: center;
+  color: #555;
+  max-width: 760px;
+  margin: 0 auto 35px;
+  line-height: 1.6;
+}
+
+.wcu-product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+}
+
+.wcu-product-card {
+  width: 280px;
+  max-width: 300px;
+  flex: 1 1 260px;
+}
+
+.wcu-product-card {
+  background: #fff7efff;
+  border: 1px solid #e5e5e5;
+  padding: 18px 20px;
+
+  display: flex;
+  gap: 14px;
+  transition: 0.25s ease;
+}
+
+.wcu-product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border-color: #d17504;
+}
+
+.wcu-product-icon {
+  background: #ffe4ce;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wcu-product-content h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.wcu-product-content p {
+  font-size: 14.5px;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .wcu-product-title {
+    font-size: 24px;
+  }
+  .wcu-product-grid {
+    grid-template-columns: 1fr;
+  }
+}

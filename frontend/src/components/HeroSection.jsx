@@ -1,205 +1,40 @@
-import React, { useEffect, useState, useRef, lazy, Suspense } from "react";
-import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
+import React, { lazy, Suspense, useState } from "react";
+import { ArrowRight, MessageSquareText } from "lucide-react";
+import { Link } from "react-router-dom";
 import "../styles/HeroSection.css";
 
 const EnquiryModal = lazy(() => import("./EnquiryModal"));
 
-const fallbackSlides = [
-  {
-    src: "/banners/banner-1-1360.webp",
-    mobileSrc: "/banners/banner-1-640.webp",
-    title: "Custom Promotional Products for Coaching Institutes",
-    subtitle:
-      "Branded apparel, student kits, stationery and gifting solutions with fast pan-India delivery.",
-    type: "image",
-  },
-  {
-    src: "/banners/banner%20(2).webp",
-    title: "Bulk Merchandise Designed for Education Brands",
-    subtitle:
-      "Launch events, admissions and welcome kits with consistent branding across every product.",
-    type: "image",
-  },
-];
-
 const HeroSection = () => {
-  const [slides, setSlides] = useState(fallbackSlides);
-  const [current, setCurrent] = useState(0);
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const timeoutRef = useRef(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    let timeoutId;
-    const triggerEvents = ["pointerdown", "keydown", "touchstart", "scroll"];
-
-    const fetchSlides = async () => {
-      try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/slides/banners`);
-        const data = await res.json();
-
-        if (!cancelled && Array.isArray(data) && data.length > 0) {
-          setSlides((currentSlides) => [currentSlides[0], ...data.slice(1)]);
-        }
-      } catch (err) {
-        console.error("Error fetching banners:", err);
-      }
-    };
-
-    const runAfterIntent = () => {
-      triggerEvents.forEach((eventName) => {
-        window.removeEventListener(eventName, runAfterIntent);
-      });
-      if (timeoutId) {
-        window.clearTimeout(timeoutId);
-      }
-      fetchSlides();
-    };
-
-    triggerEvents.forEach((eventName) => {
-      window.addEventListener(eventName, runAfterIntent, {
-        passive: true,
-        once: true,
-      });
-    });
-    timeoutId = window.setTimeout(runAfterIntent, 15000);
-
-    return () => {
-      cancelled = true;
-      triggerEvents.forEach((eventName) => {
-        window.removeEventListener(eventName, runAfterIntent);
-      });
-      if (timeoutId) {
-        window.clearTimeout(timeoutId);
-      }
-    };
-  }, []);
-
-  const length = slides.length;
-
-  useEffect(() => {
-    if (!paused && length > 0) {
-      timeoutRef.current = setTimeout(
-        () => setCurrent((prev) => (prev + 1) % length),
-        4500
-      );
-    }
-
-    return () => clearTimeout(timeoutRef.current);
-  }, [current, paused, length]);
-
-  const goNext = () => setCurrent((prev) => (prev + 1) % length);
-  const goPrev = () => setCurrent((prev) => (prev - 1 + length) % length);
-  const slide = slides[current];
 
   return (
     <>
-      <section
-        className="hero-wrapper"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-      >
-        <div className={`hero-bg-wrapper ${current === 0 ? "" : "hero-bg-fade"}`}>
-          {slide.type === "video" ? (
-            <video
-              className="hero-bg-media"
-              src={slide.src}
-              autoPlay
-              muted
-              loop
-              preload={current === 0 ? "auto" : "metadata"}
-            />
-          ) : (
-            <picture>
-              {slide.mobileSrc && (
-                <source
-                  srcSet={slide.mobileSrc}
-                  media="(max-width: 576px)"
-                  width={640}
-                  height={256}
-                />
-              )}
-              <img
-                className="hero-bg-media"
-                src={slide.src}
-                alt={slide.title || "Banner"}
-                fetchPriority={current === 0 ? "high" : "auto"}
-                loading={current === 0 ? "eager" : "lazy"}
-                decoding="async"
-                width={1280}
-                height={512}
-                sizes="100vw"
-              />
-            </picture>
-          )}
-        </div>
-
-        <div className="hero-content">
-          <h1 className="hero-title">{slide.title}</h1>
-          <p className="hero-subtext">{slide.subtitle}</p>
-
-          <ul className="hero-usps">
-            <li>
-              <CheckCircle size={18} className="usp-icon" /> Bulk Discounts
-            </li>
-            <li>
-              <CheckCircle size={18} className="usp-icon" /> Fast Delivery
-            </li>
-            <li>
-              <CheckCircle size={18} className="usp-icon" /> Pan-India Shipping
-            </li>
-          </ul>
-
-          <div className="hero-cta-group">
-            <button
-              onClick={() => setIsEnquiryOpen(true)}
-              className="btn-primary"
-            >
-              Enquire Now
+      <section className="hero-wrapper editorial-hero">
+        <div className="editorial-hero-copy">
+          <p className="editorial-eyebrow">COACHINGPROMO · CORPORATE & INSTITUTE ORDERS</p>
+          <h1 className="hero-title">Branded merchandise, thoughtfully made for education teams.</h1>
+          <p className="hero-subtext">
+            Apparel, student kits, stationery and gifting with custom branding, bulk order support and delivery across India.
+          </p>
+          <div className="editorial-hero-actions">
+            <button onClick={() => setIsEnquiryOpen(true)} className="btn-primary">
+              Discuss a bulk order <ArrowRight size={17} />
             </button>
-            <a href="#catalogue" className="btn-outline">
-              Browse Catalogue
-            </a>
+            <Link to="/categories/apparel-accessories" className="btn-outline">Explore products</Link>
           </div>
+          <div className="editorial-hero-note"><span /> Built around your quantity, branding and timeline</div>
         </div>
-
-        <button className="hero-arrow left" onClick={goPrev} aria-label="Previous slide">
-          <ArrowLeft size={26} />
-        </button>
-
-        <button className="hero-arrow right" onClick={goNext} aria-label="Next slide">
-          <ArrowRight size={26} />
-        </button>
-
-        <div className="hero-dots">
-          {slides.map((_, i) => (
-            <div
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={`hero-dot ${current === i ? "active" : ""}`}
-            />
-          ))}
+        <div className="editorial-hero-image">
+          <img src="/banners/banner-1-1360.webp" alt="Branded merchandise and promotional products for education teams" width="1360" height="544" fetchPriority="high" decoding="async" />
+          <div className="editorial-image-caption"><span>Custom merchandise</span><span>Bulk orders · Pan-India delivery</span></div>
         </div>
       </section>
-
-      <div className="hero-cta-group-2">
-        <button onClick={() => setIsEnquiryOpen(true)} className="btn-primary">
-          Enquire Now
-        </button>
-        <a href="#catalogue" className="btn-outline">
-          Browse Catalogue
-        </a>
-      </div>
-
+      <section className="capability-strip" aria-label="Ordering capabilities">
+        <p><strong>01</strong> Bulk order support</p><p><strong>02</strong> Custom branding</p><p><strong>03</strong> Product guidance</p><p><strong>04</strong> Pan-India delivery</p>
+      </section>
       <Suspense fallback={null}>
-        {isEnquiryOpen && (
-          <EnquiryModal
-            isOpen={isEnquiryOpen}
-            onClose={() => setIsEnquiryOpen(false)}
-            image="/assets/enquiry.webp"
-          />
-        )}
+        {isEnquiryOpen && <EnquiryModal isOpen={isEnquiryOpen} onClose={() => setIsEnquiryOpen(false)} image="/assets/enquiry.webp" />}
       </Suspense>
     </>
   );

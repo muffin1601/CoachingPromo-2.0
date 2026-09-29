@@ -57,7 +57,7 @@ const BlogManager = () => {
       await axios.delete(`${import.meta.env.VITE_API_URL}/blogs/${id}`);
       alert("Blog deleted successfully ✅");
       fetchBlogs();
-    } catch (err) {
+    } catch {
       alert("Delete failed ❌");
     }
   };
@@ -82,7 +82,7 @@ const BlogManager = () => {
       }
       setIsModalOpen(false);
       fetchBlogs();
-    } catch (err) {
+    } catch {
       alert("Save failed ❌");
     }
   };

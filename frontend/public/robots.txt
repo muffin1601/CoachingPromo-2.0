@@ -2,14 +2,9 @@ User-agent: *
 
 Allow: /
 
-# Block admin and API routes
+# Reduce crawling of private and utility routes. Public pages use server-side noindex.
 Disallow: /admin
 Disallow: /api
-Disallow: /login
-
-
-# Optional: block search result pages
-Disallow: /search
 
 # Sitemap location
 Sitemap: https://www.coachingpromo.in/sitemap.xml

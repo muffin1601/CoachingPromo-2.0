@@ -1,0 +1,143 @@
+/* =========================================================
+   SUBCATEGORY STATIC CONTENT
+   Brand-safe, SEO-friendly, readable long-form content
+   ========================================================= */
+
+.subcategory-html-wrapper {
+  max-width: 80%;
+  margin: 0px auto 20px;
+  padding: 0 20px;
+}
+
+/* Main container */
+.subcategory-static-content {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 40px 42px;
+  /* box-shadow: 0 10px 32px rgba(8, 60, 113, 0.08); */
+  /* border-left: 6px solid var(--brand-blue); */
+}
+
+/* ---------------------------------------------------------
+   HEADINGS
+   --------------------------------------------------------- */
+
+.subcategory-static-content h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 18px;
+  line-height: 1.25;
+}
+
+.subcategory-static-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--brand-blue-dark);
+  margin: 32px 0 14px;
+  line-height: 1.4;
+  position: relative;
+}
+
+.subcategory-static-content h3::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 6px;
+  width: 6px;
+  height: 18px;
+  background: var(--brand-orange);
+  border-radius: 4px;
+}
+
+/* ---------------------------------------------------------
+   PARAGRAPHS & TEXT
+   --------------------------------------------------------- */
+
+.subcategory-static-content p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-medium);
+  margin-bottom: 14px;
+}
+
+.subcategory-static-content p strong {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* ---------------------------------------------------------
+   LISTS
+   --------------------------------------------------------- */
+
+.subcategory-static-content ul {
+  margin: 12px 0 20px 22px;
+  padding: 0;
+}
+
+.subcategory-static-content li {
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--text-medium);
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 10px;
+}
+
+.subcategory-static-content li::marker {
+  color: var(--brand-orange);
+  font-size: 16px;
+}
+
+/* ---------------------------------------------------------
+   SEPARATORS
+   --------------------------------------------------------- */
+
+.subcategory-static-content hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--brand-blue-light),
+    transparent
+  );
+  margin: 40px 0;
+}
+
+/* ---------------------------------------------------------
+   CTA HIGHLIGHT (OPTIONAL FUTURE USE)
+   --------------------------------------------------------- */
+
+.subcategory-static-content .highlight {
+  background: rgba(211, 84, 0, 0.08);
+  border-left: 4px solid var(--brand-orange);
+  padding: 14px 18px;
+  border-radius: 8px;
+  margin: 22px 0;
+  font-size: 15.5px;
+  color: var(--text-dark);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+   --------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .subcategory-static-content {
+    padding: 28px 24px;
+  }
+
+  .subcategory-static-content h2 {
+    font-size: 24px;
+  }
+
+  .subcategory-static-content h3 {
+    font-size: 18px;
+  }
+
+  .subcategory-static-content p,
+  .subcategory-static-content li {
+    font-size: 15px;
+  }
+}

@@ -1,141 +1,59 @@
 import React from "react";
 import { useCart } from "../context/CartContext";
 import { Link, useNavigate } from "react-router-dom";
-import { Trash2, Minus, Plus } from "lucide-react";
-import PageBanner from "../components/PageBanner";
+import { Trash2, Minus, Plus, ArrowRight, ShoppingBag } from "lucide-react";
+import PageMeta from "../components/PageMeta";
+
+const getImageUrl = (imagePath) => {
+  let image = imagePath?.url || imagePath;
+  if (Array.isArray(image)) image = image[0]?.url || image[0];
+  if (!image || typeof image !== "string") return "/logo.webp";
+  if (image.startsWith("http")) return image;
+  if (image.startsWith("/uploads")) return `${import.meta.env.VITE_API_BASE_URL || ""}${image}`;
+  return image;
+};
 
 const Cart = () => {
   const { cartItems, removeFromCart, updateQuantity, clearCart } = useCart();
   const navigate = useNavigate();
-
-  // Helper to ensure image URLs are absolute
-  const getImageUrl = (imagePath) => {
-    let img = imagePath;
-
-    // Handle object with url property
-    if (img && typeof img === "object" && img.url) {
-      img = img.url;
-    }
-
-    if (Array.isArray(img) && img.length > 0) {
-      img = img[0];
-      if (img && typeof img === "object" && img.url) {
-        img = img.url;
-      }
-    }
-
-    if (!img || typeof img !== "string") return "/placeholder.jpg";
-    if (img.startsWith("http")) return img;
-    if (img.startsWith("/uploads")) {
-      const baseUrl = import.meta.env.VITE_API_BASE_URL || "";
-      return `${baseUrl}${img}`;
-    }
-    return img;
-  };
-
-  const total = cartItems.reduce((acc, item) => acc + item.qty * item.price, 0);
+  const itemCount = cartItems.reduce((count, item) => count + item.qty, 0);
 
   return (
-    <>
-      <PageBanner
-        title="Shopping Cart"
-        background="/apparel.webp"
-        breadcrumb={[{ label: "Cart" }]}
-      />
-      <div style={{ padding: "60px 20px 80px", maxWidth: "1200px", margin: "0 auto", minHeight: "50vh" }}>
-
-      {cartItems.length === 0 ? (
-        <div style={{ textAlign: "center", padding: "60px 20px", background: "var(--light-bg)", borderRadius: "0", border: "1px dashed var(--medium-border)" }}>
-          <p style={{ fontSize: "1.2rem", color: "var(--neutral-gray)", marginBottom: "20px" }}>Your cart is empty.</p>
-          <Link to="/" style={{ display: "inline-block", padding: "12px 25px", background: "var(--brand-orange)", color: "white", textDecoration: "none", borderRadius: "0", fontWeight: "600" }}>
-            Continue Shopping
-          </Link>
-        </div>
-      ) : (
-        <div style={{ display: "flex", gap: "30px", flexWrap: "wrap", alignItems: "flex-start" }}>
-          
-          {/* Cart Items List */}
-          <div style={{ flex: "1 1 65%", display: "flex", flexDirection: "column", gap: "20px" }}>
-            {cartItems.map((item, index) => (
-              <div 
-                key={`${item.product}-${index}`} 
-                style={{ 
-                  display: "flex", alignItems: "center", justifyContent: "space-between", 
-                  padding: "20px", background: "white", borderRadius: "0", 
-                  boxShadow: "var(--shadow-soft)", border: "1px solid var(--light-border)",
-                  flexWrap: "wrap", gap: "15px"
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "20px", flex: "1 1 auto" }}>
-                  <img src={getImageUrl(item.image)} alt={item.name} style={{ width: "80px", height: "80px", objectFit: "cover", borderRadius: "8px", border: "1px solid var(--light-border)" }} />
-                  <div>
-                    <h4 style={{ margin: "0 0 8px 0", fontSize: "1.1rem", color: "var(--text-dark)" }}>{item.name}</h4>
-                    <p style={{ margin: 0, fontSize: "14px", color: "var(--neutral-gray)" }}>
-                      {item.color !== "Default" && `Col: ${item.color}`} 
-                      {item.size !== "Default" && ` | Size: ${item.size}`}
-                    </p>
+    <main className="commerce-page cart-page">
+      <PageMeta title="Your Cart | CoachingPromo" description="Review selected merchandise before checkout." robots="noindex,follow" />
+      <div className="commerce-container">
+        <nav className="commerce-breadcrumb"><Link to="/">Home</Link><span>/</span><span>Cart</span></nav>
+        <header className="commerce-page-heading"><div><p className="editorial-eyebrow">YOUR SELECTION</p><h1>Shopping cart</h1></div><span>{itemCount} {itemCount === 1 ? "item" : "items"}</span></header>
+        {!cartItems.length ? (
+          <section className="commerce-empty-state"><ShoppingBag size={32} /><h2>Your cart is empty</h2><p>Browse the collection and add products for checkout.</p><Link className="commerce-primary-button" to="/categories/apparel-accessories">Explore products <ArrowRight size={17} /></Link></section>
+        ) : (
+          <div className="cart-layout">
+            <section className="cart-items" aria-label="Cart items">
+              {cartItems.map((item, index) => (
+                <article className="cart-line-item" key={`${item.product}-${item.color}-${item.size}-${index}`}>
+                  <img src={getImageUrl(item.image)} alt={item.name} width="120" height="120" />
+                  <div className="cart-line-copy"><p className="editorial-eyebrow">SELECTED PRODUCT</p><h2>{item.name}</h2><p className="cart-variant">{[item.color !== "Default" && `Color: ${item.color}`, item.size !== "Default" && `Size: ${item.size}`].filter(Boolean).join(" · ") || "Customization details can be confirmed during checkout."}</p></div>
+                  <div className="cart-line-controls">
+                    <div className="quantity-control" aria-label={`Quantity for ${item.name}`}>
+                      <button type="button" onClick={() => item.qty > 1 && updateQuantity(item.product, item.color, item.size, item.qty - 1)} aria-label="Decrease quantity"><Minus size={15} /></button><span>{item.qty}</span><button type="button" onClick={() => updateQuantity(item.product, item.color, item.size, item.qty + 1)} aria-label="Increase quantity"><Plus size={15} /></button>
+                    </div>
+                    <button className="cart-remove-button" type="button" onClick={() => removeFromCart(item.product, item.color, item.size)}><Trash2 size={15} /> Remove</button>
                   </div>
-                </div>
-
-                <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
-                  <div style={{ display: "flex", alignItems: "center", border: "1px solid var(--medium-border)", borderRadius: "6px", overflow: "hidden" }}>
-                    <button onClick={() => item.qty > 1 && updateQuantity(item.product, item.color, item.size, item.qty - 1)} style={{ padding: "8px 12px", background: "var(--light-bg)", border: "none", cursor: "pointer", borderRight: "1px solid var(--medium-border)" }}>
-                      <Minus size={14} />
-                    </button>
-                    <span style={{ padding: "0 15px", fontWeight: "600" }}>{item.qty}</span>
-                    <button onClick={() => updateQuantity(item.product, item.color, item.size, item.qty + 1)} style={{ padding: "8px 12px", background: "var(--light-bg)", border: "none", cursor: "pointer", borderLeft: "1px solid var(--medium-border)" }}>
-                      <Plus size={14} />
-                    </button>
-                  </div>
-                  
-                  <div style={{ fontWeight: "bold", color: "var(--text-dark)", width: "80px", textAlign: "right", fontSize: "1.1rem" }}>
-                    
-                  </div>
-
-                  <button 
-                    onClick={() => removeFromCart(item.product, item.color, item.size)} 
-                    style={{ marginLeft: "10px", background: "rgba(255, 77, 79, 0.1)", border: "none", color: "#ff4d4f", cursor: "pointer", padding: "10px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center" }}
-                    title="Remove item"
-                  >
-                    <Trash2 size={18} />
-                  </button>
-                </div>
-              </div>
-            ))}
-            <button onClick={clearCart} style={{ alignSelf: "flex-start", padding: "10px 20px", background: "transparent", color: "var(--neutral-gray)", border: "1px solid var(--medium-border)", borderRadius: "6px", cursor: "pointer", fontWeight: "500", transition: "all 0.2s" }} onMouseOver={(e) => { e.currentTarget.style.color = "#ff4d4f"; e.currentTarget.style.borderColor = "#ff4d4f"; }} onMouseOut={(e) => { e.currentTarget.style.color = "var(--neutral-gray)"; e.currentTarget.style.borderColor = "var(--medium-border)"; }}>
-              Empty Cart
-            </button>
+                </article>
+              ))}
+              <button className="cart-clear-button" type="button" onClick={clearCart}>Clear cart</button>
+            </section>
+            <aside className="cart-summary">
+              <p className="editorial-eyebrow">NEXT STEP</p><h2>Order summary</h2>
+              <div className="summary-rule" /><p className="summary-count"><span>Items selected</span><strong>{itemCount}</strong></p>
+              <p className="summary-note">Review quantities at checkout. Product and delivery totals are calculated from your order details.</p>
+              <button className="commerce-primary-button" type="button" onClick={() => navigate("/checkout")}>Continue to checkout <ArrowRight size={17} /></button>
+              <Link className="commerce-secondary-link" to="/categories/apparel-accessories">Continue browsing</Link>
+            </aside>
           </div>
-
-          {/* Cart Summary */}
-          <div style={{ flex: "1 1 30%", minWidth: "300px", background: "white", padding: "30px", borderRadius: "0", boxShadow: "var(--shadow-medium)", position: "sticky", top: "100px", border: "1px solid var(--brand-blue)" }}>
-            <h3 style={{ margin: "0 0 20px 0", color: "var(--brand-blue)", fontSize: "1.5rem", borderBottom: "1px solid var(--light-border)", paddingBottom: "15px" }}>Order Summary</h3>
-            
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "15px", color: "var(--neutral-gray)", fontSize: "1.1rem" }}>
-              <span>Total Items</span>
-              <span style={{ fontWeight: "600", color: "var(--text-dark)" }}>{cartItems.reduce((acc, item) => acc + item.qty, 0)}</span>
-            </div>
-            
-            <div style={{ display: "none", justifyContent: "space-between", marginBottom: "25px", fontSize: "1.3rem", fontWeight: "bold", color: "var(--text-dark)", borderTop: "1px solid var(--light-border)", paddingTop: "15px" }}>
-              <span>Cart Subtotal</span>
-              <span style={{ color: "var(--brand-orange)" }}>₹{total.toFixed(2)}</span>
-            </div>
-            
-            <p style={{ fontSize: "0.85rem", color: "var(--neutral-light)", marginBottom: "20px", textAlign: "center" }}>Taxes and shipping calculated at checkout.</p>
-            
-            <button 
-              onClick={() => navigate("/checkout")} 
-              style={{ width: "100%", padding: "15px", background: "var(--brand-orange)", color: "white", border: "none", borderRadius: "0", fontSize: "1.1rem", fontWeight: "600", cursor: "pointer", boxShadow: "0 4px 10px rgba(211, 84, 0, 0.3)", transition: "background 0.2s" }}
-              onMouseOver={(e) => e.currentTarget.style.background = "var(--brand-orange-dark)"}
-              onMouseOut={(e) => e.currentTarget.style.background = "var(--brand-orange)"}
-            >
-              Proceed to Checkout
-            </button>
-          </div>
-        </div>
-      )}
-    </div>
-    </>
+        )}
+      </div>
+    </main>
   );
 };
 

@@ -206,13 +206,14 @@ const Checkout = () => {
         background="/bags.webp"
         breadcrumb={[{ label: "Checkout" }]}
       />
-      <div style={{ padding: "60px 20px 80px", maxWidth: "1200px", margin: "0 auto", minHeight: "50vh" }}>
+      <div className="checkout-page-shell">
 
-      <div style={{ display: "flex", gap: "30px", flexWrap: "wrap", alignItems: "flex-start" }}>
+      <div className="checkout-layout">
         
         {/* Billing & Shipping Form Left */}
-        <div style={{ flex: "1 1 60%", background: "white", padding: "30px", borderRadius: "0", boxShadow: "var(--shadow-soft)", border: "1px solid var(--light-border)" }}>
-          <h2 style={{ fontSize: "1.5rem", color: "var(--text-dark)", marginBottom: "20px" }}>Billing Details</h2>
+        <div className="checkout-form-panel">
+          <p className="editorial-eyebrow">01 / YOUR DETAILS</p>
+          <h2 className="checkout-panel-title">Billing details</h2>
           <form style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
             
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "15px" }}>
@@ -309,8 +310,9 @@ const Checkout = () => {
 
 
         {/* Order Summary Right */}
-        <div style={{ flex: "1 1 35%", minWidth: "300px", background: "white", padding: "30px", borderRadius: "0", boxShadow: "var(--shadow-medium)", position: "sticky", top: "100px", border: "1px solid var(--brand-blue)" }}>
-          <h3 style={{ margin: "0 0 20px 0", color: "var(--brand-blue)", fontSize: "1.5rem", borderBottom: "1px solid var(--light-border)", paddingBottom: "15px" }}>Order Summary</h3>
+        <div className="checkout-summary-panel">
+          <p className="editorial-eyebrow">02 / REVIEW</p>
+          <h3 className="checkout-panel-title">Order summary</h3>
           
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", borderBottom: "1px solid var(--light-border)", paddingBottom: "15px", marginBottom: "15px" }}>
             {cartItems.map((item, index) => (

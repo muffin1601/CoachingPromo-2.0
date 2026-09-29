@@ -8,7 +8,6 @@ import { ChevronRight } from "lucide-react";
 /*  Lazy-loaded components */
 const PageBanner = lazy(() => import("../components/PageBanner"));
 const ExitIntentPopup = lazy(() => import("../components/ExitIntentPopup"));
-const HiddenSEOContent = lazy(() => import("../components/HiddenSEOContent"));
 
 const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
@@ -106,7 +105,7 @@ const BlogList = () => {
                 {blog.content?.slice(0, 100)}...
               </p>
 
-              <Link to={`/blogs/${blog._id}`} className="blg-readmore-link">
+              <Link to={`/blogs/${blog.slug || blog._id}`} className="blg-readmore-link">
                 READ MORE <ChevronRight size={16} />
               </Link>
             </div>
@@ -150,7 +149,6 @@ const BlogList = () => {
       {/* Lazy-loaded footer extras */}
       <Suspense fallback={null}>
         {/* <ExitIntentPopup /> */}
-        <HiddenSEOContent />
       </Suspense>
     </>
   );

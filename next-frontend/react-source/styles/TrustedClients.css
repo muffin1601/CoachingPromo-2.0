@@ -1,0 +1,167 @@
+.trusted-wrapper {
+  width: 100%;
+  padding: 70px 0;
+  background: var(--light-bg);
+  font-family: "Outfit", sans-serif;
+  overflow: hidden; /* required for marquee */
+}
+
+.trusted-container {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+}
+
+/* Heading */
+.trusted-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.trusted-subtext {
+  color: var(--neutral-gray);
+  font-size: 1.1rem;
+  margin-bottom: 38px;
+}
+
+/*  Marquee wrapper */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/*  Track that scrolls */
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  animation: marqueeMove 25s linear infinite;
+}
+
+/*  Animation */
+@keyframes marqueeMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.trusted-logo {
+  width: 180px;
+  flex-shrink: 0;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  aspect-ratio: auto;
+}
+
+.trusted-logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+  aspect-ratio: auto;
+}
+
+.trusted-logo:hover {
+  transform: scale(1.06);
+}
+
+/* ===================== 
+   ✅ RESPONSIVE OPTIMIZATION 
+   ===================== */
+
+/* TABLETS */
+@media (max-width: 992px) {
+  .trusted-title {
+    font-size: 2rem;
+  }
+  .trusted-subtext {
+    font-size: 1rem;
+  }
+  .trusted-logo {
+    width: 150px;
+  }
+  .marquee-track {
+    gap: 30px;
+    animation-duration: 20s; /* slightly faster scroll */
+  }
+}
+
+/* PHABLETS */
+@media (max-width: 768px) {
+  .trusted-title {
+    font-size: 1.75rem;
+  }
+  .trusted-logo {
+    width: 110px;
+  }
+  .marquee-track {
+    gap: 24px;
+    animation-duration: 18s;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .trusted-wrapper {
+    padding: 35px 0;
+  }
+  .trusted-title {
+    font-size: 1.6rem;
+  }
+  .trusted-subtext {
+    font-size: 0.95rem;
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: 28px;
+  }
+
+  .trusted-logo {
+    width: 85px;
+  }
+
+  .marquee-track {
+    gap: 20px;
+    animation-duration: 16s;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 420px) {
+  .trusted-title {
+    font-size: 1.45rem;
+  }
+
+  .trusted-subtext {
+    font-size: 0.9rem;
+  }
+
+  .trusted-logo {
+    width: 70px;
+  }
+
+  .marquee-track {
+    gap: 16px;
+    animation-duration: 14s;
+  }
+}
+
+/* VERY SMALL DEVICES */
+@media (max-width: 350px) {
+  .trusted-title {
+    font-size: 1.3rem;
+  }
+  .trusted-logo {
+    width: 60px;
+  }
+}

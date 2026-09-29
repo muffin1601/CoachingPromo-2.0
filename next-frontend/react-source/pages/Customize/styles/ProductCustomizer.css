@@ -1,0 +1,17 @@
+
+
+/* WRAPPER THAT HOLDS THE CANVAS */
+/* .canvas-wrapper,
+.canvas-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+} */
+
+/* Mobile */
+@media (max-width: 768px) {
+  .canvas-wrapper,
+  .canvas-container {
+    height: 380px;
+  }
+}

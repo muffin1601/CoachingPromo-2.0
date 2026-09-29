@@ -41,7 +41,7 @@ const Footer = () => {
           <h4 className="footer-heading">Quick Links</h4>
           <ul>
             <li><a href="/" title="Coaching Promo Home">Home</a></li>
-            <li><a href="#categories" title="Browse Custom Products">Products</a></li>
+            <li><a href="/categories/apparel-accessories" title="Browse custom products">Browse Products</a></li>
             <li><a href="/blogs" title="Branding & Merchandise Blogs">Blogs</a></li>
             <li><a href="/about" title="About Coaching Promo">About Us</a></li>
             <li>
@@ -173,13 +173,6 @@ const Footer = () => {
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Coaching Promo • All Rights Reserved.</p>
 
-        {/* Hidden SEO Keywords for Google */}
-        <p className="visually-hidden">
-          Custom merchandise for Coaching institutes, branded T-shirts India, corporate gifting for schools,
-          promotional products supplier Delhi NCR, custom event kits India, onboarding kits for colleges,
-          student welcome kits, custom hoodies, branded diaries, custom bottles, corporate awards,
-          trophy manufacturer India, educational Institute branding.
-        </p>
       </div>
 
     </footer>

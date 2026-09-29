@@ -16,9 +16,6 @@ const WhyChooseUsCategory = lazy(() =>
 const CategoryFAQ = lazy(() =>
   import("../components/Category/CategoryFAQ")
 );
-const HiddenSEOContent = lazy(() =>
-  import("../components/HiddenSEOContent")
-);
 
 /*  Keep SEO immediate (should NOT be lazy) */
 import SEO from "../components/Category/SEO";
@@ -27,9 +24,9 @@ const CategoryPage = () => {
   const { slug } = useParams();
   const [category, setCategory] = useState(null);
   const [subcategories, setSubcategories] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [page, setPage] = useState(1);
-  const [sort, setSort] = useState("default");
+  const [, setProducts] = useState([]);
+  const [page] = useState(1);
+  const [sort] = useState("default");
   const [loading, setLoading] = useState(true);
 
   const categoryTitles = {
@@ -119,8 +116,6 @@ const bannerImage =
         <CatalogueCTA />
         <CategoryFAQ categoryName={category.name} />
 
-        {/* extra SEO text */}
-        <HiddenSEOContent />
       </Suspense>
     </>
   );

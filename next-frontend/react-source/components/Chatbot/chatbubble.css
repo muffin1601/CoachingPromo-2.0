@@ -1,0 +1,150 @@
+.chat-row {
+  display: flex;
+  margin-bottom: 12px;
+  align-items: flex-end;
+}
+
+.chat-row.bot {
+  justify-content: flex-start;
+}
+
+.chat-row.user {
+  justify-content: flex-end;
+}
+
+.chat-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 8px;
+  background: var(--light-bg);
+}
+
+/* Base bubble */
+.bubble {
+  max-width: 75%;
+  padding: 10px 14px 16px;
+  border-radius: 24px;
+  font-size: 14px;
+  line-height: 1.5;
+  position: relative;
+  animation: fadeIn 0.25s ease-in;
+}
+
+/* Bot bubble */
+.bubble.bot {
+  background: var(--white);
+  color: var(--text-dark);
+  border: 1px solid var(--light-border);
+  border-bottom-left-radius: 6px;
+}
+
+/* User bubble */
+.bubble.user {
+  background: var(--brand-orange);
+  color: var(--white);
+  border-bottom-right-radius: 6px;
+}
+
+/* Seen ticks */
+.ticks {
+  position: absolute;
+  bottom: 4px;
+  right: 8px;
+  opacity: 0.85;
+  display: flex;
+  align-items: center;
+}
+
+/* Optional timestamp */
+.time {
+  display: block;
+  font-size: 10px;
+  color: var(--neutral-light);
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Quick replies */
+.options {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.options button {
+  background: var(--white);
+  border: 1px solid var(--brand-blue);
+  color: var(--brand-blue);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-family: 'Outfit', Arial, sans-serif;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.options button:hover {
+  background: var(--brand-blue);
+  color: var(--white);
+}
+
+/* Typing indicator bubble */
+.chat-row.bot .typing-bubble {
+  background: var(--white);
+  border: 1px solid var(--light-border);
+  padding: 10px 14px;
+  border-radius: 16px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.chat-row.bot .typing-bubble span {
+  width: 6px;
+  height: 6px;
+  background: var(--neutral-light);
+  border-radius: 50%;
+  animation: typingPulse 1.4s infinite ease-in-out both;
+}
+
+.chat-row.bot .typing-bubble span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.chat-row.bot .typing-bubble span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typingPulse {
+  0% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  60% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+}

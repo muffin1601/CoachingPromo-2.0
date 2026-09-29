@@ -11,9 +11,6 @@ const BlogSection = lazy(() => import("../components/BlogSection"));
 const CustomizationExperience = lazy(() =>
   import("../components/CustomizationExperience")
 );
-const HiddenSEOContent = lazy(() =>
-  import("../components/HiddenSEOContent")
-);
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -86,8 +83,11 @@ const BlogDetails = () => {
     <>
       <PageMeta
         title={`${blog.title} | CoachingPromo`}
-        description={blog.metaDesc || blog.content?.slice(0, 150)}
+        description={blog.metaDescription || blog.excerpt || blog.content?.replace(/<[^>]*>/g, "").slice(0, 150)}
         canonical={`${import.meta.env.VITE_FRONTEND_URL}/blogs/${id}`}
+        type="article"
+        image={blog.featuredImage || blog.media ? `${import.meta.env.VITE_IMAGE_API_URL}/uploads/blogs/${blog.featuredImage || blog.media}` : undefined}
+        imageAlt={blog.imageAlt || blog.title}
       />
 
       {/* BANNER */}
@@ -211,7 +211,6 @@ const BlogDetails = () => {
       <Suspense fallback={null}>
         <CustomizationExperience />
         <BlogSection />
-        <HiddenSEOContent />
       </Suspense>
     </>
   );

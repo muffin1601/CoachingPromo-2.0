@@ -45,7 +45,7 @@ const SearchPage = () => {
     if (query) fetchSearchResults();
   }, [query]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <main className="search-loading" role="status">Searching the catalogue…</main>;
 
   return (
     <>
@@ -69,7 +69,16 @@ const SearchPage = () => {
         />
 
         {/* Products */}
-        <SearchGrid products={products} />
+        {products.length ? (
+          <SearchGrid products={products} />
+        ) : (
+          <section className="search-empty-state" aria-live="polite">
+            <p className="editorial-eyebrow">NO MATCHES FOUND</p>
+            <h2>We couldn’t find “{query}”</h2>
+            <p>Try a broader product name or browse the catalogue by category.</p>
+            <a href="/">Explore the catalogue</a>
+          </section>
+        )}
 
         {/* Extra Components */}
         <CatalogueCTA />

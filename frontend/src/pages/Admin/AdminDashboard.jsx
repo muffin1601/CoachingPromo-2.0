@@ -64,7 +64,6 @@ const css = `
   gap: 25px;
   flex-grow: 1;
    background: linear-gradient(135deg, #f4f7fb 0%, #e6edf5 100%);
-    no-repeat center/cover;
 }                     
 
 .dashboard-row {
@@ -116,7 +115,9 @@ const css = `
 @media (max-width: 992px) {
   .main-content {
     padding-left: 0;
-  }:root {
+  }
+}
+:root {
   --brand-blue: #0b4a8d;
   --brand-orange: #d17504;
   --neutral-gray: #555;

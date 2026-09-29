@@ -15,7 +15,7 @@ const OffersPage = () => {
       try {
         const { data } = await axios.get(`${import.meta.env.VITE_API_BASE_URL || ""}/api/products/discounted`);
         setProducts(data.products || []);
-      } catch (err) {
+      } catch {
         setError("Failed to load offers. Please try again later.");
       } finally {
         setLoading(false);

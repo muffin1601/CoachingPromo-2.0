@@ -14,7 +14,7 @@ const PreviewModal = ({ isOpen, onClose, viewStates, globalPartColors = {} }) =>
   const [phone, setPhoneNumber] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [sizes, setSizes] = useState({});
+  const [sizes] = useState({});
 
   const applyGlobalColorsToCanvas = (canvas, colors) => {
     if (!canvas) return;

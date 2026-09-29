@@ -41,9 +41,6 @@ const ProductFAQ = lazy(() =>
 );
 const RecentlyViewedProducts = lazy(() => import("../components/RecentlyViewedProducts"));
 const CTASection = lazy(() => import("../components/CTASection"));
-const HiddenSEOContent = lazy(() =>
-  import("../components/HiddenSEOContent")
-);
 
 
 import SEO from "../components/Category/SEO";
@@ -128,7 +125,7 @@ const SingleProductPage = () => {
     }
   }, [product, categorySlug, subSlug]);
 
-  if (!product) return <div>Loading...</div>;
+  if (!product) return <main className="search-loading" role="status">Loading product…</main>;
 
 const {
   name,
@@ -136,7 +133,6 @@ const {
   images,
   subImages,
   tags,
-  ratings,
   sku,
   attributes,
   specifications,
@@ -303,6 +299,9 @@ const {
               </button>
             </div>
 
+            <button className="btn-request-quote" onClick={() => setIsEnquiryOpen(true)} type="button">
+              Request a quote
+            </button>
             <button
               onClick={() => {
                 addToCart(product, qty, attributes?.color?.[0] || "Default", attributes?.size?.[0] || "Default");
@@ -420,13 +419,13 @@ const {
           onEnquiryClick={() => setIsEnquiryOpen(true)}
         />
         <CTASection />
-        <HiddenSEOContent />
 
         {/* Modal */}
         <EnquiryModal
           isOpen={isEnquiryOpen}
           onClose={() => setIsEnquiryOpen(false)}
           image={enquiryImage}
+          productName={name}
         />
       </Suspense>
     </>

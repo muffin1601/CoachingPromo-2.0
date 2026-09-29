@@ -35,6 +35,10 @@ const PageMeta = ({
   ogTitle,
   ogDescription,
   ogUrl,
+  image,
+  imageAlt,
+  type = "website",
+  schema,
 }) => {
   useEffect(() => {
     if (title) {
@@ -52,9 +56,28 @@ const PageMeta = ({
       ogDescription || description
     );
     upsertMeta('meta[property="og:url"]', { property: "og:url" }, "content", ogUrl || canonical);
-    upsertMeta('meta[property="og:type"]', { property: "og:type" }, "content", "website");
+    upsertMeta('meta[property="og:type"]', { property: "og:type" }, "content", type);
+    upsertMeta('meta[property="og:image"]', { property: "og:image" }, "content", image);
+    upsertMeta('meta[property="og:image:alt"]', { property: "og:image:alt" }, "content", imageAlt || title);
+    upsertMeta('meta[property="og:site_name"]', { property: "og:site_name" }, "content", "CoachingPromo");
+    upsertMeta('meta[property="og:locale"]', { property: "og:locale" }, "content", "en_IN");
+    upsertMeta('meta[name="twitter:card"]', { name: "twitter:card" }, "content", "summary_large_image");
+    upsertMeta('meta[name="twitter:title"]', { name: "twitter:title" }, "content", ogTitle || title);
+    upsertMeta('meta[name="twitter:description"]', { name: "twitter:description" }, "content", ogDescription || description);
+    upsertMeta('meta[name="twitter:image"]', { name: "twitter:image" }, "content", image);
+    upsertMeta('meta[name="twitter:image:alt"]', { name: "twitter:image:alt" }, "content", imageAlt || title);
     upsertCanonical(canonical);
-  }, [title, description, keywords, canonical, robots, ogTitle, ogDescription, ogUrl]);
+    let script = document.head.querySelector('script[data-page-schema="true"]');
+    if (schema) {
+      if (!script) {
+        script = document.createElement("script");
+        script.type = "application/ld+json";
+        script.dataset.pageSchema = "true";
+        document.head.appendChild(script);
+      }
+      script.textContent = JSON.stringify(schema);
+    } else if (script) script.remove();
+  }, [title, description, keywords, canonical, robots, ogTitle, ogDescription, ogUrl, image, imageAlt, type, schema]);
 
   return null;
 };

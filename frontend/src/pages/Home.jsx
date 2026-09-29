@@ -1,4 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import HeroSection from "../components/HeroSection";
 import PageMeta from "../components/PageMeta";
@@ -15,20 +17,14 @@ const Gallery = lazy(() => import("../components/Gallery"));
 const CatalogueCTA = lazy(() => import("../components/CatalogueCTA"));
 const BlogSection = lazy(() => import("../components/BlogSection"));
 const HomeFAQ = lazy(() => import("../components/HomeFAQ"));
-const HiddenSEOContent = lazy(() => import("../components/HiddenSEOContent"));
-
-const canShowDesktopSections = () =>
-  typeof window !== "undefined" &&
-  window.matchMedia("(min-width: 768px)").matches;
 
 const Home = () => {
-  const [showPrioritySections, setShowPrioritySections] = useState(canShowDesktopSections);
-  const [showDeferredSections, setShowDeferredSections] = useState(false);
+  const [showPrioritySections, setShowPrioritySections] = useState(true);
+  const [showDeferredSections, setShowDeferredSections] = useState(true);
 
   useEffect(() => {
     let priorityTimeoutId;
     let deferredTimeoutId;
-    const desktop = canShowDesktopSections();
     const triggerEvents = ["pointerdown", "keydown", "touchstart", "scroll"];
 
     const removePriorityListeners = () => {
@@ -59,23 +55,9 @@ const Home = () => {
       }
     };
 
-    if (!desktop) {
-      triggerEvents.forEach((eventName) => {
-        window.addEventListener(eventName, showPriority, {
-          passive: true,
-          once: true,
-        });
-      });
-      priorityTimeoutId = window.setTimeout(showPriority, 3500);
-    }
-
-    triggerEvents.forEach((eventName) => {
-      window.addEventListener(eventName, showSections, {
-        passive: true,
-        once: true,
-      });
-    });
-    deferredTimeoutId = window.setTimeout(showSections, 15000);
+    // Critical commercial content is immediately available without user interaction.
+    showPriority();
+    showSections();
 
     return () => {
       removePriorityListeners();
@@ -98,6 +80,18 @@ const Home = () => {
       />
 
       <HeroSection />
+      <section className="home-solutions editorial-section">
+        <div className="editorial-section-heading">
+          <div><p className="editorial-eyebrow">PRODUCTS FOR YOUR TEAM</p><h2>Start with what you need to make.</h2></div>
+          <p>From daily-use merchandise to event-ready kits, explore a collection built for education brands and institutional teams.</p>
+        </div>
+        <div className="home-solution-list">
+          <Link to="/categories/apparel-accessories"><span>01 / APPAREL</span><strong>Team apparel & uniforms</strong><ArrowUpRight /></Link>
+          <Link to="/categories/bags"><span>02 / BAGS</span><strong>Backpacks & carry goods</strong><ArrowUpRight /></Link>
+          <Link to="/categories/stationery"><span>03 / STATIONERY</span><strong>Notebooks & office essentials</strong><ArrowUpRight /></Link>
+          <Link to="/categories/promotional-items"><span>04 / GIFTS</span><strong>Promotional products & gifting</strong><ArrowUpRight /></Link>
+        </div>
+      </section>
       <div className={`home-priority-sections ${showPrioritySections ? "is-loaded" : ""}`}>
         {showPrioritySections && (
           <Suspense fallback={null}>
@@ -180,11 +174,6 @@ const Home = () => {
           )}
         </section>
 
-        {showDeferredSections && (
-          <Suspense fallback={null}>
-            <HiddenSEOContent />
-          </Suspense>
-        )}
       </div>
     </div>
   );

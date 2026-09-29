@@ -297,7 +297,7 @@ const CustomizerSVG = () => {
 
     /* Update viewStates */
     setViewStates((prev) =>
-      prev.map((view, idx) =>
+      prev.map((view) =>
         view
           ? {
               ...view,

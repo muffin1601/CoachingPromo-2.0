@@ -1,85 +1,37 @@
 const express = require("express");
 const router = express.Router();
-
 const Category = require("../models/category");
 const Subcategory = require("../models/subcategory");
 const Product = require("../models/product");
 const Blog = require("../models/blog");
+const { absoluteUrl, productUrl, blogUrl } = require("../utils/siteSeo");
+
+const escapeXml = (value) => String(value).replace(/[<>&'\"]/g, (character) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;", "'": "&apos;", '"': "&quot;" })[character]);
+const lastmod = (date) => date ? new Date(date).toISOString() : null;
 
 router.get("/sitemap.xml", async (req, res) => {
-
-const base = process.env.FRONTEND_URL;
-
-const categories = await Category.find().lean();
-
-const subcategories = await Subcategory.find()
-.populate("category")
-.lean();
-
-const products = await Product.find()
-.populate("category")
-.populate("subcategory")
-.lean();
-
-const blogs = await Blog.find().lean();
-
-let urls = [];
-
-// Static pages
-urls.push(`${base}/`);
-urls.push(`${base}/about`);
-urls.push(`${base}/contact`);
-urls.push(`${base}/blogs`);
-
-
-// Categories
-categories.forEach(cat => {
-  urls.push(`${base}/categories/${cat.slug}`);
-});
-
-
-// Subcategories
-subcategories.forEach(sub => {
-  if (sub.category) {
-    urls.push(`${base}/${sub.category.slug}/${sub.slug}`);
+  try {
+    const [categories, subcategories, products, blogs] = await Promise.all([
+      Category.find().select("slug updatedAt").lean(),
+      Subcategory.find().populate("category", "slug").select("slug category updatedAt").lean(),
+      Product.find({ isActive: { $ne: false } }).populate("category", "slug").populate("subcategory", "slug").select("slug category subcategory updatedAt").lean(),
+      Blog.find({ $or: [{ status: "published" }, { status: { $exists: false } }] }).select("slug publishedAt updatedAt").lean(),
+    ]);
+    const urls = new Map();
+    const add = (loc, updatedAt) => { if (loc) urls.set(loc, updatedAt); };
+    add(absoluteUrl("/"));
+    add(absoluteUrl("/about"));
+    add(absoluteUrl("/contact"));
+    add(absoluteUrl("/blogs"));
+    categories.forEach((category) => add(absoluteUrl(`/categories/${category.slug}`), category.updatedAt));
+    subcategories.forEach((subcategory) => subcategory.category?.slug && add(absoluteUrl(`/${subcategory.category.slug}/${subcategory.slug}`), subcategory.updatedAt));
+    products.forEach((product) => add(productUrl(product), product.updatedAt));
+    blogs.forEach((blog) => add(blogUrl(blog), blog.updatedAt || blog.publishedAt));
+    const entries = [...urls].map(([loc, updatedAt]) => `<url><loc>${escapeXml(loc)}</loc>${lastmod(updatedAt) ? `<lastmod>${lastmod(updatedAt)}</lastmod>` : ""}</url>`).join("");
+    res.type("application/xml").send(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${entries}</urlset>`);
+  } catch (error) {
+    console.error("Sitemap generation failed:", error);
+    res.status(503).type("text/plain").send("Sitemap temporarily unavailable");
   }
 });
-
-
-// Products
-products.forEach(prod => {
-  if (prod.category && prod.subcategory) {
-    urls.push(`${base}/${prod.category.slug}/${prod.subcategory.slug}/${prod.slug}`);
-  }
-});
-
-
-// Blogs
-blogs.forEach(blog => {
-  urls.push(`${base}/blogs/${blog._id}`);
-});
-
-
-let xml = `<?xml version="1.0" encoding="UTF-8"?>`;
-
-xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
-
-urls.forEach(url => {
-
-xml += `
-<url>
-<loc>${url}</loc>
-<changefreq>weekly</changefreq>
-<priority>0.8</priority>
-</url>`;
-
-});
-
-xml += `</urlset>`;
-
-res.header("Content-Type", "application/xml");
-res.send(xml);
-
-});
-
 module.exports = router;

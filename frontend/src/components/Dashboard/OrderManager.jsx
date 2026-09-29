@@ -35,7 +35,7 @@ const OrderManager = () => {
       };
       await axios.put(`${import.meta.env.VITE_API_BASE_URL || ""}/api/orders/${id}/deliver`, {}, config);
       fetchOrders();
-    } catch (err) {
+    } catch {
       alert("Error marking as delivered");
     }
   };

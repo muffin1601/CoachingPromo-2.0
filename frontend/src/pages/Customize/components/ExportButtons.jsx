@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import { fabric } from "fabric";
 import jsPDF from "jspdf";
 import "../styles/ExportButtons.css";
 import { toast } from "react-toastify";
 import { X, FileDown, Ruler, Shirt } from "lucide-react";
 import SubmitForm from "./SubmitForm";
 
-const ExportButtons = ({ thumbnailCanvasRefs, viewStates }) => {
+const ExportButtons = ({ viewStates }) => {
   const [showForm, setShowForm] = useState(false);
   const [companyname, setCompanyName] = useState("");
   const [phone, setPhoneNumber] = useState("");

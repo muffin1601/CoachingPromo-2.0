@@ -40,7 +40,7 @@ const ProductGrid = ({ products, catSlug, subSlug, onRemove, isFavoritesPage = f
       <div className="product-list-grid">
         {products.map((item) => {
           // item might be a product from API or a Favorite item from context
-          const { _id, slug, name, images, price, salePrice, ratings, product, href, image, category, subcategory, discount } = item;
+          const { _id, slug, name, images, price, salePrice, product, href, image, category, subcategory, discount } = item;
           
           const itemId = _id || product;
           const finalName = name;
