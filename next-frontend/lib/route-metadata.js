@@ -1,4 +1,4 @@
-import { siteUrl } from './api';
+import { encodePathSegment, siteUrl } from './api';
 const titles = {
   '': 'Custom Merchandise for Coaching Institutes | CoachingPromo',
   about: 'About Our Custom Merchandise Team | CoachingPromo',
@@ -21,10 +21,10 @@ export async function routeMetadata(route, params = {}) {
   let description = descriptions[route] || descriptions[''];
   const privateRoute = /^(admin|customize|login|register|profile|cart|checkout|favorites|search|forgot-password|resetpassword|blogs\/post)/.test(route);
   let endpoint;
-  if (route === 'categories/[slug]') endpoint = `/categories/${encodeURIComponent(params.slug)}`;
-  if (route === '[category]/[subcategory]') endpoint = `/subcategories/${encodeURIComponent(params.category)}/${encodeURIComponent(params.subcategory)}`;
-  if (route.endsWith('[product]')) endpoint = `/products/${encodeURIComponent(params.product)}`;
-  if (route === 'blogs/[id]') endpoint = `/blogs/${encodeURIComponent(params.id)}`;
+  if (route === 'categories/[slug]') endpoint = `/categories/${encodePathSegment(params.slug)}`;
+  if (route === '[category]/[subcategory]') endpoint = `/subcategories/${encodePathSegment(params.category)}/${encodePathSegment(params.subcategory)}`;
+  if (route.endsWith('[product]')) endpoint = `/products/${encodePathSegment(params.product)}`;
+  if (route === 'blogs/[id]') endpoint = `/blogs/${encodePathSegment(params.id)}`;
   let image = '/logo.webp';
   let publishedTime;
   let modifiedTime;
@@ -43,9 +43,9 @@ export async function routeMetadata(route, params = {}) {
         image = entity.images?.[0]?.url || entity.featuredImage || entity.media || image;
         if (route === 'blogs/[id]' && image && !/^https?:|^\//.test(image)) image = `/uploads/blogs/${image}`;
         if (route.endsWith('[product]') && entity.category?.slug && entity.subcategory?.slug && entity.slug) {
-          canonicalPath = `/${encodeURIComponent(entity.category.slug)}/${encodeURIComponent(entity.subcategory.slug)}/${encodeURIComponent(entity.slug)}`;
+          canonicalPath = `/${encodePathSegment(entity.category.slug)}/${encodePathSegment(entity.subcategory.slug)}/${encodePathSegment(entity.slug)}`;
         }
-        if (route === 'blogs/[id]' && entity.slug) canonicalPath = `/blogs/${encodeURIComponent(entity.slug)}`;
+        if (route === 'blogs/[id]' && entity.slug) canonicalPath = `/blogs/${encodePathSegment(entity.slug)}`;
         publishedTime = entity.publishedAt || entity.date || entity.createdAt;
         modifiedTime = entity.updatedAt;
       }

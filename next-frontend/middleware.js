@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { CANONICAL_HOST, legacyRedirectPath } from './lib/redirects.mjs';
+import { CANONICAL_HOST, canonicalRedirectUrl, legacyRedirectPath } from './lib/redirects.mjs';
 
 export function middleware(request) {
   const forwardedHost = request.headers.get('x-forwarded-host')?.split(',')[0].trim();
@@ -10,14 +10,7 @@ export function middleware(request) {
 
   if (!destinationPath && !needsCanonicalHost) return NextResponse.next();
 
-  const destination = request.nextUrl.clone();
-  if (destinationPath) destination.pathname = destinationPath;
-  if (needsCanonicalHost) {
-    destination.protocol = 'https:';
-    destination.hostname = CANONICAL_HOST;
-    destination.port = '';
-  }
-
+  const destination = canonicalRedirectUrl(request.url, destinationPath);
   return NextResponse.redirect(destination, 308);
 }
 

@@ -5,11 +5,11 @@ import { usePathname } from 'next/navigation';
 import { ArrowUpRight, ChevronDown, Menu, X, UserRound, Heart, ShoppingBag, Phone, GraduationCap } from 'lucide-react';
 import categories from '@/react-source/data/categories';
 import SearchBox from '@/react-source/components/SearchBox';
-import UserProfileSidebar from '@/react-source/components/UserProfileSidebar';
 import { useAuth } from '@/react-source/context/AuthContext';
 import { useCart } from '@/react-source/context/CartContext';
 const EnquiryModal = lazy(() => import('@/react-source/components/EnquiryModal'));
 const RegisterInstituteModal = lazy(() => import('@/react-source/components/RegisterInstituteModal'));
+const UserProfileSidebar = lazy(() => import('@/react-source/components/UserProfileSidebar'));
 export default function Header() {
   const pathname = usePathname();
   const { user } = useAuth();
@@ -85,7 +85,10 @@ export default function Header() {
         <div className="cp-mobile-dialog-actions"><button className="cp-button" onClick={() => { setMenu(false); setQuote(true); }}>Get Quote <ArrowUpRight size={18} /></button><button className="cp-text-link" onClick={() => { setMenu(false); setRegister(true); }}>Register your institute</button><a href="tel:+918750708222"><Phone size={16} /> 87507 08222</a><a href="https://wa.me/918750708222" target="_blank" rel="noopener noreferrer">WhatsApp <ArrowUpRight size={16} /></a></div>
       </div>
     </dialog>
-    <UserProfileSidebar isOpen={profile} onClose={() => setProfile(false)} />
-    <Suspense fallback={null}>{quote && <EnquiryModal isOpen onClose={() => setQuote(false)} image="/assets/enquiry.webp" />}{register && <RegisterInstituteModal isOpen onClose={() => setRegister(false)} />}</Suspense>
+    <Suspense fallback={null}>
+      {profile && <UserProfileSidebar isOpen onClose={() => setProfile(false)} />}
+      {quote && <EnquiryModal isOpen onClose={() => setQuote(false)} image="/assets/enquiry.webp" />}
+      {register && <RegisterInstituteModal isOpen onClose={() => setRegister(false)} />}
+    </Suspense>
   </>;
 }

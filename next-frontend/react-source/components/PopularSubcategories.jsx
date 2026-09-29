@@ -125,12 +125,12 @@ const PopularSubcategories = () => {
         leading Coaching institutes, schools, colleges & training centers across India.
       </p>
 
-      <div className="popsub-slider" role="list">
+      <ul className="popsub-slider">
         {popularSubcategories.map((sub) => {
           const Icon = sub.icon;
 
           return (
-            <article key={sub.href} className="popsub-card" role="listitem">
+            <li key={sub.href} className="popsub-card">
               <div className="popsub-img-wrap">
                 <img
                   src={sub.image}
@@ -160,10 +160,10 @@ const PopularSubcategories = () => {
                   View Products <ArrowRight size={16} />
                 </a>
               </div>
-            </article>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </section>
   );
 };

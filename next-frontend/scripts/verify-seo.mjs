@@ -41,6 +41,8 @@ assert(sitemap.html.includes(`${canonicalHost}/offers`), 'offers missing from si
 assert(!sitemap.html.includes('localhost'), 'local URLs in sitemap');
 const sitemapUrls = [...sitemap.html.matchAll(/<loc>(.*?)<\/loc>/g)].map(([, url]) => url.replaceAll('&amp;', '&'));
 assert(sitemapUrls.length, 'sitemap URLs');
+const expectedSitemapUrls = Number(process.env.EXPECTED_SITEMAP_URLS || 313);
+assert.equal(sitemapUrls.length, expectedSitemapUrls, `expected ${expectedSitemapUrls} sitemap URLs`);
 for (let index = 0; index < sitemapUrls.length; index += 5) {
   const batch = sitemapUrls.slice(index, index + 5);
   const results = await Promise.all(batch.map(async url => {
@@ -74,9 +76,14 @@ for (const [source, destination] of [
 ]) {
   const response = await fetch(`${base}${source}`, { redirect: 'manual' });
   assert.equal(response.status, 308, `${source} redirect status`);
-  assert.equal(new URL(response.headers.get('location'), base).pathname, destination, `${source} redirect destination`);
+  assert.equal(response.headers.get('location'), `${canonicalHost}${destination}`, `${source} canonical redirect destination`);
 }
 console.log('PASS Search Console legacy paths use permanent one-hop redirects');
+
+const missingProduct = await read('/not-a-real-category/not-a-real-subcategory/not-a-real-product');
+assert.equal(missingProduct.response.status, 404, 'missing dynamic content must return a real HTTP 404');
+assert.match(missingProduct.html, /<meta name="robots" content="noindex"\s*\/>/, 'missing content must be noindex');
+console.log('PASS missing dynamic content: HTTP 404 and noindex');
 
 const productData = await (await fetch(`${base}/api/products/company-logo-umbrellas`)).json();
 const migratedImage = productData.product?.images?.[0]?.url;

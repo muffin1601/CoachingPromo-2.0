@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint app components lib --quiet",
     "verify:parity": "node scripts/verify-parity.mjs",
-    "verify:redirects": "node scripts/verify-redirect-rules.mjs"
+    "verify:redirects": "node scripts/verify-redirect-rules.mjs",
+    "verify:seo": "node scripts/verify-seo.mjs"
   },
   "dependencies": {
     "next": "^15.2.4",

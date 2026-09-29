@@ -4,9 +4,9 @@ import { useLocation, useNavigate } from "@/lib/react-router";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SupplyCities from "./components/SupplyCities";
-import LeadFormModal from "./components/LeadFormModal";
 import dynamic from "next/dynamic";
 const Chatbot = dynamic(() => import("./components/Chatbot/Chatbot"), { ssr: false });
+const LeadFormModal = lazy(() => import("./components/LeadFormModal"));
 const FloatingButtons = lazy(() => import("./components/FloatingButtons"));
 const LayoutWrapper = ({ children }) => {
   const location = useLocation();
@@ -59,14 +59,14 @@ const LayoutWrapper = ({ children }) => {
           {/* {location.pathname === "/" && (
             <OfferModal onBannerClick={() => setIsLeadFormOpen(true)} />
           )} */}
-          <LeadFormModal 
-            isOpen={isLeadFormOpen} 
-            onClose={() => setIsLeadFormOpen(false)} 
+          {isLeadFormOpen && <Suspense fallback={null}><LeadFormModal
+            isOpen
+            onClose={() => setIsLeadFormOpen(false)}
             onSuccess={() => {
               setIsLeadFormOpen(false);
               navigate("/offers");
-            }} 
-          />
+            }}
+          /></Suspense>}
           <Navbar />
         </>
       )}

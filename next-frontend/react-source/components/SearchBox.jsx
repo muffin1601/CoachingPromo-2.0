@@ -61,9 +61,12 @@ const SearchBox = ({ mobile = false }) => {
         <Search size={18} aria-hidden="true" />
         <input
           type="search"
+          role="combobox"
           aria-label="Search products"
           aria-controls={listId}
           aria-expanded={open}
+          aria-autocomplete="list"
+          aria-haspopup="listbox"
           autoComplete="off"
           value={query}
           onChange={(event) => setQuery(event.target.value)}

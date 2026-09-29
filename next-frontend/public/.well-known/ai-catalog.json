@@ -1,0 +1,26 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "CoachingPromo",
+    "identifier": "did:web:coachingpromo.in",
+    "documentationUrl": "https://www.coachingpromo.in/about",
+    "logoUrl": "https://www.coachingpromo.in/logo.webp"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:coachingpromo.in:website:product-catalogue",
+      "displayName": "CoachingPromo Product Catalogue",
+      "type": "text/html",
+      "url": "https://www.coachingpromo.in/",
+      "description": "Catalogue of customizable apparel, bags, stationery, awards, and promotional merchandise for educational institutes in India.",
+      "tags": ["custom merchandise", "coaching institutes", "bulk orders", "India"],
+      "capabilities": ["BrowseProductCatalogue", "SearchProducts", "RequestBulkQuote"],
+      "representativeQueries": [
+        "Find customizable merchandise for a coaching institute",
+        "Browse bulk branded products for schools and colleges"
+      ],
+      "version": "1.0.0",
+      "updatedAt": "2026-09-29T00:00:00Z"
+    }
+  ]
+}

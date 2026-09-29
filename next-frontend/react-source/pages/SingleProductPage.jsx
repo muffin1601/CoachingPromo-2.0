@@ -1,6 +1,5 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
 import { useNavigate, useParams } from "@/lib/react-router";
-import axios from "axios";
 import "../styles/SingleProductPage.css";
 import SubcategoryStaticContent from "../components/Category/SubcategoryStaticContent";
 import { useCart } from "../context/CartContext";
@@ -8,30 +7,18 @@ import { useFavorites } from "../context/FavoritesContext";
 
 import {
   Heart,
-  Facebook,
-  Twitter,
-  Linkedin,
   ShoppingCart,
   Minus,
   Plus,
   Sparkles,
   Tag,
-  BadgeIndianRupee,
-  Star,
   Info,
-  Palette,
   Play,
 } from "lucide-react";
 
 
 const EnquiryModal = lazy(() => import("../components/EnquiryModal"));
-const CustomizationExperience = lazy(() =>
-  import("../components/CustomizationExperience")
-);
 const RelatedProducts = lazy(() => import("../components/RelatedProducts"));
-const PopularSubcategories = lazy(() =>
-  import("../components/PopularSubcategories")
-);
 const CatalogueCTA = lazy(() => import("../components/CatalogueCTA"));
 const WhyChooseUsProduct = lazy(() =>
   import("../components/Category/WhyChooseUsProduct")
@@ -59,33 +46,24 @@ const SingleProductPage = ({ initialData = null }) => {
 
   const navigate = useNavigate();
 
-  const fetchProduct = async () => {
-    const { data } = await axios.get(
-      `${(process.env.NEXT_PUBLIC_API_PATH || "/api")}/products/${prodSlug}`
-    );
-    setProduct(data.product);
-    setActiveMedia(data.product?.images?.[0]);
-  };
-
-  const getCategoryData = async () => {
-    const res = await axios.get(
-      `${(process.env.NEXT_PUBLIC_API_PATH || "/api")}/categories/${categorySlug}`
-    );
-    setCategory(res.data.category);
-  };
-
-  const getSubcategoryData = async () => {
-    const res = await axios.get(
-      `${(process.env.NEXT_PUBLIC_API_PATH || "/api")}/subcategories/${categorySlug}/${subSlug}`
-    );
-    setSubcategory(res.data.subcategory);
-  };
-
   useEffect(() => {
-    fetchProduct();
-    getCategoryData();
-    getSubcategoryData();
-  }, [prodSlug]);
+    if (initialData?.product) return undefined;
+    const controller = new AbortController();
+    const apiPath = process.env.NEXT_PUBLIC_API_PATH || "/api";
+    Promise.all([
+      fetch(`${apiPath}/products/${encodeURIComponent(prodSlug)}`, { signal: controller.signal }).then((response) => response.json()),
+      fetch(`${apiPath}/categories/${encodeURIComponent(categorySlug)}`, { signal: controller.signal }).then((response) => response.json()),
+      fetch(`${apiPath}/subcategories/${encodeURIComponent(categorySlug)}/${encodeURIComponent(subSlug)}`, { signal: controller.signal }).then((response) => response.json()),
+    ]).then(([productData, categoryData, subcategoryData]) => {
+      setProduct(productData.product);
+      setActiveMedia(productData.product?.images?.[0]);
+      setCategory(categoryData.category);
+      setSubcategory(subcategoryData.subcategory);
+    }).catch((error) => {
+      if (error.name !== "AbortError") console.error("Unable to load product", error);
+    });
+    return () => controller.abort();
+  }, [initialData?.product, categorySlug, subSlug, prodSlug]);
 
   useEffect(() => {
     if (product) {
@@ -147,7 +125,7 @@ const {
     subSlug === "institute-backpacks";
 
   return (
-    <>
+    <div className="product-detail-page">
       {/* SEO (Not Lazy Loaded) */}
       <SEO
         title={
@@ -184,16 +162,19 @@ const {
         <div className="product-gallery">
           <div className="product-thumb-list">
             {(subImages?.length ? subImages : images)?.map((img, i) => (
-              <div
+              <button
+                type="button"
                 key={i}
                 className={`thumb-item ${
                   activeMedia?.url === img.url ? "thumb-active" : ""
                 }`}
                 onClick={() => setActiveMedia(img)}
+                aria-label={`View ${name} media ${i + 1}`}
+                aria-pressed={activeMedia?.url === img.url}
               >
                 {img.type === "video" ? (
                   <div className="thumb-video-wrapper">
-                    <video src={img.url} muted className="thumb-img" />
+                    <video src={img.url} muted preload="metadata" className="thumb-img" />
                     <div className="play-overlay">
                       <Play size={12} fill="white" />
                     </div>
@@ -209,7 +190,7 @@ const {
                     height={100}
                   />
                 )}
-              </div>
+              </button>
             ))}
           </div>
 
@@ -232,6 +213,7 @@ const {
                 width={600}
                 height={600}
                 decoding="async"
+                fetchPriority="high"
               />
             )}
           </div>
@@ -290,11 +272,11 @@ const {
           {/* qty + quote */}
           <div className="product-actions">
             <div className="qty-box">
-              <button onClick={() => qty > 1 && setQty(qty - 1)}>
+              <button type="button" aria-label="Decrease quantity" onClick={() => qty > 1 && setQty(qty - 1)}>
                 <Minus size={16} />
               </button>
               <span>{qty}</span>
-              <button onClick={() => setQty(qty + 1)}>
+              <button type="button" aria-label="Increase quantity" onClick={() => setQty(qty + 1)}>
                 <Plus size={16} />
               </button>
             </div>
@@ -314,6 +296,8 @@ const {
 
             <button 
               className="btn-wishlist"
+              type="button"
+              aria-label={isFavorite(product._id || product.id) ? "Remove from favorites" : "Add to favorites"}
               onClick={() => addToFavorites({ ...product, href: `/${categorySlug}/${subSlug}/${prodSlug}` })}
               style={{ color: isFavorite(product._id || product.id) ? "#ff4d4f" : "var(--neutral-gray)" }}
             >
@@ -396,8 +380,6 @@ const {
       <Suspense fallback={<div></div>}>
       <SubcategoryStaticContent subSlug={subSlug} productName={product?.name} />
 
-        {/* {shouldShowCustomize && <CustomizationExperience />} */}
-
         <WhyChooseUsProduct
           productName={name}
           subcategoryName={subcategory?.name}
@@ -428,7 +410,7 @@ const {
           productName={name}
         />
       </Suspense>
-    </>
+    </div>
   );
 };
 

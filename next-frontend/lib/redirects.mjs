@@ -23,3 +23,10 @@ export function legacyRedirectPath(pathname) {
   return null;
 }
 
+export function canonicalRedirectUrl(requestUrl, destinationPath) {
+  const source = new URL(requestUrl);
+  const destination = new URL(destinationPath || source.pathname, `https://${CANONICAL_HOST}`);
+  destination.search = source.search;
+  return destination;
+}
+

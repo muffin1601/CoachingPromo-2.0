@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { legacyRedirectPath } from '../lib/redirects.mjs';
+import { canonicalRedirectUrl, legacyRedirectPath } from '../lib/redirects.mjs';
 
 const exportedRedirects = [
   ['/', null],
@@ -20,5 +20,16 @@ const exportedRedirects = [
 for (const [source, destination] of exportedRedirects) {
   assert.equal(legacyRedirectPath(source), destination, source);
 }
+
+assert.equal(
+  canonicalRedirectUrl('http://localhost:3100/__CANONICAL__?source=legacy', '/').href,
+  'https://www.coachingpromo.in/?source=legacy',
+  'internal server hosts must never leak into public redirects',
+);
+assert.equal(
+  canonicalRedirectUrl('http://localhost:3100/current-path?q=one', null).href,
+  'https://www.coachingpromo.in/current-path?q=one',
+  'canonical-host redirects preserve the path and query string',
+);
 
 console.log(`PASS ${exportedRedirects.length} canonical and legacy redirect path rules`);
