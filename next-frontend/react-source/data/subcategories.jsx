@@ -6,7 +6,7 @@ export const subcategoryTitles = {
   "round-neck-t-shirts": "Promotional T Shirt Printing for Schools, Colleges & Teams",
   "sports-jersey": "Promotional Sports Jersey for Teams & Events",
   "shirts": "Logo Printing Formal & Casual Shirts with for Staff & Faculty",
-  "hoodies-jackets": "Custom Hoodies & Jackets with Logo Printing for Winter",
+  "hoodies-jackets": "Bulk Custom Hoodies & Jackets with Logo Printing",
   "uniform-jackets": "Custom Hoodies & Jackets with Logo Printing for Winter",
   "graduation-hat": "Custom Graduation Caps for Schools, Colleges & Convocation Events",
   "graduation-gown": "Custom Graduation Gowns for Schools, Colleges & Universities",

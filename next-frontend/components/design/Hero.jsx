@@ -15,10 +15,10 @@ export default function Hero() {
         <p className="cp-hero-note">Built around your quantity, branding and timeline</p>
       </div>
       <div className="cp-hero-gallery" aria-label="Explore custom merchandise">
-        <Link className="cp-hero-tile cp-hero-apparel" href="/categories/apparel-accessories"><img src="/assets/category/apparel.webp" alt="Custom apparel for institutes, staff and students" width="257" height="257" fetchPriority="high" /><span><small>01 / APPAREL</small><strong>Your team. Your identity.</strong><ArrowUpRight /></span></Link>
-        <Link className="cp-hero-tile cp-hero-bags" href="/categories/bags"><img src="/assets/category/bag.webp" alt="Custom logo bags for students and faculty" width="257" height="257" /><span><small>02 / BAGS</small><strong>Made for everyday.</strong><ArrowUpRight /></span></Link>
+        <Link className="cp-hero-tile cp-hero-apparel" href="/categories/apparel-accessories"><img src="/assets/category/apparel.webp" alt="Custom apparel for institutes, staff and students" width="257" height="257" loading="eager" fetchPriority="high" /><span><small>01 / APPAREL</small><strong>Your team. Your identity.</strong><ArrowUpRight /></span></Link>
+        <Link className="cp-hero-tile cp-hero-bags" href="/categories/bags"><img src="/assets/category/bag.webp" alt="Custom logo bags for students and faculty" width="257" height="257" loading="eager" fetchPriority="high" /><span><small>02 / BAGS</small><strong>Made for everyday.</strong><ArrowUpRight /></span></Link>
         <div className="cp-hero-label"><Palette size={24} /><span>Custom merchandise<strong>Bulk orders · Pan-India delivery</strong></span></div>
-        <Link className="cp-hero-tile cp-hero-gifts" href="/categories/promotional-items"><img src="/assets/category/promotional-items.webp" alt="Promotional products and branded gifting" width="257" height="257" /><span><small>03 / GIFTS</small><strong>A lasting impression.</strong><ArrowUpRight /></span></Link>
+        <Link className="cp-hero-tile cp-hero-gifts" href="/categories/promotional-items"><img src="/assets/category/promotional-items.webp" alt="Promotional products and branded gifting" width="257" height="257" loading="eager" fetchPriority="high" /><span><small>03 / GIFTS</small><strong>A lasting impression.</strong><ArrowUpRight /></span></Link>
       </div>
     </section>
     <div className="cp-capabilities">{[[Package, 'Bulk order support'], [Palette, 'Custom branding'], [MessagesSquare, 'Product guidance'], [Truck, 'Pan-India delivery']].map(([Icon, text]) => <div key={text}><Icon size={21} /><span>{text}</span></div>)}</div>

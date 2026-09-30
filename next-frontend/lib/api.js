@@ -21,7 +21,10 @@ export async function getCategory(slug) { return get(`/api/categories/${encodePa
 export async function getSubcategory(category, subcategory) { return get(`/api/subcategories/${encodePathSegment(category)}/${encodePathSegment(subcategory)}`); }
 export async function getProduct(slug) { return get(`/api/products/${encodePathSegment(slug)}`); }
 export async function searchProducts(query) { return get(`/api/products-search/search?q=${encodeURIComponent(query)}`); }
-export async function getBlogs() { return (await get("/api/blogs")) || []; }
+export async function getBlogs() {
+  try { return (await get("/api/blogs")) || []; }
+  catch { return []; }
+}
 export async function getBlog(slug) { return get(`/api/blogs/${encodePathSegment(slug)}`); }
 export const productHref = (product) => product?.category?.slug && product?.subcategory?.slug
   ? `/${encodePathSegment(product.category.slug)}/${encodePathSegment(product.subcategory.slug)}/${encodePathSegment(product.slug)}`

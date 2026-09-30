@@ -1,5 +1,4 @@
-import React, { useEffect, useState, lazy, Suspense } from "react";
-import axios from "axios";
+import React, { useState, lazy, Suspense } from "react";
 import { Link } from "@/lib/react-router";
 import PageMeta from "../components/PageMeta";
 import "../styles/Blog.css";
@@ -15,13 +14,6 @@ const BlogList = ({ initialBlogs = [] }) => {
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 8;
-
-  useEffect(() => {
-    axios
-      .get(`${(process.env.NEXT_PUBLIC_API_PATH || "/api")}/blogs`)
-      .then((res) => setBlogs(res.data))
-      .catch((err) => console.error(err));
-  }, []);
 
   // Pagination logic
   const totalPages = Math.ceil(blogs.length / blogsPerPage);

@@ -20,7 +20,7 @@ const categories = [
         name: "Jackets & Hoodies",
         href: "/apparel/jackets-hoodies",
         products: [
-          { name: "Hoodies-Jackets", href: "/apparel-accessories/hoodies-jackets" },
+          { name: "Custom Hoodies & Jackets", href: "/apparel-accessories/hoodies-jackets" },
           {
             name: "Uniform Jackets",
             href: "/apparel-accessories/uniform-jackets",

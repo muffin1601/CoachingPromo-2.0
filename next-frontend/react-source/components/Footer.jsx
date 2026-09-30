@@ -65,8 +65,8 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/apparel-accessories/hoodies-jackets" title="Customized Hoodies & Jackets">
-                Custom Hoodies
+              <a href="/custom-hoodies-for-coaching-institutes" title="Custom Hoodies for Coaching Institutes in Bulk">
+                Custom Institute Hoodies
               </a>
             </li>
             <li>

@@ -53,14 +53,17 @@ const bannerImage =
   };
 
   useEffect(() => {
-    getCategoryData(categorySlug).then((data) => {
-      setCategory(data.category);
-    });
-  }, [categorySlug]);
+    if (initialData?.subcategory) {
+      setCategory(initialData.category || null);
+      setSubcategory(initialData.subcategory);
+      setProducts(initialData.products || []);
+      setLoading(false);
+      return;
+    }
 
-  useEffect(() => {
+    getCategoryData(categorySlug).then((data) => setCategory(data.category));
     fetchSubCategory();
-  }, [categorySlug, subSlug, page, sort]);
+  }, [categorySlug, subSlug, page, sort, initialData]);
 
   const fetchSubCategory = async () => {
     setLoading(true);
@@ -134,7 +137,7 @@ const bannerImage =
       <CatalogueCTA />
       {/* <PopularSubcategories /> */}
       <DynamicSEOContent slug={subSlug} />
-      <SubcategoryFAQ subcategoryName={subcategory.name} />
+      <SubcategoryFAQ subcategoryName={subcategory.name} subSlug={subSlug} />
       <BlogSection />
     </>
   );

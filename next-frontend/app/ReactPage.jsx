@@ -1,7 +1,10 @@
 "use client";
-import dynamic from 'next/dynamic';
 
-const Page = dynamic(() => import('@/react-source/pages/Home'), {
-  ssr: true, loading: () => <p role="status">Loading…</p>
-});
-export default function ReactPage() { return <Page />; }
+import Home from '@/react-source/pages/Home';
+
+// Keep the homepage in the initial server render. A dynamic boundary here used
+// to stream a one-line loading state before the full homepage, which moved the
+// already-rendered footer when the boundary resolved and caused a large CLS.
+export default function ReactPage() {
+  return <Home />;
+}

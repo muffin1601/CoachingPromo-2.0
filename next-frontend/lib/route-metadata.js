@@ -1,4 +1,5 @@
 import { encodePathSegment, siteUrl } from './api';
+import { getSubcategorySeoContent } from './seo-content';
 const titles = {
   '': 'Custom Merchandise for Coaching Institutes | CoachingPromo',
   about: 'About Our Custom Merchandise Team | CoachingPromo',
@@ -51,6 +52,13 @@ export async function routeMetadata(route, params = {}) {
       }
     } catch { /* The React page retains its existing API error UI. */ }
   }
+  const editorialSeo = route === '[category]/[subcategory]'
+    ? getSubcategorySeoContent(params.category, params.subcategory)
+    : null;
+  if (editorialSeo) {
+    title = editorialSeo.categoryMetaTitle || editorialSeo.metaTitle;
+    description = editorialSeo.categoryMetaDescription || editorialSeo.metaDescription;
+  }
   description = String(description).replace(/\s+/g, ' ').trim().slice(0, 170);
   const url = `${siteUrl}${canonicalPath}`;
   const openGraph = { title, description, url, siteName: 'CoachingPromo', locale: 'en_IN',
@@ -59,6 +67,6 @@ export async function routeMetadata(route, params = {}) {
     if (publishedTime) openGraph.publishedTime = publishedTime;
     if (modifiedTime) openGraph.modifiedTime = modifiedTime;
   }
-  return { title, description, alternates: { canonical: canonicalPath }, robots: { index: !privateRoute, follow: !privateRoute },
+  return { title, description, ...(editorialSeo?.keywords ? { keywords: editorialSeo.keywords } : {}), alternates: { canonical: canonicalPath }, robots: { index: !privateRoute, follow: !privateRoute },
     openGraph, twitter: { card: 'summary_large_image', title, description, images: [image] } };
 }

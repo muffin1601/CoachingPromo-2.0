@@ -29,6 +29,41 @@ export function breadcrumbSchema(items) {
   };
 }
 
+export function faqSchema(faqs) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+}
+
+export function collectionPageSchema({ name, description, path, products = [] }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${canonicalUrl(path)}#collection`,
+    name,
+    description,
+    url: canonicalUrl(path),
+    isPartOf: { '@id': `${siteUrl}/#website` },
+    ...(products.length ? {
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: products.slice(0, 24).map((product, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: product.name,
+          url: canonicalUrl(`/${product.category?.slug || 'apparel-accessories'}/${product.subcategory?.slug || 'hoodies-jackets'}/${product.slug}`),
+        })),
+      },
+    } : {}),
+  };
+}
+
 export function productSchema(product, path) {
   const description = [
     typeof product?.description === 'string' ? product.description : null,

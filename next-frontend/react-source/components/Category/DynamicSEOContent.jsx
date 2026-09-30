@@ -1,11 +1,46 @@
 import React from "react";
+import Link from "next/link";
 import { subcategoryTitles } from "../../data/subcategories";
 import { subcategoryKeywords } from "../../data/subcategoryKeywords";
+import { subcategorySeoContent } from "../../../lib/seo-content";
 import "./DynamicSEOContent.css";
 
 const DynamicSEOContent = ({ slug }) => {
   const title = subcategoryTitles[slug] || "";
   const keywords = subcategoryKeywords[slug] || [];
+  const editorial = subcategorySeoContent[slug];
+
+  if (editorial) {
+    return (
+      <section className="seo-dynamic-wrapper" aria-labelledby={`${slug}-guide-title`}>
+        <h2 className="seo-dynamic-title" id={`${slug}-guide-title`}>
+          Bulk Hoodies & Winter Jackets for Education Teams
+        </h2>
+        {editorial.intro.map((paragraph) => (
+          <p className="seo-dynamic-p" key={paragraph}>{paragraph}</p>
+        ))}
+        {editorial.sections.map((section) => (
+          <div className="seo-content-section" key={section.heading}>
+            <h3 className="seo-dynamic-h3">{section.heading}</h3>
+            {section.paragraphs.map((paragraph) => (
+              <p className="seo-dynamic-p" key={paragraph}>{paragraph}</p>
+            ))}
+            {section.items && (
+              <ul className="seo-dynamic-ul">
+                {section.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            )}
+          </div>
+        ))}
+        <nav className="seo-related-links" aria-label="Related custom apparel">
+          <strong>Related institute apparel</strong>
+          {editorial.relatedLinks.map((link) => (
+            <Link href={link.href} key={link.href}>{link.label}</Link>
+          ))}
+        </nav>
+      </section>
+    );
+  }
 
   const productName = title.replace("Custom", "").replace("Premium", "");
 

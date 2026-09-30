@@ -32,7 +32,7 @@ const baseSubcategories = [
     icon: Shirt,
   },
   {
-    name: "Hoodies / Jackets",
+    name: "Custom Hoodies & Jackets",
     category: "Apparel",
     image: "/assets/home-subcat/hoodie.webp",
     catslug: "apparel-accessories",
@@ -157,7 +157,7 @@ const PopularSubcategories = () => {
                 </p>
 
                 <a href={sub.href} className="popsub-btn">
-                  View Products <ArrowRight size={16} />
+                  {sub.slug === "hoodies-jackets" ? "Explore Bulk Hoodies" : "View Products"} <ArrowRight size={16} />
                 </a>
               </div>
             </li>

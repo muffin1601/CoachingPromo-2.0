@@ -1,8 +1,9 @@
 import React from "react";
+import { subcategorySeoContent } from "../../../lib/seo-content";
 import "./SubcategoryFAQ.css";
 
-const SubcategoryFAQ = ({ subcategoryName }) => {
-  const faqs = [
+const SubcategoryFAQ = ({ subcategoryName, subSlug }) => {
+  const defaultFaqs = [
     {
       q: `What types of ${subcategoryName} are available for Coaching institutes and schools?`,
       a: `We offer a variety of ${subcategoryName} designed for Coaching institutes, schools, colleges, and training centers. All products support custom printing, logo branding, and bulk ordering.`,
@@ -32,6 +33,7 @@ const SubcategoryFAQ = ({ subcategoryName }) => {
       a: `Yes. We offer reliable Pan-India shipping to Coaching institutes, schools, colleges, training organizations, and companies in every major city.`,
     },
   ];
+  const faqs = subcategorySeoContent[subSlug]?.faqs || defaultFaqs;
 
   return (
     <section className="faq-section">
@@ -55,4 +57,4 @@ const SubcategoryFAQ = ({ subcategoryName }) => {
 };
 
 export default SubcategoryFAQ;
-  
+
