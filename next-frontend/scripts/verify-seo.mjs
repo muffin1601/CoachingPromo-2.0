@@ -41,7 +41,7 @@ assert(sitemap.html.includes(`${canonicalHost}/offers`), 'offers missing from si
 assert(!sitemap.html.includes('localhost'), 'local URLs in sitemap');
 const sitemapUrls = [...sitemap.html.matchAll(/<loc>(.*?)<\/loc>/g)].map(([, url]) => url.replaceAll('&amp;', '&'));
 assert(sitemapUrls.length, 'sitemap URLs');
-const expectedSitemapUrls = Number(process.env.EXPECTED_SITEMAP_URLS || 313);
+const expectedSitemapUrls = Number(process.env.EXPECTED_SITEMAP_URLS || 322);
 assert.equal(sitemapUrls.length, expectedSitemapUrls, `expected ${expectedSitemapUrls} sitemap URLs`);
 for (let index = 0; index < sitemapUrls.length; index += 5) {
   const batch = sitemapUrls.slice(index, index + 5);
@@ -75,6 +75,7 @@ for (const [source, destination] of [
   ['/__CANONICAL__', '/'],
   ['/blogs/__CANONICAL__', '/blogs'],
   ['/apparel-accessories/__CANONICAL__', '/categories/apparel-accessories'],
+  ['/apparel-accessories/polo-t-shirts/__CANONICAL__', '/apparel-accessories/polo-t-shirts'],
   ['/stationery/markers/__CANONICAL__', '/categories/stationery'],
 ]) {
   const response = await fetch(`${base}${source}`, { redirect: 'manual' });

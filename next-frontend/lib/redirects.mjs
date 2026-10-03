@@ -32,6 +32,17 @@ export function legacyRedirectPath(pathname) {
   const exact = exactLegacyPaths.get(normalized);
   if (exact) return exact;
 
+  // A legacy placeholder escaped into crawlable links at several hierarchy
+  // depths. Consolidate every occurrence with its real parent URL.
+  const canonicalPlaceholder = normalized.match(/^(.*)\/__CANONICAL__$/i);
+  if (canonicalPlaceholder) {
+    const parent = canonicalPlaceholder[1] || '/';
+    if (['/apparel-accessories', '/bags', '/promotional-items', '/stationery'].includes(parent)) {
+      return `/categories${parent}`;
+    }
+    return parent;
+  }
+
   // Search Console found an old product link with a trailing "<". Browsers
   // percent-encode that character before middleware sees it, so handle both
   // representations and permanently consolidate it with the clean URL.

@@ -25,6 +25,8 @@ const exportedRedirects = [
   ['/__CANONICAL__', '/'],
   ['/blogs/__CANONICAL__', '/blogs'],
   ['/apparel-accessories/__CANONICAL__', '/categories/apparel-accessories'],
+  ['/apparel-accessories/polo-t-shirts/__CANONICAL__', '/apparel-accessories/polo-t-shirts'],
+  ['/stationery/graduation-degree-folders/__CANONICAL__', '/stationery/graduation-degree-folders'],
   ['/stationery/markers/__CANONICAL__', '/categories/stationery'],
   ['/stationery/attendance-registers/personalized-attendance-registers%3C', '/stationery/attendance-registers/personalized-attendance-registers'],
   ['/stationery/attendance-registers/personalized-attendance-registers<', '/stationery/attendance-registers/personalized-attendance-registers'],

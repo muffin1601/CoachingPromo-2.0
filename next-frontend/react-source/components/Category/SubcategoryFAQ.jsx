@@ -5,32 +5,28 @@ import "./SubcategoryFAQ.css";
 const SubcategoryFAQ = ({ subcategoryName, subSlug }) => {
   const defaultFaqs = [
     {
-      q: `What types of ${subcategoryName} are available for Coaching institutes and schools?`,
-      a: `We offer a variety of ${subcategoryName} designed for Coaching institutes, schools, colleges, and training centers. All products support custom printing, logo branding, and bulk ordering.`,
+      q: `What types of ${subcategoryName} are available for institutes?`,
+      a: `The options shown on this page are intended for institutes, schools, colleges and training centres. Branding availability depends on the selected product and material.`,
     },
     {
-      q: `Do you provide logo printing and customization on all ${subcategoryName}?`,
-      a: `Yes. We offer full customization on all ${subcategoryName} including logo printing, Institute branding, student personalization, event printing, and corporate-style finishing.`,
+      q: `Can a logo be added to ${subcategoryName}?`,
+      a: `Logo printing or another customization method may be available. Share the product link and artwork so the team can confirm a suitable process and print area.`,
     },
     {
-      q: `Is bulk ordering available for ${subcategoryName}?`,
-      a: `Absolutely. We specialize in bulk orders for educational organizations and offer competitive pricing, bulk discounts, and fast Pan-India delivery.`,
+      q: `Can ${subcategoryName} be ordered in bulk?`,
+      a: `Yes. Share the required quantity and delivery city to receive current availability, pricing and order details.`,
     },
     {
-      q: `How long does it take to deliver customized ${subcategoryName}?`,
-      a: `Production time depends on order size, but most customized ${subcategoryName} are delivered within 5–12 days across India. Express production is also available for urgent requirements.`,
+      q: `How long does a customized order take?`,
+      a: `Timing depends on quantity, stock, customization and destination. Confirm your required date before ordering so the team can provide a realistic schedule.`,
     },
     {
-      q: `Can I see a sample before placing a bulk order for ${subcategoryName}?`,
-      a: `Yes. We provide digital mockups, live previews, and sample products upon request so institutes can review quality before finalizing bulk orders.`,
+      q: `Can an approval or sample be arranged?`,
+      a: `Approval and sample options vary by product and order size. Ask what can be arranged for the item you are considering.`,
     },
     {
-      q: `Are the ${subcategoryName} suitable for student welcome kits and events?`,
-      a: `Yes. Many institutes use our ${subcategoryName} for student welcome kits, orientation events, annual functions, seminars, and staff branding.`,
-    },
-    {
-      q: `Do you ship customized ${subcategoryName} across India?`,
-      a: `Yes. We offer reliable Pan-India shipping to Coaching institutes, schools, colleges, training organizations, and companies in every major city.`,
+      q: `Do you deliver ${subcategoryName} across India?`,
+      a: `Delivery is arranged across India. Serviceability and the estimated schedule are confirmed for your destination with the quotation.`,
     },
   ];
   const faqs = subcategorySeoContent[subSlug]?.faqs || defaultFaqs;
@@ -38,18 +34,17 @@ const SubcategoryFAQ = ({ subcategoryName, subSlug }) => {
   return (
     <section className="faq-section">
       <h2 className="faq-title">Frequently Asked Questions</h2>
-
       <div className="faq-list">
-        {faqs.map((f, index) => (
-          <details key={index} className="faq-item">
-            <summary className="faq-question">{f.q}</summary>
-            <p className="faq-answer">{f.a}</p>
+        {faqs.map((faq) => (
+          <details key={faq.q} className="faq-item">
+            <summary className="faq-question">{faq.q}</summary>
+            <p className="faq-answer">{faq.a}</p>
           </details>
         ))}
       </div>
       <div className="cta-wrapper-5">
-        <button className="cta-btn-blog-5" onClick={() => window.location.href = '/contact'}>
-          Start Your Bulk Order – Contact Us
+        <button className="cta-btn-blog-5" onClick={() => { window.location.href = "/contact"; }}>
+          Discuss a bulk order
         </button>
       </div>
     </section>
@@ -57,4 +52,3 @@ const SubcategoryFAQ = ({ subcategoryName, subSlug }) => {
 };
 
 export default SubcategoryFAQ;
-

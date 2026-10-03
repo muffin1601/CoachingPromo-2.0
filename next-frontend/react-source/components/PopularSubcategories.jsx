@@ -105,13 +105,10 @@ const baseSubcategories = [
   },
 ];
 
-const popularSubcategories = baseSubcategories
-  .map((item) => ({
+const popularSubcategories = baseSubcategories.map((item) => ({
     ...item,
     href: `/${item.catslug}/${item.slug}`,
-  }))
-  .sort((a, b) => b.productCount - a.productCount)
-  .slice(0, 10);
+  }));
 
 const PopularSubcategories = () => {
   return (
@@ -122,7 +119,7 @@ const PopularSubcategories = () => {
 
       <p className="popsub-subtext">
         Explore high-demand apparel, bags, promotional items & stationery used by
-        leading Coaching institutes, schools, colleges & training centers across India.
+        coaching institutes, schools, colleges & training centers across India.
       </p>
 
       <ul className="popsub-slider">
@@ -153,7 +150,7 @@ const PopularSubcategories = () => {
                 <h3 className="popsub-name">{sub.name}</h3>
 
                 <p className="popsub-count">
-                  {sub.productCount}+ custom products for institutes
+                  Custom options for institutes
                 </p>
 
                 <a href={sub.href} className="popsub-btn">

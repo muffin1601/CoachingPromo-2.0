@@ -1,7 +1,7 @@
 import { encodePathSegment, siteUrl } from './api';
 import { getSubcategorySeoContent } from './seo-content';
 const titles = {
-  '': 'Custom Merchandise for Coaching Institutes | CoachingPromo',
+  '': 'Promotional Products for Coaching Institutes | CoachingPromo',
   about: 'About Our Custom Merchandise Team | CoachingPromo',
   contact: 'Contact CoachingPromo for Bulk Merchandise Orders',
   blogs: 'Branding & Merchandise Ideas for Institutes | CoachingPromo',
@@ -9,11 +9,29 @@ const titles = {
   register: 'Register', profile: 'My Profile', cart: 'Your Cart', checkout: 'Checkout', favorites: 'Favorites',
 };
 const descriptions = {
-  '': 'Custom T-shirts, bags, stationery and promotional gifts for coaching institutes, schools and colleges across India. Explore logo branding and bulk orders.',
+  '': 'Custom promotional products, apparel, student kits and stationery for coaching institutes, schools and colleges. Explore logo branding and bulk orders across India.',
   about: 'Learn how CoachingPromo helps education teams source custom apparel, student bags, stationery and branded gifts for institutes across India.',
   contact: 'Contact CoachingPromo in New Delhi about custom merchandise, logo branding and bulk orders for coaching institutes, schools and colleges.',
   blogs: 'Ideas and guides for institute branding, custom apparel, promotional products and student merchandise from CoachingPromo.',
   offers: 'Explore available promotional merchandise offers and bulk-order options for institutes, schools and education teams.',
+};
+const categorySeo = {
+  'apparel-accessories': {
+    title: 'Custom Apparel for Coaching Institutes | T-Shirts & Jackets',
+    description: 'Browse custom T-shirts, hoodies, teacher jackets and graduation wear for coaching institutes, schools and colleges. Request bulk logo branding.',
+  },
+  bags: {
+    title: 'Custom Bags for Coaching Institutes | Bulk Logo Printing',
+    description: 'Browse custom backpacks, tote bags and messenger bags for student kits, institute staff and events. Request logo branding and bulk pricing.',
+  },
+  'promotional-items': {
+    title: 'Promotional Products for Coaching Institutes | Bulk India',
+    description: 'Explore branded promotional products for coaching institutes, schools and education teams, including diaries, bottles, awards and desk items.',
+  },
+  stationery: {
+    title: 'Custom Stationery for Coaching Institutes | Bulk Printing',
+    description: 'Custom notebooks, attendance registers, degree folders, pens and academic stationery for schools, colleges and coaching institutes.',
+  },
 };
 export async function routeMetadata(route, params = {}) {
   const pathname = '/' + route.replace(/\[([^\]]+)\]/g, (_, key) => encodeURIComponent(params[key] || ''));
@@ -58,6 +76,10 @@ export async function routeMetadata(route, params = {}) {
   if (editorialSeo) {
     title = editorialSeo.categoryMetaTitle || editorialSeo.metaTitle;
     description = editorialSeo.categoryMetaDescription || editorialSeo.metaDescription;
+  }
+  if (route === 'categories/[slug]' && categorySeo[params.slug]) {
+    title = categorySeo[params.slug].title;
+    description = categorySeo[params.slug].description;
   }
   description = String(description).replace(/\s+/g, ' ').trim().slice(0, 170);
   const url = `${siteUrl}${canonicalPath}`;

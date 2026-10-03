@@ -1,124 +1,59 @@
 import React from "react";
 import Link from "next/link";
 import { subcategoryTitles } from "../../data/subcategories";
-import { subcategoryKeywords } from "../../data/subcategoryKeywords";
 import { subcategorySeoContent } from "../../../lib/seo-content";
 import "./DynamicSEOContent.css";
 
 const DynamicSEOContent = ({ slug }) => {
-  const title = subcategoryTitles[slug] || "";
-  const keywords = subcategoryKeywords[slug] || [];
+  const title = subcategoryTitles[slug] || "Institute merchandise";
   const editorial = subcategorySeoContent[slug];
 
   if (editorial) {
     return (
       <section className="seo-dynamic-wrapper" aria-labelledby={`${slug}-guide-title`}>
-        <h2 className="seo-dynamic-title" id={`${slug}-guide-title`}>
-          Bulk Hoodies & Winter Jackets for Education Teams
-        </h2>
-        {editorial.intro.map((paragraph) => (
-          <p className="seo-dynamic-p" key={paragraph}>{paragraph}</p>
-        ))}
+        <h2 className="seo-dynamic-title" id={`${slug}-guide-title`}>{editorial.title}</h2>
+        {editorial.intro.map((paragraph) => <p className="seo-dynamic-p" key={paragraph}>{paragraph}</p>)}
         {editorial.sections.map((section) => (
           <div className="seo-content-section" key={section.heading}>
             <h3 className="seo-dynamic-h3">{section.heading}</h3>
-            {section.paragraphs.map((paragraph) => (
-              <p className="seo-dynamic-p" key={paragraph}>{paragraph}</p>
-            ))}
-            {section.items && (
-              <ul className="seo-dynamic-ul">
-                {section.items.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            )}
+            {section.paragraphs.map((paragraph) => <p className="seo-dynamic-p" key={paragraph}>{paragraph}</p>)}
+            {section.items && <ul className="seo-dynamic-ul">{section.items.map((item) => <li key={item}>{item}</li>)}</ul>}
           </div>
         ))}
-        <nav className="seo-related-links" aria-label="Related custom apparel">
-          <strong>Related institute apparel</strong>
-          {editorial.relatedLinks.map((link) => (
-            <Link href={link.href} key={link.href}>{link.label}</Link>
-          ))}
+        <nav className="seo-related-links" aria-label={`Related links for ${title}`}>
+          <strong>Related products and guidance</strong>
+          {editorial.relatedLinks.map((link) => <Link href={link.href} key={link.href}>{link.label}</Link>)}
         </nav>
       </section>
     );
   }
 
-  const productName = title.replace("Custom", "").replace("Premium", "");
-
+  const productName = title.replace("Custom", "").replace("Premium", "").trim();
   return (
     <section className="seo-dynamic-wrapper">
       <h2 className="seo-dynamic-title">{title}</h2>
-
-      {/* INTRO */}
       <p className="seo-dynamic-p">
-        {productName} are one of the most popular branding choices for{" "}<mark>coaching institutes</mark>,{" "}
-        <mark>colleges</mark>, and{" "} <mark>universities</mark> across India. They help strengthen your
-        institute’s identity and provide a professional, trustworthy look to
-        students, staff, and faculty members.
+        Explore {productName.toLowerCase()} for coaching institutes, schools, colleges and education teams.
+        Compare the listed products, then share your quantity, branding artwork and delivery location for
+        an accurate recommendation and quotation.
       </p>
-
-      {/* WHY SECTION */}
-      <h3 className="seo-dynamic-h3">Why Institutes Need {productName}</h3>
+      <h3 className="seo-dynamic-h3">Planning an institute order</h3>
       <p className="seo-dynamic-p">
-        In today's competitive education industry, institutes must maintain a
-        strong, recognizable presence. {productName} offer a practical and
-        effective way to build consistency across campuses. They enhance brand
-        recall during seminars, admissions, events, exams, and daily academic
-        use. Parents and students perceive institutes with unified identity as
-        more organized and credible.
+        Start with the intended use, approximate quantity and required date. Product material, size, print
+        area and finishing can affect suitability and cost, so confirm the current specification before
+        approving a bulk order.
       </p>
-
-      {/* CUSTOMIZATION */}
-      <h3 className="seo-dynamic-h3">
-        Customization Options for {productName}
-      </h3>
+      <h3 className="seo-dynamic-h3">Branding options</h3>
       <p className="seo-dynamic-p">
-        You can fully personalize your {productName} with{" "}
-        <mark>logo printing</mark>, <mark>branding</mark>,{" "}
-        <mark>embroidery</mark>, color selection, and layout customization. Our
-        design experts help you create impactful branding for student kits,
-        teacher uniforms, event merchandise, and promotional campaigns.
+        Depending on the selected product, {productName.toLowerCase()} can be configured with an institute
+        logo, name, colours or event artwork. Available printing, embroidery and finishing methods vary by
+        material; the team will confirm suitable options during quotation.
       </p>
-
-      {/* USE CASES */}
-      {/* <h3 className="seo-dynamic-h3">
-        Best Use Cases for {productName} in Educational Institutes
-      </h3>
-      <ul className="seo-dynamic-ul">
-        <li>Student welcome kits</li>
-        <li>Coaching staff uniforms</li>
-        <li>Seminars & academic events</li>
-        <li>Open houses & orientation programs</li>
-        <li>Examination drives</li>
-        <li>University clubs & activity groups</li>CD ..
-      </ul> */}
-
-      {/* BENEFITS */}
-      <h3 className="seo-dynamic-h3">
-        Key Benefits of Using {productName} for Your Institute
-      </h3>
+      <h3 className="seo-dynamic-h3">Ordering and delivery</h3>
       <p className="seo-dynamic-p">
-        These products offer lasting brand visibility and practical utility.
-        Students wear or use them regularly, making them a powerful promotional
-        asset. They also help unify teams, improve discipline, and create a
-        sense of belonging among students and staff.
+        Share the product link, quantity, branding file, delivery city and needed date. CoachingPromo will
+        confirm availability, customization, pricing and the estimated production and delivery schedule.
       </p>
-
-      {/* ORDER */}
-      <h3 className="seo-dynamic-h3">Ordering & Delivery</h3>
-      <p className="seo-dynamic-p">
-        We offer fast delivery across India with bulk pricing for Coaching
-        centres and universities. Share your logo, quantity, and requirements to
-        receive a <mark>free mockup</mark> and quotation.
-      </p>
-
-      {/* KEYWORD CHIPS */}
-      <div className="seo-keyword-chips">
-        {keywords.map((k, i) => (
-          <span key={i} className="keyword-chip">
-            {k}
-          </span>
-        ))}
-      </div>
     </section>
   );
 };

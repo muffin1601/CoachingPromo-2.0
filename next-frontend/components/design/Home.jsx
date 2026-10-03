@@ -20,7 +20,16 @@ export default function Home() {
     <Hero />
     <TrustedClients />
     <Categories />
-    <section className="cp-solutions"><div><p className="cp-kicker">PRODUCTS FOR YOUR TEAM</p><h2>Start with what you need to make.</h2><p>From daily-use merchandise to event-ready kits, explore a collection built for education brands and institutional teams.</p></div><div className="cp-solutions-links">{[['APPAREL', 'Team apparel & uniforms', 'apparel-accessories'], ['BAGS', 'Backpacks & carry goods', 'bags'], ['STATIONERY', 'Notebooks & office essentials', 'stationery'], ['GIFTS', 'Promotional products & gifting', 'promotional-items']].map(([label, title, slug], index) => <Link href={`/categories/${slug}`} key={slug}><span>0{index + 1} / {label}</span><strong>{title}</strong><ArrowUpRight /></Link>)}</div></section>
+    <section className="cp-solutions"><div><p className="cp-kicker">PRODUCTS FOR YOUR TEAM</p><h2>Start with what you need to make.</h2><p>From daily-use merchandise to event-ready kits, explore a collection built for education brands and institutional teams.</p></div><div className="cp-solutions-links">{[
+      ['APPAREL', 'Teacher jackets & staff uniforms', '/apparel-accessories/uniform-jackets'],
+      ['T-SHIRTS', 'Coaching institute polo T-shirts', '/apparel-accessories/polo-t-shirts'],
+      ['WINTER WEAR', 'Custom hoodies for institutes', '/custom-hoodies-for-coaching-institutes'],
+      ['STUDENT KITS', 'Printed tote bags', '/bags/tote-bag'],
+      ['ACADEMIC', 'Custom notebooks & registers', '/stationery/notebook'],
+      ['CONVOCATION', 'Degree certificate folders', '/stationery/graduation-degree-folders'],
+      ['PLANNING', 'Branded coaching diaries', '/promotional-items/diary-set'],
+      ['ALL PRODUCTS', 'Browse promotional products', '/categories/promotional-items'],
+    ].map(([label, title, href], index) => <Link href={href} key={href}><span>{String(index + 1).padStart(2, '0')} / {label}</span><strong>{title}</strong><ArrowUpRight /></Link>)}</div></section>
     <PopularSubcategories />
     <CustomizationExperience />
     <WhyChooseUs />
