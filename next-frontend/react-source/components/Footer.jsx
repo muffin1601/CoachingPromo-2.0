@@ -30,9 +30,9 @@ const Footer = () => {
           />
 
           <p className="footer-text" itemProp="description">
-            Coaching Promo is India’s leading supplier of
+            Coaching Promo supplies
             <strong> custom T-shirts, hoodies, student kits, event merchandise, diaries, bottles, and trophies</strong>
-            for Coaching Institutes, Schools, Colleges, and Universities. We help education brands elevate their identity with premium customized products.
+            for Coaching Institutes, Schools, Colleges, and Universities. We help education teams plan useful products with consistent custom branding.
           </p>
         </div>
 
@@ -52,6 +52,8 @@ const Footer = () => {
                 Contact Us
               </a>
             </li>
+            <li><a href="/solutions/student-welcome-kits">Student Welcome Kits</a></li>
+            <li><a href="/industries/colleges-universities">College Merchandise</a></li>
           </ul>
         </div>
 

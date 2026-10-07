@@ -9,7 +9,9 @@
     "lint": "eslint app components lib --quiet",
     "verify:parity": "node scripts/verify-parity.mjs",
     "verify:redirects": "node scripts/verify-redirect-rules.mjs",
-    "verify:seo": "node scripts/verify-seo.mjs"
+    "verify:seo": "node scripts/verify-seo.mjs",
+    "verify:seo-architecture": "node scripts/verify-seo-architecture.mjs",
+    "generate:seo-reports": "node scripts/generate-seo-deliverables.mjs"
   },
   "dependencies": {
     "next": "^15.2.4",

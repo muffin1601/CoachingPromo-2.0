@@ -47,6 +47,7 @@ export async function routeMetadata(route, params = {}) {
   let image = '/logo.webp';
   let publishedTime;
   let modifiedTime;
+  let entityName = '';
   if (endpoint) {
     try {
       const backend = (process.env.BACKEND_URL || 'http://127.0.0.1:5001').replace(/\/$/, '');
@@ -54,6 +55,7 @@ export async function routeMetadata(route, params = {}) {
       if (response.ok) {
         const data = await response.json();
         const entity = data.product || data.subcategory || data.category || data;
+        entityName = entity.title || entity.name || '';
         const entityDescription = typeof entity.description === 'string' ? entity.description
           : entity.description?.short || entity.description?.long;
         const content = typeof entity.content === 'string' ? entity.content.replace(/<[^>]*>/g, ' ') : '';
@@ -80,6 +82,16 @@ export async function routeMetadata(route, params = {}) {
   if (route === 'categories/[slug]' && categorySeo[params.slug]) {
     title = categorySeo[params.slug].title;
     description = categorySeo[params.slug].description;
+  }
+  // Some legacy catalogue records do not yet have descriptive copy, and a
+  // small number of older articles share an excerpt. Prefixing dynamic-page
+  // descriptions with the actual entity name keeps metadata useful and
+  // unique without inventing product specifications or business claims.
+  if ((route.endsWith('[product]') || route === 'blogs/[id]') && entityName) {
+    const cleanName = String(entityName).replace(/\s+/g, ' ').trim();
+    if (!String(description).toLowerCase().startsWith(cleanName.toLowerCase())) {
+      description = `${cleanName}. ${description}`;
+    }
   }
   description = String(description).replace(/\s+/g, ' ').trim().slice(0, 170);
   const url = `${siteUrl}${canonicalPath}`;

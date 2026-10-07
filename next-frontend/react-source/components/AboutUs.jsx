@@ -7,12 +7,12 @@ const AboutUs = () => {
 
       {/* ========== HERO SECTION ========== */}
       <header className="about-hero">
-        <h1>About CoachingPromo – India’s Leading Institute Branding Partner</h1>
+        <h2>About CoachingPromo – Institute Merchandise and Branding Support</h2>
         <p>
-          CoachingPromo is India’s most trusted provider of customized promotional
-          merchandise for Coaching institutes, schools, colleges, universities, and
-          corporate training organizations. We help institutions strengthen their
-          identity with high-quality branded gifts, apparel, and event merchandise.
+          CoachingPromo helps Coaching institutes, schools, colleges, universities,
+          and training organizations plan customized merchandise. The catalogue
+          brings together apparel, student products, stationery, awards and event
+          merchandise for institutional requirements.
         </p>
       </header>
 
@@ -21,32 +21,31 @@ const AboutUs = () => {
         <div className="about-left">
           <h2>Who We Are</h2>
           <p>
-            For over a decade, CoachingPromo has been empowering educational and
-            training organizations with premium promotional products that enhance
-            visibility and brand value. From customized student kits to faculty gifts,
-            event merchandise, welcome kits, convocation branding, and more — we
-            offer complete end-to-end solutions.
+            We support educational and training organizations with product selection,
+            artwork planning and bulk-order quotations. From student kits and faculty
+            apparel to event merchandise and convocation products, each requirement is
+            specified around its audience, quantity, branding and schedule.
           </p>
 
           <p>
             Our product range includes customized notebooks, t-shirts, hoodies,
             stationery, backpacks, awards, corporate gifts, orientation kits, and
-            premium merchandise designed with precision. Every product is crafted to
-            reflect your institution’s identity and deliver long-lasting impact.
+            merchandise. Available materials, branding methods and commercial terms
+            are confirmed for the selected product before an order is approved.
           </p>
 
           <div className="about-highlights">
             <div>
-              <h3>10+ Years</h3>
-              <p>Experience in Branding & Merchandise</p>
+              <h3>Product Planning</h3>
+              <p>Options selected for the programme and recipient</p>
             </div>
             <div>
-              <h3>500+ Institutes</h3>
-              <p>Served Across India</p>
+              <h3>Artwork Review</h3>
+              <p>Logo placement and customization checked before production</p>
             </div>
             <div>
-              <h3>10,000+</h3>
-              <p>Customized Orders Successfully Delivered</p>
+              <h3>Bulk Quotations</h3>
+              <p>Current pricing and timelines based on the requirement</p>
             </div>
           </div>
         </div>
@@ -69,10 +68,9 @@ const AboutUs = () => {
       <section className="about-mission">
         <h2>Our Mission</h2>
         <p>
-          To simplify Institute branding with premium, meaningful, and high-quality
-          promotional products that inspire students, create lasting impressions, and
-          build institutional pride. We focus on creativity, innovation, and fast
-          delivery—making merchandising easy and affordable for every organization.
+          To make institutional merchandise easier to plan by connecting each product
+          with a clear use, recipient and approved identity. We focus on practical
+          specifications, accurate artwork and transparent quotation-stage decisions.
         </p>
       </section>
 
@@ -80,23 +78,20 @@ const AboutUs = () => {
       <section className="about-timeline">
 
         <div className="timeline-item">
-          <h4>2015</h4>
-          <p>Began offering creative branding solutions for Coaching institutes.</p>
+          <h4>Plan</h4>
+          <p>Define the programme, recipients, quantity, destination and required date.</p>
         </div>
         <div className="timeline-item">
-          <h4>2018</h4>
-          <p>Expanded into apparel, stationery, event gifting & onboarding kits.</p>
+          <h4>Specify</h4>
+          <p>Select the product, material, size or format and suitable branding method.</p>
         </div>
         <div className="timeline-item">
-          <h4>2022</h4>
-          <p>Reached 500+ Coaching centers, colleges & universities across India.</p>
+          <h4>Approve</h4>
+          <p>Review the quotation, artwork, product details and confirmed schedule.</p>
         </div>
         <div className="timeline-item">
-          <h4>Today</h4>
-          <p>
-            Recognized as a leading national provider of custom institute
-            merchandise, onboarding kits, event gifts, and branding accessories.
-          </p>
+          <h4>Produce</h4>
+          <p>Proceed against the approved specification and agreed delivery plan.</p>
         </div>
       </section>
 
@@ -122,7 +117,7 @@ const AboutUs = () => {
         <div className="faq-item-1">
           <h4>Do you offer bulk discounts?</h4>
           <p>
-            Yes, bulk orders receive tier-based discounts for institutions.
+            Bulk pricing is quoted for the selected product, quantity, branding and delivery requirement.
           </p>
         </div>
 
@@ -130,7 +125,7 @@ const AboutUs = () => {
         <div className="faq-item-1">
           <h4>What is the minimum order quantity (MOQ)?</h4>
           <p>
-            Most products have an MOQ of 20–50 units, but it varies based on the item. Some items can be customized even in smaller quantities.
+            MOQ varies by product and customization. Contact us with the item and quantity so the current requirement can be confirmed.
           </p>
         </div>
 
@@ -138,8 +133,8 @@ const AboutUs = () => {
         <div className="faq-item-1">
           <h4>How long does it take to deliver customized merchandise?</h4>
           <p>
-            Standard delivery takes 5–12 working days depending on the product type,
-            customization process, and your location.
+            Timing depends on the product, quantity, customization, approvals and destination.
+            Share the required date so a realistic schedule can be confirmed before ordering.
           </p>
         </div>
 
@@ -147,8 +142,8 @@ const AboutUs = () => {
         <div className="faq-item-1">
           <h4>Can I see a sample before placing a bulk order?</h4>
           <p>
-            Yes, we provide digital mockups and physical samples on request so you can
-            approve the design before production.
+            Artwork approval and sample options vary by product and order size. Ask what
+            can be arranged for the item you are considering before approving production.
           </p>
         </div>
       </section>

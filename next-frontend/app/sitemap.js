@@ -1,5 +1,6 @@
 import { siteUrl, api } from '@/lib/api';
 import { hoodieGuides } from '@/lib/hoodie-guides';
+import { seoPageEntries } from '@/lib/seo-pages';
 export const dynamic = 'force-dynamic';
 // The backend already includes every active product, without catalogue pagination.
 export default async function sitemap() {
@@ -16,7 +17,7 @@ export default async function sitemap() {
     const lastModified = entry.match(/<lastmod>(.*?)<\/lastmod>/)?.[1];
     return [{ url: `${siteUrl}${url.pathname}`, ...(lastModified ? { lastModified } : {}) }];
   });
-  const editorialUrls = ['/custom-hoodies-for-coaching-institutes', ...hoodieGuides.map(post => `/blogs/${post.slug}`)]
+  const editorialUrls = ['/custom-hoodies-for-coaching-institutes', ...hoodieGuides.map(post => `/blogs/${post.slug}`), ...seoPageEntries.map(page => page.path)]
     .map(path => ({ url: `${siteUrl}${path}`, lastModified: '2026-09-30', changeFrequency: 'monthly', priority: path.startsWith('/blogs/') ? 0.7 : 0.9 }));
   const seen = new Set();
   return [...editorialUrls, ...backendUrls].filter(item => !seen.has(item.url) && seen.add(item.url));

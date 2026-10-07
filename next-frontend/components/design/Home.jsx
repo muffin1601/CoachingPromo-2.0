@@ -24,11 +24,21 @@ export default function Home() {
       ['APPAREL', 'Teacher jackets & staff uniforms', '/apparel-accessories/uniform-jackets'],
       ['T-SHIRTS', 'Coaching institute polo T-shirts', '/apparel-accessories/polo-t-shirts'],
       ['WINTER WEAR', 'Custom hoodies for institutes', '/custom-hoodies-for-coaching-institutes'],
-      ['STUDENT KITS', 'Printed tote bags', '/bags/tote-bag'],
+      ['STUDENT KITS', 'Admission and welcome kits', '/solutions/student-welcome-kits'],
       ['ACADEMIC', 'Custom notebooks & registers', '/stationery/notebook'],
       ['CONVOCATION', 'Degree certificate folders', '/stationery/graduation-degree-folders'],
       ['PLANNING', 'Branded coaching diaries', '/promotional-items/diary-set'],
       ['ALL PRODUCTS', 'Browse promotional products', '/categories/promotional-items'],
+    ].map(([label, title, href], index) => <Link href={href} key={href}><span>{String(index + 1).padStart(2, '0')} / {label}</span><strong>{title}</strong><ArrowUpRight /></Link>)}</div></section>
+    <section className="cp-solutions"><div><p className="cp-kicker">PLAN BY PROGRAMME</p><h2>Merchandise for the way education teams work.</h2><p>Use focused planning pages for admissions, campus events, institutional gifting and audience-specific requirements.</p></div><div className="cp-solutions-links">{[
+      ['WELCOME', 'Student welcome and admission kits', '/solutions/student-welcome-kits'],
+      ['EVENTS', 'Fests, seminars and workshops', '/solutions/event-merchandise-for-educational-institutions'],
+      ['GIFTING', 'Faculty and institutional gifting', '/solutions/corporate-gifting-for-educational-institutions'],
+      ['GRADUATION', 'Convocation and graduation products', '/solutions/convocation-products'],
+      ['SCHOOLS', 'Custom school merchandise', '/industries/schools'],
+      ['COLLEGES', 'College and university merchandise', '/industries/colleges-universities'],
+      ['TRAINING', 'Training institute merchandise', '/industries/training-institutes'],
+      ['GUIDE', 'Plan promotional products', '/guides/promotional-product-planning-for-coaching-institutes'],
     ].map(([label, title, href], index) => <Link href={href} key={href}><span>{String(index + 1).padStart(2, '0')} / {label}</span><strong>{title}</strong><ArrowUpRight /></Link>)}</div></section>
     <PopularSubcategories />
     <CustomizationExperience />

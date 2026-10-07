@@ -41,7 +41,7 @@ assert(sitemap.html.includes(`${canonicalHost}/offers`), 'offers missing from si
 assert(!sitemap.html.includes('localhost'), 'local URLs in sitemap');
 const sitemapUrls = [...sitemap.html.matchAll(/<loc>(.*?)<\/loc>/g)].map(([, url]) => url.replaceAll('&amp;', '&'));
 assert(sitemapUrls.length, 'sitemap URLs');
-const expectedSitemapUrls = Number(process.env.EXPECTED_SITEMAP_URLS || 322);
+const expectedSitemapUrls = Number(process.env.EXPECTED_SITEMAP_URLS || 339);
 assert.equal(sitemapUrls.length, expectedSitemapUrls, `expected ${expectedSitemapUrls} sitemap URLs`);
 for (let index = 0; index < sitemapUrls.length; index += 5) {
   const batch = sitemapUrls.slice(index, index + 5);
