@@ -3,7 +3,8 @@ import path from 'node:path';
 import { seoPageEntries } from '../lib/seo-pages.js';
 
 const root = process.cwd();
-const sourcePath = path.join(root, 'coachingpromo_india_seo_keywords_master.csv');
+const reportDir = path.join(root, 'seo-reports');
+const sourcePath = path.join(reportDir, 'coachingpromo_india_seo_keywords_master.csv');
 const base = (process.env.SEO_TEST_BASE || 'http://127.0.0.1:3122').replace(/\/$/, '');
 
 function parseCsv(text) {
@@ -29,7 +30,10 @@ const csv = value => {
   const text = value == null ? '' : String(value);
   return /[",\r\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
 };
-const writeCsv = async (filename, columns, rows) => fs.writeFile(path.join(root, filename), [columns.join(','), ...rows.map(row => columns.map(column => csv(row[column])).join(','))].join('\r\n') + '\r\n');
+const writeCsv = async (filename, columns, rows) => {
+  await fs.mkdir(reportDir, { recursive: true });
+  return fs.writeFile(path.join(reportDir, filename), [columns.join(','), ...rows.map(row => columns.map(column => csv(row[column])).join(','))].join('\r\n') + '\r\n');
+};
 const normalize = value => String(value).toLowerCase().replace(/customised/g, 'customized').replace(/centres/g, 'centers').replace(/t-shirts?/g, 't shirts').replace(/\s+/g, ' ').trim();
 
 const owners = {

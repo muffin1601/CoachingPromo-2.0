@@ -19,8 +19,8 @@ function parseCsv(text) {
   return rows.filter(item => item.some(Boolean)).map(item => Object.fromEntries(headers.map((header, index) => [header, item[index] || ''])));
 }
 
-const source = parseCsv(await fs.readFile('coachingpromo_india_seo_keywords_master.csv', 'utf8'));
-const mapped = parseCsv(await fs.readFile('COACHINGPROMO_KEYWORD_MAP.csv', 'utf8'));
+const source = parseCsv(await fs.readFile('seo-reports/coachingpromo_india_seo_keywords_master.csv', 'utf8'));
+const mapped = parseCsv(await fs.readFile('seo-reports/COACHINGPROMO_KEYWORD_MAP.csv', 'utf8'));
 assert.equal(source.length, 830, 'source row count');
 assert.equal(mapped.length, source.length, 'mapped row count must equal source');
 assert.deepEqual(mapped.map(row => row.Keyword), source.map(row => row.Keyword), 'keyword map must preserve every source row and order');

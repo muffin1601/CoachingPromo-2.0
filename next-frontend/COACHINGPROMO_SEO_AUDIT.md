@@ -2,7 +2,7 @@
 
 Audit date: 6 October 2026  
 Canonical site: `https://www.coachingpromo.in`  
-Master keyword source: `coachingpromo_india_seo_keywords_master.csv`
+Master keyword source: `seo-reports/coachingpromo_india_seo_keywords_master.csv`
 
 ## Executive assessment
 
@@ -94,7 +94,7 @@ Live search results reveal older product/About copy containing fixed turnaround,
 - Guides own distinct informational questions and link to commercial pages.
 - No city × product or `near me` doorway page was created.
 
-The authoritative row-by-row disposition is in `COACHINGPROMO_KEYWORD_MAP.csv`.
+The authoritative row-by-row disposition is in `seo-reports/COACHINGPROMO_KEYWORD_MAP.csv`.
 
 ## Product and content quality risks
 

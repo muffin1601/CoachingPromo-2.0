@@ -31,7 +31,7 @@ The implementation also expanded the sitemap, strengthened homepage and contextu
 | Modifier-only rows | 71 |
 | Geo rows deferred to avoid thin doorway pages | 21 |
 
-Every secondary, informational, spelling, audience, location and modifier phrase remains present in `COACHINGPROMO_KEYWORD_MAP.csv` with its canonical owner and disposition.
+Every secondary, informational, spelling, audience, location and modifier phrase remains present in `seo-reports/COACHINGPROMO_KEYWORD_MAP.csv` with its canonical owner and disposition.
 
 ## 3. Existing pages improved
 
@@ -145,11 +145,11 @@ See `COACHINGPROMO_TEST_REPORT.md` for exact details.
 ## Deliverables
 
 - `COACHINGPROMO_SEO_AUDIT.md`
-- `COACHINGPROMO_KEYWORD_MAP.csv`
-- `COACHINGPROMO_SEO_URL_INVENTORY.csv`
-- `COACHINGPROMO_CONTENT_GAPS.csv`
+- `seo-reports/COACHINGPROMO_KEYWORD_MAP.csv`
+- `seo-reports/COACHINGPROMO_SEO_URL_INVENTORY.csv`
+- `seo-reports/COACHINGPROMO_CONTENT_GAPS.csv`
 - `COACHINGPROMO_IMPLEMENTATION_REPORT.md`
-- `COACHINGPROMO_INTERNAL_LINK_MAP.csv`
+- `seo-reports/COACHINGPROMO_INTERNAL_LINK_MAP.csv`
 - `COACHINGPROMO_SCHEMA_REPORT.md`
 - `COACHINGPROMO_TEST_REPORT.md`
 
