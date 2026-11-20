@@ -9,7 +9,7 @@ import { getSubcategory, productHref } from './api';
  * `isActive: true` records.
  */
 
-export const COLLECTION_BANNER = { src: '/Winter%20Wear%20Collection%202027.webp', width: 2048, height: 768 };
+export const COLLECTION_BANNER = { src: '/cp_banner.webp', width: 2048, height: 768 };
 
 export const collections = {
   winter: {

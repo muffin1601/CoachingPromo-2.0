@@ -27,7 +27,7 @@ export function Breadcrumbs({ items }) {
 
 /** Full banner with no cropping: the artwork already carries its own headline. */
 export function HeroBanner({ alt, href }) {
-  const image = <Image src={COLLECTION_BANNER.src} width={COLLECTION_BANNER.width} height={COLLECTION_BANNER.height} alt={alt} priority sizes="100vw" quality={80} className="cl-hero-image" />;
+  const image = <Image src={COLLECTION_BANNER.src} width={COLLECTION_BANNER.width} height={COLLECTION_BANNER.height} alt={alt} priority unoptimized sizes="100vw" className="cl-hero-image" />;
   return <div className="cl-hero-media">{href ? <a href={href} aria-label={`${alt} — jump to products`}>{image}</a> : image}</div>;
 }
 
