@@ -9,7 +9,7 @@ import { getSubcategory, productHref } from './api';
  * `isActive: true` records.
  */
 
-export const COLLECTION_BANNER = { src: '/cp_banner.webp', width: 2048, height: 768 };
+export const COLLECTION_BANNER = { src: '/Winter%20Wear%20Collection%202027.webp', width: 2048, height: 768 };
 
 export const collections = {
   winter: {
@@ -50,11 +50,11 @@ export const collections = {
   newYear: {
     key: 'new-year',
     path: '/new-year-collection',
-    name: 'New Year Collection',
-    title: 'New Year Gifts & Custom Merchandise for Institutes | CoachingPromo',
-    description: 'Explore New Year gifts for coaching institutes: custom T-shirts, hoodies, bags, ID cards, notebooks and pens. Request a quote for bulk merchandise.',
+    name: 'New Year & Winter Collection',
+    title: 'New Year Gifts & Winter Wear for Institutes | CoachingPromo',
+    description: 'Explore New Year gifts and winter wear for coaching institutes, including custom hoodies, jackets, bags and stationery. Request a bulk quote.',
     keywords: ['New Year gifts for coaching institutes', 'custom New Year merchandise', 'promotional gifts for coaching institutes', 'student welcome kits', 'bulk promotional stationery', 'customized notebooks and pens', 'branded bags for students', 'coaching institute promotional products'],
-    h1: 'Custom New Year Gifts & Merchandise for Coaching Institutes',
+    h1: 'New Year Gifts & Winter Merchandise for Coaching Institutes',
     bannerAlt: 'New Year 2027 collection banner with institute-branded hoodies, backpack, notebook, pen, bottle and mug for coaching institutes and training centres',
     perGroupLimit: 4,
     groups: [
@@ -68,6 +68,11 @@ export const collections = {
         key: 'hoodies', name: 'Personalized Hoodies', short: 'Hoodies',
         blurb: 'Seasonal hoodies that double as a New Year gift for students and staff.',
         sources: ['apparel-accessories/hoodies-jackets'],
+      },
+      {
+        key: 'jackets', name: 'Uniform & Nehru Jackets', short: 'Staff jackets',
+        blurb: 'Smart winter layers for faculty, counsellors and front-desk teams.',
+        sources: ['apparel-accessories/uniform-jackets'],
       },
       {
         key: 'bags', name: 'Branded Bags', short: 'Bags',
@@ -103,6 +108,7 @@ export const collections = {
     ],
     rows: [
       { title: 'Apparel for new batches', groups: ['tshirts', 'hoodies'] },
+      { title: 'Winter layers for staff', groups: ['jackets'] },
       { title: 'Bags and identity essentials', groups: ['bags', 'idcards'] },
       { title: 'Stationery for every student', groups: ['notebooks', 'pens'] },
       { title: 'Year-round reminders of your brand', groups: ['calendars', 'diaries'] },

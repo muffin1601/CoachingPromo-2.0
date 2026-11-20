@@ -20,7 +20,7 @@ export const metadata = {
   twitter: { card: 'summary_large_image', title: config.title, description: config.description, images: [COLLECTION_BANNER.src] },
 };
 
-const CORE_TILES = ['tshirts', 'hoodies', 'bags', 'idcards', 'notebooks', 'pens'];
+const CORE_TILES = ['tshirts', 'hoodies', 'jackets', 'bags', 'idcards', 'notebooks', 'pens'];
 
 const allFaqs = [
   { q: 'Can we combine different products in one bulk quote?', a: 'Yes. You can request T-shirts, hoodies, bags, ID cards, notebooks, pens and other catalogue items in a single enquiry. Mention the quantity for each item and the quotation will cover the full combination.' },
@@ -88,9 +88,9 @@ export default async function NewYearCollectionPage() {
         <Breadcrumbs items={breadcrumbs} />
         <p className="cl-kicker">New Year 2027 · Gifts &amp; welcome kits</p>
         <h1>{config.h1}</h1>
-        <p className="cl-lede">T-shirts, hoodies, bags, ID cards, notebooks and pens, branded for your institute and ready to quote in bulk.</p>
+        <p className="cl-lede">T-shirts, hoodies, jackets, bags, ID cards, notebooks and pens, branded for your institute and ready to quote in bulk.</p>
         <div className="cl-actions">
-          <a className="cl-btn cl-btn-primary" href="#featured-products">Explore New Year Collection <ArrowRight size={17} aria-hidden="true" /></a>
+          <a className="cl-btn cl-btn-primary" href="#featured-products">Explore the Collection <ArrowRight size={17} aria-hidden="true" /></a>
           <QuoteLink className="cl-btn cl-btn-outline" requirement="New Year Collection: bulk merchandise" item="New Year hero">Get Bulk Quotation</QuoteLink>
           <WhatsAppLink message="Hi CoachingPromo, I would like a bulk quote for the New Year Collection." item="New Year hero" />
         </div>
@@ -112,13 +112,13 @@ export default async function NewYearCollectionPage() {
 
     {tiles.length > 0 && <section className="cl-section cl-band" aria-labelledby="categories-heading">
       <div className="cl-wrap">
-        <SectionHead kicker="Shop by category" title="Shop New Year Gifts by Category" id="categories-heading">Six essentials institutes order most for new admissions and New Year events.</SectionHead>
+        <SectionHead kicker="Shop by category" title="Shop New Year & Winter by Category" id="categories-heading">Explore winter apparel, gifts and essentials for new admissions and New Year events.</SectionHead>
         <CategoryTiles groups={tiles} />
       </div>
     </section>}
 
     <section className="cl-section cl-wrap" id="featured-products" aria-labelledby="products-heading">
-      <SectionHead kicker="From the catalogue" title="Featured New Year Products" id="products-heading">Live products and prices, organised by category. Open any product for full details or request a quote straight from the card.</SectionHead>
+      <SectionHead kicker="From the catalogue" title="Featured New Year & Winter Products" id="products-heading">Live products and prices, organised by category. Open any product for full details or request a quote straight from the card.</SectionHead>
       {rows.length ? rows.map(row => <div className="cl-row" key={row.title}>
         <p className="cl-row-title">{row.title}</p>
         <div className={`cl-row-groups${row.groups.length > 1 ? ' cl-row-split' : ''}`}>{row.groups.map(group => <ProductGroup key={group.key} group={group} collectionName={config.name} columns={row.groups.length > 1 ? 2 : 4} />)}</div>
@@ -171,17 +171,17 @@ export default async function NewYearCollectionPage() {
             <li><Link href="/apparel-accessories/round-neck-t-shirts">Custom round neck T-shirts</Link></li>
           </ul>
         </div>
-        <Link href="/winter-collection" className="cl-crosslink" data-track="collection_crosslink" data-item="Winter Collection">
-          <span className="cl-kicker">Also explore</span>
-          <strong>Winter Collection</strong>
-          <span>Custom hoodies, uniform jackets and matching T-shirts for students and staff.</span>
-          <em>View the collection <ArrowRight size={16} aria-hidden="true" /></em>
+        <Link href="/custom-hoodies-for-coaching-institutes" className="cl-crosslink">
+          <span className="cl-kicker">Winter wear guide</span>
+          <strong>Custom Hoodies for Institutes</strong>
+          <span>Explore fabrics, branding and bulk ordering for students and staff.</span>
+          <em>Read the guide <ArrowRight size={16} aria-hidden="true" /></em>
         </Link>
       </div>
     </section>
 
     <section className="cl-section cl-wrap cl-narrow" aria-labelledby="faq-heading">
-      <SectionHead kicker="FAQ" title="New Year Merchandise FAQs" id="faq-heading" />
+      <SectionHead kicker="FAQ" title="New Year & Winter Merchandise FAQs" id="faq-heading" />
       <Faq faqs={faqs} />
     </section>
 

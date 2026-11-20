@@ -53,8 +53,7 @@ const Footer = () => {
               </a>
             </li>
             <li><a href="/solutions/student-welcome-kits">Student Welcome Kits</a></li>
-            <li><a href="/winter-collection">Winter Collection</a></li>
-            <li><a href="/new-year-collection">New Year Collection</a></li>
+            <li><a href="/new-year-collection">New Year &amp; Winter Collection</a></li>
             <li><a href="/industries/colleges-universities">College Merchandise</a></li>
           </ul>
         </div>

@@ -8,6 +8,7 @@ const privateIndexPrefixes = [
 
 const exactLegacyPaths = new Map([
   ['/account', '/profile'],
+  ['/winter-collection', '/new-year-collection'],
   ['/blog', '/blogs'],
   ['/tshirts', '/categories/apparel-accessories'],
   ['/apparel/graduation-gown', '/apparel-accessories/graduation-gown'],
