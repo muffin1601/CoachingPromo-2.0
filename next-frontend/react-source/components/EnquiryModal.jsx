@@ -9,7 +9,7 @@ const initialForm = {
   name: "", companyname: "", email: "", phone: "", location: "",
 };
 
-const EnquiryModal = ({ isOpen, onClose, image, productName = "" }) => {
+const EnquiryModal = ({ isOpen, onClose, image, productName = "", onSubmitted }) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({ ...initialForm, requirement: productName });
   const [submitting, setSubmitting] = useState(false);
@@ -64,6 +64,8 @@ const EnquiryModal = ({ isOpen, onClose, image, productName = "" }) => {
       });
       await axios.post(`${(process.env.NEXT_PUBLIC_API_PATH || "/api")}/send-email`, payload);
       toast.success("Thank you! Our team will contact you shortly.");
+      // Callers receive only non-personal context (e.g. for analytics).
+      onSubmitted?.({ branding: formData.branding });
       setFormData({ ...initialForm, requirement: productName });
       setStep(1);
       onClose();

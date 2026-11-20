@@ -22,9 +22,9 @@ export function websiteSchema() {
   return { '@context': 'https://schema.org', '@type': 'WebSite', '@id': `${siteUrl}/#website`, name: 'CoachingPromo', url: canonicalUrl('/'), inLanguage: 'en-IN', publisher: { '@id': `${siteUrl}/#organization` } };
 }
 
-export function breadcrumbSchema(items) {
+export function breadcrumbSchema(items, id) {
   return {
-    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList', ...(id ? { '@id': id } : {}),
     itemListElement: items.map(([name, path], index) => ({ '@type': 'ListItem', position: index + 1, name, item: canonicalUrl(path) })),
   };
 }
@@ -58,6 +58,36 @@ export function collectionPageSchema({ name, description, path, products = [] })
           position: index + 1,
           name: product.name,
           url: canonicalUrl(`/${product.category?.slug || 'apparel-accessories'}/${product.subcategory?.slug || 'hoodies-jackets'}/${product.slug}`),
+        })),
+      },
+    } : {}),
+  };
+}
+
+/**
+ * CollectionPage + ItemList for curated landing pages that mix categories.
+ * Each ListItem uses the product's real catalogue URL (`href`). Offers, ratings
+ * and reviews are deliberately omitted: they belong on the product pages.
+ */
+export function curatedCollectionSchema({ name, description, path, image, products = [] }) {
+  const url = canonicalUrl(path);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${url}#collection`,
+    name, description, url, inLanguage: 'en-IN',
+    isPartOf: { '@id': `${siteUrl}/#website` },
+    publisher: { '@id': `${siteUrl}/#organization` },
+    ...(image ? { primaryImageOfPage: { '@type': 'ImageObject', url: canonicalUrl(image) } } : {}),
+    breadcrumb: { '@id': `${url}#breadcrumb` },
+    ...(products.length ? {
+      mainEntity: {
+        '@type': 'ItemList',
+        '@id': `${url}#products`,
+        name: `${name} products`,
+        numberOfItems: products.length,
+        itemListElement: products.map((product, index) => ({
+          '@type': 'ListItem', position: index + 1, name: product.name, url: canonicalUrl(product.href),
         })),
       },
     } : {}),

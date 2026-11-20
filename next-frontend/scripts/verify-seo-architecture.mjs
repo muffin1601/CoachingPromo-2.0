@@ -31,7 +31,7 @@ const sitemapResponse = await fetch(`${base}/sitemap.xml`);
 assert.equal(sitemapResponse.status, 200, 'sitemap status');
 const sitemap = await sitemapResponse.text();
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1].replaceAll('&amp;', '&'));
-assert.equal(urls.length, 339, 'sitemap URL count');
+assert.equal(urls.length, 341, 'sitemap URL count'); // +2 seasonal collection pages
 assert.equal(new Set(urls).size, urls.length, 'duplicate sitemap URL');
 
 const pages = [];
